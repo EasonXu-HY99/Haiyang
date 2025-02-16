@@ -3,9 +3,9 @@ project:
   output-dir: _site  # Default output directory
 
 website:
-  title: "My Tech Portfolio"
+  title: "Haiyang's Tech Portfolio"
   description: "Showcasing expertise in IoT, Cybersecurity, and AWS Cloud."
-  site-url: "https://yourdomain.netlify.app"  # Replace with your actual Netlify URL or custom domain
+  site-url: "https://haiyangxu.netlify.app/"  # Replace with your actual Netlify URL or custom domain
   favicon: assets/favicon.ico
 
   navbar:

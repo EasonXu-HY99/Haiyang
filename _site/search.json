@@ -2,21 +2,21 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome to My Tech Portfolio",
+    "title": "Welcome to Haiyang’s Tech Portfolio",
     "section": "",
-    "text": "Hello! I’m Xu Haiyang, a Computer Science graduate specializing in Cybersecurity & Cyber-Physical Systems. This website serves as a portfolio to showcase my projects, research, and technical knowledge in IoT, Cybersecurity, AWS Cloud, and AI.\n\n\n\nEducation:\n\nSingapore Management University (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)\nSingapore Polytechnic (Mar 2018 – Apr 2021) - Diploma in Computer Engineering\n\nCertifications: AWS Certified Solutions Architect\nProgramming Skills: JavaScript, R Coding, Python, ReactJS, Java, C/C++\nCybersecurity Skills: OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence\n\n\n\n\nThis website is structured into several sections to help visitors and myself find useful solutions: - Cyber Defense & Threat Intelligence: Articles and resources on security best practices, penetration testing, and risk management. - Mastering Code & Development: Code snippets, tutorials, and solutions for common programming challenges. - Cloud Computing & Scalability: Insights into AWS, serverless computing, and cloud security. - GitHub Mastery & DevOps: Guides on version control, GitHub Actions, and repository management. - AI & Machine Learning Innovations: Machine learning, deep learning, and AI-related projects.\n\n\n\n\nAWS Security Automation (View Project) - Implemented AWS Lambda, API Gateway, and Security Hub for real-time security analysis.\nInsider Threat Detection (View Project) - Built ML-based risk assessment using TensorFlow and Scikit Learn.\nIoT Smart System (View Project) - Designed IoT applications with AWS cloud connectivity.\n\n\n\n\n\nDeep Learning Week Hackathon (2022) - Led AI solution for real-time pedestrian and vehicle detection.\nLyve Cloud Hackathon (2022) - Developed cloud-based media streaming server.\n\n\n\n\nFeel free to connect with me on: - 📧 Email: haiyang.xu.2021@scis.smu.edu.sg - 🔗 LinkedIn - 🐙 GitHub\n\n\n“Technology is best when it brings people together.” – Matt Mullenweg"
+    "text": "Hello! I’m Xu Haiyang, a Computer Science graduate specializing in Cybersecurity & Cyber-Physical Systems. This website serves as a portfolio to showcase my projects, research, and technical knowledge in IoT, Cybersecurity, AWS Cloud, and AI.\n\n\n\nEducation:\n\nSingapore Management University (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)\nSingapore Polytechnic (Mar 2018 – Apr 2021) - Diploma in Computer Engineering\n\nCertifications: AWS Certified Solutions Architect\nProgramming Skills: JavaScript, R Coding, Python, ReactJS, Java, C/C++\nCybersecurity Skills: OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence\n\n\n\n\nThis website is structured into several sections to help visitors and myself find useful solutions:\n- Cyber Defense & Threat Intelligence: Articles and resources on security best practices, penetration testing, and risk management.\n- Mastering Code & Development: Code snippets, tutorials, and solutions for common programming challenges.\n- Cloud Computing & Scalability: Insights into AWS, serverless computing, and cloud security.\n- GitHub Mastery & DevOps: Guides on version control, GitHub Actions, and repository management.\n- AI & Machine Learning Innovations: Machine learning, deep learning, and AI-related projects.\n\n\n\n\nAWS Security Automation (View Project) - Implemented AWS Lambda, API Gateway, and Security Hub for real-time security analysis.\nInsider Threat Detection (View Project) - Built ML-based risk assessment using TensorFlow and Scikit Learn.\nIoT Smart System (View Project) - Designed IoT applications with AWS cloud connectivity.\n\n\n\n\n\nDeep Learning Week Hackathon (2022) - Led AI solution for real-time pedestrian and vehicle detection.\nLyve Cloud Hackathon (2022) - Developed cloud-based media streaming server.\n\n\n\n\nFeel free to connect with me on:\n- 📧 Email: haiyang.xu.2021@scis.smu.edu.sg\n- 🔗 LinkedIn\n- 🐙 GitHub\n- 📄 Download My Resume\n\n\nIn the AI era, cybersecurity professionals are the guardians of innovation, ensuring that technological advancements remain secure and trustworthy."
   },
   {
     "objectID": "index.html#about-me",
     "href": "index.html#about-me",
-    "title": "Welcome to My Tech Portfolio",
+    "title": "Welcome to Haiyang’s Tech Portfolio",
     "section": "",
     "text": "Education:\n\nSingapore Management University (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)\nSingapore Polytechnic (Mar 2018 – Apr 2021) - Diploma in Computer Engineering\n\nCertifications: AWS Certified Solutions Architect\nProgramming Skills: JavaScript, R Coding, Python, ReactJS, Java, C/C++\nCybersecurity Skills: OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence"
   },
   {
     "objectID": "index.html#featured-projects",
     "href": "index.html#featured-projects",
-    "title": "Welcome to My Tech Portfolio",
+    "title": "Welcome to Haiyang’s Tech Portfolio",
     "section": "",
     "text": "AWS Security Automation (View Project) - Implemented AWS Lambda, API Gateway, and Security Hub for real-time security analysis.\nInsider Threat Detection (View Project) - Built ML-based risk assessment using TensorFlow and Scikit Learn.\nIoT Smart System (View Project) - Designed IoT applications with AWS cloud connectivity."
   },
@@ -30,16 +30,16 @@
   {
     "objectID": "index.html#hackathons-achievements",
     "href": "index.html#hackathons-achievements",
-    "title": "Welcome to My Tech Portfolio",
+    "title": "Welcome to Haiyang’s Tech Portfolio",
     "section": "",
     "text": "Deep Learning Week Hackathon (2022) - Led AI solution for real-time pedestrian and vehicle detection.\nLyve Cloud Hackathon (2022) - Developed cloud-based media streaming server."
   },
   {
     "objectID": "index.html#get-in-touch",
     "href": "index.html#get-in-touch",
-    "title": "Welcome to My Tech Portfolio",
+    "title": "Welcome to Haiyang’s Tech Portfolio",
     "section": "",
-    "text": "Feel free to connect with me on: - 📧 Email: haiyang.xu.2021@scis.smu.edu.sg - 🔗 LinkedIn - 🐙 GitHub\n\n\n“Technology is best when it brings people together.” – Matt Mullenweg"
+    "text": "Feel free to connect with me on:\n- 📧 Email: haiyang.xu.2021@scis.smu.edu.sg\n- 🔗 LinkedIn\n- 🐙 GitHub\n- 📄 Download My Resume\n\n\nIn the AI era, cybersecurity professionals are the guardians of innovation, ensuring that technological advancements remain secure and trustworthy."
   },
   {
     "objectID": "about.html",
@@ -51,9 +51,9 @@
   {
     "objectID": "index.html#explore-topics",
     "href": "index.html#explore-topics",
-    "title": "Welcome to My Tech Portfolio",
+    "title": "Welcome to Haiyang’s Tech Portfolio",
     "section": "",
-    "text": "This website is structured into several sections to help visitors and myself find useful solutions: - Cyber Defense & Threat Intelligence: Articles and resources on security best practices, penetration testing, and risk management. - Mastering Code & Development: Code snippets, tutorials, and solutions for common programming challenges. - Cloud Computing & Scalability: Insights into AWS, serverless computing, and cloud security. - GitHub Mastery & DevOps: Guides on version control, GitHub Actions, and repository management. - AI & Machine Learning Innovations: Machine learning, deep learning, and AI-related projects."
+    "text": "This website is structured into several sections to help visitors and myself find useful solutions:\n- Cyber Defense & Threat Intelligence: Articles and resources on security best practices, penetration testing, and risk management.\n- Mastering Code & Development: Code snippets, tutorials, and solutions for common programming challenges.\n- Cloud Computing & Scalability: Insights into AWS, serverless computing, and cloud security.\n- GitHub Mastery & DevOps: Guides on version control, GitHub Actions, and repository management.\n- AI & Machine Learning Innovations: Machine learning, deep learning, and AI-related projects."
   },
   {
     "objectID": "ai.html",

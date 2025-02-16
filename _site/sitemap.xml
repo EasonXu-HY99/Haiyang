@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yourdomain.netlify.app/index.html</loc>
-    <lastmod>2025-02-16T08:00:12.389Z</lastmod>
+    <lastmod>2025-02-16T13:41:04.056Z</lastmod>
   </url>
   <url>
     <loc>https://yourdomain.netlify.app/about.html</loc>
@@ -35,5 +35,9 @@
   <url>
     <loc>https://yourdomain.netlify.app/github.html</loc>
     <lastmod>2025-02-16T07:50:20.187Z</lastmod>
+  </url>
+  <url>
+    <loc>https://haiyangxu.netlify.app/index.html</loc>
+    <lastmod>2025-02-16T13:41:04.056Z</lastmod>
   </url>
 </urlset>
