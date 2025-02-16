@@ -1,193 +1,132 @@
-/* Color Palette
-#091057 - Dark Blue
-#024CAA - Medium Blue
-#EC8305 - Orange
-#DBD3D3 - Light Gray
-*/
+/* Google Material Design Inspired Tech Website Style */
 
-/* Body Styling */
+/* Import Google Font (Roboto) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Reset default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Body Styling */
 body {
-    background-image: url('background.jpg');  /* Assuming background.jpg is in the same folder */
-    background-size: cover;  /* Ensures the image covers the entire background */
-    background-position: center;  /* Centers the image */
-    background-repeat: no-repeat;  /* Prevents the image from repeating */
-    background-attachment: fixed;  /* Ensures the background stays in place when scrolling */
-    font-family: 'Arial', sans-serif; /* Ensure the font styling is retained */
-    color: #091057; /* Dark Blue for text readability */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #202124; /* Primary text color */
+  background-color: #fff; /* Clean white background */
 }
 
-/* Container for centering content */
+/* Container for centered content */
 .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
-/* Title Styling */
-.title {
-    color: #091057; /* Dark Blue for title */
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 3em; /* Adjust this as needed for the title size */
-    font-weight: bold;
-    line-height: 1.2;
+/* Header & Navigation */
+header {
+  background: #fff;
+  border-bottom: 1px solid #dadce0; /* Subtle border */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
 }
 
-/* Link Styling */
-a {
-    color: #024CAA; /* Medium Blue for default links */
-    text-decoration: none;
-}
-
-a:hover {
-    color: #EC8305; /* Orange for links on hover */
-}
-
-/* Navigation Bar */
 .navbar {
-    background-color: #091057;  /* Dark Blue for navbar background */
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
 }
 
 .navbar a {
-    float: left;
-    display: block;
-    color: white;  /* Default white color for links */
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-size: 17px;
+  color: #202124;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-/* Navbar Hover and Active */
-.navbar a:hover {
-    color: #EC8305;  /* Orange text on hover */
-}
-
-/* Active Link Styling */
-.navbar a:active, .navbar a.current {
-    color: #EC8305;  /* Orange text for active/current link */
-}
-
-/* Optional: Adding focus to indicate the active page in the navbar */
+.navbar a:hover,
 .navbar a.current {
-    border-bottom: 2px solid #EC8305;  /* Optional underline effect */
+  color: #1a73e8; /* Google Blue */
+  border-bottom: 2px solid #1a73e8;
 }
 
-/* Heading Styles */
-h1, h2, h3 {
-    color: #091057; /* Dark Blue for headings */
-    text-align: center;
-    margin-bottom: 20px;
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 48px 16px;
+  background: #f8f9fa; /* Light grey background */
 }
 
-/* Button Styling */
-button, .btn {
-    background-color: #EC8305; /* Orange for buttons */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 16px;
+  color: #1a73e8; /* Google Blue for headline */
 }
 
-button:hover, .btn:hover {
-    background-color: #024CAA; /* Medium Blue on hover */
+.hero p {
+  font-size: 1.125em;
+  color: #5f6368; /* Subdued grey text */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-/* Apply Google Font */
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #091057;
-}
-
-p {
-    margin-bottom: 20px;
-    line-height: 1.8;
+/* Main Content Sections */
+section {
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(60,64,67,0.3); /* Subtle shadow */
 }
 
 /* Headings */
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+h1, h2, h3, h4, h5 {
+  color: #202124;
+  margin-bottom: 16px;
 }
 
-h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
+/* Paragraph Styling */
+p {
+  margin-bottom: 16px;
+  color: #202124;
 }
 
-/* Link Cards */
-.card {
-    background-color: #DBD3D3; /* Light Gray for card background */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin: 20px 0;
-    transition: 0.3s;
+/* Button Styling */
+.btn {
+  display: inline-block;
+  background-color: #1a73e8;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
-.card:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-/* Centered text */
-.card a {
-    color: #024CAA; /* Medium Blue for card links */
-    font-weight: bold;
-    text-align: center;
-    display: block;
-    padding: 10px 0;
-}
-
-.card a:hover {
-    color: #091057; /* Dark Blue on hover */
+.btn:hover {
+  background-color: #1669c1;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #091057; /* Dark Blue for footer */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+  background: #fff;
+  border-top: 1px solid #dadce0;
+  text-align: center;
+  padding: 16px;
+  color: #5f6368;
+  font-size: 0.875em;
 }
 
-footer a {
-    color: #DBD3D3; /* Light Gray for footer links */
-    text-decoration: none;
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
-
-footer a:hover {
-    color: #EC8305; /* Orange on hover */
-}
-
-/* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-    .container {
-        width: 100%;
-        padding: 0 10px;
-    }
-
-    .navbar a {
-        float: none;
-        width: 100%;
-        text-align: left;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-}
-

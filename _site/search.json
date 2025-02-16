@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Welcome to My Tech Portfolio",
     "section": "",
-    "text": "Hello! I’m Xu Haiyang, a Computer Science graduate specializing in Cybersecurity & Cyber-Physical Systems. This website serves as a portfolio to showcase my projects, research, and technical knowledge in IoT, Cybersecurity, and AWS Cloud.\n\n\n\nEducation:\n\nSingapore Management University (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)\nSingapore Polytechnic (Mar 2018 – Apr 2021) - Diploma in Computer Engineering\n\nCertifications: AWS Certified Solutions Architect\nProgramming Skills: Java, C/C++, Python, JavaScript, ReactJS\nCybersecurity Skills: OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence\n\n\n\n\n\nAWS Security Automation (View Project) - Implemented AWS Lambda, API Gateway, and Security Hub for real-time security analysis.\nInsider Threat Detection (View Project) - Built ML-based risk assessment using TensorFlow and Scikit Learn.\nIoT Smart System (View Project) - Designed IoT applications with AWS cloud connectivity.\n\n\n\n\n\nUnderstanding Zero Trust Security Model (Read More)\nDeploying Serverless Applications with AWS Lambda (Read More)\nIoT Device Hardening: Best Practices (Read More)\n\n\n\n\n\nDeep Learning Week Hackathon (2022) - Led AI solution for real-time pedestrian and vehicle detection.\nLyve Cloud Hackathon (2022) - Developed cloud-based media streaming server.\n\n\n\n\nFeel free to connect with me on: - 📧 Email: haiyang.xu.2021@scis.smu.edu.sg - 🔗 LinkedIn - 🐙 GitHub\n\n\n“Technology is best when it brings people together.” – Matt Mullenweg"
+    "text": "Hello! I’m Xu Haiyang, a Computer Science graduate specializing in Cybersecurity & Cyber-Physical Systems. This website serves as a portfolio to showcase my projects, research, and technical knowledge in IoT, Cybersecurity, AWS Cloud, and AI.\n\n\n\nEducation:\n\nSingapore Management University (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)\nSingapore Polytechnic (Mar 2018 – Apr 2021) - Diploma in Computer Engineering\n\nCertifications: AWS Certified Solutions Architect\nProgramming Skills: Java, C/C++, Python, JavaScript, ReactJS\nCybersecurity Skills: OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence\n\n\n\n\nThis website is structured into several sections to help visitors and myself find useful solutions: - Cyber Defense & Threat Intelligence: Articles and resources on security best practices, penetration testing, and risk management. - Mastering Code & Development: Code snippets, tutorials, and solutions for common programming challenges. - Cloud Computing & Scalability: Insights into AWS, serverless computing, and cloud security. - GitHub Mastery & DevOps: Guides on version control, GitHub Actions, and repository management. - AI & Machine Learning Innovations: Machine learning, deep learning, and AI-related projects.\n\n\n\n\nAWS Security Automation (View Project) - Implemented AWS Lambda, API Gateway, and Security Hub for real-time security analysis.\nInsider Threat Detection (View Project) - Built ML-based risk assessment using TensorFlow and Scikit Learn.\nIoT Smart System (View Project) - Designed IoT applications with AWS cloud connectivity.\n\n\n\n\n\nDeep Learning Week Hackathon (2022) - Led AI solution for real-time pedestrian and vehicle detection.\nLyve Cloud Hackathon (2022) - Developed cloud-based media streaming server.\n\n\n\n\nFeel free to connect with me on: - 📧 Email: haiyang.xu.2021@scis.smu.edu.sg - 🔗 LinkedIn - 🐙 GitHub\n\n\n“Technology is best when it brings people together.” – Matt Mullenweg"
   },
   {
     "objectID": "index.html#about-me",
@@ -47,5 +47,159 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#explore-topics",
+    "href": "index.html#explore-topics",
+    "title": "Welcome to My Tech Portfolio",
+    "section": "",
+    "text": "This website is structured into several sections to help visitors and myself find useful solutions: - Cyber Defense & Threat Intelligence: Articles and resources on security best practices, penetration testing, and risk management. - Mastering Code & Development: Code snippets, tutorials, and solutions for common programming challenges. - Cloud Computing & Scalability: Insights into AWS, serverless computing, and cloud security. - GitHub Mastery & DevOps: Guides on version control, GitHub Actions, and repository management. - AI & Machine Learning Innovations: Machine learning, deep learning, and AI-related projects."
+  },
+  {
+    "objectID": "ai.html",
+    "href": "ai.html",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Below is a list of 20 commands (prompt techniques) you can use with ChatGPT to improve your research and work productivity. Each command includes a brief explanation and a copyable prompt.\n\n\nPrompt:\nSummarize the following text: [insert text]  \nExplanation: Quickly distills lengthy articles or reports into a concise summary.\n\n\n\nPrompt:\nExplain [concept] like I’m 5.  \nExplanation: Breaks down complex topics into simple, easy-to-understand language.\n\n\n\nPrompt:\nAct as a [research assistant/expert in renewable energy/etc.].  \nExplanation: Guides ChatGPT to respond in the tone and style of a specified expert.\n\n\n\nPrompt:\nGenerate an outline for a report on [topic].  \nExplanation: Creates a structured blueprint for projects, articles, or presentations.\n\n\n\nPrompt:\nList the pros and cons of [subject].  \nExplanation: Helps evaluate options by comparing benefits and drawbacks.\n\n\n\nPrompt:\nCompare [option A] and [option B].  \nExplanation: Provides a side-by-side comparison for decision-making.\n\n\n\nPrompt:\nTranslate the following text to [language]: [insert text].  \nExplanation: Converts text into different languages, aiding localization.\n\n\n\nPrompt:\nRewrite this text in simpler language: [insert text].  \nExplanation: Makes technical or dense content more accessible.\n\n\n\nPrompt:\nBrainstorm creative ideas for [project/topic].  \nExplanation: Generates innovative ideas to overcome creative blocks.\n\n\n\nPrompt:\nGive me a step-by-step guide on how to [task].  \nExplanation: Breaks down tasks into clear, actionable steps.\n\n\n\nPrompt:\nGive me synonyms for [word].  \nExplanation: Helps find alternative words for better phrasing.\n\n\n\nPrompt:\nExplain this code: [insert code].  \nExplanation: Breaks down and explains code snippets in simple terms.\n\n\n\nPrompt:\nFind and fix errors in this code: [insert code].  \nExplanation: Identifies and corrects errors in programming code.\n\n\n\nPrompt:\nGenerate a sample paragraph about [topic].  \nExplanation: Creates placeholder or draft text for various needs.\n\n\n\nPrompt:\nCreate a study plan for learning [subject] in [timeframe].  \nExplanation: Helps organize study schedules effectively.\n\n\n\nPrompt:\nExtract the key points from this text: [insert text].  \nExplanation: Pulls out essential details from dense information.\n\n\n\nPrompt:\nCreate a to-do list for [goal/project].  \nExplanation: Structures tasks efficiently for productivity.\n\n\n\nPrompt:\nConvert this text to bullet points: [insert text].  \nExplanation: Reformats text into easier-to-read structures.\n\n\n\nPrompt:\nSummarize the major events of [historical period].  \nExplanation: Provides concise historical overviews.\n\n\n\nPrompt:\nWrite a professional email for [purpose].  \nExplanation: Creates well-structured emails for professional use."
+  },
+  {
+    "objectID": "ai.html#summarize-content",
+    "href": "ai.html#summarize-content",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nSummarize the following text: [insert text]  \nExplanation: Quickly distills lengthy articles or reports into a concise summary."
+  },
+  {
+    "objectID": "ai.html#explain-like-im-5-eli5",
+    "href": "ai.html#explain-like-im-5-eli5",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nExplain [concept] like I’m 5.  \nExplanation: Breaks down complex topics into simple, easy-to-understand language."
+  },
+  {
+    "objectID": "ai.html#act-as-role",
+    "href": "ai.html#act-as-role",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nAct as a [research assistant/expert in renewable energy/etc.].  \nExplanation: Guides ChatGPT to respond in the tone and style of a specified expert."
+  },
+  {
+    "objectID": "ai.html#generate-an-outline-or-plan",
+    "href": "ai.html#generate-an-outline-or-plan",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nGenerate an outline for a report on [topic].  \nExplanation: Creates a structured blueprint for projects, articles, or presentations."
+  },
+  {
+    "objectID": "ai.html#list-pros-and-cons",
+    "href": "ai.html#list-pros-and-cons",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nList the pros and cons of [subject].  \nExplanation: Helps evaluate options by comparing benefits and drawbacks."
+  },
+  {
+    "objectID": "ai.html#compare-items",
+    "href": "ai.html#compare-items",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nCompare [option A] and [option B].  \nExplanation: Provides a side-by-side comparison for decision-making."
+  },
+  {
+    "objectID": "ai.html#translate-text",
+    "href": "ai.html#translate-text",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nTranslate the following text to [language]: [insert text].  \nExplanation: Converts text into different languages, aiding localization."
+  },
+  {
+    "objectID": "ai.html#rewrite-in-simpler-language",
+    "href": "ai.html#rewrite-in-simpler-language",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nRewrite this text in simpler language: [insert text].  \nExplanation: Makes technical or dense content more accessible."
+  },
+  {
+    "objectID": "ai.html#brainstorm-ideas",
+    "href": "ai.html#brainstorm-ideas",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nBrainstorm creative ideas for [project/topic].  \nExplanation: Generates innovative ideas to overcome creative blocks."
+  },
+  {
+    "objectID": "ai.html#step-by-step-guides",
+    "href": "ai.html#step-by-step-guides",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nGive me a step-by-step guide on how to [task].  \nExplanation: Breaks down tasks into clear, actionable steps."
+  },
+  {
+    "objectID": "ai.html#find-alternative-words-thesaurus",
+    "href": "ai.html#find-alternative-words-thesaurus",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nGive me synonyms for [word].  \nExplanation: Helps find alternative words for better phrasing."
+  },
+  {
+    "objectID": "ai.html#code-explanation",
+    "href": "ai.html#code-explanation",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nExplain this code: [insert code].  \nExplanation: Breaks down and explains code snippets in simple terms."
+  },
+  {
+    "objectID": "ai.html#debug-code",
+    "href": "ai.html#debug-code",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nFind and fix errors in this code: [insert code].  \nExplanation: Identifies and corrects errors in programming code."
+  },
+  {
+    "objectID": "ai.html#generate-sample-text",
+    "href": "ai.html#generate-sample-text",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nGenerate a sample paragraph about [topic].  \nExplanation: Creates placeholder or draft text for various needs."
+  },
+  {
+    "objectID": "ai.html#create-a-study-plan",
+    "href": "ai.html#create-a-study-plan",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nCreate a study plan for learning [subject] in [timeframe].  \nExplanation: Helps organize study schedules effectively."
+  },
+  {
+    "objectID": "ai.html#extract-key-information",
+    "href": "ai.html#extract-key-information",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nExtract the key points from this text: [insert text].  \nExplanation: Pulls out essential details from dense information."
+  },
+  {
+    "objectID": "ai.html#generate-a-to-do-list",
+    "href": "ai.html#generate-a-to-do-list",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nCreate a to-do list for [goal/project].  \nExplanation: Structures tasks efficiently for productivity."
+  },
+  {
+    "objectID": "ai.html#convert-text-format",
+    "href": "ai.html#convert-text-format",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nConvert this text to bullet points: [insert text].  \nExplanation: Reformats text into easier-to-read structures."
+  },
+  {
+    "objectID": "ai.html#historical-events-summary",
+    "href": "ai.html#historical-events-summary",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nSummarize the major events of [historical period].  \nExplanation: Provides concise historical overviews."
+  },
+  {
+    "objectID": "ai.html#generate-email-templates",
+    "href": "ai.html#generate-email-templates",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nWrite a professional email for [purpose].  \nExplanation: Creates well-structured emails for professional use."
   }
 ]

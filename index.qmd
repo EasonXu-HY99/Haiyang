@@ -6,38 +6,39 @@ format: html
 
 # 👋 Welcome!
 
-Hello! I'm **Xu Haiyang**, a Computer Science graduate specializing in **Cybersecurity & Cyber-Physical Systems**. This website serves as a portfolio to showcase my projects, research, and technical knowledge in **IoT, Cybersecurity, and AWS Cloud**.
+Hello! I'm **Xu Haiyang**, a Computer Science graduate specializing in **Cybersecurity & Cyber-Physical Systems**. This website serves as a portfolio to showcase my projects, research, and technical knowledge in **IoT, Cybersecurity, AWS Cloud, and AI**.
 
 ## 🎓 About Me
+- **Education:** 
+  - **Singapore Management University** (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)
+  - **Singapore Polytechnic** (Mar 2018 – Apr 2021) - Diploma in Computer Engineering
+- **Certifications:** AWS Certified Solutions Architect
+- **Programming Skills:** Java, C/C++, Python, JavaScript, ReactJS
+- **Cybersecurity Skills:** OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence
 
--   **Education:**
-    -   **Singapore Management University** (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)
-    -   **Singapore Polytechnic** (Mar 2018 – Apr 2021) - Diploma in Computer Engineering
--   **Certifications:** AWS Certified Solutions Architect
--   **Programming Skills:** Java, C/C++, Python, JavaScript, ReactJS
--   **Cybersecurity Skills:** OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence
+## 📂 Explore Topics
+This website is structured into several sections to help visitors and myself find useful solutions:
+- **[Cyber Defense & Threat Intelligence](cybersecurity.qmd)**: Articles and resources on security best practices, penetration testing, and risk management.
+- **[Mastering Code & Development](coding.qmd)**: Code snippets, tutorials, and solutions for common programming challenges.
+- **[Cloud Computing & Scalability](cloud.qmd)**: Insights into AWS, serverless computing, and cloud security.
+- **[GitHub Mastery & DevOps](github.qmd)**: Guides on version control, GitHub Actions, and repository management.
+- **[AI & Machine Learning Innovations](ai.qmd)**: Machine learning, deep learning, and AI-related projects.
 
 ## 🚀 Featured Projects
-
--   **AWS Security Automation** [(View Project)](projects.qmd) - Implemented AWS Lambda, API Gateway, and Security Hub for real-time security analysis.
--   **Insider Threat Detection** [(View Project)](projects.qmd) - Built ML-based risk assessment using TensorFlow and Scikit Learn.
--   **IoT Smart System** [(View Project)](projects.qmd) - Designed IoT applications with AWS cloud connectivity.
-
-## 📢 Latest Blog Posts
-
--   **Understanding Zero Trust Security Model** [(Read More)](blog.qmd)
--   **Deploying Serverless Applications with AWS Lambda** [(Read More)](blog.qmd)
--   **IoT Device Hardening: Best Practices** [(Read More)](blog.qmd)
+- **AWS Security Automation** [(View Project)](projects.qmd) - Implemented AWS Lambda, API Gateway, and Security Hub for real-time security analysis.
+- **Insider Threat Detection** [(View Project)](projects.qmd) - Built ML-based risk assessment using TensorFlow and Scikit Learn.
+- **IoT Smart System** [(View Project)](projects.qmd) - Designed IoT applications with AWS cloud connectivity.
 
 ## 🏆 Hackathons & Achievements
-
--   **Deep Learning Week Hackathon (2022)** - Led AI solution for real-time pedestrian and vehicle detection.
--   **Lyve Cloud Hackathon (2022)** - Developed cloud-based media streaming server.
+- **Deep Learning Week Hackathon (2022)** - Led AI solution for real-time pedestrian and vehicle detection.
+- **Lyve Cloud Hackathon (2022)** - Developed cloud-based media streaming server.
 
 ## 📬 Get in Touch
+Feel free to connect with me on:
+- 📧 Email: [haiyang.xu.2021@scis.smu.edu.sg](mailto:haiyang.xu.2021@scis.smu.edu.sg)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/haiyang-xu-8a2151212/)
+- 🐙 [GitHub](https://github.com/EasonXu-HY99)
 
-Feel free to connect with me on: - 📧 Email: [haiyang.xu.2021\@scis.smu.edu.sg](mailto:haiyang.xu.2021@scis.smu.edu.sg) - 🔗 [LinkedIn](https://www.linkedin.com/in/haiyang-xu-8a2151212/) - 🐙 [GitHub](https://github.com/EasonXu-HY99)
+---
 
-------------------------------------------------------------------------
-
-> *“Technology is best when it brings people together.”* – Matt Mullenweg
+> _“Technology is best when it brings people together.”_ – Matt Mullenweg

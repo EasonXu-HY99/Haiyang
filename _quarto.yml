@@ -12,12 +12,18 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About
       - href: projects.qmd
         text: Projects
-      - href: blog.qmd
-        text: Blog  # Added Blog Section
+      - href: cybersecurity.qmd
+        text: Cybersecurity
+      - href: coding.qmd
+        text: Coding
+      - href: cloud.qmd
+        text: Cloud
+      - href: github.qmd
+        text: GitHub
+      - href: ai.qmd
+        text: AI
       - href: contact.qmd
         text: Contact
     right:
