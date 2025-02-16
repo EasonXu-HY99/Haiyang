@@ -1,0 +1,193 @@
+/* Color Palette
+#091057 - Dark Blue
+#024CAA - Medium Blue
+#EC8305 - Orange
+#DBD3D3 - Light Gray
+*/
+
+/* Body Styling */
+body {
+    background-image: url('background.jpg');  /* Assuming background.jpg is in the same folder */
+    background-size: cover;  /* Ensures the image covers the entire background */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    background-attachment: fixed;  /* Ensures the background stays in place when scrolling */
+    font-family: 'Arial', sans-serif; /* Ensure the font styling is retained */
+    color: #091057; /* Dark Blue for text readability */
+}
+
+/* Container for centering content */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Title Styling */
+.title {
+    color: #091057; /* Dark Blue for title */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3em; /* Adjust this as needed for the title size */
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Link Styling */
+a {
+    color: #024CAA; /* Medium Blue for default links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #EC8305; /* Orange for links on hover */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #091057;  /* Dark Blue for navbar background */
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;  /* Default white color for links */
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Navbar Hover and Active */
+.navbar a:hover {
+    color: #EC8305;  /* Orange text on hover */
+}
+
+/* Active Link Styling */
+.navbar a:active, .navbar a.current {
+    color: #EC8305;  /* Orange text for active/current link */
+}
+
+/* Optional: Adding focus to indicate the active page in the navbar */
+.navbar a.current {
+    border-bottom: 2px solid #EC8305;  /* Optional underline effect */
+}
+
+/* Heading Styles */
+h1, h2, h3 {
+    color: #091057; /* Dark Blue for headings */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+button, .btn {
+    background-color: #EC8305; /* Orange for buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover, .btn:hover {
+    background-color: #024CAA; /* Medium Blue on hover */
+}
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Apply Google Font */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #091057;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+/* Link Cards */
+.card {
+    background-color: #DBD3D3; /* Light Gray for card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px 0;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Centered text */
+.card a {
+    color: #024CAA; /* Medium Blue for card links */
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+}
+
+.card a:hover {
+    color: #091057; /* Dark Blue on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #091057; /* Dark Blue for footer */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #DBD3D3; /* Light Gray for footer links */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #EC8305; /* Orange on hover */
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .navbar a {
+        float: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+

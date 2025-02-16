@@ -1,0 +1,1 @@
+Sitemap: https://yourdomain.netlify.app/sitemap.xml
