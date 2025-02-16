@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: _site  # Default output directory
+
+website:
+  title: "My Tech Portfolio"
+  description: "Showcasing expertise in IoT, Cybersecurity, and AWS Cloud."
+  site-url: "https://yourdomain.netlify.app"  # Replace with your actual Netlify URL or custom domain
+  favicon: assets/favicon.ico
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: projects.qmd
+        text: Projects
+      - href: blog.qmd
+        text: Blog  # Added Blog Section
+      - href: contact.qmd
+        text: Contact
+    right:
+      - icon: github
+        href: "https://github.com/EasonXu-HY99"
+      - icon: linkedin
+        href: "https://www.linkedin.com/in/haiyang-xu-8a2151212/"
+  
+  page-footer:
+    center: "© 2025 Xu Haiyang. All Rights Reserved."
+    left: 
+      - icon: github
+        href: "https://github.com/EasonXu-HY99"
+      - icon: linkedin
+        href: "https://www.linkedin.com/in/haiyang-xu-8a2151212/"
+    right: "Built with ❤️ using Quarto & Netlify"
+
+format:
+  html:
+    theme: cosmo  # Choose from themes like journal, litera, lux, etc.
+    css: styles.css  # Custom styles
+    toc: true  # Enable Table of Contents for better navigation
+    toc-depth: 3  # Limits TOC depth for better readability
+    smooth-scroll: true  # Smooth scrolling for better UX
+
+editor: visual  # Enables Quarto's visual editor mode
