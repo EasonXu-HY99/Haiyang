@@ -9,142 +9,202 @@ format: html
 
 Below is a list of 20 commands (prompt techniques) you can use with ChatGPT to improve your research and work productivity. Each command includes a brief explanation and a copyable prompt.
 
-## 1. Summarize Content  
-**Prompt:**  
-```  
+## 1. Summarize Content
+
+**Prompt:**
+
+```         
 Summarize the following text: [insert text]  
-```  
+```
+
 **Explanation:** Quickly distills lengthy articles or reports into a concise summary.
 
-## 2. Explain Like I’m 5 (ELI5)  
-**Prompt:**  
-```  
+## 2. Explain Like I’m 5 (ELI5)
+
+**Prompt:**
+
+```         
 Explain [concept] like I’m 5.  
-```  
+```
+
 **Explanation:** Breaks down complex topics into simple, easy-to-understand language.
 
-## 3. Act As [Role]  
-**Prompt:**  
-```  
+## 3. Act As \[Role\]
+
+**Prompt:**
+
+```         
 Act as a [research assistant/expert in renewable energy/etc.].  
-```  
+```
+
 **Explanation:** Guides ChatGPT to respond in the tone and style of a specified expert.
 
-## 4. Generate an Outline or Plan  
-**Prompt:**  
-```  
+## 4. Generate an Outline or Plan
+
+**Prompt:**
+
+```         
 Generate an outline for a report on [topic].  
-```  
+```
+
 **Explanation:** Creates a structured blueprint for projects, articles, or presentations.
 
-## 5. List Pros and Cons  
-**Prompt:**  
-```  
+## 5. List Pros and Cons
+
+**Prompt:**
+
+```         
 List the pros and cons of [subject].  
-```  
+```
+
 **Explanation:** Helps evaluate options by comparing benefits and drawbacks.
 
-## 6. Compare Items  
-**Prompt:**  
-```  
+## 6. Compare Items
+
+**Prompt:**
+
+```         
 Compare [option A] and [option B].  
-```  
+```
+
 **Explanation:** Provides a side-by-side comparison for decision-making.
 
-## 7. Translate Text  
-**Prompt:**  
-```  
+## 7. Translate Text
+
+**Prompt:**
+
+```         
 Translate the following text to [language]: [insert text].  
-```  
+```
+
 **Explanation:** Converts text into different languages, aiding localization.
 
-## 8. Rewrite in Simpler Language  
-**Prompt:**  
-```  
+## 8. Rewrite in Simpler Language
+
+**Prompt:**
+
+```         
 Rewrite this text in simpler language: [insert text].  
-```  
+```
+
 **Explanation:** Makes technical or dense content more accessible.
 
-## 9. Brainstorm Ideas  
-**Prompt:**  
-```  
+## 9. Brainstorm Ideas
+
+**Prompt:**
+
+```         
 Brainstorm creative ideas for [project/topic].  
-```  
+```
+
 **Explanation:** Generates innovative ideas to overcome creative blocks.
 
-## 10. Step-by-Step Guides  
-**Prompt:**  
-```  
+## 10. Step-by-Step Guides
+
+**Prompt:**
+
+```         
 Give me a step-by-step guide on how to [task].  
-```  
+```
+
 **Explanation:** Breaks down tasks into clear, actionable steps.
 
-## 11. Find Alternative Words (Thesaurus)  
-**Prompt:**  
-```  
+## 11. Find Alternative Words (Thesaurus)
+
+**Prompt:**
+
+```         
 Give me synonyms for [word].  
-```  
+```
+
 **Explanation:** Helps find alternative words for better phrasing.
 
-## 12. Code Explanation  
-**Prompt:**  
-```  
+## 12. Code Explanation
+
+**Prompt:**
+
+```         
 Explain this code: [insert code].  
-```  
+```
+
 **Explanation:** Breaks down and explains code snippets in simple terms.
 
-## 13. Debug Code  
-**Prompt:**  
-```  
+## 13. Debug Code
+
+**Prompt:**
+
+```         
 Find and fix errors in this code: [insert code].  
-```  
+```
+
 **Explanation:** Identifies and corrects errors in programming code.
 
-## 14. Generate Sample Text  
-**Prompt:**  
-```  
+## 14. Generate Sample Text
+
+**Prompt:**
+
+```         
 Generate a sample paragraph about [topic].  
-```  
+```
+
 **Explanation:** Creates placeholder or draft text for various needs.
 
-## 15. Create a Study Plan  
-**Prompt:**  
-```  
+## 15. Create a Study Plan
+
+**Prompt:**
+
+```         
 Create a study plan for learning [subject] in [timeframe].  
-```  
+```
+
 **Explanation:** Helps organize study schedules effectively.
 
-## 16. Extract Key Information  
-**Prompt:**  
-```  
+## 16. Extract Key Information
+
+**Prompt:**
+
+```         
 Extract the key points from this text: [insert text].  
-```  
+```
+
 **Explanation:** Pulls out essential details from dense information.
 
-## 17. Generate a To-Do List  
-**Prompt:**  
-```  
+## 17. Generate a To-Do List
+
+**Prompt:**
+
+```         
 Create a to-do list for [goal/project].  
-```  
+```
+
 **Explanation:** Structures tasks efficiently for productivity.
 
-## 18. Convert Text Format  
-**Prompt:**  
-```  
+## 18. Convert Text Format
+
+**Prompt:**
+
+```         
 Convert this text to bullet points: [insert text].  
-```  
+```
+
 **Explanation:** Reformats text into easier-to-read structures.
 
-## 19. Historical Events Summary  
-**Prompt:**  
-```  
+## 19. Historical Events Summary
+
+**Prompt:**
+
+```         
 Summarize the major events of [historical period].  
-```  
+```
+
 **Explanation:** Provides concise historical overviews.
 
-## 20. Generate Email Templates  
-**Prompt:**  
-```  
+## 20. Generate Email Templates
+
+**Prompt:**
+
+```         
 Write a professional email for [purpose].  
-```  
+```
+
 **Explanation:** Creates well-structured emails for professional use.

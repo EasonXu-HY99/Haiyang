@@ -1,5 +1,14 @@
 ---
-title: "contact"
-format: html
+title: "Contact Me"
+description: "Get in touch with Xu Haiyang"
+format:
+  html:
+    code-fold: false
 ---
 
+# Let's Connect!
+
+-   **Email**: 📧 [haiyang.xu.2021\@scis.smu.edu.sg](mailto:haiyang.xu.2021@scis.smu.edu.sg)
+-   **Phone**: 📱 +65 8090 8720
+-   **LinkedIn**: 🔗 [Haiyang Xu](https://www.linkedin.com/in/haiyang-xu-8a2151212/)
+-   **Resume**: 📄 [Download my Resume](resume.pdf)

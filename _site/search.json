@@ -355,5 +355,12 @@
     "title": "Useful GitHub Commands",
     "section": "",
     "text": "gh issue create\nExplanation: This command creates a new GitHub issue (requires the GitHub CLI). Follow the prompts to enter the issue title, description, and labels."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact Me",
+    "section": "",
+    "text": "Let’s Connect!\n\nEmail: 📧 haiyang.xu.2021@scis.smu.edu.sg\nPhone: 📱 +65 8090 8720\nLinkedIn: 🔗 Haiyang Xu\nResume: 📄 Download my Resume"
   }
 ]
