@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Xu Haiyang">
+<meta name="dcterms.date" content="2025-02-01">
 
-<title>github – My Tech Portfolio</title>
+<title>Useful GitHub Commands – My Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -145,22 +181,63 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#useful-github-commands" id="toc-useful-github-commands" class="nav-link active" data-scroll-target="#useful-github-commands">Useful GitHub Commands</a>
+  <ul class="collapse">
+  <li><a href="#cloning-a-repository" id="toc-cloning-a-repository" class="nav-link" data-scroll-target="#cloning-a-repository">Cloning a Repository</a></li>
+  <li><a href="#checking-repository-status" id="toc-checking-repository-status" class="nav-link" data-scroll-target="#checking-repository-status">Checking Repository Status</a></li>
+  <li><a href="#adding-changes-to-staging-area" id="toc-adding-changes-to-staging-area" class="nav-link" data-scroll-target="#adding-changes-to-staging-area">Adding Changes to Staging Area</a></li>
+  <li><a href="#committing-changes" id="toc-committing-changes" class="nav-link" data-scroll-target="#committing-changes">Committing Changes</a></li>
+  <li><a href="#viewing-commit-history" id="toc-viewing-commit-history" class="nav-link" data-scroll-target="#viewing-commit-history">Viewing Commit History</a></li>
+  <li><a href="#pushing-changes-to-a-remote-repository" id="toc-pushing-changes-to-a-remote-repository" class="nav-link" data-scroll-target="#pushing-changes-to-a-remote-repository">Pushing Changes to a Remote Repository</a></li>
+  <li><a href="#pulling-latest-changes-from-remote" id="toc-pulling-latest-changes-from-remote" class="nav-link" data-scroll-target="#pulling-latest-changes-from-remote">Pulling Latest Changes from Remote</a></li>
+  <li><a href="#creating-a-new-branch" id="toc-creating-a-new-branch" class="nav-link" data-scroll-target="#creating-a-new-branch">Creating a New Branch</a></li>
+  <li><a href="#switching-branches" id="toc-switching-branches" class="nav-link" data-scroll-target="#switching-branches">Switching Branches</a></li>
+  <li><a href="#merging-a-branch" id="toc-merging-a-branch" class="nav-link" data-scroll-target="#merging-a-branch">Merging a Branch</a></li>
+  <li><a href="#deleting-a-branch" id="toc-deleting-a-branch" class="nav-link" data-scroll-target="#deleting-a-branch">Deleting a Branch</a></li>
+  <li><a href="#viewing-remote-repositories" id="toc-viewing-remote-repositories" class="nav-link" data-scroll-target="#viewing-remote-repositories">Viewing Remote Repositories</a></li>
+  <li><a href="#adding-a-remote-repository" id="toc-adding-a-remote-repository" class="nav-link" data-scroll-target="#adding-a-remote-repository">Adding a Remote Repository</a></li>
+  <li><a href="#resetting-changes" id="toc-resetting-changes" class="nav-link" data-scroll-target="#resetting-changes">Resetting Changes</a></li>
+  <li><a href="#viewing-differences-between-versions" id="toc-viewing-differences-between-versions" class="nav-link" data-scroll-target="#viewing-differences-between-versions">Viewing Differences Between Versions</a></li>
+  <li><a href="#stashing-changes" id="toc-stashing-changes" class="nav-link" data-scroll-target="#stashing-changes">Stashing Changes</a></li>
+  <li><a href="#creating-a-tag" id="toc-creating-a-tag" class="nav-link" data-scroll-target="#creating-a-tag">Creating a Tag</a></li>
+  <li><a href="#pushing-tags-to-remote" id="toc-pushing-tags-to-remote" class="nav-link" data-scroll-target="#pushing-tags-to-remote">Pushing Tags to Remote</a></li>
+  <li><a href="#deleting-a-remote-branch" id="toc-deleting-a-remote-branch" class="nav-link" data-scroll-target="#deleting-a-remote-branch">Deleting a Remote Branch</a></li>
+  <li><a href="#viewing-github-issues" id="toc-viewing-github-issues" class="nav-link" data-scroll-target="#viewing-github-issues">Viewing GitHub Issues</a></li>
+  <li><a href="#creating-a-github-issue" id="toc-creating-a-github-issue" class="nav-link" data-scroll-target="#creating-a-github-issue">Creating a GitHub Issue</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">github</h1>
+<h1 class="title">Useful GitHub Commands</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Xu Haiyang </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 1, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -170,8 +247,116 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="useful-github-commands" class="level1">
+<h1>Useful GitHub Commands</h1>
+<section id="cloning-a-repository" class="level2">
+<h2 class="anchored" data-anchor-id="cloning-a-repository">Cloning a Repository</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>repository_url<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command creates a local copy of the remote repository. Replace <code>&lt;repository_url&gt;</code> with the actual URL of the repository you want to clone (e.g., <code>https://github.com/user/repo.git</code>).</p>
+</section>
+<section id="checking-repository-status" class="level2">
+<h2 class="anchored" data-anchor-id="checking-repository-status">Checking Repository Status</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command shows the current status of your working directory and staging area, including changes that are staged for commit and those that are not.</p>
+</section>
+<section id="adding-changes-to-staging-area" class="level2">
+<h2 class="anchored" data-anchor-id="adding-changes-to-staging-area">Adding Changes to Staging Area</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="op">&lt;</span>file_or_directory<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command stages changes for the next commit. Replace <code>&lt;file_or_directory&gt;</code> with the file or directory you want to stage. To stage all changes, use <code>git add .</code>.</p>
+</section>
+<section id="committing-changes" class="level2">
+<h2 class="anchored" data-anchor-id="committing-changes">Committing Changes</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Your commit message"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command commits the staged changes to the repository with a message describing the changes. Replace <code>"Your commit message"</code> with a brief but descriptive message.</p>
+</section>
+<section id="viewing-commit-history" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-commit-history">Viewing Commit History</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command shows the commit history, listing all commits made in the repository, along with their details such as author, date, and commit message.</p>
+</section>
+<section id="pushing-changes-to-a-remote-repository" class="level2">
+<h2 class="anchored" data-anchor-id="pushing-changes-to-a-remote-repository">Pushing Changes to a Remote Repository</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command uploads your local commits to the remote repository. Replace <code>&lt;branch_name&gt;</code> with the branch you’re working on (e.g., <code>main</code> or <code>develop</code>).</p>
+</section>
+<section id="pulling-latest-changes-from-remote" class="level2">
+<h2 class="anchored" data-anchor-id="pulling-latest-changes-from-remote">Pulling Latest Changes from Remote</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull origin <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command fetches and merges changes from the remote repository into your local repository. Replace <code>&lt;branch_name&gt;</code> with the name of the branch you want to pull from (usually <code>main</code>).</p>
+</section>
+<section id="creating-a-new-branch" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-new-branch">Creating a New Branch</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> <span class="op">&lt;</span>new_branch_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command creates and switches to a new branch. Replace <code>&lt;new_branch_name&gt;</code> with the name you want for the new branch.</p>
+</section>
+<section id="switching-branches" class="level2">
+<h2 class="anchored" data-anchor-id="switching-branches">Switching Branches</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command switches to an existing branch. Replace <code>&lt;branch_name&gt;</code> with the name of the branch you want to switch to.</p>
+</section>
+<section id="merging-a-branch" class="level2">
+<h2 class="anchored" data-anchor-id="merging-a-branch">Merging a Branch</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command merges changes from another branch into your current branch. Replace <code>&lt;branch_name&gt;</code> with the branch you want to merge.</p>
+</section>
+<section id="deleting-a-branch" class="level2">
+<h2 class="anchored" data-anchor-id="deleting-a-branch">Deleting a Branch</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command deletes a local branch. Replace <code>&lt;branch_name&gt;</code> with the name of the branch you want to delete.</p>
+</section>
+<section id="viewing-remote-repositories" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-remote-repositories">Viewing Remote Repositories</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command shows the URLs of the remote repositories associated with your local repository.</p>
+</section>
+<section id="adding-a-remote-repository" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-remote-repository">Adding a Remote Repository</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin <span class="op">&lt;</span>repository_url<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command adds a remote repository to your local repository. Replace <code>&lt;repository_url&gt;</code> with the actual URL of the remote repository.</p>
+</section>
+<section id="resetting-changes" class="level2">
+<h2 class="anchored" data-anchor-id="resetting-changes">Resetting Changes</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command resets your working directory and staging area to the last commit, discarding any uncommitted changes.</p>
+</section>
+<section id="viewing-differences-between-versions" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-differences-between-versions">Viewing Differences Between Versions</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command shows the differences between the working directory and the staging area, or between two commits.</p>
+</section>
+<section id="stashing-changes" class="level2">
+<h2 class="anchored" data-anchor-id="stashing-changes">Stashing Changes</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> stash</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command temporarily saves your changes, allowing you to work on something else without committing those changes.</p>
+</section>
+<section id="creating-a-tag" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-tag">Creating a Tag</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="op">&lt;</span>tag_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command creates a tag for a specific commit. Replace <code>&lt;tag_name&gt;</code> with the name of the tag (e.g., <code>v1.0</code>).</p>
+</section>
+<section id="pushing-tags-to-remote" class="level2">
+<h2 class="anchored" data-anchor-id="pushing-tags-to-remote">Pushing Tags to Remote</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>tag_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command pushes the tag to the remote repository.</p>
+</section>
+<section id="deleting-a-remote-branch" class="level2">
+<h2 class="anchored" data-anchor-id="deleting-a-remote-branch">Deleting a Remote Branch</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="at">--delete</span> <span class="op">&lt;</span>branch_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command deletes a branch from the remote repository.</p>
+</section>
+<section id="viewing-github-issues" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-github-issues">Viewing GitHub Issues</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command lists open issues in a GitHub repository (requires the GitHub CLI). You can filter, view, and manage issues directly from the terminal.</p>
+</section>
+<section id="creating-a-github-issue" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-github-issue">Creating a GitHub Issue</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue create</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Explanation</strong>: This command creates a new GitHub issue (requires the GitHub CLI). Follow the prompts to enter the issue title, description, and labels.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

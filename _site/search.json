@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Welcome to My Tech Portfolio",
     "section": "",
-    "text": "Hello! I’m Xu Haiyang, a Computer Science graduate specializing in Cybersecurity & Cyber-Physical Systems. This website serves as a portfolio to showcase my projects, research, and technical knowledge in IoT, Cybersecurity, AWS Cloud, and AI.\n\n\n\nEducation:\n\nSingapore Management University (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)\nSingapore Polytechnic (Mar 2018 – Apr 2021) - Diploma in Computer Engineering\n\nCertifications: AWS Certified Solutions Architect\nProgramming Skills: Java, C/C++, Python, JavaScript, ReactJS\nCybersecurity Skills: OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence\n\n\n\n\nThis website is structured into several sections to help visitors and myself find useful solutions: - Cyber Defense & Threat Intelligence: Articles and resources on security best practices, penetration testing, and risk management. - Mastering Code & Development: Code snippets, tutorials, and solutions for common programming challenges. - Cloud Computing & Scalability: Insights into AWS, serverless computing, and cloud security. - GitHub Mastery & DevOps: Guides on version control, GitHub Actions, and repository management. - AI & Machine Learning Innovations: Machine learning, deep learning, and AI-related projects.\n\n\n\n\nAWS Security Automation (View Project) - Implemented AWS Lambda, API Gateway, and Security Hub for real-time security analysis.\nInsider Threat Detection (View Project) - Built ML-based risk assessment using TensorFlow and Scikit Learn.\nIoT Smart System (View Project) - Designed IoT applications with AWS cloud connectivity.\n\n\n\n\n\nDeep Learning Week Hackathon (2022) - Led AI solution for real-time pedestrian and vehicle detection.\nLyve Cloud Hackathon (2022) - Developed cloud-based media streaming server.\n\n\n\n\nFeel free to connect with me on: - 📧 Email: haiyang.xu.2021@scis.smu.edu.sg - 🔗 LinkedIn - 🐙 GitHub\n\n\n“Technology is best when it brings people together.” – Matt Mullenweg"
+    "text": "Hello! I’m Xu Haiyang, a Computer Science graduate specializing in Cybersecurity & Cyber-Physical Systems. This website serves as a portfolio to showcase my projects, research, and technical knowledge in IoT, Cybersecurity, AWS Cloud, and AI.\n\n\n\nEducation:\n\nSingapore Management University (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)\nSingapore Polytechnic (Mar 2018 – Apr 2021) - Diploma in Computer Engineering\n\nCertifications: AWS Certified Solutions Architect\nProgramming Skills: JavaScript, R Coding, Python, ReactJS, Java, C/C++\nCybersecurity Skills: OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence\n\n\n\n\nThis website is structured into several sections to help visitors and myself find useful solutions: - Cyber Defense & Threat Intelligence: Articles and resources on security best practices, penetration testing, and risk management. - Mastering Code & Development: Code snippets, tutorials, and solutions for common programming challenges. - Cloud Computing & Scalability: Insights into AWS, serverless computing, and cloud security. - GitHub Mastery & DevOps: Guides on version control, GitHub Actions, and repository management. - AI & Machine Learning Innovations: Machine learning, deep learning, and AI-related projects.\n\n\n\n\nAWS Security Automation (View Project) - Implemented AWS Lambda, API Gateway, and Security Hub for real-time security analysis.\nInsider Threat Detection (View Project) - Built ML-based risk assessment using TensorFlow and Scikit Learn.\nIoT Smart System (View Project) - Designed IoT applications with AWS cloud connectivity.\n\n\n\n\n\nDeep Learning Week Hackathon (2022) - Led AI solution for real-time pedestrian and vehicle detection.\nLyve Cloud Hackathon (2022) - Developed cloud-based media streaming server.\n\n\n\n\nFeel free to connect with me on: - 📧 Email: haiyang.xu.2021@scis.smu.edu.sg - 🔗 LinkedIn - 🐙 GitHub\n\n\n“Technology is best when it brings people together.” – Matt Mullenweg"
   },
   {
     "objectID": "index.html#about-me",
     "href": "index.html#about-me",
     "title": "Welcome to My Tech Portfolio",
     "section": "",
-    "text": "Education:\n\nSingapore Management University (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)\nSingapore Polytechnic (Mar 2018 – Apr 2021) - Diploma in Computer Engineering\n\nCertifications: AWS Certified Solutions Architect\nProgramming Skills: Java, C/C++, Python, JavaScript, ReactJS\nCybersecurity Skills: OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence"
+    "text": "Education:\n\nSingapore Management University (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity & CPS)\nSingapore Polytechnic (Mar 2018 – Apr 2021) - Diploma in Computer Engineering\n\nCertifications: AWS Certified Solutions Architect\nProgramming Skills: JavaScript, R Coding, Python, ReactJS, Java, C/C++\nCybersecurity Skills: OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence"
   },
   {
     "objectID": "index.html#featured-projects",
@@ -201,5 +201,159 @@
     "title": "20 Useful ChatGPT Commands for Research & Productivity",
     "section": "",
     "text": "Prompt:\nWrite a professional email for [purpose].  \nExplanation: Creates well-structured emails for professional use."
+  },
+  {
+    "objectID": "github.html",
+    "href": "github.html",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git clone &lt;repository_url&gt;\nExplanation: This command creates a local copy of the remote repository. Replace &lt;repository_url&gt; with the actual URL of the repository you want to clone (e.g., https://github.com/user/repo.git).\n\n\n\ngit status\nExplanation: This command shows the current status of your working directory and staging area, including changes that are staged for commit and those that are not.\n\n\n\ngit add &lt;file_or_directory&gt;\nExplanation: This command stages changes for the next commit. Replace &lt;file_or_directory&gt; with the file or directory you want to stage. To stage all changes, use git add ..\n\n\n\ngit commit -m \"Your commit message\"\nExplanation: This command commits the staged changes to the repository with a message describing the changes. Replace \"Your commit message\" with a brief but descriptive message.\n\n\n\ngit log\nExplanation: This command shows the commit history, listing all commits made in the repository, along with their details such as author, date, and commit message.\n\n\n\ngit push origin &lt;branch_name&gt;\nExplanation: This command uploads your local commits to the remote repository. Replace &lt;branch_name&gt; with the branch you’re working on (e.g., main or develop).\n\n\n\ngit pull origin &lt;branch_name&gt;\nExplanation: This command fetches and merges changes from the remote repository into your local repository. Replace &lt;branch_name&gt; with the name of the branch you want to pull from (usually main).\n\n\n\ngit checkout -b &lt;new_branch_name&gt;\nExplanation: This command creates and switches to a new branch. Replace &lt;new_branch_name&gt; with the name you want for the new branch.\n\n\n\ngit checkout &lt;branch_name&gt;\nExplanation: This command switches to an existing branch. Replace &lt;branch_name&gt; with the name of the branch you want to switch to.\n\n\n\ngit merge &lt;branch_name&gt;\nExplanation: This command merges changes from another branch into your current branch. Replace &lt;branch_name&gt; with the branch you want to merge.\n\n\n\ngit branch -d &lt;branch_name&gt;\nExplanation: This command deletes a local branch. Replace &lt;branch_name&gt; with the name of the branch you want to delete.\n\n\n\ngit remote -v\nExplanation: This command shows the URLs of the remote repositories associated with your local repository.\n\n\n\ngit remote add origin &lt;repository_url&gt;\nExplanation: This command adds a remote repository to your local repository. Replace &lt;repository_url&gt; with the actual URL of the remote repository.\n\n\n\ngit reset --hard\nExplanation: This command resets your working directory and staging area to the last commit, discarding any uncommitted changes.\n\n\n\ngit diff\nExplanation: This command shows the differences between the working directory and the staging area, or between two commits.\n\n\n\ngit stash\nExplanation: This command temporarily saves your changes, allowing you to work on something else without committing those changes.\n\n\n\ngit tag &lt;tag_name&gt;\nExplanation: This command creates a tag for a specific commit. Replace &lt;tag_name&gt; with the name of the tag (e.g., v1.0).\n\n\n\ngit push origin &lt;tag_name&gt;\nExplanation: This command pushes the tag to the remote repository.\n\n\n\ngit push origin --delete &lt;branch_name&gt;\nExplanation: This command deletes a branch from the remote repository.\n\n\n\ngh issue list\nExplanation: This command lists open issues in a GitHub repository (requires the GitHub CLI). You can filter, view, and manage issues directly from the terminal.\n\n\n\ngh issue create\nExplanation: This command creates a new GitHub issue (requires the GitHub CLI). Follow the prompts to enter the issue title, description, and labels."
+  },
+  {
+    "objectID": "github.html#cloning-a-repository",
+    "href": "github.html#cloning-a-repository",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git clone &lt;repository_url&gt;\nExplanation: This command creates a local copy of the remote repository. Replace &lt;repository_url&gt; with the actual URL of the repository you want to clone (e.g., https://github.com/user/repo.git)."
+  },
+  {
+    "objectID": "github.html#checking-repository-status",
+    "href": "github.html#checking-repository-status",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git status\nExplanation: This command shows the current status of your working directory and staging area, including changes that are staged for commit and those that are not."
+  },
+  {
+    "objectID": "github.html#adding-changes-to-staging-area",
+    "href": "github.html#adding-changes-to-staging-area",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git add &lt;file_or_directory&gt;\nExplanation: This command stages changes for the next commit. Replace &lt;file_or_directory&gt; with the file or directory you want to stage. To stage all changes, use git add .."
+  },
+  {
+    "objectID": "github.html#committing-changes",
+    "href": "github.html#committing-changes",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git commit -m \"Your commit message\"\nExplanation: This command commits the staged changes to the repository with a message describing the changes. Replace \"Your commit message\" with a brief but descriptive message."
+  },
+  {
+    "objectID": "github.html#viewing-commit-history",
+    "href": "github.html#viewing-commit-history",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git log\nExplanation: This command shows the commit history, listing all commits made in the repository, along with their details such as author, date, and commit message."
+  },
+  {
+    "objectID": "github.html#pushing-changes-to-a-remote-repository",
+    "href": "github.html#pushing-changes-to-a-remote-repository",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git push origin &lt;branch_name&gt;\nExplanation: This command uploads your local commits to the remote repository. Replace &lt;branch_name&gt; with the branch you’re working on (e.g., main or develop)."
+  },
+  {
+    "objectID": "github.html#pulling-latest-changes-from-remote",
+    "href": "github.html#pulling-latest-changes-from-remote",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git pull origin &lt;branch_name&gt;\nExplanation: This command fetches and merges changes from the remote repository into your local repository. Replace &lt;branch_name&gt; with the name of the branch you want to pull from (usually main)."
+  },
+  {
+    "objectID": "github.html#creating-a-new-branch",
+    "href": "github.html#creating-a-new-branch",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git checkout -b &lt;new_branch_name&gt;\nExplanation: This command creates and switches to a new branch. Replace &lt;new_branch_name&gt; with the name you want for the new branch."
+  },
+  {
+    "objectID": "github.html#switching-branches",
+    "href": "github.html#switching-branches",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git checkout &lt;branch_name&gt;\nExplanation: This command switches to an existing branch. Replace &lt;branch_name&gt; with the name of the branch you want to switch to."
+  },
+  {
+    "objectID": "github.html#merging-a-branch",
+    "href": "github.html#merging-a-branch",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git merge &lt;branch_name&gt;\nExplanation: This command merges changes from another branch into your current branch. Replace &lt;branch_name&gt; with the branch you want to merge."
+  },
+  {
+    "objectID": "github.html#deleting-a-branch",
+    "href": "github.html#deleting-a-branch",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git branch -d &lt;branch_name&gt;\nExplanation: This command deletes a local branch. Replace &lt;branch_name&gt; with the name of the branch you want to delete."
+  },
+  {
+    "objectID": "github.html#viewing-remote-repositories",
+    "href": "github.html#viewing-remote-repositories",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git remote -v\nExplanation: This command shows the URLs of the remote repositories associated with your local repository."
+  },
+  {
+    "objectID": "github.html#adding-a-remote-repository",
+    "href": "github.html#adding-a-remote-repository",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git remote add origin &lt;repository_url&gt;\nExplanation: This command adds a remote repository to your local repository. Replace &lt;repository_url&gt; with the actual URL of the remote repository."
+  },
+  {
+    "objectID": "github.html#resetting-changes",
+    "href": "github.html#resetting-changes",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git reset --hard\nExplanation: This command resets your working directory and staging area to the last commit, discarding any uncommitted changes."
+  },
+  {
+    "objectID": "github.html#viewing-differences-between-versions",
+    "href": "github.html#viewing-differences-between-versions",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git diff\nExplanation: This command shows the differences between the working directory and the staging area, or between two commits."
+  },
+  {
+    "objectID": "github.html#stashing-changes",
+    "href": "github.html#stashing-changes",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git stash\nExplanation: This command temporarily saves your changes, allowing you to work on something else without committing those changes."
+  },
+  {
+    "objectID": "github.html#creating-a-tag",
+    "href": "github.html#creating-a-tag",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git tag &lt;tag_name&gt;\nExplanation: This command creates a tag for a specific commit. Replace &lt;tag_name&gt; with the name of the tag (e.g., v1.0)."
+  },
+  {
+    "objectID": "github.html#pushing-tags-to-remote",
+    "href": "github.html#pushing-tags-to-remote",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git push origin &lt;tag_name&gt;\nExplanation: This command pushes the tag to the remote repository."
+  },
+  {
+    "objectID": "github.html#deleting-a-remote-branch",
+    "href": "github.html#deleting-a-remote-branch",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "git push origin --delete &lt;branch_name&gt;\nExplanation: This command deletes a branch from the remote repository."
+  },
+  {
+    "objectID": "github.html#viewing-github-issues",
+    "href": "github.html#viewing-github-issues",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "gh issue list\nExplanation: This command lists open issues in a GitHub repository (requires the GitHub CLI). You can filter, view, and manage issues directly from the terminal."
+  },
+  {
+    "objectID": "github.html#creating-a-github-issue",
+    "href": "github.html#creating-a-github-issue",
+    "title": "Useful GitHub Commands",
+    "section": "",
+    "text": "gh issue create\nExplanation: This command creates a new GitHub issue (requires the GitHub CLI). Follow the prompts to enter the issue title, description, and labels."
   }
 ]

@@ -1,5 +1,176 @@
 ---
-title: "github"
+title: "Useful GitHub Commands"
+author: "Xu Haiyang"
+date: "2025-02-01"
 format: html
 ---
 
+# Useful GitHub Commands
+
+## Cloning a Repository
+
+``` bash
+git clone <repository_url>
+```
+
+**Explanation**: This command creates a local copy of the remote repository. Replace `<repository_url>` with the actual URL of the repository you want to clone (e.g., `https://github.com/user/repo.git`).
+
+## Checking Repository Status
+
+``` bash
+git status
+```
+
+**Explanation**: This command shows the current status of your working directory and staging area, including changes that are staged for commit and those that are not.
+
+## Adding Changes to Staging Area
+
+``` bash
+git add <file_or_directory>
+```
+
+**Explanation**: This command stages changes for the next commit. Replace `<file_or_directory>` with the file or directory you want to stage. To stage all changes, use `git add .`.
+
+## Committing Changes
+
+``` bash
+git commit -m "Your commit message"
+```
+
+**Explanation**: This command commits the staged changes to the repository with a message describing the changes. Replace `"Your commit message"` with a brief but descriptive message.
+
+## Viewing Commit History
+
+``` bash
+git log
+```
+
+**Explanation**: This command shows the commit history, listing all commits made in the repository, along with their details such as author, date, and commit message.
+
+## Pushing Changes to a Remote Repository
+
+``` bash
+git push origin <branch_name>
+```
+
+**Explanation**: This command uploads your local commits to the remote repository. Replace `<branch_name>` with the branch you're working on (e.g., `main` or `develop`).
+
+## Pulling Latest Changes from Remote
+
+``` bash
+git pull origin <branch_name>
+```
+
+**Explanation**: This command fetches and merges changes from the remote repository into your local repository. Replace `<branch_name>` with the name of the branch you want to pull from (usually `main`).
+
+## Creating a New Branch
+
+``` bash
+git checkout -b <new_branch_name>
+```
+
+**Explanation**: This command creates and switches to a new branch. Replace `<new_branch_name>` with the name you want for the new branch.
+
+## Switching Branches
+
+``` bash
+git checkout <branch_name>
+```
+
+**Explanation**: This command switches to an existing branch. Replace `<branch_name>` with the name of the branch you want to switch to.
+
+## Merging a Branch
+
+``` bash
+git merge <branch_name>
+```
+
+**Explanation**: This command merges changes from another branch into your current branch. Replace `<branch_name>` with the branch you want to merge.
+
+## Deleting a Branch
+
+``` bash
+git branch -d <branch_name>
+```
+
+**Explanation**: This command deletes a local branch. Replace `<branch_name>` with the name of the branch you want to delete.
+
+## Viewing Remote Repositories
+
+``` bash
+git remote -v
+```
+
+**Explanation**: This command shows the URLs of the remote repositories associated with your local repository.
+
+## Adding a Remote Repository
+
+``` bash
+git remote add origin <repository_url>
+```
+
+**Explanation**: This command adds a remote repository to your local repository. Replace `<repository_url>` with the actual URL of the remote repository.
+
+## Resetting Changes
+
+``` bash
+git reset --hard
+```
+
+**Explanation**: This command resets your working directory and staging area to the last commit, discarding any uncommitted changes.
+
+## Viewing Differences Between Versions
+
+``` bash
+git diff
+```
+
+**Explanation**: This command shows the differences between the working directory and the staging area, or between two commits.
+
+## Stashing Changes
+
+``` bash
+git stash
+```
+
+**Explanation**: This command temporarily saves your changes, allowing you to work on something else without committing those changes.
+
+## Creating a Tag
+
+``` bash
+git tag <tag_name>
+```
+
+**Explanation**: This command creates a tag for a specific commit. Replace `<tag_name>` with the name of the tag (e.g., `v1.0`).
+
+## Pushing Tags to Remote
+
+``` bash
+git push origin <tag_name>
+```
+
+**Explanation**: This command pushes the tag to the remote repository.
+
+## Deleting a Remote Branch
+
+``` bash
+git push origin --delete <branch_name>
+```
+
+**Explanation**: This command deletes a branch from the remote repository.
+
+## Viewing GitHub Issues
+
+``` bash
+gh issue list
+```
+
+**Explanation**: This command lists open issues in a GitHub repository (requires the GitHub CLI). You can filter, view, and manage issues directly from the terminal.
+
+## Creating a GitHub Issue
+
+``` bash
+gh issue create
+```
+
+**Explanation**: This command creates a new GitHub issue (requires the GitHub CLI). Follow the prompts to enter the issue title, description, and labels.
