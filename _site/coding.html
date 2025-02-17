@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-02-01">
+<meta name="dcterms.date" content="2025-02-11">
 
-<title>Some Coding Sharing – Haiyang’s Tech Portfolio</title>
+<title>Coding &amp; Algorithms &amp; Tutorials – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,15 +147,40 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#algorithms-tutorial" id="toc-algorithms-tutorial" class="nav-link active" data-scroll-target="#algorithms-tutorial">Algorithms Tutorial</a>
+  <ul class="collapse">
+  <li><a href="#what-is-an-algorithm" id="toc-what-is-an-algorithm" class="nav-link" data-scroll-target="#what-is-an-algorithm">What is an Algorithm?</a></li>
+  <li><a href="#what-is-the-need-for-algorithms" id="toc-what-is-the-need-for-algorithms" class="nav-link" data-scroll-target="#what-is-the-need-for-algorithms">What is the Need for Algorithms?</a></li>
+  <li><a href="#analysis-of-algorithms" id="toc-analysis-of-algorithms" class="nav-link" data-scroll-target="#analysis-of-algorithms"><strong>1. Analysis of Algorithms</strong></a></li>
+  <li><a href="#mathematical-algorithms" id="toc-mathematical-algorithms" class="nav-link" data-scroll-target="#mathematical-algorithms">2. Mathematical Algorithms</a></li>
+  <li><a href="#bitwise-algorithms" id="toc-bitwise-algorithms" class="nav-link" data-scroll-target="#bitwise-algorithms">3. Bitwise Algorithms</a></li>
+  <li><a href="#searching-algorithms" id="toc-searching-algorithms" class="nav-link" data-scroll-target="#searching-algorithms">4. Searching Algorithms</a></li>
+  <li><a href="#sorting-algorithms" id="toc-sorting-algorithms" class="nav-link" data-scroll-target="#sorting-algorithms">5. Sorting Algorithms</a></li>
+  <li><a href="#recursion" id="toc-recursion" class="nav-link" data-scroll-target="#recursion">6. Recursion</a></li>
+  <li><a href="#backtracking-algorithm" id="toc-backtracking-algorithm" class="nav-link" data-scroll-target="#backtracking-algorithm">7. Backtracking Algorithm</a></li>
+  <li><a href="#divide-and-conquer-algorithm" id="toc-divide-and-conquer-algorithm" class="nav-link" data-scroll-target="#divide-and-conquer-algorithm">8. Divide and Conquer Algorithm</a></li>
+  <li><a href="#greedy-algorithm" id="toc-greedy-algorithm" class="nav-link" data-scroll-target="#greedy-algorithm">9. Greedy Algorithm</a></li>
+  <li><a href="#dynamic-programming" id="toc-dynamic-programming" class="nav-link" data-scroll-target="#dynamic-programming">10. Dynamic Programming</a></li>
+  <li><a href="#graph-algorithms" id="toc-graph-algorithms" class="nav-link" data-scroll-target="#graph-algorithms">11. Graph Algorithms</a></li>
+  <li><a href="#pattern-searching" id="toc-pattern-searching" class="nav-link" data-scroll-target="#pattern-searching">12. Pattern Searching</a></li>
+  <li><a href="#branch-and-bound-algorithm" id="toc-branch-and-bound-algorithm" class="nav-link" data-scroll-target="#branch-and-bound-algorithm">13. Branch and Bound Algorithm</a></li>
+  <li><a href="#geometric-algorithms" id="toc-geometric-algorithms" class="nav-link" data-scroll-target="#geometric-algorithms">14. Geometric Algorithms</a></li>
+  <li><a href="#randomized-algorithms" id="toc-randomized-algorithms" class="nav-link" data-scroll-target="#randomized-algorithms">15. Randomized Algorithms</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Some Coding Sharing</h1>
+<h1 class="title">Coding &amp; Algorithms &amp; Tutorials</h1>
 </div>
 
 
@@ -172,7 +197,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 1, 2025</p>
+      <p class="date">February 11, 2025</p>
     </div>
   </div>
   
@@ -184,8 +209,171 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="algorithms-tutorial" class="level1">
+<h1>Algorithms Tutorial</h1>
+<p><strong>Algorithm</strong> is a step-by-step procedure for solving a problem or accomplishing a task. In the context of data structures and algorithms, it is a set of well-defined instructions for performing a specific computational task. Algorithms are fundamental to computer science and play a very important role in designing efficient solutions for various problems. Understanding algorithms is essential for anyone interested in mastering data structures and algorithms.</p>
+<section id="what-is-an-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-algorithm">What is an Algorithm?</h2>
+<p>An <strong>algorithm</strong> is a finite sequence of well-defined instructions that can be used to solve a computational problem. It provides a step-by-step procedure that convert an input into a desired output.</p>
+<p>Algorithms typically follow a logical structure:</p>
+<ul>
+<li><p><strong>Input:</strong> The algorithm receives input data.</p></li>
+<li><p><strong>Processing:</strong> The algorithm performs a series of operations on the input data.</p></li>
+<li><p><strong>Output:</strong> The algorithm produces the desired output.</p></li>
+</ul>
+</section>
+<section id="what-is-the-need-for-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-need-for-algorithms">What is the Need for Algorithms?</h2>
+<p>Algorithms are essential for solving complex computational problems efficiently and effectively. They provide a systematic approach to:</p>
+<ul>
+<li><p><strong>Solving problems:</strong> Algorithms break down problems into smaller, manageable steps.</p></li>
+<li><p><strong>Optimizing solutions:</strong> Algorithms find the best or near-optimal solutions to problems.</p></li>
+<li><p><strong>Automating tasks:</strong> Algorithms can automate repetitive or complex tasks, saving time and effort.</p></li>
+</ul>
+</section>
+<section id="analysis-of-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-of-algorithms"><strong>1. Analysis of Algorithms</strong></h2>
+<p>Analysis of Algorithms is the process of evaluating the efficiency of algorithms, focusing mainly on the <strong>time</strong> and <strong>space</strong> complexity. This helps in evaluating how the algorithm’s running time or space requirements grow as the size of input increases.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/design-and-analysis-of-algorithms/"><strong>Analysis of Algorithms Guide</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/quizzes/top-mcqs-on-complexity-analysis-of-algorithms-with-answers/"><strong>Quiz on Analysis of Algorithms</strong></a></p></li>
+</ul>
+</section>
+<section id="mathematical-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="mathematical-algorithms">2. Mathematical Algorithms</h2>
+<p>Mathematical algorithms are used for analyzing and optimizing data structures and algorithms. Knowing basic concepts like&nbsp;<strong>divisibility</strong>,&nbsp;<strong>LCM</strong>,&nbsp;<strong>GCD,</strong> etc. can really help you understand how data structures work and improve your ability to design efficient algorithms.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/mathematica-algorithms-difficulty-wise/?preview_id=1348439&amp;preview=true"><strong>Mathematical Algorithms Guide</strong></a></p></li>
+<li><p><a href="https://practice.geeksforgeeks.org/topics/mathematical/?ref=taocp"><strong>Practice Problems on Mathematical Algorithms</strong></a></p></li>
+</ul>
+</section>
+<section id="bitwise-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="bitwise-algorithms">3. Bitwise Algorithms</h2>
+<p><strong>Bitwise algorithms</strong> are algorithms that operate on individual bits of numbers. These algorithms manipulate the binary representation of numbers like&nbsp;<strong>shifting bits</strong>,&nbsp;<strong>setting</strong> or&nbsp;<strong>clearing specific bits</strong> of a number and perform&nbsp;<strong>bitwise operations</strong>&nbsp;(AND, OR, XOR). Bitwise algorithms are commonly used in&nbsp;<strong>low-level programming, cryptography, and optimization tasks</strong>&nbsp;where efficient manipulation of individual bits is required.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/bitwise-algorithms/"><strong>Bitwise Algorithms Guide</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category=Bit%20Magic&amp;sortBy=submissions"><strong>Practice Problems on Bit Magic</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/algorithms-gq/top-mcqs-on-bitwise-algorithms-and-bit-manipulations-with-answers/"><strong>Quiz on Bitwise Algorithms</strong></a></p></li>
+</ul>
+</section>
+<section id="searching-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="searching-algorithms">4. Searching Algorithms</h2>
+<p>Searching Algorithms are used to find a specific element or item in a collection of data. These algorithms are widely used to retrieve data efficiently from large datasets.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/searching-algorithms/"><strong>Guide</strong></a> on Searching Algorithms</p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category=Searching&amp;sortBy=submissions"><strong>Practice Problems on Searching</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/top-50-searching-coding-problems-for-interviews/"><strong>Top Searching Interview Questions and Problems</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/quizzes/top-mcqs-on-searching-algorithm-with-answers/"><strong>Quiz on Searching Algorithms</strong></a></p></li>
+</ul>
+</section>
+<section id="sorting-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="sorting-algorithms">5. Sorting Algorithms</h2>
+<p><strong>Sorting algorithms</strong>&nbsp;are used to&nbsp;<strong>arrange</strong> the elements of a list in a&nbsp;<strong>specific order</strong>, such as numerical or alphabetical. It organizes the items in a systematic way, making it easier to search for and access specific elements.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/sorting-algorithms/"><strong>Guide on Sorting Algorithms</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category%5B%5D=Sorting"><strong>Practice problems on Sorting algorithm</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/top-sorting-interview-questions-and-problems/"><strong>Top Sorting Interview Questions and Problems</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/quizzes/top-mcqs-on-sorting-algorithms-with-answers/"><strong>Quiz on Sorting Algorithms</strong></a></p></li>
+</ul>
+</section>
+<section id="recursion" class="level2">
+<h2 class="anchored" data-anchor-id="recursion">6. Recursion</h2>
+<p><strong>Recursion</strong>&nbsp;is a programming technique where a function&nbsp;<strong>calls itself</strong>&nbsp;within its own definition. It is usually used to solve problems that can be broken down into smaller instances of the same problem.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/recursion-algorithms/"><strong>Guide on Recursive Algorithms</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category%5B%5D=Recursion"><strong>Practice Problems on Recursion algorithm</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/top-50-interview-problems-on-recursion-algorithm/"><strong>Top 50 Problems on Recursion Algorithm for Interview</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/quizzes/top-mcqs-on-recursion-algorithm-with-answers/"><strong>Quiz on Recursion</strong></a></p></li>
+</ul>
+</section>
+<section id="backtracking-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="backtracking-algorithm">7. Backtracking Algorithm</h2>
+<p><strong>Backtracking Algorithm</strong> is derived from the&nbsp;<strong>Recursion</strong> algorithm, with the option to&nbsp;<strong>revert</strong> if a recursive solution fails, i.e.&nbsp;in case a solution fails, the program&nbsp;<strong>traces back</strong>&nbsp;to the moment where it failed and builds on another solution. So basically it tries out all the possible solutions and finds the correct one.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/backtracking-algorithms/"><strong>Guide on&nbsp;Backtracking&nbsp;Algorithms</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category%5B%5D=Backtracking"><strong>Practice Problems on Backtracking algorithm</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/top-20-backtracking-algorithm-interview-questions/"><strong>Top 20 Backtracking Algorithm Interview Questions</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/quizzes/top-mcqs-on-backtracking-algorithm-with-answers/"><strong>Quiz on Backtracking Algorithm</strong></a></p></li>
+</ul>
+</section>
+<section id="divide-and-conquer-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="divide-and-conquer-algorithm">8. Divide and Conquer Algorithm</h2>
+<p><strong>Divide and conquer</strong> algorithms follow a recursive strategy to solve problems by dividing them into&nbsp;<strong>smaller subproblems</strong>, solving those subproblems, and combining the solutions to obtain the final solution.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/divide-and-conquer/"><strong>Guide on Divide and Conquer Algorithm</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category%5B%5D=Divide%20and%20Conquer"><strong>Practice problems on Divide And Conquer algorithm</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/algorithms-gq/top-mcqs-on-divide-and-conquer-algrithm-with-answers/"><strong>Quiz on Divide and Conquer</strong></a></p></li>
+</ul>
+</section>
+<section id="greedy-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="greedy-algorithm">9. Greedy Algorithm</h2>
+<p><strong>Greedy Algorithm</strong> builds up the solution one piece at a time and chooses the next piece which gives the most obvious and immediate benefit i.e., which is the most&nbsp;<strong>optimal choice at that moment</strong>. So the problems where choosing&nbsp;<strong>locally optimal</strong>&nbsp;also leads to the global solutions are best fit for Greedy.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/greedy-algorithms/"><strong>Guide on Greedy Algorithms</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category%5B%5D=Greedy"><strong>Practice Problems on Greedy Algorithm</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/top-20-greedy-algorithms-interview-questions/"><strong>Top 20 Greedy Algorithm Interview Questions</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/quizzes/top-mcqs-on-greedy-algorithms-with-answers/"><strong>Quiz on Greedy Algorithm</strong></a></p></li>
+</ul>
+</section>
+<section id="dynamic-programming" class="level2">
+<h2 class="anchored" data-anchor-id="dynamic-programming">10. Dynamic Programming</h2>
+<p><strong>Dynamic Programming</strong>&nbsp;is a method used to solve complex problems by breaking them down into simpler&nbsp;<strong>subproblems</strong>. By solving each subproblem only&nbsp;<strong>once</strong> and&nbsp;<strong>storing the results</strong>, it avoids redundant computations, leading to more&nbsp;<strong>efficient solutions</strong> for a wide range of problems.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/dynamic-programming/"><strong>Dynamic Programming Guide</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category%5B%5D=Dynamic%20Programming"><strong>Practice Problems on Dynamic Programming</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/top-50-dynamic-programming-coding-problems-for-interviews/"><strong>Top 50 Dynamic Programming Coding Problems for Interviews</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/quizzes/top-mcqs-on-dynamic-programming-with-answers/"><strong>Quiz on Dynamic Programming</strong></a></p></li>
+</ul>
+</section>
+<section id="graph-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="graph-algorithms">11. Graph Algorithms</h2>
+<p><strong>Graph algorithms</strong>&nbsp;are a set of techniques and methods used to solve problems related to graphs, which are a collection of nodes and edges. These algorithms perform various operations on graphs, such as&nbsp;<strong>searching, traversing, finding the shortest path</strong>, and determining&nbsp;<strong>connectivity</strong>. They are essential for solving a wide range of real-world problems, including&nbsp;<strong>network routing</strong>,&nbsp;<strong>social network analysis</strong>, and&nbsp;<strong>resource allocation</strong>.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/"><strong>Guide on Graph Algorithms</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category=Graph&amp;sortBy=submissions"><strong>Practice Problems on Graph Algorithms</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/top-50-graph-coding-problems-for-interviews/"><strong>Top 50 Graph Coding Problems for Interviews</strong></a></p></li>
+</ul>
+</section>
+<section id="pattern-searching" class="level2">
+<h2 class="anchored" data-anchor-id="pattern-searching">12. Pattern Searching</h2>
+<p><strong>Pattern Searching</strong>&nbsp;is a fundamental technique in DSA used to find occurrences of a specific pattern within a larger text. The Pattern Searching Algorithms use techniques like&nbsp;<strong>preprocessing</strong>&nbsp;to minimize unnecessary comparisons, making the search faster.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/pattern-searching/"><strong>Pattern Searching Guide</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category=Pattern%20Searching&amp;sortBy=submissions"><strong>Practice Problems on&nbsp;Pattern Searching</strong></a></p></li>
+</ul>
+</section>
+<section id="branch-and-bound-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="branch-and-bound-algorithm">13. Branch and Bound Algorithm</h2>
+<p><strong>Branch and Bound Algorithm</strong> is a method used in combinatorial optimization problems to systematically search for the best solution. It works by dividing the problem into smaller subproblems, or branches, and then eliminating certain branches based on bounds on the optimal solution. This process continues until the best solution is found or all branches have been explored.</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/branch-and-bound-algorithm/"><strong>Guide on Branch and Bound Algorithm</strong></a></li>
+</ul>
+</section>
+<section id="geometric-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-algorithms">14. Geometric Algorithms</h2>
+<p><strong>Geometric algorithms</strong> are a set of algorithms that solve problems related to&nbsp;<strong>shapes</strong>,&nbsp;<strong>points</strong>,&nbsp;<strong>lines</strong> and polygons. Geometric algorithms are essential for solving a wide range of problems in computer science, such as intersection detection, convex hull computation, etc.</p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/geometric-algorithms/"><strong>Guide on Geometric Algorithms</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/explore?page=1&amp;category=Geometric&amp;sortBy=submissions"><strong>Practice Problem on Geometric Algorithms</strong></a></p></li>
+</ul>
+</section>
+<section id="randomized-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="randomized-algorithms">15. Randomized Algorithms</h2>
+<p>Randomized algorithms are algorithms that use&nbsp;<strong>randomness</strong> to solve problems. They make use of random input to achieve their goals, often leading to&nbsp;<strong>simpler</strong> and more&nbsp;<strong>efficient solutions</strong>. These algorithms may&nbsp;<strong>not product same result</strong> but are particularly useful in situations when a&nbsp;<strong>probabilistic approach</strong>&nbsp;is acceptable.</p>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/randomized-algorithms/"><strong>Guide on Randomized Algorithms</strong></a></li>
+</ul>
+<p><strong>Related Articles:</strong></p>
+<ul>
+<li><p><a href="https://www.geeksforgeeks.org/introduction-to-algorithms/"><strong>What is Algorithm | Introduction to Algorithms</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/what-is-an-algorithm-definition-types-complexity-examples/"><strong>Definition, Types, Complexity, Examples of Algorithms</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/algorithms-design-techniques/"><strong>Algorithms Design Techniques</strong></a></p></li>
+<li><p><a href="https://www.geeksforgeeks.org/what-is-algorithm-and-why-analysis-of-it-is-important/"><strong>Why is analysis of an Algorithm important?</strong></a></p></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

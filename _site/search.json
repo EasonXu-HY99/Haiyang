@@ -614,5 +614,131 @@
     "title": "Cybersecurity Summary",
     "section": "Key cybersecurity best practices and technologies",
     "text": "Key cybersecurity best practices and technologies\nWhile each organization’s cybersecurity strategy differs, many use these tools and tactics to reduce vulnerabilities, prevent attacks and intercept attacks in progress:\n\nSecurity awareness training\nData security tools\nIdentity and access management\nThreat detection and response\nDisaster recovery\n\n\nSecurity awareness training\nSecurity awareness training helps users understand how seemingly harmless actions—from using the same simple password for multiple log-ins to oversharing on social media—increase their own or their organization’s risk of attack.\nCombined with thought-out data security policies, security awareness training can help employees protect sensitive personal and organizational data. It can also help them recognize and avoid phishing and malware attacks.\n\n\nData security tools\nData security tools, such as encryption and data loss prevention (DLP) solutions, can help stop security threats in progress or mitigate their effects. For example, DLP tools can detect and block attempted data theft, while encryption can make it so that any data that hackers steal is useless to them.\n\n\nIdentity and access management\nIdentity and access management (IAM) refers to the tools and strategies that control how users access resources and what they can do with those resources.\nIAM technologies can help protect against account theft. For example, multifactor authentication requires users to supply multiple credentials to log in, meaning threat actors need more than just a password to break into an account.\nLikewise, adaptive authentication systems detect when users are engaging in risky behavior and raise additional authentication challenges before allowing them to proceed. Adaptive authentication can help limit the lateral movement of hackers who make it into the system.\nA zero trust architecture is one way to enforce strict access controls by verifying all connection requests between users and devices, applications and data.\n\n\nAttack surface management\nAttack surface management (ASM) is the continuous discovery, analysis, remediation and monitoring of the cybersecurity vulnerabilities and potential attack vectors that make up an organization’s attack surface.\nUnlike other cyberdefense disciplines, ASM is conducted entirely from a hacker’s perspective rather than the perspective of the defender. It identifies targets and assesses risks based on the opportunities they present to a malicious attacker.\n\n\nThreat detection and response\nAnalytics- and AI-driven technologies can help identify and respond to attacks in progress. These technologies can include security information and event management (SIEM), security orchestration, automation and response (SOAR) and endpoint detection and response (EDR). Typically, organizations use these technologies as part of a formal incident response plan.\n\n\nDisaster recovery\nDisaster recovery capabilities can play a key role in maintaining business continuity and remediating threats in the event of a cyberattack. For example, the ability to fail over to a backup that is hosted in a remote location can help a business resume operations after a ransomware attack (sometimes without paying a ransom)"
+  },
+  {
+    "objectID": "coding.html",
+    "href": "coding.html",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Algorithm is a step-by-step procedure for solving a problem or accomplishing a task. In the context of data structures and algorithms, it is a set of well-defined instructions for performing a specific computational task. Algorithms are fundamental to computer science and play a very important role in designing efficient solutions for various problems. Understanding algorithms is essential for anyone interested in mastering data structures and algorithms.\n\n\nAn algorithm is a finite sequence of well-defined instructions that can be used to solve a computational problem. It provides a step-by-step procedure that convert an input into a desired output.\nAlgorithms typically follow a logical structure:\n\nInput: The algorithm receives input data.\nProcessing: The algorithm performs a series of operations on the input data.\nOutput: The algorithm produces the desired output.\n\n\n\n\nAlgorithms are essential for solving complex computational problems efficiently and effectively. They provide a systematic approach to:\n\nSolving problems: Algorithms break down problems into smaller, manageable steps.\nOptimizing solutions: Algorithms find the best or near-optimal solutions to problems.\nAutomating tasks: Algorithms can automate repetitive or complex tasks, saving time and effort.\n\n\n\n\nAnalysis of Algorithms is the process of evaluating the efficiency of algorithms, focusing mainly on the time and space complexity. This helps in evaluating how the algorithm’s running time or space requirements grow as the size of input increases.\n\nAnalysis of Algorithms Guide\nQuiz on Analysis of Algorithms\n\n\n\n\nMathematical algorithms are used for analyzing and optimizing data structures and algorithms. Knowing basic concepts like divisibility, LCM, GCD, etc. can really help you understand how data structures work and improve your ability to design efficient algorithms.\n\nMathematical Algorithms Guide\nPractice Problems on Mathematical Algorithms\n\n\n\n\nBitwise algorithms are algorithms that operate on individual bits of numbers. These algorithms manipulate the binary representation of numbers like shifting bits, setting or clearing specific bits of a number and perform bitwise operations (AND, OR, XOR). Bitwise algorithms are commonly used in low-level programming, cryptography, and optimization tasks where efficient manipulation of individual bits is required.\n\nBitwise Algorithms Guide\nPractice Problems on Bit Magic\nQuiz on Bitwise Algorithms\n\n\n\n\nSearching Algorithms are used to find a specific element or item in a collection of data. These algorithms are widely used to retrieve data efficiently from large datasets.\n\nGuide on Searching Algorithms\nPractice Problems on Searching\nTop Searching Interview Questions and Problems\nQuiz on Searching Algorithms\n\n\n\n\nSorting algorithms are used to arrange the elements of a list in a specific order, such as numerical or alphabetical. It organizes the items in a systematic way, making it easier to search for and access specific elements.\n\nGuide on Sorting Algorithms\nPractice problems on Sorting algorithm\nTop Sorting Interview Questions and Problems\nQuiz on Sorting Algorithms\n\n\n\n\nRecursion is a programming technique where a function calls itself within its own definition. It is usually used to solve problems that can be broken down into smaller instances of the same problem.\n\nGuide on Recursive Algorithms\nPractice Problems on Recursion algorithm\nTop 50 Problems on Recursion Algorithm for Interview\nQuiz on Recursion\n\n\n\n\nBacktracking Algorithm is derived from the Recursion algorithm, with the option to revert if a recursive solution fails, i.e. in case a solution fails, the program traces back to the moment where it failed and builds on another solution. So basically it tries out all the possible solutions and finds the correct one.\n\nGuide on Backtracking Algorithms\nPractice Problems on Backtracking algorithm\nTop 20 Backtracking Algorithm Interview Questions\nQuiz on Backtracking Algorithm\n\n\n\n\nDivide and conquer algorithms follow a recursive strategy to solve problems by dividing them into smaller subproblems, solving those subproblems, and combining the solutions to obtain the final solution.\n\nGuide on Divide and Conquer Algorithm\nPractice problems on Divide And Conquer algorithm\nQuiz on Divide and Conquer\n\n\n\n\nGreedy Algorithm builds up the solution one piece at a time and chooses the next piece which gives the most obvious and immediate benefit i.e., which is the most optimal choice at that moment. So the problems where choosing locally optimal also leads to the global solutions are best fit for Greedy.\n\nGuide on Greedy Algorithms\nPractice Problems on Greedy Algorithm\nTop 20 Greedy Algorithm Interview Questions\nQuiz on Greedy Algorithm\n\n\n\n\nDynamic Programming is a method used to solve complex problems by breaking them down into simpler subproblems. By solving each subproblem only once and storing the results, it avoids redundant computations, leading to more efficient solutions for a wide range of problems.\n\nDynamic Programming Guide\nPractice Problems on Dynamic Programming\nTop 50 Dynamic Programming Coding Problems for Interviews\nQuiz on Dynamic Programming\n\n\n\n\nGraph algorithms are a set of techniques and methods used to solve problems related to graphs, which are a collection of nodes and edges. These algorithms perform various operations on graphs, such as searching, traversing, finding the shortest path, and determining connectivity. They are essential for solving a wide range of real-world problems, including network routing, social network analysis, and resource allocation.\n\nGuide on Graph Algorithms\nPractice Problems on Graph Algorithms\nTop 50 Graph Coding Problems for Interviews\n\n\n\n\nPattern Searching is a fundamental technique in DSA used to find occurrences of a specific pattern within a larger text. The Pattern Searching Algorithms use techniques like preprocessing to minimize unnecessary comparisons, making the search faster.\n\nPattern Searching Guide\nPractice Problems on Pattern Searching\n\n\n\n\nBranch and Bound Algorithm is a method used in combinatorial optimization problems to systematically search for the best solution. It works by dividing the problem into smaller subproblems, or branches, and then eliminating certain branches based on bounds on the optimal solution. This process continues until the best solution is found or all branches have been explored.\n\nGuide on Branch and Bound Algorithm\n\n\n\n\nGeometric algorithms are a set of algorithms that solve problems related to shapes, points, lines and polygons. Geometric algorithms are essential for solving a wide range of problems in computer science, such as intersection detection, convex hull computation, etc.\n\nGuide on Geometric Algorithms\nPractice Problem on Geometric Algorithms\n\n\n\n\nRandomized algorithms are algorithms that use randomness to solve problems. They make use of random input to achieve their goals, often leading to simpler and more efficient solutions. These algorithms may not product same result but are particularly useful in situations when a probabilistic approach is acceptable.\n\nGuide on Randomized Algorithms\n\nRelated Articles:\n\nWhat is Algorithm | Introduction to Algorithms\nDefinition, Types, Complexity, Examples of Algorithms\nAlgorithms Design Techniques\nWhy is analysis of an Algorithm important?"
+  },
+  {
+    "objectID": "coding.html#what-is-an-algorithm",
+    "href": "coding.html#what-is-an-algorithm",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "An algorithm is a finite sequence of well-defined instructions that can be used to solve a computational problem. It provides a step-by-step procedure that convert an input into a desired output.\nAlgorithms typically follow a logical structure:\n\nInput: The algorithm receives input data.\nProcessing: The algorithm performs a series of operations on the input data.\nOutput: The algorithm produces the desired output."
+  },
+  {
+    "objectID": "coding.html#what-is-the-need-for-algorithms",
+    "href": "coding.html#what-is-the-need-for-algorithms",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Algorithms are essential for solving complex computational problems efficiently and effectively. They provide a systematic approach to:\n\nSolving problems: Algorithms break down problems into smaller, manageable steps.\nOptimizing solutions: Algorithms find the best or near-optimal solutions to problems.\nAutomating tasks: Algorithms can automate repetitive or complex tasks, saving time and effort."
+  },
+  {
+    "objectID": "coding.html#analysis-of-algorithms",
+    "href": "coding.html#analysis-of-algorithms",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Analysis of Algorithms is the process of evaluating the efficiency of algorithms, focusing mainly on the time and space complexity. This helps in evaluating how the algorithm’s running time or space requirements grow as the size of input increases.\n\nAnalysis of Algorithms Guide\nQuiz on Analysis of Algorithms"
+  },
+  {
+    "objectID": "coding.html#mathematical-algorithms",
+    "href": "coding.html#mathematical-algorithms",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Mathematical algorithms are used for analyzing and optimizing data structures and algorithms. Knowing basic concepts like divisibility, LCM, GCD, etc. can really help you understand how data structures work and improve your ability to design efficient algorithms.\n\nMathematical Algorithms Guide\nPractice Problems on Mathematical Algorithms"
+  },
+  {
+    "objectID": "coding.html#bitwise-algorithms",
+    "href": "coding.html#bitwise-algorithms",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Bitwise algorithms are algorithms that operate on individual bits of numbers. These algorithms manipulate the binary representation of numbers like shifting bits, setting or clearing specific bits of a number and perform bitwise operations (AND, OR, XOR). Bitwise algorithms are commonly used in low-level programming, cryptography, and optimization tasks where efficient manipulation of individual bits is required.\n\nBitwise Algorithms Guide\nPractice Problems on Bit Magic\nQuiz on Bitwise Algorithms"
+  },
+  {
+    "objectID": "coding.html#searching-algorithms",
+    "href": "coding.html#searching-algorithms",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Searching Algorithms are used to find a specific element or item in a collection of data. These algorithms are widely used to retrieve data efficiently from large datasets.\n\nGuide on Searching Algorithms\nPractice Problems on Searching\nTop Searching Interview Questions and Problems\nQuiz on Searching Algorithms"
+  },
+  {
+    "objectID": "coding.html#sorting-algorithms",
+    "href": "coding.html#sorting-algorithms",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Sorting algorithms are used to arrange the elements of a list in a specific order, such as numerical or alphabetical. It organizes the items in a systematic way, making it easier to search for and access specific elements.\n\nGuide on Sorting Algorithms\nPractice problems on Sorting algorithm\nTop Sorting Interview Questions and Problems\nQuiz on Sorting Algorithms"
+  },
+  {
+    "objectID": "coding.html#recursion",
+    "href": "coding.html#recursion",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Recursion is a programming technique where a function calls itself within its own definition. It is usually used to solve problems that can be broken down into smaller instances of the same problem.\n\nGuide on Recursive Algorithms\nPractice Problems on Recursion algorithm\nTop 50 Problems on Recursion Algorithm for Interview\nQuiz on Recursion"
+  },
+  {
+    "objectID": "coding.html#backtracking-algorithm",
+    "href": "coding.html#backtracking-algorithm",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Backtracking Algorithm is derived from the Recursion algorithm, with the option to revert if a recursive solution fails, i.e. in case a solution fails, the program traces back to the moment where it failed and builds on another solution. So basically it tries out all the possible solutions and finds the correct one.\n\nGuide on Backtracking Algorithms\nPractice Problems on Backtracking algorithm\nTop 20 Backtracking Algorithm Interview Questions\nQuiz on Backtracking Algorithm"
+  },
+  {
+    "objectID": "coding.html#divide-and-conquer-algorithm",
+    "href": "coding.html#divide-and-conquer-algorithm",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Divide and conquer algorithms follow a recursive strategy to solve problems by dividing them into smaller subproblems, solving those subproblems, and combining the solutions to obtain the final solution.\n\nGuide on Divide and Conquer Algorithm\nPractice problems on Divide And Conquer algorithm\nQuiz on Divide and Conquer"
+  },
+  {
+    "objectID": "coding.html#greedy-algorithm",
+    "href": "coding.html#greedy-algorithm",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Greedy Algorithm builds up the solution one piece at a time and chooses the next piece which gives the most obvious and immediate benefit i.e., which is the most optimal choice at that moment. So the problems where choosing locally optimal also leads to the global solutions are best fit for Greedy.\n\nGuide on Greedy Algorithms\nPractice Problems on Greedy Algorithm\nTop 20 Greedy Algorithm Interview Questions\nQuiz on Greedy Algorithm"
+  },
+  {
+    "objectID": "coding.html#dynamic-programming",
+    "href": "coding.html#dynamic-programming",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Dynamic Programming is a method used to solve complex problems by breaking them down into simpler subproblems. By solving each subproblem only once and storing the results, it avoids redundant computations, leading to more efficient solutions for a wide range of problems.\n\nDynamic Programming Guide\nPractice Problems on Dynamic Programming\nTop 50 Dynamic Programming Coding Problems for Interviews\nQuiz on Dynamic Programming"
+  },
+  {
+    "objectID": "coding.html#graph-algorithms",
+    "href": "coding.html#graph-algorithms",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Graph algorithms are a set of techniques and methods used to solve problems related to graphs, which are a collection of nodes and edges. These algorithms perform various operations on graphs, such as searching, traversing, finding the shortest path, and determining connectivity. They are essential for solving a wide range of real-world problems, including network routing, social network analysis, and resource allocation.\n\nGuide on Graph Algorithms\nPractice Problems on Graph Algorithms\nTop 50 Graph Coding Problems for Interviews"
+  },
+  {
+    "objectID": "coding.html#pattern-searching",
+    "href": "coding.html#pattern-searching",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Pattern Searching is a fundamental technique in DSA used to find occurrences of a specific pattern within a larger text. The Pattern Searching Algorithms use techniques like preprocessing to minimize unnecessary comparisons, making the search faster.\n\nPattern Searching Guide\nPractice Problems on Pattern Searching"
+  },
+  {
+    "objectID": "coding.html#branch-and-bound-algorithm",
+    "href": "coding.html#branch-and-bound-algorithm",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Branch and Bound Algorithm is a method used in combinatorial optimization problems to systematically search for the best solution. It works by dividing the problem into smaller subproblems, or branches, and then eliminating certain branches based on bounds on the optimal solution. This process continues until the best solution is found or all branches have been explored.\n\nGuide on Branch and Bound Algorithm"
+  },
+  {
+    "objectID": "coding.html#geometric-algorithms",
+    "href": "coding.html#geometric-algorithms",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Geometric algorithms are a set of algorithms that solve problems related to shapes, points, lines and polygons. Geometric algorithms are essential for solving a wide range of problems in computer science, such as intersection detection, convex hull computation, etc.\n\nGuide on Geometric Algorithms\nPractice Problem on Geometric Algorithms"
+  },
+  {
+    "objectID": "coding.html#randomized-algorithms",
+    "href": "coding.html#randomized-algorithms",
+    "title": "Coding & Algorithms & Tutorials",
+    "section": "",
+    "text": "Randomized algorithms are algorithms that use randomness to solve problems. They make use of random input to achieve their goals, often leading to simpler and more efficient solutions. These algorithms may not product same result but are particularly useful in situations when a probabilistic approach is acceptable.\n\nGuide on Randomized Algorithms\n\nRelated Articles:\n\nWhat is Algorithm | Introduction to Algorithms\nDefinition, Types, Complexity, Examples of Algorithms\nAlgorithms Design Techniques\nWhy is analysis of an Algorithm important?"
   }
 ]

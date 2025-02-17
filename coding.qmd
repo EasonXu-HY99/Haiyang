@@ -1,6 +1,188 @@
 ---
-title: "Some Coding Sharing"
+title: "Coding & Algorithms & Tutorials"
 author: "Xu Haiyang"
-date: "2025-02-01"
+date: "2025-02-11"
 format: html
 ---
+
+# Algorithms Tutorial
+
+**Algorithm** is a step-by-step procedure for solving a problem or accomplishing a task. In the context of data structures and algorithms, it is a set of well-defined instructions for performing a specific computational task. Algorithms are fundamental to computer science and play a very important role in designing efficient solutions for various problems. Understanding algorithms is essential for anyone interested in mastering data structures and algorithms.
+
+## What is an Algorithm?
+
+An **algorithm** is a finite sequence of well-defined instructions that can be used to solve a computational problem. It provides a step-by-step procedure that convert an input into a desired output.
+
+Algorithms typically follow a logical structure:
+
+-   **Input:** The algorithm receives input data.
+
+-   **Processing:** The algorithm performs a series of operations on the input data.
+
+-   **Output:** The algorithm produces the desired output.
+
+## What is the Need for Algorithms?
+
+Algorithms are essential for solving complex computational problems efficiently and effectively. They provide a systematic approach to:
+
+-   **Solving problems:** Algorithms break down problems into smaller, manageable steps.
+
+-   **Optimizing solutions:** Algorithms find the best or near-optimal solutions to problems.
+
+-   **Automating tasks:** Algorithms can automate repetitive or complex tasks, saving time and effort.
+
+## **1. Analysis of Algorithms**
+
+Analysis of Algorithms is the process of evaluating the efficiency of algorithms, focusing mainly on the **time** and **space** complexity. This helps in evaluating how the algorithm's running time or space requirements grow as the size of input increases.
+
+-   [**Analysis of Algorithms Guide**](https://www.geeksforgeeks.org/design-and-analysis-of-algorithms/)
+
+-   [**Quiz on Analysis of Algorithms**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-complexity-analysis-of-algorithms-with-answers/)
+
+## 2. Mathematical Algorithms
+
+Mathematical algorithms are used for analyzing and optimizing data structures and algorithms. Knowing basic concepts like **divisibility**, **LCM**, **GCD,** etc. can really help you understand how data structures work and improve your ability to design efficient algorithms.
+
+-   [**Mathematical Algorithms Guide**](https://www.geeksforgeeks.org/mathematica-algorithms-difficulty-wise/?preview_id=1348439&preview=true)
+
+-   [**Practice Problems on Mathematical Algorithms**](https://practice.geeksforgeeks.org/topics/mathematical/?ref=taocp)
+
+## 3. Bitwise Algorithms
+
+**Bitwise algorithms** are algorithms that operate on individual bits of numbers. These algorithms manipulate the binary representation of numbers like **shifting bits**, **setting** or **clearing specific bits** of a number and perform **bitwise operations** (AND, OR, XOR). Bitwise algorithms are commonly used in **low-level programming, cryptography, and optimization tasks** where efficient manipulation of individual bits is required.
+
+-   [**Bitwise Algorithms Guide**](https://www.geeksforgeeks.org/bitwise-algorithms/)
+
+-   [**Practice Problems on Bit Magic**](https://www.geeksforgeeks.org/explore?page=1&category=Bit%20Magic&sortBy=submissions)
+
+-   [**Quiz on Bitwise Algorithms**](https://www.geeksforgeeks.org/algorithms-gq/top-mcqs-on-bitwise-algorithms-and-bit-manipulations-with-answers/)
+
+## 4. Searching Algorithms
+
+Searching Algorithms are used to find a specific element or item in a collection of data. These algorithms are widely used to retrieve data efficiently from large datasets.
+
+-   [**Guide**](https://www.geeksforgeeks.org/searching-algorithms/) on Searching Algorithms
+
+-   [**Practice Problems on Searching**](https://www.geeksforgeeks.org/explore?page=1&category=Searching&sortBy=submissions)
+
+-   [**Top Searching Interview Questions and Problems**](https://www.geeksforgeeks.org/top-50-searching-coding-problems-for-interviews/)
+
+-   [**Quiz on Searching Algorithms**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-searching-algorithm-with-answers/)
+
+## 5. Sorting Algorithms
+
+**Sorting algorithms** are used to **arrange** the elements of a list in a **specific order**, such as numerical or alphabetical. It organizes the items in a systematic way, making it easier to search for and access specific elements.
+
+-   [**Guide on Sorting Algorithms**](https://www.geeksforgeeks.org/sorting-algorithms/)
+
+-   [**Practice problems on Sorting algorithm**](https://www.geeksforgeeks.org/explore?page=1&category[]=Sorting)
+
+-   [**Top Sorting Interview Questions and Problems**](https://www.geeksforgeeks.org/top-sorting-interview-questions-and-problems/)
+
+-   [**Quiz on Sorting Algorithms**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-sorting-algorithms-with-answers/)
+
+## 6. Recursion
+
+**Recursion** is a programming technique where a function **calls itself** within its own definition. It is usually used to solve problems that can be broken down into smaller instances of the same problem.
+
+-   [**Guide on Recursive Algorithms**](https://www.geeksforgeeks.org/recursion-algorithms/)
+
+-   [**Practice Problems on Recursion algorithm**](https://www.geeksforgeeks.org/explore?page=1&category[]=Recursion)
+
+-   [**Top 50 Problems on Recursion Algorithm for Interview**](https://www.geeksforgeeks.org/top-50-interview-problems-on-recursion-algorithm/)
+
+-   [**Quiz on Recursion**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-recursion-algorithm-with-answers/)
+
+## 7. Backtracking Algorithm
+
+**Backtracking Algorithm** is derived from the **Recursion** algorithm, with the option to **revert** if a recursive solution fails, i.e. in case a solution fails, the program **traces back** to the moment where it failed and builds on another solution. So basically it tries out all the possible solutions and finds the correct one.
+
+-   [**Guide on Backtracking Algorithms**](https://www.geeksforgeeks.org/backtracking-algorithms/)
+
+-   [**Practice Problems on Backtracking algorithm**](https://www.geeksforgeeks.org/explore?page=1&category[]=Backtracking)
+
+-   [**Top 20 Backtracking Algorithm Interview Questions**](https://www.geeksforgeeks.org/top-20-backtracking-algorithm-interview-questions/)
+
+-   [**Quiz on Backtracking Algorithm**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-backtracking-algorithm-with-answers/)
+
+## 8. Divide and Conquer Algorithm
+
+**Divide and conquer** algorithms follow a recursive strategy to solve problems by dividing them into **smaller subproblems**, solving those subproblems, and combining the solutions to obtain the final solution.
+
+-   [**Guide on Divide and Conquer Algorithm**](https://www.geeksforgeeks.org/divide-and-conquer/)
+
+-   [**Practice problems on Divide And Conquer algorithm**](https://www.geeksforgeeks.org/explore?page=1&category[]=Divide%20and%20Conquer)
+
+-   [**Quiz on Divide and Conquer**](https://www.geeksforgeeks.org/algorithms-gq/top-mcqs-on-divide-and-conquer-algrithm-with-answers/)
+
+## 9. Greedy Algorithm
+
+**Greedy Algorithm** builds up the solution one piece at a time and chooses the next piece which gives the most obvious and immediate benefit i.e., which is the most **optimal choice at that moment**. So the problems where choosing **locally optimal** also leads to the global solutions are best fit for Greedy.
+
+-   [**Guide on Greedy Algorithms**](https://www.geeksforgeeks.org/greedy-algorithms/)
+
+-   [**Practice Problems on Greedy Algorithm**](https://www.geeksforgeeks.org/explore?page=1&category[]=Greedy)
+
+-   [**Top 20 Greedy Algorithm Interview Questions**](https://www.geeksforgeeks.org/top-20-greedy-algorithms-interview-questions/)
+
+-   [**Quiz on Greedy Algorithm**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-greedy-algorithms-with-answers/)
+
+## 10. Dynamic Programming
+
+**Dynamic Programming** is a method used to solve complex problems by breaking them down into simpler **subproblems**. By solving each subproblem only **once** and **storing the results**, it avoids redundant computations, leading to more **efficient solutions** for a wide range of problems.
+
+-   [**Dynamic Programming Guide**](https://www.geeksforgeeks.org/dynamic-programming/)
+
+-   [**Practice Problems on Dynamic Programming**](https://www.geeksforgeeks.org/explore?page=1&category[]=Dynamic%20Programming)
+
+-   [**Top 50 Dynamic Programming Coding Problems for Interviews**](https://www.geeksforgeeks.org/top-50-dynamic-programming-coding-problems-for-interviews/)
+
+-   [**Quiz on Dynamic Programming**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-dynamic-programming-with-answers/)
+
+## 11. Graph Algorithms
+
+**Graph algorithms** are a set of techniques and methods used to solve problems related to graphs, which are a collection of nodes and edges. These algorithms perform various operations on graphs, such as **searching, traversing, finding the shortest path**, and determining **connectivity**. They are essential for solving a wide range of real-world problems, including **network routing**, **social network analysis**, and **resource allocation**.
+
+-   [**Guide on Graph Algorithms**](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/)
+
+-   [**Practice Problems on Graph Algorithms**](https://www.geeksforgeeks.org/explore?page=1&category=Graph&sortBy=submissions)
+
+-   [**Top 50 Graph Coding Problems for Interviews**](https://www.geeksforgeeks.org/top-50-graph-coding-problems-for-interviews/)
+
+## 12. Pattern Searching
+
+**Pattern Searching** is a fundamental technique in DSA used to find occurrences of a specific pattern within a larger text. The Pattern Searching Algorithms use techniques like **preprocessing** to minimize unnecessary comparisons, making the search faster.
+
+-   [**Pattern Searching Guide**](https://www.geeksforgeeks.org/pattern-searching/)
+
+-   [**Practice Problems on Pattern Searching**](https://www.geeksforgeeks.org/explore?page=1&category=Pattern%20Searching&sortBy=submissions)
+
+## 13. Branch and Bound Algorithm
+
+**Branch and Bound Algorithm** is a method used in combinatorial optimization problems to systematically search for the best solution. It works by dividing the problem into smaller subproblems, or branches, and then eliminating certain branches based on bounds on the optimal solution. This process continues until the best solution is found or all branches have been explored.
+
+-   [**Guide on Branch and Bound Algorithm**](https://www.geeksforgeeks.org/branch-and-bound-algorithm/)
+
+## 14. Geometric Algorithms
+
+**Geometric algorithms** are a set of algorithms that solve problems related to **shapes**, **points**, **lines** and polygons. Geometric algorithms are essential for solving a wide range of problems in computer science, such as intersection detection, convex hull computation, etc.
+
+-   [**Guide on Geometric Algorithms**](https://www.geeksforgeeks.org/geometric-algorithms/)
+
+-   [**Practice Problem on Geometric Algorithms**](https://www.geeksforgeeks.org/explore?page=1&category=Geometric&sortBy=submissions)
+
+## 15. Randomized Algorithms
+
+Randomized algorithms are algorithms that use **randomness** to solve problems. They make use of random input to achieve their goals, often leading to **simpler** and more **efficient solutions**. These algorithms may **not product same result** but are particularly useful in situations when a **probabilistic approach** is acceptable.
+
+-   [**Guide on Randomized Algorithms**](https://www.geeksforgeeks.org/randomized-algorithms/)
+
+**Related Articles:**
+
+-   [**What is Algorithm \| Introduction to Algorithms**](https://www.geeksforgeeks.org/introduction-to-algorithms/)
+
+-   [**Definition, Types, Complexity, Examples of Algorithms**](https://www.geeksforgeeks.org/what-is-an-algorithm-definition-types-complexity-examples/)
+
+-   [**Algorithms Design Techniques**](https://www.geeksforgeeks.org/algorithms-design-techniques/)
+
+-   [**Why is analysis of an Algorithm important?**](https://www.geeksforgeeks.org/what-is-algorithm-and-why-analysis-of-it-is-important/)
