@@ -1,5 +1,6 @@
 ---
-title: "coding"
+title: "Some Coding Sharing"
+author: "Xu Haiyang"
+date: "2025-02-01"
 format: html
 ---
-

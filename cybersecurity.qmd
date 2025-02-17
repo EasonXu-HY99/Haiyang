@@ -1,5 +1,264 @@
 ---
-title: "cybersecurity"
+title: "Cybersecurity Summary "
+date: "2025-02-07"
 format: html
 ---
 
+## What is cybersecurity?
+
+Cybersecurity refers to any technologies, practices and policies for preventing [cyberattacks](https://www.ibm.com/think/topics/cyber-attack) or mitigating their impact. Cybersecurity aims to protect computer systems, applications, devices, data, financial assets and people against [ransomware](https://www.ibm.com/think/topics/ransomware) and other [malware](https://www.ibm.com/think/topics/malware), [phishing](https://www.ibm.com/think/topics/phishing) scams, data theft and other cyberthreats.
+
+At the enterprise level, cybersecurity is a key component of an organization’s overall [risk management](https://www.ibm.com/topics/risk-management) strategy. According to Cybersecurity Ventures, global spending on cybersecurity products and services will exceed USD 1.75 trillion total during the years 2021 through 2025.
+
+Cybersecurity job growth is also robust. The US Bureau of Labor Statistics projects that “employment of information security analysts is projected to grow 32% from 2022 to 2032, faster than the average for all occupations.”
+
+## Why cybersecurity is important
+
+Cybersecurity is important because cyberattacks and cybercrime have the power to disrupt, damage or destroy businesses, communities and lives. Successful cyberattacks lead to identity theft, personal and corporate extortion, loss of sensitive information and business-critical data, temporary business outages, lost business and lost customers and, in some cases, business closures.
+
+Cyberattacks have an enormous and growing impact on businesses and the economy. By one estimate, cybercrime will cost the world economy USD 10.5 trillion per year by 2025.The cost of cyberattacks continues to rise as cybercriminals become more sophisticated.
+
+According to IBM's latest [*Cost of a Data Breach Report*](https://www.ibm.com/reports/data-breach):
+
+-   The average cost of a data breach jumped to USD 4.88 million from USD 4.45 million in 2023—a 10% spike and the highest increase since the pandemic.
+
+<!-- -->
+
+-   Business losses (revenue loss due to system downtime, lost customers and reputational damage) and post-breach response costs (costs to set up call centers and credit monitoring services for affected customers or to pay regulatory fines), rose nearly 11% over the previous year.
+
+-   The number of organizations paying more than USD 50,000 in regulatory fines as a result of a data breach rose 22.7% over the previous year; those paying more than USD 100,000 rose 19.5%.
+
+## Cybersecurity challenges
+
+Apart from the sheer volume of cyberattacks, one of the biggest challenges for cybersecurity professionals is the ever-evolving nature of the information technology (IT) landscape, and the way threats evolve with it. Many emerging technologies that offer tremendous new advantages for businesses and individuals also present new opportunities for threat actors and cybercriminals to launch increasingly sophisticated attacks. For example:
+
+-   **The pervasive adoption of cloud computing** can increase network management complexity and raise the risk of cloud misconfigurations, improperly secured APIs and other avenues hackers can exploit.
+
+<!-- -->
+
+-   **More remote work, hybrid work and [bring-your-own-device (BYOD)](https://www.ibm.com/topics/byod) policies** mean more connections, devices, applications and data for security teams to protect.
+
+<!-- -->
+
+-   **Proliferating [Internet of Things (IoT)](https://www.ibm.com/think/topics/internet-of-things) and connected devices,** many of which are unsecured or improperly secured by default, can be easily hijacked by bad actors.
+
+-   **The rise of [artificial intelligence (AI)](https://www.ibm.com/think/topics/artificial-intelligence), and of [generative AI](https://www.ibm.com/think/topics/generative-ai)** in particular, presents an entirely new threat landscape that hackers are already exploiting through prompt injection and other techniques. According to recent research from the IBM® Institute for Business Value, [only 24% of generative AI initiatives are secured](https://www.ibm.com/thought-leadership/institute-business-value/report/securing-generative-ai).
+
+As the worldwide attack surface expands, the cybersecurity workforce is struggling to keep pace. A World Economic Forum study found that the global cybersecurity worker gap—the gap between cybersecurity workers and jobs that need to be filled—might reach 85 million workers by 2030.
+
+Closing this skills gap can have an impact. According to the *Cost of a Data Breach 2024 Report*, organizations suffering from a high-level shortage of security skills saw an average cost per breach of USD 5.74 million, compared to USD 3.98 million for organizations with lower-level skills shortages.
+
+Resource-strained security teams will increasingly turn to security technologies featuring advanced analytics, artificial intelligence (AI) and automation to strengthen their cyber defenses and minimize the impact of successful attacks.
+
+## Types of cybersecurity
+
+Comprehensive cybersecurity strategies protect all of an organization’s IT infrastructure layers against cyberthreats and cybercrime. Some of the most important cybersecurity domains include:
+
+-   **AI security**
+
+-   **Critical infrastructure security**
+
+-   **Network security**
+
+-   **Endpoint security**
+
+-   **Application security**
+
+-   **Cloud security**
+
+-   **Information security**
+
+-   **Mobile security**
+
+### AI security
+
+[AI security](https://www.ibm.com/think/topics/ai-security) refers to measures and technology aimed at preventing or mitigating cyberthreats and cyberattacks that target AI applications or systems or that use AI in malicious ways.
+
+Generative AI offers threat actors new attack vectors to exploit. Hackers can use malicious prompts to manipulate AI apps, poison data sources to distort AI outputs and even trick AI tools into sharing sensitive information. They can also use (and have already used) generative AI to create malicious code and phishing emails.
+
+AI security uses specialized [risk management frameworks](https://www.ibm.com/think/insights/ai-risk-management)—and increasingly, AI-enabled cybersecurity tools—to protect the AI attack surface. According to the *Cost of a Data Breach 2024 Report*, organizations that deployed AI-enabled security tools and automation extensively for cyberthreat prevention saw a USD 2.2 million lower average cost per breach compared to organizations with no AI deployed.
+
+### Critical infrastructure security
+
+Critical infrastructure security protects the computer systems, applications, networks, data and digital assets that a society depends on for national security, economic health and public safety.
+
+In the United States, the National Institute of Standards and Technology (NIST) offers a cybersecurity framework to help IT providers and stakeholders secure critical infrastructure. The US Department of Homeland Security’s Cybersecurity and Infrastructure Security Agency (CISA) also provides guidance.
+
+### Network security
+
+[Network security](https://www.ibm.com/topics/network-security) focuses on preventing unauthorized access to networks and network resources. It also helps ensure that authorized users have secure and reliable access to the resources and assets they need to do their jobs.
+
+### Application security
+
+Application security helps prevent unauthorized access to and use of apps and related data. It also helps identify and mitigate flaws or vulnerabilities in application design. Modern application development methods such as [DevOps](https://www.ibm.com/topics/devops) and [DevSecOps](https://www.ibm.com/topics/devsecops) build security and security testing into the development process.
+
+### Cloud security
+
+[Cloud security](https://www.ibm.com/topics/cloud-security) secures an organization’s cloud-based services and assets, including applications, data, virtual servers and other infrastructure.
+
+Generally speaking, cloud security operates on the shared responsibility model. The cloud provider is responsible for securing the services that they deliver and the infrastructure that delivers them. The customer is responsible for protecting their data, code and other assets they store or run in the cloud.
+
+### Information security and data security
+
+[Information security (InfoSec)](https://www.ibm.com/topics/information-security) protects an organization's important information—digital files and data, paper documents, physical media—against unauthorized access, use or alteration.
+
+[Data security](https://www.ibm.com/think/topics/data-security), the protection of digital information, is a subset of information security and the focus of most cybersecurity-related InfoSec measures.
+
+### Mobile security
+
+[Mobile security](https://www.ibm.com/topics/mobile-security) encompasses cybersecurity tools and practices specific to smartphones and other mobile devices, including mobile application management (MAM) and enterprise mobility management (EMM).
+
+More recently, organizations are adopting [unified endpoint management (UEM)](https://www.ibm.com/topics/uem) solutions that allow them to protect, configure and manage all endpoint devices, including mobile devices, from a single console.
+
+## Common cybersecurity threats
+
+Some of the most common types of cyberthreats include
+
+-   **Malware**
+
+-   **Ransomware**
+
+-   **Phishing**
+
+-   **Credential theft and abuse**
+
+-   **Insider threats**
+
+-   **AI attacks**
+
+-   **Cryptojacking**
+
+-   **Distributed denial of service (DDoS)\
+    **
+
+### Malware
+
+Malware, short for "malicious software", is any software code or computer program that is intentionally written to harm a computer system or its users. Almost every modern [cyberattack](https://www.ibm.com/think/topics/cyber-attack) involves some type of malware.
+
+Hackers and cybercriminals create and use malware to gain unauthorized access to computer systems and sensitive data, hijack computer systems and operate them remotely, disrupt or damage computer systems, or hold data or systems hostage for large sums of money (see "Ransomware").
+
+### Ransomware
+
+Ransomware is a type of malware that encrypts a victim’s data or device and threatens to keep it encrypted—or worse—unless the victim pays a ransom to the attacker.
+
+The earliest ransomware attacks demanded a ransom in exchange for the encryption key required to unlock the victim’s data. Starting around 2019, almost all ransomware attacks were *double extortion* attacks that also threatened to publicly share victims’ data; some *triple extortion* attacks added the threat of a distributed denial-of-service (DDoS) attack.
+
+More recently, ransomware attacks are on the decline. According to the [*IBM X-Force Threat Intelligence Index 2024*](https://www.ibm.com/reports/threat-intelligence)*,* ransomware attacks accounted for 20% of all attacks in 2023, down 11.5% from 2022. The decline is likely the result of improved ransomware prevention, more effective law enforcement intervention and data backup and protection practices that enable businesses to recover without paying the ransom.
+
+In the meantime, ransomware attackers have repurposed their resources to start other types of cyberthreats, including *infostealer* malware that allows attackers to steal data and hold it hostage without locking down the victim’s systems and *data destruction* attacks that destroy or threaten to destroy data for specific purposes.
+
+### Phishing
+
+Phishing attacks are email, text or voice messages that trick users into downloading malware, sharing sensitive information or sending funds to the wrong people.
+
+Most users are familiar with bulk phishing scams—mass-mailed fraudulent messages that appear to be from a large and trusted brand, asking recipients to reset their passwords or reenter credit card information. More sophisticated phishing scams, such as [spear phishing](https://www.ibm.com/think/topics/spear-phishing) and [business email compromise (BEC)](https://www.ibm.com/topics/business-email-compromise), target specific individuals or groups to steal especially valuable data or large sums of money.
+
+Phishing is just one type of [social engineering](https://www.ibm.com/topics/social-engineering), a class of “human hacking” tactics and interactive attacks that use psychological manipulation to pressure people into taking unwise actions.
+
+### Credential theft and account abuse
+
+The *X-Force Threat Intelligence Index* found that identity-based attacks, which hijack legitimate user accounts and abuse their privileges, account for 30% of attacks. This makes identity-based attacks the most common entry point into corporate networks.
+
+Hackers have many techniques for stealing credentials and taking over accounts. For example, Kerberoasting attacks manipulate the Kerberos authentication protocol commonly used in Microsoft Active Directory to seize privileged service accounts. In 2023, the [IBM X-Force team experienced](https://www.ibm.com/reports/threat-intelligence) a 100% increase in Kerberoasting incidents.
+
+Similarly, the X-Force team saw a 266% increase in the use of infostealer malware that secretly records user credentials and other sensitive data.
+
+### Insider threats
+
+Insider threats are threats that originate with authorized users—employees, contractors, business partners—who intentionally or accidentally misuse their legitimate access or have their accounts hijacked by cybercriminals.
+
+Insider threats can be harder to detect than external threats because they have the earmarks of authorized activity and are invisible to antivirus software, firewalls and other security solutions that block external attacks.
+
+### AI attacks
+
+Much like cybersecurity professionals are using AI to strengthen their defenses, cybercriminals are using AI to conduct advanced attacks.
+
+In generative AI fraud, scammers use [generative AI](https://www.ibm.com/think/topics/generative-ai) to produce fake emails, applications and other business documents to fool people into sharing sensitive data or sending money.
+
+The *X-Force Threat Intelligence Index* reports that scammers can use open source generative AI tools to craft convincing phishing emails in as little as five minutes. For comparison, it takes scammers 16 hours to come up with the same message manually.
+
+Hackers are also using organizations’ AI tools as attack vectors. For example, in prompt injection attacks, threat actors use malicious inputs to manipulate generative AI systems into leaking sensitive data, spreading misinformation or worse.
+
+### Cryptojacking
+
+Cryptojacking happens when hackers gain access to an endpoint device and secretly use its computing resources to mine cryptocurrencies such as bitcoin, ether or monero.
+
+Security analysts identified cryptojacking as a cyberthreat around 2011, shortly after the introduction of cryptocurrency. According to the IBM *X-Force Threat Intelligence Index*, cryptojacking is now among the top three areas of operations for cybercriminals.
+
+### Distributed denial of service (DDoS)
+
+A DDoS attack attempts to crash a server, website or network by overloading it with traffic, usually from a botnet—a network of distributed systems that a cybercriminal hijacks by using malware and remote-controlled operations.
+
+The global volume of DDoS attacks spiked during the COVID-19 pandemic. Increasingly, attackers are combining DDoS attacks with ransomware attacks, or simply threatening to launch DDoS attacks unless the target pays a ransom.
+
+## Cybersecurity myths
+
+Despite an ever-increasing volume of cybersecurity incidents worldwide and the insights gleaned from resolving these incidents, some misconceptions persist. Some of the most dangerous include:
+
+### Strong passwords are adequate protection
+
+Strong passwords do make a difference; for example, a 12-character password takes 62 trillion times longer to crack than a 6-character password. But passwords are relatively easy to acquire in other ways, such as through social engineering, keylogging malware, buying them on the dark web or paying disgruntled insiders to steal them.
+
+### Most cybersecurity risks are well-known
+
+In fact, the cyberthreat landscape is constantly changing. Thousands of new vulnerabilities are reported in old and new applications and devices every year. Opportunities for human error—specifically by negligent employees or contractors who unintentionally cause a data breach—keep increasing.
+
+### All cyberattack vectors are contained
+
+Cybercriminals find new attack vectors all the time. The rise of AI technologies, operational technology (OT), Internet of Things (IoT) devices and cloud environments all give hackers new opportunities to cause trouble.
+
+### My industry is safe
+
+Every industry has its share of cybersecurity risks. For example, ransomware attacks are targeting more sectors than ever, including local governments, nonprofits and healthcare providers. Attacks on supply chains, ".gov" websites and critical infrastructure have also increased.
+
+### Cybercriminals don’t attack small businesses
+
+Yes, they do. The *Hiscox Cyber Readiness Report* found that almost half (41%) of small businesses in the US experienced a cyberattack in the last year.
+
+## Key cybersecurity best practices and technologies
+
+While each organization’s cybersecurity strategy differs, many use these tools and tactics to reduce vulnerabilities, prevent attacks and intercept attacks in progress:
+
+-   **Security awareness training**
+
+-   **Data security tools**
+
+-   **Identity and access management**
+
+-   **Threat detection and response**
+
+-   **Disaster recovery**
+
+### Security awareness training
+
+Security awareness training helps users understand how seemingly harmless actions—from using the same simple password for multiple log-ins to oversharing on social media—increase their own or their organization’s risk of attack.
+
+Combined with thought-out [data security](https://www.ibm.com/think/topics/data-security) policies, security awareness training can help employees protect sensitive personal and organizational data. It can also help them recognize and avoid phishing and malware attacks.
+
+### Data security tools
+
+Data security tools, such as [encryption](https://www.ibm.com/topics/encryption) and [data loss prevention](https://www.ibm.com/think/topics/data-loss-prevention) (DLP) solutions, can help stop security threats in progress or mitigate their effects. For example, DLP tools can detect and block attempted data theft, while encryption can make it so that any data that hackers steal is useless to them.
+
+### Identity and access management
+
+[Identity and access management (IAM)](https://www.ibm.com/think/topics/identity-access-management) refers to the tools and strategies that control how users access resources and what they can do with those resources.
+
+IAM technologies can help protect against account theft. For example, [multifactor authentication](https://www.ibm.com/think/topics/multi-factor-authentication) requires users to supply multiple credentials to log in, meaning threat actors need more than just a password to break into an account.
+
+Likewise, adaptive authentication systems detect when users are engaging in risky behavior and raise additional authentication challenges before allowing them to proceed. Adaptive authentication can help limit the [lateral movement](https://www.ibm.com/think/topics/lateral-movement) of hackers who make it into the system.
+
+A [zero trust](https://www.ibm.com/topics/zero-trust) architecture is one way to enforce strict access controls by verifying all connection requests between users and devices, applications and data.
+
+### Attack surface management
+
+[Attack surface management (ASM)](https://www.ibm.com/topics/attack-surface-management) is the continuous discovery, analysis, remediation and monitoring of the cybersecurity vulnerabilities and potential attack vectors that make up an organization’s [attack surface](https://www.ibm.com/topics/attack-surface).
+
+Unlike other cyberdefense disciplines, ASM is conducted entirely from a hacker’s perspective rather than the perspective of the defender. It identifies targets and assesses risks based on the opportunities they present to a malicious attacker.
+
+### Threat detection and response
+
+Analytics- and AI-driven technologies can help identify and respond to attacks in progress. These technologies can include [security information and event management (SIEM)](https://www.ibm.com/think/topics/siem), [security orchestration, automation and response (SOAR)](https://www.ibm.com/think/topics/security-orchestration-automation-response) and [endpoint detection and response (EDR)](https://www.ibm.com/think/topics/edr). Typically, organizations use these technologies as part of a formal [incident response](https://www.ibm.com/think/topics/incident-response) plan.
+
+### Disaster recovery
+
+[Disaster recovery](https://www.ibm.com/topics/disaster-recovery) capabilities can play a key role in maintaining business continuity and remediating threats in the event of a cyberattack. For example, the ability to fail over to a backup that is hosted in a remote location can help a business resume operations after a ransomware attack (sometimes without paying a ransom)
