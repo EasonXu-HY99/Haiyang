@@ -13,7 +13,7 @@ website:
       - href: index.qmd
         text: Home
       - href: projects.qmd
-        text: Projects
+        text: Project Intern
       - href: cybersecurity.qmd
         text: Cybersecurity
       - href: coding.qmd

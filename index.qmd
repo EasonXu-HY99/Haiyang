@@ -30,11 +30,12 @@ This website is structured into several sections to help visitors and myself fin
 
 \- [**AI & Machine Learning Innovations**](ai.qmd): Machine learning, deep learning, and AI-related projects.
 
-## 🚀 Featured Projects
+## 🚀 Projects Internships & Work Experiences
 
--   **AWS Security Automation** [(View Project)](projects.qmd) - Implemented AWS Lambda, API Gateway, and Security Hub for real-time security analysis.
--   **Insider Threat Detection** [(View Project)](projects.qmd) - Built ML-based risk assessment using TensorFlow and Scikit Learn.
--   **IoT Smart System** [(View Project)](projects.qmd) - Designed IoT applications with AWS cloud connectivity.
+-   **AWS Security & DevSecOps Automation** [(View Project)](projects.qmd) - Developed an **automated security monitoring system** using **AWS Lambda, API Gateway, and Security Hub,** reducing vulnerability resolution time and improving incident response efficiency.
+-   **ML-Powered Insider Threat Detection** [(View Project)](projects.qmd) – Built a **machine learning-driven anomaly detection system** with **TensorFlow and Scikit-learn**, reducing **false positives by 25%** and enhancing security risk assessments at UBS AG.
+-   **IoT-Enabled Industrial Automation** [(View Project)](projects.qmd) – Designed and deployed **IoT cloud solutions** for **real-time factory monitoring**, ensuring **98% uptime** by integrating AWS with industrial sensors.
+-   **Smart Farming IoT System** [(View Project)](projects.qmd) – Developed an **IoT-driven smart farming dashboard** with **real-time data visualization and cloud integration**, improving operational efficiency for **50+ farm operators**.
 
 ## 🏆 Hackathons & Achievements
 
