@@ -35,154 +35,1994 @@ Algorithms are essential for solving complex computational problems efficiently 
 
 Analysis of Algorithms is the process of evaluating the efficiency of algorithms, focusing mainly on the **time** and **space** complexity. This helps in evaluating how the algorithm's running time or space requirements grow as the size of input increases.
 
--   [**Analysis of Algorithms Guide**](https://www.geeksforgeeks.org/design-and-analysis-of-algorithms/)
+### **Basics on Analysis of Algorithms:**
 
--   [**Quiz on Analysis of Algorithms**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-complexity-analysis-of-algorithms-with-answers/)
+-   [**Why is Analysis Important?**](https://www.geeksforgeeks.org/what-is-algorithm-and-why-analysis-of-it-is-important/)
+
+-   [**Order of Growth**](https://www.geeksforgeeks.org/order-o-f-growth/?preview_id=1347138&preview=true)
+
+-   [**Asymptotic Analysis**](https://www.geeksforgeeks.org/asymptotic-notation-and-analysis-based-on-input-size-of-algorithms/)
+
+-   [**Worst, Average and Best Cases of Algorithms**](https://www.geeksforgeeks.org/worst-average-and-best-case-analysis-of-algorithms/)
+
+### **Asymptotic Notations:**
+
+-   [**Big-O Notation**](https://www.geeksforgeeks.org/analysis-algorithms-big-o-analysis/)
+
+-   [**Theta - Θ Notation**](https://www.geeksforgeeks.org/analysis-of-algorithms-big-theta-notation/)
+
+-   [**Big – Ω (Big- Omega) Notation**](https://www.geeksforgeeks.org/analysis-of-algorithms-big-omega-notation/)
+
+-   [**Time Complexity**](https://www.geeksforgeeks.org/understanding-time-complexity-simple-examples/)
+
+-   [**Space Complexity**](https://www.geeksforgeeks.org/g-fact-86/)
+
+-   [**Difference between Big Oh, Big Omega and Big Theta**](https://www.geeksforgeeks.org/difference-between-big-oh-big-omega-and-big-theta/)
+
+-   [**Examples of Big-O analysis**](https://www.geeksforgeeks.org/examples-of-big-o-analysis/)
+
+-   [**Difference between big O notations and tilde**](https://www.geeksforgeeks.org/difference-between-big-o-notations-and-tilde/)
+
+-   [**Practice Questions on Time Complexity Analysis**](https://www.geeksforgeeks.org/practice-questions-time-complexity-analysis/)
+
+### Analysis Examples
+
+-   [**Analyzing Loops**](https://www.geeksforgeeks.org/how-to-analyse-loops-for-complexity-analysis-of-algorithms/)
+
+-   [**Analyzing Recursive Functions**](https://www.geeksforgeeks.org/how-to-analyse-complexity-of-recurrence-relation/)
+
+-   [**Amortized Analysis**](https://www.geeksforgeeks.org/introduction-to-amortized-analysis/)
 
 ## 2. Mathematical Algorithms
 
 Mathematical algorithms are used for analyzing and optimizing data structures and algorithms. Knowing basic concepts like **divisibility**, **LCM**, **GCD,** etc. can really help you understand how data structures work and improve your ability to design efficient algorithms.
 
--   [**Mathematical Algorithms Guide**](https://www.geeksforgeeks.org/mathematica-algorithms-difficulty-wise/?preview_id=1348439&preview=true)
+### **Mathematical Concepts:**
 
--   [**Practice Problems on Mathematical Algorithms**](https://practice.geeksforgeeks.org/topics/mathematical/?ref=taocp)
+-   [**Numbers**](https://www.geeksforgeeks.org/numbers-aptitude-questions-and-answers/)
+
+-   [**Prime Numbers**](https://www.geeksforgeeks.org/prime-numbers/)
+
+-   [**Arithmetic Progression**](https://www.geeksforgeeks.org/what-is-arithmetic-progression/)
+
+-   [**Geometric Progression**](https://www.geeksforgeeks.org/what-is-geometric-progression/)
+
+-   [**GCD**](https://www.geeksforgeeks.org/greatest-common-divisor-gcd/) and [**LCM**](https://www.geeksforgeeks.org/lcm-least-common-multiple/)
+
+-   [**Factorial**](https://www.geeksforgeeks.org/factorial/)
+
+-   [**Permutation**](https://www.geeksforgeeks.org/permutation/) and [**Combination**](https://www.geeksforgeeks.org/combinations/)
+
+-   [**Catalan Number**](https://www.geeksforgeeks.org/catalan-numbers/)
+
+-   [**Modular Arithmetic**](https://www.geeksforgeeks.org/modular-arithmetic/)
+
+### **Basic Problems**
+
+-   [**Sum of Naturals**](https://www.geeksforgeeks.org/program-find-sum-first-n-natural-numbers/)
+
+-   [**Sum of Squares of Naturals**](https://www.geeksforgeeks.org/sum-of-squares-of-first-n-natural-numbers/)
+
+-   [**Nth Term of AP**](https://www.geeksforgeeks.org/program-n-th-term-arithmetic-progression-series/)
+
+-   [**Nth Term of GP**](https://www.geeksforgeeks.org/find-nth-term-geometric-progression-series/)
+
+-   [**Nth Triangular Number**](https://www.geeksforgeeks.org/triangular-numbers/)
+
+-   [**Sum of Sums of Natural Numbers**](https://www.geeksforgeeks.org/sum-of-first-n-natural-numbers/)
+
+-   [**Count Digits**](https://www.geeksforgeeks.org/program-count-digits-integer-3-different-methods/)
+
+-   [**Sum of Digits**](https://www.geeksforgeeks.org/program-for-sum-of-the-digits-of-a-given-number/)
+
+-   [**Reverse Digits**](https://www.geeksforgeeks.org/write-a-program-to-reverse-digits-of-a-number/)
+
+-   [**K-th Digit in a\^b**](https://www.geeksforgeeks.org/k-th-digit-raised-power-b/)
+
+-   [**Palindrome Number**](https://www.geeksforgeeks.org/check-if-a-number-is-palindrome/)
+
+-   [**GCD of Two Numbers**](https://www.geeksforgeeks.org/program-to-find-lcm-of-two-numbers/)
+
+-   [**LCM of Two Numbers**](https://www.geeksforgeeks.org/program-to-find-lcm-of-two-numbers/)
+
+-   [**Add two fractions**](https://www.geeksforgeeks.org/program-to-add-two-fractions/)
+
+-   [**Check for Co-Prime**](https://www.geeksforgeeks.org/check-two-numbers-co-prime-not/)
+
+-   [**Factorial of a Number**](https://www.geeksforgeeks.org/program-for-factorial-of-a-number/)
+
+-   [**GCD of more than 2**](https://www.geeksforgeeks.org/gcd-two-array-numbers/)
+
+-   [**LCM of more than 2**](https://www.geeksforgeeks.org/lcm-of-given-array-elements/)
+
+-   [**Padovan Sequence**](https://www.geeksforgeeks.org/padovan-sequence/)
+
+### **Easy Problems**
+
+-   [**Pair Cube Count**](https://www.geeksforgeeks.org/count-pairs-a-b-whose-sum-of-cubes-is-n-a3-b3-n/)
+
+-   [**Sum of 2, 22, 222, ………**](https://www.geeksforgeeks.org/sum-sequence-2-22-222/)
+
+-   [**Sum of 1\^2 + 3\^2 + 5\^2 + . . . + (2\*n – 1)\^2**](https://www.geeksforgeeks.org/sum-series-12-32-52-2n-12/)
+
+-   [**Sum of 0.6, 0.06, 0.006, 0.0006, …to n terms**](https://www.geeksforgeeks.org/sum-series-0-6-0-06-0-006-0-0006-n-terms/)
+
+-   [**n-th term of 2, 12, 36, 80, 150….**](https://www.geeksforgeeks.org/n-th-term-series-2-12-36-80-150/)
+
+-   [**Digit Root**](https://www.geeksforgeeks.org/digital-rootrepeated-digital-sum-given-integer/)
+
+-   [**Fibonacci Numbers**](https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/)
+
+-   [**Lucas Number**](https://www.geeksforgeeks.org/lucas-numbers/)
+
+-   [**Check for Power**](https://www.geeksforgeeks.org/check-if-a-number-is-power-of-another-number/)
+
+-   [**Three Divisors**](https://www.geeksforgeeks.org/numbers-exactly-3-divisors/)
+
+-   [**Square Root**](https://www.geeksforgeeks.org/square-root-of-an-integer/)
+
+-   [**Binomial Coefficient**](https://www.geeksforgeeks.org/binomial-coefficient-dp-9/)
+
+-   [**Pascal Triangle**](https://www.geeksforgeeks.org/pascal-triangle/)
+
+-   [**nth Row of the Pascal Triangle**](https://www.geeksforgeeks.org/find-the-nth-row-in-pascals-triangle/)
+
+-   [**Armstrong Numbers**](https://www.geeksforgeeks.org/program-for-armstrong-numbers/)
+
+-   [**Determinant of a Matrix**](https://www.geeksforgeeks.org/determinant-of-a-matrix/)
+
+-   [**Modular Exponentiation**](https://www.geeksforgeeks.org/modular-exponentiation-power-in-modular-arithmetic/)
+
+-   [**Check for Perfect Squares**](https://www.geeksforgeeks.org/check-if-given-number-is-perfect-square-in-cpp/)
+
+-   [**Divisibility by 3**](https://www.geeksforgeeks.org/check-large-number-divisible-3-not/)
+
+-   [**Divisibility by 4**](https://www.geeksforgeeks.org/check-large-number-divisible-4-not/)
+
+-   [**Divisibility by 7**](https://www.geeksforgeeks.org/divisibility-by-7/)
+
+-   [**Divisibility by 11**](https://origin.geeksforgeeks.org/check-large-number-divisible-11-not/)
+
+-   [**Divisibility by 13**](https://www.geeksforgeeks.org/check-large-number-divisible-13-not/)
+
+-   [**Divisibility by 29**](https://www.geeksforgeeks.org/number-is-divisible-by-29-or-not/)
+
+### **Medium Problems**
+
+-   [**Linear Diophantine Equations**](https://www.geeksforgeeks.org/eulers-totient-function/)
+
+-   [**Euler's Totient Function**](https://www.geeksforgeeks.org/eulers-totient-function/)
+
+-   [**Sieve of Eratosthenes**](https://www.geeksforgeeks.org/sieve-of-eratosthenes/)
+
+-   [**All Divisors**](https://www.geeksforgeeks.org/find-all-factors-of-a-natural-number/)
+
+-   [**Prime Factorization**](https://www.geeksforgeeks.org/prime-factor/)
+
+-   [**Largest Prime Factor**](https://www.geeksforgeeks.org/find-largest-prime-factor-number/)
+
+-   [**Factorial of a Large Number**](https://www.geeksforgeeks.org/factorial-large-number/)
+
+-   [**Largest Power Divisible in Factorial**](https://www.geeksforgeeks.org/largest-power-k-n-factorial-k-may-not-prime/)
+
+-   [**Last Non-zero Digit of Factorial**](https://www.geeksforgeeks.org/last-non-zero-digit-factorial/)
+
+-   [**Power Set**](https://www.geeksforgeeks.org/power-set/)
+
+-   [**Add Two Polynomials**](https://www.geeksforgeeks.org/program-add-two-polynomials/)
+
+-   [**All Permutations of a String**](https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/)
+
+-   [**Next Permutation**](https://www.geeksforgeeks.org/next-permutation/)
+
+-   [**Check for Carmichael Numbers**](https://www.geeksforgeeks.org/carmichael-numbers/)
+
+-   [**Collatz sequence**](https://www.geeksforgeeks.org/program-to-print-collatz-sequence/)
+
+-   [**Grid Unique Paths**](https://www.geeksforgeeks.org/count-possible-paths-top-left-bottom-right-nxm-matrix/)
+
+-   [**Nth Even Fibonacci Number**](https://www.geeksforgeeks.org/nth-even-fibonacci-number/)
+
+-   [**Last 2 Digits of Nth Fibonacci**](https://www.geeksforgeeks.org/program-find-last-two-digits-nth-fibonacci-number/)
+
+### **Hard Problems**
+
+-   [**Josephus Problem**](https://www.geeksforgeeks.org/josephus-problem/)
+
+-   [**Water Jug Tutorial**](https://www.geeksforgeeks.org/water-jug-problem-complete-tutorial/)
+
+-   [**Segmented Sieve**](https://www.geeksforgeeks.org/segmented-sieve/)
+
+-   [**k-th prime factor**](https://www.geeksforgeeks.org/k-th-prime-factor-given-number/)
+
+-   [**N-th Root**](https://www.geeksforgeeks.org/n-th-root-number/)
+
+-   [**Sum of Digits in Factorial**](https://www.geeksforgeeks.org/find-sum-digits-factorial-number/)
+
+-   [**Egg Dropping**](https://www.geeksforgeeks.org/egg-dropping-puzzle-dp-11/)
+
+-   [**Next String**](https://www.geeksforgeeks.org/lexicographically-next-string/)
 
 ## 3. Bitwise Algorithms
 
 **Bitwise algorithms** are algorithms that operate on individual bits of numbers. These algorithms manipulate the binary representation of numbers like **shifting bits**, **setting** or **clearing specific bits** of a number and perform **bitwise operations** (AND, OR, XOR). Bitwise algorithms are commonly used in **low-level programming, cryptography, and optimization tasks** where efficient manipulation of individual bits is required.
 
--   [**Bitwise Algorithms Guide**](https://www.geeksforgeeks.org/bitwise-algorithms/)
+### **Basics**
 
--   [**Practice Problems on Bit Magic**](https://www.geeksforgeeks.org/explore?page=1&category=Bit%20Magic&sortBy=submissions)
+-   [**Introduction to Bitwise Algorithms**](https://www.geeksforgeeks.org/introduction-to-bitwise-algorithms-data-structures-and-algorithms-tutorial/)
 
--   [**Quiz on Bitwise Algorithms**](https://www.geeksforgeeks.org/algorithms-gq/top-mcqs-on-bitwise-algorithms-and-bit-manipulations-with-answers/)
+-   [**Bitwise Operators in C/C++**](https://www.geeksforgeeks.org/bitwise-operators-in-c-cpp/)
+
+-   [**Bitwise Operators in Java**](https://www.geeksforgeeks.org/bitwise-operators-in-java/)
+
+-   [**Python Bitwise Operators**](https://www.geeksforgeeks.org/python-bitwise-operators/)
+
+-   [**JavaScript Bitwise Operators**](https://www.geeksforgeeks.org/javascript-bitwise-operators/)
+
+-   [**All about Bit Manipulation**](https://www.geeksforgeeks.org/all-about-bit-manipulation/)
+
+-   [**Little and Big Endian Mystery**](https://www.geeksforgeeks.org/little-and-big-endian-mystery/)
+
+### Bit Manipulation Tips and Tricks
+
+-   [**Bits manipulation (Important tactics)**](https://www.geeksforgeeks.org/bits-manipulation-important-tactics/)
+
+-   [**Bitwise Hacks for Competitive Programming**](https://www.geeksforgeeks.org/bitwise-hacks-for-competitive-programming/)
+
+### **Easy Problems on Bit Algorithms:**
+
+-   [**Binary Representation**](https://www.geeksforgeeks.org/binary-representation-of-a-given-number/)
+
+-   [**Turn off the rightmost set bit**](https://www.geeksforgeeks.org/turn-off-the-rightmost-set-bit/)
+
+-   [**Check if K-th Bit Set**](https://www.geeksforgeeks.org/check-whether-k-th-bit-set-not/)
+
+-   [**Set the K-th Bit**](https://www.geeksforgeeks.org/set-k-th-bit-given-number/)
+
+-   [**Modulus division by 2's Power**](https://www.geeksforgeeks.org/compute-modulus-division-by-a-power-of-2-number/)
+
+-   [**Odd Occurring Number**](https://www.geeksforgeeks.org/find-the-number-occurring-odd-number-of-times/)
+
+-   [**Power of two**](https://www.geeksforgeeks.org/program-to-find-whether-a-no-is-power-of-two/)
+
+-   [**The only set bit**](https://www.geeksforgeeks.org/find-position-of-the-only-set-bit/)
+
+-   [**Add Bit Strings**](https://www.geeksforgeeks.org/add-two-bit-strings/)
+
+-   [**Check for Integer Overflow**](https://www.geeksforgeeks.org/check-for-integer-overflow/)
+
+-   [**XOR without using XOR**](https://www.geeksforgeeks.org/find-xor-of-two-number-without-using-xor-operator/)
+
+-   [**Check for Equal**](https://www.geeksforgeeks.org/check-if-two-numbers-are-equal-without-using-arithmetic-and-comparison-operators/)
+
+-   [**Check for opposite signs**](https://www.geeksforgeeks.org/detect-if-two-integers-have-opposite-signs/)
+
+-   [**Swap Two Numbers**](https://www.geeksforgeeks.org/swap-two-numbers-without-using-temporary-variable/)
+
+-   [**Russian Peasant**](https://www.geeksforgeeks.org/russian-peasant-multiply-two-numbers-using-bitwise-operators/)
+
+### **Medium Problems on Bit Algorithms:**
+
+-   [**Most Significant Set Bit**](https://www.geeksforgeeks.org/find-significant-set-bit-number/)
+
+-   [**Rightmost Set Bit**](https://www.geeksforgeeks.org/position-of-rightmost-set-bit/)
+
+-   [**Count Set Bits**](https://www.geeksforgeeks.org/count-set-bits-in-an-integer/)
+
+-   [**Swap Bits**](https://www.geeksforgeeks.org/swap-bits-in-a-given-number/)
+
+-   [**Rotate Bits**](https://www.geeksforgeeks.org/rotate-bits-of-an-integer/)
+
+-   [**Smallest of Three**](https://www.geeksforgeeks.org/smallest-of-three-integers-without-comparison-operators/)
+
+-   [**Minimum without branching**](https://www.geeksforgeeks.org/compute-the-minimum-or-maximum-max-of-two-integers-without-branching/)
+
+-   [**Smallest power of 2 greater than or equal to n**](https://www.geeksforgeeks.org/smallest-power-of-2-greater-than-or-equal-to-n/)
+
+-   [**Program to find parity**](https://www.geeksforgeeks.org/program-to-find-parity/)
+
+-   [**Check if binary is palindrome**](https://www.geeksforgeeks.org/check-binary-representation-number-palindrome/)
+
+-   [**Generate n-bit Gray Codes**](https://www.geeksforgeeks.org/given-a-number-n-generate-bit-patterns-from-0-to-2n-1-so-that-successive-patterns-differ-by-one-bit/)
+
+-   [**Check for Sparse**](https://www.geeksforgeeks.org/check-if-a-given-number-is-sparse-or-not/)
+
+-   [**Euclid when % and / are costly**](https://www.geeksforgeeks.org/euclids-algorithm-when-and-operations-are-costly/)
+
+-   [**Square without using \*, / and pow()**](https://www.geeksforgeeks.org/calculate-square-of-a-number-without-using-and-pow/)
+
+-   [**Cyclic Redundancy Check and Modulo-2 Division**](https://www.geeksforgeeks.org/modulo-2-binary-division/)
+
+-   [**Set Bits in a Range**](https://www.geeksforgeeks.org/copy-set-bits-in-a-range/)
+
+-   [**Check for Bleak**](https://www.geeksforgeeks.org/check-if-a-number-is-bleak/)
+
+-   [**Gray to Binary and Vice Versa**](https://www.geeksforgeeks.org/gray-to-binary-and-binary-to-gray-conversion/)
+
+### **Hard Problems on Bit Algorithms:**
+
+-   [**Next higher with same set bits**](https://www.geeksforgeeks.org/next-higher-number-with-same-number-of-set-bits/)
+
+-   [**Karatsuba Algorithm for fast Multiplication**](https://www.geeksforgeeks.org/divide-and-conquer-set-2-karatsuba-algorithm-for-fast-multiplication/)
+
+-   [**Max Subarray XOR**](https://www.geeksforgeeks.org/find-the-maximum-subarray-xor-in-a-given-array/)
+
+-   [**Longest Sequence of 1’s in Binary with One Flip**](https://www.geeksforgeeks.org/find-longest-sequence-1s-binary-representation-one-flip/)
+
+-   [**Closest Smaller and greater with same set bits**](https://www.geeksforgeeks.org/closest-next-smaller-greater-numbers-number-set-bits/)
+
+-   [**Bitmasking and Dynamic Programming**](https://www.geeksforgeeks.org/bitmasking-dynamic-programming-set-2-tsp/)
+
+-   [**Compute the Parity**](https://www.geeksforgeeks.org/compute-parity-number-using-xor-table-look/)
+
+-   [**XOR Encryption by Shifting Plaintext**](https://www.geeksforgeeks.org/xor-encryption-shifting-plaintext/)
+
+-   [**Count pairs with at least one digit common**](https://www.geeksforgeeks.org/count-pairs-array-least-one-digit-common/)
+
+-   [**Floating to Binary**](https://www.geeksforgeeks.org/python-program-to-convert-floating-to-binary/)
+
+-   [**Booth’s Multiplication Algorithm**](https://www.geeksforgeeks.org/booths-multiplication-algorithm/)
+
+-   [**Pairs with Pandigital Concatenation**](https://www.geeksforgeeks.org/number-pairs-pandigital-concatenation/)
+
+-   [**n-th number whose binary is a palindrome**](https://www.geeksforgeeks.org/find-n-th-number-whose-binary-representation-palindrome/)
+
+-   [**Two non-repeating in an array of repeating**](https://www.geeksforgeeks.org/find-two-non-repeating-elements-in-an-array-of-repeating-elements/)
+
+### What are Bitwise Algorithms?
+
+Bitwise algorithms are algorithms that operate on individual bits of data rather than on larger data types like integers or floating-point numbers. These algorithms manipulate bits directly, typically using bitwise operators such as AND, OR, XOR, shift left, shift right, and complement.
+
+### Common Bitwise Algorithms and Operations:
+
+Here are some common bitwise algorithms and operations:
+
+-   **Bitwise AND (&):** Takes two numbers as input and performs a bitwise AND operation on their corresponding bits. It returns 1 only if both bits are 1; otherwise, it returns 0.
+
+-   **Bitwise OR (\|):** Performs a bitwise OR operation on the corresponding bits of two numbers. It returns 1 if at least one of the bits is 1.
+
+-   **Bitwise XOR (\^):** Performs a bitwise exclusive OR operation on the corresponding bits of two numbers. It returns 1 if the bits are different and 0 if they are the same.
+
+-   **Bitwise NOT (\~):** Performs a bitwise NOT operation, which flips each bit of the input (1 becomes 0 and 0 becomes 1).
+
+-   **Left Shift (\<\<) and Right Shift (\>\>):** These operators shift the bits of a number to the left or right by a specified number of positions. Left shifting is equivalent to multiplying the number by 2, while right shifting is equivalent to dividing by 2.
+
+### Applications of Bitwise Algorithms:
+
+-   **Bit manipulation (setting, clearing, toggling bits):** Bitwise operators are often used to manipulate individual bits of numbers. This includes tasks such as setting bits (using OR), clearing bits (using AND with the complement), toggling bits (using XOR with 1), and checking the value of a specific bit.
+
+-   **Efficient storage of data:** Bitwise algorithms play a crucial role in data compression techniques like Huffman coding. They can efficiently represent and process compressed data by manipulating bits directly.
+
+-   **Cryptography:** Many cryptographic algorithms, such as AES (Advanced Encryption Standard), DES (Data Encryption Standard), and SHA (Secure Hash Algorithm), utilize bitwise operations for encryption, decryption, and hashing. Bitwise XOR, in particular, is commonly used in encryption algorithms for its simplicity and effectiveness.
+
+-   **Networking and Protocol Handling:** Bitwise algorithms are used in networking protocols for tasks like IP address manipulation, subnet masking, and packet parsing. For example, bitwise AND is used in subnet masking to determine the network address from an IP address and subnet mask.
+
+-   **Low-Level System Programming:** Bitwise operations are essential in low-level system programming for tasks such as device control, memory management, and bit-level I/O operations. They are used to manipulate hardware registers, set/clear flags, and optimize code for performance.
+
+-   **Error Detection and Correction:** Bitwise algorithms are employed in error detection and correction techniques, such as CRC (Cyclic Redundancy Check) and Hamming codes. These algorithms use bitwise XOR and other operations to detect and correct errors in transmitted data.
 
 ## 4. Searching Algorithms
 
 Searching Algorithms are used to find a specific element or item in a collection of data. These algorithms are widely used to retrieve data efficiently from large datasets.
 
--   [**Guide**](https://www.geeksforgeeks.org/searching-algorithms/) on Searching Algorithms
+### Basics :
 
--   [**Practice Problems on Searching**](https://www.geeksforgeeks.org/explore?page=1&category=Searching&sortBy=submissions)
+-   [**Linear Search**](https://www.geeksforgeeks.org/linear-search/)
 
--   [**Top Searching Interview Questions and Problems**](https://www.geeksforgeeks.org/top-50-searching-coding-problems-for-interviews/)
+-   [**Binary Search**](https://www.geeksforgeeks.org/binary-search/)
 
--   [**Quiz on Searching Algorithms**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-searching-algorithm-with-answers/)
+-   [**Two Pointers Technique**](https://www.geeksforgeeks.org/two-pointers-technique/)
+
+### **Library Implementations of Binary Search**
+
+-   [**binary_search, lower_bound and upper_bound in C++**](https://www.geeksforgeeks.org/binary-search-functions-in-c-stl-binary_search-lower_bound-and-upper_bound/)
+
+-   [**Arrays.binarySearch() in Java**](https://www.geeksforgeeks.org/arrays-binarysearch-java-examples-set-1/)
+
+-   [**Arrays.binarySearch() in Java for Search in subarray**](https://www.geeksforgeeks.org/arrays-binarysearch-in-java-with-examples-set-2-search-in-subarray/)
+
+-   [**Collections.binarySearch() in Java**](https://www.geeksforgeeks.org/collections-binarysearch-java-examples/)
+
+-   [**Bisect in Python**](https://www.geeksforgeeks.org/bisect-algorithm-functions-in-python/)
+
+-   [**List.BinarySearch in C#**](https://www.geeksforgeeks.org/list-binarysearch-method-in-c-sharp/)
+
+### **Easy Problems**
+
+-   [**Largest in an Array**](https://www.geeksforgeeks.org/program-to-find-largest-element-in-an-array/)
+
+-   [**Second Largest in an array**](https://www.geeksforgeeks.org/find-second-largest-element-array/)
+
+-   [**Largest three in an array**](https://www.geeksforgeeks.org/find-the-largest-three-elements-in-an-array/)
+
+-   [**Missing Number**](https://www.geeksforgeeks.org/find-the-missing-number/)
+
+-   [**First Repeating**](https://www.geeksforgeeks.org/find-first-repeating-element-array-integers/)
+
+-   [**Missing and Repeating**](https://www.geeksforgeeks.org/find-a-repeating-and-a-missing-number/)
+
+-   [**Count 1’s in a sorted binary array**](https://www.geeksforgeeks.org/count-1s-sorted-binary-array/)
+
+-   [**Closest to 0 Sum Pair**](https://www.geeksforgeeks.org/two-elements-whose-sum-is-closest-to-zero/)
+
+-   [**Pair with the given difference**](https://www.geeksforgeeks.org/find-a-pair-with-the-given-difference/)
+
+-   [**k largest(or smallest) Elements**](https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/)
+
+-   [**Kth smallest in row and column-wise sorted**](https://www.geeksforgeeks.org/kth-smallest-element-in-a-row-wise-and-column-wise-sorted-2d-array/)
+
+-   [**Common elements in 3 sorted**](https://www.geeksforgeeks.org/find-common-elements-three-sorted-arrays/)
+
+-   [**Ceiling in a sorted**](https://www.geeksforgeeks.org/ceiling-in-a-sorted-array/)
+
+-   [**Floor in a Sorted**](https://www.geeksforgeeks.org/floor-in-a-sorted-array/)
+
+-   [**Maximum in a Bitonic**](https://www.geeksforgeeks.org/find-the-maximum-element-in-an-array-which-is-first-increasing-and-then-decreasing/)
+
+-   [**Elements that appear more than n/k times**](https://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/)
+
+### **Medium Problems**
+
+-   [**Triplets with zero sum**](https://www.geeksforgeeks.org/find-triplets-array-whose-sum-equal-zero/)
+
+-   [**Partition Point**](https://www.geeksforgeeks.org/find-the-element-before-which-all-the-elements-are-smaller-than-it-and-after-which-all-are-greater-than-it/)
+
+-   [**Largest pair sum**](https://www.geeksforgeeks.org/find-the-largest-pair-sum-in-an-unsorted-array/)
+
+-   [**K’th Smallest in Unsorted Array**](https://www.geeksforgeeks.org/kth-smallest-largest-element-in-unsorted-array/)
+
+-   [**Search an in a sorted and rotated**](https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/)
+
+-   [**Min in a sorted and rotated**](https://www.geeksforgeeks.org/find-minimum-element-in-a-sorted-and-rotated-array/)
+
+-   [**Max in a sorted and rotated**](https://www.geeksforgeeks.org/maximum-element-in-a-sorted-and-rotated-array/)
+
+-   [**Peak element**](https://www.geeksforgeeks.org/find-a-peak-in-a-given-array/)
+
+-   [**Max and min using minimum comparisons**](https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/)
+
+-   [**Find a Fixed Point in a given array**](https://www.geeksforgeeks.org/find-a-fixed-point-in-a-given-array/)
+
+-   [**K most frequent words from a file**](https://www.geeksforgeeks.org/find-the-k-most-frequent-words-from-a-file/)
+
+-   [**K closest elements**](https://www.geeksforgeeks.org/find-k-closest-elements-given-value/)
+
+-   [**2 Sum – Pair Sum Closest to Target in Sorted Array**](https://www.geeksforgeeks.org/given-sorted-array-number-x-find-pair-array-whose-sum-closest-x/)
+
+-   [**Closest pair from two sorted arrays**](https://www.geeksforgeeks.org/given-two-sorted-arrays-number-x-find-pair-whose-sum-closest-x/)
+
+-   [**Three closest from three sorted arrays**](https://www.geeksforgeeks.org/find-three-closest-elements-from-given-three-sorted-arrays/)
+
+-   [**Binary Search for Rationals**](https://www.geeksforgeeks.org/binary-search-for-rational-numbers-without-using-floating-point-arithmetic/)
+
+-   [**Missing Element in AP**](https://www.geeksforgeeks.org/find-missing-number-arithmetic-progression/)
+
+### **Hard Problems**
+
+-   [**Median of two sorted arrays**](https://www.geeksforgeeks.org/median-of-two-sorted-arrays/)
+
+-   [**Median of two sorted of different sizes**](https://www.geeksforgeeks.org/median-of-two-sorted-arrays-of-different-sizes/)
+
+-   [**Search in an almost sorted array**](https://www.geeksforgeeks.org/search-almost-sorted-array/)
+
+-   [**Search in a sorted infinite array**](https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers/)
+
+-   [**Pair sum in a sorted and rotated array**](https://www.geeksforgeeks.org/given-a-sorted-and-rotated-array-find-if-there-is-a-pair-with-a-given-sum/)
+
+-   [**K’th Smallest/Largest Element in Unsorted Array**](https://www.geeksforgeeks.org/kth-smallest-largest-element-in-unsorted-array-worst-case-linear-time/)
+
+-   [**K’th largest element in a stream**](https://www.geeksforgeeks.org/kth-largest-element-in-a-stream/)
+
+-   [**Best First Search (Informed Search)**](https://www.geeksforgeeks.org/best-first-search-informed-search/)
+
+### More Searching Algorithms
+
+-   [**Sentinel Linear Search**](https://www.geeksforgeeks.org/sentinel-linear-search/)
+
+-   [**Meta Binary Search \| One-Sided Binary Search**](https://www.geeksforgeeks.org/meta-binary-search-one-sided-binary-search/)
+
+-   [**Ternary Search**](https://www.geeksforgeeks.org/ternary-search/)
+
+-   [**Jump Search**](https://www.geeksforgeeks.org/jump-search/)
+
+-   [**Interpolation Search**](https://www.geeksforgeeks.org/interpolation-search/)
+
+-   [**Exponential Search**](https://www.geeksforgeeks.org/exponential-search/)
+
+-   [**Fibonacci Search**](https://www.geeksforgeeks.org/fibonacci-search/)
+
+-   [**The Ubiquitous Binary Search**](https://www.geeksforgeeks.org/the-ubiquitous-binary-search-set-1/)
+
+### **Comparisons Between Different Searching Algorithms**
+
+-   [**Linear Search vs Binary Search**](https://www.geeksforgeeks.org/linear-search-vs-binary-search/)
+
+-   [**Interpolation search vs Binary search**](https://www.geeksforgeeks.org/g-fact-84/)
+
+-   [**Why is Binary Search preferred over Ternary Search?**](https://www.geeksforgeeks.org/binary-search-preferred-ternary-search/)
+
+-   [**Is Sentinel Linear Search better than normal Linear Search?**](https://www.geeksforgeeks.org/is-sentinel-linear-search-better-than-normal-linear-search/)
 
 ## 5. Sorting Algorithms
 
 **Sorting algorithms** are used to **arrange** the elements of a list in a **specific order**, such as numerical or alphabetical. It organizes the items in a systematic way, making it easier to search for and access specific elements.
 
--   [**Guide on Sorting Algorithms**](https://www.geeksforgeeks.org/sorting-algorithms/)
+### Basics of Sorting Algorithms:
 
--   [**Practice problems on Sorting algorithm**](https://www.geeksforgeeks.org/explore?page=1&category[]=Sorting)
+-   [**Introduction to Sorting**](https://www.geeksforgeeks.org/introduction-to-sorting-algorithm/)
 
--   [**Top Sorting Interview Questions and Problems**](https://www.geeksforgeeks.org/top-sorting-interview-questions-and-problems/)
+-   [**Applications of Sorting**](https://www.geeksforgeeks.org/applications-advantages-and-disadvantages-of-sorting-algorithm/)
 
--   [**Quiz on Sorting Algorithms**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-sorting-algorithms-with-answers/)
+### Sorting Algorithms:
+
+Comparison Based : [**Selection Sort**](https://www.geeksforgeeks.org/selection-sort/), [**Bubble Sort**](https://www.geeksforgeeks.org/bubble-sort/), [**Insertion Sort**](https://www.geeksforgeeks.org/insertion-sort/), [**Merge Sort**](https://www.geeksforgeeks.org/merge-sort/), [**Quick Sort**](https://www.geeksforgeeks.org/quick-sort/), [**Heap Sort**](https://www.geeksforgeeks.org/heap-sort/), [**Cycle Sort**](https://www.geeksforgeeks.org/cycle-sort/), [**3-way Merge Sort**](https://www.geeksforgeeks.org/3-way-merge-sort/)\
+Non Comparison Based : [**Counting Sort**](https://www.geeksforgeeks.org/counting-sort/), [**Radix Sort**](https://www.geeksforgeeks.org/radix-sort/), [**Bucket Sort**](https://www.geeksforgeeks.org/bucket-sort-2/), [**TimSort**](https://www.geeksforgeeks.org/timsort/), [**Comb Sort**](https://www.geeksforgeeks.org/comb-sort/), [**Pigeonhole Sort**](https://www.geeksforgeeks.org/pigeonhole-sort/)\
+Hybrid Sorting Algorithms : [**IntroSort**](https://www.geeksforgeeks.org/introsort-cs-sorting-weapon/), [**Tim Sort**](https://www.geeksforgeeks.org/timsort/)
+
+### **Library Implementations:**
+
+-   [**qsort() in C**](https://www.geeksforgeeks.org/comparator-function-of-qsort-in-c/)
+
+-   [**sort() in C++ STL**](https://www.geeksforgeeks.org/sort-c-stl/)
+
+-   [**Arrays.sort() in Java with examples**](https://www.geeksforgeeks.org/arrays-sort-in-java-with-examples/)
+
+-   [**Collections.sort() in Java with Examples**](https://www.geeksforgeeks.org/collections-sort-java-examples/)
+
+-   [**Sort a List in Python**](https://www.geeksforgeeks.org/sort-a-list-in-python/)
+
+-   [**Sorting in JavaScript**](https://www.geeksforgeeks.org/javascript-array-sort-method/)
+
+### **Easy Problems on Sorting:**
+
+-   [**Check if an array is Sorted**](https://www.geeksforgeeks.org/program-check-array-sorted-not-iterative-recursive/)
+
+-   [**Sort an array of two types**](https://www.geeksforgeeks.org/sort-array-containing-two-types-elements/)
+
+-   [**Sort a String**](https://www.geeksforgeeks.org/sort-string-characters/)
+
+-   [**Sort Each Row of a Matrix**](https://www.geeksforgeeks.org/row-wise-sorting-2d-array/)
+
+-   [**Sort a Matrix**](https://www.geeksforgeeks.org/sort-given-matrix/)
+
+-   [**Sort a Linked List**](https://www.geeksforgeeks.org/sorting-a-singly-linked-list/)
+
+-   [**Sort in Wave Form**](https://www.geeksforgeeks.org/sort-array-wave-form-2/)
+
+-   [**Sort by Frequency**](https://www.geeksforgeeks.org/sort-elements-by-frequency/)
+
+-   [**Sort from Different Machines**](https://www.geeksforgeeks.org/sort-numbers-stored-on-different-machines/)
+
+-   [**Check if any two intervals overlap**](https://www.geeksforgeeks.org/check-if-any-two-intervals-overlap-among-a-given-set-of-intervals/)
+
+-   [**Missing elements of a range**](https://www.geeksforgeeks.org/find-missing-elements-of-a-range/)
+
+-   [**Sort by set bits counts**](https://www.geeksforgeeks.org/sort-array-according-count-set-bits/)
+
+-   [**Sort even and odd placed in different orders**](https://www.geeksforgeeks.org/sort-even-placed-elements-increasing-odd-placed-decreasing-order/)
+
+-   [**Sorting Big Integers**](https://www.geeksforgeeks.org/sorting-big-integers/)
+
+-   [**Sort strings by lengths**](https://www.geeksforgeeks.org/sort-array-strings-according-string-lengths/)
+
+-   [**Merge Two Sorted Arrays**](https://www.geeksforgeeks.org/merge-two-sorted-arrays/)
+
+-   [**Sort when two halves are sorted**](https://www.geeksforgeeks.org/sort-array-two-halves-sorted/)
+
+-   [**2 Sum - Pair in a Sorted Array**](https://www.geeksforgeeks.org/pair-with-given-sum-in-sorted-array-two-sum-ii/)
+
+-   [**Intersection of two sorted arrays**](https://www.geeksforgeeks.org/intersection-of-two-sorted-arrays/)
+
+-   [**Union of two sorted arrays**](https://www.geeksforgeeks.org/union-of-two-sorted-arrays/)
+
+-   [**Meeting Rooms**](https://www.geeksforgeeks.org/meeting-rooms-check-if-a-person-can-attend-all-meetings/)
+
+### **Medium Problems on Sorting:**
+
+-   [**Minimum Increments to Make Unique**](https://www.geeksforgeeks.org/minimum-increment-operations-to-make-array-unique/)
+
+-   [**Merge Overlapping Intervals**](https://www.geeksforgeeks.org/merging-intervals/)
+
+-   [**Minimum Platforms**](https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/)
+
+-   [**Closest Pair of Elements**](https://www.geeksforgeeks.org/closest-pair-of-points-using-divide-and-conquer-algorithm/)
+
+-   [**Closest Pair of Points**](https://www.geeksforgeeks.org/closest-pair-of-points-using-divide-and-conquer-algorithm/)
+
+-   [**Chocolate Distribution Problem**](https://www.geeksforgeeks.org/chocolate-distribution-problem/)
+
+-   [**Min and Max Amount to Buy All**](https://www.geeksforgeeks.org/find-minimum-maximum-amount-buy-n-candies/)
+
+-   [**Three Way Partitioning**](https://www.geeksforgeeks.org/three-way-partitioning-of-an-array-around-a-given-range/)
+
+-   [**Sort an array of 0s, 1s and 2s**](https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/)
+
+-   [**Sort a linked list of 0s, 1s and 2s**](https://www.geeksforgeeks.org/sort-a-linked-list-of-0s-1s-or-2s/)
+
+-   [**Inversion count**](https://www.geeksforgeeks.org/inversion-count-in-array-using-merge-sort/)
+
+-   [**K-th Smallest Element**](https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/)
+
+-   [**K Smallest Elements**](https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/)
+
+-   [**3 Sum - Find Any**](https://www.geeksforgeeks.org/find-a-triplet-that-sum-to-a-given-value/)
+
+-   [**3 Sum - Closest Triplet**](https://www.geeksforgeeks.org/find-a-triplet-in-an-array-whose-sum-is-closest-to-a-given-number/)
+
+-   [**Smallest Difference Triplet from Three arrays**](https://www.geeksforgeeks.org/smallest-difference-triplet-from-three-arrays/)
+
+-   [**Merge K Sorted Arrays**](https://www.geeksforgeeks.org/merge-k-sorted-linked-lists/)
+
+-   [**Merge K Sorted Linked Lists**](https://www.geeksforgeeks.org/merge-k-sorted-linked-lists/)
+
+-   [**Min Unsorted Subarray to make array sorted**](https://www.geeksforgeeks.org/minimum-length-unsorted-subarray-sorting-which-makes-the-complete-array-sorted/)
+
+-   [**Sort a nearly sorted array**](https://www.geeksforgeeks.org/nearly-sorted-algorithm/)
+
+-   [**Sort n numbers in range from 0 to n\^2 – 1**](https://www.geeksforgeeks.org/sort-n-numbers-range-0-n2-1-linear-time/)
+
+-   [**Sort an array of 1 to n**](https://www.geeksforgeeks.org/sort-array-contain-1-n-values/)
+
+-   [**Sort according to order defined by another**](https://www.geeksforgeeks.org/sort-array-according-order-defined-another-array/)
+
+-   [**Maximum intervals overlap**](https://www.geeksforgeeks.org/find-the-point-where-maximum-intervals-overlap/)
+
+-   [**Permutation with worst Case of Merge Sort**](https://www.geeksforgeeks.org/find-a-permutation-that-causes-worst-case-of-merge-sort/)
+
+-   [**Minimum swaps to make two arrays identical**](https://www.geeksforgeeks.org/minimum-swaps-to-make-two-array-identical/)
+
+-   [**Permute two arrays such that all pair suns are greater than K**](https://www.geeksforgeeks.org/permute-two-arrays-sum-every-pair-greater-equal-k/)
+
+-   [**Bucket Sort To Sort an Array with Negative Numbers**](https://www.geeksforgeeks.org/bucket-sort-to-sort-an-array-with-negative-numbers/)
+
+-   [**Convert an Array to reduced form using Vector of pairs**](https://www.geeksforgeeks.org/convert-an-array-to-reduced-form-using-vector-of-pairs/)
+
+-   [**Check if array can be sorted with conditional swapping of adjacent**](https://www.geeksforgeeks.org/check-possible-sort-array-conditional-swapping-adjacent-allowed/)
+
+-   [**4 Sum - Find Any**](https://www.geeksforgeeks.org/4-sum-find-any-quadruplet-having-given-sum/) \[More problems an 4 Sum are in Hard Section\]
+
+### **Hard Problems on Sorting:**
+
+-   [**Merge Without Extra Space**](https://www.geeksforgeeks.org/merge-two-sorted-arrays-o1-extra-space/)
+
+-   [**Top K Frequent Elements**](https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/)
+
+-   [**3 Sum - Distinct Triplets**](https://www.geeksforgeeks.org/unique-triplets-sum-given-value/)
+
+-   [**4 Sum - Distinct Quadruples**](https://www.geeksforgeeks.org/find-four-elements-that-sum-to-a-given-value-set-2/)
+
+-   [**4 Sum - All Quadruples**](https://www.geeksforgeeks.org/4-sum-find-a-quadruplet-with-closest-sum/)
+
+-   [**4 Sum - Closest Quadruple**](https://www.geeksforgeeks.org/4-sum-find-a-quadruplet-with-closest-sum/)
+
+-   [**Surpasser Counts in an Array**](https://www.geeksforgeeks.org/find-surpasser-count-of-each-element-in-array/)
+
+-   [**Count distinct occurrences as a subsequence**](https://www.geeksforgeeks.org/count-distinct-occurrences-as-a-subsequence/)
+
+-   [**Minimum consecutive number subsets**](https://www.geeksforgeeks.org/count-minimum-number-subsets-subsequences-consecutive-numbers/)
+
+-   [**Minimum swaps for Binary Tree to BST**](https://www.geeksforgeeks.org/minimum-swap-required-convert-binary-tree-binary-search-tree/)
+
+-   [**K-th smallest element after removing some integers from natural numbers**](https://www.geeksforgeeks.org/k-th-smallest-element-removing-integers-natural-numbers/)
+
+-   [**Max frequency diff such greater freq item is also is also greater**](https://www.geeksforgeeks.org/maximum-difference-between-frequency-of-two-elements-such-that-element-having-greater-frequency-is-also-greater/)
+
+-   [**Min swaps to reach permuted array with at most 2 positions left swaps allowed**](https://www.geeksforgeeks.org/minimum-swaps-reach-permuted-array-2-positions-left-swaps-allowed/)
+
+-   [**Making Array Elements Same**](https://www.geeksforgeeks.org/find-whether-possible-make-array-elements-using-one-external-number/)
+
+-   [**Sort an array after applying an equation**](https://www.geeksforgeeks.org/sort-array-applying-given-equation/)
+
+-   [**Array of strings in sorted order without copying strings**](https://www.geeksforgeeks.org/print-array-strings-sorted-order-without-copying-one-string-another/)
 
 ## 6. Recursion
 
 **Recursion** is a programming technique where a function **calls itself** within its own definition. It is usually used to solve problems that can be broken down into smaller instances of the same problem.
 
--   [**Guide on Recursive Algorithms**](https://www.geeksforgeeks.org/recursion-algorithms/)
+### Learn Basics of Recursion Algorithms:
 
--   [**Practice Problems on Recursion algorithm**](https://www.geeksforgeeks.org/explore?page=1&category[]=Recursion)
+-   [**Introduction to Recursion**](https://www.geeksforgeeks.org/introduction-to-recursion-data-structure-and-algorithm-tutorials/)
 
--   [**Top 50 Problems on Recursion Algorithm for Interview**](https://www.geeksforgeeks.org/top-50-interview-problems-on-recursion-algorithm/)
+-   [**Recursion vs Iteration**](https://www.geeksforgeeks.org/difference-between-recursion-and-iteration/)
 
--   [**Quiz on Recursion**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-recursion-algorithm-with-answers/)
+-   [**Finite and Infinite Recursion**](https://www.geeksforgeeks.org/finite-and-infinite-recursion-with-examples/)
+
+-   [**What is Tail Recursion**](https://www.geeksforgeeks.org/tail-recursion/)
+
+-   [**Tail Recursion Optimization**](https://www.geeksforgeeks.org/why-is-tail-recursion-optimization-faster-than-normal-recursion/)
+
+### Recursion in Different Languages:
+
+-   [**Recursion in Python**](https://www.geeksforgeeks.org/recursion-in-python/)
+
+-   [**Recursion in Java**](https://www.geeksforgeeks.org/recursion-in-java)
+
+-   [**Recursion in C#**](https://www.geeksforgeeks.org/recursion-in-c-sharp/)
+
+-   [**Recursion in JavaScript**](https://www.geeksforgeeks.org/how-to-understand-recursion-in-javascript/)
+
+### **Easy** Problems on Recursion
+
+-   [**Print 1 to n without loop**](https://www.geeksforgeeks.org/print-1-to-n-without-using-loops/)
+
+-   [**Print n to 1 without loop**](https://www.geeksforgeeks.org/print-n-to-1-without-loop/)
+
+-   [**Mean of Array using Recursion**](https://www.geeksforgeeks.org/mean-of-array-using-recursion/)
+
+-   [**Sum of natural numbers using recursion**](https://www.geeksforgeeks.org/sum-of-natural-numbers-using-recursion/)
+
+-   [**Decimal to binary number using recursion**](https://www.geeksforgeeks.org/decimal-binary-number-using-recursion/)
+
+-   [**Sum of array elements using recursion**](https://www.geeksforgeeks.org/sum-array-elements-using-recursion/)
+
+-   [**Print reverse of a string using recursion**](https://www.geeksforgeeks.org/reverse-a-string-using-recursion/)
+
+-   [**Program for length of a string using recursion**](https://www.geeksforgeeks.org/program-for-length-of-a-string-using-recursion/)
+
+-   [**Sum of digit of a number using recursion**](https://www.geeksforgeeks.org/sum-digit-number-using-recursion/)
+
+-   [**Tail recursion to calculate sum of array elements.**](https://www.geeksforgeeks.org/tail-recursion-to-calculate-sum-of-array-elements/)
+
+-   [**Program to print first n Fibonacci Numbers \| Set 1**](https://www.geeksforgeeks.org/program-to-print-first-n-fibonacci-numbers/)
+
+-   [**Factorial of a number**](https://www.geeksforgeeks.org/program-for-factorial-of-a-number/)
+
+-   [**Array Min and Max using Recursion**](https://www.geeksforgeeks.org/recursive-programs-to-find-minimum-and-maximum-elements-of-array/)
+
+-   [**Palindrome Check using Recursion**](https://www.geeksforgeeks.org/recursive-function-check-string-palindrome/)
+
+-   [**Count Set-bits using Recursion**](https://www.geeksforgeeks.org/count-set-bits-of-number-using-recursion/)
+
+-   [**Fibonacci Series in reverse order using Recursion**](https://www.geeksforgeeks.org/print-fibonacci-series-in-reverse-order-using-recursion/)
+
+### **Medium** Problems on Recursion
+
+-   [**Recursively remove all adjacent duplicates**](https://www.geeksforgeeks.org/recursively-remove-adjacent-duplicates-given-string/)
+
+-   [**Sort the Queue using Recursion**](https://www.geeksforgeeks.org/sort-the-queue-using-recursion/)
+
+-   [**Reversing a queue using recursion**](https://www.geeksforgeeks.org/reversing-queue-using-recursion/)
+
+-   [**Coin Change**](https://www.geeksforgeeks.org/coin-change-dp-7/)
+
+-   [**Binary to Gray code using recursion**](https://www.geeksforgeeks.org/program-convert-binary-code-equivalent-gray-code-using-recursion/)
+
+-   [**Delete a linked list using recursion**](https://www.geeksforgeeks.org/delete-linked-list-using-recursion/)
+
+-   [**Product of 2 Numbers using Recursion**](https://www.geeksforgeeks.org/product-2-numbers-using-recursion/)
+
+-   [**Programs for Printing Pyramid Patterns using Recursion**](https://www.geeksforgeeks.org/programs-for-printing-pyramid-patterns-using-recursion/)
+
+-   [**Length of longest palindromic sub-string : Recursion**](https://www.geeksforgeeks.org/length-of-longest-palindromic-sub-string-recursion/)
+
+-   [**Program for Tower of Hanoi Algorithm**](https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/)
+
+-   [**Time Complexity Analysis \| Tower Of Hanoi (Recursion)**](https://www.geeksforgeeks.org/time-complexity-analysis-tower-hanoi-recursion/)
+
+-   [**Program to calculate value of nCr using Recursion**](https://www.geeksforgeeks.org/program-to-calculate-value-of-ncr-using-recursion/)
+
+-   [**Find geometric sum of the series using recursion**](https://www.geeksforgeeks.org/find-geometric-sum-of-the-series-using-recursion/)
+
+-   [**Convert a String to an Integer using Recursion**](https://www.geeksforgeeks.org/convert-a-string-to-an-integer-using-recursion/)
+
+-   [**DFS traversal of a Tree**](https://www.geeksforgeeks.org/dfs-traversal-of-a-tree-using-recursion/)
+
+-   [**Bottom View of a Binary Tree using Recursion**](https://www.geeksforgeeks.org/bottom-view-of-a-binary-tree-using-recursion/)
+
+-   [**Write a program to print all Permutations of given String**](https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/)
+
+-   [**Print all subsets of a given Set or Array**](https://www.geeksforgeeks.org/backtracking-to-find-all-subsets/)
+
+-   [**Print all possible paths from top left to bottom right of a mXn matrix**](https://www.geeksforgeeks.org/print-all-possible-paths-from-top-left-to-bottom-right-of-a-mxn-matrix/)
+
+-   [**Print all combinations of balanced parentheses**](https://www.geeksforgeeks.org/print-all-combinations-of-balanced-parentheses/)
+
+-   [**Longest Common Subsequence (LCS)**](https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/)
+
+### **Hard** Problems on Recursion
+
+-   [**Find the value of a number raised to its reverse**](https://www.geeksforgeeks.org/find-the-value-of-a-number-raised-to-its-reverse/)
+
+-   [**How to Sort a Stack using Recursion**](https://www.geeksforgeeks.org/sort-a-stack-using-recursion/)
+
+-   [**Reverse a Doubly linked list using recursion**](https://www.geeksforgeeks.org/reverse-doubly-linked-list-using-recursion/)
+
+-   [**Given a string, print all possible palindromic partitions**](https://www.geeksforgeeks.org/given-a-string-print-all-possible-palindromic-partition/)
+
+-   [**Check if a string is a scrambled form of another string**](https://www.geeksforgeeks.org/check-if-a-string-is-a-scrambled-form-of-another-string/)
+
+-   [**Word Break Problem \| DP-32**](https://www.geeksforgeeks.org/word-break-problem-dp-32/)
+
+-   [**Print all palindromic partitions of a string**](https://www.geeksforgeeks.org/print-palindromic-partitions-string/)
+
+-   [**N Queen Problem \| Backtracking-3**](https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/)
+
+-   [**Algorithm to Solve Sudoku \| Sudoku Solver**](https://www.geeksforgeeks.org/sudoku-backtracking-7/)
+
+-   [**The Knight’s tour problem**](https://www.geeksforgeeks.org/the-knights-tour-problem/)
+
+### What is a Recursive Algorithm?
+
+A recursive algorithm is an algorithm that uses recursion to solve a problem. Recursive algorithms typically have two parts:
+
+1.  **Base case:** Which is a condition that stops the recursion.
+
+2.  **Recursive case:** Which is a call to the function itself with a smaller version of the problem.
+
+### Types of Recursion
+
+There are several different recursion types and terms. These include:
+
+-   **Direct recursion:** This is typified by the factorial implementation where the methods call itself.
+
+-   **In-Direct recursion:** This happens where one method, say method **A**, calls another method **B**, which then calls method **A**. This involves two or more methods that eventually create a circular call sequence.
+
+-   **Head recursion:** The recursive call is made at the beginning of the method.
+
+-   **Tail recursion:** The recursive call is the last statement.
+
+### Applications of Recursion Algorithms:
+
+Here are some common applications of recursion:
+
+-   **Tree and Graph Traversal:** Depth-first search (DFS) and breadth-first search (BFS)
+
+-   **Dynamic Programming:** Solving optimization problems by breaking them into smaller subproblems
+
+-   **Divide-and-Conquer:** Solving problems by dividing them into smaller parts, solving each part recursively, and combining the results
+
+-   **Backtracking:** Exploring all possible solutions to a problem by recursively trying different options
+
+-   **Combinatorics:** Counting or generating all possible combinations or permutations of a set
+
+### When to Use Recursion?
+
+Recursion is a powerful technique that can be used to solve a wide variety of problems. However, it is important to use recursion carefully, as it can lead to stack overflows if not used properly.
+
+Recursion should be used when:
+
+-   The problem can be broken down into smaller subproblems that can be solved recursively.
+
+-   The base case is easy to identify.
+
+-   The recursive calls are tail recursive.
 
 ## 7. Backtracking Algorithm
 
 **Backtracking Algorithm** is derived from the **Recursion** algorithm, with the option to **revert** if a recursive solution fails, i.e. in case a solution fails, the program **traces back** to the moment where it failed and builds on another solution. So basically it tries out all the possible solutions and finds the correct one.
 
--   [**Guide on Backtracking Algorithms**](https://www.geeksforgeeks.org/backtracking-algorithms/)
+### **Basic of Backtracking Algorithm:**
 
--   [**Practice Problems on Backtracking algorithm**](https://www.geeksforgeeks.org/explore?page=1&category[]=Backtracking)
+1.  [**Introduction to Backtracking**](https://www.geeksforgeeks.org/introduction-to-backtracking-data-structure-and-algorithm-tutorials/)
 
--   [**Top 20 Backtracking Algorithm Interview Questions**](https://www.geeksforgeeks.org/top-20-backtracking-algorithm-interview-questions/)
+2.  [**Backtracking vs Recursion**](https://www.geeksforgeeks.org/what-is-the-difference-between-backtracking-and-recursion/)
 
--   [**Quiz on Backtracking Algorithm**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-backtracking-algorithm-with-answers/)
+3.  [**Backtracking vs Branch and Bound**](https://www.geeksforgeeks.org/difference-between-backtracking-and-branch-n-bound-technique/)
+
+### **Standard Problems**
+
+-   [**Permutations of a String**](https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/)
+
+-   [**The Knight’s tour problem**](https://www.geeksforgeeks.org/the-knights-tour-problem/)
+
+-   [**Rat in a Maze**](https://www.geeksforgeeks.org/rat-in-a-maze/)
+
+-   [**N Queen Problem \| Backtracking-3**](https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/)
+
+-   [**Subset Sum problem**](https://www.geeksforgeeks.org/subset-sum-problem/)
+
+-   [**m Coloring Problem**](https://www.geeksforgeeks.org/m-coloring-problem/)
+
+-   [**Hamiltonian Cycle**](https://www.geeksforgeeks.org/hamiltonian-cycle/)
+
+-   [**Sudoku \| Backtracking-7**](https://www.geeksforgeeks.org/sudoku-backtracking-7/)
+
+-   [**Magnet Puzzle**](https://www.geeksforgeeks.org/magnet-puzzle/)
+
+-   [**Remove Invalid Parentheses**](https://www.geeksforgeeks.org/remove-invalid-parentheses/)
+
+-   [**A backtracking approach to generate n bit Gray Codes**](https://www.geeksforgeeks.org/backtracking-approach-generate-n-bit-gray-codes/)
+
+### **Easy Problem:**
+
+-   [**Backtracking to find all subsets**](https://www.geeksforgeeks.org/backtracking-to-find-all-subsets/)
+
+-   [**Check if a given string is sum-string**](https://www.geeksforgeeks.org/check-given-string-sum-string/)
+
+-   [**Count all possible paths between two vertices**](https://www.geeksforgeeks.org/count-possible-paths-two-vertices/)
+
+-   [**Find all distinct subsets of a given set**](https://www.geeksforgeeks.org/find-distinct-subsets-given-set/)
+
+-   [**Find if there is a path of more than k length from a source**](https://www.geeksforgeeks.org/find-if-there-is-a-path-of-more-than-k-length-from-a-source/)
+
+-   [**Print all paths from a given source to a destination**](https://www.geeksforgeeks.org/find-paths-given-source-destination/)
+
+-   [**Print all possible strings that can be made by placing spaces**](https://www.geeksforgeeks.org/print-possible-strings-can-made-placing-spaces/)
+
+### **Medium Problems:**
+
+-   [**Tug of War**](https://www.geeksforgeeks.org/tug-of-war/)
+
+-   [**8 queen problem**](https://www.geeksforgeeks.org/8-queen-problem/)
+
+-   [**Combinational Sum**](https://www.geeksforgeeks.org/combinational-sum/)
+
+-   [**Warnsdorff’s algorithm for Knight’s tour problem**](https://www.geeksforgeeks.org/warnsdorffs-algorithm-knights-tour-problem/)
+
+-   [**Find paths from corner cell to middle cell in maze**](https://www.geeksforgeeks.org/find-paths-from-corner-cell-to-middle-cell-in-maze/)
+
+-   [**Find Maximum number possible by doing at-most K swaps**](https://www.geeksforgeeks.org/find-maximum-number-possible-by-doing-at-most-k-swaps/)
+
+-   [**Rat in a Maze with multiple steps or jump allowed**](https://www.geeksforgeeks.org/rat-in-a-maze-with-multiple-steps-jump-allowed/)
+
+-   [**N Queen in O(n) space**](https://www.geeksforgeeks.org/n-queen-in-on-space/)
+
+### **Hard Problems:**
+
+-   [**Power Set in Lexicographic order**](https://www.geeksforgeeks.org/powet-set-lexicographic-order/)
+
+-   [**Word Break Problem using Backtracking**](https://www.geeksforgeeks.org/word-break-problem-using-backtracking/)
+
+-   [**Partition of a set into K subsets with equal sum**](https://www.geeksforgeeks.org/partition-set-k-subsets-equal-sum/)
+
+-   [**Longest Possible Route in a Matrix with Hurdles**](https://www.geeksforgeeks.org/longest-possible-route-in-a-matrix-with-hurdles/)
+
+-   [**Find shortest safe route in a path with landmines**](https://www.geeksforgeeks.org/find-shortest-safe-route-in-a-path-with-landmines/)
+
+-   [**Print all palindromic partitions of a string**](https://www.geeksforgeeks.org/print-palindromic-partitions-string/)
+
+-   [**Printing all solutions in N-Queen Problem**](https://www.geeksforgeeks.org/printing-solutions-n-queen-problem/)
+
+-   [**Print all longest common sub-sequences in lexicographical order**](https://www.geeksforgeeks.org/print-longest-common-sub-sequences-lexicographical-order/)
+
+### What is Backtracking Algorithm?
+
+**Backtracking** is a problem-solving algorithmic technique that involves finding a solution incrementally by trying **different options** and **undoing** them if they lead to a **dead end**.
+
+It is commonly used in situations where you need to explore multiple possibilities to solve a problem, like searching for a path in a maze or solving puzzles like **Sudoku**. When a dead end is reached, the algorithm backtracks to the previous decision point and explores a different path until a solution is found or all possibilities have been exhausted.
+
+### How Does a Backtracking Algorithm Work?
+
+A **backtracking algorithm** works by recursively exploring all possible solutions to a problem. It starts by choosing an initial solution, and then it explores all possible extensions of that solution. If an extension leads to a solution, the algorithm returns that solution. If an extension does not lead to a solution, the algorithm backtracks to the previous solution and tries a different extension.
+
+The following is a general outline of how a backtracking algorithm works:
+
+1.  Choose an initial solution.
+
+2.  Explore all possible extensions of the current solution.
+
+3.  If an extension leads to a solution, return that solution.
+
+4.  If an extension does not lead to a solution, backtrack to the previous solution and try a different extension.
+
+5.  Repeat steps 2-4 until all possible solutions have been explored.
+
+### Example of Backtracking Algorithm
+
+**Example:** Finding the shortest path through a maze
+
+**Input:** A maze represented as a 2D array, where **0** represents an open space and **1** represents a wall.
+
+**Algorithm:**
+
+1.  Start at the starting point.
+
+2.  For each of the four possible directions (up, down, left, right), try moving in that direction.
+
+3.  If moving in that direction leads to the ending point, return the path taken.
+
+4.  If moving in that direction does not lead to the ending point, backtrack to the previous position and try a different direction.
+
+5.  Repeat steps 2-4 until the ending point is reached or all possible paths have been explored.
+
+### When to Use a Backtracking Algorithm?
+
+Backtracking algorithms are best used to solve problems that have the following characteristics:
+
+-   There are multiple possible solutions to the problem.
+
+-   The problem can be broken down into smaller subproblems.
+
+-   The subproblems can be solved independently.
+
+### Applications of Backtracking Algorithm
+
+Backtracking algorithms are used in a wide variety of applications, including:
+
+-   Solving puzzles (e.g., Sudoku, crossword puzzles)
+
+-   Finding the shortest path through a maze
+
+-   Scheduling problems
+
+-   Resource allocation problems
+
+-   Network optimization problems
+
+-   Combinatorial problems, such as generating permutations, combinations, or subsets.
 
 ## 8. Divide and Conquer Algorithm
 
 **Divide and conquer** algorithms follow a recursive strategy to solve problems by dividing them into **smaller subproblems**, solving those subproblems, and combining the solutions to obtain the final solution.
 
--   [**Guide on Divide and Conquer Algorithm**](https://www.geeksforgeeks.org/divide-and-conquer/)
+### **Basics of Divide and Conquer Algorithm:**
 
--   [**Practice problems on Divide And Conquer algorithm**](https://www.geeksforgeeks.org/explore?page=1&category[]=Divide%20and%20Conquer)
+-   [**Introduction to Divide and Conquer**](https://www.geeksforgeeks.org/divide-and-conquer-introduction/)
 
--   [**Quiz on Divide and Conquer**](https://www.geeksforgeeks.org/algorithms-gq/top-mcqs-on-divide-and-conquer-algrithm-with-answers/)
+-   [**Dynamic Programming vs Divide-and-Conquer**](https://www.geeksforgeeks.org/dynamic-programming-vs-divide-and-conquer/)
+
+-   [**Decrease and Conquer**](https://www.geeksforgeeks.org/decrease-and-conquer/)
+
+-   [**Advanced master theorem for divide and conquer recurrences**](https://www.geeksforgeeks.org/advanced-master-theorem-for-divide-and-conquer-recurrences/)
+
+### **Standard Algorithms on** Divide and Conquer Algorithm**:**
+
+-   [**Binary Search**](https://www.geeksforgeeks.org/binary-search/)
+
+-   [**Merge Sort**](https://www.geeksforgeeks.org/merge-sort/)
+
+-   [**Quick Sort**](https://www.geeksforgeeks.org/quick-sort/)
+
+-   [**Calculate pow(x, n)**](https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/)
+
+-   [**Karatsuba algorithm for fast multiplication**](https://www.geeksforgeeks.org/divide-and-conquer-set-2-karatsuba-algorithm-for-fast-multiplication/)
+
+-   [**Strassen’s Matrix Multiplication**](https://www.geeksforgeeks.org/strassens-matrix-multiplication/)
+
+-   [**Convex Hull (Simple Divide and Conquer Algorithm)**](https://www.geeksforgeeks.org/convex-hull-simple-divide-conquer-algorithm/)
+
+-   [**Quickhull Algorithm for Convex Hull**](https://www.geeksforgeeks.org/quickhull-algorithm-convex-hull/)
+
+### **Practice problems on** Divide and Conquer Algorithm**:**
+
+-   [**Square root of an integer**](https://www.geeksforgeeks.org/square-root-of-an-integer/)
+
+-   [**Maximum and minimum of an array using minimum number of comparisons**](https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/)
+
+-   [**Find frequency of each element in a limited range array in less than O(n) time**](https://www.geeksforgeeks.org/find-frequency-of-each-element-in-a-limited-range-array-in-less-than-on-time/)
+
+-   [**Tiling Problem**](https://www.geeksforgeeks.org/divide-and-conquer-set-6-tiling-problem/)
+
+-   [**Count Inversions**](https://www.geeksforgeeks.org/counting-inversions/)
+
+-   [**The Skyline Problem**](https://www.geeksforgeeks.org/divide-and-conquer-set-7-the-skyline-problem/)
+
+-   [**Search in a Row-wise and Column-wise Sorted 2D Array**](https://www.geeksforgeeks.org/divide-conquer-set-6-search-row-wise-column-wise-sorted-2d-array/)
+
+-   [**Allocate minimum number of pages**](https://www.geeksforgeeks.org/allocate-minimum-number-pages/)
+
+-   [**Modular Exponentiation (Power in Modular Arithmetic)**](https://www.geeksforgeeks.org/modular-exponentiation-power-in-modular-arithmetic/)
+
+### Problems Based on Standard Divide and Conquer Algorithms
+
+-   [**Binary Search Based Problems**](https://www.geeksforgeeks.org/top-50-binary-search-tree-coding-problems-for-interviews/)
+
+-   [**Merge Sort Based Problems**](https://www.geeksforgeeks.org/merge-sort-based-practice-problems/)
+
+-   [**Quick Sort Based Problems**](https://www.geeksforgeeks.org/quicksort-based-practice-problems/)
 
 ## 9. Greedy Algorithm
 
 **Greedy Algorithm** builds up the solution one piece at a time and chooses the next piece which gives the most obvious and immediate benefit i.e., which is the most **optimal choice at that moment**. So the problems where choosing **locally optimal** also leads to the global solutions are best fit for Greedy.
 
--   [**Guide on Greedy Algorithms**](https://www.geeksforgeeks.org/greedy-algorithms/)
+### **Basics of Greedy Algorithm**
 
--   [**Practice Problems on Greedy Algorithm**](https://www.geeksforgeeks.org/explore?page=1&category[]=Greedy)
+-   [**Introduction to Greedy Algorithm**](https://www.geeksforgeeks.org/introduction-to-greedy-algorithm-data-structures-and-algorithm-tutorials/)
 
--   [**Top 20 Greedy Algorithm Interview Questions**](https://www.geeksforgeeks.org/top-20-greedy-algorithms-interview-questions/)
+-   [**Greedy Algorithms General Structure**](https://www.geeksforgeeks.org/greedy-algorithms-general-structure-and-applications/)
 
--   [**Quiz on Greedy Algorithm**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-greedy-algorithms-with-answers/)
+### **Easy Problems on Greedy** Algorithm
+
+-   [**Fractional Knapsack**](https://www.geeksforgeeks.org/fractional-knapsack-problem/)
+
+-   [**Min Cost to Make Array Size 1**](https://www.geeksforgeeks.org/minimum-cost-make-array-size-1-removing-larger-pairs/)
+
+-   [**Min Rotations for Circular Lock**](https://www.geeksforgeeks.org/minimum-rotations-unlock-circular-lock/)
+
+-   [**Max Composite Numbers to Make n**](https://www.geeksforgeeks.org/split-n-maximum-composite-numbers/)
+
+-   [**Smallest Subset Greater Sum**](https://www.geeksforgeeks.org/smallest-subset-sum-greater-elements/)
+
+-   [**Assign Cookies**](https://www.geeksforgeeks.org/assign-cookies/)
+
+-   [**Buy Maximum Stocks**](https://www.geeksforgeeks.org/buy-maximum-stocks-stocks-can-bought-th-day/)
+
+-   [**Max Consecutive Diff Sum**](https://www.geeksforgeeks.org/maximize-sum-consecutive-differences-circular-array/)
+
+-   [**Min and Max Costs to buy all**](https://www.geeksforgeeks.org/find-minimum-maximum-amount-buy-n-candies/)
+
+-   [**Min Notes with Given Sum**](https://www.geeksforgeeks.org/find-number-currency-notes-sum-upto-given-amount/)
+
+-   [**Max Equal Sum of Three Stacks**](https://www.geeksforgeeks.org/find-maximum-sum-possible-equal-sum-three-stacks/)
+
+### **Medium Problems on Greedy** Algorithm
+
+-   [**Activity Selection Problem**](https://www.geeksforgeeks.org/activity-selection-problem-greedy-algo-1/)
+
+-   [**Jump Game**](https://www.geeksforgeeks.org/minimum-number-jumps-reach-endset-2on-solution/)
+
+-   [**Job Sequencing Problem**](https://www.geeksforgeeks.org/job-sequencing-problem/)
+
+-   [**Egyptian Fraction**](https://www.geeksforgeeks.org/merging-intervals/)
+
+-   [**Merge Overlapping Intervals**](https://www.geeksforgeeks.org/merging-intervals/)
+
+-   [**Min Fibonacci Terms with Sum K**](https://www.geeksforgeeks.org/minimum-fibonacci-terms-sum-equal-k/)
+
+-   [**Minimum Platforms**](https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/)
+
+-   [**Min Cost to Connect n ropes**](https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/)
+
+-   [**Max trains**](https://www.geeksforgeeks.org/maximum-trains-stoppage-can-provided/)
+
+-   [**Partition 1 to n into two min diff groups**](https://www.geeksforgeeks.org/divide-1-n-two-groups-minimum-sum-difference/)
+
+-   [**Paper cut into min squares**](https://www.geeksforgeeks.org/paper-cut-minimum-number-squares/)
+
+-   [**Min diff groups of size two**](https://www.geeksforgeeks.org/minimum-difference-between-groups-of-size-two/)
+
+-   [**Max Satisfied Customers**](https://www.geeksforgeeks.org/maximum-number-customers-can-satisfied-given-quantity/)
+
+-   [**Min initial vertices to traverse matrix with constraints**](https://www.geeksforgeeks.org/minimum-initial-vertices-traverse-whole-matrix-given-conditions/)
+
+-   [**Largest palindromic number by permuting digits**](https://www.geeksforgeeks.org/largest-palindromic-number-permuting-digits/)
+
+-   [**Smallest with n digits and digits sum**](https://www.geeksforgeeks.org/find-smallest-number-with-given-number-of-digits-and-digit-sum/)
+
+-   [**Lexicographically largest subsequence with every char at least k times**](https://www.geeksforgeeks.org/lexicographically-largest-subsequence-every-character-occurs-least-k-times/)
+
+### **Hard Problems on Greedy** Algorithm
+
+-   [**Minimize the Max Height Diff**](https://www.geeksforgeeks.org/minimize-the-maximum-difference-between-the-heights/)
+
+-   [**Making max equal with k updates**](https://www.geeksforgeeks.org/maximum-elements-can-made-equal-k-updates/)
+
+-   [**Minimize cash flow among friends**](https://www.geeksforgeeks.org/minimize-cash-flow-among-given-set-friends-borrowed-money/)
+
+-   [**Minimum Cost to cut a board into squares**](https://www.geeksforgeeks.org/minimum-cost-cut-board-squares/)
+
+-   [**Minimum cost to process m tasks where switching costs**](https://www.geeksforgeeks.org/minimum-cost-to-process-m-tasks-where-switching-costs/)
+
+-   [**Minimum time to finish all jobs with given constraints**](https://www.geeksforgeeks.org/find-minimum-time-to-finish-all-jobs-with-given-constraints/)
+
+-   [**Minimize the maximum difference between the heights of towers**](https://www.geeksforgeeks.org/minimize-the-maximum-difference-between-the-heights/)
+
+-   [**Minimum edges to reverse to make path from a source to a destination**](https://www.geeksforgeeks.org/minimum-edges-reverse-make-path-source-destination/)
+
+-   [**Find the Largest Cube formed by Deleting minimum Digits from a number**](https://www.geeksforgeeks.org/find-largest-cube-formed-deleting-minimum-digits-number/)
+
+-   [**Rearrange characters in a string such that no two adjacent are same**](https://www.geeksforgeeks.org/rearrange-characters-string-no-two-adjacent/)
+
+-   [**Rearrange a string so that all same characters become d distance away**](https://www.geeksforgeeks.org/rearrange-a-string-so-that-all-same-characters-become-at-least-d-distance-away/)
+
+### **Standard Greedy Algorithms**
+
+-   [**Activity Selection Problem**](https://www.geeksforgeeks.org/greedy-algorithms-set-1-activity-selection-problem/)
+
+-   [**Job Sequencing Problem**](https://www.geeksforgeeks.org/job-sequencing-problem-set-1-greedy-algorithm/)
+
+-   [**Huffman Coding**](https://www.geeksforgeeks.org/greedy-algorithms-set-3-huffman-coding/)
+
+-   [**Huffman Decoding**](https://www.geeksforgeeks.org/huffman-decoding/)
+
+-   [**Water Connection Problem**](https://www.geeksforgeeks.org/water-connection-problem/)
+
+-   [**Minimum Swaps for Bracket Balancing**](https://www.geeksforgeeks.org/minimum-swaps-bracket-balancing/)
+
+-   [**Egyptian Fraction**](https://www.geeksforgeeks.org/greedy-algorithm-egyptian-fraction/)
+
+-   [**Policemen catch thieves**](https://www.geeksforgeeks.org/policemen-catch-thieves/)
+
+-   [**Fitting Shelves Problem**](https://www.geeksforgeeks.org/fitting-shelves-problem/)
+
+-   [**Assign Mice to Holes**](https://www.geeksforgeeks.org/assign-mice-holes/)
+
+### **Greedy Problems on Array**
+
+-   [**Minimum product subset of an array**](https://www.geeksforgeeks.org/minimum-product-subset-array/)
+
+-   [**Maximize array sum after K negations using Sorting**](https://www.geeksforgeeks.org/maximize-array-sum-after-k-negations-using-sorting/)
+
+-   [**Minimum sum of product of two arrays**](https://www.geeksforgeeks.org/minimum-sum-product-two-arrays/)
+
+-   [**Minimum sum of absolute difference of pairs of two arrays**](https://www.geeksforgeeks.org/minimum-sum-absolute-difference-pairs-two-arrays/)
+
+-   [**Minimum increment/decrement to make array non-Increasing**](https://www.geeksforgeeks.org/minimum-incrementdecrement-to-make-array-non-increasing/)
+
+-   [**Sorting array with reverse around middle**](https://www.geeksforgeeks.org/sorting-array-reverse-around-middle/)
+
+-   [**Sum of Areas of Rectangles possible for an array**](https://www.geeksforgeeks.org/sum-area-rectangles-possible-array/)
+
+-   [**Largest lexicographic array with at-most K consecutive swaps**](https://www.geeksforgeeks.org/largest-lexicographic-array-with-at-most-k-consecutive-swaps/)
+
+-   [**Partition into two subarrays of lengths k and (N – k) such that the difference of sums is maximum**](https://www.geeksforgeeks.org/partition-into-two-subarrays-of-lengths-k-and-n-k-such-that-the-difference-of-sums-is-maximum/)
+
+### **Greedy Problems in Operating System**
+
+-   [**First Fit algorithm in Memory Management**](https://www.geeksforgeeks.org/program-first-fit-algorithm-memory-management/)
+
+-   [**Best Fit algorithm in Memory Management**](https://www.geeksforgeeks.org/program-best-fit-algorithm-memory-management/)
+
+-   [**Worst Fit algorithm in Memory Management**](https://www.geeksforgeeks.org/program-worst-fit-algorithm-memory-management/)
+
+-   [**Shortest Job First Scheduling**](https://www.geeksforgeeks.org/program-shortest-job-first-sjf-scheduling-set-1-non-preemptive/)
+
+-   [**Job Scheduling with two jobs allowed at a time**](https://www.geeksforgeeks.org/job-scheduling-two-jobs-allowed-time/)
+
+-   [**Program for Optimal Page Replacement Algorithm**](https://www.geeksforgeeks.org/program-optimal-page-replacement-algorithm/)
+
+### **Greedy Problems on Graph**
+
+-   [**Kruskal’s Minimum Spanning Tree**](https://www.geeksforgeeks.org/greedy-algorithms-set-2-kruskals-minimum-spanning-tree-mst/)
+
+-   [**Prim’s Minimum Spanning Tree**](https://www.geeksforgeeks.org/greedy-algorithms-set-5-prims-minimum-spanning-tree-mst-2/)
+
+-   [**Boruvka’s Minimum Spanning Tree**](https://www.geeksforgeeks.org/greedy-algorithms-set-9-boruvkas-algorithm/)
+
+-   [**Dijkastra’s Shortest Path Algorithm**](https://www.geeksforgeeks.org/greedy-algorithms-set-6-dijkstras-shortest-path-algorithm/)
+
+-   [**Dial’s Algorithm**](https://www.geeksforgeeks.org/dials-algorithm-optimized-dijkstra-for-small-range-weights/)
+
+-   [**Minimum cost to connect all cities**](https://www.geeksforgeeks.org/minimum-cost-connect-cities/)
+
+-   [**Max Flow Problem Introduction**](https://www.geeksforgeeks.org/max-flow-problem-introduction/)
+
+-   [**Number of single cycle components in an undirected graph**](https://www.geeksforgeeks.org/number-of-simple-cyclic-components-in-an-undirected-graph/)
+
+### **Approximate Greedy Algorithm for NP Complete**
+
+-   [**Set cover problem**](https://www.geeksforgeeks.org/set-cover-problem-set-1-greedy-approximate-algorithm/)
+
+-   [**Bin Packing Problem**](https://www.geeksforgeeks.org/bin-packing-problem-minimize-number-of-used-bins/)
+
+-   [**Graph Coloring**](https://www.geeksforgeeks.org/graph-coloring-set-2-greedy-algorithm/)
+
+-   [**K-centers problem**](https://www.geeksforgeeks.org/k-centers-problem-set-1-greedy-approximate-algorithm/)
+
+-   [**Shortest superstring problem**](https://www.geeksforgeeks.org/shortest-superstring-problem/)
+
+-   [**Approximate solution for Travelling Salesman Problem using MST**](https://www.geeksforgeeks.org/approximate-solution-for-travelling-salesman-problem-using-mst/)
+
+### **Greedy for Special cases of DP**
+
+-   [**Fractional Knapsack Problem**](https://www.geeksforgeeks.org/fractional-knapsack-problem/)
+
+-   [**Minimum number of coins required**](https://www.geeksforgeeks.org/greedy-algorithm-to-find-minimum-number-of-coins/)
 
 ## 10. Dynamic Programming
 
 **Dynamic Programming** is a method used to solve complex problems by breaking them down into simpler **subproblems**. By solving each subproblem only **once** and **storing the results**, it avoids redundant computations, leading to more **efficient solutions** for a wide range of problems.
 
--   [**Dynamic Programming Guide**](https://www.geeksforgeeks.org/dynamic-programming/)
+### **Basic of DP**
 
--   [**Practice Problems on Dynamic Programming**](https://www.geeksforgeeks.org/explore?page=1&category[]=Dynamic%20Programming)
+-   [**Introduction to DP**](https://www.geeksforgeeks.org/introduction-to-dynamic-programming-data-structures-and-algorithm-tutorials/)
 
--   [**Top 50 Dynamic Programming Coding Problems for Interviews**](https://www.geeksforgeeks.org/top-50-dynamic-programming-coding-problems-for-interviews/)
+-   [**Tabulation vs Memoizatation**](https://www.geeksforgeeks.org/tabulation-vs-memoizatation/)
 
--   [**Quiz on Dynamic Programming**](https://www.geeksforgeeks.org/quizzes/top-mcqs-on-dynamic-programming-with-answers/)
+-   [**Steps to solve a DP Problem**](https://www.geeksforgeeks.org/solve-dynamic-programming-problem/)
+
+### **Basic Problems**
+
+-   [**Fibonacci numbers**](https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/)
+
+-   [**Tribonacci Numbers**](https://www.geeksforgeeks.org/tribonacci-numbers/)
+
+-   [**Lucas Numbers**](https://www.geeksforgeeks.org/count-ways-reach-nth-stair/)
+
+-   [**Climbing Stairs**](https://www.geeksforgeeks.org/count-ways-reach-nth-stair/)
+
+-   [**Climbing Stairs with 3 Moves**](https://www.geeksforgeeks.org/count-ways-reach-nth-stair-using-step-1-2-3/)
+
+-   [**Weighted Climbing Stairs**](https://www.geeksforgeeks.org/minimum-cost-to-reach-the-top-of-the-floor-by-climbing-stairs/)
+
+-   [**Maximum Segments**](https://www.geeksforgeeks.org/maximize-the-number-of-segments-of-length-p-q-and-r/)
+
+-   [**nth Catalan Number**](https://www.geeksforgeeks.org/program-nth-catalan-number/)
+
+-   [**Count Unique BSTs**](https://www.geeksforgeeks.org/number-of-unique-bst-with-a-given-key-dynamic-programming/)
+
+-   [**Count Valid Parenthesis**](https://www.geeksforgeeks.org/find-number-valid-parentheses-expressions-given-length/)
+
+-   [**Ways to Triangulate a Polygon**](https://www.geeksforgeeks.org/number-of-ways-a-convex-polygon-of-n2-sides-can-split-into-triangles-by-connecting-vertices/)
+
+-   [**Min Sum in a Triangle**](https://www.geeksforgeeks.org/minimum-sum-path-triangle/)
+
+-   [**Minimum Perfect Squares**](https://www.geeksforgeeks.org/minimum-number-of-squares-whose-sum-equals-to-given-number-n/)
+
+-   [**Ways to Partition a Set**](https://www.geeksforgeeks.org/bell-numbers-number-of-ways-to-partition-a-set/)
+
+-   [**Binomial Coefficient**](https://www.geeksforgeeks.org/binomial-coefficient-dp-9/)
+
+-   [**Pascal's Triangle**](https://www.geeksforgeeks.org/pascal-triangle/)
+
+-   [**Nth Row of Pascal Triangle**](https://www.geeksforgeeks.org/find-the-nth-row-in-pascals-triangle/)
+
+-   [**Min Sum in a Triangle**](https://www.geeksforgeeks.org/minimum-sum-path-triangle/)
+
+### **Easy Problems**
+
+-   [**House Robber**](https://www.geeksforgeeks.org/find-maximum-possible-stolen-value-houses/)
+
+-   [**Min Cost Path**](https://www.geeksforgeeks.org/dynamic-programming-set-6-min-cost-path/)
+
+-   [**Decode Ways**](https://www.geeksforgeeks.org/count-possible-decodings-given-digit-sequence/)
+
+-   [**Subset Sum Problem**](https://www.geeksforgeeks.org/dynamic-programming-subset-sum-problem/)
+
+-   [**Coin change problem - Count Ways**](https://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/)
+
+-   [**Coin Change – Minimum Coins to Make Sum**](https://www.geeksforgeeks.org/find-minimum-number-of-coins-that-make-a-change/)
+
+-   [**Painting Fence Algorithm**](https://www.geeksforgeeks.org/painting-fence-algorithm/)
+
+-   [**Cutting a Rod**](https://www.geeksforgeeks.org/dynamic-programming-set-13-cutting-a-rod/)
+
+-   [**Jump Game**](https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/)
+
+-   [**Longest Common Substring**](https://www.geeksforgeeks.org/longest-common-substring-space-optimized-dp-solution/)
+
+-   [**Count all paths in a Grid**](https://www.geeksforgeeks.org/count-possible-paths-top-left-bottom-right-nxm-matrix/)
+
+-   [**Paths in a Grid with Obstacles**](https://www.geeksforgeeks.org/unique-paths-in-a-grid-with-obstacles/)
+
+-   [**Permutations with K Inversions**](https://www.geeksforgeeks.org/number-of-permutation-with-k-inversions/)
+
+-   [**Max A's using Special Keyboard**](https://www.geeksforgeeks.org/how-to-print-maximum-number-of-a-using-given-four-keys/)
+
+### **Medium Problems**
+
+-   [**Water Overflow**](https://www.geeksforgeeks.org/find-water-in-a-glass/)
+
+-   [**Longest Common Subsequence**](https://www.geeksforgeeks.org/longest-common-subsequence/)
+
+-   [**Longest Increasing Subsequence**](https://www.geeksforgeeks.org/longest-increasing-subsequence-dp-3/)
+
+-   [**Edit Distance**](https://www.geeksforgeeks.org/edit-distance-dp-5/)
+
+-   [**Largest Divisible Subset**](https://www.geeksforgeeks.org/largest-divisible-subset-array/)
+
+-   [**Weighted Job Schedulling**](https://www.geeksforgeeks.org/weighted-job-scheduling/)
+
+-   [**0-1 Knapsack Problem**](https://www.geeksforgeeks.org/knapsack-problem/)
+
+-   [**Printing Items in 0/1 Knapsack**](https://www.geeksforgeeks.org/printing-items-01-knapsack/)
+
+-   [**Unbounded Knapsack**](https://www.geeksforgeeks.org/unbounded-knapsack-repetition-items-allowed/)
+
+-   [**Word Break Problem**](https://www.geeksforgeeks.org/word-break-problem-dp-32/)
+
+-   [**Tile Stacking Problem**](https://www.geeksforgeeks.org/tile-stacking-problem/)
+
+-   [**Box-Stacking Problem**](https://www.geeksforgeeks.org/dynamic-programming-set-21-box-stacking-problem/)
+
+-   [**Partition Problem**](https://www.geeksforgeeks.org/dynamic-programming-set-18-partition-problem/)
+
+-   [**Longest Palindromic Subsequence**](https://www.geeksforgeeks.org/dynamic-programming-set-12-longest-palindromic-subsequence/)
+
+-   [**Longest Common Increasing Subsequence (LCS + LIS)**](https://www.geeksforgeeks.org/longest-common-increasing-subsequence-lcs-lis/)
+
+-   [**All distinct subset (or subsequence) sums**](https://www.geeksforgeeks.org/find-distinct-subset-subsequence-sums-array/)
+
+-   [**Count Derangements**](https://www.geeksforgeeks.org/count-derangements-permutation-such-that-no-element-appears-in-its-original-position/)
+
+-   [**Minimum insertions for palindrome**](https://www.geeksforgeeks.org/dynamic-programming-set-28-minimum-insertions-to-form-a-palindrome/)
+
+-   [**Wildcard Pattern Matching**](https://www.geeksforgeeks.org/implementing-regular-expression-matching/)
+
+-   [**Regular Expression Matching**](https://www.geeksforgeeks.org/implementing-regular-expression-matching/)
+
+-   [**Arrange Balls with adjacent of different types**](https://www.geeksforgeeks.org/ways-to-arrange-balls-such-that-adjacent-balls-are-of-different-types/)
+
+-   [**Longest Subsequence with 1 adjacent difference**](https://www.geeksforgeeks.org/longest-subsequence-such-that-difference-between-adjacents-is-one/)
+
+-   [**Maximum size square sub-matrix with all 1s**](https://www.geeksforgeeks.org/maximum-size-sub-matrix-with-all-1s-in-a-binary-matrix/)
+
+-   [**Bellman–Ford Algorithm**](https://www.geeksforgeeks.org/dynamic-programming-set-23-bellman-ford-algorithm/)
+
+-   [**Floyd Warshall Algorithm**](https://www.geeksforgeeks.org/dynamic-programming-set-16-floyd-warshall-algorithm/)
+
+-   [**Maximum Tip Calculator**](https://www.geeksforgeeks.org/maximum-tip-calculator/)
+
+### **Hard Problems**
+
+-   [**Largest X Bordered Square**](https://www.geeksforgeeks.org/given-matrix-o-x-find-largest-subsquare-surrounded-x/)
+
+-   [**Egg Dropping Problem**](https://www.geeksforgeeks.org/egg-dropping-puzzle-dp-11/)
+
+-   [**Palindrome Partitioning**](https://www.geeksforgeeks.org/count-palindrome-sub-strings-string/)
+
+-   [**Palindromic Substring Count**](https://www.geeksforgeeks.org/count-palindrome-sub-strings-string/)
+
+-   [**Word Wrap Problem**](https://www.geeksforgeeks.org/optimal-strategy-for-a-game-dp-31/)
+
+-   [**Optimal Strategy for a Game**](https://www.geeksforgeeks.org/optimal-strategy-for-a-game-dp-31/)
+
+-   [**The painter’s partition problem**](https://www.geeksforgeeks.org/painters-partition-problem/)
+
+-   [**Program for Bridge and Torch problem**](https://www.geeksforgeeks.org/program-bridge-torch-problem/)
+
+-   [**Matrix Chain Multiplication**](https://www.geeksforgeeks.org/dynamic-programming-set-8-matrix-chain-multiplication/)
+
+-   [**Printing Matrix Chain Multiplication**](https://www.geeksforgeeks.org/printing-brackets-matrix-chain-multiplication-problem/)
+
+-   [**Maximum sum rectangle**](https://www.geeksforgeeks.org/dynamic-programming-set-27-max-sum-rectangle-in-a-2d-matrix/)
+
+-   [**Stock Buy and Sell - At-Most k Times**](https://www.geeksforgeeks.org/maximum-profit-by-buying-and-selling-a-share-at-most-twice/)
+
+-   [**Stock Buy and Sell - At Most 2 Times**](https://www.geeksforgeeks.org/maximum-profit-by-buying-and-selling-a-share-at-most-twice/)
+
+-   [**Min cost to sort strings using Reversals**](https://www.geeksforgeeks.org/minimum-cost-sort-strings-using-reversal-operations-different-costs/)
+
+-   [**Count of AP Subsequences**](https://www.geeksforgeeks.org/count-arithmetic-progression-subsequences-array/)
+
+-   [**DP on Trees**](https://www.geeksforgeeks.org/introduction-to-dynamic-programming-on-trees/)
+
+-   [**Max Height of Tree when any Node can be Root**](https://www.geeksforgeeks.org/maximum-height-of-tree-when-any-node-can-be-considered-as-root/)
+
+-   [**Longest repeating and non-overlapping substring**](https://www.geeksforgeeks.org/longest-repeating-and-non-overlapping-substring/)
+
+-   [**Palindrome Substrings Count**](https://www.geeksforgeeks.org/count-palindrome-sub-strings-string/)
 
 ## 11. Graph Algorithms
 
 **Graph algorithms** are a set of techniques and methods used to solve problems related to graphs, which are a collection of nodes and edges. These algorithms perform various operations on graphs, such as **searching, traversing, finding the shortest path**, and determining **connectivity**. They are essential for solving a wide range of real-world problems, including **network routing**, **social network analysis**, and **resource allocation**.
 
--   [**Guide on Graph Algorithms**](https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/)
+### **Basics**
 
--   [**Practice Problems on Graph Algorithms**](https://www.geeksforgeeks.org/explore?page=1&category=Graph&sortBy=submissions)
+-   [**Graph and its representations**](https://www.geeksforgeeks.org/graph-and-its-representations/)
 
--   [**Top 50 Graph Coding Problems for Interviews**](https://www.geeksforgeeks.org/top-50-graph-coding-problems-for-interviews/)
+### **BFS and DFS**
+
+-   [**Breadth First Traversal**](https://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/)
+
+-   [**Depth First Traversal**](https://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/)
+
+-   [**Difference between BFS and DFS**](https://www.geeksforgeeks.org/difference-between-bfs-and-dfs/)
+
+-   [**Rotten Tomatoes**](https://www.geeksforgeeks.org/minimum-time-required-so-that-all-oranges-become-rotten/)
+
+-   [**Islands in a Graph**](https://www.geeksforgeeks.org/find-the-number-of-islands-using-dfs/)
+
+-   [**Flood Fill**](https://www.geeksforgeeks.org/flood-fill-algorithm/)
+
+-   [**Check for Bipartite**](https://www.geeksforgeeks.org/bipartite-graph/)
+
+-   [**Word Ladder**](https://www.geeksforgeeks.org/word-ladder-length-of-shortest-chain-to-reach-a-target-word/)
+
+-   [**Snakes and Ladder**](https://www.geeksforgeeks.org/snake-ladder-problem-2/)
+
+-   [**Water Jug problem**](https://www.geeksforgeeks.org/water-jug-problem-using-bfs/)
+
+-   [**Pacific Atlantic Water Flow**](https://www.geeksforgeeks.org/atlantic-pacific-water-flow/)
+
+-   [**Shortest Path in Binary Matrix**](https://www.geeksforgeeks.org/shortest-path-in-a-binary-maze/)
+
+-   [**Clone a Graph**](https://www.geeksforgeeks.org/clone-an-undirected-graph/)
+
+-   [**Transitive Closure of a Graph using DFS**](https://www.geeksforgeeks.org/transitive-closure-of-a-graph-using-dfs/)
+
+### **Cycles**
+
+-   [**Detect Cycle in a Directed Graph**](https://www.geeksforgeeks.org/detect-cycle-in-a-graph/)
+
+-   [**Detect cycle in an undirected graph**](https://www.geeksforgeeks.org/detect-cycle-undirected-graph/)
+
+-   [**Detect cycle in a direct graph using colors**](https://www.geeksforgeeks.org/detect-cycle-direct-graph-using-colors/)
+
+-   [**Detect a negative cycle in a Graph \| (Bellman Ford)**](https://www.geeksforgeeks.org/detect-negative-cycle-graph-bellman-ford/)
+
+-   [**Cycles of length n in an undirected and connected graph**](https://www.geeksforgeeks.org/cycles-of-length-n-in-an-undirected-and-connected-graph/)
+
+-   [**Detecting negative cycle using Floyd Warshall**](https://www.geeksforgeeks.org/detecting-negative-cycle-using-floyd-warshall/)
+
+-   [**Clone a Directed Acyclic Graph**](https://www.geeksforgeeks.org/clone-directed-acyclic-graph/)
+
+-   [**Union By Rank and Path Compression in Union-Find Algorithm**](https://www.geeksforgeeks.org/union-by-rank-and-path-compression-in-union-find-algorithm/)
+
+-   [**Introduction to Disjoint Set Data Structure or Union-Find Algorithm**](https://www.geeksforgeeks.org/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/)
+
+### **Shortest Path**
+
+-   [**Dijkstra’s shortest path algorithm**](https://www.geeksforgeeks.org/greedy-algorithms-set-6-dijkstras-shortest-path-algorithm/)
+
+-   [**Bellman–Ford Algorithm**](https://www.geeksforgeeks.org/dynamic-programming-set-23-bellman-ford-algorithm/)
+
+-   [**Floyd Warshall Algorithm**](https://www.geeksforgeeks.org/dynamic-programming-set-16-floyd-warshall-algorithm/)
+
+-   [**Johnson’s algorithm for All-pairs shortest paths**](https://www.geeksforgeeks.org/johnsons-algorithm/)
+
+-   [**Shortest Path in Directed Acyclic Graph**](https://www.geeksforgeeks.org/shortest-path-for-directed-acyclic-graphs/)
+
+-   [**Dial’s Algorithm**](https://www.geeksforgeeks.org/dials-algorithm-optimized-dijkstra-for-small-range-weights/)
+
+-   [**Multistage Graph (Shortest Path)**](https://www.geeksforgeeks.org/multistage-graph-shortest-path/)
+
+-   [**Shortest path in an unweighted graph**](https://www.geeksforgeeks.org/shortest-path-unweighted-graph/)
+
+-   [**Karp’s minimum mean (or average) weight cycle algorithm**](https://www.geeksforgeeks.org/karps-minimum-mean-average-weight-cycle-algorithm/)
+
+-   [**0-1 BFS (Shortest Path in a Binary Weight Graph)**](https://www.geeksforgeeks.org/0-1-bfs-shortest-path-binary-graph/)
+
+-   [**Find minimum weight cycle in an undirected graph**](https://www.geeksforgeeks.org/find-minimum-weight-cycle-undirected-graph/)
+
+### **Minimum Spanning Tree**
+
+-   [**Prim’s Minimum Spanning Tree (MST)**](https://www.geeksforgeeks.org/greedy-algorithms-set-5-prims-minimum-spanning-tree-mst-2/)
+
+-   [**Kruskal’s Minimum Spanning Tree Algorithm**](https://www.geeksforgeeks.org/greedy-algorithms-set-2-kruskals-minimum-spanning-tree-mst/)
+
+-   [**Difference between Prim’s and Kruskal’s algorithm for MST**](https://www.geeksforgeeks.org/difference-between-prims-and-kruskals-algorithm-for-mst/)
+
+-   [**Applications of Minimum Spanning Tree Problem**](https://www.geeksforgeeks.org/applications-of-minimum-spanning-tree/)
+
+-   [**Minimum cost to connect all cities**](https://www.geeksforgeeks.org/minimum-cost-connect-cities/)
+
+-   [**Total number of Spanning Trees in a Graph**](https://www.geeksforgeeks.org/total-number-spanning-trees-graph/)
+
+-   [**Minimum Product Spanning Tree**](https://www.geeksforgeeks.org/minimum-product-spanning-tree/)
+
+-   [**Reverse Delete Algorithm for Minimum Spanning Tree**](https://www.geeksforgeeks.org/reverse-delete-algorithm-minimum-spanning-tree/)
+
+-   [**Boruvka’s algorithm for Minimum Spanning Tree**](https://www.geeksforgeeks.org/greedy-algorithms-set-9-boruvkas-algorithm/)
+
+### **Topological Sorting**
+
+-   [**Topological Sorting**](https://www.geeksforgeeks.org/topological-sorting/)
+
+-   [**All topological sorts of a Directed Acyclic Graph**](https://www.geeksforgeeks.org/all-topological-sorts-of-a-directed-acyclic-graph/)
+
+-   [**Kahn’s Algorithm for Topological Sorting**](https://www.geeksforgeeks.org/topological-sorting-indegree-based-solution/)
+
+-   [**Maximum edges that can be added to DAG so that is remains DAG**](https://www.geeksforgeeks.org/maximum-edges-can-added-dag-remains-dag/)
+
+-   [**Longest Path in a Directed Acyclic Graph**](https://www.geeksforgeeks.org/find-longest-path-directed-acyclic-graph/)
+
+-   [**Topological Sort of a graph using departure time of vertex**](https://www.geeksforgeeks.org/topological-sorting-using-departure-time-of-vertex/)
+
+-   [**Find Itinerary from a given list of tickets**](https://www.geeksforgeeks.org/find-itinerary-from-a-given-list-of-tickets/)
+
+### **Connectivity in Graph**
+
+-   [**Articulation Points (or Cut Vertices) in a Graph**](https://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/)
+
+-   [**Biconnected Components**](https://www.geeksforgeeks.org/biconnected-components/)
+
+-   [**Bridges in a graph**](https://www.geeksforgeeks.org/bridge-in-a-graph/)
+
+-   [**Eulerian path and circuit**](https://www.geeksforgeeks.org/eulerian-path-and-circuit/)
+
+-   [**Fleury’s Algorithm for printing Eulerian Path or Circuit**](https://www.geeksforgeeks.org/fleurys-algorithm-for-printing-eulerian-path/)
+
+-   [**Strongly Connected Components**](https://www.geeksforgeeks.org/strongly-connected-components/)
+
+-   [**Count all possible walks from a source to a destination with exactly k edges**](https://www.geeksforgeeks.org/count-possible-paths-source-destination-exactly-k-edges/)
+
+-   [**Euler Circuit in a Directed Graph**](https://www.geeksforgeeks.org/euler-circuit-directed-graph/)
+
+-   [**Length of shortest chain to reach the target word**](https://www.geeksforgeeks.org/length-of-shortest-chain-to-reach-a-target-word/)
+
+-   [**Find if an array of strings can be chained to form a circle**](https://www.geeksforgeeks.org/given-array-strings-find-strings-can-chained-form-circle/)
+
+-   [**Tarjan’s Algorithm to find strongly connected Components**](https://www.geeksforgeeks.org/tarjan-algorithm-find-strongly-connected-components/)
+
+-   [**Paths to travel each nodes using each edge (Seven Bridges of Königsberg)**](https://www.geeksforgeeks.org/paths-travel-nodes-using-edgeseven-bridges-konigsberg/)
+
+-   [**Dynamic Connectivity \| Set 1 (Incremental)**](https://www.geeksforgeeks.org/dynamic-connectivity-set-1-incremental/)
+
+### **Maximum Flow in Graph**
+
+-   [**Max Flow Problem Introduction**](https://www.geeksforgeeks.org/max-flow-problem-introduction/)
+
+-   [**Ford-Fulkerson Algorithm for Maximum Flow Problem**](https://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/)
+
+-   [**Find maximum number of edge disjoint paths between two vertices**](https://www.geeksforgeeks.org/find-edge-disjoint-paths-two-vertices/)
+
+-   [**Find minimum s-t cut in a flow network**](https://www.geeksforgeeks.org/minimum-cut-in-a-directed-graph/)
+
+-   [**Maximum Bipartite Matching**](https://www.geeksforgeeks.org/maximum-bipartite-matching/)
+
+-   [**Channel Assignment Problem**](https://www.geeksforgeeks.org/channel-assignment-problem/)
+
+-   [**Introduction to Push Relabel Algorithm**](https://www.geeksforgeeks.org/introduction-to-push-relabel-algorithm/)
+
+-   [**Karger’s Algorithm- Set 1- Introduction and Implementation**](https://www.geeksforgeeks.org/kargers-algorithm-for-minimum-cut-set-1-introduction-and-implementation/)
+
+-   [**Dinic’s algorithm for Maximum Flow**](https://www.geeksforgeeks.org/dinics-algorithm-maximum-flow/)
 
 ## 12. Pattern Searching
 
 **Pattern Searching** is a fundamental technique in DSA used to find occurrences of a specific pattern within a larger text. The Pattern Searching Algorithms use techniques like **preprocessing** to minimize unnecessary comparisons, making the search faster.
 
--   [**Pattern Searching Guide**](https://www.geeksforgeeks.org/pattern-searching/)
+### Important Pattern Searching Algorithms:
 
--   [**Practice Problems on Pattern Searching**](https://www.geeksforgeeks.org/explore?page=1&category=Pattern%20Searching&sortBy=submissions)
+-   [**Naive String Matching**](https://www.geeksforgeeks.org/naive-algorithm-for-pattern-searching/) : A Simple Algorithm that works in O(m x n) time where **m** is the length of the pattern and **n** is the length of the text.
+
+-   [**Knuth-Morris-Pratt (KMP) Algorithm**](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/) It preprocesses pattern and works in O(m + n) Time.
+
+-   [**Rabin-Karp Algorithm**](https://www.geeksforgeeks.org/rabin-karp-algorithm-for-pattern-searching/) : It uses hashing to compare the pattern with the text. It works in O(m x n) Time in worst case,
+
+-   [**Aho-Corasick Algorithm**](https://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/) : A deterministic finite automaton (DFA) based algorithm and works in O(m + n) time.
+
+### **Learn Basics of** Pattern Searching**:**
+
+-   [**Introduction to Pattern Searching**](https://www.geeksforgeeks.org/introduction-to-pattern-searching-data-structure-and-algorithm-tutorial/)
+
+-   [**Naive Pattern Searching**](https://www.geeksforgeeks.org/searching-for-patterns-set-1-naive-pattern-searching/)
+
+### **Standard** Pattern Searching Algorithms**:**
+
+-   [**Rabin-Karp Algorithm**](https://www.geeksforgeeks.org/searching-for-patterns-set-3-rabin-karp-algorithm/)
+
+-   [**KMP Algorithm**](https://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/)
+
+-   [**Z algorithm**](https://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm/)
+
+-   [**Finite Automata**](https://www.geeksforgeeks.org/searching-for-patterns-set-5-finite-automata/)
+
+-   [**Boyer Moore – Bad Character Heuristic**](https://www.geeksforgeeks.org/pattern-searching-set-7-boyer-moore-algorithm-bad-character-heuristic/)
+
+-   [**Aho-Corasick Algorithm**](https://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/)
+
+-   [**Suffix Array**](https://www.geeksforgeeks.org/suffix-array-set-1-introduction/)
+
+-   [**Kasai’s Algorithm for LCP array from Suffix Array**](https://www.geeksforgeeks.org/kasais-algorithm-for-construction-of-lcp-array-from-suffix-array/)
+
+-   [**Online algorithm for checking palindrome in a stream**](https://www.geeksforgeeks.org/online-algorithm-for-checking-palindrome-in-a-stream/)
+
+-   [**Manacher’s Algorithm**](https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-4/)
+
+-   [**Ukkonen’s Suffix Tree Construction – Part 1**](https://www.geeksforgeeks.org/ukkonens-suffix-tree-construction-part-1/)
+
+-   [**Generalized Suffix Tree**](https://www.geeksforgeeks.org/generalized-suffix-tree)
+
+### **Practice Problems on** Pattern Searching**:**
+
+-   [**Frequency of a Substring**](https://www.geeksforgeeks.org/frequency-substring-string/)
+
+-   [**Anagram Substring Search**](https://www.geeksforgeeks.org/anagram-substring-search-search-permutations/)
+
+-   [**Check if Two Strings Rotations**](https://www.geeksforgeeks.org/a-program-to-check-if-strings-are-rotations-of-each-other/)
+
+-   [**Substrings with all Vowels**](https://www.geeksforgeeks.org/find-substrings-contain-vowels/)
+
+-   [**Substrings with only Given Character**](https://www.geeksforgeeks.org/count-of-substrings-containing-only-the-given-character/)
+
+-   [**Find all Occurrences of a Subarray**](https://www.geeksforgeeks.org/check-whether-an-array-is-subarray-of-another-array/)
+
+-   [**Pattern Searching using a Trie of all Suffixes**](https://www.geeksforgeeks.org/pattern-searching-using-trie-suffixes/)
+
+-   [**Wildcard Pattern Matching**](https://www.geeksforgeeks.org/wildcard-pattern-matching/)
+
+-   [**Regular Expression Matching**](https://www.geeksforgeeks.org/implementing-regular-expression-matching/)
+
+-   [**Longest prefix which is also suffix**](https://www.geeksforgeeks.org/longest-prefix-also-suffix/)
+
+-   [**Count string in a 2D array**](https://www.geeksforgeeks.org/find-count-number-given-string-present-2d-character-array/)
+
+-   [**Find all the patterns of “1(0+)1”**](https://www.geeksforgeeks.org/find-all-the-patterns-of-101-in-a-given-string-general-approach/)
+
+-   [**Max length prefix as Subsequence**](https://www.geeksforgeeks.org/maximum-length-prefix-one-string-occurs-subsequence-another/)
+
+-   [**Search a Word in a 2D Grid**](https://www.geeksforgeeks.org/search-a-word-in-a-2d-grid-of-characters/)
+
+-   [**Word Search with Zig-Zag**](https://www.geeksforgeeks.org/check-if-a-word-exists-in-a-grid-or-not/)
+
+-   [**Suffix Tree Application 1 – Substring Check**](https://www.geeksforgeeks.org/suffix-tree-application-1-substring-check/)
+
+### Applications of Pattern Searching
+
+Pattern searching algorithms have numerous applications, including:
+
+-   **Text Processing:** Searching for keywords in a document, finding and replacing text, spell checking, and plagiarism detection.
+
+-   **Information Retrieval:** Finding relevant documents in a database, web search, and data mining.
+
+-   **Bioinformatics:** Searching for DNA sequences in a genome, protein analysis, and gene expression analysis.
+
+-   **Network Security:** Detecting malicious patterns in network traffic, intrusion detection, and malware analysis.
+
+-   **Data Mining:** Identifying patterns in large datasets, customer segmentation, and fraud detection.
 
 ## 13. Branch and Bound Algorithm
 
 **Branch and Bound Algorithm** is a method used in combinatorial optimization problems to systematically search for the best solution. It works by dividing the problem into smaller subproblems, or branches, and then eliminating certain branches based on bounds on the optimal solution. This process continues until the best solution is found or all branches have been explored.
 
--   [**Guide on Branch and Bound Algorithm**](https://www.geeksforgeeks.org/branch-and-bound-algorithm/)
+### Introduction to Branch and Bound:
+
+-   [**Branch and Bound meaning in DSA**](https://www.geeksforgeeks.org/branch-and-bound-meaning-in-dsa/)
+
+-   [**Introduction to Branch and Bound**](https://www.geeksforgeeks.org/introduction-to-branch-and-bound-data-structures-and-algorithms-tutorial/)
+
+-   [**Difference between Backtracking and Branch-N-Bound**](https://www.geeksforgeeks.org/difference-between-backtracking-and-branch-n-bound-technique/)
+
+### Standard Problems on Branch and Bound:
+
+-   [**Branch and Bound \| Set 1 (Introduction with 0/1 Knapsack)**](https://www.geeksforgeeks.org/branch-and-bound-set-1-introduction-with-01-knapsack/)
+
+-   [**Branch and Bound \| Set 2 (Implementation of 0/1 Knapsack)**](https://www.geeksforgeeks.org/branch-and-bound-set-2-implementation-of-01-knapsack/)
+
+-   [**0/1 Knapsack using Least Cost Branch and Bound**](https://www.geeksforgeeks.org/0-1-knapsack-using-least-count-branch-and-bound/)
+
+-   [**Branch and Bound \| Set 3 (8 puzzle Problem)**](https://www.geeksforgeeks.org/branch-bound-set-3-8-puzzle-problem/ "Permalink to Branch and Bound | Set 3 (8 puzzle Problem)")
+
+-   [**Branch and Bound \| Set 5 (N Queen Problem)**](https://www.geeksforgeeks.org/branch-and-bound-set-4-n-queen-problem/ "Permalink to Branch and Bound | Set 5 (N Queen Problem)")
+
+-   [**Branch And Bound \| Set 6 (Traveling Salesman Problem)**](https://www.geeksforgeeks.org/branch-bound-set-5-traveling-salesman-problem/ "Permalink to Branch And Bound | Set 6 (Traveling Salesman Problem)")
+
+-   [**Job Assignment Problem using Branch And Bound**](https://www.geeksforgeeks.org/job-assignment-problem-using-branch-and-bound/)
+
+-   [**Travelling Salesman Problem (TSP) using Reduced Matrix Method**](https://www.geeksforgeeks.org/travelling-salesman-problem-tsp-using-reduced-matrix-method/)
+
+-   [**Generate Binary Strings of length N using Branch and Bound**](https://www.geeksforgeeks.org/generate-binary-strings-of-length-n-using-branch-and-bound/)
 
 ## 14. Geometric Algorithms
 
 **Geometric algorithms** are a set of algorithms that solve problems related to **shapes**, **points**, **lines** and polygons. Geometric algorithms are essential for solving a wide range of problems in computer science, such as intersection detection, convex hull computation, etc.
 
--   [**Guide on Geometric Algorithms**](https://www.geeksforgeeks.org/geometric-algorithms/)
+### **Table of Content**
 
--   [**Practice Problem on Geometric Algorithms**](https://www.geeksforgeeks.org/explore?page=1&category=Geometric&sortBy=submissions)
+-   [**What are Geometric Algorithms?**](https://www.geeksforgeeks.org/geometric-algorithms/#what-are-geometric-algorithms)
+
+-   [**Pattern Printing**](https://www.geeksforgeeks.org/geometric-algorithms/#pattern-printing)
+
+-   [**Lines**](https://www.geeksforgeeks.org/geometric-algorithms/#lines)
+
+-   [**Triangle**](https://www.geeksforgeeks.org/geometric-algorithms/#triangle)
+
+-   [**Rectangle \| Square \| Circle**](https://www.geeksforgeeks.org/geometric-algorithms/#rectangle-square-circle)
+
+-   [**Quadrilateral**](https://www.geeksforgeeks.org/geometric-algorithms/#quadrilateral)
+
+-   [**3D Objects**](https://www.geeksforgeeks.org/geometric-algorithms/#3d-objects)
+
+-   [**Polygon and Convex Hull**](https://www.geeksforgeeks.org/geometric-algorithms/#polygon-and-convex-hull)
+
+-   [**Standard Problems on Geometric Algorithm**](https://www.geeksforgeeks.org/geometric-algorithms/#standard-problems-on-geometric-algorithm)
+
+### **Pattern Printing:**
+
+-   [**Print lower triangle with alternate ‘\*’ and ‘#’**](https://www.geeksforgeeks.org/print-lower-triangle-with-alternate-and/)
+
+-   [**Print the pattern 1\*2\*5\*6 –3\*4**](https://www.geeksforgeeks.org/print-the-pattern-1256-34/)
+
+-   [**Python Program to print the pattern ‘G’**](https://www.geeksforgeeks.org/python-program-to-print-the-pattern-g/)
+
+-   [**Pascal’s Triangle**](https://www.geeksforgeeks.org/pascal-triangle/)
+
+-   [**Program to print pyramid pattern**](https://www.geeksforgeeks.org/program-to-print-pyramid-pattern/)
+
+-   [**Program to print the diamond shape**](https://www.geeksforgeeks.org/program-print-diamond-shape/)
+
+-   [**Hour-glass Pattern**](https://www.geeksforgeeks.org/hour-glass-pattern/)
+
+-   [**Program to print V and inverted-V pattern**](https://www.geeksforgeeks.org/program-for-inverted-v-pattern/)
+
+-   [**Program to print hollow pyramid, diamond pattern and their modifications**](https://www.geeksforgeeks.org/program-print-hollow-pyramid-diamond-pattern/)
+
+-   [**Code to Generate the Map of India (With Explanation)**](https://www.geeksforgeeks.org/code-to-generate-the-map-of-india-with-explanation/)
+
+### **Lines:**
+
+-   [**Program to find the mid-point of a line**](https://www.geeksforgeeks.org/program-find-mid-point-line/)
+
+-   [**Section formula (Point that divides a line in given ratio)**](https://www.geeksforgeeks.org/section-formula-point-divides-line-given-ratio/)
+
+-   [**Program to find slope of a line**](https://www.geeksforgeeks.org/program-find-slope-line/)
+
+-   [**Program to find line passing through 2 Points**](https://www.geeksforgeeks.org/program-find-line-passing-2-points/)
+
+-   [**Program for Point of Intersection of Two Lines**](https://www.geeksforgeeks.org/program-for-point-of-intersection-of-two-lines/)
+
+-   [**Reflection of a point about a line in C++**](https://www.geeksforgeeks.org/reflection-point-line-c/)
+
+-   [**Find points at a given distance on a line of given slope**](https://www.geeksforgeeks.org/find-points-at-a-given-distance-on-a-line-of-given-slope/)
+
+-   [**Given n line segments, find if any two segments intersect**](https://www.geeksforgeeks.org/given-a-set-of-line-segments-find-if-any-two-segments-intersect/)
+
+-   [**Count maximum points on same line**](https://www.geeksforgeeks.org/count-maximum-points-on-same-line/)
+
+-   [**Minimum lines to cover all points**](https://www.geeksforgeeks.org/minimum-lines-cover-points/)
+
+### **Triangle:**
+
+-   [**Check whether triangle is valid or not if sides are given**](https://www.geeksforgeeks.org/check-whether-triangle-valid-not-sides-given/)
+
+-   [**Check whether a given point lies inside a triangle or not**](https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/)
+
+-   [**Program to find area of a triangle**](https://www.geeksforgeeks.org/c-program-find-area-triangle/)
+
+-   [**Check if right triangle possible from given area and hypotenuse**](https://www.geeksforgeeks.org/check-right-angles-possible-given-area-hypotenuse/)
+
+-   [**Count Integral points inside a Triangle**](https://www.geeksforgeeks.org/count-integral-points-inside-a-triangle/)
+
+-   [**Find all angles of a given triangle**](https://www.geeksforgeeks.org/find-angles-given-triangle/)
+
+-   [**Program to find Circumcenter of a Triangle**](https://www.geeksforgeeks.org/program-find-circumcenter-triangle-2/)
+
+-   [**Number of Triangles that can be formed given a set of lines in Euclidean Plane**](https://www.geeksforgeeks.org/number-triangles-can-formed-given-set-lines-euclidean-plane/)
+
+-   [**Program to calculate area of Circumcircle of an Equilateral Triangle**](https://www.geeksforgeeks.org/program-calculate-area-circumcircle-equilateral-triangle/)
+
+-   [**Program to find third side of triangle using law of cosines**](https://www.geeksforgeeks.org/program-find-third-side-triangle-using-law-cosines/)
+
+### **Rectangle \| Square \| Circle:**
+
+-   [**Check whether a given point lies inside a rectangle or not**](https://www.geeksforgeeks.org/check-whether-given-point-lies-inside-rectangle-not/)
+
+-   [**Program for Area And Perimeter Of Rectangle**](https://www.geeksforgeeks.org/program-area-perimeter-rectangle/)
+
+-   [**Find if two rectangles overlap**](https://www.geeksforgeeks.org/find-two-rectangles-overlap/)
+
+-   [**How to check if given four points form a square**](https://www.geeksforgeeks.org/check-given-four-points-form-square/)
+
+-   [**Number of rectangles in N\*M grid**](https://www.geeksforgeeks.org/number-rectangles-nm-grid/)
+
+-   [**Program to find Circumference of a Circle**](https://www.geeksforgeeks.org/program-find-circumference-circle/)
+
+-   [**Program to find area of a circle**](https://www.geeksforgeeks.org/c-program-find-area-circle/)
+
+-   [**Check whether a point exists in circle sector or not**](https://www.geeksforgeeks.org/check-whether-point-exists-circle-sector-not/)
+
+-   [**Check if two given circles touch or intersect each other**](https://www.geeksforgeeks.org/check-two-given-circles-touch-intersect/)
+
+-   [**Program to find area of a Circular Segment**](https://www.geeksforgeeks.org/program-find-area-circular-segment/)
+
+-   [**Check if a line touches or intersects a circle**](https://www.geeksforgeeks.org/check-line-touches-intersects-circle/)
+
+-   [**Area of a Circumscribed Circle of a Square**](https://www.geeksforgeeks.org/area-circumscribed-circle-square/)
+
+-   [**Find minimum radius such that atleast k point lie inside the circle**](https://www.geeksforgeeks.org/find-minimum-radius-atleast-k-point-lie-inside-circle/)
+
+-   [**Angular Sweep (Maximum points that can be enclosed in a circle of given radius)**](https://www.geeksforgeeks.org/angular-sweep-maximum-points-can-enclosed-circle-given-radius/)
+
+### **Quadrilateral:**
+
+-   [**Number of parallelograms when n horizontal parallel lines intersect m vertical parallellines**](https://www.geeksforgeeks.org/number-of-parallelograms-when-n-horizontal-parallel-lines-intersect-m-vertical-parallellines/)
+
+-   [**Program for Circumference of a Parallelogram**](https://www.geeksforgeeks.org/program-circumference-parallelogram/)
+
+-   [**Program to calculate area and perimeter of Trapezium**](https://www.geeksforgeeks.org/program-calculate-area-perimeter-trapezium/)
+
+-   [**Program to find area of a Trapezoid**](https://www.geeksforgeeks.org/program-find-area-trapezoid/)
+
+-   [**Find all possible coordinates of parallelogram**](https://www.geeksforgeeks.org/find-possible-coordinates-parallelogram/)
+
+-   [**Maximum area of quadrilateral**](https://www.geeksforgeeks.org/maximum-area-quadrilateral/)
+
+-   [**Check whether four points make a parallelogram**](https://www.geeksforgeeks.org/check-whether-four-points-make-parallelogram/)
+
+-   [**Find the Missing Point of Parallelogram**](https://www.geeksforgeeks.org/find-missing-point-parallelogram/)
+
+### **3D Objects:**
+
+-   [**Find the perimeter of a cylinder**](https://www.geeksforgeeks.org/find-perimeter-cylinder/)
+
+-   [**Program for Volume and Surface area of Frustum of Cone**](https://www.geeksforgeeks.org/program-for-volume-and-surface-area-of-frustum-of-cone/)
+
+-   [**Program to calculate volume of Ellipsoid**](https://www.geeksforgeeks.org/program-calculate-volume-ellipsoid/)
+
+-   [**Program for volume of Pyramid**](https://www.geeksforgeeks.org/program-for-volume-of-pyramid/)
+
+-   [**Calculate volume and surface area of a cone**](https://www.geeksforgeeks.org/calculate-volume-surface-area-cone/)
+
+-   [**Calculate Volume and Surface area Of Sphere**](https://www.geeksforgeeks.org/calculate-volume-surface-area-sphere/)
+
+-   [**Program for Volume and Surface Area of Cuboid**](https://www.geeksforgeeks.org/program-for-volume-and-surface-area-of-cuboid/)
+
+-   [**Program for Volume and Surface Area of Cube**](https://www.geeksforgeeks.org/program-volume-surface-area-cube/)
+
+-   [**Pythagorean Quadruple**](https://www.geeksforgeeks.org/pythagorean-quadruple/)
+
+-   [**LS3/NS3 sphere generation algorithm and its implementation**](https://www.geeksforgeeks.org/ls3ns3-sphere-generation-algorithm-implementation/)
+
+### **Polygon and Convex Hull:**
+
+-   [**How to check if a given point lies inside or outside a polygon?**](https://www.geeksforgeeks.org/how-to-check-if-a-given-point-lies-inside-a-polygon/)
+
+-   [**Area of a polygon with given n ordered vertices**](https://www.geeksforgeeks.org/area-of-a-polygon-with-given-n-ordered-vertices/)
+
+-   [**Tangents between two Convex Polygons**](https://www.geeksforgeeks.org/tangents-two-convex-polygons/)
+
+-   [**Find number of diagonals in n sided convex polygon**](https://www.geeksforgeeks.org/find-number-diagonals-n-sided-convex-polygon/)
+
+-   [**Convex Hull using Jarvis’ Algorithm or Wrapping**](https://www.geeksforgeeks.org/convex-hull-using-jarvis-algorithm-or-wrapping/)
+
+-   [**Quickhull Algorithm for Convex Hull**](https://www.geeksforgeeks.org/quickhull-algorithm-convex-hull/)
+
+-   [**Deleting points from Convex Hull**](https://www.geeksforgeeks.org/deleting-points-convex-hull/)
+
+-   [**Minimum area of a Polygon with three points given**](https://www.geeksforgeeks.org/minimum-area-polygon-three-points-given/)
+
+### **Standard Problems on Geometric Algorithm:**
+
+-   [**Finding the vertex, focus**](https://www.geeksforgeeks.org/finding-vertex-focus-directrix-parabola/)
+
+-   [**and directrix of a parabola**](https://www.geeksforgeeks.org/finding-vertex-focus-directrix-parabola/)
+
+-   [**Find Simple Closed Path for a given set of points**](https://www.geeksforgeeks.org/find-simple-closed-path-for-a-given-set-of-points/)
+
+-   [**Number of Integral Points between Two Points**](https://www.geeksforgeeks.org/number-integral-points-two-points/)
+
+-   [**Optimum location of point to minimize total distance**](https://www.geeksforgeeks.org/optimum-location-point-minimize-total-distance/)
+
+-   [**Find perimeter of shapes formed with 1s in binary matrix**](https://www.geeksforgeeks.org/find-perimeter-shapes-formed-1s-binary-matrix/)
+
+-   [**Draw geometric shapes on images using OpenCV**](https://www.geeksforgeeks.org/draw-geometric-shapes-images-using-opencv/)
+
+-   [**Find if it’s possible to rotate the page by an angle or not**](https://www.geeksforgeeks.org/find-possible-rotate-page-angle-not/)
+
+-   [**Equable Shapes**](https://www.geeksforgeeks.org/equable-shapes/)
 
 ## 15. Randomized Algorithms
 
 Randomized algorithms are algorithms that use **randomness** to solve problems. They make use of random input to achieve their goals, often leading to **simpler** and more **efficient solutions**. These algorithms may **not product same result** but are particularly useful in situations when a **probabilistic approach** is acceptable.
 
--   [**Guide on Randomized Algorithms**](https://www.geeksforgeeks.org/randomized-algorithms/)
+### **Introduction**
 
-**Related Articles:**
+-   [**Introduction and Analysis**](https://www.geeksforgeeks.org/randomized-algorithms-set-1-introduction-and-analysis/)
 
--   [**What is Algorithm \| Introduction to Algorithms**](https://www.geeksforgeeks.org/introduction-to-algorithms/)
+-   [**Classification and Applications**](https://www.geeksforgeeks.org/randomized-algorithms-set-2-classification-and-applications/)
 
--   [**Definition, Types, Complexity, Examples of Algorithms**](https://www.geeksforgeeks.org/what-is-an-algorithm-definition-types-complexity-examples/)
+-   [**1/2 Approximate Median Example**](https://www.geeksforgeeks.org/randomized-algorithms-set-3-12-approximate-median/)
 
--   [**Algorithms Design Techniques**](https://www.geeksforgeeks.org/algorithms-design-techniques/)
+### **Easy Problems**
 
--   [**Why is analysis of an Algorithm important?**](https://www.geeksforgeeks.org/what-is-algorithm-and-why-analysis-of-it-is-important/)
+-   [**Generates one of 3 according to given probabilities**](https://www.geeksforgeeks.org/write-a-function-to-generate-3-numbers-according-to-given-probabilities/)
+
+-   [**Generate 0 and 1 with 25% and 75% probability**](https://www.geeksforgeeks.org/generate-0-1-25-75-probability/)
+
+-   [**Implement rand3() using rand2()**](https://www.geeksforgeeks.org/implement-rand3-using-rand2/)
+
+-   [**Birthday Paradox**](https://www.geeksforgeeks.org/birthday-paradox/)
+
+-   [**Expected Value of an array**](https://www.geeksforgeeks.org/expectation-expected-value-array/)
+
+-   [**Shuffle a deck of cards**](https://www.geeksforgeeks.org/shuffle-a-deck-of-cards-3/)
+
+-   [**Generate CAPTCHA and verify**](https://www.geeksforgeeks.org/program-generate-captcha-verify-user/)
+
+-   [**Index of max occurring with equal probability**](https://www.geeksforgeeks.org/find-index-maximum-occurring-element-equal-probability/)
+
+-   [**Randomized Binary Search**](https://www.geeksforgeeks.org/randomized-binary-search-algorithm/)
+
+### **Medium Problems**
+
+-   [**Make a fair coin from a biased coin**](https://www.geeksforgeeks.org/print-0-and-1-with-50-probability/)
+
+-   [**Shuffle a given array using Fisher–Yates shuffle Algorithm**](https://www.geeksforgeeks.org/shuffle-a-given-array-using-fisher-yates-shuffle-algorithm/)
+
+-   [**Expected Number of Trials until Success**](https://www.geeksforgeeks.org/expected-number-of-trials-before-success/)
+
+-   [**Strong Password Suggester Program**](https://www.geeksforgeeks.org/strong-password-suggester-program/)
+
+-   [**QuickSort using Random Pivoting**](https://www.geeksforgeeks.org/quicksort-using-random-pivoting/)
+
+-   [**Operations on Sparse Matrices**](https://www.geeksforgeeks.org/operations-sparse-matrices/)
+
+-   [**Estimating the value of Pi using Monte Carlo**](https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/)
+
+-   [**Implement rand12() using rand6() in one line**](https://www.geeksforgeeks.org/implement-rand12-using-rand6-in-one-line/)
+
+### **Hard Problems**
+
+-   [**Generate integer from 1 to 7 with equal probability**](https://www.geeksforgeeks.org/generate-integer-from-1-to-7-with-equal-probability/)
+
+-   [**Implement random-0-6-Generator using the given random-0-1-Generator**](https://www.geeksforgeeks.org/implement-random-0-6-generator-using-the-given-random-0-1-generator/)
+
+-   [**Select a random number from stream, with O(1) space**](https://www.geeksforgeeks.org/select-a-random-number-from-stream-with-o1-space/)
+
+-   [**Random number generator in arbitrary probability distribution fashion**](https://www.geeksforgeeks.org/random-number-generator-in-arbitrary-probability-distribution-fashion/)
+
+-   [**Reservoir Sampling**](https://www.geeksforgeeks.org/reservoir-sampling/)
+
+-   [**Linearity of Expectation**](https://www.geeksforgeeks.org/linearity-of-expectation/)
+
+-   [**Introduction and implementation of Karger’s algorithm for Minimum Cut**](https://www.geeksforgeeks.org/introduction-and-implementation-of-kargers-algorithm-for-minimum-cut/)
+
+-   [**Select a Random Node from a Singly Linked List**](https://www.geeksforgeeks.org/select-a-random-node-from-a-singly-linked-list/)
+
+-   [**Select a Random Node from a tree with equal probability**](https://www.geeksforgeeks.org/select-random-node-tree-equal-probability/)
+
+-   [**Freivald’s Algorithm to check if a matrix is product of two**](https://www.geeksforgeeks.org/freivalds-algorithm/)
+
+-   [**Random Acyclic Maze Generator with given Entry and Exit point**](https://www.geeksforgeeks.org/random-acyclic-maze-generator-with-given-entry-and-exit-point/)
