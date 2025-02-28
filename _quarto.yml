@@ -6,7 +6,7 @@ website:
   title: "Haiyang's Tech Portfolio"
   description: "Showcasing expertise in IoT, Cybersecurity, and AWS Cloud."
   site-url: "https://haiyangxu.netlify.app/"  # Replace with your actual Netlify URL or custom domain
-  favicon: assets/favicon.ico
+  favicon: logo.jpg
 
   navbar:
     left:
