@@ -12,6 +12,8 @@ At the enterprise level, cybersecurity is a key component of an organization’s
 
 Cybersecurity job growth is also robust. The US Bureau of Labor Statistics projects that “employment of information security analysts is projected to grow 32% from 2022 to 2032, faster than the average for all occupations.”
 
+[Jump to Cybersecurity Tools](#cybersecurity-tool)
+
 ## Why cybersecurity is important
 
 Cybersecurity is important because cyberattacks and cybercrime have the power to disrupt, damage or destroy businesses, communities and lives. Successful cyberattacks lead to identity theft, personal and corporate extortion, loss of sensitive information and business-critical data, temporary business outages, lost business and lost customers and, in some cases, business closures.
@@ -262,3 +264,274 @@ Analytics- and AI-driven technologies can help identify and respond to attacks i
 ### Disaster recovery
 
 [Disaster recovery](https://www.ibm.com/topics/disaster-recovery) capabilities can play a key role in maintaining business continuity and remediating threats in the event of a cyberattack. For example, the ability to fail over to a backup that is hosted in a remote location can help a business resume operations after a ransomware attack (sometimes without paying a ransom)
+
+## Cybersecurity Tools {#cybersecurity-tool}
+
+### Network Scanning and Information Gathering
+
+This category includes tools essential for discovering and mapping network structures, identifying open ports, and gathering intelligence about systems and services. These tools are critical for initial reconnaissance in security assessments.
+
+-   **Nmap**: A powerful, open-source network scanner that performs various scans to identify hosts, services, and vulnerabilities, supporting Windows, Linux, and macOS.
+
+    -   Website: [Nmap](https://nmap.org/)
+
+-   **Shodan**: Described as a search engine for internet-connected devices, it allows users to find specific devices and their configurations, useful for security research.
+
+    -   Website: [Shodan](https://www.shodan.io/)
+
+-   **Maltego**: A data mining tool for visualizing relationships, aiding in open-source intelligence (OSINT) and reconnaissance, particularly for mapping entities.
+
+    -   Website: [Maltego](https://www.maltego.com/)
+
+-   **TheHarvester**: Gathers email addresses, subdomains, and other public information, essential for initial information collection in security assessments.
+
+    -   Website: [TheHarvester](https://github.com/laramies/theHarvester)
+
+-   **Recon-NG**: A modular web reconnaissance framework, collecting data from various sources for comprehensive network mapping.
+
+    -   Website: [Recon-NG](https://bitbucket.org/LaNMaSteR53/recon-ng/wiki/Getting%20Started)
+
+-   **Amass**: Focuses on network mapping and DNS enumeration, particularly for subdomain discovery and asset identification.
+
+    -   Website: [Amass](https://github.com/OWASP/Amass)
+
+-   **censys**: A search engine for internet infrastructure, providing data on SSL/TLS certificates, DNS records, and more for security analysis.
+
+    -   Website: [censys](https://censys.io/)
+
+-   **OSINT Framework**: Integrates various OSINT tools and resources, offering a centralized platform for efficient information gathering.
+
+    -   Website: [OSINT Framework](https://www.osintframework.com/)
+
+-   **Gobuster**: A directory and file discovery tool for web servers, useful for finding hidden files and directories, indicating its versatility across categories.
+
+    -   Website: [Gobuster](https://github.com/OJ/gobuster)
+
+### Wireless Network Security
+
+Focused on assessing the security of wireless networks, these tools perform tasks like password cracking, traffic monitoring, and vulnerability identification, particularly for Wi-Fi networks.
+
+-   **Aircrack-NG**: A suite of tools for Wi-Fi security assessment, including cracking WEP and WPA-PSK keys, with support for multiple operating systems.
+
+    -   Website: [Aircrack-NG](https://www.aircrack-ng.org/)
+
+-   **Wifite**: Automates wireless attacks, such as deauthentication and handshake capture, simplifying the process for security testing.
+
+    -   Website: [Wifite](https://github.com/derv82/wifite)
+
+-   **Kismet**: A wireless network detector, sniffer, and intrusion detection system, capturing and analyzing wireless traffic.
+
+    -   Website: [Kismet](https://www.kismetwireless.net/)
+
+-   **TCPDump**: A command-line tool for capturing and analyzing network traffic, useful for wireless network analysis and security auditing.
+
+    -   Website: [TCPDump](https://www.tcpdump.org/)
+
+-   **Airodump**: Part of the Aircrack-NG suite, captures and analyzes wireless network traffic for security assessment.
+
+    -   Website: [Airodump](https://www.aircrack-ng.org/doku.php)
+
+-   **Netstumbler**: Detects wireless networks and their properties, primarily for Windows, measuring signal strength and encryption.
+
+    -   Website: [Netstumbler](https://www.netstumbler.org/)
+
+-   **Reaver**: Cracks WPS pin codes to obtain WPA/WPA2 passphrases, focusing on exploiting Wi-Fi Protected Setup vulnerabilities.
+
+    -   Website: [Reaver](https://ha.cker.de/old/reaver.html)
+
+### Social Engineering and Phishing
+
+These tools simulate social engineering attacks, particularly Phishing, to test user awareness and the effectiveness of security controls, crucial for assessing human-related vulnerabilities.
+
+-   **GoPhish**: An open-source Phishing toolkit for simulating attacks, measuring user susceptibility, and improving security training.
+
+    -   Website: [GoPhish](https://github.com/gophish/gophish)
+
+-   **HiddenEye**: Creates and manages Phishing campaigns, including email templates and landing pages, for testing security awareness.
+
+    -   Website: [HiddenEye](https://github.com/HiddenEyeTeam/HiddenEye)
+
+-   **SocialFish**: Creates Phishing pages and manages campaigns, focusing on social engineering attack simulations.
+
+    -   Website: [SocialFish](https://github.com/UndeadSec/SocialFish)
+
+-   **EvilURL**: Generates shortened URLs for use in Phishing attacks, enhancing the stealth of social engineering efforts.
+
+    -   Website: [EvilURL](https://github.com/UndeadSec/EvilURL)
+
+-   **Evilginx**: Creates fake login pages to intercept and relay user credentials, simulating advanced Phishing scenarios.
+
+    -   Website: [Evilginx](https://github.com/evilginx2/evilginx2)
+
+### Penetration Testing and Exploitation
+
+These tools perform penetration tests and exploit vulnerabilities to assess system and network security, identifying weaknesses before they can be exploited by attackers.
+
+-   **Burp Suite**: A comprehensive toolkit for web application security testing, including proxy, scanner, and intruder, developed by PortSwigger.
+
+    -   Website: [Burp Suite](https://portswigger.net/burp)
+
+-   **Metasploit Framework**: A popular penetration testing framework with a collection of exploits and automation tools, supporting multiple platforms.
+
+    -   Website: [Metasploit Framework](https://www.metasploit.com/)
+
+-   **SQL Map**: An automated tool for detecting and exploiting SQL injection vulnerabilities, enhancing web application security.
+
+    -   Website: [SQL Map](https://sqlmap.org/)
+
+-   **OWASP ZAP (Zed Attack Proxy)**: An open-source web application security scanner, focusing on identifying vulnerabilities like cross-site scripting.
+
+    -   Website: [OWASP ZAP](https://www.zaproxy.org/)
+
+-   **ExploitDB**: A database of exploits and proof-of-concepts for various vulnerabilities, aiding in security research and testing.
+
+    -   Website: [ExploitDB](https://www.exploit-db.com/)
+
+-   **Core Impact**: A commercial penetration testing platform with a suite of tools for vulnerability assessment and exploitation.
+
+    -   Website: [Core Impact](https://www.coresecurity.com/core-impact)
+
+-   **Cobalt Strike**: A commercial tool for post-exploitation activities, including command and control and data exfiltration, used in advanced security testing.
+
+    -   Website: [Cobalt Strike](https://www.cobaltstrike.com/)
+
+### Password Cracking
+
+These tools focus on cracking or recovering passwords from hashed files or network captures, essential for testing password strength and security.
+
+-   **John the Ripper**: A fast, flexible password cracking tool supporting multiple hashing algorithms, with versions for Windows, Linux, and more.
+
+    -   Website: [John the Ripper](https://www.openwall.com/john/)
+
+-   **Hydra**: A brute-force tool for attacking network services like FTP, SSH, and HTTP, known for its parallel processing capabilities.
+
+    -   Website: [Hydra](https://github.com/vanhauser-thc/thc-hydra)
+
+-   **Hashcat**: A high-performance password cracking tool with GPU acceleration, supporting over 250 hashing algorithms.
+
+    -   Website: [Hashcat](https://hashcat.net/hashcat/)
+
+-   **OphCrack**: Cracks Windows passwords using rainbow tables, offering an efficient method for password recovery.
+
+    -   Website: [OphCrack](https://ophcrack.sourceforge.io/)
+
+-   **Medusa**: A parallel brute-force login tool supporting multiple protocols, useful for testing login security.
+
+    -   Website: [Medusa](https://github.com/jmk-foofus/medusa)
+
+-   **Cain & Abel**: A Windows tool for password cracking, network sniffing, and other security features, including VoIP analysis.
+
+    -   Website: [Cain & Abel](http://www.oxid.it/cain.html)
+
+### Vulnerability Scanning
+
+These tools scan networks and systems for known vulnerabilities, misconfigurations, and security issues, providing detailed reports for remediation.
+
+-   **OpenVAS**: An open-source vulnerability scanner with a large database of tests, suitable for comprehensive network scanning.
+
+    -   Website: [OpenVAS](https://www.openvas.org/)
+
+-   **Nessus**: A commercial vulnerability scanner providing detailed reports on security issues, with daily database updates.
+
+    -   Website: [Nessus](https://www.tenable.com/products/nessus)
+
+-   **AppScan**: Scans web applications for vulnerabilities like SQL injection and cross-site scripting, part of IBM's security suite.
+
+    -   Website: [AppScan](https://www.ibm.com/products/appscan)
+
+-   **Lynis**: A security auditing tool for Unix-based systems, checking for issues and misconfigurations, with open-source availability.
+
+    -   Website: [Lynis](https://cisofy.com/lynis/)
+
+-   **Retina**: A vulnerability management tool for network and web application scans, offering continuous monitoring.
+
+    -   Website: [Retina](https://www.beyondtrust.com/products/retina)
+
+-   **Nexpose**: Provides continuous scanning and risk assessment, integrating with security tools for vulnerability management.
+
+    -   Website: [Nexpose](https://www.rapid7.com/products/nexpose/)
+
+### Digital Forensics
+
+These tools investigate and analyze digital evidence from sources like hard drives, memory dumps, and network traffic, crucial for incident response and legal investigations.
+
+-   **SleuthKit**: A collection of tools for digital forensics, including file system analysis and data recovery, supporting multiple file systems.
+
+    -   Website: [SleuthKit](https://www.sleuthkit.org/)
+
+-   **Autopsy**: A graphical interface for The Sleuth Kit, providing a user-friendly way to perform digital forensics, with case management features.
+
+    -   Website: [Autopsy](https://www.autopsy.com/)
+
+-   **Volatility**: Analyzes memory dumps for extracting information, useful in memory forensics for incident response.
+
+    -   Website: [Volatility](https://www.volatilityfoundation.org/)
+
+-   **Guymager**: Creates forensic images of storage devices, ensuring evidence integrity for legal and investigative purposes.
+
+    -   Website: [Guymager](https://github.com/GuyFawkes314/Guymager)
+
+-   **Foremost**: Recovers files from disk images, useful in data carving for recovering deleted or corrupted files.
+
+    -   
+
+    -   Website: [Foremost](https://github.com/kernc/foremost)
+
+-   **Binwalk**: Analyzes and extracts firmware images, particularly useful for embedded systems forensics and reverse engineering.
+
+    -   Website: [Binwalk](https://github.com/ReFirmLabs/binwalk)
+
+-   **Wireshark**: A network protocol analyzer for capturing and analyzing traffic, also useful for network forensics in incident analysis.
+
+    -   Website: [Wireshark](https://www.wireshark.org/)
+
+### Web Application Security
+
+These tools assess web application security, identifying vulnerabilities like SQL injection, cross-site scripting, and insecure direct object references, critical for protecting web-based assets.
+
+-   **OWASP ZAP (Zed Attack Proxy)**: An open-source web application security scanner, focusing on identifying vulnerabilities like cross-site scripting and SQL injection.
+
+    -   Website: [OWASP ZAP](https://www.zaproxy.org/)
+
+-   **Burp Suite**: A comprehensive toolkit for web application testing, including proxy, scanner, and intruder, developed by PortSwigger for security professionals.
+
+    -   Website: [Burp Suite](https://portswigger.net/burp)
+
+-   **Nikto**: Scans web servers for misconfigurations and potential vulnerabilities, with a database of over 6,400 threats.
+
+    -   Website: [Nikto](https://github.com/sullo/nikto)
+
+-   **WPScan**: Scans WordPress websites for vulnerabilities and outdated versions, essential for securing content management systems.
+
+    -   Website: [WPScan](https://wpscan.com/)
+
+-   **Gobuster**: Discovers directories and files on web servers, useful for security assessment and finding hidden content, also listed in information gathering.
+
+    -   Website: [Gobuster](https://github.com/OJ/gobuster)
+
+-   **App Spider**: Crawls and maps web application structures for security testing, part of Burp Suite, enhancing web application vulnerability detection.
+
+    -   Website: [App Spider](https://portswigger.net/burp/help/spider.html)
+
+### Tables for Enhanced Organization
+
+To further organize the information, below are tables summarizing the tools by category, including their primary function and website links.
+
+| **Category** | **Tool Name** | **Primary Function** | **Website** |
+|----|----|----|----|
+| Network Scanning and Information Gathering | Nmap | Network scanning and host discovery | [Nmap](https://nmap.org/) |
+|  | Shodan | Search engine for internet-connected devices | [Shodan](https://www.shodan.io/) |
+| Wireless Network Security | Aircrack-NG | Wi-Fi security assessment, password cracking | [Aircrack-NG](https://www.aircrack-ng.org/) |
+|  | Kismet | Wireless network detection and intrusion detection | [Kismet](https://www.kismetwireless.net/) |
+| Social Engineering and Phishing | GoPhish | Phishing simulation and user susceptibility testing | [GoPhish](https://github.com/gophish/gophish) |
+|  | Evilginx | Fake login page creation for credential interception | [Evilginx](https://github.com/evilginx2/evilginx2) |
+| Penetration Testing and Exploitation | Burp Suite | Web application security testing, including scanning | [Burp Suite](https://portswigger.net/burp) |
+|  | Metasploit Framework | Penetration testing with exploits and automation | [Metasploit Framework](https://www.metasploit.com/) |
+| Password Cracking | John the Ripper | Password cracking with multiple hashing algorithms | [John the Ripper](https://www.openwall.com/john/) |
+|  | Hashcat | High-performance password cracking with GPU support | [Hashcat](https://hashcat.net/hashcat/) |
+| Vulnerability Scanning | OpenVAS | Open-source vulnerability scanning with extensive tests | [OpenVAS](https://www.openvas.org/) |
+|  | Nessus | Commercial vulnerability scanner with detailed reports | [Nessus](https://www.tenable.com/products/nessus) |
+| Digital Forensics | SleuthKit | Digital forensics for file system analysis | [SleuthKit](https://www.sleuthkit.org/) |
+|  | Volatility | Memory forensics for analyzing memory dumps | [Volatility](https://www.volatilityfoundation.org/) |
+| Web Application Security | OWASP ZAP | Open-source web application security scanner | [OWASP ZAP](https://www.zaproxy.org/) |
+|  | WPScan | WordPress vulnerability scanning | [WPScan](https://wpscan.com/) |
