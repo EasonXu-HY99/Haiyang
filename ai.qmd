@@ -9,202 +9,177 @@ format: html
 
 Below is a list of 20 commands (prompt techniques) you can use with ChatGPT to improve your research and work productivity. Each command includes a brief explanation and a copyable prompt.
 
-## 1. Summarize Content
+## 1. Summarize Weekly Accomplishments
 
 **Prompt:**
 
 ```         
-Summarize the following text: [insert text]  
+Summarize the main achievements, challenges, and next steps from this week’s work on [project or task]. Include key technical details and highlight any roadblocks that need attention.
 ```
 
-**Explanation:** Quickly distills lengthy articles or reports into a concise summary.
-
-## 2. Explain Like I’m 5 (ELI5)
+## 2. Structured Report Format
 
 **Prompt:**
 
 ```         
-Explain [concept] like I’m 5.  
+Create a detailed weekly report template for a computer scientist. It should have sections for:
+
+1. Overview
+2. Accomplishments
+3. Challenges
+4. Metrics (e.g., code commits, bug fixes)
+5. Next steps and Action Items
+
+Provide a professional tone and clear formatting. 
 ```
 
-**Explanation:** Breaks down complex topics into simple, easy-to-understand language.
-
-## 3. Act As \[Role\]
+## 3. Translating Technical Jargon
 
 **Prompt:**
 
 ```         
-Act as a [research assistant/expert in renewable energy/etc.].  
+Rewrite the following technical update for a non-technical audience: [insert detailed technical update]. Focus on explaining the key points in simple, concise language. 
 ```
 
-**Explanation:** Guides ChatGPT to respond in the tone and style of a specified expert.
-
-## 4. Generate an Outline or Plan
+## 4. Converting Bullet Points to Narrative
 
 **Prompt:**
 
 ```         
-Generate an outline for a report on [topic].  
+Turn these bullet points into a well-structured weekly report:
+
+1. Completed module integration
+2. Fixed critical bugs in feature X
+3. Coordinated with the testing team
+4. Planning for performance improvements next week 
 ```
 
-**Explanation:** Creates a structured blueprint for projects, articles, or presentations.
-
-## 5. List Pros and Cons
+## 5. Highlighting Key Metrics
 
 **Prompt:**
 
 ```         
-List the pros and cons of [subject].  
+Draft a weekly report focusing on performance metrics for [specific project]. Include quantitative data (e.g., number of commits, test coverage, processing speed improvements) and interpret these metrics for stakeholders.
 ```
 
-**Explanation:** Helps evaluate options by comparing benefits and drawbacks.
-
-## 6. Compare Items
+## 6. Bug Fixes & System Stability
 
 **Prompt:**
 
 ```         
-Compare [option A] and [option B].  
+List all critical bugs you fixed this week along with their impact on system performance. Then, summarize the overall improvement in system stability and any residual issues that need follow-up.
 ```
 
-**Explanation:** Provides a side-by-side comparison for decision-making.
-
-## 7. Translate Text
+## 7. New Feature Development
 
 **Prompt:**
 
 ```         
-Translate the following text to [language]: [insert text].  
+Draft a report outlining new features introduced during the week. Include technical details, the challenges you faced during implementation, and potential areas for further enhancement.
 ```
 
-**Explanation:** Converts text into different languages, aiding localization.
-
-## 8. Rewrite in Simpler Language
+## 8. Milestone Timeline
 
 **Prompt:**
 
 ```         
-Rewrite this text in simpler language: [insert text].  
+Create a timeline of major tasks and milestones achieved this week. For each milestone, provide a brief description of the work done, any obstacles encountered, and the expected next steps. 
 ```
 
-**Explanation:** Makes technical or dense content more accessible.
-
-## 9. Brainstorm Ideas
+## 9. Cross-Team Collaboration
 
 **Prompt:**
 
 ```         
-Brainstorm creative ideas for [project/topic].  
+Summarize your interactions with other teams or departments this week. Highlight the feedback received, any tasks delegated or shared, and outline any pending follow-ups that require additional coordination. 
 ```
 
-**Explanation:** Generates innovative ideas to overcome creative blocks.
-
-## 10. Step-by-Step Guides
+## 10. Performance Metrics & Analytics
 
 **Prompt:**
 
 ```         
-Give me a step-by-step guide on how to [task].  
+Prepare a performance analytics report for the week. Include quantitative data such as code commits, review metrics, test coverage improvements, and any benchmark results. Interpret these metrics in a way that highlights progress and areas needing improvement. 
 ```
 
-**Explanation:** Breaks down tasks into clear, actionable steps.
-
-## 11. Find Alternative Words (Thesaurus)
+## 11. Learning & Professional Development
 
 **Prompt:**
 
 ```         
-Give me synonyms for [word].  
+Detail any new skills learned or training sessions attended during the week. Explain how these insights have been applied to current projects or how they might improve future work. 
 ```
 
-**Explanation:** Helps find alternative words for better phrasing.
-
-## 12. Code Explanation
+## 12. Risk Assessment & Mitigation
 
 **Prompt:**
 
 ```         
-Explain this code: [insert code].  
+Identify any potential risks or issues encountered during the week, explain their potential impact on the project, and describe the mitigation strategies you implemented or propose for the future.
 ```
 
-**Explanation:** Breaks down and explains code snippets in simple terms.
-
-## 13. Debug Code
+## 13. Task Completion Overview
 
 **Prompt:**
 
 ```         
-Find and fix errors in this code: [insert code].  
+Summarize all tasks and projects completed this week, including a brief note on how each task contributed to broader project milestones. Highlight any tasks that are still in progress and outline the next steps. 
 ```
 
-**Explanation:** Identifies and corrects errors in programming code.
-
-## 14. Generate Sample Text
+## 14. Roadmap & Process Update
 
 **Prompt:**
 
 ```         
-Generate a sample paragraph about [topic].  
+Update your project roadmap based on this week’s progress. Identify any adjustments made to timelines or priorities, and explain the reasons behind these changes. 
 ```
 
-**Explanation:** Creates placeholder or draft text for various needs.
-
-## 15. Create a Study Plan
+## 15. Retrospective & Process Improvement
 
 **Prompt:**
 
 ```         
-Create a study plan for learning [subject] in [timeframe].  
+Draft a brief retrospective for the week: What went well? What didn’t? Include insights on how you plan to improve processes or overcome obstacles in the coming weeks. 
 ```
 
-**Explanation:** Helps organize study schedules effectively.
-
-## 16. Extract Key Information
+## 16. Project Impact & Value Delivery
 
 **Prompt:**
 
 ```         
-Extract the key points from this text: [insert text].  
+Describe how your work this week contributed to overall business value. Highlight any cost savings, efficiency improvements, or innovative contributions that directly support your organization’s strategic goals. 
 ```
 
-**Explanation:** Pulls out essential details from dense information.
-
-## 17. Generate a To-Do List
+## 17. Technical Debt & Refactoring Updates
 
 **Prompt:**
 
 ```         
-Create a to-do list for [goal/project].  
+Summarize the technical debt issues addressed during the week. Explain the refactoring or improvements made, and how these efforts enhance code quality and system maintainability. 
 ```
 
-**Explanation:** Structures tasks efficiently for productivity.
-
-## 18. Convert Text Format
+## 18. Feedback Incorporation & Next Iterations
 
 **Prompt:**
 
 ```         
-Convert this text to bullet points: [insert text].  
+Document any feedback received from code reviews, user testing, or stakeholder meetings. Outline how you are incorporating this feedback into future iterations to improve project outcomes.  
 ```
 
-**Explanation:** Reformats text into easier-to-read structures.
-
-## 19. Historical Events Summary
+## 19. Resource Allocation & Utilization
 
 **Prompt:**
 
 ```         
-Summarize the major events of [historical period].  
+Detail how your time and resources were distributed across different tasks this week. Include any challenges with resource constraints and describe strategies implemented to manage these effectively.
 ```
 
 **Explanation:** Provides concise historical overviews.
 
-## 20. Generate Email Templates
+## 20. Innovation & Experimentation
 
 **Prompt:**
 
 ```         
-Write a professional email for [purpose].  
+Report on any experimental techniques, prototypes, or innovative ideas you explored this week. Discuss their potential benefits or risks and propose actionable next steps for further investigation. 
 ```
-
-**Explanation:** Creates well-structured emails for professional use.

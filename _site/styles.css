@@ -65,6 +65,12 @@ body::before {
   animation: bgZoom 20s ease-in-out infinite alternate;
 }
 
+pre, code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 /* Container for centered content */
 .container {
   max-width: 1200px;
@@ -262,5 +268,4 @@ footer {
     align-items: flex-start;
   }
 }
-
 

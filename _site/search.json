@@ -60,7 +60,7 @@
     "href": "ai.html",
     "title": "20 Useful ChatGPT Commands for Research & Productivity",
     "section": "",
-    "text": "Below is a list of 20 commands (prompt techniques) you can use with ChatGPT to improve your research and work productivity. Each command includes a brief explanation and a copyable prompt.\n\n\nPrompt:\nSummarize the following text: [insert text]  \nExplanation: Quickly distills lengthy articles or reports into a concise summary.\n\n\n\nPrompt:\nExplain [concept] like I’m 5.  \nExplanation: Breaks down complex topics into simple, easy-to-understand language.\n\n\n\nPrompt:\nAct as a [research assistant/expert in renewable energy/etc.].  \nExplanation: Guides ChatGPT to respond in the tone and style of a specified expert.\n\n\n\nPrompt:\nGenerate an outline for a report on [topic].  \nExplanation: Creates a structured blueprint for projects, articles, or presentations.\n\n\n\nPrompt:\nList the pros and cons of [subject].  \nExplanation: Helps evaluate options by comparing benefits and drawbacks.\n\n\n\nPrompt:\nCompare [option A] and [option B].  \nExplanation: Provides a side-by-side comparison for decision-making.\n\n\n\nPrompt:\nTranslate the following text to [language]: [insert text].  \nExplanation: Converts text into different languages, aiding localization.\n\n\n\nPrompt:\nRewrite this text in simpler language: [insert text].  \nExplanation: Makes technical or dense content more accessible.\n\n\n\nPrompt:\nBrainstorm creative ideas for [project/topic].  \nExplanation: Generates innovative ideas to overcome creative blocks.\n\n\n\nPrompt:\nGive me a step-by-step guide on how to [task].  \nExplanation: Breaks down tasks into clear, actionable steps.\n\n\n\nPrompt:\nGive me synonyms for [word].  \nExplanation: Helps find alternative words for better phrasing.\n\n\n\nPrompt:\nExplain this code: [insert code].  \nExplanation: Breaks down and explains code snippets in simple terms.\n\n\n\nPrompt:\nFind and fix errors in this code: [insert code].  \nExplanation: Identifies and corrects errors in programming code.\n\n\n\nPrompt:\nGenerate a sample paragraph about [topic].  \nExplanation: Creates placeholder or draft text for various needs.\n\n\n\nPrompt:\nCreate a study plan for learning [subject] in [timeframe].  \nExplanation: Helps organize study schedules effectively.\n\n\n\nPrompt:\nExtract the key points from this text: [insert text].  \nExplanation: Pulls out essential details from dense information.\n\n\n\nPrompt:\nCreate a to-do list for [goal/project].  \nExplanation: Structures tasks efficiently for productivity.\n\n\n\nPrompt:\nConvert this text to bullet points: [insert text].  \nExplanation: Reformats text into easier-to-read structures.\n\n\n\nPrompt:\nSummarize the major events of [historical period].  \nExplanation: Provides concise historical overviews.\n\n\n\nPrompt:\nWrite a professional email for [purpose].  \nExplanation: Creates well-structured emails for professional use."
+    "text": "Below is a list of 20 commands (prompt techniques) you can use with ChatGPT to improve your research and work productivity. Each command includes a brief explanation and a copyable prompt.\n\n\nPrompt:\nSummarize the main achievements, challenges, and next steps from this week’s work on [project or task]. Include key technical details and highlight any roadblocks that need attention.\n\n\n\nPrompt:\nCreate a detailed weekly report template for a computer scientist. It should have sections for:\n\n1. Overview\n2. Accomplishments\n3. Challenges\n4. Metrics (e.g., code commits, bug fixes)\n5. Next steps and Action Items\n\nProvide a professional tone and clear formatting. \n\n\n\nPrompt:\nRewrite the following technical update for a non-technical audience: [insert detailed technical update]. Focus on explaining the key points in simple, concise language. \n\n\n\nPrompt:\nTurn these bullet points into a well-structured weekly report:\n\n1. Completed module integration\n2. Fixed critical bugs in feature X\n3. Coordinated with the testing team\n4. Planning for performance improvements next week \n\n\n\nPrompt:\nDraft a weekly report focusing on performance metrics for [specific project]. Include quantitative data (e.g., number of commits, test coverage, processing speed improvements) and interpret these metrics for stakeholders.\n\n\n\nPrompt:\nList all critical bugs you fixed this week along with their impact on system performance. Then, summarize the overall improvement in system stability and any residual issues that need follow-up.\n\n\n\nPrompt:\nDraft a report outlining new features introduced during the week. Include technical details, the challenges you faced during implementation, and potential areas for further enhancement.\n\n\n\nPrompt:\nCreate a timeline of major tasks and milestones achieved this week. For each milestone, provide a brief description of the work done, any obstacles encountered, and the expected next steps. \n\n\n\nPrompt:\nSummarize your interactions with other teams or departments this week. Highlight the feedback received, any tasks delegated or shared, and outline any pending follow-ups that require additional coordination. \n\n\n\nPrompt:\nPrepare a performance analytics report for the week. Include quantitative data such as code commits, review metrics, test coverage improvements, and any benchmark results. Interpret these metrics in a way that highlights progress and areas needing improvement. \n\n\n\nPrompt:\nDetail any new skills learned or training sessions attended during the week. Explain how these insights have been applied to current projects or how they might improve future work. \n\n\n\nPrompt:\nIdentify any potential risks or issues encountered during the week, explain their potential impact on the project, and describe the mitigation strategies you implemented or propose for the future.\n\n\n\nPrompt:\nSummarize all tasks and projects completed this week, including a brief note on how each task contributed to broader project milestones. Highlight any tasks that are still in progress and outline the next steps. \n\n\n\nPrompt:\nUpdate your project roadmap based on this week’s progress. Identify any adjustments made to timelines or priorities, and explain the reasons behind these changes. \n\n\n\nPrompt:\nDraft a brief retrospective for the week: What went well? What didn’t? Include insights on how you plan to improve processes or overcome obstacles in the coming weeks. \n\n\n\nPrompt:\nDescribe how your work this week contributed to overall business value. Highlight any cost savings, efficiency improvements, or innovative contributions that directly support your organization’s strategic goals. \n\n\n\nPrompt:\nSummarize the technical debt issues addressed during the week. Explain the refactoring or improvements made, and how these efforts enhance code quality and system maintainability. \n\n\n\nPrompt:\nDocument any feedback received from code reviews, user testing, or stakeholder meetings. Outline how you are incorporating this feedback into future iterations to improve project outcomes.  \n\n\n\nPrompt:\nDetail how your time and resources were distributed across different tasks this week. Include any challenges with resource constraints and describe strategies implemented to manage these effectively.\nExplanation: Provides concise historical overviews.\n\n\n\nPrompt:\nReport on any experimental techniques, prototypes, or innovative ideas you explored this week. Discuss their potential benefits or risks and propose actionable next steps for further investigation."
   },
   {
     "objectID": "ai.html#summarize-content",
@@ -1384,5 +1384,145 @@
     "title": "Welcome to Haiyang’s Tech Portfolio",
     "section": "",
     "text": "Xu Haiyang\n\n\n\nHello! I’m Xu Haiyang, a Computer Science graduate specializing in Cybersecurity & Cyber-Physical Systems.\nThis website serves as a portfolio to showcase my projects, research, and technical expertise in IoT, Cybersecurity, AWS Cloud, and AI."
+  },
+  {
+    "objectID": "ai.html#summarize-weekly-accomplishments",
+    "href": "ai.html#summarize-weekly-accomplishments",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nSummarize the main achievements, challenges, and next steps from this week’s work on [project or task]. Include key technical details and highlight any roadblocks that need attention."
+  },
+  {
+    "objectID": "ai.html#structured-report-format",
+    "href": "ai.html#structured-report-format",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nCreate a detailed weekly report template for a computer scientist. It should have sections for:\n\n1. Overview\n2. Accomplishments\n3. Challenges\n4. Metrics (e.g., code commits, bug fixes)\n5. Next steps and Action Items\n\nProvide a professional tone and clear formatting."
+  },
+  {
+    "objectID": "ai.html#translating-technical-jargon",
+    "href": "ai.html#translating-technical-jargon",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nRewrite the following technical update for a non-technical audience: [insert detailed technical update]. Focus on explaining the key points in simple, concise language."
+  },
+  {
+    "objectID": "ai.html#converting-bullet-points-to-narrative",
+    "href": "ai.html#converting-bullet-points-to-narrative",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nTurn these bullet points into a well-structured weekly report:\n\n1. Completed module integration\n2. Fixed critical bugs in feature X\n3. Coordinated with the testing team\n4. Planning for performance improvements next week"
+  },
+  {
+    "objectID": "ai.html#highlighting-key-metrics",
+    "href": "ai.html#highlighting-key-metrics",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nDraft a weekly report focusing on performance metrics for [specific project]. Include quantitative data (e.g., number of commits, test coverage, processing speed improvements) and interpret these metrics for stakeholders."
+  },
+  {
+    "objectID": "ai.html#bug-fixes-system-stability",
+    "href": "ai.html#bug-fixes-system-stability",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nList all critical bugs you fixed this week along with their impact on system performance. Then, summarize the overall improvement in system stability and any residual issues that need follow-up."
+  },
+  {
+    "objectID": "ai.html#new-feature-development",
+    "href": "ai.html#new-feature-development",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nDraft a report outlining new features introduced during the week. Include technical details, the challenges you faced during implementation, and potential areas for further enhancement."
+  },
+  {
+    "objectID": "ai.html#milestone-timeline",
+    "href": "ai.html#milestone-timeline",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nCreate a timeline of major tasks and milestones achieved this week. For each milestone, provide a brief description of the work done, any obstacles encountered, and the expected next steps."
+  },
+  {
+    "objectID": "ai.html#cross-team-collaboration",
+    "href": "ai.html#cross-team-collaboration",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nSummarize your interactions with other teams or departments this week. Highlight the feedback received, any tasks delegated or shared, and outline any pending follow-ups that require additional coordination."
+  },
+  {
+    "objectID": "ai.html#performance-metrics-analytics",
+    "href": "ai.html#performance-metrics-analytics",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nPrepare a performance analytics report for the week. Include quantitative data such as code commits, review metrics, test coverage improvements, and any benchmark results. Interpret these metrics in a way that highlights progress and areas needing improvement."
+  },
+  {
+    "objectID": "ai.html#learning-professional-development",
+    "href": "ai.html#learning-professional-development",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nDetail any new skills learned or training sessions attended during the week. Explain how these insights have been applied to current projects or how they might improve future work."
+  },
+  {
+    "objectID": "ai.html#risk-assessment-mitigation",
+    "href": "ai.html#risk-assessment-mitigation",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nIdentify any potential risks or issues encountered during the week, explain their potential impact on the project, and describe the mitigation strategies you implemented or propose for the future."
+  },
+  {
+    "objectID": "ai.html#task-completion-overview",
+    "href": "ai.html#task-completion-overview",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nSummarize all tasks and projects completed this week, including a brief note on how each task contributed to broader project milestones. Highlight any tasks that are still in progress and outline the next steps."
+  },
+  {
+    "objectID": "ai.html#roadmap-process-update",
+    "href": "ai.html#roadmap-process-update",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nUpdate your project roadmap based on this week’s progress. Identify any adjustments made to timelines or priorities, and explain the reasons behind these changes."
+  },
+  {
+    "objectID": "ai.html#retrospective-process-improvement",
+    "href": "ai.html#retrospective-process-improvement",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nDraft a brief retrospective for the week: What went well? What didn’t? Include insights on how you plan to improve processes or overcome obstacles in the coming weeks."
+  },
+  {
+    "objectID": "ai.html#project-impact-value-delivery",
+    "href": "ai.html#project-impact-value-delivery",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nDescribe how your work this week contributed to overall business value. Highlight any cost savings, efficiency improvements, or innovative contributions that directly support your organization’s strategic goals."
+  },
+  {
+    "objectID": "ai.html#technical-debt-refactoring-updates",
+    "href": "ai.html#technical-debt-refactoring-updates",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nSummarize the technical debt issues addressed during the week. Explain the refactoring or improvements made, and how these efforts enhance code quality and system maintainability."
+  },
+  {
+    "objectID": "ai.html#feedback-incorporation-next-iterations",
+    "href": "ai.html#feedback-incorporation-next-iterations",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nDocument any feedback received from code reviews, user testing, or stakeholder meetings. Outline how you are incorporating this feedback into future iterations to improve project outcomes."
+  },
+  {
+    "objectID": "ai.html#resource-allocation-utilization",
+    "href": "ai.html#resource-allocation-utilization",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nDetail how your time and resources were distributed across different tasks this week. Include any challenges with resource constraints and describe strategies implemented to manage these effectively.\nExplanation: Provides concise historical overviews."
+  },
+  {
+    "objectID": "ai.html#innovation-experimentation",
+    "href": "ai.html#innovation-experimentation",
+    "title": "20 Useful ChatGPT Commands for Research & Productivity",
+    "section": "",
+    "text": "Prompt:\nReport on any experimental techniques, prototypes, or innovative ideas you explored this week. Discuss their potential benefits or risks and propose actionable next steps for further investigation."
   }
 ]
