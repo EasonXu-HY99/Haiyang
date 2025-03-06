@@ -82,7 +82,7 @@
   </url>
   <url>
     <loc>https://haiyangxu.netlify.app/tools.html</loc>
-    <lastmod>2025-03-06T15:07:56.791Z</lastmod>
+    <lastmod>2025-03-06T17:43:41.302Z</lastmod>
   </url>
   <url>
     <loc>https://haiyangxu.netlify.app/cybertools/nmap.html</loc>
@@ -283,5 +283,13 @@
   <url>
     <loc>https://haiyangxu.netlify.app/cybertools/zap.html</loc>
     <lastmod>2025-03-06T16:30:26.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://haiyangxu.netlify.app/cybertools/appspider.html</loc>
+    <lastmod>2025-03-06T16:34:34.566Z</lastmod>
+  </url>
+  <url>
+    <loc>https://haiyangxu.netlify.app/cybertools/wpscan.html</loc>
+    <lastmod>2025-03-06T16:33:21.892Z</lastmod>
   </url>
 </urlset>
