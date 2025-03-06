@@ -1,0 +1,33 @@
+---
+title: "Cybersecurity Tools"
+listing:
+  contents: cybertools
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+---
+
+### Tables for Enhanced Organization
+
+To further organize the information, below are tables summarizing the tools by category, including their primary function and website links.
+
+| **Category** | **Tool Name** | **Primary Function** | **Website** |
+|------------------|------------------|------------------|------------------|
+| Network Scanning and Information Gathering | Nmap | Network scanning and host discovery | [Nmap](https://nmap.org/) |
+|  | Shodan | Search engine for internet-connected devices | [Shodan](https://www.shodan.io/) |
+| Wireless Network Security | Aircrack-NG | Wi-Fi security assessment, password cracking | [Aircrack-NG](https://www.aircrack-ng.org/) |
+|  | Kismet | Wireless network detection and intrusion detection | [Kismet](https://www.kismetwireless.net/) |
+| Social Engineering and Phishing | GoPhish | Phishing simulation and user susceptibility testing | [GoPhish](https://github.com/gophish/gophish) |
+|  | Evilginx | Fake login page creation for credential interception | [Evilginx](https://github.com/evilginx2/evilginx2) |
+| Penetration Testing and Exploitation | Burp Suite | Web application security testing, including scanning | [Burp Suite](https://portswigger.net/burp) |
+|  | Metasploit Framework | Penetration testing with exploits and automation | [Metasploit Framework](https://www.metasploit.com/) |
+| Password Cracking | John the Ripper | Password cracking with multiple hashing algorithms | [John the Ripper](https://www.openwall.com/john/) |
+|  | Hashcat | High-performance password cracking with GPU support | [Hashcat](https://hashcat.net/hashcat/) |
+| Vulnerability Scanning | OpenVAS | Open-source vulnerability scanning with extensive tests | [OpenVAS](https://www.openvas.org/) |
+|  | Nessus | Commercial vulnerability scanner with detailed reports | [Nessus](https://www.tenable.com/products/nessus) |
+| Digital Forensics | SleuthKit | Digital forensics for file system analysis | [SleuthKit](https://www.sleuthkit.org/) |
+|  | Volatility | Memory forensics for analyzing memory dumps | [Volatility](https://www.volatilityfoundation.org/) |
+| Web Application Security | OWASP ZAP | Open-source web application security scanner | [OWASP ZAP](https://www.zaproxy.org/) |
+|  | WPScan | WordPress vulnerability scanning | [WPScan](https://wpscan.com/) |
