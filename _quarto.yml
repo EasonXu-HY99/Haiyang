@@ -14,6 +14,8 @@ website:
         text: Home
       - href: projects.qmd
         text: Project Intern
+      - href: blog.qmd
+        text: Haiyang Blog
       - href: cybersecurity.qmd
         text: Cybersecurity
       - href: coding.qmd

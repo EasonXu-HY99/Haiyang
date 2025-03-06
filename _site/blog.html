@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Welcome to Haiyang’s Tech Portfolio – Haiyang's Tech Portfolio</title>
+<title>Haiyang Daily Blog – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./logo.jpg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,8 +69,66 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -91,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -99,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Project Intern</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link active" href="./blog.html" aria-current="page"> 
 <span class="menu-text">Haiyang Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -150,27 +210,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome! 👋</a>
-  <ul class="collapse">
-  <li><a href="#about-me" id="toc-about-me" class="nav-link" data-scroll-target="#about-me">🎓 About Me</a></li>
-  <li><a href="#explore-topics" id="toc-explore-topics" class="nav-link" data-scroll-target="#explore-topics">📂 Explore Topics</a></li>
-  <li><a href="#projects-internships-work-experiences" id="toc-projects-internships-work-experiences" class="nav-link" data-scroll-target="#projects-internships-work-experiences">🚀 Projects Internships &amp; Work Experiences</a></li>
-  <li><a href="#hackathons-achievements" id="toc-hackathons-achievements" class="nav-link" data-scroll-target="#hackathons-achievements">🏆 Hackathons &amp; Achievements</a></li>
-  <li><a href="#get-in-touch" id="toc-get-in-touch" class="nav-link" data-scroll-target="#get-in-touch">📬 Get in Touch</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="AI">AI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to Haiyang’s Tech Portfolio</h1>
+<h1 class="title">Haiyang Daily Blog</h1>
 </div>
 
 
@@ -187,74 +234,53 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome" class="level1">
-<h1>Welcome! 👋</h1>
-<div class="columns" style="align-items: center; margin-bottom: 1.5em;">
-<div class="column" style="width:20%;">
-<p><img src="profile.jpg" class="img-fluid" style="border-radius: 50%; margin-left:auto; margin-right:auto; display:block;" width="120"></p>
-<div style="text-align:center; margin-top:0.5em; font-weight:bold;">
-<p>Xu Haiyang</p>
-</div>
-</div><div class="column" style="width:80%;">
-<p>Hello! I’m <strong>Xu Haiyang</strong>, a dedicated <strong>Computer Science graduate</strong> with a passion for <strong>Cybersecurity &amp; Cyber-Physical Systems</strong>. Over the years, I’ve immersed myself in the intricacies of <strong>IoT, AWS Cloud, and AI</strong> to develop innovative solutions that secure and optimize real-world applications. This website is a curated portfolio of my <strong>projects, research, and technical expertise</strong>. I hold a <strong>Bachelor of Science (Computer Science) (20 Jan 2025) Merit</strong> 🎓.<br>
-🔗 <a href="cert.pdf" target="_blank"><strong>View My Certification</strong></a></p>
-</div>
-</div>
-<section id="about-me" class="level2">
-<h2 class="anchored" data-anchor-id="about-me">🎓 About Me</h2>
-<ul>
-<li><strong>Education:</strong>
-<ul>
-<li><strong>Singapore Management University</strong> (Aug 2021 – Dec 2024) - BSc in Computer Science (Cybersecurity &amp; CPS)</li>
-<li><strong>Singapore Polytechnic</strong> (Mar 2018 – Apr 2021) - Diploma in Computer Engineering</li>
-</ul></li>
-<li><strong>Certifications:</strong> AWS Certified Solutions Architect</li>
-<li><strong>Programming Skills:</strong> JavaScript, R Coding, Python, ReactJS, Java, C/C++</li>
-<li><strong>Cybersecurity Skills:</strong> OWASP ZAP, SQL Injection Testing, IAM, Risk Management, Threat Intelligence</li>
-</ul>
-</section>
-<section id="explore-topics" class="level2">
-<h2 class="anchored" data-anchor-id="explore-topics">📂 Explore Topics</h2>
-<p>This website is structured into several sections to help visitors and myself find useful solutions:</p>
-<p>- <a href="./cybersecurity.html"><strong>Cyber Defense &amp; Threat Intelligence</strong></a>: Articles and resources on security best practices, penetration testing, and risk management.</p>
-<p>- <a href="./coding.html"><strong>Mastering Code &amp; Development</strong></a>: Code snippets, tutorials, and solutions for common programming challenges.</p>
-<p>- <a href="./cloud.html"><strong>Cloud Computing &amp; Scalability</strong></a>: Insights into AWS, serverless computing, and cloud security.</p>
-<p>- <a href="./github.html"><strong>GitHub Mastery &amp; DevOps</strong></a>: Guides on version control, GitHub Actions, and repository management.</p>
-<p>- <a href="./ai.html"><strong>AI &amp; Machine Learning Innovations</strong></a>: Machine learning, deep learning, and AI-related projects.</p>
-</section>
-<section id="projects-internships-work-experiences" class="level2">
-<h2 class="anchored" data-anchor-id="projects-internships-work-experiences">🚀 Projects Internships &amp; Work Experiences</h2>
-<ul>
-<li><strong>AWS Security &amp; DevSecOps Automation</strong> <a href="./projects.html">(View Project)</a> - Developed an <strong>automated security monitoring system</strong> using <strong>AWS Lambda, API Gateway, and Security Hub,</strong> reducing vulnerability resolution time and improving incident response efficiency.</li>
-<li><strong>ML-Powered Insider Threat Detection</strong> <a href="./projects.html">(View Project)</a> – Built a <strong>machine learning-driven anomaly detection system</strong> with <strong>TensorFlow and Scikit-learn</strong>, reducing <strong>false positives by 25%</strong> and enhancing security risk assessments at UBS AG.</li>
-<li><strong>IoT-Enabled Industrial Automation</strong> <a href="./projects.html">(View Project)</a> – Designed and deployed <strong>IoT cloud solutions</strong> for <strong>real-time factory monitoring</strong>, ensuring <strong>98% uptime</strong> by integrating AWS with industrial sensors.</li>
-<li><strong>Smart Farming IoT System</strong> <a href="./projects.html">(View Project)</a> – Developed an <strong>IoT-driven smart farming dashboard</strong> with <strong>real-time data visualization and cloud integration</strong>, improving operational efficiency for <strong>50+ farm operators</strong>.</li>
-</ul>
-</section>
-<section id="hackathons-achievements" class="level2">
-<h2 class="anchored" data-anchor-id="hackathons-achievements">🏆 Hackathons &amp; Achievements</h2>
-<ul>
-<li><strong>Deep Learning Week Hackathon (2022)</strong> - Led AI solution for real-time pedestrian and vehicle detection.</li>
-<li><strong>Lyve Cloud Hackathon (2022)</strong> - Developed cloud-based media streaming server.</li>
-</ul>
-</section>
-<section id="get-in-touch" class="level2">
-<h2 class="anchored" data-anchor-id="get-in-touch">📬 Get in Touch</h2>
-<p>Feel free to connect with me on:</p>
-<p>- 📧 Email: <a href="mailto:haiyang.xu.2021@scis.smu.edu.sg">haiyang.xu.2021@scis.smu.edu.sg</a></p>
-<p>- 🔗 <a href="https://www.linkedin.com/in/haiyang-xu-8a2151212/">LinkedIn</a></p>
-<p>- 🐙 <a href="https://github.com/EasonXu-HY99">GitHub</a></p>
-<p>- 📄 <a href="resume.pdf">Download My Resume</a></p>
-<hr>
-<blockquote class="blockquote">
-<p>In the AI era, cybersecurity professionals are the guardians of innovation, ensuring that technological advancements remain secure and trustworthy.</p>
-</blockquote>
 
 
-</section>
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="news,AI" data-listing-date-sort="1741190400000" data-listing-file-modified-sort="1741269118997" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="448">
+<div class="thumbnail">
+<p><a href="./posts/03062025.html" class="no-external"></a></p><a href="./posts/03062025.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/03062025.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/03062025.html" class="no-external">Introducing Manus AI: The Future of Autonomous AI Agents</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/03062025.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+news
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('AI'); return false;">
+AI
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/03062025.html" class="no-external">In the rapidly evolving world of artificial intelligence, Manus AI emerges as a groundbreaking innovation. Developed by the Chinese AI startup Monica, Manus AI is a general…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/03062025.html" class="no-external">
+<div class="listing-date">
+Mar 6, 2025
+</div>
+<div class="listing-author">
+Xu Haiyang
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
