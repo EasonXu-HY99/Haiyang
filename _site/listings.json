@@ -4,5 +4,11 @@
     "items": [
       "/posts/03062025.html"
     ]
+  },
+  {
+    "listing": "/tools.html",
+    "items": [
+      "/cybertools/nmap.html"
+    ]
   }
 ]

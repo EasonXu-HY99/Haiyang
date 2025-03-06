@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-02-13">
 
-<title>Project Internships &amp; Work Experiences – Haiyang’s Tech Portfolio</title>
+<title>Cybersecurity Tools – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./logo.jpg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,8 +69,66 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -97,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="./projects.html"> 
 <span class="menu-text">Project Intern</span></a>
   </li>  
   <li class="nav-item">
@@ -109,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Cybersecurity</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tools.html"> 
+    <a class="nav-link active" href="./tools.html" aria-current="page"> 
 <span class="menu-text">Cyber Tools</span></a>
   </li>  
   <li class="nav-item">
@@ -160,38 +218,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cybersecurity-analyst-hungry-hub-appservation-co.-ltd.-bangkok-thailand" id="toc-cybersecurity-analyst-hungry-hub-appservation-co.-ltd.-bangkok-thailand" class="nav-link active" data-scroll-target="#cybersecurity-analyst-hungry-hub-appservation-co.-ltd.-bangkok-thailand"><strong>Cybersecurity Analyst – Hungry Hub (AppServation Co., Ltd.), Bangkok, Thailand</strong></a></li>
-  <li><a href="#insider-threat-risk-solution-developer-ubs-ag-singapore" id="toc-insider-threat-risk-solution-developer-ubs-ag-singapore" class="nav-link" data-scroll-target="#insider-threat-risk-solution-developer-ubs-ag-singapore"><strong>Insider Threat Risk Solution Developer – UBS AG, Singapore</strong></a></li>
-  <li><a href="#iot-web-development-intern-w2-industrial-services-hub-pte.-ltd.-singapore" id="toc-iot-web-development-intern-w2-industrial-services-hub-pte.-ltd.-singapore" class="nav-link" data-scroll-target="#iot-web-development-intern-w2-industrial-services-hub-pte.-ltd.-singapore"><strong>IoT &amp; Web Development Intern – W2 Industrial Services Hub Pte. Ltd., Singapore</strong></a></li>
-  <li><a href="#iot-web-development-intern-singapore-indoor-farms-pte.-ltd.-singapore" id="toc-iot-web-development-intern-singapore-indoor-farms-pte.-ltd.-singapore" class="nav-link" data-scroll-target="#iot-web-development-intern-singapore-indoor-farms-pte.-ltd.-singapore"><strong>IoT &amp; Web Development Intern – Singapore Indoor Farms Pte. Ltd., Singapore</strong></a></li>
+  <li><a href="#tables-for-enhanced-organization" id="toc-tables-for-enhanced-organization" class="nav-link active" data-scroll-target="#tables-for-enhanced-organization">Tables for Enhanced Organization</a></li>
   </ul>
 </nav>
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Information Gathering">Information Gathering <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project Internships &amp; Work Experiences</h1>
+<h1 class="title">Cybersecurity Tools</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Xu Haiyang </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 13, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -201,108 +244,162 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="cybersecurity-analyst-hungry-hub-appservation-co.-ltd.-bangkok-thailand" class="level2">
-<h2 class="anchored" data-anchor-id="cybersecurity-analyst-hungry-hub-appservation-co.-ltd.-bangkok-thailand"><strong>Cybersecurity Analyst – Hungry Hub (AppServation Co., Ltd.), Bangkok, Thailand</strong></h2>
-<p><img src="hungry.jpg" class="img-fluid"></p>
-<p><strong>May 2024 – Aug 2024</strong></p>
-<p>During my tenure as a <strong>Cybersecurity Analyst</strong> at Hungry Hub, I played a key role in enhancing the organization’s security posture by automating security workflows, improving vulnerability management, and streamlining incident response processes. My contributions included:</p>
-<p>🔹 <strong>Automated Security Scanning &amp; Vulnerability Management</strong></p>
-<ul>
-<li><p>Implemented <strong>OWASP ZAP</strong>, <strong>GitHub Actions</strong>, and <strong>SonarQube</strong> to automate security scans for web applications and APIs.</p></li>
-<li><p>Reduced <strong>vulnerability resolution time by 30%</strong> by integrating security checks directly into the CI/CD pipeline.</p></li>
-<li><p>Ensured early detection of security flaws, minimizing risks before deployment.</p></li>
-</ul>
-<p>🔹 <strong>Cloud Security &amp; Incident Response Optimization</strong></p>
-<ul>
-<li><p>Designed and deployed <strong>AWS Lambda workflows</strong> to process security alerts efficiently.</p></li>
-<li><p>Integrated <strong>AWS API Gateway</strong> to enable real-time event-driven security monitoring.</p></li>
-<li><p>Improved <strong>incident response efficiency</strong> by reducing manual investigation time and automating alert categorization.</p></li>
-</ul>
-<p>🔹 <strong>Scripting &amp; Process Automation</strong></p>
-<ul>
-<li><p>Developed <strong>Python and Shell scripts</strong> to automate repetitive security tasks, such as log analysis and report generation.</p></li>
-<li><p>Achieved a <strong>10+ hours/month</strong> time savings for the security team, allowing them to focus on high-priority threats.</p></li>
-</ul>
-<p>This role reinforced my expertise in <strong>application security, cloud security, DevSecOps practices, and automation</strong>, and I am eager to bring these skills to future opportunities.</p>
-</section>
-<section id="insider-threat-risk-solution-developer-ubs-ag-singapore" class="level2">
-<h2 class="anchored" data-anchor-id="insider-threat-risk-solution-developer-ubs-ag-singapore"><strong>Insider Threat Risk Solution Developer – UBS AG, Singapore</strong></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="UBS.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><strong>Jan 2024 – Apr 2024</strong></p>
-<p>As an <strong>Insider Threat Risk Solution Developer</strong> at UBS AG, I worked on building cutting-edge security solutions to detect and mitigate insider threats. My contributions focused on <strong>machine learning-driven anomaly detection</strong>, <strong>high-performance microservices</strong>, and <strong>DevSecOps automation</strong>.</p>
-<p>🔹 <strong>Machine Learning for Insider Threat Detection</strong></p>
-<ul>
-<li><p>Developed an <strong>anomaly detection model</strong> using <strong>TensorFlow</strong> and <strong>Scikit-learn</strong> to analyze user activity logs and identify suspicious behaviors.</p></li>
-<li><p>Reduced <strong>false positive rates by 25%</strong>, enhancing the accuracy of insider threat detection.</p></li>
-<li><p>Implemented advanced feature engineering techniques to extract meaningful patterns from high-volume security logs.</p></li>
-</ul>
-<p>🔹 <strong>High-Performance Microservices Development</strong></p>
-<ul>
-<li><p>Designed and deployed <strong>Python/Flask microservices</strong> integrated with <strong>MySQL</strong>, capable of handling <strong>10,000+ daily transactions</strong> while maintaining <strong>99.9% uptime</strong>.</p></li>
-<li><p>Optimized database queries and caching strategies to improve API response times and system reliability.</p></li>
-</ul>
-<p>🔹 <strong>CI/CD &amp; DevSecOps Automation</strong></p>
-<ul>
-<li><p>Streamlined the <strong>CI/CD pipeline</strong> using <strong>GitLab</strong> and <strong>Docker</strong>, reducing deployment times by <strong>40%</strong>.</p></li>
-<li><p>Ensured secure and efficient deployments by implementing automated testing and vulnerability scans in the pipeline.</p></li>
-</ul>
-<p>This role strengthened my expertise in <strong>cybersecurity, ML-driven anomaly detection, cloud-native microservices, and DevSecOps</strong>, equipping me with the skills to tackle complex security challenges in enterprise environments.</p>
-</section>
-<section id="iot-web-development-intern-w2-industrial-services-hub-pte.-ltd.-singapore" class="level2">
-<h2 class="anchored" data-anchor-id="iot-web-development-intern-w2-industrial-services-hub-pte.-ltd.-singapore"><strong>IoT &amp; Web Development Intern – W2 Industrial Services Hub Pte. Ltd., Singapore</strong></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="W2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><strong>Aug 2020 – Feb 2021</strong></p>
-<p>During my internship at <strong>W2 Industrial Services Hub</strong>, I worked on <strong>IoT cloud integration, real-time data processing, and user interface development</strong> to enhance industrial automation solutions. My key contributions included:</p>
-<p>🔹 <strong>Cloud &amp; IoT Integration</strong></p>
-<ul>
-<li><p>Integrated <strong>AWS cloud services</strong> (AWS IoT Core, Lambda, and DynamoDB) with industrial <strong>IoT hardware</strong>, ensuring <strong>98% uptime</strong> for real-time data processing.</p></li>
-<li><p>Developed <strong>real-time data ingestion pipelines</strong>, enabling seamless communication between edge devices and cloud-based analytics.</p></li>
-</ul>
-<p>🔹 <strong>IoT Dashboard &amp; UI Development</strong></p>
-<ul>
-<li><p>Designed and built <strong>user-friendly dashboards</strong> using <strong>React.js and Node.js</strong>, providing <strong>50+ factory technicians</strong> with real-time operational insights.</p></li>
-<li><p>Improved <strong>data visualization and usability</strong>, allowing technicians to monitor machine performance, predict maintenance needs, and reduce downtime.</p></li>
-</ul>
-<p>This experience strengthened my skills in <strong>IoT systems, cloud computing, full-stack web development, and industrial automation</strong>, preparing me for future roles in <strong>smart technology solutions</strong>.</p>
-</section>
-<section id="iot-web-development-intern-singapore-indoor-farms-pte.-ltd.-singapore" class="level2">
-<h2 class="anchored" data-anchor-id="iot-web-development-intern-singapore-indoor-farms-pte.-ltd.-singapore"><strong>IoT &amp; Web Development Intern – Singapore Indoor Farms Pte. Ltd., Singapore</strong></h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="indoor.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><strong>Aug 2020 – Feb 2021</strong></p>
-<p>At <strong>Singapore Indoor Farms</strong>, I contributed to <strong>cloud infrastructure development, data management, and web interface design</strong> to support smart farming operations. My work focused on improving <strong>connectivity, data accuracy, and user experience</strong> for precision agriculture.</p>
-<p>🔹 <strong>Cloud Infrastructure &amp; IoT Integration</strong></p>
-<ul>
-<li><p>Built and deployed <strong>AWS-based cloud infrastructure</strong> (AWS IoT Core, Lambda, and S3) to enable seamless connectivity between IoT sensors and factory backend systems.</p></li>
-<li><p>Ensured <strong>real-time data transmission</strong>, optimizing farm monitoring and automation processes.</p></li>
-</ul>
-<p>🔹 <strong>Data Management &amp; Processing</strong></p>
-<ul>
-<li><p>Managed <strong>large-scale agricultural datasets</strong>, implementing <strong>data cleaning and processing pipelines</strong> to ensure accuracy and reliability.</p></li>
-<li><p>Designed <strong>automated data processing workflows</strong>, improving efficiency in farm operations and decision-making.</p></li>
-</ul>
-<p>🔹 <strong>Web Interface Development for Indoor Farming</strong></p>
-<ul>
-<li><p>Developed an <strong>interactive web dashboard</strong> using <strong>React.js and Flask</strong>, allowing farm operators to <strong>visualize real-time sensor data</strong> and control environmental conditions remotely.</p></li>
-<li><p>Enhanced user experience by designing <strong>intuitive UI components</strong> for monitoring farm performance, reducing manual intervention.</p></li>
-</ul>
-<p>This internship strengthened my skills in <strong>IoT-cloud integration, data engineering, and full-stack web development</strong>, preparing me for future roles in <strong>smart technology solutions and industrial automation</strong>.</p>
+<section id="tables-for-enhanced-organization" class="level3">
+<h3 class="anchored" data-anchor-id="tables-for-enhanced-organization">Tables for Enhanced Organization</h3>
+<p>To further organize the information, below are tables summarizing the tools by category, including their primary function and website links.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Category</strong></th>
+<th><strong>Tool Name</strong></th>
+<th><strong>Primary Function</strong></th>
+<th><strong>Website</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Network Scanning and Information Gathering</td>
+<td>Nmap</td>
+<td>Network scanning and host discovery</td>
+<td><a href="https://nmap.org/">Nmap</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Shodan</td>
+<td>Search engine for internet-connected devices</td>
+<td><a href="https://www.shodan.io/">Shodan</a></td>
+</tr>
+<tr class="odd">
+<td>Wireless Network Security</td>
+<td>Aircrack-NG</td>
+<td>Wi-Fi security assessment, password cracking</td>
+<td><a href="https://www.aircrack-ng.org/">Aircrack-NG</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Kismet</td>
+<td>Wireless network detection and intrusion detection</td>
+<td><a href="https://www.kismetwireless.net/">Kismet</a></td>
+</tr>
+<tr class="odd">
+<td>Social Engineering and Phishing</td>
+<td>GoPhish</td>
+<td>Phishing simulation and user susceptibility testing</td>
+<td><a href="https://github.com/gophish/gophish">GoPhish</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Evilginx</td>
+<td>Fake login page creation for credential interception</td>
+<td><a href="https://github.com/evilginx2/evilginx2">Evilginx</a></td>
+</tr>
+<tr class="odd">
+<td>Penetration Testing and Exploitation</td>
+<td>Burp Suite</td>
+<td>Web application security testing, including scanning</td>
+<td><a href="https://portswigger.net/burp">Burp Suite</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Metasploit Framework</td>
+<td>Penetration testing with exploits and automation</td>
+<td><a href="https://www.metasploit.com/">Metasploit Framework</a></td>
+</tr>
+<tr class="odd">
+<td>Password Cracking</td>
+<td>John the Ripper</td>
+<td>Password cracking with multiple hashing algorithms</td>
+<td><a href="https://www.openwall.com/john/">John the Ripper</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Hashcat</td>
+<td>High-performance password cracking with GPU support</td>
+<td><a href="https://hashcat.net/hashcat/">Hashcat</a></td>
+</tr>
+<tr class="odd">
+<td>Vulnerability Scanning</td>
+<td>OpenVAS</td>
+<td>Open-source vulnerability scanning with extensive tests</td>
+<td><a href="https://www.openvas.org/">OpenVAS</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Nessus</td>
+<td>Commercial vulnerability scanner with detailed reports</td>
+<td><a href="https://www.tenable.com/products/nessus">Nessus</a></td>
+</tr>
+<tr class="odd">
+<td>Digital Forensics</td>
+<td>SleuthKit</td>
+<td>Digital forensics for file system analysis</td>
+<td><a href="https://www.sleuthkit.org/">SleuthKit</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Volatility</td>
+<td>Memory forensics for analyzing memory dumps</td>
+<td><a href="https://www.volatilityfoundation.org/">Volatility</a></td>
+</tr>
+<tr class="odd">
+<td>Web Application Security</td>
+<td>OWASP ZAP</td>
+<td>Open-source web application security scanner</td>
+<td><a href="https://www.zaproxy.org/">OWASP ZAP</a></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>WPScan</td>
+<td>WordPress vulnerability scanning</td>
+<td><a href="https://wpscan.com/">WPScan</a></td>
+</tr>
+</tbody>
+</table>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Information Gathering" data-listing-date-sort="1741190400000" data-listing-file-modified-sort="1741274112292" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="488">
+<div class="thumbnail">
+<p><a href="./cybertools/nmap.html" class="no-external"></a></p><a href="./cybertools/nmap.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./cybertools/nmap.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./cybertools/nmap.html" class="no-external">Exploring Nmap: The Essential Network Scanning Tool</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./cybertools/nmap.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Information Gathering'); return false;">
+Information Gathering
+</div>
+</div>
+<div class="listing-description">
+<a href="./cybertools/nmap.html" class="no-external">In the world of network security and administration, Nmap stands out as an indispensable tool. Short for Network Mapper, Nmap is a free and open-source utility that allows…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./cybertools/nmap.html" class="no-external">
+<div class="listing-date">
+Mar 6, 2025
+</div>
+<div class="listing-author">
+Xu Haiyang
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
