@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-07">
 
-<title>shodan – Haiyang's Tech Portfolio</title>
+<title>Shodan: The Search Engine for the Internet of Things – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,16 +189,42 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#what-is-shodan" id="toc-what-is-shodan" class="nav-link" data-scroll-target="#what-is-shodan">What is Shodan?</a></li>
+  <li><a href="#how-shodan-works" id="toc-how-shodan-works" class="nav-link" data-scroll-target="#how-shodan-works">How Shodan Works</a></li>
+  <li><a href="#shodan-search-interface" id="toc-shodan-search-interface" class="nav-link" data-scroll-target="#shodan-search-interface">Shodan Search Interface</a>
+  <ul class="collapse">
+  <li><a href="#common-search-filters" id="toc-common-search-filters" class="nav-link" data-scroll-target="#common-search-filters">Common Search Filters</a></li>
+  </ul></li>
+  <li><a href="#exploring-shodan-maps" id="toc-exploring-shodan-maps" class="nav-link" data-scroll-target="#exploring-shodan-maps">Exploring Shodan Maps</a></li>
+  <li><a href="#practical-applications" id="toc-practical-applications" class="nav-link" data-scroll-target="#practical-applications">Practical Applications</a>
+  <ul class="collapse">
+  <li><a href="#for-security-professionals" id="toc-for-security-professionals" class="nav-link" data-scroll-target="#for-security-professionals">For Security Professionals</a></li>
+  <li><a href="#for-researchers-and-academics" id="toc-for-researchers-and-academics" class="nav-link" data-scroll-target="#for-researchers-and-academics">For Researchers and Academics</a></li>
+  </ul></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a></li>
+  <li><a href="#shodan-dorks-advanced-search-techniques" id="toc-shodan-dorks-advanced-search-techniques" class="nav-link" data-scroll-target="#shodan-dorks-advanced-search-techniques">Shodan Dorks: Advanced Search Techniques</a></li>
+  <li><a href="#mitigation-strategies" id="toc-mitigation-strategies" class="nav-link" data-scroll-target="#mitigation-strategies">Mitigation Strategies</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Shodan: The Search Engine for the Internet of Things</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Information Gathering</div>
+    <div class="quarto-category">Cybersecurity</div>
+    <div class="quarto-category">OSINT</div>
   </div>
   </div>
 
@@ -182,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 7, 2025</p>
     </div>
   </div>
   
@@ -194,8 +254,223 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Shodan is often described as “Google for hackers” or “the scariest search engine on the Internet,” but these descriptions only scratch the surface of what this powerful tool can do. Unlike traditional search engines that index web content, Shodan scans the entire Internet, cataloging devices connected to the network—from servers and routers to webcams, traffic lights, industrial control systems, and even smart home devices.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://static-00.iconduck.com/assets.00/shodan-icon-512x512-px4ctshz.png" class="img-fluid figure-img" width="200"></p>
+<figcaption>Shodan Logo</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-is-shodan" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-shodan">What is Shodan?</h2>
+<p>Shodan was created by John Matherly in 2009 as a project to track how many devices were connected to the Internet. It has since evolved into a sophisticated intelligence-gathering tool that:</p>
+<ul>
+<li>Maps Internet-connected devices worldwide</li>
+<li>Identifies vulnerabilities in networked systems</li>
+<li>Provides detailed information about services, ports, and banners</li>
+<li>Offers insights into global technology deployments and security trends</li>
+</ul>
+</section>
+<section id="how-shodan-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-shodan-works">How Shodan Works</h2>
+<p>Shodan operates by sending requests to every device it can find online and recording the responses. These responses, known as “banners,” often contain detailed information about the device:</p>
+<pre><code>HTTP/1.1 200 OK
+Server: nginx/1.14.2
+Date: Fri, 07 Mar 2025 12:34:56 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/7.4.3</code></pre>
+<p>From this simple banner, Shodan extracts critical information: - The web server software (nginx 1.14.2) - The backend language (PHP 7.4.3) - The date and time when the server responded</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Shodan does not perform any intrusive actions or attacks; it simply collects publicly available information that devices willingly share.</p>
+</div>
+</div>
+</section>
+<section id="shodan-search-interface" class="level2">
+<h2 class="anchored" data-anchor-id="shodan-search-interface">Shodan Search Interface</h2>
+<p>The Shodan search interface allows users to find devices using specialized filters and search operators.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.shodan.io/static/blogging/content/images/2018/01/maps.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Shodan Search Interface</figcaption>
+</figure>
+</div>
+<section id="common-search-filters" class="level3">
+<h3 class="anchored" data-anchor-id="common-search-filters">Common Search Filters</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Filter</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>country:</code></td>
+<td>Filter by country code</td>
+<td><code>country:CN</code></td>
+</tr>
+<tr class="even">
+<td><code>port:</code></td>
+<td>Filter by open port</td>
+<td><code>port:22</code></td>
+</tr>
+<tr class="odd">
+<td><code>os:</code></td>
+<td>Filter by operating system</td>
+<td><code>os:linux</code></td>
+</tr>
+<tr class="even">
+<td><code>product:</code></td>
+<td>Filter by software/product</td>
+<td><code>product:nginx</code></td>
+</tr>
+<tr class="odd">
+<td><code>vuln:</code></td>
+<td>Filter by CVE vulnerability</td>
+<td><code>vuln:CVE-2021-44228</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="exploring-shodan-maps" class="level2">
+<h2 class="anchored" data-anchor-id="exploring-shodan-maps">Exploring Shodan Maps</h2>
+<p>Shodan Maps provide a visual representation of internet-connected devices across the globe, offering a unique perspective on the Internet of Things landscape.</p>
+<div class="ratio ratio-16x9">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GI0PblwOc_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="practical-applications" class="level2">
+<h2 class="anchored" data-anchor-id="practical-applications">Practical Applications</h2>
+<section id="for-security-professionals" class="level3">
+<h3 class="anchored" data-anchor-id="for-security-professionals">For Security Professionals</h3>
+<ul>
+<li>Vulnerability assessment and management</li>
+<li>Attack surface monitoring</li>
+<li>Security research and intelligence gathering</li>
+<li>Compliance validation</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Using the Shodan API with Python</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shodan</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the API with your API key</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>api <span class="op">=</span> shodan.Shodan(<span class="st">'YOUR_API_KEY'</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Search for NGINX servers in China</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> api.search(<span class="st">'nginx country:CN'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the results</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Results found: </span><span class="sc">{</span>results[<span class="st">'total'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> result <span class="kw">in</span> results[<span class="st">'matches'</span>]:</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"IP: </span><span class="sc">{</span>result[<span class="st">'ip_str'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Port: </span><span class="sc">{</span>result[<span class="st">'port'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result[<span class="st">'data'</span>])</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="for-researchers-and-academics" class="level3">
+<h3 class="anchored" data-anchor-id="for-researchers-and-academics">For Researchers and Academics</h3>
+<ul>
+<li>Internet topology studies</li>
+<li>Technology adoption analysis</li>
+<li>Historical internet data research</li>
+<li>IoT ecosystem mapping</li>
+</ul>
+</section>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<p>With great power comes great responsibility. Shodan has legitimate uses for security professionals, researchers, and organizations monitoring their digital footprint, but it can also be misused.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ethical Usage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Always obtain proper authorization before scanning or accessing systems discovered through Shodan. Unauthorized access to computer systems is illegal in most jurisdictions.</p>
+</div>
+</div>
+</section>
+<section id="shodan-dorks-advanced-search-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="shodan-dorks-advanced-search-techniques">Shodan Dorks: Advanced Search Techniques</h2>
+<p>“Dorks” are specialized search queries that help find specific types of exposed devices or vulnerabilities.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dork</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>webcamxp</code></td>
+<td>Find exposed webcams</td>
+</tr>
+<tr class="even">
+<td><code>"MongoDB Server Information" port:27017 -authentication</code></td>
+<td>Find unsecured MongoDB databases</td>
+</tr>
+<tr class="odd">
+<td><code>"default password" "camera"</code></td>
+<td>Find cameras with default credentials</td>
+</tr>
+<tr class="even">
+<td><code>http.title:"Dashboard [Jenkins]"</code></td>
+<td>Find Jenkins installations</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mitigation-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="mitigation-strategies">Mitigation Strategies</h2>
+<p>If you’re concerned about your devices appearing on Shodan, consider these mitigation strategies:</p>
+<ol type="1">
+<li><strong>Implement proper authentication</strong> for all internet-facing services</li>
+<li><strong>Use firewalls and restrict access</strong> to only necessary services</li>
+<li><strong>Keep software updated</strong> to patch known vulnerabilities</li>
+<li><strong>Use VPNs</strong> for accessing sensitive systems remotely</li>
+<li><strong>Perform regular Shodan searches</strong> on your IP ranges to identify exposed services</li>
+</ol>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Shodan represents a double-edged sword in the world of cybersecurity. For security professionals, it’s an invaluable tool for understanding exposure and identifying vulnerabilities before malicious actors do. For organizations, it serves as a reminder of the importance of security by design and proper configuration management.</p>
+<p>As our world becomes more connected, tools like Shodan become increasingly important for maintaining awareness of our digital footprint and ensuring that the convenience of connectivity doesn’t come at the expense of security.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://www.shodan.io/">Official Shodan Website</a></li>
+<li><a href="https://developer.shodan.io/api">Shodan API Documentation</a></li>
+<li><a href="https://blog.shodan.io/">Shodan Blog</a></li>
+<li>Matherly, J. (2009). “Complete Guide to Shodan.” Shodan, LLC.</li>
+<li>SANS Institute. (2023). “Using Shodan for Open Source Intelligence.”</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

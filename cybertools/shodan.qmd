@@ -1,6 +1,152 @@
 ---
-title: ""
-date: "2025-03-06"
-categories: [Information Gathering]
+title: "Shodan: The Search Engine for the Internet of Things"
+date: "2025-03-07"
+categories: [Information Gathering, Cybersecurity, OSINT]
 author: "Xu Haiyang"
+image: "https://static-00.iconduck.com/assets.00/shodan-icon-512x512-px4ctshz.png"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction
+
+Shodan is often described as "Google for hackers" or "the scariest search engine on the Internet," but these descriptions only scratch the surface of what this powerful tool can do. Unlike traditional search engines that index web content, Shodan scans the entire Internet, cataloging devices connected to the network—from servers and routers to webcams, traffic lights, industrial control systems, and even smart home devices.
+
+![Shodan Logo](https://static-00.iconduck.com/assets.00/shodan-icon-512x512-px4ctshz.png){fig-align="center" width="200"}
+
+## What is Shodan?
+
+Shodan was created by John Matherly in 2009 as a project to track how many devices were connected to the Internet. It has since evolved into a sophisticated intelligence-gathering tool that:
+
+- Maps Internet-connected devices worldwide
+- Identifies vulnerabilities in networked systems
+- Provides detailed information about services, ports, and banners
+- Offers insights into global technology deployments and security trends
+
+## How Shodan Works
+
+Shodan operates by sending requests to every device it can find online and recording the responses. These responses, known as "banners," often contain detailed information about the device:
+
+```
+HTTP/1.1 200 OK
+Server: nginx/1.14.2
+Date: Fri, 07 Mar 2025 12:34:56 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Powered-By: PHP/7.4.3
+```
+
+From this simple banner, Shodan extracts critical information:
+- The web server software (nginx 1.14.2)
+- The backend language (PHP 7.4.3)
+- The date and time when the server responded
+
+::: {.callout-note}
+Shodan does not perform any intrusive actions or attacks; it simply collects publicly available information that devices willingly share.
+:::
+
+## Shodan Search Interface
+
+The Shodan search interface allows users to find devices using specialized filters and search operators.
+
+![Shodan Search Interface](https://www.shodan.io/static/blogging/content/images/2018/01/maps.png){fig-align="center" width="600"}
+
+### Common Search Filters
+
+| Filter | Description | Example |
+|--------|-------------|---------|
+| `country:` | Filter by country code | `country:CN` |
+| `port:` | Filter by open port | `port:22` |
+| `os:` | Filter by operating system | `os:linux` |
+| `product:` | Filter by software/product | `product:nginx` |
+| `vuln:` | Filter by CVE vulnerability | `vuln:CVE-2021-44228` |
+
+## Exploring Shodan Maps
+
+Shodan Maps provide a visual representation of internet-connected devices across the globe, offering a unique perspective on the Internet of Things landscape.
+
+<div class="ratio ratio-16x9">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GI0PblwOc_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+## Practical Applications
+
+### For Security Professionals
+
+- Vulnerability assessment and management
+- Attack surface monitoring
+- Security research and intelligence gathering
+- Compliance validation
+
+```python
+# Example: Using the Shodan API with Python
+import shodan
+
+# Initialize the API with your API key
+api = shodan.Shodan('YOUR_API_KEY')
+
+# Search for NGINX servers in China
+results = api.search('nginx country:CN')
+
+# Print the results
+print(f"Results found: {results['total']}")
+for result in results['matches']:
+    print(f"IP: {result['ip_str']}")
+    print(f"Port: {result['port']}")
+    print(result['data'])
+    print('')
+```
+
+### For Researchers and Academics
+
+- Internet topology studies
+- Technology adoption analysis
+- Historical internet data research
+- IoT ecosystem mapping
+
+## Ethical Considerations
+
+With great power comes great responsibility. Shodan has legitimate uses for security professionals, researchers, and organizations monitoring their digital footprint, but it can also be misused.
+
+::: {.callout-warning}
+## Ethical Usage
+Always obtain proper authorization before scanning or accessing systems discovered through Shodan. Unauthorized access to computer systems is illegal in most jurisdictions.
+:::
+
+## Shodan Dorks: Advanced Search Techniques
+
+"Dorks" are specialized search queries that help find specific types of exposed devices or vulnerabilities.
+
+| Dork | Purpose |
+|------|---------|
+| `webcamxp` | Find exposed webcams |
+| `"MongoDB Server Information" port:27017 -authentication` | Find unsecured MongoDB databases |
+| `"default password" "camera"` | Find cameras with default credentials |
+| `http.title:"Dashboard [Jenkins]"` | Find Jenkins installations |
+
+## Mitigation Strategies
+
+If you're concerned about your devices appearing on Shodan, consider these mitigation strategies:
+
+1. **Implement proper authentication** for all internet-facing services
+2. **Use firewalls and restrict access** to only necessary services
+3. **Keep software updated** to patch known vulnerabilities
+4. **Use VPNs** for accessing sensitive systems remotely
+5. **Perform regular Shodan searches** on your IP ranges to identify exposed services
+
+## Conclusion
+
+Shodan represents a double-edged sword in the world of cybersecurity. For security professionals, it's an invaluable tool for understanding exposure and identifying vulnerabilities before malicious actors do. For organizations, it serves as a reminder of the importance of security by design and proper configuration management.
+
+As our world becomes more connected, tools like Shodan become increasingly important for maintaining awareness of our digital footprint and ensuring that the convenience of connectivity doesn't come at the expense of security.
+
+## References
+
+- [Official Shodan Website](https://www.shodan.io/)
+- [Shodan API Documentation](https://developer.shodan.io/api)
+- [Shodan Blog](https://blog.shodan.io/)
+- Matherly, J. (2009). "Complete Guide to Shodan." Shodan, LLC.
+- SANS Institute. (2023). "Using Shodan for Open Source Intelligence."

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-07">
 
-<title>maltego – Haiyang's Tech Portfolio</title>
+<title>Maltego: Advanced Visual Link Analysis for Intelligence Gathering – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,16 +155,59 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#what-is-maltego" id="toc-what-is-maltego" class="nav-link" data-scroll-target="#what-is-maltego">What is Maltego?</a></li>
+  <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts">Core Concepts</a>
+  <ul class="collapse">
+  <li><a href="#the-maltego-interface" id="toc-the-maltego-interface" class="nav-link" data-scroll-target="#the-maltego-interface">The Maltego Interface</a></li>
+  <li><a href="#entities" id="toc-entities" class="nav-link" data-scroll-target="#entities">Entities</a></li>
+  <li><a href="#transforms" id="toc-transforms" class="nav-link" data-scroll-target="#transforms">Transforms</a></li>
+  </ul></li>
+  <li><a href="#maltego-editions" id="toc-maltego-editions" class="nav-link" data-scroll-target="#maltego-editions">Maltego Editions</a></li>
+  <li><a href="#practical-applications" id="toc-practical-applications" class="nav-link" data-scroll-target="#practical-applications">Practical Applications</a>
+  <ul class="collapse">
+  <li><a href="#osint-open-source-intelligence" id="toc-osint-open-source-intelligence" class="nav-link" data-scroll-target="#osint-open-source-intelligence">OSINT (Open Source Intelligence)</a></li>
+  <li><a href="#cybersecurity-investigations" id="toc-cybersecurity-investigations" class="nav-link" data-scroll-target="#cybersecurity-investigations">Cybersecurity Investigations</a></li>
+  <li><a href="#corporate-intelligence" id="toc-corporate-intelligence" class="nav-link" data-scroll-target="#corporate-intelligence">Corporate Intelligence</a></li>
+  </ul></li>
+  <li><a href="#live-demonstration" id="toc-live-demonstration" class="nav-link" data-scroll-target="#live-demonstration">Live Demonstration</a></li>
+  <li><a href="#transform-hub-and-integrations" id="toc-transform-hub-and-integrations" class="nav-link" data-scroll-target="#transform-hub-and-integrations">Transform Hub and Integrations</a></li>
+  <li><a href="#advanced-techniques" id="toc-advanced-techniques" class="nav-link" data-scroll-target="#advanced-techniques">Advanced Techniques</a>
+  <ul class="collapse">
+  <li><a href="#machine-learning-integration" id="toc-machine-learning-integration" class="nav-link" data-scroll-target="#machine-learning-integration">Machine Learning Integration</a></li>
+  <li><a href="#large-scale-investigations" id="toc-large-scale-investigations" class="nav-link" data-scroll-target="#large-scale-investigations">Large-Scale Investigations</a></li>
+  </ul></li>
+  <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies">Case Studies</a>
+  <ul class="collapse">
+  <li><a href="#cybercrime-investigation" id="toc-cybercrime-investigation" class="nav-link" data-scroll-target="#cybercrime-investigation">Cybercrime Investigation</a></li>
+  <li><a href="#corporate-research" id="toc-corporate-research" class="nav-link" data-scroll-target="#corporate-research">Corporate Research</a></li>
+  </ul></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a></li>
+  <li><a href="#getting-started-with-maltego" id="toc-getting-started-with-maltego" class="nav-link" data-scroll-target="#getting-started-with-maltego">Getting Started with Maltego</a>
+  <ul class="collapse">
+  <li><a href="#installation-process" id="toc-installation-process" class="nav-link" data-scroll-target="#installation-process">Installation Process</a></li>
+  <li><a href="#your-first-investigation" id="toc-your-first-investigation" class="nav-link" data-scroll-target="#your-first-investigation">Your First Investigation</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Maltego: Advanced Visual Link Analysis for Intelligence Gathering</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Information Gathering</div>
+    <div class="quarto-category">OSINT</div>
+    <div class="quarto-category">Threat Intelligence</div>
   </div>
   </div>
 
@@ -182,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 7, 2025</p>
     </div>
   </div>
   
@@ -194,8 +237,331 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Maltego stands as one of the most powerful visual link analysis tools available for information gathering and intelligence analysis. Developed by Paterva, this platform has revolutionized how security professionals, researchers, and analysts discover, visualize, and understand the relationships between pieces of information scattered across the digital landscape.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.maltego.com/images/uploads/maltego-logo.png" class="img-fluid figure-img" width="250"></p>
+<figcaption>Maltego Logo</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-is-maltego" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-maltego">What is Maltego?</h2>
+<p>Maltego is a comprehensive intelligence and forensics application that offers graphical link analysis for gathering and connecting information for investigative tasks. It excels at revealing relationships among entities such as people, companies, websites, domains, DNS names, IP addresses, social networks, and affiliations across both online and offline worlds.</p>
+<p>Key attributes include:</p>
+<ul>
+<li><strong>Visual mapping</strong>: Presents complex information in intuitive graphs</li>
+<li><strong>Data integration</strong>: Combines information from diverse sources</li>
+<li><strong>Pattern recognition</strong>: Helps identify relationships that might otherwise remain hidden</li>
+<li><strong>Extensibility</strong>: Supports custom transforms and data sources</li>
+<li><strong>Real-time analysis</strong>: Continuously updates information as investigations proceed</li>
+</ul>
+</section>
+<section id="core-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="core-concepts">Core Concepts</h2>
+<section id="the-maltego-interface" class="level3">
+<h3 class="anchored" data-anchor-id="the-maltego-interface">The Maltego Interface</h3>
+<p>The Maltego workspace is built around several key components:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.maltego.com/images/uploads/what-is-maltego-interface.png" class="img-fluid figure-img" width="700"></p>
+<figcaption>Maltego Interface</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li><strong>Palette</strong>: Contains all entity types that can be added to your graph</li>
+<li><strong>Graph View</strong>: The main workspace where entities and their relationships are visualized</li>
+<li><strong>Detail View</strong>: Shows properties and information about selected entities</li>
+<li><strong>Entity List</strong>: Displays all entities in the current graph</li>
+<li><strong>Transform Hub</strong>: Access point for all available transforms</li>
+</ol>
+</section>
+<section id="entities" class="level3">
+<h3 class="anchored" data-anchor-id="entities">Entities</h3>
+<p>Entities are the fundamental building blocks in Maltego. They represent pieces of information such as:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Entity Type</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Person</td>
+<td>Names, email addresses, social media accounts</td>
+</tr>
+<tr class="even">
+<td>Infrastructure</td>
+<td>Domains, IP addresses, DNS records</td>
+</tr>
+<tr class="odd">
+<td>Organization</td>
+<td>Companies, NGOs, government agencies</td>
+</tr>
+<tr class="even">
+<td>Location</td>
+<td>Physical addresses, GPS coordinates</td>
+</tr>
+<tr class="odd">
+<td>Document</td>
+<td>Files, web pages, publications</td>
+</tr>
+<tr class="even">
+<td>Phrase</td>
+<td>Keywords, hashtags</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="transforms" class="level3">
+<h3 class="anchored" data-anchor-id="transforms">Transforms</h3>
+<p>Transforms are the analytical engines of Maltego. They take an entity as input, query various data sources, and return results as new entities connected to the original entity.</p>
+<pre><code>Domain → DNS to IP → Transform → IP Addresses of the Domain</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Transforms can be chained together to create complex analytical workflows, allowing for deep data mining with minimal manual effort.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="maltego-editions" class="level2">
+<h2 class="anchored" data-anchor-id="maltego-editions">Maltego Editions</h2>
+<p>Maltego offers several editions to suit different needs and budgets:</p>
+<ol type="1">
+<li><strong>Maltego CE (Community Edition)</strong>
+<ul>
+<li>Free with limitations</li>
+<li>Maximum of 12 results per transform</li>
+<li>Restricted transform set</li>
+</ul></li>
+<li><strong>Maltego Classic</strong>
+<ul>
+<li>Full commercial version</li>
+<li>Unrestricted results</li>
+<li>Access to all standard transforms</li>
+</ul></li>
+<li><strong>Maltego XL</strong>
+<ul>
+<li>Enterprise-grade solution</li>
+<li>Designed for large-scale investigations</li>
+<li>Handles complex graphs with thousands of entities</li>
+</ul></li>
+<li><strong>Maltego Server</strong>
+<ul>
+<li>Collaborative analysis platform</li>
+<li>Centralized transform server</li>
+<li>Team-based investigations</li>
+</ul></li>
+</ol>
+</section>
+<section id="practical-applications" class="level2">
+<h2 class="anchored" data-anchor-id="practical-applications">Practical Applications</h2>
+<section id="osint-open-source-intelligence" class="level3">
+<h3 class="anchored" data-anchor-id="osint-open-source-intelligence">OSINT (Open Source Intelligence)</h3>
+<p>Maltego excels at gathering and correlating publicly available information:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.maltego.com/images/uploads/maltego-graph-example.png" class="img-fluid figure-img" width="650"></p>
+<figcaption>Maltego OSINT Example</figcaption>
+</figure>
+</div>
+<pre><code># Example workflow for domain reconnaissance:
+1. Start with target domain
+2. Run DNS transforms to identify IP addresses and subdomains
+3. Find related domains through WHOIS information
+4. Discover email addresses associated with the domain
+5. Map relationships between identified entities</code></pre>
+</section>
+<section id="cybersecurity-investigations" class="level3">
+<h3 class="anchored" data-anchor-id="cybersecurity-investigations">Cybersecurity Investigations</h3>
+<p>Security professionals use Maltego for:</p>
+<ul>
+<li><strong>Threat actor profiling</strong>: Mapping connections between known malicious entities</li>
+<li><strong>Infrastructure analysis</strong>: Understanding attack vectors and command-and-control setups</li>
+<li><strong>Vulnerability assessment</strong>: Identifying exposed assets and potential attack surfaces</li>
+<li><strong>Incident response</strong>: Tracking the scope and impact of security breaches</li>
+</ul>
+</section>
+<section id="corporate-intelligence" class="level3">
+<h3 class="anchored" data-anchor-id="corporate-intelligence">Corporate Intelligence</h3>
+<p>Organizations leverage Maltego for:</p>
+<ul>
+<li><strong>Competitive analysis</strong>: Mapping relationships between competitors</li>
+<li><strong>Due diligence</strong>: Investigating potential business partners</li>
+<li><strong>Risk assessment</strong>: Identifying potential threats to business operations</li>
+<li><strong>Compliance verification</strong>: Ensuring regulatory adherence</li>
+</ul>
+</section>
+</section>
+<section id="live-demonstration" class="level2">
+<h2 class="anchored" data-anchor-id="live-demonstration">Live Demonstration</h2>
+<div class="ratio ratio-16x9">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ruRk1eYP2gw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="transform-hub-and-integrations" class="level2">
+<h2 class="anchored" data-anchor-id="transform-hub-and-integrations">Transform Hub and Integrations</h2>
+<p>The Transform Hub provides access to numerous data sources through various transform packages:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.maltego.com/images/uploads/transform-hub.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Maltego Transform Hub</figcaption>
+</figure>
+</div>
+<p>Popular transform sets include:</p>
+<ul>
+<li><strong>Standard Transforms</strong>: Basic reconnaissance and OSINT gathering</li>
+<li><strong>Shodan</strong>: Internet-connected device information</li>
+<li><strong>Have I Been Pwned</strong>: Data breach checks</li>
+<li><strong>VirusTotal</strong>: Malware intelligence</li>
+<li><strong>Twitter/X</strong>: Social media analysis</li>
+<li><strong>Recorded Future</strong>: Threat intelligence</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creating Custom Transforms
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Advanced users can develop custom transforms using the Maltego Transform Development API, available in Python, Java, and other languages.</p>
+</div>
+</div>
+</section>
+<section id="advanced-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-techniques">Advanced Techniques</h2>
+<section id="machine-learning-integration" class="level3">
+<h3 class="anchored" data-anchor-id="machine-learning-integration">Machine Learning Integration</h3>
+<p>Recent versions of Maltego incorporate machine learning to enhance analysis:</p>
+<ul>
+<li><strong>Pattern recognition</strong>: Automatically identifying similar entity clusters</li>
+<li><strong>Anomaly detection</strong>: Highlighting unusual connections</li>
+<li><strong>Predictive analysis</strong>: Suggesting potential relationships based on existing data</li>
+<li><strong>Entity resolution</strong>: Merging duplicate entities with varying representations</li>
+</ul>
+</section>
+<section id="large-scale-investigations" class="level3">
+<h3 class="anchored" data-anchor-id="large-scale-investigations">Large-Scale Investigations</h3>
+<p>For complex investigations involving thousands of entities:</p>
+<pre><code># Best practices for large graphs:
+1. Use Maltego XL for improved performance
+2. Apply focused transforms to limit scope
+3. Use machine views to organize complex datasets
+4. Leverage bookmarks for important findings
+5. Export interim results regularly</code></pre>
+</section>
+</section>
+<section id="case-studies" class="level2">
+<h2 class="anchored" data-anchor-id="case-studies">Case Studies</h2>
+<section id="cybercrime-investigation" class="level3">
+<h3 class="anchored" data-anchor-id="cybercrime-investigation">Cybercrime Investigation</h3>
+<p>Security researchers used Maltego to investigate a phishing campaign:</p>
+<ol type="1">
+<li>Starting with phishing emails, they extracted domain information</li>
+<li>Through DNS transforms, they identified related infrastructure</li>
+<li>WHOIS data revealed connections to previously identified malicious actors</li>
+<li>Social media transforms uncovered additional associated accounts</li>
+<li>The resulting graph revealed the full scope of the campaign infrastructure</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.maltego.com/images/uploads/case-study-graph.png" class="img-fluid figure-img" width="650"></p>
+<figcaption>Case Study Example</figcaption>
+</figure>
+</div>
+</section>
+<section id="corporate-research" class="level3">
+<h3 class="anchored" data-anchor-id="corporate-research">Corporate Research</h3>
+<p>A competitive intelligence team mapped industry relationships:</p>
+<ol type="1">
+<li>Beginning with key competitors, they identified board members and executives</li>
+<li>Social media analysis revealed professional networks</li>
+<li>Corporate registry searches uncovered related business entities</li>
+<li>News and publication transforms identified strategic partnerships</li>
+<li>The analysis revealed previously unknown market positioning strategies</li>
+</ol>
+</section>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible Usage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Maltego is a powerful tool that must be used ethically and legally. Always respect privacy laws and obtain proper authorization before conducting investigations.</p>
+</div>
+</div>
+<p>Guidelines for ethical use:</p>
+<ol type="1">
+<li><strong>Establish clear boundaries</strong> for investigations</li>
+<li><strong>Document your methodology</strong> and findings</li>
+<li><strong>Verify information</strong> from multiple sources</li>
+<li><strong>Consider privacy implications</strong> of gathered data</li>
+<li><strong>Use only legally accessible information</strong> sources</li>
+</ol>
+</section>
+<section id="getting-started-with-maltego" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-with-maltego">Getting Started with Maltego</h2>
+<section id="installation-process" class="level3">
+<h3 class="anchored" data-anchor-id="installation-process">Installation Process</h3>
+<pre><code># Basic installation steps:
+1. Download the appropriate version from Maltego.com
+2. Run the installer for your operating system
+3. Create or sign in with your Maltego account
+4. Set up your transform servers
+5. Choose and install transform packages</code></pre>
+</section>
+<section id="your-first-investigation" class="level3">
+<h3 class="anchored" data-anchor-id="your-first-investigation">Your First Investigation</h3>
+<p>A simple workflow for beginners:</p>
+<ol type="1">
+<li>Start with a domain entity</li>
+<li>Run the “To Website [Using Search Engine]” transform</li>
+<li>From the resulting websites, run “To Entities” transforms</li>
+<li>Examine the relationships revealed in your graph</li>
+<li>Save your findings as a Maltego graph (.mtgx) file</li>
+</ol>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Maltego represents a paradigm shift in information gathering and intelligence analysis. By visualizing complex relationships and automating data collection, it enables analysts to discover insights that would remain hidden using traditional methods.</p>
+<p>Whether you’re a cybersecurity professional mapping threat infrastructure, an investigator following digital breadcrumbs, or a business analyst researching market relationships, Maltego provides an unparalleled platform for connecting the dots in our increasingly complex information landscape.</p>
+<p>As data sources continue to expand and integration capabilities grow, Maltego’s position as the premier visual link analysis tool seems secure for the foreseeable future.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://www.maltego.com/">Official Maltego Website</a></li>
+<li><a href="https://docs.maltego.com/">Maltego Documentation</a></li>
+<li><a href="https://www.maltego.com/blog/">Paterva Blog</a></li>
+<li>Barrett, D. (2023). “Open Source Intelligence Techniques: Resources for Searching and Analyzing Online Information.” 9th Edition.</li>
+<li>Chauhan, S. &amp; Panda, N.K. (2022). “Mastering Open Source Intelligence.” Packt Publishing.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

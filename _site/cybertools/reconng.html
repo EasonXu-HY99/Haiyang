@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-07">
 
-<title>reconng – Haiyang's Tech Portfolio</title>
+<title>Recon-ng: Comprehensive Web Reconnaissance Framework – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,16 +189,69 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#what-is-recon-ng" id="toc-what-is-recon-ng" class="nav-link" data-scroll-target="#what-is-recon-ng">What is Recon-ng?</a></li>
+  <li><a href="#framework-architecture" id="toc-framework-architecture" class="nav-link" data-scroll-target="#framework-architecture">Framework Architecture</a>
+  <ul class="collapse">
+  <li><a href="#core-components" id="toc-core-components" class="nav-link" data-scroll-target="#core-components">Core Components</a></li>
+  <li><a href="#module-categories" id="toc-module-categories" class="nav-link" data-scroll-target="#module-categories">Module Categories</a></li>
+  </ul></li>
+  <li><a href="#installation-and-setup" id="toc-installation-and-setup" class="nav-link" data-scroll-target="#installation-and-setup">Installation and Setup</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a>
+  <ul class="collapse">
+  <li><a href="#basic-navigation" id="toc-basic-navigation" class="nav-link" data-scroll-target="#basic-navigation">Basic Navigation</a></li>
+  <li><a href="#working-with-modules" id="toc-working-with-modules" class="nav-link" data-scroll-target="#working-with-modules">Working with Modules</a></li>
+  </ul></li>
+  <li><a href="#live-demonstration" id="toc-live-demonstration" class="nav-link" data-scroll-target="#live-demonstration">Live Demonstration</a></li>
+  <li><a href="#practical-workflows" id="toc-practical-workflows" class="nav-link" data-scroll-target="#practical-workflows">Practical Workflows</a>
+  <ul class="collapse">
+  <li><a href="#domain-reconnaissance" id="toc-domain-reconnaissance" class="nav-link" data-scroll-target="#domain-reconnaissance">Domain Reconnaissance</a></li>
+  <li><a href="#person-and-organization-research" id="toc-person-and-organization-research" class="nav-link" data-scroll-target="#person-and-organization-research">Person and Organization Research</a></li>
+  </ul></li>
+  <li><a href="#advanced-features" id="toc-advanced-features" class="nav-link" data-scroll-target="#advanced-features">Advanced Features</a>
+  <ul class="collapse">
+  <li><a href="#api-key-management" id="toc-api-key-management" class="nav-link" data-scroll-target="#api-key-management">API Key Management</a></li>
+  <li><a href="#database-operations" id="toc-database-operations" class="nav-link" data-scroll-target="#database-operations">Database Operations</a></li>
+  <li><a href="#custom-module-development" id="toc-custom-module-development" class="nav-link" data-scroll-target="#custom-module-development">Custom Module Development</a></li>
+  </ul></li>
+  <li><a href="#integration-with-other-tools" id="toc-integration-with-other-tools" class="nav-link" data-scroll-target="#integration-with-other-tools">Integration with Other Tools</a>
+  <ul class="collapse">
+  <li><a href="#export-for-maltego" id="toc-export-for-maltego" class="nav-link" data-scroll-target="#export-for-maltego">Export for Maltego</a></li>
+  <li><a href="#feeding-nmap" id="toc-feeding-nmap" class="nav-link" data-scroll-target="#feeding-nmap">Feeding Nmap</a></li>
+  </ul></li>
+  <li><a href="#use-cases-and-examples" id="toc-use-cases-and-examples" class="nav-link" data-scroll-target="#use-cases-and-examples">Use Cases and Examples</a>
+  <ul class="collapse">
+  <li><a href="#bug-bounty-hunting" id="toc-bug-bounty-hunting" class="nav-link" data-scroll-target="#bug-bounty-hunting">Bug Bounty Hunting</a></li>
+  <li><a href="#security-assessments" id="toc-security-assessments" class="nav-link" data-scroll-target="#security-assessments">Security Assessments</a></li>
+  </ul></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a>
+  <ul class="collapse">
+  <li><a href="#efficiency-tips" id="toc-efficiency-tips" class="nav-link" data-scroll-target="#efficiency-tips">Efficiency Tips</a></li>
+  <li><a href="#performance-considerations" id="toc-performance-considerations" class="nav-link" data-scroll-target="#performance-considerations">Performance Considerations</a></li>
+  </ul></li>
+  <li><a href="#ethical-and-legal-considerations" id="toc-ethical-and-legal-considerations" class="nav-link" data-scroll-target="#ethical-and-legal-considerations">Ethical and Legal Considerations</a></li>
+  <li><a href="#comparison-with-similar-tools" id="toc-comparison-with-similar-tools" class="nav-link" data-scroll-target="#comparison-with-similar-tools">Comparison with Similar Tools</a></li>
+  <li><a href="#future-of-recon-ng" id="toc-future-of-recon-ng" class="nav-link" data-scroll-target="#future-of-recon-ng">Future of Recon-ng</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Recon-ng: Comprehensive Web Reconnaissance Framework</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Information Gathering</div>
+    <div class="quarto-category">OSINT</div>
+    <div class="quarto-category">Reconnaissance</div>
   </div>
   </div>
 
@@ -182,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 7, 2025</p>
     </div>
   </div>
   
@@ -194,8 +281,444 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Recon-ng is a powerful and versatile reconnaissance framework that has become an essential tool for security professionals, penetration testers, and OSINT (Open Source Intelligence) analysts. Created by Tim Tomes (LaNMaSteR53), this Python-based tool provides a complete framework for web-based open source reconnaissance, integrating a wide range of modules that automate numerous information gathering tasks.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/lanmaster53/recon-ng/master/recon_ng/data/images/logo.png" class="img-fluid figure-img" width="300"></p>
+<figcaption>Recon-ng Logo</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-is-recon-ng" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-recon-ng">What is Recon-ng?</h2>
+<p>Recon-ng is an open-source, full-featured reconnaissance framework designed with a modular architecture, allowing users to create, customize, and execute various reconnaissance tasks efficiently. Its design draws inspiration from Metasploit, providing a familiar command-line interface that security professionals can quickly adapt to.</p>
+<p>Key features of Recon-ng include:</p>
+<ul>
+<li>Modular architecture</li>
+<li>Integrated API key management</li>
+<li>Robust data storage</li>
+<li>Interactive command-line interface</li>
+<li>Extensive reporting capabilities</li>
+<li>Workspace-based organization</li>
+</ul>
+</section>
+<section id="framework-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="framework-architecture">Framework Architecture</h2>
+<section id="core-components" class="level3">
+<h3 class="anchored" data-anchor-id="core-components">Core Components</h3>
+<p>Recon-ng’s architecture consists of several key components:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://i.imgur.com/7JyLfnM.png" class="img-fluid figure-img" width="700"></p>
+<figcaption>Recon-ng Architecture</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li><strong>Core Engine</strong>: The framework’s foundation, managing modules, workspaces, and database operations</li>
+<li><strong>Modules</strong>: Individual reconnaissance tools, each targeting specific information sources or tasks</li>
+<li><strong>Database</strong>: SQLite database for storing collected intelligence</li>
+<li><strong>Workspaces</strong>: Separate environments for organizing different reconnaissance projects</li>
+<li><strong>API Key Manager</strong>: System for storing and managing API credentials</li>
+</ol>
+</section>
+<section id="module-categories" class="level3">
+<h3 class="anchored" data-anchor-id="module-categories">Module Categories</h3>
+<p>Recon-ng organizes its modules into distinct categories:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Recon</td>
+<td>Core reconnaissance modules for gathering information</td>
+</tr>
+<tr class="even">
+<td>Reporting</td>
+<td>Generating reports from collected data</td>
+</tr>
+<tr class="odd">
+<td>Import</td>
+<td>Importing data from external sources</td>
+</tr>
+<tr class="even">
+<td>Discovery</td>
+<td>Discovering new hosts, contacts, or information</td>
+</tr>
+<tr class="odd">
+<td>Exploitation</td>
+<td>Leveraging discovered information for further access</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="installation-and-setup" class="level2">
+<h2 class="anchored" data-anchor-id="installation-and-setup">Installation and Setup</h2>
+<p>Recon-ng comes pre-installed on security-focused Linux distributions like Kali Linux. For other systems:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/lanmaster53/recon-ng.git</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Navigate to the directory</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> recon-ng</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Install dependencies</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> REQUIREMENTS</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Run Recon-ng</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">./recon-ng</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recon-ng requires Python 3.6+ and several Python libraries that handle web requests, parsing, and database operations.</p>
+</div>
+</div>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<section id="basic-navigation" class="level3">
+<h3 class="anchored" data-anchor-id="basic-navigation">Basic Navigation</h3>
+<p>Upon launching Recon-ng, users are presented with an interactive shell:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://i.imgur.com/rZvK8qJ.png" class="img-fluid figure-img" width="700"></p>
+<figcaption>Recon-ng Shell</figcaption>
+</figure>
+</div>
+<p>Basic commands include:</p>
+<pre><code>[recon-ng][default] &gt; workspaces list         # List available workspaces
+[recon-ng][default] &gt; workspaces create test  # Create a new workspace
+[recon-ng][test] &gt; modules search             # List all available modules
+[recon-ng][test] &gt; marketplace search         # Search the module marketplace
+[recon-ng][test] &gt; help                       # Display help information</code></pre>
+</section>
+<section id="working-with-modules" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-modules">Working with Modules</h3>
+<p>Modules form the core functionality of Recon-ng:</p>
+<pre><code># Search for domain-related modules
+[recon-ng][test] &gt; marketplace search domain
+
+# Install a module
+[recon-ng][test] &gt; marketplace install recon/domains-hosts/google_site_web
+
+# Load a module
+[recon-ng][test] &gt; modules load recon/domains-hosts/google_site_web
+
+# View module information
+[recon-ng][test][recon/domains-hosts/google_site_web] &gt; info
+
+# Set required options
+[recon-ng][test][recon/domains-hosts/google_site_web] &gt; options set SOURCE example.com
+
+# Run the module
+[recon-ng][test][recon/domains-hosts/google_site_web] &gt; run</code></pre>
+</section>
+</section>
+<section id="live-demonstration" class="level2">
+<h2 class="anchored" data-anchor-id="live-demonstration">Live Demonstration</h2>
+<div class="ratio ratio-16x9">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LheiqBpI6DA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="practical-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="practical-workflows">Practical Workflows</h2>
+<section id="domain-reconnaissance" class="level3">
+<h3 class="anchored" data-anchor-id="domain-reconnaissance">Domain Reconnaissance</h3>
+<p>A typical workflow for domain intelligence gathering:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://i.imgur.com/2WNr8Gp.png" class="img-fluid figure-img" width="650"></p>
+<figcaption>Domain Recon Workflow</figcaption>
+</figure>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new workspace</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">workspaces</span> create domain_recon</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the initial domain to the database</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">db</span> insert domains</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Find subdomains</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">modules</span> load recon/domains-hosts/brute_hosts</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span> set SOURCE example.com</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">run</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Resolve discovered hosts to IP addresses</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ex">modules</span> load recon/hosts-hosts/resolve</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ex">run</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Gather information about the IP addresses</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="ex">modules</span> load recon/hosts-ports/shodan_ip</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ex">run</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Discover technologies used by the websites</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ex">modules</span> load recon/hosts-hosts/wappalyzer</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="ex">run</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a report</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="ex">modules</span> load reporting/html</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span> set FILENAME example_com_report.html</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="ex">run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="person-and-organization-research" class="level3">
+<h3 class="anchored" data-anchor-id="person-and-organization-research">Person and Organization Research</h3>
+<p>For investigating individuals or organizations:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start with company name</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">db</span> insert companies</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Find associated domains</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">modules</span> load recon/companies-domains/whoxy_whois</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">run</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Find email addresses</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ex">modules</span> load recon/domains-contacts/whois_pocs</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ex">run</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Search for breached credentials</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="ex">modules</span> load recon/contacts-credentials/hibp_breach</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="ex">run</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate summary report</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="ex">modules</span> load reporting/csv</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span> set FILENAME org_research.csv</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="ex">run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Always ensure you have proper authorization before conducting reconnaissance on individuals or organizations. Unauthorized reconnaissance may violate privacy laws and regulations.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="advanced-features" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-features">Advanced Features</h2>
+<section id="api-key-management" class="level3">
+<h3 class="anchored" data-anchor-id="api-key-management">API Key Management</h3>
+<p>Many Recon-ng modules rely on external APIs that require authentication:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List available API keys</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">keys</span> list</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new API key</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">keys</span> add shodan_api <span class="op">&lt;</span>your_key_here<span class="op">&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Search for modules using specific APIs</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">marketplace</span> search twitter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://i.imgur.com/lVPPXQs.png" class="img-fluid figure-img" width="700"></p>
+<figcaption>API Key Management</figcaption>
+</figure>
+</div>
+</section>
+<section id="database-operations" class="level3">
+<h3 class="anchored" data-anchor-id="database-operations">Database Operations</h3>
+<p>Recon-ng stores all gathered information in a SQLite database, which can be directly manipulated:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show available tables</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">db</span> schema</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Query specific data</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">db</span> query SELECT <span class="pp">*</span> FROM hosts WHERE host LIKE <span class="st">'%.example.com'</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Export data to CSV</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">db</span> export csv /path/to/output.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="custom-module-development" class="level3">
+<h3 class="anchored" data-anchor-id="custom-module-development">Custom Module Development</h3>
+<p>Advanced users can create custom modules to extend Recon-ng’s functionality:</p>
+<ol type="1">
+<li>Create a Python file following the module template</li>
+<li>Implement the required methods</li>
+<li>Place the file in the appropriate module category directory</li>
+<li>Load and use like any built-in module</li>
+</ol>
+</section>
+</section>
+<section id="integration-with-other-tools" class="level2">
+<h2 class="anchored" data-anchor-id="integration-with-other-tools">Integration with Other Tools</h2>
+<p>Recon-ng’s data can be leveraged by other security tools:</p>
+<section id="export-for-maltego" class="level3">
+<h3 class="anchored" data-anchor-id="export-for-maltego">Export for Maltego</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Export to Maltego CSV format</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">modules</span> load reporting/csv</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span> set FILENAME maltego_import.csv</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span> set HEADERS yes</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">run</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Import into Maltego using the Data Import transform</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="feeding-nmap" class="level3">
+<h3 class="anchored" data-anchor-id="feeding-nmap">Feeding Nmap</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Export hosts for Nmap scanning</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">db</span> query SELECT ip_address FROM hosts WHERE ip_address IS NOT NULL <span class="op">&gt;</span> targets.txt</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use with Nmap</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-iL</span> targets.txt <span class="at">-sV</span> <span class="at">-oA</span> nmap_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="use-cases-and-examples" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases-and-examples">Use Cases and Examples</h2>
+<section id="bug-bounty-hunting" class="level3">
+<h3 class="anchored" data-anchor-id="bug-bounty-hunting">Bug Bounty Hunting</h3>
+<p>Recon-ng is particularly valuable for bug bounty hunters:</p>
+<ol type="1">
+<li>Create a workspace for the target program</li>
+<li>Enumerate domains, subdomains, and hosts</li>
+<li>Identify technologies and potential vulnerabilities</li>
+<li>Export findings for further testing with specialized tools</li>
+</ol>
+</section>
+<section id="security-assessments" class="level3">
+<h3 class="anchored" data-anchor-id="security-assessments">Security Assessments</h3>
+<p>For security professionals conducting organizational assessments:</p>
+<ol type="1">
+<li>Map the organization’s public-facing assets</li>
+<li>Discover exposed credentials and data leaks</li>
+<li>Identify relationships between corporate entities</li>
+<li>Document findings in comprehensive reports</li>
+</ol>
+</section>
+</section>
+<section id="best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
+<section id="efficiency-tips" class="level3">
+<h3 class="anchored" data-anchor-id="efficiency-tips">Efficiency Tips</h3>
+<p>To get the most out of Recon-ng:</p>
+<ol type="1">
+<li><strong>Create dedicated workspaces</strong> for each target or project</li>
+<li><strong>Use the marketplace</strong> to keep modules updated</li>
+<li><strong>Chain modules</strong> to create automated workflows</li>
+<li><strong>Document API keys</strong> securely for reuse</li>
+<li><strong>Regularly export data</strong> to prevent loss</li>
+</ol>
+</section>
+<section id="performance-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="performance-considerations">Performance Considerations</h3>
+<p>When working with large reconnaissance tasks:</p>
+<ol type="1">
+<li><strong>Use targeted modules</strong> rather than running everything</li>
+<li><strong>Implement rate limiting</strong> where supported</li>
+<li><strong>Schedule intensive tasks</strong> during off-hours</li>
+<li><strong>Split large targets</strong> into multiple workspaces</li>
+<li><strong>Regularly clean up</strong> database tables to improve performance</li>
+</ol>
+</section>
+</section>
+<section id="ethical-and-legal-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-and-legal-considerations">Ethical and Legal Considerations</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Responsible Usage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recon-ng is a powerful tool that should only be used for legitimate security assessment, penetration testing, or research with proper authorization.</p>
+</div>
+</div>
+<p>Guidelines for ethical use:</p>
+<ol type="1">
+<li><strong>Obtain explicit permission</strong> before reconnaissance</li>
+<li><strong>Document scope and activities</strong> thoroughly</li>
+<li><strong>Respect rate limits</strong> of target systems and APIs</li>
+<li><strong>Handle discovered information</strong> responsibly</li>
+<li><strong>Report security issues</strong> through appropriate channels</li>
+</ol>
+</section>
+<section id="comparison-with-similar-tools" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-with-similar-tools">Comparison with Similar Tools</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 37%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Strengths</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Recon-ng</strong></td>
+<td>Complete framework, modular, database-backed</td>
+<td>Requires API keys for many modules</td>
+</tr>
+<tr class="even">
+<td><strong>theHarvester</strong></td>
+<td>Simple, focused on email harvesting</td>
+<td>Less comprehensive, fewer data sources</td>
+</tr>
+<tr class="odd">
+<td><strong>Maltego</strong></td>
+<td>Visual mapping, excellent UI</td>
+<td>Community edition limitations, cost</td>
+</tr>
+<tr class="even">
+<td><strong>OWASP Amass</strong></td>
+<td>Excellent DNS enumeration</td>
+<td>Steeper learning curve</td>
+</tr>
+<tr class="odd">
+<td><strong>Spiderfoot</strong></td>
+<td>Extensive automation, web interface</td>
+<td>Resource intensive</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="future-of-recon-ng" class="level2">
+<h2 class="anchored" data-anchor-id="future-of-recon-ng">Future of Recon-ng</h2>
+<p>Recent developments in Recon-ng include:</p>
+<ul>
+<li>Migration to Python 3</li>
+<li>Introduction of the marketplace system</li>
+<li>Enhanced reporting capabilities</li>
+<li>Improved API key management</li>
+<li>Growing community-contributed modules</li>
+</ul>
+<p>The project continues to evolve with the changing landscape of open source intelligence and web reconnaissance.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Recon-ng stands as one of the most comprehensive and well-organized reconnaissance frameworks available to security professionals. Its modular design, powerful data management capabilities, and integration potential make it an essential tool for anyone involved in cybersecurity assessments or open source intelligence gathering.</p>
+<p>By mastering Recon-ng, security professionals can efficiently collect, organize, and leverage intelligence about digital assets—providing a solid foundation for vulnerability assessments, penetration tests, and overall security posture improvement.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://github.com/lanmaster53/recon-ng">Official Recon-ng GitHub Repository</a></li>
+<li><a href="https://github.com/lanmaster53/recon-ng/wiki">Recon-ng Wiki</a></li>
+<li>Tomes, T. (2023). “Recon-ng: Evolution of a Reconnaissance Framework.” Black Hat Arsenal.</li>
+<li>SANS Institute. (2024). “Using Open Source Tools for Intelligence Gathering.”</li>
+<li>Kennedy, D. et al.&nbsp;(2022). “Metasploit: The Penetration Tester’s Guide.” No Starch Press.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

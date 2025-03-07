@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-07">
 
-<title>Exploring Nmap: The Essential Network Scanning Tool – Haiyang’s Tech Portfolio</title>
+<title>Nmap: The Network Mapper - Essential Tool for Network Discovery and Security Auditing – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -157,15 +191,37 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#introduction-to-nmap" id="toc-introduction-to-nmap" class="nav-link active" data-scroll-target="#introduction-to-nmap">Introduction to Nmap</a></li>
-  <li><a href="#key-features-and-capabilities" id="toc-key-features-and-capabilities" class="nav-link" data-scroll-target="#key-features-and-capabilities">Key Features and Capabilities</a></li>
-  <li><a href="#how-nmap-works" id="toc-how-nmap-works" class="nav-link" data-scroll-target="#how-nmap-works">How Nmap Works</a></li>
-  <li><a href="#significance-and-impact" id="toc-significance-and-impact" class="nav-link" data-scroll-target="#significance-and-impact">Significance and Impact</a></li>
-  <li><a href="#comparison-with-other-tools" id="toc-comparison-with-other-tools" class="nav-link" data-scroll-target="#comparison-with-other-tools">Comparison with Other Tools</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#what-is-nmap" id="toc-what-is-nmap" class="nav-link" data-scroll-target="#what-is-nmap">What is Nmap?</a></li>
+  <li><a href="#core-functionality" id="toc-core-functionality" class="nav-link" data-scroll-target="#core-functionality">Core Functionality</a>
+  <ul class="collapse">
+  <li><a href="#host-discovery" id="toc-host-discovery" class="nav-link" data-scroll-target="#host-discovery">Host Discovery</a></li>
+  <li><a href="#port-scanning-techniques" id="toc-port-scanning-techniques" class="nav-link" data-scroll-target="#port-scanning-techniques">Port Scanning Techniques</a></li>
+  <li><a href="#service-and-version-detection" id="toc-service-and-version-detection" class="nav-link" data-scroll-target="#service-and-version-detection">Service and Version Detection</a></li>
+  <li><a href="#operating-system-detection" id="toc-operating-system-detection" class="nav-link" data-scroll-target="#operating-system-detection">Operating System Detection</a></li>
+  </ul></li>
+  <li><a href="#nmap-scripting-engine-nse" id="toc-nmap-scripting-engine-nse" class="nav-link" data-scroll-target="#nmap-scripting-engine-nse">Nmap Scripting Engine (NSE)</a></li>
+  <li><a href="#zenmap-the-gui-frontend-for-nmap" id="toc-zenmap-the-gui-frontend-for-nmap" class="nav-link" data-scroll-target="#zenmap-the-gui-frontend-for-nmap">Zenmap: The GUI Frontend for Nmap</a></li>
+  <li><a href="#practical-examples" id="toc-practical-examples" class="nav-link" data-scroll-target="#practical-examples">Practical Examples</a>
+  <ul class="collapse">
+  <li><a href="#basic-network-scan" id="toc-basic-network-scan" class="nav-link" data-scroll-target="#basic-network-scan">Basic Network Scan</a></li>
+  <li><a href="#comprehensive-host-scan" id="toc-comprehensive-host-scan" class="nav-link" data-scroll-target="#comprehensive-host-scan">Comprehensive Host Scan</a></li>
+  <li><a href="#scanning-specific-ports" id="toc-scanning-specific-ports" class="nav-link" data-scroll-target="#scanning-specific-ports">Scanning Specific Ports</a></li>
+  <li><a href="#saving-results" id="toc-saving-results" class="nav-link" data-scroll-target="#saving-results">Saving Results</a></li>
+  </ul></li>
+  <li><a href="#live-demonstration" id="toc-live-demonstration" class="nav-link" data-scroll-target="#live-demonstration">Live Demonstration</a></li>
+  <li><a href="#advanced-techniques" id="toc-advanced-techniques" class="nav-link" data-scroll-target="#advanced-techniques">Advanced Techniques</a>
+  <ul class="collapse">
+  <li><a href="#timing-and-performance" id="toc-timing-and-performance" class="nav-link" data-scroll-target="#timing-and-performance">Timing and Performance</a></li>
+  <li><a href="#firewallids-evasion" id="toc-firewallids-evasion" class="nav-link" data-scroll-target="#firewallids-evasion">Firewall/IDS Evasion</a></li>
+  </ul></li>
+  <li><a href="#ethical-and-legal-considerations" id="toc-ethical-and-legal-considerations" class="nav-link" data-scroll-target="#ethical-and-legal-considerations">Ethical and Legal Considerations</a></li>
+  <li><a href="#integration-with-other-tools" id="toc-integration-with-other-tools" class="nav-link" data-scroll-target="#integration-with-other-tools">Integration with Other Tools</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -174,9 +230,11 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exploring Nmap: The Essential Network Scanning Tool</h1>
+<h1 class="title">Nmap: The Network Mapper - Essential Tool for Network Discovery and Security Auditing</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Information Gathering</div>
+    <div class="quarto-category">Network Security</div>
+    <div class="quarto-category">Penetration Testing</div>
   </div>
   </div>
 
@@ -194,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 7, 2025</p>
     </div>
   </div>
   
@@ -206,63 +264,291 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction-to-nmap" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-nmap">Introduction to Nmap</h2>
-<p>In the world of network security and administration, Nmap stands out as an indispensable tool. Short for Network Mapper, Nmap is a free and open-source utility that allows users to scan networks, discover hosts, and detect services and operating systems. Created by Gordon Lyon, also known as Fyodor, Nmap has become a go-to tool for security professionals, system administrators, and ethical hackers alike.</p>
-<p>To get a better understanding of Nmap’s capabilities, check out this tutorial video:</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/IoIsTrKrl-0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p><em>Image by robstephan from Flickr, licensed under CC BY 2.0.</em></p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Nmap (Network Mapper) is one of the most popular and powerful open-source network scanning tools available today. Created by Gordon “Fyodor” Lyon in 1997, Nmap has become an indispensable tool for network administrators, security professionals, and ethical hackers worldwide. Its versatility and robustness have established it as the de facto standard for network discovery and security auditing.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://nmap.org/images/nmap-logo-256x256.png" class="img-fluid figure-img" width="200"></p>
+<figcaption>Nmap Logo</figcaption>
+</figure>
+</div>
 </section>
-<section id="key-features-and-capabilities" class="level2">
-<h2 class="anchored" data-anchor-id="key-features-and-capabilities">Key Features and Capabilities</h2>
-<ol type="1">
-<li><strong>Port Scanning</strong>: Nmap can scan for open ports on a network, helping to identify potential entry points for attacks.</li>
-<li><strong>OS Detection</strong>: It can determine the operating system of a host, which is crucial for understanding the network’s composition.</li>
-<li><strong>Service Detection</strong>: Nmap identifies the services running on open ports, providing insights into potential vulnerabilities.</li>
-<li><strong>Scripting Engine (NSE)</strong>: This allows users to write custom scripts for more advanced scanning and detection tasks.</li>
-<li><strong>Flexibility and Customization</strong>: Nmap offers a wide range of options and flags to customize scans according to specific needs.</li>
-</ol>
-</section>
-<section id="how-nmap-works" class="level2">
-<h2 class="anchored" data-anchor-id="how-nmap-works">How Nmap Works</h2>
-<p>Nmap works by sending specially crafted packets to the target hosts and analyzing their responses. Some of its scanning techniques include:</p>
+<section id="what-is-nmap" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-nmap">What is Nmap?</h2>
+<p>Nmap is a utility for network discovery and security auditing that uses raw IP packets in novel ways to determine:</p>
 <ul>
-<li><strong>TCP SYN Scanning</strong>: Sends SYN packets to determine if a port is open, closed, or filtered.</li>
-<li><strong>UDP Scanning</strong>: Probes UDP ports to find open or filtered ports.</li>
-<li><strong>ICMP Scanning</strong>: Uses ICMP echo requests to identify active hosts.</li>
-<li><strong>OS Fingerprinting</strong>: Sends a series of TCP and UDP packets to determine the target’s OS.</li>
+<li>What hosts are available on a network</li>
+<li>What services (application name and version) those hosts are offering</li>
+<li>What operating systems they are running</li>
+<li>What type of packet filters/firewalls are in use</li>
+<li>And dozens of other characteristics</li>
+</ul>
+<p>Beyond these basic functions, Nmap offers:</p>
+<ul>
+<li>Flexible target specification</li>
+<li>Port scanning techniques</li>
+<li>Service and version detection</li>
+<li>Operating system detection</li>
+<li>Scriptable interaction with the target (NSE)</li>
+<li>Output formats for humans and machines</li>
 </ul>
 </section>
-<section id="significance-and-impact" class="level2">
-<h2 class="anchored" data-anchor-id="significance-and-impact">Significance and Impact</h2>
-<ol type="1">
-<li><strong>Security Auditing</strong>: Nmap is essential for identifying vulnerabilities and ensuring network security.</li>
-<li><strong>Network Inventory</strong>: It helps in maintaining an up-to-date list of network devices and their configurations.</li>
-<li><strong>Penetration Testing</strong>: Ethical hackers use Nmap to simulate attacks and test system defenses.</li>
-<li><strong>Education and Research</strong>: Nmap is a valuable tool for learning about network security and protocol behavior.</li>
-</ol>
-<p>However, Nmap can also be misused by malicious actors to scan for vulnerabilities and launch attacks. Therefore, it’s crucial to use Nmap responsibly and ethically.</p>
+<section id="core-functionality" class="level2">
+<h2 class="anchored" data-anchor-id="core-functionality">Core Functionality</h2>
+<section id="host-discovery" class="level3">
+<h3 class="anchored" data-anchor-id="host-discovery">Host Discovery</h3>
+<p>Before Nmap can scan a target for open ports, it first needs to identify active hosts. Nmap offers several techniques for host discovery:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://nmap.org/images/nmap-host-discovery.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Nmap Host Discovery</figcaption>
+</figure>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ping scan to identify live hosts without port scanning</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-sn</span> 192.168.1.0/24</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Skip host discovery and scan all addresses</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-Pn</span> 192.168.1.100</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="comparison-with-other-tools" class="level2">
-<h2 class="anchored" data-anchor-id="comparison-with-other-tools">Comparison with Other Tools</h2>
+<section id="port-scanning-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="port-scanning-techniques">Port Scanning Techniques</h3>
+<p>Nmap provides multiple port scanning methods, each with specific advantages in different scenarios:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Scan Type</th>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TCP SYN</td>
+<td>-sS</td>
+<td>Half-open stealth scan</td>
+</tr>
+<tr class="even">
+<td>TCP Connect</td>
+<td>-sT</td>
+<td>Full TCP connection scan</td>
+</tr>
+<tr class="odd">
+<td>UDP</td>
+<td>-sU</td>
+<td>UDP port scan</td>
+</tr>
+<tr class="even">
+<td>FIN</td>
+<td>-sF</td>
+<td>Sends a FIN packet</td>
+</tr>
+<tr class="odd">
+<td>NULL</td>
+<td>-sN</td>
+<td>Doesn’t set any bits (TCP flag header is 0)</td>
+</tr>
+<tr class="even">
+<td>XMAS</td>
+<td>-sX</td>
+<td>Sets FIN, PSH, and URG flags</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The TCP SYN scan (<code>-sS</code>) is the default and most popular scan option. It’s relatively unobtrusive and stealthy as it never completes TCP connections.</p>
+</div>
+</div>
+</section>
+<section id="service-and-version-detection" class="level3">
+<h3 class="anchored" data-anchor-id="service-and-version-detection">Service and Version Detection</h3>
+<p>One of Nmap’s most valuable features is its ability to determine what service and what version of that service is running on a port.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scan with service version detection</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-sV</span> 192.168.1.100</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Example output:</p>
+<pre><code>PORT     STATE SERVICE       VERSION
+22/tcp   open  ssh           OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+80/tcp   open  http          Apache httpd 2.4.41 ((Ubuntu))
+443/tcp  open  ssl/http      Apache httpd 2.4.41 ((Ubuntu))
+3306/tcp open  mysql         MySQL 8.0.27-0ubuntu0.20.04.1</code></pre>
+</section>
+<section id="operating-system-detection" class="level3">
+<h3 class="anchored" data-anchor-id="operating-system-detection">Operating System Detection</h3>
+<p>Nmap can identify the operating system running on target hosts by analyzing responses to specially crafted packets.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enable OS detection</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-O</span> 192.168.1.100</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://nmap.org/book/images/nsedoc-ipidseq.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Nmap OS Detection</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="nmap-scripting-engine-nse" class="level2">
+<h2 class="anchored" data-anchor-id="nmap-scripting-engine-nse">Nmap Scripting Engine (NSE)</h2>
+<p>The Nmap Scripting Engine (NSE) dramatically extends Nmap’s functionality with scripts for:</p>
 <ul>
-<li><strong>Masscan</strong>: A fast port scanner that can scan the entire Internet in a few days, but it’s less feature-rich compared to Nmap.</li>
-<li><strong>Zmap</strong>: Another fast scanner, primarily used for large-scale Internet-wide scans.</li>
-<li><strong>Angry IP Scanner</strong>: A GUI-based scanner for Windows, offering basic features like ping and port scanning.</li>
+<li>Network discovery</li>
+<li>Vulnerability detection</li>
+<li>Backdoor detection</li>
+<li>Vulnerability exploitation</li>
 </ul>
-<p>Nmap stands out for its comprehensive feature set, flexibility, and community support.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the default safe scripts</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">--script</span><span class="op">=</span>default 192.168.1.100</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run specific vulnerability scripts</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">--script</span><span class="op">=</span>vuln 192.168.1.100</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Run a specific script</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">--script</span><span class="op">=</span>http-title 192.168.1.100</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="zenmap-the-gui-frontend-for-nmap" class="level2">
+<h2 class="anchored" data-anchor-id="zenmap-the-gui-frontend-for-nmap">Zenmap: The GUI Frontend for Nmap</h2>
+<p>Zenmap provides a user-friendly graphical interface for Nmap, making it accessible to users who might be intimidated by the command line.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://nmap.org/images/zenmap-main-window.png" class="img-fluid figure-img" width="700"></p>
+<figcaption>Zenmap GUI</figcaption>
+</figure>
+</div>
+<p>Key features of Zenmap include:</p>
+<ul>
+<li>Interactive results viewer</li>
+<li>Scan profiles for common scan types</li>
+<li>Network topology mapping</li>
+<li>Scan comparison</li>
+<li>Search functionality</li>
+</ul>
+</section>
+<section id="practical-examples" class="level2">
+<h2 class="anchored" data-anchor-id="practical-examples">Practical Examples</h2>
+<section id="basic-network-scan" class="level3">
+<h3 class="anchored" data-anchor-id="basic-network-scan">Basic Network Scan</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic scan of a network range</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> 192.168.1.0/24</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="comprehensive-host-scan" class="level3">
+<h3 class="anchored" data-anchor-id="comprehensive-host-scan">Comprehensive Host Scan</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggressive scan with OS and version detection, script scanning, and traceroute</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-A</span> 192.168.1.100</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="scanning-specific-ports" class="level3">
+<h3 class="anchored" data-anchor-id="scanning-specific-ports">Scanning Specific Ports</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scan specific ports or port ranges</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-p</span> 22,80,443 192.168.1.100</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-p</span> 1-1000 192.168.1.100</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="saving-results" class="level3">
+<h3 class="anchored" data-anchor-id="saving-results">Saving Results</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save results in all formats</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-A</span> 192.168.1.100 <span class="at">-oA</span> scan_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="live-demonstration" class="level2">
+<h2 class="anchored" data-anchor-id="live-demonstration">Live Demonstration</h2>
+<div class="ratio ratio-16x9">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4t4kBkMsDbQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="advanced-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-techniques">Advanced Techniques</h2>
+<section id="timing-and-performance" class="level3">
+<h3 class="anchored" data-anchor-id="timing-and-performance">Timing and Performance</h3>
+<p>Nmap offers timing templates to control the scan speed:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paranoid timing (slowest, most evasive)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-T0</span> 192.168.1.100</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sneaky timing</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-T1</span> 192.168.1.100</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Normal timing (default)</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-T3</span> 192.168.1.100</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggressive timing</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-T4</span> 192.168.1.100</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Insane timing (fastest, noisiest)</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-T5</span> 192.168.1.100</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="firewallids-evasion" class="level3">
+<h3 class="anchored" data-anchor-id="firewallids-evasion">Firewall/IDS Evasion</h3>
+<p>Nmap includes several features for evading detection:</p>
+<ul>
+<li>Fragmentation: <code>-f</code></li>
+<li>Set specific MTU: <code>--mtu</code></li>
+<li>Decoy scans: <code>-D</code></li>
+<li>Source port manipulation: <code>--source-port</code></li>
+<li>Append random data: <code>--data-length</code></li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evasion example</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-f</span> <span class="at">-T2</span> <span class="at">-D</span> 10.0.0.1,10.0.0.2,ME <span class="at">-n</span> <span class="at">-sS</span> <span class="at">-p</span> 80 192.168.1.100</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ethical-and-legal-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-and-legal-considerations">Ethical and Legal Considerations</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important Legal Notice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nmap should only be used with proper authorization. Unauthorized scanning of networks may violate computer crime laws and network policies.</p>
+</div>
+</div>
+<p>Best practices for ethical use of Nmap:</p>
+<ol type="1">
+<li><strong>Always get permission</strong> before scanning a network</li>
+<li><strong>Document authorization</strong> and maintain records</li>
+<li><strong>Schedule scans</strong> during off-peak hours when possible</li>
+<li><strong>Limit scan intensity</strong> to avoid disruption</li>
+<li><strong>Review results carefully</strong> and report findings responsibly</li>
+</ol>
+</section>
+<section id="integration-with-other-tools" class="level2">
+<h2 class="anchored" data-anchor-id="integration-with-other-tools">Integration with Other Tools</h2>
+<p>Nmap works well with other security tools in a comprehensive security workflow:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://nmap.org/book/images/ereet-firewall.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Security Workflow</figcaption>
+</figure>
+</div>
+<p>Common integration scenarios:</p>
+<ul>
+<li><strong>Vulnerability scanners</strong>: Use Nmap results to feed into tools like OpenVAS or Nessus</li>
+<li><strong>Penetration testing frameworks</strong>: Metasploit can use Nmap data to target exploits</li>
+<li><strong>Security information and event management (SIEM)</strong>: Nmap results can enhance network visibility</li>
+<li><strong>Continuous monitoring</strong>: Regular automated scans to detect changes</li>
+</ul>
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Nmap is more than just a network scanning tool; it’s a versatile utility that plays a pivotal role in network security and administration. Its ability to map networks, detect services, and identify operating systems makes it an essential tool for anyone involved in network management or security.</p>
-<p><strong>Citations:</strong></p>
+<p>Nmap remains the gold standard for network discovery and security auditing more than two decades after its initial release. Its continued development and community support have kept it relevant despite changing network technologies and security challenges.</p>
+<p>Whether you’re a system administrator mapping your network, a security professional conducting a vulnerability assessment, or a penetration tester looking for potential entry points, Nmap provides the flexibility, power, and reliability needed to understand network environments thoroughly.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li><a href="https://nmap.org/">Nmap Official Website overview of Nmap</a></li>
-<li><a href="https://nmap.org/book/">Nmap Book comprehensive guide to Nmap features</a></li>
-<li><a href="https://www.cybersecurity-insiders.com/nmap-the-swiss-army-knife-of-network-scanning/">Cybersecurity Insiders Article on Nmap significance in security</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Comparison_of_network_scanners">Comparison of Network Scanners on Wikipedia comparison table</a></li>
-<li><a href="https://www.youtube.com/watch?v=IoIsTrKrl-0">Tutorial Video on YouTube how to use Nmap for scanning</a></li>
-<li><a href="https://www.flickr.com/photos/46377159@N00/4923280444">Nmap screenshot by robstephan Flickr image licensed CC BY 2.0</a></li>
+<li><a href="https://nmap.org/">Official Nmap Website</a></li>
+<li><a href="https://nmap.org/book/">Nmap Network Scanning Book</a></li>
+<li><a href="https://nmap.org/book/man.html">Nmap Reference Guide</a></li>
+<li>Lyon, G. (2008). “Nmap Network Scanning: The Official Nmap Project Guide to Network Discovery and Security Scanning.” Insecure.Com LLC.</li>
+<li>McNab, C. (2022). “Network Security Assessment: Know Your Network.” O’Reilly Media.</li>
 </ul>
 
 
