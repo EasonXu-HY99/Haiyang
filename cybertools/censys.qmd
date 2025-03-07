@@ -1,6 +1,235 @@
 ---
-title: ""
-date: "2025-03-06"
-categories: [Information Gathering]
+title: "Censys: Comprehensive Internet Security and Attack Surface Management"
+date: "2025-03-07"
+categories: [Information Gathering, Cybersecurity]
 author: "Xu Haiyang"
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHAwB-ChhtuWMacEdd70N6D9cxkLNvW44J4Q&s"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction to Censys
+
+Censys is a leading Internet security and attack surface management platform that provides comprehensive visibility into an organization's digital assets. Founded in 2015 as a research project at the University of Michigan, Censys has evolved into a powerful cybersecurity tool used by security professionals worldwide to discover, monitor, and analyze internet-exposed assets.
+
+![Censys Dashboard](https://support.censys.io/hc/article_attachments/25696999148948)
+
+## Key Features and Capabilities
+
+### Internet-Wide Scanning
+
+Censys continuously scans the entire IPv4 address space, collecting detailed information about internet-connected devices, services, and systems. This comprehensive scanning provides:
+
+- Discovery of all public-facing assets
+- Identification of open ports and running services
+- Detection of security vulnerabilities and misconfigurations
+- Certificate and cryptographic protocol information
+
+### Attack Surface Management
+
+```{=html}
+<div class="row">
+  <div class="col-md-7">
+    <p>Censys Attack Surface Management (ASM) platform helps organizations:</p>
+    <ul>
+      <li>Discover unknown and shadow IT assets</li>
+      <li>Monitor cloud infrastructure and IoT devices</li>
+      <li>Identify potential security risks before attackers</li>
+      <li>Track digital asset inventory over time</li>
+      <li>Receive alerts on critical security issues</li>
+    </ul>
+  </div>
+  <div class="col-md-5">
+    <img src="https://support.censys.io/hc/article_attachments/25696956817812" alt="Attack Surface Management" class="img-fluid rounded">
+  </div>
+</div>
+```
+
+### Certificate Intelligence
+
+Censys provides detailed information about SSL/TLS certificates across the internet, enabling:
+
+- Monitoring of certificate validity and expiration
+- Identification of certificate authorities and issuers
+- Tracking certificate deployments across your infrastructure
+- Detection of fraudulent or malicious certificates
+
+## Using Censys for Security Research
+
+### Search Capabilities
+
+Censys offers powerful search functionality to query its extensive database:
+
+```python
+from censys.search import CensysHosts
+
+h = CensysHosts()
+
+# Search for hosts with specific service
+query = "services.service_name: ELASTICSEARCH"
+results = h.search(query, per_page=10)
+
+for host in results:
+    print(f"Found host: {host['ip']}")
+    for service in host.get("services", []):
+        print(f"  Service: {service.get('service_name', 'unknown')}")
+        print(f"  Port: {service.get('port', 'unknown')}")
+```
+
+### Sample Queries
+
+Here are some useful Censys search queries for security professionals:
+
+| Purpose | Query |
+|---------|-------|
+| Find vulnerable systems | `services.software.product: "Apache" AND services.software.version: /2\.4\.4[9]?/` |
+| Identify exposed databases | `services.service_name: MONGODB AND NOT services.mongodb.authentication.enabled: true` |
+| Detect misconfigured web servers | `services.http.response.headers.server: "nginx" AND services.http.response.status_code: 500` |
+| Find IoT devices | `services.service_name: "Dahua DVR"` |
+
+## Censys vs. Other Reconnaissance Tools
+
+```{=html}
+<div class="comparison-container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Censys</th>
+        <th>Shodan</th>
+        <th>Amass</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Internet-wide scanning</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>Limited</td>
+      </tr>
+      <tr>
+        <td>Attack surface management</td>
+        <td>✓</td>
+        <td>Limited</td>
+        <td>Limited</td>
+      </tr>
+      <tr>
+        <td>Subdomain enumeration</td>
+        <td>Limited</td>
+        <td>Limited</td>
+        <td>✓</td>
+      </tr>
+      <tr>
+        <td>Certificate intelligence</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>Limited</td>
+      </tr>
+      <tr>
+        <td>Historical data</td>
+        <td>✓</td>
+        <td>✓</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+## Video Demo: Using Censys for Attack Surface Discovery
+
+```{=html}
+<div class="ratio ratio-16x9 my-4">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/paCny0XeNfA" title="Censys Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+```
+
+## Practical Applications
+
+### Vulnerability Management
+
+Security teams use Censys to:
+
+- Identify vulnerable systems before they can be exploited
+- Track exposure to new CVEs across their infrastructure
+- Verify remediation efforts are complete
+- Monitor third-party vendor security posture
+
+### Threat Intelligence
+
+Censys data powers threat intelligence by:
+
+- Identifying command & control infrastructure
+- Tracking attacker infrastructure changes
+- Supporting attribution of malicious activity
+- Providing context for observed indicators of compromise
+
+### Compliance Monitoring
+
+Organizations leverage Censys for compliance by:
+
+- Maintaining accurate inventory of internet-facing assets
+- Ensuring proper SSL/TLS configuration
+- Detecting unauthorized services and shadow IT
+- Documenting security controls for auditors
+
+## Getting Started with Censys
+
+### API Integration
+
+Integrating with the Censys API is straightforward:
+
+```python
+from censys.search import CensysHosts
+import os
+
+# Set your API credentials
+API_ID = os.environ.get("CENSYS_API_ID")
+API_SECRET = os.environ.get("CENSYS_API_SECRET")
+
+# Initialize the client
+h = CensysHosts(api_id=API_ID, api_secret=API_SECRET)
+
+# Create a simple report of your assets
+results = h.search("services.service_name: HTTP", per_page=100)
+
+http_versions = {}
+for host in results:
+    for service in host.get("services", []):
+        if service.get("service_name") == "HTTP":
+            server = service.get("http", {}).get("response", {}).get("headers", {}).get("server", "Unknown")
+            if server in http_versions:
+                http_versions[server] += 1
+            else:
+                http_versions[server] = 1
+
+print("Web Server Distribution:")
+for server, count in http_versions.items():
+    print(f"  {server}: {count}")
+```
+
+### Subscription Options
+
+Censys offers several subscription tiers to meet different needs:
+
+1. **Free** - Basic search access with limited results
+2. **Personal** - Enhanced search capabilities for individual researchers
+3. **Professional** - Full access for security teams with API integration
+4. **Enterprise** - Custom solutions with dedicated support and advanced features
+
+## Conclusion
+
+Censys represents one of the most powerful tools in a security professional's arsenal for discovering and monitoring internet-exposed assets. Its comprehensive scanning, robust search capabilities, and attack surface management features provide invaluable insights for vulnerability management, threat intelligence, and overall security posture assessment.
+
+By incorporating Censys into your security workflow, you can gain visibility into your organization's true attack surface and stay ahead of potential threats before they become exploitable vulnerabilities.
+
+## References
+
+1. [Censys Official Website](https://censys.io/)
+2. [Censys Research Publications](https://censys.io/research/)
+3. [Censys API Documentation](https://search.censys.io/api)
+4. Durumeric, Z., Adrian, D., Mirian, A., Bailey, M., & Halderman, J. A. (2015). "A Search Engine Backed by Internet-Wide Scanning." Proceedings of the 22nd ACM Conference on Computer and Communications Security.
+5. [OWASP Information Gathering](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/)

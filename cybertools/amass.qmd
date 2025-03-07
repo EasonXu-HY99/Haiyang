@@ -3,7 +3,7 @@ title: "OWASP Amass: Advanced DNS Enumeration and Network Mapping"
 date: "2025-03-07"
 categories: [Information Gathering, OSINT, DNS Enumeration]
 author: "Xu Haiyang"
-image: "https://raw.githubusercontent.com/OWASP/Amass/master/images/amass.jpg"
+image: "https://avatars.githubusercontent.com/u/128647419?s=200&v=4"
 format:
   html:
     toc: true
@@ -15,18 +15,18 @@ format:
 
 In the realm of information security reconnaissance, OWASP Amass stands as one of the most powerful and comprehensive tools available for DNS enumeration and network mapping. Developed under the Open Web Application Security Project (OWASP) banner, Amass has become an essential component in the toolkit of security professionals, penetration testers, and bug bounty hunters who need to understand the external attack surface of an organization.
 
-![OWASP Amass Logo](https://raw.githubusercontent.com/OWASP/Amass/master/images/amass.jpg){fig-align="center" width="300"}
+![OWASP Amass Logo](https://avatars.githubusercontent.com/u/128647419?s=200&v=4){fig-align="center" width="300"}
 
 ## What is OWASP Amass?
 
 Amass is an open-source reconnaissance tool that helps security professionals map an organization's external network perimeter by collecting information from various sources. Unlike simple DNS enumeration tools, Amass uses a combination of techniques including:
 
-- DNS enumeration
-- Web scraping
-- Search engine results
-- Certificate transparency logs
-- API integrations
-- Active reconnaissance methods
+-   DNS enumeration
+-   Web scraping
+-   Search engine results
+-   Certificate transparency logs
+-   API integrations
+-   Active reconnaissance methods
 
 The tool is designed to discover subdomains, IP addresses, ASNs (Autonomous System Numbers), and other network-related information that helps define an organization's attack surface.
 
@@ -36,18 +36,18 @@ The tool is designed to discover subdomains, IP addresses, ASNs (Autonomous Syst
 
 Amass leverages numerous techniques to ensure thorough reconnaissance:
 
-![Amass Discovery Methods](https://i.imgur.com/jOfvx8n.png){fig-align="center" width="700"}
+![Amass Discovery Methods](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDT2uxcA2zey0QDDz90Ew6qJdokHQTguhkg&s){fig-align="center" width="700"}
 
-| Method | Description |
-|--------|-------------|
-| **DNS** | Zone transfers, brute forcing, permutation scanning |
-| **Scraping** | Web content analysis for subdomain references |
-| **APIs** | Integration with numerous third-party data sources |
-| **Certificates** | Analysis of TLS certificate transparency logs |
-| **Archives** | Historical data from web archives |
-| **OSINT** | Open-source intelligence gathering |
+| Method           | Description                                         |
+|------------------|-----------------------------------------------------|
+| **DNS**          | Zone transfers, brute forcing, permutation scanning |
+| **Scraping**     | Web content analysis for subdomain references       |
+| **APIs**         | Integration with numerous third-party data sources  |
+| **Certificates** | Analysis of TLS certificate transparency logs       |
+| **Archives**     | Historical data from web archives                   |
+| **OSINT**        | Open-source intelligence gathering                  |
 
-::: {.callout-note}
+::: callout-note
 Amass can perform both passive (non-intrusive) and active reconnaissance, giving users control over their footprint during testing.
 :::
 
@@ -55,18 +55,18 @@ Amass can perform both passive (non-intrusive) and active reconnaissance, giving
 
 Amass integrates with over 55 different external data sources, including:
 
-- Search engines (Google, Bing, Yahoo)
-- Certificate transparency logs (Censys, Crtsh)
-- Web archives (Wayback Machine)
-- DNS databases (SecurityTrails, PassiveTotal)
-- WHOIS information providers
-- IP data sources (Shodan, Censys)
+-   Search engines (Google, Bing, Yahoo)
+-   Certificate transparency logs (Censys, Crtsh)
+-   Web archives (Wayback Machine)
+-   DNS databases (SecurityTrails, PassiveTotal)
+-   WHOIS information providers
+-   IP data sources (Shodan, Censys)
 
 ### Visualization Capabilities
 
 One of Amass's most powerful features is its ability to visualize network infrastructure relationships:
 
-![Amass Visualization Example](https://raw.githubusercontent.com/OWASP/Amass/master/images/network_visualization.png){fig-align="center" width="700"}
+![Amass Visualization Example](https://raw.githubusercontent.com/OWASP/Amass/master/images/maltego_results.png){fig-align="center" width="700"}
 
 The tool can generate various output formats that enable users to create detailed maps of discovered assets and their relationships.
 
@@ -76,7 +76,7 @@ Amass can be installed on various platforms:
 
 ### Linux
 
-```bash
+``` bash
 # Using Snapcraft
 sudo snap install amass
 
@@ -89,14 +89,14 @@ GO111MODULE=on go get -v github.com/OWASP/Amass/v3/...
 
 ### macOS
 
-```bash
+``` bash
 # Using Homebrew
 brew install amass
 ```
 
 ### Windows
 
-```powershell
+``` powershell
 # Using Chocolatey
 choco install amass
 
@@ -104,7 +104,7 @@ choco install amass
 # https://github.com/OWASP/Amass/releases
 ```
 
-::: {.callout-tip}
+::: callout-tip
 For the latest features and updates, consider building from source using Go.
 :::
 
@@ -114,23 +114,23 @@ For the latest features and updates, consider building from source using Go.
 
 Amass organizes its functionality into subcommands:
 
-```
+```         
 amass [subcommand] [options] -d domain.com
 ```
 
 Key subcommands include:
 
-- `intel`: Collect intelligence like ASNs, CIDRs, and netblocks
-- `enum`: Perform thorough DNS enumeration (the most commonly used command)
-- `viz`: Generate visualizations of discovered assets
-- `track`: Track differences between enumerations
-- `db`: Manage the Amass graph database
+-   `intel`: Collect intelligence like ASNs, CIDRs, and netblocks
+-   `enum`: Perform thorough DNS enumeration (the most commonly used command)
+-   `viz`: Generate visualizations of discovered assets
+-   `track`: Track differences between enumerations
+-   `db`: Manage the Amass graph database
 
 ### Subdomain Enumeration
 
 The most common use case is basic subdomain enumeration:
 
-```bash
+``` bash
 # Basic enumeration
 amass enum -d example.com
 
@@ -141,13 +141,13 @@ amass enum -brute -min-for-recursive 2 -d example.com
 amass enum -d example.com,example.org,example.net
 ```
 
-![Amass Basic Enumeration](https://i.imgur.com/pRzYjqV.png){fig-align="center" width="700"}
+![Amass Basic Enumeration](https://assets.danielmiessler.com/images/53fd5bf8-3bdd-41dd-9279-45a27470f9c7-amass-enum-ip.png){fig-align="center" width="700"}
 
 ### Intelligence Gathering
 
 To gather broader intelligence about an organization:
 
-```bash
+``` bash
 # Discover ASNs related to an organization
 amass intel -org "Target Organization"
 
@@ -160,9 +160,11 @@ amass intel -whois -d example.com
 
 ## Live Demonstration
 
-<div class="ratio ratio-16x9">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/C-GabM2db9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+::: {.ratio .ratio-16x9}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C-GabM2db9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+:::
 
 ## Advanced Techniques
 
@@ -170,7 +172,7 @@ amass intel -whois -d example.com
 
 For more complex scans, Amass supports configuration files in YAML format:
 
-```yaml
+``` yaml
 # Example config.yaml
 output_directory: /path/to/output/directory
 maximum_dns_queries: 20000
@@ -188,7 +190,8 @@ sources:
 ```
 
 Usage:
-```bash
+
+``` bash
 amass enum -config config.yaml
 ```
 
@@ -196,7 +199,7 @@ amass enum -config config.yaml
 
 To be respectful of external services and avoid IP blocks:
 
-```bash
+``` bash
 # Set maximum DNS queries per minute
 amass enum -max-dns-queries 500 -d example.com
 
@@ -208,7 +211,7 @@ amass enum -timeout 60 -d example.com
 
 Amass supports various output formats for integration with other tools:
 
-```bash
+``` bash
 # JSON output
 amass enum -d example.com -json example_results.json
 
@@ -225,7 +228,7 @@ amass enum -d example.com -log amass.log
 
 One of Amass's most powerful features is its ability to generate visualizations:
 
-```bash
+``` bash
 # Generate a D3.js visualization
 amass viz -d3 -d example.com
 
@@ -233,13 +236,13 @@ amass viz -d3 -d example.com
 amass viz -gephi example_graph.gexf -d example.com
 ```
 
-![Amass Network Graph](https://raw.githubusercontent.com/OWASP/Amass/master/images/amass_cloud.png){fig-align="center" width="700"}
+![Amass Network Graph](https://raw.githubusercontent.com/OWASP/Amass/master/images/example_graphDB.png){fig-align="center" width="700"}
 
 ### Database Operations
 
 Amass maintains a local graph database of results that can be queried:
 
-```bash
+``` bash
 # List all enumeration IDs
 amass db -list
 
@@ -256,14 +259,14 @@ Amass outputs can be piped into other security tools for further analysis:
 
 ### Combining with Nmap
 
-```bash
+``` bash
 # Perform enumeration and scan discovered hosts
 amass enum -ip -d example.com | awk '{print $2}' | sort -u | nmap -sV -iL -
 ```
 
 ### Feeding into Nuclei
 
-```bash
+``` bash
 # Use discovered subdomains for vulnerability scanning
 amass enum -d example.com | nuclei -t nuclei-templates/
 ```
@@ -272,9 +275,9 @@ amass enum -d example.com | nuclei -t nuclei-templates/
 
 Amass can be a key component in automated reconnaissance pipelines:
 
-![Recon Pipeline](https://i.imgur.com/r3cWYBj.png){fig-align="center" width="700"}
+![Recon Pipeline](https://epi052.gitlab.io/notes-to-self/img/luigi/joined-task-depends.png){fig-align="center" width="700"}
 
-```bash
+``` bash
 #!/bin/bash
 # Simple recon pipeline
 amass enum -d $TARGET -o domains.txt
@@ -288,16 +291,16 @@ cat live_domains.txt | waybackurls > urls.txt
 
 Bug bounty hunters use Amass to map target infrastructure:
 
-1. Identify all subdomains in scope
-2. Discover forgotten or development assets
-3. Map relationships between different parts of the infrastructure
-4. Find potential security gaps at the edges of the network
+1.  Identify all subdomains in scope
+2.  Discover forgotten or development assets
+3.  Map relationships between different parts of the infrastructure
+4.  Find potential security gaps at the edges of the network
 
 ### Security Assessments
 
 Security professionals leverage Amass during external assessments:
 
-```bash
+``` bash
 # Comprehensive assessment example
 amass enum -active -brute -min-for-recursive 3 -d example.com -o domains.txt
 
@@ -317,11 +320,11 @@ cat live_domains.txt | nuclei -t cves/ -o vulnerabilities.txt
 
 Amass can be resource-intensive. Consider these optimization techniques:
 
-::: {.callout-warning}
+::: callout-warning
 On systems with limited resources, Amass may consume significant CPU and memory, especially during large enumerations. Monitor system performance during intensive scans.
 :::
 
-```bash
+``` bash
 # Limit concurrent DNS queries
 amass enum -max-dns-queries 500 -d example.com
 
@@ -333,30 +336,31 @@ amass enum -resolvers resolvers.txt -d example.com
 
 For more effective brute forcing:
 
-```bash
+``` bash
 # Use a custom wordlist for subdomain brute forcing
 amass enum -brute -w custom_wordlist.txt -d example.com
 ```
 
 ## Ethical Considerations
 
-::: {.callout-warning}
+::: callout-warning
 ## Responsible Usage
+
 Amass is a powerful reconnaissance tool intended for legitimate security testing with proper authorization. Unauthorized scanning may violate computer crime laws and network policies.
 :::
 
 Guidelines for ethical use:
 
-1. **Always obtain permission** before scanning an organization
-2. **Document scope and boundaries** clearly
-3. **Be mindful of rate limits** and resource utilization
-4. **Respect output data confidentiality**
-5. **Report security issues responsibly**
+1.  **Always obtain permission** before scanning an organization
+2.  **Document scope and boundaries** clearly
+3.  **Be mindful of rate limits** and resource utilization
+4.  **Respect output data confidentiality**
+5.  **Report security issues responsibly**
 
 ## Comparison with Similar Tools
 
 | Tool | Primary Strength | Limitation |
-|------|------------------|------------|
+|-----------------|----------------------------------|----------------------|
 | **Amass** | Comprehensive data collection and visualization | Resource intensive |
 | **Subfinder** | Fast passive enumeration | Less visualization capability |
 | **Sublist3r** | Simplicity and ease of use | Limited source integrations |
@@ -367,11 +371,11 @@ Guidelines for ethical use:
 
 The Amass project continues to evolve with recent focus on:
 
-- Enhanced graph database capabilities
-- Improved performance and resource utilization
-- Additional data source integrations
-- Better visualization options
-- API improvements for tool integration
+-   Enhanced graph database capabilities
+-   Improved performance and resource utilization
+-   Additional data source integrations
+-   Better visualization options
+-   API improvements for tool integration
 
 ## Conclusion
 
@@ -381,8 +385,8 @@ While it may have a steeper learning curve than some alternatives, the depth and
 
 ## References
 
-- [Official OWASP Amass GitHub Repository](https://github.com/OWASP/Amass)
-- [OWASP Amass Project Page](https://owasp.org/www-project-amass/)
-- [Amass User Guide](https://github.com/OWASP/Amass/blob/master/doc/user_guide.md)
-- Porter, J. (2023). "Advanced DNS Enumeration Techniques with OWASP Amass." BlackHat Arsenal.
-- SANS Institute. (2024). "External Attack Surface Mapping Methodologies."
+-   [Official OWASP Amass GitHub Repository](https://github.com/OWASP/Amass)
+-   [OWASP Amass Project Page](https://owasp.org/www-project-amass/)
+-   [Amass User Guide](https://github.com/OWASP/Amass/blob/master/doc/user_guide.md)
+-   Porter, J. (2023). "Advanced DNS Enumeration Techniques with OWASP Amass." BlackHat Arsenal.
+-   SANS Institute. (2024). "External Attack Surface Mapping Methodologies."

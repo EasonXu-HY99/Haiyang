@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-07">
 
-<title>censys – Haiyang's Tech Portfolio</title>
+<title>Censys: Comprehensive Internet Security and Attack Surface Management – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,16 +189,50 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-censys" id="toc-introduction-to-censys" class="nav-link active" data-scroll-target="#introduction-to-censys">Introduction to Censys</a></li>
+  <li><a href="#key-features-and-capabilities" id="toc-key-features-and-capabilities" class="nav-link" data-scroll-target="#key-features-and-capabilities">Key Features and Capabilities</a>
+  <ul class="collapse">
+  <li><a href="#internet-wide-scanning" id="toc-internet-wide-scanning" class="nav-link" data-scroll-target="#internet-wide-scanning">Internet-Wide Scanning</a></li>
+  <li><a href="#attack-surface-management" id="toc-attack-surface-management" class="nav-link" data-scroll-target="#attack-surface-management">Attack Surface Management</a></li>
+  <li><a href="#certificate-intelligence" id="toc-certificate-intelligence" class="nav-link" data-scroll-target="#certificate-intelligence">Certificate Intelligence</a></li>
+  </ul></li>
+  <li><a href="#using-censys-for-security-research" id="toc-using-censys-for-security-research" class="nav-link" data-scroll-target="#using-censys-for-security-research">Using Censys for Security Research</a>
+  <ul class="collapse">
+  <li><a href="#search-capabilities" id="toc-search-capabilities" class="nav-link" data-scroll-target="#search-capabilities">Search Capabilities</a></li>
+  <li><a href="#sample-queries" id="toc-sample-queries" class="nav-link" data-scroll-target="#sample-queries">Sample Queries</a></li>
+  </ul></li>
+  <li><a href="#censys-vs.-other-reconnaissance-tools" id="toc-censys-vs.-other-reconnaissance-tools" class="nav-link" data-scroll-target="#censys-vs.-other-reconnaissance-tools">Censys vs.&nbsp;Other Reconnaissance Tools</a></li>
+  <li><a href="#video-demo-using-censys-for-attack-surface-discovery" id="toc-video-demo-using-censys-for-attack-surface-discovery" class="nav-link" data-scroll-target="#video-demo-using-censys-for-attack-surface-discovery">Video Demo: Using Censys for Attack Surface Discovery</a></li>
+  <li><a href="#practical-applications" id="toc-practical-applications" class="nav-link" data-scroll-target="#practical-applications">Practical Applications</a>
+  <ul class="collapse">
+  <li><a href="#vulnerability-management" id="toc-vulnerability-management" class="nav-link" data-scroll-target="#vulnerability-management">Vulnerability Management</a></li>
+  <li><a href="#threat-intelligence" id="toc-threat-intelligence" class="nav-link" data-scroll-target="#threat-intelligence">Threat Intelligence</a></li>
+  <li><a href="#compliance-monitoring" id="toc-compliance-monitoring" class="nav-link" data-scroll-target="#compliance-monitoring">Compliance Monitoring</a></li>
+  </ul></li>
+  <li><a href="#getting-started-with-censys" id="toc-getting-started-with-censys" class="nav-link" data-scroll-target="#getting-started-with-censys">Getting Started with Censys</a>
+  <ul class="collapse">
+  <li><a href="#api-integration" id="toc-api-integration" class="nav-link" data-scroll-target="#api-integration">API Integration</a></li>
+  <li><a href="#subscription-options" id="toc-subscription-options" class="nav-link" data-scroll-target="#subscription-options">Subscription Options</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Censys: Comprehensive Internet Security and Attack Surface Management</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Information Gathering</div>
+    <div class="quarto-category">Cybersecurity</div>
   </div>
   </div>
 
@@ -182,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 7, 2025</p>
     </div>
   </div>
   
@@ -194,8 +262,259 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-censys" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-censys">Introduction to Censys</h2>
+<p>Censys is a leading Internet security and attack surface management platform that provides comprehensive visibility into an organization’s digital assets. Founded in 2015 as a research project at the University of Michigan, Censys has evolved into a powerful cybersecurity tool used by security professionals worldwide to discover, monitor, and analyze internet-exposed assets.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://support.censys.io/hc/article_attachments/25696999148948.png" class="img-fluid figure-img"></p>
+<figcaption>Censys Dashboard</figcaption>
+</figure>
+</div>
+</section>
+<section id="key-features-and-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="key-features-and-capabilities">Key Features and Capabilities</h2>
+<section id="internet-wide-scanning" class="level3">
+<h3 class="anchored" data-anchor-id="internet-wide-scanning">Internet-Wide Scanning</h3>
+<p>Censys continuously scans the entire IPv4 address space, collecting detailed information about internet-connected devices, services, and systems. This comprehensive scanning provides:</p>
+<ul>
+<li>Discovery of all public-facing assets</li>
+<li>Identification of open ports and running services</li>
+<li>Detection of security vulnerabilities and misconfigurations</li>
+<li>Certificate and cryptographic protocol information</li>
+</ul>
+</section>
+<section id="attack-surface-management" class="level3">
+<h3 class="anchored" data-anchor-id="attack-surface-management">Attack Surface Management</h3>
+<div class="row">
+  <div class="col-md-7">
+    <p>Censys Attack Surface Management (ASM) platform helps organizations:</p>
+    <ul>
+      <li>Discover unknown and shadow IT assets</li>
+      <li>Monitor cloud infrastructure and IoT devices</li>
+      <li>Identify potential security risks before attackers</li>
+      <li>Track digital asset inventory over time</li>
+      <li>Receive alerts on critical security issues</li>
+    </ul>
+  </div>
+  <div class="col-md-5">
+    <img src="https://support.censys.io/hc/article_attachments/25696956817812" alt="Attack Surface Management" class="img-fluid rounded">
+  </div>
+</div>
+</section>
+<section id="certificate-intelligence" class="level3">
+<h3 class="anchored" data-anchor-id="certificate-intelligence">Certificate Intelligence</h3>
+<p>Censys provides detailed information about SSL/TLS certificates across the internet, enabling:</p>
+<ul>
+<li>Monitoring of certificate validity and expiration</li>
+<li>Identification of certificate authorities and issuers</li>
+<li>Tracking certificate deployments across your infrastructure</li>
+<li>Detection of fraudulent or malicious certificates</li>
+</ul>
+</section>
+</section>
+<section id="using-censys-for-security-research" class="level2">
+<h2 class="anchored" data-anchor-id="using-censys-for-security-research">Using Censys for Security Research</h2>
+<section id="search-capabilities" class="level3">
+<h3 class="anchored" data-anchor-id="search-capabilities">Search Capabilities</h3>
+<p>Censys offers powerful search functionality to query its extensive database:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> censys.search <span class="im">import</span> CensysHosts</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> CensysHosts()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Search for hosts with specific service</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="st">"services.service_name: ELASTICSEARCH"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> h.search(query, per_page<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> host <span class="kw">in</span> results:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Found host: </span><span class="sc">{</span>host[<span class="st">'ip'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> service <span class="kw">in</span> host.get(<span class="st">"services"</span>, []):</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"  Service: </span><span class="sc">{</span>service<span class="sc">.</span>get(<span class="st">'service_name'</span>, <span class="st">'unknown'</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"  Port: </span><span class="sc">{</span>service<span class="sc">.</span>get(<span class="st">'port'</span>, <span class="st">'unknown'</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sample-queries" class="level3">
+<h3 class="anchored" data-anchor-id="sample-queries">Sample Queries</h3>
+<p>Here are some useful Censys search queries for security professionals:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Purpose</th>
+<th>Query</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Find vulnerable systems</td>
+<td><code>services.software.product: "Apache" AND services.software.version: /2\.4\.4[9]?/</code></td>
+</tr>
+<tr class="even">
+<td>Identify exposed databases</td>
+<td><code>services.service_name: MONGODB AND NOT services.mongodb.authentication.enabled: true</code></td>
+</tr>
+<tr class="odd">
+<td>Detect misconfigured web servers</td>
+<td><code>services.http.response.headers.server: "nginx" AND services.http.response.status_code: 500</code></td>
+</tr>
+<tr class="even">
+<td>Find IoT devices</td>
+<td><code>services.service_name: "Dahua DVR"</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="censys-vs.-other-reconnaissance-tools" class="level2">
+<h2 class="anchored" data-anchor-id="censys-vs.-other-reconnaissance-tools">Censys vs.&nbsp;Other Reconnaissance Tools</h2>
+<div class="comparison-container">
+  
+<table class="table table-striped caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Feature</th>
+<th data-quarto-table-cell-role="th">Censys</th>
+<th data-quarto-table-cell-role="th">Shodan</th>
+<th data-quarto-table-cell-role="th">Amass</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Internet-wide scanning</td>
+<td>✓</td>
+<td>✓</td>
+<td>Limited</td>
+</tr>
+<tr class="even">
+<td>Attack surface management</td>
+<td>✓</td>
+<td>Limited</td>
+<td>Limited</td>
+</tr>
+<tr class="odd">
+<td>Subdomain enumeration</td>
+<td>Limited</td>
+<td>Limited</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>Certificate intelligence</td>
+<td>✓</td>
+<td>✓</td>
+<td>Limited</td>
+</tr>
+<tr class="odd">
+<td>Historical data</td>
+<td>✓</td>
+<td>✓</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</section>
+<section id="video-demo-using-censys-for-attack-surface-discovery" class="level2">
+<h2 class="anchored" data-anchor-id="video-demo-using-censys-for-attack-surface-discovery">Video Demo: Using Censys for Attack Surface Discovery</h2>
+<div class="ratio ratio-16x9 my-4">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/paCny0XeNfA" title="Censys Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+</section>
+<section id="practical-applications" class="level2">
+<h2 class="anchored" data-anchor-id="practical-applications">Practical Applications</h2>
+<section id="vulnerability-management" class="level3">
+<h3 class="anchored" data-anchor-id="vulnerability-management">Vulnerability Management</h3>
+<p>Security teams use Censys to:</p>
+<ul>
+<li>Identify vulnerable systems before they can be exploited</li>
+<li>Track exposure to new CVEs across their infrastructure</li>
+<li>Verify remediation efforts are complete</li>
+<li>Monitor third-party vendor security posture</li>
+</ul>
+</section>
+<section id="threat-intelligence" class="level3">
+<h3 class="anchored" data-anchor-id="threat-intelligence">Threat Intelligence</h3>
+<p>Censys data powers threat intelligence by:</p>
+<ul>
+<li>Identifying command &amp; control infrastructure</li>
+<li>Tracking attacker infrastructure changes</li>
+<li>Supporting attribution of malicious activity</li>
+<li>Providing context for observed indicators of compromise</li>
+</ul>
+</section>
+<section id="compliance-monitoring" class="level3">
+<h3 class="anchored" data-anchor-id="compliance-monitoring">Compliance Monitoring</h3>
+<p>Organizations leverage Censys for compliance by:</p>
+<ul>
+<li>Maintaining accurate inventory of internet-facing assets</li>
+<li>Ensuring proper SSL/TLS configuration</li>
+<li>Detecting unauthorized services and shadow IT</li>
+<li>Documenting security controls for auditors</li>
+</ul>
+</section>
+</section>
+<section id="getting-started-with-censys" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-with-censys">Getting Started with Censys</h2>
+<section id="api-integration" class="level3">
+<h3 class="anchored" data-anchor-id="api-integration">API Integration</h3>
+<p>Integrating with the Censys API is straightforward:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> censys.search <span class="im">import</span> CensysHosts</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set your API credentials</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>API_ID <span class="op">=</span> os.environ.get(<span class="st">"CENSYS_API_ID"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>API_SECRET <span class="op">=</span> os.environ.get(<span class="st">"CENSYS_API_SECRET"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the client</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> CensysHosts(api_id<span class="op">=</span>API_ID, api_secret<span class="op">=</span>API_SECRET)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a simple report of your assets</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> h.search(<span class="st">"services.service_name: HTTP"</span>, per_page<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>http_versions <span class="op">=</span> {}</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> host <span class="kw">in</span> results:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> service <span class="kw">in</span> host.get(<span class="st">"services"</span>, []):</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> service.get(<span class="st">"service_name"</span>) <span class="op">==</span> <span class="st">"HTTP"</span>:</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            server <span class="op">=</span> service.get(<span class="st">"http"</span>, {}).get(<span class="st">"response"</span>, {}).get(<span class="st">"headers"</span>, {}).get(<span class="st">"server"</span>, <span class="st">"Unknown"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> server <span class="kw">in</span> http_versions:</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>                http_versions[server] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>                http_versions[server] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Web Server Distribution:"</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> server, count <span class="kw">in</span> http_versions.items():</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>server<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>count<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="subscription-options" class="level3">
+<h3 class="anchored" data-anchor-id="subscription-options">Subscription Options</h3>
+<p>Censys offers several subscription tiers to meet different needs:</p>
+<ol type="1">
+<li><strong>Free</strong> - Basic search access with limited results</li>
+<li><strong>Personal</strong> - Enhanced search capabilities for individual researchers</li>
+<li><strong>Professional</strong> - Full access for security teams with API integration</li>
+<li><strong>Enterprise</strong> - Custom solutions with dedicated support and advanced features</li>
+</ol>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Censys represents one of the most powerful tools in a security professional’s arsenal for discovering and monitoring internet-exposed assets. Its comprehensive scanning, robust search capabilities, and attack surface management features provide invaluable insights for vulnerability management, threat intelligence, and overall security posture assessment.</p>
+<p>By incorporating Censys into your security workflow, you can gain visibility into your organization’s true attack surface and stay ahead of potential threats before they become exploitable vulnerabilities.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li><a href="https://censys.io/">Censys Official Website</a></li>
+<li><a href="https://censys.io/research/">Censys Research Publications</a></li>
+<li><a href="https://search.censys.io/api">Censys API Documentation</a></li>
+<li>Durumeric, Z., Adrian, D., Mirian, A., Bailey, M., &amp; Halderman, J. A. (2015). “A Search Engine Backed by Internet-Wide Scanning.” Proceedings of the 22nd ACM Conference on Computer and Communications Security.</li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/">OWASP Information Gathering</a></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

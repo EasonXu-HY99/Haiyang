@@ -21,20 +21,20 @@ Nmap (Network Mapper) is one of the most popular and powerful open-source networ
 
 Nmap is a utility for network discovery and security auditing that uses raw IP packets in novel ways to determine:
 
-- What hosts are available on a network
-- What services (application name and version) those hosts are offering
-- What operating systems they are running
-- What type of packet filters/firewalls are in use
-- And dozens of other characteristics
+-   What hosts are available on a network
+-   What services (application name and version) those hosts are offering
+-   What operating systems they are running
+-   What type of packet filters/firewalls are in use
+-   And dozens of other characteristics
 
 Beyond these basic functions, Nmap offers:
 
-- Flexible target specification
-- Port scanning techniques
-- Service and version detection
-- Operating system detection
-- Scriptable interaction with the target (NSE)
-- Output formats for humans and machines
+-   Flexible target specification
+-   Port scanning techniques
+-   Service and version detection
+-   Operating system detection
+-   Scriptable interaction with the target (NSE)
+-   Output formats for humans and machines
 
 ## Core Functionality
 
@@ -42,9 +42,9 @@ Beyond these basic functions, Nmap offers:
 
 Before Nmap can scan a target for open ports, it first needs to identify active hosts. Nmap offers several techniques for host discovery:
 
-![Nmap Host Discovery](https://nmap.org/images/nmap-host-discovery.png){fig-align="center" width="600"}
+![Nmap Host Discovery](https://media.geeksforgeeks.org/wp-content/uploads/20220927132254/9.png){fig-align="center" width="600"}
 
-```bash
+``` bash
 # Ping scan to identify live hosts without port scanning
 nmap -sn 192.168.1.0/24
 
@@ -56,16 +56,16 @@ nmap -Pn 192.168.1.100
 
 Nmap provides multiple port scanning methods, each with specific advantages in different scenarios:
 
-| Scan Type | Flag | Description |
-|-----------|------|-------------|
-| TCP SYN | -sS | Half-open stealth scan |
-| TCP Connect | -sT | Full TCP connection scan |
-| UDP | -sU | UDP port scan |
-| FIN | -sF | Sends a FIN packet |
-| NULL | -sN | Doesn't set any bits (TCP flag header is 0) |
-| XMAS | -sX | Sets FIN, PSH, and URG flags |
+| Scan Type   | Flag | Description                                 |
+|-------------|------|---------------------------------------------|
+| TCP SYN     | -sS  | Half-open stealth scan                      |
+| TCP Connect | -sT  | Full TCP connection scan                    |
+| UDP         | -sU  | UDP port scan                               |
+| FIN         | -sF  | Sends a FIN packet                          |
+| NULL        | -sN  | Doesn't set any bits (TCP flag header is 0) |
+| XMAS        | -sX  | Sets FIN, PSH, and URG flags                |
 
-::: {.callout-note}
+::: callout-note
 The TCP SYN scan (`-sS`) is the default and most popular scan option. It's relatively unobtrusive and stealthy as it never completes TCP connections.
 :::
 
@@ -73,13 +73,14 @@ The TCP SYN scan (`-sS`) is the default and most popular scan option. It's relat
 
 One of Nmap's most valuable features is its ability to determine what service and what version of that service is running on a port.
 
-```bash
+``` bash
 # Scan with service version detection
 nmap -sV 192.168.1.100
 ```
 
 Example output:
-```
+
+```         
 PORT     STATE SERVICE       VERSION
 22/tcp   open  ssh           OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
 80/tcp   open  http          Apache httpd 2.4.41 ((Ubuntu))
@@ -91,23 +92,23 @@ PORT     STATE SERVICE       VERSION
 
 Nmap can identify the operating system running on target hosts by analyzing responses to specially crafted packets.
 
-```bash
+``` bash
 # Enable OS detection
 nmap -O 192.168.1.100
 ```
 
-![Nmap OS Detection](https://nmap.org/book/images/nsedoc-ipidseq.png){fig-align="center" width="600"}
+![Nmap OS Detection](https://www.stationx.net/wp-content/uploads/2023/10/image-22.png){fig-align="center" width="600"}
 
 ## Nmap Scripting Engine (NSE)
 
 The Nmap Scripting Engine (NSE) dramatically extends Nmap's functionality with scripts for:
 
-- Network discovery
-- Vulnerability detection
-- Backdoor detection
-- Vulnerability exploitation
+-   Network discovery
+-   Vulnerability detection
+-   Backdoor detection
+-   Vulnerability exploitation
 
-```bash
+``` bash
 # Run the default safe scripts
 nmap --script=default 192.168.1.100
 
@@ -122,35 +123,36 @@ nmap --script=http-title 192.168.1.100
 
 Zenmap provides a user-friendly graphical interface for Nmap, making it accessible to users who might be intimidated by the command line.
 
-![Zenmap GUI](https://nmap.org/images/zenmap-main-window.png){fig-align="center" width="700"}
+![Zenmap GUI](https://nmap.org/zenmap/images/zenmap-hd-648x700.png){fig-align="center" width="700"}
+
 
 Key features of Zenmap include:
 
-- Interactive results viewer
-- Scan profiles for common scan types
-- Network topology mapping
-- Scan comparison
-- Search functionality
+-   Interactive results viewer
+-   Scan profiles for common scan types
+-   Network topology mapping
+-   Scan comparison
+-   Search functionality
 
 ## Practical Examples
 
 ### Basic Network Scan
 
-```bash
+``` bash
 # Basic scan of a network range
 nmap 192.168.1.0/24
 ```
 
 ### Comprehensive Host Scan
 
-```bash
+``` bash
 # Aggressive scan with OS and version detection, script scanning, and traceroute
 nmap -A 192.168.1.100
 ```
 
 ### Scanning Specific Ports
 
-```bash
+``` bash
 # Scan specific ports or port ranges
 nmap -p 22,80,443 192.168.1.100
 nmap -p 1-1000 192.168.1.100
@@ -158,16 +160,18 @@ nmap -p 1-1000 192.168.1.100
 
 ### Saving Results
 
-```bash
+``` bash
 # Save results in all formats
 nmap -A 192.168.1.100 -oA scan_results
 ```
 
 ## Live Demonstration
 
-<div class="ratio ratio-16x9">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4t4kBkMsDbQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+::: {.ratio .ratio-16x9}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4t4kBkMsDbQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+:::
 
 ## Advanced Techniques
 
@@ -175,7 +179,7 @@ nmap -A 192.168.1.100 -oA scan_results
 
 Nmap offers timing templates to control the scan speed:
 
-```bash
+``` bash
 # Paranoid timing (slowest, most evasive)
 nmap -T0 192.168.1.100
 
@@ -196,44 +200,45 @@ nmap -T5 192.168.1.100
 
 Nmap includes several features for evading detection:
 
-- Fragmentation: `-f`
-- Set specific MTU: `--mtu`
-- Decoy scans: `-D`
-- Source port manipulation: `--source-port`
-- Append random data: `--data-length`
+-   Fragmentation: `-f`
+-   Set specific MTU: `--mtu`
+-   Decoy scans: `-D`
+-   Source port manipulation: `--source-port`
+-   Append random data: `--data-length`
 
-```bash
+``` bash
 # Evasion example
 nmap -f -T2 -D 10.0.0.1,10.0.0.2,ME -n -sS -p 80 192.168.1.100
 ```
 
 ## Ethical and Legal Considerations
 
-::: {.callout-warning}
+::: callout-warning
 ## Important Legal Notice
+
 Nmap should only be used with proper authorization. Unauthorized scanning of networks may violate computer crime laws and network policies.
 :::
 
 Best practices for ethical use of Nmap:
 
-1. **Always get permission** before scanning a network
-2. **Document authorization** and maintain records
-3. **Schedule scans** during off-peak hours when possible
-4. **Limit scan intensity** to avoid disruption
-5. **Review results carefully** and report findings responsibly
+1.  **Always get permission** before scanning a network
+2.  **Document authorization** and maintain records
+3.  **Schedule scans** during off-peak hours when possible
+4.  **Limit scan intensity** to avoid disruption
+5.  **Review results carefully** and report findings responsibly
 
 ## Integration with Other Tools
 
 Nmap works well with other security tools in a comprehensive security workflow:
 
-![Security Workflow](https://nmap.org/book/images/ereet-firewall.png){fig-align="center" width="600"}
+![Security Workflow](https://yurisk.info/2017/01/25/nmap-run-stages-flow-diagram/NMAP_scan_flow.gif){fig-align="center" width="600"}
 
 Common integration scenarios:
 
-- **Vulnerability scanners**: Use Nmap results to feed into tools like OpenVAS or Nessus
-- **Penetration testing frameworks**: Metasploit can use Nmap data to target exploits
-- **Security information and event management (SIEM)**: Nmap results can enhance network visibility
-- **Continuous monitoring**: Regular automated scans to detect changes
+-   **Vulnerability scanners**: Use Nmap results to feed into tools like OpenVAS or Nessus
+-   **Penetration testing frameworks**: Metasploit can use Nmap data to target exploits
+-   **Security information and event management (SIEM)**: Nmap results can enhance network visibility
+-   **Continuous monitoring**: Regular automated scans to detect changes
 
 ## Conclusion
 
@@ -243,8 +248,8 @@ Whether you're a system administrator mapping your network, a security professio
 
 ## References
 
-- [Official Nmap Website](https://nmap.org/)
-- [Nmap Network Scanning Book](https://nmap.org/book/)
-- [Nmap Reference Guide](https://nmap.org/book/man.html)
-- Lyon, G. (2008). "Nmap Network Scanning: The Official Nmap Project Guide to Network Discovery and Security Scanning." Insecure.Com LLC.
-- McNab, C. (2022). "Network Security Assessment: Know Your Network." O'Reilly Media.
+-   [Official Nmap Website](https://nmap.org/)
+-   [Nmap Network Scanning Book](https://nmap.org/book/)
+-   [Nmap Reference Guide](https://nmap.org/book/man.html)
+-   Lyon, G. (2008). "Nmap Network Scanning: The Official Nmap Project Guide to Network Discovery and Security Scanning." Insecure.Com LLC.
+-   McNab, C. (2022). "Network Security Assessment: Know Your Network." O'Reilly Media.

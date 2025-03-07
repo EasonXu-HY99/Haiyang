@@ -35,7 +35,7 @@ Key attributes include:
 
 The Maltego workspace is built around several key components:
 
-![Maltego Interface](https://www.maltego.com/images/uploads/what-is-maltego-interface.png){fig-align="center" width="700"}
+![Maltego Interface](https://blog.sociallinks.io/content/images/2021/01/ezgif-3-ab98ccbee064.jpg){fig-align="center" width="700"}
 
 1. **Palette**: Contains all entity types that can be added to your graph
 2. **Graph View**: The main workspace where entities and their relationships are visualized
@@ -98,7 +98,7 @@ Maltego offers several editions to suit different needs and budgets:
 
 Maltego excels at gathering and correlating publicly available information:
 
-![Maltego OSINT Example](https://www.maltego.com/images/uploads/maltego-graph-example.png){fig-align="center" width="650"}
+![Maltego OSINT Example](https://miro.medium.com/v2/resize:fit:916/1*hzf7HTg9niAD8GWHhjARkQ.png){fig-align="center" width="650"}
 
 ```
 # Example workflow for domain reconnaissance:
@@ -130,14 +130,14 @@ Organizations leverage Maltego for:
 ## Live Demonstration
 
 <div class="ratio ratio-16x9">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ruRk1eYP2gw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VkQ94URp7To" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Transform Hub and Integrations
 
 The Transform Hub provides access to numerous data sources through various transform packages:
 
-![Maltego Transform Hub](https://www.maltego.com/images/uploads/transform-hub.png){fig-align="center" width="600"}
+![Maltego Transform Hub](https://www.maltego.com/images/uploads/transform-hub-redesign002.png){fig-align="center" width="600"}
 
 Popular transform sets include:
 
@@ -189,7 +189,7 @@ Security researchers used Maltego to investigate a phishing campaign:
 4. Social media transforms uncovered additional associated accounts
 5. The resulting graph revealed the full scope of the campaign infrastructure
 
-![Case Study Example](https://www.maltego.com/images/uploads/case-study-graph.png){fig-align="center" width="650"}
+![Case Study Example](https://ars.els-cdn.com/content/image/3-s2.0-B9780128018675000148-f14-01-9780128018675.jpg){fig-align="center" width="650"}
 
 ### Corporate Research
 

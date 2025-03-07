@@ -3,7 +3,7 @@ title: "Recon-ng: Comprehensive Web Reconnaissance Framework"
 date: "2025-03-07"
 categories: [Information Gathering, OSINT, Reconnaissance]
 author: "Xu Haiyang"
-image: "https://raw.githubusercontent.com/lanmaster53/recon-ng/master/recon_ng/data/images/logo.png"
+image: "https://miro.medium.com/v2/resize:fit:1080/0*bjq1agxWAu7xlmr5.png"
 format:
   html:
     toc: true
@@ -15,7 +15,7 @@ format:
 
 Recon-ng is a powerful and versatile reconnaissance framework that has become an essential tool for security professionals, penetration testers, and OSINT (Open Source Intelligence) analysts. Created by Tim Tomes (LaNMaSteR53), this Python-based tool provides a complete framework for web-based open source reconnaissance, integrating a wide range of modules that automate numerous information gathering tasks.
 
-![Recon-ng Logo](https://raw.githubusercontent.com/lanmaster53/recon-ng/master/recon_ng/data/images/logo.png){fig-align="center" width="300"}
+![Recon-ng Logo](https://miro.medium.com/v2/resize:fit:1080/0*bjq1agxWAu7xlmr5.png){fig-align="center" width="300"}
 
 ## What is Recon-ng?
 
@@ -23,12 +23,12 @@ Recon-ng is an open-source, full-featured reconnaissance framework designed with
 
 Key features of Recon-ng include:
 
-- Modular architecture
-- Integrated API key management
-- Robust data storage
-- Interactive command-line interface
-- Extensive reporting capabilities
-- Workspace-based organization
+-   Modular architecture
+-   Integrated API key management
+-   Robust data storage
+-   Interactive command-line interface
+-   Extensive reporting capabilities
+-   Workspace-based organization
 
 ## Framework Architecture
 
@@ -36,31 +36,31 @@ Key features of Recon-ng include:
 
 Recon-ng's architecture consists of several key components:
 
-![Recon-ng Architecture](https://i.imgur.com/7JyLfnM.png){fig-align="center" width="700"}
+![Recon-ng Architecture](https://miro.medium.com/v2/resize:fit:1400/1*dRjjqr_iF7Xdy3MhYHO1Cg.png){fig-align="center" width="700"}
 
-1. **Core Engine**: The framework's foundation, managing modules, workspaces, and database operations
-2. **Modules**: Individual reconnaissance tools, each targeting specific information sources or tasks
-3. **Database**: SQLite database for storing collected intelligence
-4. **Workspaces**: Separate environments for organizing different reconnaissance projects
-5. **API Key Manager**: System for storing and managing API credentials
+1.  **Core Engine**: The framework's foundation, managing modules, workspaces, and database operations
+2.  **Modules**: Individual reconnaissance tools, each targeting specific information sources or tasks
+3.  **Database**: SQLite database for storing collected intelligence
+4.  **Workspaces**: Separate environments for organizing different reconnaissance projects
+5.  **API Key Manager**: System for storing and managing API credentials
 
 ### Module Categories
 
 Recon-ng organizes its modules into distinct categories:
 
-| Category | Purpose |
-|----------|---------|
-| Recon | Core reconnaissance modules for gathering information |
-| Reporting | Generating reports from collected data |
-| Import | Importing data from external sources |
-| Discovery | Discovering new hosts, contacts, or information |
-| Exploitation | Leveraging discovered information for further access |
+| Category     | Purpose                                               |
+|--------------|-------------------------------------------------------|
+| Recon        | Core reconnaissance modules for gathering information |
+| Reporting    | Generating reports from collected data                |
+| Import       | Importing data from external sources                  |
+| Discovery    | Discovering new hosts, contacts, or information       |
+| Exploitation | Leveraging discovered information for further access  |
 
 ## Installation and Setup
 
 Recon-ng comes pre-installed on security-focused Linux distributions like Kali Linux. For other systems:
 
-```bash
+``` bash
 # Clone the repository
 git clone https://github.com/lanmaster53/recon-ng.git
 
@@ -74,7 +74,7 @@ pip install -r REQUIREMENTS
 ./recon-ng
 ```
 
-::: {.callout-note}
+::: callout-note
 Recon-ng requires Python 3.6+ and several Python libraries that handle web requests, parsing, and database operations.
 :::
 
@@ -84,11 +84,11 @@ Recon-ng requires Python 3.6+ and several Python libraries that handle web reque
 
 Upon launching Recon-ng, users are presented with an interactive shell:
 
-![Recon-ng Shell](https://i.imgur.com/rZvK8qJ.png){fig-align="center" width="700"}
+![Recon-ng Shell](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOZaf_f-_wp6DK19rAw-lR0aIPUoLuG-GT7q1I7ZfmAxg28KxdsDBAOPWTl3JFSrZTcX_eXnk3eFCxNMO06Lh6XEaTRU0iBr8M4zzm6zhCEolcWzBZEfGk1e6TL53-E4zluwrCZ7zaTx4/s1600/Screenshot_2020-02-19_14-27-04.webp){fig-align="center" width="700"}
 
 Basic commands include:
 
-```
+```         
 [recon-ng][default] > workspaces list         # List available workspaces
 [recon-ng][default] > workspaces create test  # Create a new workspace
 [recon-ng][test] > modules search             # List all available modules
@@ -100,7 +100,7 @@ Basic commands include:
 
 Modules form the core functionality of Recon-ng:
 
-```
+```         
 # Search for domain-related modules
 [recon-ng][test] > marketplace search domain
 
@@ -122,9 +122,11 @@ Modules form the core functionality of Recon-ng:
 
 ## Live Demonstration
 
-<div class="ratio ratio-16x9">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LheiqBpI6DA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+::: {.ratio .ratio-16x9}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5i9niOcMr44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+:::
 
 ## Practical Workflows
 
@@ -132,9 +134,9 @@ Modules form the core functionality of Recon-ng:
 
 A typical workflow for domain intelligence gathering:
 
-![Domain Recon Workflow](https://i.imgur.com/2WNr8Gp.png){fig-align="center" width="650"}
+![Domain Recon Workflow](https://pentester.land/blog/compilation-of-recon-workflows/workflow-3_hubc72550fc5f1b6110f224d68bf257f7a_67424_860x0_resize_q75_h2_box.webp){fig-align="center" width="650"}
 
-```bash
+``` bash
 # Create a new workspace
 workspaces create domain_recon
 
@@ -168,7 +170,7 @@ run
 
 For investigating individuals or organizations:
 
-```bash
+``` bash
 # Start with company name
 db insert companies
 
@@ -190,7 +192,7 @@ options set FILENAME org_research.csv
 run
 ```
 
-::: {.callout-warning}
+::: callout-warning
 Always ensure you have proper authorization before conducting reconnaissance on individuals or organizations. Unauthorized reconnaissance may violate privacy laws and regulations.
 :::
 
@@ -200,7 +202,7 @@ Always ensure you have proper authorization before conducting reconnaissance on 
 
 Many Recon-ng modules rely on external APIs that require authentication:
 
-```bash
+``` bash
 # List available API keys
 keys list
 
@@ -211,13 +213,13 @@ keys add shodan_api <your_key_here>
 marketplace search twitter
 ```
 
-![API Key Management](https://i.imgur.com/lVPPXQs.png){fig-align="center" width="700"}
+![API Key Management](https://redhuntlabs.com/wp-content/uploads/2023/09/image-6-1024x545.png){fig-align="center" width="700"}
 
 ### Database Operations
 
 Recon-ng stores all gathered information in a SQLite database, which can be directly manipulated:
 
-```bash
+``` bash
 # Show available tables
 db schema
 
@@ -232,10 +234,10 @@ db export csv /path/to/output.csv
 
 Advanced users can create custom modules to extend Recon-ng's functionality:
 
-1. Create a Python file following the module template
-2. Implement the required methods
-3. Place the file in the appropriate module category directory
-4. Load and use like any built-in module
+1.  Create a Python file following the module template
+2.  Implement the required methods
+3.  Place the file in the appropriate module category directory
+4.  Load and use like any built-in module
 
 ## Integration with Other Tools
 
@@ -243,7 +245,7 @@ Recon-ng's data can be leveraged by other security tools:
 
 ### Export for Maltego
 
-```bash
+``` bash
 # Export to Maltego CSV format
 modules load reporting/csv
 options set FILENAME maltego_import.csv
@@ -255,7 +257,7 @@ run
 
 ### Feeding Nmap
 
-```bash
+``` bash
 # Export hosts for Nmap scanning
 db query SELECT ip_address FROM hosts WHERE ip_address IS NOT NULL > targets.txt
 
@@ -269,19 +271,19 @@ nmap -iL targets.txt -sV -oA nmap_results
 
 Recon-ng is particularly valuable for bug bounty hunters:
 
-1. Create a workspace for the target program
-2. Enumerate domains, subdomains, and hosts
-3. Identify technologies and potential vulnerabilities
-4. Export findings for further testing with specialized tools
+1.  Create a workspace for the target program
+2.  Enumerate domains, subdomains, and hosts
+3.  Identify technologies and potential vulnerabilities
+4.  Export findings for further testing with specialized tools
 
 ### Security Assessments
 
 For security professionals conducting organizational assessments:
 
-1. Map the organization's public-facing assets
-2. Discover exposed credentials and data leaks
-3. Identify relationships between corporate entities
-4. Document findings in comprehensive reports
+1.  Map the organization's public-facing assets
+2.  Discover exposed credentials and data leaks
+3.  Identify relationships between corporate entities
+4.  Document findings in comprehensive reports
 
 ## Best Practices
 
@@ -289,41 +291,42 @@ For security professionals conducting organizational assessments:
 
 To get the most out of Recon-ng:
 
-1. **Create dedicated workspaces** for each target or project
-2. **Use the marketplace** to keep modules updated
-3. **Chain modules** to create automated workflows
-4. **Document API keys** securely for reuse
-5. **Regularly export data** to prevent loss
+1.  **Create dedicated workspaces** for each target or project
+2.  **Use the marketplace** to keep modules updated
+3.  **Chain modules** to create automated workflows
+4.  **Document API keys** securely for reuse
+5.  **Regularly export data** to prevent loss
 
 ### Performance Considerations
 
 When working with large reconnaissance tasks:
 
-1. **Use targeted modules** rather than running everything
-2. **Implement rate limiting** where supported
-3. **Schedule intensive tasks** during off-hours
-4. **Split large targets** into multiple workspaces
-5. **Regularly clean up** database tables to improve performance
+1.  **Use targeted modules** rather than running everything
+2.  **Implement rate limiting** where supported
+3.  **Schedule intensive tasks** during off-hours
+4.  **Split large targets** into multiple workspaces
+5.  **Regularly clean up** database tables to improve performance
 
 ## Ethical and Legal Considerations
 
-::: {.callout-warning}
+::: callout-warning
 ## Responsible Usage
+
 Recon-ng is a powerful tool that should only be used for legitimate security assessment, penetration testing, or research with proper authorization.
 :::
 
 Guidelines for ethical use:
 
-1. **Obtain explicit permission** before reconnaissance
-2. **Document scope and activities** thoroughly
-3. **Respect rate limits** of target systems and APIs
-4. **Handle discovered information** responsibly
-5. **Report security issues** through appropriate channels
+1.  **Obtain explicit permission** before reconnaissance
+2.  **Document scope and activities** thoroughly
+3.  **Respect rate limits** of target systems and APIs
+4.  **Handle discovered information** responsibly
+5.  **Report security issues** through appropriate channels
 
 ## Comparison with Similar Tools
 
 | Tool | Strengths | Limitations |
-|------|-----------|------------|
+|-----------------|--------------------------|-----------------------------|
 | **Recon-ng** | Complete framework, modular, database-backed | Requires API keys for many modules |
 | **theHarvester** | Simple, focused on email harvesting | Less comprehensive, fewer data sources |
 | **Maltego** | Visual mapping, excellent UI | Community edition limitations, cost |
@@ -334,11 +337,11 @@ Guidelines for ethical use:
 
 Recent developments in Recon-ng include:
 
-- Migration to Python 3
-- Introduction of the marketplace system
-- Enhanced reporting capabilities
-- Improved API key management
-- Growing community-contributed modules
+-   Migration to Python 3
+-   Introduction of the marketplace system
+-   Enhanced reporting capabilities
+-   Improved API key management
+-   Growing community-contributed modules
 
 The project continues to evolve with the changing landscape of open source intelligence and web reconnaissance.
 
@@ -350,8 +353,8 @@ By mastering Recon-ng, security professionals can efficiently collect, organize,
 
 ## References
 
-- [Official Recon-ng GitHub Repository](https://github.com/lanmaster53/recon-ng)
-- [Recon-ng Wiki](https://github.com/lanmaster53/recon-ng/wiki)
-- Tomes, T. (2023). "Recon-ng: Evolution of a Reconnaissance Framework." Black Hat Arsenal.
-- SANS Institute. (2024). "Using Open Source Tools for Intelligence Gathering."
-- Kennedy, D. et al. (2022). "Metasploit: The Penetration Tester's Guide." No Starch Press.
+-   [Official Recon-ng GitHub Repository](https://github.com/lanmaster53/recon-ng)
+-   [Recon-ng Wiki](https://github.com/lanmaster53/recon-ng/wiki)
+-   Tomes, T. (2023). "Recon-ng: Evolution of a Reconnaissance Framework." Black Hat Arsenal.
+-   SANS Institute. (2024). "Using Open Source Tools for Intelligence Gathering."
+-   Kennedy, D. et al. (2022). "Metasploit: The Penetration Tester's Guide." No Starch Press.

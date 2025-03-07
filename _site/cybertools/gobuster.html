@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-07">
 
-<title>gobuster – Haiyang's Tech Portfolio</title>
+<title>Gobuster: Directory/File &amp; DNS Busting Tool – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,17 +189,93 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-gobuster" id="toc-introduction-to-gobuster" class="nav-link active" data-scroll-target="#introduction-to-gobuster">Introduction to Gobuster</a></li>
+  <li><a href="#core-features" id="toc-core-features" class="nav-link" data-scroll-target="#core-features">Core Features</a>
+  <ul class="collapse">
+  <li><a href="#directoryfile-mode-dir" id="toc-directoryfile-mode-dir" class="nav-link" data-scroll-target="#directoryfile-mode-dir">Directory/File Mode (dir)</a></li>
+  <li><a href="#dns-mode-dns" id="toc-dns-mode-dns" class="nav-link" data-scroll-target="#dns-mode-dns">DNS Mode (dns)</a></li>
+  <li><a href="#virtual-host-mode-vhost" id="toc-virtual-host-mode-vhost" class="nav-link" data-scroll-target="#virtual-host-mode-vhost">Virtual Host Mode (vhost)</a></li>
+  </ul></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
+  <ul class="collapse">
+  <li><a href="#using-go" id="toc-using-go" class="nav-link" data-scroll-target="#using-go">Using Go</a></li>
+  <li><a href="#using-apt-kali-linux" id="toc-using-apt-kali-linux" class="nav-link" data-scroll-target="#using-apt-kali-linux">Using APT (Kali Linux)</a></li>
+  <li><a href="#using-docker" id="toc-using-docker" class="nav-link" data-scroll-target="#using-docker">Using Docker</a></li>
+  <li><a href="#from-source" id="toc-from-source" class="nav-link" data-scroll-target="#from-source">From Source</a></li>
+  </ul></li>
+  <li><a href="#practical-usage-examples" id="toc-practical-usage-examples" class="nav-link" data-scroll-target="#practical-usage-examples">Practical Usage Examples</a>
+  <ul class="collapse">
+  <li><a href="#directory-enumeration" id="toc-directory-enumeration" class="nav-link" data-scroll-target="#directory-enumeration">Directory Enumeration</a></li>
+  <li><a href="#advanced-directory-scanning" id="toc-advanced-directory-scanning" class="nav-link" data-scroll-target="#advanced-directory-scanning">Advanced Directory Scanning</a></li>
+  <li><a href="#dns-enumeration" id="toc-dns-enumeration" class="nav-link" data-scroll-target="#dns-enumeration">DNS Enumeration</a></li>
+  <li><a href="#virtual-host-discovery" id="toc-virtual-host-discovery" class="nav-link" data-scroll-target="#virtual-host-discovery">Virtual Host Discovery</a></li>
+  </ul></li>
+  <li><a href="#gobuster-vs.-other-enumeration-tools" id="toc-gobuster-vs.-other-enumeration-tools" class="nav-link" data-scroll-target="#gobuster-vs.-other-enumeration-tools">Gobuster vs.&nbsp;Other Enumeration Tools</a></li>
+  <li><a href="#command-line-arguments" id="toc-command-line-arguments" class="nav-link" data-scroll-target="#command-line-arguments">Command Line Arguments</a>
+  <ul class="collapse">
+  <li><a href="#global-flags" id="toc-global-flags" class="nav-link" data-scroll-target="#global-flags">Global Flags</a></li>
+  <li><a href="#directory-mode-specific-flags" id="toc-directory-mode-specific-flags" class="nav-link" data-scroll-target="#directory-mode-specific-flags">Directory Mode Specific Flags</a></li>
+  </ul></li>
+  <li><a href="#practical-applications" id="toc-practical-applications" class="nav-link" data-scroll-target="#practical-applications">Practical Applications</a>
+  <ul class="collapse">
+  <li><a href="#web-application-security-testing" id="toc-web-application-security-testing" class="nav-link" data-scroll-target="#web-application-security-testing">Web Application Security Testing</a></li>
+  <li><a href="#bug-bounty-hunting" id="toc-bug-bounty-hunting" class="nav-link" data-scroll-target="#bug-bounty-hunting">Bug Bounty Hunting</a></li>
+  <li><a href="#penetration-testing" id="toc-penetration-testing" class="nav-link" data-scroll-target="#penetration-testing">Penetration Testing</a></li>
+  </ul></li>
+  <li><a href="#advanced-techniques" id="toc-advanced-techniques" class="nav-link" data-scroll-target="#advanced-techniques">Advanced Techniques</a>
+  <ul class="collapse">
+  <li><a href="#creating-custom-wordlists" id="toc-creating-custom-wordlists" class="nav-link" data-scroll-target="#creating-custom-wordlists">Creating Custom Wordlists</a></li>
+  <li><a href="#recursive-scanning" id="toc-recursive-scanning" class="nav-link" data-scroll-target="#recursive-scanning">Recursive Scanning</a></li>
+  <li><a href="#automating-with-scripts" id="toc-automating-with-scripts" class="nav-link" data-scroll-target="#automating-with-scripts">Automating with Scripts</a></li>
+  </ul></li>
+  <li><a href="#security-considerations" id="toc-security-considerations" class="nav-link" data-scroll-target="#security-considerations">Security Considerations</a>
+  <ul class="collapse">
+  <li><a href="#legal-and-ethical-usage" id="toc-legal-and-ethical-usage" class="nav-link" data-scroll-target="#legal-and-ethical-usage">Legal and Ethical Usage</a></li>
+  <li><a href="#rate-limiting-and-stealth" id="toc-rate-limiting-and-stealth" class="nav-link" data-scroll-target="#rate-limiting-and-stealth">Rate Limiting and Stealth</a></li>
+  </ul></li>
+  <li><a href="#common-wordlists" id="toc-common-wordlists" class="nav-link" data-scroll-target="#common-wordlists">Common Wordlists</a></li>
+  <li><a href="#integration-with-other-tools" id="toc-integration-with-other-tools" class="nav-link" data-scroll-target="#integration-with-other-tools">Integration with Other Tools</a>
+  <ul class="collapse">
+  <li><a href="#with-nmap" id="toc-with-nmap" class="nav-link" data-scroll-target="#with-nmap">With Nmap</a></li>
+  <li><a href="#with-burp-suite" id="toc-with-burp-suite" class="nav-link" data-scroll-target="#with-burp-suite">With Burp Suite</a></li>
+  </ul></li>
+  <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies">Case Studies</a>
+  <ul class="collapse">
+  <li><a href="#finding-hidden-administrative-interfaces" id="toc-finding-hidden-administrative-interfaces" class="nav-link" data-scroll-target="#finding-hidden-administrative-interfaces">Finding Hidden Administrative Interfaces</a></li>
+  <li><a href="#uncovering-development-api-endpoints" id="toc-uncovering-development-api-endpoints" class="nav-link" data-scroll-target="#uncovering-development-api-endpoints">Uncovering Development API Endpoints</a></li>
+  </ul></li>
+  <li><a href="#troubleshooting-common-issues" id="toc-troubleshooting-common-issues" class="nav-link" data-scroll-target="#troubleshooting-common-issues">Troubleshooting Common Issues</a>
+  <ul class="collapse">
+  <li><a href="#error-unable-to-connect-to-host" id="toc-error-unable-to-connect-to-host" class="nav-link" data-scroll-target="#error-unable-to-connect-to-host">Error: Unable to connect to host</a></li>
+  <li><a href="#false-positives-with-wildcard-responses" id="toc-false-positives-with-wildcard-responses" class="nav-link" data-scroll-target="#false-positives-with-wildcard-responses">False Positives with Wildcard Responses</a></li>
+  <li><a href="#tlscertificate-issues" id="toc-tlscertificate-issues" class="nav-link" data-scroll-target="#tlscertificate-issues">TLS/Certificate Issues</a></li>
+  </ul></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a>
+  <ul class="collapse">
+  <li><a href="#scan-methodology" id="toc-scan-methodology" class="nav-link" data-scroll-target="#scan-methodology">Scan Methodology</a></li>
+  <li><a href="#resource-management" id="toc-resource-management" class="nav-link" data-scroll-target="#resource-management">Resource Management</a></li>
+  </ul></li>
+  <li><a href="#future-development" id="toc-future-development" class="nav-link" data-scroll-target="#future-development">Future Development</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Gobuster: Directory/File &amp; DNS Busting Tool</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Information Gathering</div>
-    <div class="quarto-category">Web Application Assessment</div>
+    <div class="quarto-category">Web Security</div>
+    <div class="quarto-category">Penetration Testing</div>
   </div>
   </div>
 
@@ -183,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 7, 2025</p>
     </div>
   </div>
   
@@ -195,8 +305,584 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-gobuster" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-gobuster">Introduction to Gobuster</h2>
+<p>Gobuster is a powerful and versatile open-source tool used for discovering hidden directories, files, and subdomains on web servers. Written in Go, it’s designed to be fast, flexible, and reliable for security professionals, penetration testers, and bug bounty hunters. Gobuster’s high-performance brute force capabilities make it an essential part of the reconnaissance phase in web application security testing.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.kali.org/tools/gobuster/images/gobuster-logo.svg" class="img-fluid figure-img"></p>
+<figcaption>Gobuster Logo</figcaption>
+</figure>
+</div>
+<p>Originally created by OJ Reeves (<span class="citation" data-cites="TheColonial">@TheColonial</span>), Gobuster has become one of the standard directory and subdomain enumeration tools in the security professional’s toolkit. Its Go-based architecture allows for efficient parallel processing, making it significantly faster than many alternatives when performing large-scale enumeration tasks.</p>
+</section>
+<section id="core-features" class="level2">
+<h2 class="anchored" data-anchor-id="core-features">Core Features</h2>
+<p>Gobuster offers three primary scanning modes, each serving a specific reconnaissance purpose:</p>
+<section id="directoryfile-mode-dir" class="level3">
+<h3 class="anchored" data-anchor-id="directoryfile-mode-dir">Directory/File Mode (dir)</h3>
+<p>The directory mode searches for directories and files on a target web server by attempting to access each path from a specified wordlist.</p>
+<div class="row">
+  <div class="col-md-6">
+    <p>Key capabilities include:</p>
+    <ul>
+      <li>Recursive scanning of nested directories</li>
+      <li>Customizable file extensions</li>
+      <li>Status code filtering</li>
+      <li>Response size filtering</li>
+      <li>Pattern matching in responses</li>
+      <li>Automatic handling of wildcards</li>
+      <li>Flexible wordlist support</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <img src="https://abrictosecurity.com/wp-content/uploads/2022/09/gobuster-h.png" alt="Gobuster Directory Scan" class="img-fluid border rounded">
+  </div>
+</div>
+</section>
+<section id="dns-mode-dns" class="level3">
+<h3 class="anchored" data-anchor-id="dns-mode-dns">DNS Mode (dns)</h3>
+<p>The DNS mode performs subdomain enumeration by brute-forcing possible subdomain names against a target domain.</p>
+<p>Key features include: - Resolution of found subdomains - Wildcard detection and handling - Support for multiple DNS resolvers - Optional validation of wildcard responses</p>
+</section>
+<section id="virtual-host-mode-vhost" class="level3">
+<h3 class="anchored" data-anchor-id="virtual-host-mode-vhost">Virtual Host Mode (vhost)</h3>
+<p>The vhost mode discovers virtual hosts (non-DNS subdomains) on a target web server.</p>
+<p>Features include: - Detection of virtual hosts not listed in DNS - Differentiation between real and false positives - Response filtering capabilities - Custom header support</p>
+</section>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<p>Gobuster can be installed through multiple methods:</p>
+<section id="using-go" class="level3">
+<h3 class="anchored" data-anchor-id="using-go">Using Go</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">go</span> install github.com/OJ/gobuster/v3@latest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="using-apt-kali-linux" class="level3">
+<h3 class="anchored" data-anchor-id="using-apt-kali-linux">Using APT (Kali Linux)</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gobuster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="using-docker" class="level3">
+<h3 class="anchored" data-anchor-id="using-docker">Using Docker</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> pull haxos/gobuster</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> haxos/gobuster dir <span class="at">-u</span> https://example.com <span class="at">-w</span> wordlist.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="from-source" class="level3">
+<h3 class="anchored" data-anchor-id="from-source">From Source</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/OJ/gobuster.git</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> gobuster</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">go</span> build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="practical-usage-examples" class="level2">
+<h2 class="anchored" data-anchor-id="practical-usage-examples">Practical Usage Examples</h2>
+<section id="directory-enumeration" class="level3">
+<h3 class="anchored" data-anchor-id="directory-enumeration">Directory Enumeration</h3>
+<p>The most common use case for Gobuster is to discover hidden directories and files on a target web server:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="at">-u</span> https://target.com <span class="at">-w</span> /usr/share/wordlists/dirb/common.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="card mb-3">
+  <div class="card-header bg-light">Output Example</div>
+  <div class="card-body">
+    <pre class="mb-0"><code>===============================================================
+Gobuster v3.5
+by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     https://target.com
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirb/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.5
+[+] Timeout:                 10s
+===============================================================
+2022/09/19 15:31:05 Starting gobuster in directory enumeration mode
+===============================================================
+/.hta                 (Status: 403) [Size: 277]
+/.htaccess            (Status: 403) [Size: 277]
+/.htpasswd            (Status: 403) [Size: 277]
+/admin                (Status: 301) [Size: 310] [--&gt; https://target.com/admin/]
+/assets               (Status: 301) [Size: 311] [--&gt; https://target.com/assets/]
+/css                  (Status: 301) [Size: 308] [--&gt; https://target.com/css/]
+/index.html           (Status: 200) [Size: 5432]
+/js                   (Status: 301) [Size: 307] [--&gt; https://target.com/js/]
+/login                (Status: 200) [Size: 1289]
+/robots.txt           (Status: 200) [Size: 312]
+/server-status        (Status: 403) [Size: 277]
+/uploads              (Status: 301) [Size: 312] [--&gt; https://target.com/uploads/]
+===============================================================
+2022/09/19 15:32:13 Finished
+===============================================================</code></pre>
+  </div>
+</div>
+</section>
+<section id="advanced-directory-scanning" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-directory-scanning">Advanced Directory Scanning</h3>
+<p>For more targeted directory scanning, Gobuster offers numerous options:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="dt">\</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-u</span> https://target.com <span class="dt">\</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt <span class="dt">\</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-t</span> 50 <span class="dt">\</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">-x</span> php,html,txt <span class="dt">\</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">-b</span> 403,404 <span class="dt">\</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">-c</span> <span class="st">"session=1234567890"</span> <span class="dt">\</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> gobuster_output.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command: - Sets 50 concurrent threads (<code>-t 50</code>) - Looks for PHP, HTML, and TXT files (<code>-x php,html,txt</code>) - Excludes 403 and 404 responses (<code>-b 403,404</code>) - Sends a custom cookie (<code>-c "session=1234567890"</code>) - Saves results to a file (<code>-o gobuster_output.txt</code>)</p>
+</section>
+<section id="dns-enumeration" class="level3">
+<h3 class="anchored" data-anchor-id="dns-enumeration">DNS Enumeration</h3>
+<p>To discover subdomains of a target domain:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dns <span class="dt">\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> example.com <span class="dt">\</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt <span class="dt">\</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-i</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="ratio ratio-16x9 my-4">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HjXNK-mYwDQ" title="Gobuster Demonstration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+</section>
+<section id="virtual-host-discovery" class="level3">
+<h3 class="anchored" data-anchor-id="virtual-host-discovery">Virtual Host Discovery</h3>
+<p>To enumerate virtual hosts on a target:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> vhost <span class="dt">\</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-u</span> https://example.com <span class="dt">\</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt <span class="dt">\</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-t</span> 50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="gobuster-vs.-other-enumeration-tools" class="level2">
+<h2 class="anchored" data-anchor-id="gobuster-vs.-other-enumeration-tools">Gobuster vs.&nbsp;Other Enumeration Tools</h2>
+<table class="table table-striped caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Feature</th>
+<th data-quarto-table-cell-role="th">Gobuster</th>
+<th data-quarto-table-cell-role="th">Dirbuster</th>
+<th data-quarto-table-cell-role="th">Dirb</th>
+<th data-quarto-table-cell-role="th">ffuf</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Language</td>
+<td>Go</td>
+<td>Java</td>
+<td>C</td>
+<td>Go</td>
+</tr>
+<tr class="even">
+<td>Performance</td>
+<td>Very High</td>
+<td>Moderate</td>
+<td>Moderate</td>
+<td>Very High</td>
+</tr>
+<tr class="odd">
+<td>Directory Scanning</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>DNS Enumeration</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>Limited</td>
+</tr>
+<tr class="odd">
+<td>Virtual Host Discovery</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr class="even">
+<td>Fuzzing Capabilities</td>
+<td>Limited</td>
+<td>Limited</td>
+<td>Limited</td>
+<td>Extensive</td>
+</tr>
+<tr class="odd">
+<td>Active Development</td>
+<td>✓</td>
+<td>✗</td>
+<td>Limited</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="command-line-arguments" class="level2">
+<h2 class="anchored" data-anchor-id="command-line-arguments">Command Line Arguments</h2>
+<section id="global-flags" class="level3">
+<h3 class="anchored" data-anchor-id="global-flags">Global Flags</h3>
+<p>These flags apply to all Gobuster modes:</p>
+<div class="row">
+  <div class="col-md-6">
+    <ul>
+      <li><code>-z, --noprogress</code>: Don't display progress</li>
+      <li><code>-o, --output</code>: Output file to write results</li>
+      <li><code>-q, --quiet</code>: Don't print banner and other noise</li>
+      <li><code>-t, --threads</code>: Number of concurrent threads (default 10)</li>
+      <li><code>-v, --verbose</code>: Verbose output (errors)</li>
+      <li><code>-w, --wordlist</code>: Path to wordlist</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div class="alert alert-info">
+      <strong>Pro Tip:</strong> When running on targets you don't control, consider using lower thread counts to avoid overwhelming the server and potentially causing denial of service.
+    </div>
+  </div>
+</div>
+</section>
+<section id="directory-mode-specific-flags" class="level3">
+<h3 class="anchored" data-anchor-id="directory-mode-specific-flags">Directory Mode Specific Flags</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Key flags include: - <code>-u, --url</code>: Target URL - <code>-c, --cookies</code>: Cookies to use for requests - <code>-x, --extensions</code>: File extensions to search for - <code>-H, --headers</code>: Custom headers to add - <code>-k, --no-tls-validation</code>: Skip TLS certificate verification - <code>-n, --no-status</code>: Don’t print status codes - <code>-e, --expanded</code>: Expanded mode, print full URLs - <code>-r, --follow-redirect</code>: Follow redirects - <code>-s, --status-codes</code>: Positive status codes (default “200,204,301,302,307,401,403”) - <code>-b, --status-codes-blacklist</code>: Negative status codes</p>
+</section>
+</section>
+<section id="practical-applications" class="level2">
+<h2 class="anchored" data-anchor-id="practical-applications">Practical Applications</h2>
+<section id="web-application-security-testing" class="level3">
+<h3 class="anchored" data-anchor-id="web-application-security-testing">Web Application Security Testing</h3>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <h4 class="card-title anchored">Methodology Example</h4>
+    <ol>
+      <li>Perform initial reconnaissance with directory enumeration:
+        <pre><code>gobuster dir -u https://target.com -w common-dirs.txt</code></pre>
+      </li>
+      <li>Identify potentially sensitive directories</li>
+      <li>Perform deeper enumeration on discovered paths:
+        <pre><code>gobuster dir -u https://target.com/admin -w admin-wordlist.txt -x php</code></pre>
+      </li>
+      <li>Check for accessible configuration or backup files:
+        <pre><code>gobuster dir -u https://target.com -w backup-files.txt -x bak,old,~,backup</code></pre>
+      </li>
+      <li>Document findings and attempt to access discovered resources</li>
+    </ol>
+  </div>
+</div>
+</section>
+<section id="bug-bounty-hunting" class="level3">
+<h3 class="anchored" data-anchor-id="bug-bounty-hunting">Bug Bounty Hunting</h3>
+<p>Gobuster is extensively used in bug bounty programs for initial reconnaissance:</p>
+<ol type="1">
+<li>Map the attack surface with DNS enumeration</li>
+<li>Discover potentially overlooked endpoints with directory scanning</li>
+<li>Find development or testing environments with vhost enumeration</li>
+<li>Identify exposed sensitive information or functionality</li>
+</ol>
+</section>
+<section id="penetration-testing" class="level3">
+<h3 class="anchored" data-anchor-id="penetration-testing">Penetration Testing</h3>
+<p>During authorized penetration tests, Gobuster helps:</p>
+<ul>
+<li>Discover entry points for further testing</li>
+<li>Identify access control issues with restricted directories</li>
+<li>Find forgotten backup files that might contain credentials</li>
+<li>Map complete application structure</li>
+</ul>
+</section>
+</section>
+<section id="advanced-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-techniques">Advanced Techniques</h2>
+<section id="creating-custom-wordlists" class="level3">
+<h3 class="anchored" data-anchor-id="creating-custom-wordlists">Creating Custom Wordlists</h3>
+<p>Effective enumeration depends on quality wordlists. Consider these methods:</p>
+<ol type="1">
+<li><p><strong>Web Scraping</strong>: Extract words from the target website</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-r</span> <span class="at">-l</span> 2 https://target.com</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">cewl</span> <span class="at">-d</span> 2 <span class="at">-m</span> 5 <span class="at">-w</span> wordlist.txt https://target.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Combining Wordlists</strong>: Merge and deduplicate existing lists</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> wordlist1.txt wordlist2.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-u</span> <span class="op">&gt;</span> combined-wordlist.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Pattern-Based Generation</strong>: Create wordlists based on naming conventions</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">12</span><span class="dt">}</span><span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="st">"backup-</span><span class="va">$(</span><span class="fu">date</span> +%Y<span class="va">)</span><span class="st">-</span><span class="va">$i</span><span class="st">"</span> <span class="op">&gt;&gt;</span> wordlist.txt<span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+</section>
+<section id="recursive-scanning" class="level3">
+<h3 class="anchored" data-anchor-id="recursive-scanning">Recursive Scanning</h3>
+<p>To thoroughly enumerate a web application:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="dt">\</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-u</span> https://target.com <span class="dt">\</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> /usr/share/wordlists/dirb/common.txt <span class="dt">\</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-r</span> <span class="dt">\</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--wildcard</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>-r</code> flag enables recursive scanning, automatically enumerating discovered directories.</p>
+</section>
+<section id="automating-with-scripts" class="level3">
+<h3 class="anchored" data-anchor-id="automating-with-scripts">Automating with Scripts</h3>
+<p>This Bash script combines multiple Gobuster modes for comprehensive enumeration:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="va">TARGET</span><span class="op">=</span><span class="va">$1</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="va">WORDLIST</span><span class="op">=</span><span class="st">"/usr/share/wordlists/dirb/common.txt"</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="va">DNS_WORDLIST</span><span class="op">=</span><span class="st">"/usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt"</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="va">OUTPUT_DIR</span><span class="op">=</span><span class="st">"gobuster_results"</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create output directory</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$OUTPUT_DIR</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"[*] Starting DNS enumeration..."</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dns <span class="dt">\</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> <span class="va">$TARGET</span> <span class="dt">\</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> <span class="va">$DNS_WORDLIST</span> <span class="dt">\</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> <span class="st">"</span><span class="va">$OUTPUT_DIR</span><span class="st">/</span><span class="va">${TARGET}</span><span class="st">_dns.txt"</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"[*] Starting directory enumeration..."</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="dt">\</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">-u</span> <span class="st">"https://</span><span class="va">$TARGET</span><span class="st">"</span> <span class="dt">\</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> <span class="va">$WORDLIST</span> <span class="dt">\</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">-x</span> php,html,txt,conf,bak <span class="dt">\</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> <span class="st">"</span><span class="va">$OUTPUT_DIR</span><span class="st">/</span><span class="va">${TARGET}</span><span class="st">_dir.txt"</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"[*] Starting vhost enumeration..."</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> vhost <span class="dt">\</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">-u</span> <span class="st">"https://</span><span class="va">$TARGET</span><span class="st">"</span> <span class="dt">\</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> <span class="va">$DNS_WORDLIST</span> <span class="dt">\</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">-o</span> <span class="st">"</span><span class="va">$OUTPUT_DIR</span><span class="st">/</span><span class="va">${TARGET}</span><span class="st">_vhost.txt"</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"[+] Enumeration complete. Results saved to </span><span class="va">$OUTPUT_DIR</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="security-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations">Security Considerations</h2>
+<section id="legal-and-ethical-usage" class="level3">
+<h3 class="anchored" data-anchor-id="legal-and-ethical-usage">Legal and Ethical Usage</h3>
+<div class="alert alert-warning">
+  <h4 class="alert-heading anchored">Warning!</h4>
+  <p>Always ensure you have proper authorization before performing enumeration. Unauthorized scanning may:</p>
+  <ul>
+    <li>Violate computer crime laws</li>
+    <li>Breach terms of service</li>
+    <li>Trigger security alerts</li>
+    <li>Potentially cause service disruption</li>
+  </ul>
+</div>
+</section>
+<section id="rate-limiting-and-stealth" class="level3">
+<h3 class="anchored" data-anchor-id="rate-limiting-and-stealth">Rate Limiting and Stealth</h3>
+<p>To avoid detection and minimize impact on target systems:</p>
+<ol type="1">
+<li><p><strong>Reduce thread count</strong>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="at">-u</span> https://target.com <span class="at">-w</span> wordlist.txt <span class="at">-t</span> 5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Add delays between requests</strong>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="at">-u</span> https://target.com <span class="at">-w</span> wordlist.txt <span class="at">--delay</span> 100ms</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Use custom User-Agent headers</strong>:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="at">-u</span> https://target.com <span class="at">-w</span> wordlist.txt <span class="at">-a</span> <span class="st">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Disable progress output</strong> for quieter operation:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="at">-u</span> https://target.com <span class="at">-w</span> wordlist.txt <span class="at">-q</span> <span class="at">-z</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+</section>
+</section>
+<section id="common-wordlists" class="level2">
+<h2 class="anchored" data-anchor-id="common-wordlists">Common Wordlists</h2>
+<p>The effectiveness of Gobuster greatly depends on the quality of wordlists used. Here are some popular wordlists for different scanning scenarios:</p>
+<table class="table caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Wordlist</th>
+<th data-quarto-table-cell-role="th">Size</th>
+<th data-quarto-table-cell-role="th">Best For</th>
+<th data-quarto-table-cell-role="th">Location (Kali Linux)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>dirb/common.txt</td>
+<td>4,614 words</td>
+<td>Quick initial scans</td>
+<td>/usr/share/wordlists/dirb/common.txt</td>
+</tr>
+<tr class="even">
+<td>dirbuster/directory-list-2.3-medium.txt</td>
+<td>220,560 words</td>
+<td>Thorough directory scans</td>
+<td>/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt</td>
+</tr>
+<tr class="odd">
+<td>SecLists/Discovery/DNS/subdomains-top1million-5000.txt</td>
+<td>5,000 words</td>
+<td>Common subdomains</td>
+<td>/usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt</td>
+</tr>
+<tr class="even">
+<td>SecLists/Discovery/Web-Content/raft-large-files.txt</td>
+<td>37,042 words</td>
+<td>File discovery</td>
+<td>/usr/share/wordlists/SecLists/Discovery/Web-Content/raft-large-files.txt</td>
+</tr>
+<tr class="odd">
+<td>SecLists/Discovery/Web-Content/api-endpoints.txt</td>
+<td>3,091 words</td>
+<td>API endpoint discovery</td>
+<td>/usr/share/wordlists/SecLists/Discovery/Web-Content/api-endpoints.txt</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.researchgate.net/publication/348213104/figure/fig2/AS:976460324012032@1609817691018/sualization-of-the-recommanded-top-10-word-lists-by-softmax-and-graph-softmax-with-the.ppm" class="img-fluid figure-img"></p>
+<figcaption>Popular Wordlists Visualization</figcaption>
+</figure>
+</div>
+</section>
+<section id="integration-with-other-tools" class="level2">
+<h2 class="anchored" data-anchor-id="integration-with-other-tools">Integration with Other Tools</h2>
+<p>Gobuster works effectively as part of a larger reconnaissance toolkit:</p>
+<section id="with-nmap" class="level3">
+<h3 class="anchored" data-anchor-id="with-nmap">With Nmap</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First identify open web servers with Nmap</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> <span class="at">-p</span> 80,443 <span class="at">--open</span> <span class="at">-oG</span> nmap-scan.txt 192.168.1.0/24</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract targets and feed to Gobuster</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">"80/open\|443/open"</span> nmap-scan.txt <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span><span class="st">" "</span> <span class="at">-f2</span> <span class="op">&gt;</span> web-targets.txt</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Scan each target with Gobuster</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> target <span class="kw">in</span> <span class="va">$(</span><span class="fu">cat</span> web-targets.txt<span class="va">)</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">gobuster</span> dir <span class="at">-u</span> http://<span class="va">$target</span> <span class="at">-w</span> common.txt <span class="at">-o</span> gobuster-<span class="va">$target</span>.txt</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="with-burp-suite" class="level3">
+<h3 class="anchored" data-anchor-id="with-burp-suite">With Burp Suite</h3>
+<ol type="1">
+<li>Discover directories with Gobuster</li>
+<li>Import findings into Burp Suite’s target scope</li>
+<li>Perform targeted scanning on discovered endpoints</li>
+<li>Use Burp’s crawler on discovered directories</li>
+</ol>
+<div class="row">
+  <div class="col-md-7">
+    <h4 class="anchored">Workflow Diagram</h4>
+    <div class="mermaid">
+    graph TD
+        A[Reconnaissance] --&gt; B[Gobuster Scan]
+        B --&gt; C[Directory Discovery]
+        B --&gt; D[Subdomain Discovery]
+        C --&gt; E[Import to Burp Suite]
+        D --&gt; E
+        E --&gt; F[Targeted Scanning]
+        F --&gt; G[Vulnerability Identification]
+        G --&gt; H[Exploitation]
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="card bg-light">
+      <div class="card-body">
+        <h5 class="card-title anchored">Integration Benefits</h5>
+        <ul>
+          <li>Streamlined reconnaissance process</li>
+          <li>More thorough coverage of target</li>
+          <li>Efficient use of specialized tools</li>
+          <li>Reduced manual effort</li>
+          <li>Consistent methodology</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</section>
+<section id="case-studies" class="level2">
+<h2 class="anchored" data-anchor-id="case-studies">Case Studies</h2>
+<section id="finding-hidden-administrative-interfaces" class="level3">
+<h3 class="anchored" data-anchor-id="finding-hidden-administrative-interfaces">Finding Hidden Administrative Interfaces</h3>
+<div class="card mb-3">
+  <div class="card-header bg-light">Real-World Example</div>
+  <div class="card-body">
+    <p>During a penetration test of a corporate web application, the security team used Gobuster to discover a hidden administrative interface:</p>
+    
+    <pre><code class="bash">gobuster dir -u https://company.com -w admin-wordlists.txt -x php</code></pre>
+    
+    <p>The scan revealed an unexpected endpoint at <code>/manage-system/admin.php</code> that wasn't linked from the main site. This administrative panel had weak authentication, leading to full application compromise.</p>
+  </div>
+</div>
+</section>
+<section id="uncovering-development-api-endpoints" class="level3">
+<h3 class="anchored" data-anchor-id="uncovering-development-api-endpoints">Uncovering Development API Endpoints</h3>
+<p>During bug bounty hunting on a financial services website, a researcher used Gobuster to scan for API endpoints:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="at">-u</span> https://api.financial-site.com <span class="at">-w</span> api-wordlists.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This revealed several undocumented API endpoints including <code>/api/v1/internal/user/</code> which exposed sensitive user information without proper authentication, resulting in a critical vulnerability finding.</p>
+</section>
+</section>
+<section id="troubleshooting-common-issues" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+<section id="error-unable-to-connect-to-host" class="level3">
+<h3 class="anchored" data-anchor-id="error-unable-to-connect-to-host">Error: Unable to connect to host</h3>
+<p>This error typically occurs when: - The target is blocking your IP - The target is down or unreachable - There’s a firewall or WAF in place</p>
+<p><strong>Solution</strong>: Verify connectivity with a simple curl request, check for IP blocking, or try with <code>--delay</code> flag.</p>
+</section>
+<section id="false-positives-with-wildcard-responses" class="level3">
+<h3 class="anchored" data-anchor-id="false-positives-with-wildcard-responses">False Positives with Wildcard Responses</h3>
+<p>Some servers return “200 OK” for all requests regardless of existence.</p>
+<p><strong>Solution</strong>: Use the <code>--wildcard</code> flag to detect and filter out wildcard responses:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="at">-u</span> https://target.com <span class="at">-w</span> wordlist.txt <span class="at">--wildcard</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tlscertificate-issues" class="level3">
+<h3 class="anchored" data-anchor-id="tlscertificate-issues">TLS/Certificate Issues</h3>
+<p>When scanning HTTPS targets, you might encounter certificate validation errors.</p>
+<p><strong>Solution</strong>: Use the <code>-k</code> flag to skip certificate verification:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gobuster</span> dir <span class="at">-u</span> https://target.com <span class="at">-w</span> wordlist.txt <span class="at">-k</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
+<section id="scan-methodology" class="level3">
+<h3 class="anchored" data-anchor-id="scan-methodology">Scan Methodology</h3>
+<p>For effective enumeration, follow this approach:</p>
+<ol type="1">
+<li><strong>Start broad</strong> with a small wordlist to identify general structure</li>
+<li><strong>Go deeper</strong> with targeted scans on discovered directories</li>
+<li><strong>Use appropriate extensions</strong> based on the technology stack</li>
+<li><strong>Save results</strong> for documentation and further analysis</li>
+<li><strong>Combine modes</strong> (dir, dns, vhost) for comprehensive reconnaissance</li>
+</ol>
+</section>
+<section id="resource-management" class="level3">
+<h3 class="anchored" data-anchor-id="resource-management">Resource Management</h3>
+<div class="alert alert-success">
+  <h4 class="alert-heading anchored">Performance Tips</h4>
+  <ul>
+    <li><strong>Thread count:</strong> Balance between speed and target load (10-50 threads typically)</li>
+    <li><strong>Wordlist selection:</strong> Choose appropriate size based on scan scope</li>
+    <li><strong>Status filtering:</strong> Filter out unwanted responses to reduce noise</li>
+    <li><strong>Use expanded mode:</strong> More comprehensive output with <code>-e</code> flag</li>
+  </ul>
+</div>
+</section>
+</section>
+<section id="future-development" class="level2">
+<h2 class="anchored" data-anchor-id="future-development">Future Development</h2>
+<p>The Gobuster project continues to evolve with new features and improvements:</p>
+<ul>
+<li>Enhanced pattern matching for more precise filtering</li>
+<li>Additional scanning modes for specific use cases</li>
+<li>Performance optimizations for larger scans</li>
+<li>Improved reporting capabilities</li>
+<li>Better integration with other security tools</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Gobuster stands out as an essential tool for web application security testing, penetration testing, and bug bounty hunting. Its speed, flexibility, and multiple scanning modes make it indispensable for discovering hidden resources and mapping attack surfaces.</p>
+<p>By leveraging Gobuster’s capabilities alongside other security tools and methodologies, security professionals can conduct more thorough assessments and identify vulnerabilities that might otherwise remain hidden. The key to success with Gobuster lies in understanding its various features, selecting appropriate wordlists, and following a structured approach to enumeration.</p>
+<p>Whether you’re a seasoned security professional or just starting in the field, mastering Gobuster will significantly enhance your reconnaissance capabilities and improve your overall security testing effectiveness.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>OJ Reeves. (2023). Gobuster GitHub Repository. <a href="https://github.com/OJ/gobuster">github.com/OJ/gobuster</a></li>
+<li>OWASP. (2022). “Web Security Testing Guide: Information Gathering.” <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/">owasp.org/www-project-web-security-testing-guide</a></li>
+<li>Kali Linux Tools. (2023). “Gobuster Documentation.” <a href="https://tools.kali.org/web-applications/gobuster">tools.kali.org/web-applications/gobuster</a></li>
+<li>SecLists Project. (2023). “Collection of Security Wordlists.” <a href="https://github.com/danielmiessler/SecLists">github.com/danielmiessler/SecLists</a></li>
+<li>HackerOne. (2022). “The Beginners Guide to Directory Enumeration.” HackerOne Blog.</li>
+<li>PortSwigger. (2023). “Using Directory Enumeration Tools with Burp Suite.” Web Security Academy.</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

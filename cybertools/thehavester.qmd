@@ -75,7 +75,7 @@ cd theHarvester
 pip3 install -r requirements.txt
 ```
 
-![theHarvester Installation](https://i.imgur.com/EBxWop7.png){fig-align="center" width="700"}
+![theHarvester Installation](https://media.geeksforgeeks.org/wp-content/uploads/20200515201739/WhatsApp-Image-2020-05-15-at-8.16.23-PM.jpeg){fig-align="center" width="700"}
 
 ## Usage Examples
 
@@ -100,7 +100,7 @@ To collect email addresses associated with a domain:
 theHarvester -d company.com -l 500 -b google,bing,yahoo
 ```
 
-![Email Harvesting Example](https://i.imgur.com/cQlKgMg.png){fig-align="center" width="700"}
+![Email Harvesting Example](https://i.ytimg.com/vi/VytCL2ujjcA/maxresdefault.jpg){fig-align="center" width="700"}
 
 ### Subdomain Enumeration
 
@@ -171,14 +171,14 @@ Where `-c` enables DNS brute force using the default wordlist.
 ## Live Demonstration
 
 <div class="ratio ratio-16x9">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LnR9FtUfJUA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s9QqH67P1q4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 ## Integration with Other Tools
 
 theHarvester is often used as the initial reconnaissance step in a broader security assessment workflow:
 
-![OSINT Workflow](https://i.imgur.com/XxJZbqA.png){fig-align="center" width="700"}
+![OSINT Workflow](https://turingpoint.de/static/47784248f86a96507f009c407db27163/f4cb1/email_flow_d6cd10eb63.png){fig-align="center" width="700"}
 
 ### Feeding Results to Other Tools
 

@@ -1,6 +1,687 @@
 ---
-title: ""
-date: "2025-03-06"
-categories: [Information Gathering, Web Application Assessment]
+title: "Gobuster: Directory/File & DNS Busting Tool"
+date: "2025-03-07"
+categories: [Information Gathering, Web Security, Penetration Testing]
 author: "Xu Haiyang"
+image: "https://www.kali.org/tools/gobuster/images/gobuster-logo.svg"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
+    highlight-style: github
+    html-math-method: katex
 ---
+
+## Introduction to Gobuster
+
+Gobuster is a powerful and versatile open-source tool used for discovering hidden directories, files, and subdomains on web servers. Written in Go, it's designed to be fast, flexible, and reliable for security professionals, penetration testers, and bug bounty hunters. Gobuster's high-performance brute force capabilities make it an essential part of the reconnaissance phase in web application security testing.
+
+![Gobuster Logo](https://www.kali.org/tools/gobuster/images/gobuster-logo.svg)
+
+Originally created by OJ Reeves (@TheColonial), Gobuster has become one of the standard directory and subdomain enumeration tools in the security professional's toolkit. Its Go-based architecture allows for efficient parallel processing, making it significantly faster than many alternatives when performing large-scale enumeration tasks.
+
+## Core Features
+
+Gobuster offers three primary scanning modes, each serving a specific reconnaissance purpose:
+
+### Directory/File Mode (dir)
+
+The directory mode searches for directories and files on a target web server by attempting to access each path from a specified wordlist.
+
+```{=html}
+<div class="row">
+  <div class="col-md-6">
+    <p>Key capabilities include:</p>
+    <ul>
+      <li>Recursive scanning of nested directories</li>
+      <li>Customizable file extensions</li>
+      <li>Status code filtering</li>
+      <li>Response size filtering</li>
+      <li>Pattern matching in responses</li>
+      <li>Automatic handling of wildcards</li>
+      <li>Flexible wordlist support</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <img src="https://abrictosecurity.com/wp-content/uploads/2022/09/gobuster-h.png" alt="Gobuster Directory Scan" class="img-fluid border rounded">
+  </div>
+</div>
+```
+
+### DNS Mode (dns)
+
+The DNS mode performs subdomain enumeration by brute-forcing possible subdomain names against a target domain.
+
+Key features include:
+- Resolution of found subdomains
+- Wildcard detection and handling
+- Support for multiple DNS resolvers
+- Optional validation of wildcard responses
+
+### Virtual Host Mode (vhost)
+
+The vhost mode discovers virtual hosts (non-DNS subdomains) on a target web server.
+
+Features include:
+- Detection of virtual hosts not listed in DNS
+- Differentiation between real and false positives
+- Response filtering capabilities
+- Custom header support
+
+## Installation
+
+Gobuster can be installed through multiple methods:
+
+### Using Go
+
+```bash
+go install github.com/OJ/gobuster/v3@latest
+```
+
+### Using APT (Kali Linux)
+
+```bash
+sudo apt update
+sudo apt install gobuster
+```
+
+### Using Docker
+
+```bash
+docker pull haxos/gobuster
+docker run --rm haxos/gobuster dir -u https://example.com -w wordlist.txt
+```
+
+### From Source
+
+```bash
+git clone https://github.com/OJ/gobuster.git
+cd gobuster
+go build
+```
+
+## Practical Usage Examples
+
+### Directory Enumeration
+
+The most common use case for Gobuster is to discover hidden directories and files on a target web server:
+
+```bash
+gobuster dir -u https://target.com -w /usr/share/wordlists/dirb/common.txt
+```
+
+```{=html}
+<div class="card mb-3">
+  <div class="card-header bg-light">Output Example</div>
+  <div class="card-body">
+    <pre class="mb-0"><code>===============================================================
+Gobuster v3.5
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     https://target.com
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirb/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.5
+[+] Timeout:                 10s
+===============================================================
+2022/09/19 15:31:05 Starting gobuster in directory enumeration mode
+===============================================================
+/.hta                 (Status: 403) [Size: 277]
+/.htaccess            (Status: 403) [Size: 277]
+/.htpasswd            (Status: 403) [Size: 277]
+/admin                (Status: 301) [Size: 310] [--> https://target.com/admin/]
+/assets               (Status: 301) [Size: 311] [--> https://target.com/assets/]
+/css                  (Status: 301) [Size: 308] [--> https://target.com/css/]
+/index.html           (Status: 200) [Size: 5432]
+/js                   (Status: 301) [Size: 307] [--> https://target.com/js/]
+/login                (Status: 200) [Size: 1289]
+/robots.txt           (Status: 200) [Size: 312]
+/server-status        (Status: 403) [Size: 277]
+/uploads              (Status: 301) [Size: 312] [--> https://target.com/uploads/]
+===============================================================
+2022/09/19 15:32:13 Finished
+===============================================================</code></pre>
+  </div>
+</div>
+```
+
+### Advanced Directory Scanning
+
+For more targeted directory scanning, Gobuster offers numerous options:
+
+```bash
+gobuster dir \
+  -u https://target.com \
+  -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt \
+  -t 50 \
+  -x php,html,txt \
+  -b 403,404 \
+  -c "session=1234567890" \
+  -o gobuster_output.txt
+```
+
+This command:
+- Sets 50 concurrent threads (`-t 50`)
+- Looks for PHP, HTML, and TXT files (`-x php,html,txt`)
+- Excludes 403 and 404 responses (`-b 403,404`)
+- Sends a custom cookie (`-c "session=1234567890"`)
+- Saves results to a file (`-o gobuster_output.txt`)
+
+### DNS Enumeration
+
+To discover subdomains of a target domain:
+
+```bash
+gobuster dns \
+  -d example.com \
+  -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt \
+  -i
+```
+
+```{=html}
+<div class="ratio ratio-16x9 my-4">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HjXNK-mYwDQ" title="Gobuster Demonstration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+```
+
+### Virtual Host Discovery
+
+To enumerate virtual hosts on a target:
+
+```bash
+gobuster vhost \
+  -u https://example.com \
+  -w /usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt \
+  -t 50
+```
+
+## Gobuster vs. Other Enumeration Tools
+
+```{=html}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Gobuster</th>
+      <th>Dirbuster</th>
+      <th>Dirb</th>
+      <th>ffuf</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Language</td>
+      <td>Go</td>
+      <td>Java</td>
+      <td>C</td>
+      <td>Go</td>
+    </tr>
+    <tr>
+      <td>Performance</td>
+      <td>Very High</td>
+      <td>Moderate</td>
+      <td>Moderate</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Directory Scanning</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>DNS Enumeration</td>
+      <td>✓</td>
+      <td>✗</td>
+      <td>✗</td>
+      <td>Limited</td>
+    </tr>
+    <tr>
+      <td>Virtual Host Discovery</td>
+      <td>✓</td>
+      <td>✗</td>
+      <td>✗</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>Fuzzing Capabilities</td>
+      <td>Limited</td>
+      <td>Limited</td>
+      <td>Limited</td>
+      <td>Extensive</td>
+    </tr>
+    <tr>
+      <td>Active Development</td>
+      <td>✓</td>
+      <td>✗</td>
+      <td>Limited</td>
+      <td>✓</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Command Line Arguments
+
+### Global Flags
+
+These flags apply to all Gobuster modes:
+
+```{=html}
+<div class="row">
+  <div class="col-md-6">
+    <ul>
+      <li><code>-z, --noprogress</code>: Don't display progress</li>
+      <li><code>-o, --output</code>: Output file to write results</li>
+      <li><code>-q, --quiet</code>: Don't print banner and other noise</li>
+      <li><code>-t, --threads</code>: Number of concurrent threads (default 10)</li>
+      <li><code>-v, --verbose</code>: Verbose output (errors)</li>
+      <li><code>-w, --wordlist</code>: Path to wordlist</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div class="alert alert-info">
+      <strong>Pro Tip:</strong> When running on targets you don't control, consider using lower thread counts to avoid overwhelming the server and potentially causing denial of service.
+    </div>
+  </div>
+</div>
+```
+
+### Directory Mode Specific Flags
+
+```bash
+gobuster dir --help
+```
+
+Key flags include:
+- `-u, --url`: Target URL
+- `-c, --cookies`: Cookies to use for requests
+- `-x, --extensions`: File extensions to search for
+- `-H, --headers`: Custom headers to add
+- `-k, --no-tls-validation`: Skip TLS certificate verification
+- `-n, --no-status`: Don't print status codes
+- `-e, --expanded`: Expanded mode, print full URLs
+- `-r, --follow-redirect`: Follow redirects
+- `-s, --status-codes`: Positive status codes (default "200,204,301,302,307,401,403")
+- `-b, --status-codes-blacklist`: Negative status codes
+
+## Practical Applications
+
+### Web Application Security Testing
+
+```{=html}
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <h4 class="card-title">Methodology Example</h4>
+    <ol>
+      <li>Perform initial reconnaissance with directory enumeration:
+        <pre><code>gobuster dir -u https://target.com -w common-dirs.txt</code></pre>
+      </li>
+      <li>Identify potentially sensitive directories</li>
+      <li>Perform deeper enumeration on discovered paths:
+        <pre><code>gobuster dir -u https://target.com/admin -w admin-wordlist.txt -x php</code></pre>
+      </li>
+      <li>Check for accessible configuration or backup files:
+        <pre><code>gobuster dir -u https://target.com -w backup-files.txt -x bak,old,~,backup</code></pre>
+      </li>
+      <li>Document findings and attempt to access discovered resources</li>
+    </ol>
+  </div>
+</div>
+```
+
+### Bug Bounty Hunting
+
+Gobuster is extensively used in bug bounty programs for initial reconnaissance:
+
+1. Map the attack surface with DNS enumeration
+2. Discover potentially overlooked endpoints with directory scanning
+3. Find development or testing environments with vhost enumeration
+4. Identify exposed sensitive information or functionality
+
+### Penetration Testing
+
+During authorized penetration tests, Gobuster helps:
+
+- Discover entry points for further testing
+- Identify access control issues with restricted directories
+- Find forgotten backup files that might contain credentials
+- Map complete application structure
+
+## Advanced Techniques
+
+### Creating Custom Wordlists
+
+Effective enumeration depends on quality wordlists. Consider these methods:
+
+1. **Web Scraping**: Extract words from the target website
+   ```bash
+   wget -r -l 2 https://target.com
+   cewl -d 2 -m 5 -w wordlist.txt https://target.com
+   ```
+
+2. **Combining Wordlists**: Merge and deduplicate existing lists
+   ```bash
+   cat wordlist1.txt wordlist2.txt | sort -u > combined-wordlist.txt
+   ```
+
+3. **Pattern-Based Generation**: Create wordlists based on naming conventions
+   ```bash
+   for i in {1..12}; do echo "backup-$(date +%Y)-$i" >> wordlist.txt; done
+   ```
+
+### Recursive Scanning
+
+To thoroughly enumerate a web application:
+
+```bash
+gobuster dir \
+  -u https://target.com \
+  -w /usr/share/wordlists/dirb/common.txt \
+  -r \
+  --wildcard
+```
+
+The `-r` flag enables recursive scanning, automatically enumerating discovered directories.
+
+### Automating with Scripts
+
+This Bash script combines multiple Gobuster modes for comprehensive enumeration:
+
+```bash
+#!/bin/bash
+
+TARGET=$1
+WORDLIST="/usr/share/wordlists/dirb/common.txt"
+DNS_WORDLIST="/usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt"
+OUTPUT_DIR="gobuster_results"
+
+# Create output directory
+mkdir -p $OUTPUT_DIR
+
+echo "[*] Starting DNS enumeration..."
+gobuster dns \
+  -d $TARGET \
+  -w $DNS_WORDLIST \
+  -o "$OUTPUT_DIR/${TARGET}_dns.txt"
+
+echo "[*] Starting directory enumeration..."
+gobuster dir \
+  -u "https://$TARGET" \
+  -w $WORDLIST \
+  -x php,html,txt,conf,bak \
+  -o "$OUTPUT_DIR/${TARGET}_dir.txt"
+
+echo "[*] Starting vhost enumeration..."
+gobuster vhost \
+  -u "https://$TARGET" \
+  -w $DNS_WORDLIST \
+  -o "$OUTPUT_DIR/${TARGET}_vhost.txt"
+
+echo "[+] Enumeration complete. Results saved to $OUTPUT_DIR"
+```
+
+## Security Considerations
+
+### Legal and Ethical Usage
+
+```{=html}
+<div class="alert alert-warning">
+  <h4 class="alert-heading">Warning!</h4>
+  <p>Always ensure you have proper authorization before performing enumeration. Unauthorized scanning may:</p>
+  <ul>
+    <li>Violate computer crime laws</li>
+    <li>Breach terms of service</li>
+    <li>Trigger security alerts</li>
+    <li>Potentially cause service disruption</li>
+  </ul>
+</div>
+```
+### Rate Limiting and Stealth
+
+To avoid detection and minimize impact on target systems:
+
+1. **Reduce thread count**:
+   ```bash
+   gobuster dir -u https://target.com -w wordlist.txt -t 5
+   ```
+
+2. **Add delays between requests**:
+   ```bash
+   gobuster dir -u https://target.com -w wordlist.txt --delay 100ms
+   ```
+
+3. **Use custom User-Agent headers**:
+   ```bash
+   gobuster dir -u https://target.com -w wordlist.txt -a "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+   ```
+
+4. **Disable progress output** for quieter operation:
+   ```bash
+   gobuster dir -u https://target.com -w wordlist.txt -q -z
+   ```
+
+## Common Wordlists
+
+The effectiveness of Gobuster greatly depends on the quality of wordlists used. Here are some popular wordlists for different scanning scenarios:
+
+```{=html}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Wordlist</th>
+      <th>Size</th>
+      <th>Best For</th>
+      <th>Location (Kali Linux)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dirb/common.txt</td>
+      <td>4,614 words</td>
+      <td>Quick initial scans</td>
+      <td>/usr/share/wordlists/dirb/common.txt</td>
+    </tr>
+    <tr>
+      <td>dirbuster/directory-list-2.3-medium.txt</td>
+      <td>220,560 words</td>
+      <td>Thorough directory scans</td>
+      <td>/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt</td>
+    </tr>
+    <tr>
+      <td>SecLists/Discovery/DNS/subdomains-top1million-5000.txt</td>
+      <td>5,000 words</td>
+      <td>Common subdomains</td>
+      <td>/usr/share/wordlists/SecLists/Discovery/DNS/subdomains-top1million-5000.txt</td>
+    </tr>
+    <tr>
+      <td>SecLists/Discovery/Web-Content/raft-large-files.txt</td>
+      <td>37,042 words</td>
+      <td>File discovery</td>
+      <td>/usr/share/wordlists/SecLists/Discovery/Web-Content/raft-large-files.txt</td>
+    </tr>
+    <tr>
+      <td>SecLists/Discovery/Web-Content/api-endpoints.txt</td>
+      <td>3,091 words</td>
+      <td>API endpoint discovery</td>
+      <td>/usr/share/wordlists/SecLists/Discovery/Web-Content/api-endpoints.txt</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+![Popular Wordlists Visualization](https://www.researchgate.net/publication/348213104/figure/fig2/AS:976460324012032@1609817691018/sualization-of-the-recommanded-top-10-word-lists-by-softmax-and-graph-softmax-with-the.ppm)
+
+## Integration with Other Tools
+
+Gobuster works effectively as part of a larger reconnaissance toolkit:
+
+### With Nmap
+
+```bash
+# First identify open web servers with Nmap
+nmap -p 80,443 --open -oG nmap-scan.txt 192.168.1.0/24
+
+# Extract targets and feed to Gobuster
+grep "80/open\|443/open" nmap-scan.txt | cut -d" " -f2 > web-targets.txt
+
+# Scan each target with Gobuster
+for target in $(cat web-targets.txt); do
+    gobuster dir -u http://$target -w common.txt -o gobuster-$target.txt
+done
+```
+
+### With Burp Suite
+
+1. Discover directories with Gobuster
+2. Import findings into Burp Suite's target scope
+3. Perform targeted scanning on discovered endpoints
+4. Use Burp's crawler on discovered directories
+
+```{=html}
+<div class="row">
+  <div class="col-md-7">
+    <h4>Workflow Diagram</h4>
+    <div class="mermaid">
+    graph TD
+        A[Reconnaissance] --> B[Gobuster Scan]
+        B --> C[Directory Discovery]
+        B --> D[Subdomain Discovery]
+        C --> E[Import to Burp Suite]
+        D --> E
+        E --> F[Targeted Scanning]
+        F --> G[Vulnerability Identification]
+        G --> H[Exploitation]
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="card bg-light">
+      <div class="card-body">
+        <h5 class="card-title">Integration Benefits</h5>
+        <ul>
+          <li>Streamlined reconnaissance process</li>
+          <li>More thorough coverage of target</li>
+          <li>Efficient use of specialized tools</li>
+          <li>Reduced manual effort</li>
+          <li>Consistent methodology</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+## Case Studies
+
+### Finding Hidden Administrative Interfaces
+
+```{=html}
+<div class="card mb-3">
+  <div class="card-header bg-light">Real-World Example</div>
+  <div class="card-body">
+    <p>During a penetration test of a corporate web application, the security team used Gobuster to discover a hidden administrative interface:</p>
+    
+    <pre><code class="bash">gobuster dir -u https://company.com -w admin-wordlists.txt -x php</code></pre>
+    
+    <p>The scan revealed an unexpected endpoint at <code>/manage-system/admin.php</code> that wasn't linked from the main site. This administrative panel had weak authentication, leading to full application compromise.</p>
+  </div>
+</div>
+```
+
+### Uncovering Development API Endpoints
+
+During bug bounty hunting on a financial services website, a researcher used Gobuster to scan for API endpoints:
+
+```bash
+gobuster dir -u https://api.financial-site.com -w api-wordlists.txt
+```
+
+This revealed several undocumented API endpoints including `/api/v1/internal/user/` which exposed sensitive user information without proper authentication, resulting in a critical vulnerability finding.
+
+## Troubleshooting Common Issues
+
+### Error: Unable to connect to host
+
+This error typically occurs when:
+- The target is blocking your IP
+- The target is down or unreachable
+- There's a firewall or WAF in place
+
+**Solution**: Verify connectivity with a simple curl request, check for IP blocking, or try with `--delay` flag.
+
+### False Positives with Wildcard Responses
+
+Some servers return "200 OK" for all requests regardless of existence.
+
+**Solution**: Use the `--wildcard` flag to detect and filter out wildcard responses:
+
+```bash
+gobuster dir -u https://target.com -w wordlist.txt --wildcard
+```
+
+### TLS/Certificate Issues
+
+When scanning HTTPS targets, you might encounter certificate validation errors.
+
+**Solution**: Use the `-k` flag to skip certificate verification:
+
+```bash
+gobuster dir -u https://target.com -w wordlist.txt -k
+```
+
+## Best Practices
+
+### Scan Methodology
+
+For effective enumeration, follow this approach:
+
+1. **Start broad** with a small wordlist to identify general structure
+2. **Go deeper** with targeted scans on discovered directories
+3. **Use appropriate extensions** based on the technology stack
+4. **Save results** for documentation and further analysis
+5. **Combine modes** (dir, dns, vhost) for comprehensive reconnaissance
+
+### Resource Management
+
+```{=html}
+<div class="alert alert-success">
+  <h4 class="alert-heading">Performance Tips</h4>
+  <ul>
+    <li><strong>Thread count:</strong> Balance between speed and target load (10-50 threads typically)</li>
+    <li><strong>Wordlist selection:</strong> Choose appropriate size based on scan scope</li>
+    <li><strong>Status filtering:</strong> Filter out unwanted responses to reduce noise</li>
+    <li><strong>Use expanded mode:</strong> More comprehensive output with <code>-e</code> flag</li>
+  </ul>
+</div>
+```
+
+## Future Development
+
+The Gobuster project continues to evolve with new features and improvements:
+
+- Enhanced pattern matching for more precise filtering
+- Additional scanning modes for specific use cases
+- Performance optimizations for larger scans
+- Improved reporting capabilities
+- Better integration with other security tools
+
+## Conclusion
+
+Gobuster stands out as an essential tool for web application security testing, penetration testing, and bug bounty hunting. Its speed, flexibility, and multiple scanning modes make it indispensable for discovering hidden resources and mapping attack surfaces.
+
+By leveraging Gobuster's capabilities alongside other security tools and methodologies, security professionals can conduct more thorough assessments and identify vulnerabilities that might otherwise remain hidden. The key to success with Gobuster lies in understanding its various features, selecting appropriate wordlists, and following a structured approach to enumeration.
+
+Whether you're a seasoned security professional or just starting in the field, mastering Gobuster will significantly enhance your reconnaissance capabilities and improve your overall security testing effectiveness.
+
+## References
+
+1. OJ Reeves. (2023). Gobuster GitHub Repository. [github.com/OJ/gobuster](https://github.com/OJ/gobuster)
+2. OWASP. (2022). "Web Security Testing Guide: Information Gathering." [owasp.org/www-project-web-security-testing-guide](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/)
+3. Kali Linux Tools. (2023). "Gobuster Documentation." [tools.kali.org/web-applications/gobuster](https://tools.kali.org/web-applications/gobuster)
+4. SecLists Project. (2023). "Collection of Security Wordlists." [github.com/danielmiessler/SecLists](https://github.com/danielmiessler/SecLists)
+5. HackerOne. (2022). "The Beginners Guide to Directory Enumeration." HackerOne Blog.
+6. PortSwigger. (2023). "Using Directory Enumeration Tools with Burp Suite." Web Security Academy.
