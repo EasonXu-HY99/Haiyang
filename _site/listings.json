@@ -8,7 +8,7 @@
   {
     "listing": "/tools.html",
     "items": [
-      "/cybertools/censys.html",
+      "/cybertools/amass.html",
       "/cybertools/maltego.html",
       "/cybertools/nmap.html",
       "/cybertools/reconng.html",
@@ -16,13 +16,13 @@
       "/cybertools/thehavester.html",
       "/cybertools/aircrackng.html",
       "/cybertools/airsnort.html",
-      "/cybertools/amass.html",
       "/cybertools/appscan.html",
       "/cybertools/appspider.html",
       "/cybertools/autopsy.html",
       "/cybertools/binwalk.html",
       "/cybertools/burpsuite.html",
       "/cybertools/cainabel.html",
+      "/cybertools/censys.html",
       "/cybertools/cobaltstrike.html",
       "/cybertools/coreimpart.html",
       "/cybertools/evilginx.html",
