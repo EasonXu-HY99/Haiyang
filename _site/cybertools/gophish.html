@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-08">
 
-<title>gophish – Haiyang's Tech Portfolio</title>
+<title>GoPhish: Open-Source Phishing Toolkit – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,16 +189,33 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#creating-your-first-campaign" id="toc-creating-your-first-campaign" class="nav-link" data-scroll-target="#creating-your-first-campaign">Creating Your First Campaign</a></li>
+  <li><a href="#demo-building-a-phishing-campaign" id="toc-demo-building-a-phishing-campaign" class="nav-link" data-scroll-target="#demo-building-a-phishing-campaign">Demo: Building a Phishing Campaign</a></li>
+  <li><a href="#security-considerations" id="toc-security-considerations" class="nav-link" data-scroll-target="#security-considerations">Security Considerations</a></li>
+  <li><a href="#advanced-configuration" id="toc-advanced-configuration" class="nav-link" data-scroll-target="#advanced-configuration">Advanced Configuration</a></li>
+  <li><a href="#integration-with-other-tools" id="toc-integration-with-other-tools" class="nav-link" data-scroll-target="#integration-with-other-tools">Integration with Other Tools</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">GoPhish: Open-Source Phishing Toolkit</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Software Engineering</div>
+    <div class="quarto-category">Cybersecurity</div>
   </div>
   </div>
 
@@ -182,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 8, 2025</p>
     </div>
   </div>
   
@@ -194,8 +245,126 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p><a href="https://getgophish.com/">GoPhish</a> is a powerful, open-source phishing toolkit designed to help organizations test their security awareness through simulated phishing campaigns. As phishing remains one of the most prevalent attack vectors used by malicious actors, GoPhish provides security teams with the tools needed to strengthen their human firewall.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://img.helpnetsecurity.com/wp-content/uploads/2016/04/09113139/gophish-featured.jpg" class="img-fluid figure-img" width="300"></p>
+<figcaption>GoPhish Logo</figcaption>
+</figure>
+</div>
+</section>
+<section id="key-features" class="level2">
+<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<p>GoPhish offers a comprehensive set of features that make it an essential tool for security professionals:</p>
+<ul>
+<li><strong>User-friendly web interface</strong>: Intuitive dashboard for creating and managing phishing campaigns</li>
+<li><strong>Extensive reporting</strong>: Detailed metrics and analytics on campaign performance</li>
+<li><strong>Landing page replication</strong>: Easily clone legitimate websites for realistic phishing simulations</li>
+<li><strong>Email templating</strong>: Create customizable email templates with tracking capabilities</li>
+<li><strong>Scheduled campaigns</strong>: Automate campaign launches for consistent testing</li>
+<li><strong>API access</strong>: Integrate GoPhish into your existing security infrastructure</li>
+</ul>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>Installing and configuring GoPhish is straightforward. Below is a basic guide to get you up and running:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the latest release</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/gophish/gophish/releases/latest/download/gophish-v0.12.1-linux-64bit.zip</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the archive</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> gophish-v0.12.1-linux-64bit.zip</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set execution permissions</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x gophish</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Run GoPhish</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ex">./gophish</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once launched, you can access the admin interface at <code>https://localhost:3333</code> with the default credentials (username: admin, password: gophish).</p>
+</section>
+<section id="creating-your-first-campaign" class="level2">
+<h2 class="anchored" data-anchor-id="creating-your-first-campaign">Creating Your First Campaign</h2>
+<p>The campaign creation process follows these main steps:</p>
+<ol type="1">
+<li><strong>Create landing pages</strong>: Design or clone the pages where users will land after clicking links</li>
+<li><strong>Set up email templates</strong>: Craft the phishing emails that will be sent to targets</li>
+<li><strong>Define sending profiles</strong>: Configure the email sending settings</li>
+<li><strong>Manage user groups</strong>: Organize target recipients into logical groups</li>
+<li><strong>Launch campaigns</strong>: Schedule and execute your phishing simulations</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://user-images.githubusercontent.com/1317288/27941933-e72d302c-6298-11e7-9db1-fe592c79c61e.png" class="img-fluid figure-img"></p>
+<figcaption>GoPhish Dashboard</figcaption>
+</figure>
+</div>
+</section>
+<section id="demo-building-a-phishing-campaign" class="level2">
+<h2 class="anchored" data-anchor-id="demo-building-a-phishing-campaign">Demo: Building a Phishing Campaign</h2>
+<p>The following video demonstrates how to create a basic phishing campaign using GoPhish:</p>
+<div class="ratio ratio-16x9">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lDOAC9QCUxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="security-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations">Security Considerations</h2>
+<p>When using GoPhish for security testing, consider these important factors:</p>
+<ul>
+<li><strong>Legal authorization</strong>: Always obtain proper authorization before conducting phishing tests</li>
+<li><strong>Scope definition</strong>: Clearly define test parameters and communicate them to stakeholders</li>
+<li><strong>Data protection</strong>: Handle all collected data according to relevant privacy regulations</li>
+<li><strong>Educational focus</strong>: Emphasize the educational aspect of campaigns over punitive measures</li>
+</ul>
+</section>
+<section id="advanced-configuration" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-configuration">Advanced Configuration</h2>
+<p>GoPhish can be customized for more complex testing scenarios:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">admin_server</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">listen_url</span><span class="kw">:</span><span class="at"> 0.0.0.0:3333</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">use_tls</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">cert_path</span><span class="kw">:</span><span class="at"> example.crt</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">key_path</span><span class="kw">:</span><span class="at"> example.key</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">phish_server</span><span class="kw">:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">listen_url</span><span class="kw">:</span><span class="at"> 0.0.0.0:80</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">use_tls</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">database</span><span class="kw">:</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> sqlite3</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">path</span><span class="kw">:</span><span class="at"> gophish.db</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">logging</span><span class="kw">:</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">filename</span><span class="kw">:</span><span class="at"> gophish.log</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">level</span><span class="kw">:</span><span class="at"> info</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="integration-with-other-tools" class="level2">
+<h2 class="anchored" data-anchor-id="integration-with-other-tools">Integration with Other Tools</h2>
+<p>GoPhish works well with other security tools and can be integrated into broader security testing frameworks:</p>
+<ul>
+<li><strong>SIEM systems</strong>: Feed phishing exercise data into security information and event management tools</li>
+<li><strong>Training platforms</strong>: Connect with security awareness training solutions</li>
+<li><strong>Automation tools</strong>: Use the API to automate campaign creation and reporting</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>GoPhish represents an essential tool in the modern security professional’s arsenal. By conducting regular phishing simulations, organizations can identify vulnerabilities in their human security layer and develop targeted training programs to address these weaknesses.</p>
+<p>For more information, visit the <a href="https://docs.getgophish.com/">official GoPhish documentation</a> or explore the <a href="https://github.com/gophish/gophish">GitHub repository</a>.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>GoPhish Official Website: <a href="https://getgophish.com/">https://getgophish.com/</a></li>
+<li>GoPhish Documentation: <a href="https://docs.getgophish.com/">https://docs.getgophish.com/</a></li>
+<li>GitHub Repository: <a href="https://github.com/gophish/gophish">https://github.com/gophish/gophish</a></li>
+<li>SANS Institute. (2023). “Phishing Awareness Training Best Practices”</li>
+<li>National Cyber Security Centre. (2024). “Phishing Attacks: Defending Your Organisation”</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

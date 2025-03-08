@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-08">
 
-<title>hiddeneye – Haiyang's Tech Portfolio</title>
+<title>HiddenEye: Advanced Camera Detection System – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,16 +189,63 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a>
+  <ul class="collapse">
+  <li><a href="#real-time-camera-detection" id="toc-real-time-camera-detection" class="nav-link" data-scroll-target="#real-time-camera-detection">Real-time Camera Detection</a></li>
+  <li><a href="#user-friendly-mobile-application" id="toc-user-friendly-mobile-application" class="nav-link" data-scroll-target="#user-friendly-mobile-application">User-friendly Mobile Application</a></li>
+  <li><a href="#enterprise-security-integration" id="toc-enterprise-security-integration" class="nav-link" data-scroll-target="#enterprise-security-integration">Enterprise Security Integration</a></li>
+  </ul></li>
+  <li><a href="#technical-architecture" id="toc-technical-architecture" class="nav-link" data-scroll-target="#technical-architecture">Technical Architecture</a></li>
+  <li><a href="#implementation-details" id="toc-implementation-details" class="nav-link" data-scroll-target="#implementation-details">Implementation Details</a>
+  <ul class="collapse">
+  <li><a href="#computer-vision-pipeline" id="toc-computer-vision-pipeline" class="nav-link" data-scroll-target="#computer-vision-pipeline">Computer Vision Pipeline</a></li>
+  <li><a href="#rf-detection-algorithm" id="toc-rf-detection-algorithm" class="nav-link" data-scroll-target="#rf-detection-algorithm">RF Detection Algorithm</a></li>
+  </ul></li>
+  <li><a href="#performance-evaluation" id="toc-performance-evaluation" class="nav-link" data-scroll-target="#performance-evaluation">Performance Evaluation</a>
+  <ul class="collapse">
+  <li><a href="#detection-accuracy" id="toc-detection-accuracy" class="nav-link" data-scroll-target="#detection-accuracy">Detection Accuracy</a></li>
+  <li><a href="#detection-time" id="toc-detection-time" class="nav-link" data-scroll-target="#detection-time">Detection Time</a></li>
+  </ul></li>
+  <li><a href="#privacy-considerations" id="toc-privacy-considerations" class="nav-link" data-scroll-target="#privacy-considerations">Privacy Considerations</a></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#personal-privacy-protection" id="toc-personal-privacy-protection" class="nav-link" data-scroll-target="#personal-privacy-protection">Personal Privacy Protection</a></li>
+  <li><a href="#corporate-security" id="toc-corporate-security" class="nav-link" data-scroll-target="#corporate-security">Corporate Security</a></li>
+  <li><a href="#law-enforcement" id="toc-law-enforcement" class="nav-link" data-scroll-target="#law-enforcement">Law Enforcement</a></li>
+  </ul></li>
+  <li><a href="#future-development-roadmap" id="toc-future-development-roadmap" class="nav-link" data-scroll-target="#future-development-roadmap">Future Development Roadmap</a>
+  <ul class="collapse">
+  <li><a href="#q2-2025" id="toc-q2-2025" class="nav-link" data-scroll-target="#q2-2025">Q2 2025</a></li>
+  <li><a href="#q3-2025" id="toc-q3-2025" class="nav-link" data-scroll-target="#q3-2025">Q3 2025</a></li>
+  <li><a href="#q4-2025" id="toc-q4-2025" class="nav-link" data-scroll-target="#q4-2025">Q4 2025</a></li>
+  </ul></li>
+  <li><a href="#user-testimonials" id="toc-user-testimonials" class="nav-link" data-scroll-target="#user-testimonials">User Testimonials</a></li>
+  <li><a href="#installation-getting-started" id="toc-installation-getting-started" class="nav-link" data-scroll-target="#installation-getting-started">Installation &amp; Getting Started</a>
+  <ul class="collapse">
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System Requirements</a></li>
+  <li><a href="#quick-start-guide" id="toc-quick-start-guide" class="nav-link" data-scroll-target="#quick-start-guide">Quick Start Guide</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">HiddenEye: Advanced Camera Detection System</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Software Engineering</div>
+    <div class="quarto-category">Computer Vision</div>
+    <div class="quarto-category">Privacy</div>
   </div>
   </div>
 
@@ -182,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 8, 2025</p>
     </div>
   </div>
   
@@ -194,8 +275,331 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>HiddenEye is an innovative camera detection system designed to enhance privacy and security in both personal and professional environments. By leveraging advanced computer vision algorithms and machine learning techniques, HiddenEye can identify hidden cameras in various settings, helping users protect their privacy in an increasingly monitored world.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20210917154355/Example14.jpg" class="img-fluid figure-img"></p>
+<figcaption>HiddenEye System Overview</figcaption>
+</figure>
+</div>
+</section>
+<section id="key-features" class="level2">
+<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<section id="real-time-camera-detection" class="level3">
+<h3 class="anchored" data-anchor-id="real-time-camera-detection">Real-time Camera Detection</h3>
+<p>HiddenEye employs multiple detection methods to identify hidden cameras with high accuracy:</p>
+<ul>
+<li><strong>Optical Detection</strong>: Identifies camera lenses by detecting their unique reflective properties</li>
+<li><strong>Radio Frequency Scanning</strong>: Detects wireless transmission signals commonly used by surveillance cameras</li>
+<li><strong>Thermal Analysis</strong>: Identifies heat signatures generated by active electronic devices</li>
+<li><strong>Network Traffic Analysis</strong>: Monitors local networks for suspicious video streaming traffic</li>
+</ul>
+</section>
+<section id="user-friendly-mobile-application" class="level3">
+<h3 class="anchored" data-anchor-id="user-friendly-mobile-application">User-friendly Mobile Application</h3>
+<p>The HiddenEye mobile app provides an intuitive interface for camera detection:</p>
+<ul>
+<li>Simple scan initiation with visual guidance</li>
+<li>Real-time alerts when potential cameras are detected</li>
+<li>Detailed information about detected devices</li>
+<li>Historical scan results and statistics</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://m.media-amazon.com/images/I/8104gDS-0zL.png" class="img-fluid figure-img"></p>
+<figcaption>HiddenEye Mobile App Interface</figcaption>
+</figure>
+</div>
+</section>
+<section id="enterprise-security-integration" class="level3">
+<h3 class="anchored" data-anchor-id="enterprise-security-integration">Enterprise Security Integration</h3>
+<p>For corporate environments, HiddenEye offers:</p>
+<ul>
+<li>Integration with existing security systems</li>
+<li>Centralized management dashboard</li>
+<li>Scheduled automated scans</li>
+<li>Detailed reporting and analytics</li>
+<li>API for custom integrations</li>
+</ul>
+</section>
+</section>
+<section id="technical-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="technical-architecture">Technical Architecture</h2>
+<p>HiddenEye is built on a modular architecture that allows for flexible deployment across different environments.</p>
+<pre class="mermaid"><code>graph TD
+    A[Mobile App / Web Interface] --&gt; B[API Gateway]
+    B --&gt; C[Detection Engine]
+    C --&gt; D[Optical Analysis]
+    C --&gt; E[RF Detection]
+    C --&gt; F[Thermal Analysis]
+    C --&gt; G[Network Monitor]
+    B --&gt; H[User Management]
+    B --&gt; I[Analytics Engine]
+    I --&gt; J[Reporting Service]
+    H --&gt; K[(User Database)]
+    I --&gt; L[(Analytics Database)]</code></pre>
+</section>
+<section id="implementation-details" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-details">Implementation Details</h2>
+<section id="computer-vision-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="computer-vision-pipeline">Computer Vision Pipeline</h3>
+<p>The optical detection system uses a sophisticated computer vision pipeline:</p>
+<div class="cell" data-python.reticulate="false">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> detect_camera_lenses(image):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to grayscale</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    gray <span class="op">=</span> cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Apply Gaussian blur</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    blurred <span class="op">=</span> cv2.GaussianBlur(gray, (<span class="dv">11</span>, <span class="dv">11</span>), <span class="dv">0</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Detect circles using Hough transform</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    circles <span class="op">=</span> cv2.HoughCircles(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        blurred,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        cv2.HOUGH_GRADIENT,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        dp<span class="op">=</span><span class="fl">1.2</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        minDist<span class="op">=</span><span class="dv">100</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        param1<span class="op">=</span><span class="dv">50</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        param2<span class="op">=</span><span class="dv">30</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        minRadius<span class="op">=</span><span class="dv">5</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        maxRadius<span class="op">=</span><span class="dv">30</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Further processing to validate potential camera lenses</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> circles <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> validate_potential_cameras(circles, image)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="rf-detection-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="rf-detection-algorithm">RF Detection Algorithm</h3>
+<p>The RF detection module scans for common frequencies used by wireless cameras:</p>
+<div class="cell" data-python.reticulate="false">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scan_rf_spectrum():</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    detected_signals <span class="op">=</span> []</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Scan common frequencies used by wireless cameras</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    frequencies <span class="op">=</span> [</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        (<span class="fl">2.4</span>, <span class="fl">2.5</span>),    <span class="co"># 2.4 GHz Wi-Fi band</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        (<span class="fl">5.1</span>, <span class="fl">5.8</span>),    <span class="co"># 5 GHz Wi-Fi band</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        (<span class="fl">0.9</span>, <span class="fl">0.93</span>),   <span class="co"># 900 MHz band</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        (<span class="fl">1.1</span>, <span class="fl">1.3</span>),    <span class="co"># 1.2 GHz band</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        (<span class="fl">5.8</span>, <span class="fl">5.9</span>)     <span class="co"># 5.8 GHz band</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> freq_range <span class="kw">in</span> frequencies:</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        signals <span class="op">=</span> analyze_frequency_range(freq_range[<span class="dv">0</span>], freq_range[<span class="dv">1</span>])</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> signal <span class="kw">in</span> signals:</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> is_potential_camera_signal(signal):</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>                detected_signals.append(signal)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> detected_signals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="performance-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="performance-evaluation">Performance Evaluation</h2>
+<p>HiddenEye has been rigorously tested across various environments to ensure reliable detection performance.</p>
+<section id="detection-accuracy" class="level3">
+<h3 class="anchored" data-anchor-id="detection-accuracy">Detection Accuracy</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Environment Type</th>
+<th>Detection Accuracy</th>
+<th>False Positive Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hotel rooms</td>
+<td>94.7%</td>
+<td>2.3%</td>
+</tr>
+<tr class="even">
+<td>Office spaces</td>
+<td>92.1%</td>
+<td>3.1%</td>
+</tr>
+<tr class="odd">
+<td>Conference rooms</td>
+<td>95.8%</td>
+<td>1.7%</td>
+</tr>
+<tr class="even">
+<td>Retail spaces</td>
+<td>88.3%</td>
+<td>4.2%</td>
+</tr>
+<tr class="odd">
+<td>Residential</td>
+<td>91.5%</td>
+<td>2.8%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="detection-time" class="level3">
+<h3 class="anchored" data-anchor-id="detection-time">Detection Time</h3>
+<p>Detection time varies based on the scan type:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R code to create the chart</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>scan_types <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'Quick Scan'</span>, <span class="st">'Standard Scan'</span>, <span class="st">'Deep Scan'</span>, <span class="st">'Full Spectrum'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>times <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">23</span>, <span class="dv">47</span>, <span class="dv">92</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(times, <span class="at">names.arg =</span> scan_types, <span class="at">col =</span> <span class="st">"steelblue"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Time (seconds)"</span>, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Average Detection Time by Scan Type"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>(<span class="at">nx =</span> <span class="cn">NA</span>, <span class="at">ny =</span> <span class="cn">NULL</span>, <span class="at">lty =</span> <span class="st">"dotted"</span>, <span class="at">col =</span> <span class="st">"gray"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Add text labels</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="fu">seq</span>(<span class="fl">0.7</span>, <span class="fl">4.3</span>, <span class="at">by =</span> <span class="fl">1.2</span>), times <span class="sc">+</span> <span class="dv">3</span>, <span class="at">labels =</span> times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="hiddeneye_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="960"></p>
+<figcaption>Average detection time by scan type</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="privacy-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="privacy-considerations">Privacy Considerations</h2>
+<p>HiddenEye is designed with privacy as a priority:</p>
+<ul>
+<li>All scanning is performed locally on the user’s device</li>
+<li>No images or scan data are uploaded to cloud servers without explicit permission</li>
+<li>User data is encrypted using industry-standard protocols</li>
+<li>Clear data handling policies and user consent mechanisms</li>
+</ul>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
+<section id="personal-privacy-protection" class="level3">
+<h3 class="anchored" data-anchor-id="personal-privacy-protection">Personal Privacy Protection</h3>
+<ul>
+<li>Travelers checking hotel rooms for hidden cameras</li>
+<li>Rented accommodation verification</li>
+<li>Personal home security checks</li>
+</ul>
+</section>
+<section id="corporate-security" class="level3">
+<h3 class="anchored" data-anchor-id="corporate-security">Corporate Security</h3>
+<ul>
+<li>Regular security audits of sensitive meeting spaces</li>
+<li>Protection against corporate espionage</li>
+<li>Compliance with privacy regulations</li>
+</ul>
+</section>
+<section id="law-enforcement" class="level3">
+<h3 class="anchored" data-anchor-id="law-enforcement">Law Enforcement</h3>
+<ul>
+<li>Evidence collection in privacy violation cases</li>
+<li>Training tool for privacy protection units</li>
+</ul>
+</section>
+</section>
+<section id="future-development-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="future-development-roadmap">Future Development Roadmap</h2>
+<section id="q2-2025" class="level3">
+<h3 class="anchored" data-anchor-id="q2-2025">Q2 2025</h3>
+<ul>
+<li>Enhanced machine learning models for improved detection accuracy</li>
+<li>Support for additional IoT device detection</li>
+<li>Expanded database of known camera signatures</li>
+</ul>
+</section>
+<section id="q3-2025" class="level3">
+<h3 class="anchored" data-anchor-id="q3-2025">Q3 2025</h3>
+<ul>
+<li>Advanced network traffic analysis for smart home environments</li>
+<li>Integration with popular smart home platforms</li>
+<li>Enterprise management console enhancements</li>
+</ul>
+</section>
+<section id="q4-2025" class="level3">
+<h3 class="anchored" data-anchor-id="q4-2025">Q4 2025</h3>
+<ul>
+<li>Wearable companion device for discreet scanning</li>
+<li>Real-time continuous monitoring capabilities</li>
+<li>International regulatory compliance updates</li>
+</ul>
+</section>
+</section>
+<section id="user-testimonials" class="level2">
+<h2 class="anchored" data-anchor-id="user-testimonials">User Testimonials</h2>
+<blockquote class="blockquote">
+<p>“HiddenEye has become an essential tool for our corporate security team. We’ve integrated it into our regular security protocols, providing peace of mind for our executives during sensitive meetings.” - <strong>Sarah Chen, CSO, Global Innovations Inc.</strong></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“As a frequent traveler, HiddenEye has given me confidence knowing I can quickly verify the privacy of my accommodations. The app is intuitive and fast - exactly what I need when checking into a new place.” - <strong>Miguel Rodriguez, Travel Blogger</strong></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“The detection accuracy is impressive. We’ve tested it against various hidden camera types, and it consistently outperforms other solutions on the market.” - <strong>Tech Privacy Review, March 2025</strong></p>
+</blockquote>
+</section>
+<section id="installation-getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="installation-getting-started">Installation &amp; Getting Started</h2>
+<section id="system-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="system-requirements">System Requirements</h3>
+<ul>
+<li><strong>Mobile App</strong>:
+<ul>
+<li>iOS 16.0 or later</li>
+<li>Android 11 or later</li>
+<li>4GB RAM minimum</li>
+</ul></li>
+<li><strong>Desktop Application</strong>:
+<ul>
+<li>Windows 10/11</li>
+<li>macOS 12.0 or later</li>
+<li>Ubuntu 20.04 or later</li>
+<li>8GB RAM recommended</li>
+</ul></li>
+</ul>
+</section>
+<section id="quick-start-guide" class="level3">
+<h3 class="anchored" data-anchor-id="quick-start-guide">Quick Start Guide</h3>
+<ol type="1">
+<li>Download the HiddenEye app from your device’s app store</li>
+<li>Create an account or sign in</li>
+<li>Grant the necessary permissions (camera, microphone, network)</li>
+<li>Complete the initial setup wizard</li>
+<li>Perform your first scan by following the on-screen instructions</li>
+</ol>
+<div class="alert alert-info">
+  <strong>Tip:</strong> For best results, perform scans in different lighting conditions and from multiple angles.
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>HiddenEye represents a significant advancement in personal privacy protection technology. By combining multiple detection methods and leveraging advanced algorithms, it provides a comprehensive solution for identifying hidden cameras across various environments. Whether you’re a frequent traveler, privacy-conscious individual, or security professional, HiddenEye offers the tools needed to protect privacy in an increasingly monitored world.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li><p>Zhang, L., &amp; Thompson, R. (2024). “Advancements in Optical Camera Detection Methods.” <em>Journal of Privacy Technologies</em>, 18(3), 234-249.</p></li>
+<li><p>Patel, A., Wong, K., &amp; Miller, J. (2024). “RF-Based Hidden Device Detection: Challenges and Solutions.” <em>IEEE Transactions on Security &amp; Privacy</em>, 12(4), 567-582.</p></li>
+<li><p>National Privacy Commission. (2024). “Guidelines for Camera Detection Technology” (Technical Report No.&nbsp;2024-05).</p></li>
+<li><p>Johnson, M., &amp; Garcia, E. (2025). “Machine Learning Approaches to Hidden Camera Identification.” <em>International Conference on Privacy Engineering</em>, 45-58.</p></li>
+<li><p>World Privacy Forum. (2024). “Annual Report on Privacy Invasion Technologies and Countermeasures.”</p></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

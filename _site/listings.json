@@ -8,6 +8,9 @@
   {
     "listing": "/tools.html",
     "items": [
+      "/cybertools/gophish.html",
+      "/cybertools/hiddeneye.html",
+      "/cybertools/socialfish.html",
       "/cybertools/amass.html",
       "/cybertools/censys.html",
       "/cybertools/gobuster.html",
@@ -31,10 +34,8 @@
       "/cybertools/evilurl.html",
       "/cybertools/exploitdb.html",
       "/cybertools/foremost.html",
-      "/cybertools/gophish.html",
       "/cybertools/guymager.html",
       "/cybertools/hashcat.html",
-      "/cybertools/hiddeneye.html",
       "/cybertools/hydra.html",
       "/cybertools/johntheripper.html",
       "/cybertools/kismet.html",
@@ -51,7 +52,6 @@
       "/cybertools/reaver.html",
       "/cybertools/retina.html",
       "/cybertools/sluethkit.html",
-      "/cybertools/socialfish.html",
       "/cybertools/sqlmap.html",
       "/cybertools/tcpdump.html",
       "/cybertools/thchydra.html",

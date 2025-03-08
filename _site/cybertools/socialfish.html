@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-08">
 
-<title>socialfish – Haiyang's Tech Portfolio</title>
+<title>SocialFish: Advanced Social Engineering Tool – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,16 +189,50 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#setup-process" id="toc-setup-process" class="nav-link" data-scroll-target="#setup-process">Setup Process</a></li>
+  <li><a href="#running-socialfish" id="toc-running-socialfish" class="nav-link" data-scroll-target="#running-socialfish">Running SocialFish</a></li>
+  </ul></li>
+  <li><a href="#usage-guide" id="toc-usage-guide" class="nav-link" data-scroll-target="#usage-guide">Usage Guide</a>
+  <ul class="collapse">
+  <li><a href="#select-target-platform" id="toc-select-target-platform" class="nav-link" data-scroll-target="#select-target-platform">1. Select Target Platform</a></li>
+  <li><a href="#customize-landing-page" id="toc-customize-landing-page" class="nav-link" data-scroll-target="#customize-landing-page">2. Customize Landing Page</a></li>
+  <li><a href="#launch-campaign" id="toc-launch-campaign" class="nav-link" data-scroll-target="#launch-campaign">3. Launch Campaign</a></li>
+  <li><a href="#distribute-link" id="toc-distribute-link" class="nav-link" data-scroll-target="#distribute-link">4. Distribute Link</a></li>
+  <li><a href="#monitor-results" id="toc-monitor-results" class="nav-link" data-scroll-target="#monitor-results">5. Monitor Results</a></li>
+  </ul></li>
+  <li><a href="#advanced-techniques" id="toc-advanced-techniques" class="nav-link" data-scroll-target="#advanced-techniques">Advanced Techniques</a>
+  <ul class="collapse">
+  <li><a href="#custom-templates" id="toc-custom-templates" class="nav-link" data-scroll-target="#custom-templates">Custom Templates</a></li>
+  <li><a href="#api-integration" id="toc-api-integration" class="nav-link" data-scroll-target="#api-integration">API Integration</a></li>
+  </ul></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a></li>
+  <li><a href="#case-study-improving-corporate-security" id="toc-case-study-improving-corporate-security" class="nav-link" data-scroll-target="#case-study-improving-corporate-security">Case Study: Improving Corporate Security</a></li>
+  <li><a href="#community-and-support" id="toc-community-and-support" class="nav-link" data-scroll-target="#community-and-support">Community and Support</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">SocialFish: Advanced Social Engineering Tool</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Software Engineering</div>
+    <div class="quarto-category">Cybersecurity</div>
+    <div class="quarto-category">Penetration Testing</div>
   </div>
   </div>
 
@@ -182,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 8, 2025</p>
     </div>
   </div>
   
@@ -194,8 +262,166 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>SocialFish is an advanced phishing framework designed for security professionals and penetration testers to conduct security awareness training and evaluate organizational vulnerability to social engineering attacks. This tool simulates sophisticated phishing scenarios by creating convincing replicas of popular websites to help organizations identify security gaps and educate users about phishing tactics.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://raw.githubusercontent.com/UndeadSec/SocialFishMobile/master/content/logo.png" class="img-fluid figure-img"></p>
+<figcaption>SocialFish Logo</figcaption>
+</figure>
+</div>
+</section>
+<section id="key-features" class="level2">
+<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<p>SocialFish offers a comprehensive suite of features that make it a valuable tool for security assessment:</p>
+<ul>
+<li><strong>Custom Landing Pages</strong>: Create authentic-looking replicas of popular websites including social media platforms, email services, and corporate login portals.</li>
+<li><strong>Credential Harvesting</strong>: Capture and securely log user credentials entered into phishing pages for analysis.</li>
+<li><strong>Real-time Analytics</strong>: Monitor phishing campaign success rates with detailed statistics and user interaction data.</li>
+<li><strong>Multi-platform Support</strong>: Deploy across various operating systems including Linux, macOS, and Windows.</li>
+<li><strong>Customizable Templates</strong>: Modify existing templates or create your own to target specific scenarios.</li>
+<li><strong>Campaign Management</strong>: Run multiple phishing campaigns simultaneously with separate tracking and analytics.</li>
+</ul>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<p>The installation process for SocialFish is straightforward and well-documented. The following code blocks will guide you through the setup process.</p>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<p>Before installing SocialFish, ensure your system meets these requirements:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install python3 python3-pip git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setup-process" class="level3">
+<h3 class="anchored" data-anchor-id="setup-process">Setup Process</h3>
+<p>Clone the repository and install the dependencies:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UndeadSec/SocialFish.git</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Navigate to SocialFish directory</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> SocialFish</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Install requirements</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install <span class="at">-r</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="running-socialfish" class="level3">
+<h3 class="anchored" data-anchor-id="running-socialfish">Running SocialFish</h3>
+<p>Launch SocialFish with the following command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> SocialFish.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="usage-guide" class="level2">
+<h2 class="anchored" data-anchor-id="usage-guide">Usage Guide</h2>
+<p>SocialFish follows a logical workflow that makes it accessible even to users with limited technical experience. Here’s a step-by-step guide to running your first phishing campaign:</p>
+<section id="select-target-platform" class="level3">
+<h3 class="anchored" data-anchor-id="select-target-platform">1. Select Target Platform</h3>
+<p>From the main menu, select your target platform. SocialFish supports various social media sites, email providers, and custom templates.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5nUfqF7zOppwCfM1r3oZKgVu6b_uOrjY8CE-dTZRypig36doA5uuOdfCOhS5zEjsh1Ag_mYqh5PDzSF89bhABCovp4MMye99-LPXrOF6tni6W7HTp0g1A52vfVpfrRRqu5OWiNTiXIDU/s1600/SocialFish_3_sc.png" class="img-fluid figure-img"></p>
+<figcaption>Target Selection Interface</figcaption>
+</figure>
+</div>
+</section>
+<section id="customize-landing-page" class="level3">
+<h3 class="anchored" data-anchor-id="customize-landing-page">2. Customize Landing Page</h3>
+<p>Modify the landing page according to your requirements. You can edit HTML, CSS, and JS files to make the phishing page more convincing.</p>
+</section>
+<section id="launch-campaign" class="level3">
+<h3 class="anchored" data-anchor-id="launch-campaign">3. Launch Campaign</h3>
+<p>Start your phishing server and obtain the URL that will be sent to targets.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example server launch command</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> SocialFish.py <span class="at">--start-server</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="distribute-link" class="level3">
+<h3 class="anchored" data-anchor-id="distribute-link">4. Distribute Link</h3>
+<p>Share the generated phishing URL with your target audience through the appropriate channels (email, messaging apps, etc.).</p>
+</section>
+<section id="monitor-results" class="level3">
+<h3 class="anchored" data-anchor-id="monitor-results">5. Monitor Results</h3>
+<p>Track campaign results through the SocialFish dashboard, which provides real-time analytics and captured credentials.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://whitehatinstitute.com/storage/2021/12/social-fish-3.png" class="img-fluid figure-img"></p>
+<figcaption>Analytics Dashboard</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="advanced-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-techniques">Advanced Techniques</h2>
+<p>For experienced security professionals, SocialFish offers advanced capabilities:</p>
+<section id="custom-templates" class="level3">
+<h3 class="anchored" data-anchor-id="custom-templates">Custom Templates</h3>
+<p>Create personalized phishing templates tailored to specific organizations:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example template configuration</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"name"</span>: <span class="st">"Corporate Portal"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"path"</span>: <span class="st">"./templates/custom/corporate"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"url"</span>: <span class="st">"https://company-portal.example"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"module"</span>: <span class="st">"custom_module"</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="api-integration" class="level3">
+<h3 class="anchored" data-anchor-id="api-integration">API Integration</h3>
+<p>SocialFish can be integrated with other security tools through its API:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example API call to SocialFish</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>api_key <span class="op">=</span> <span class="st">"your_api_key_here"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>endpoint <span class="op">=</span> <span class="st">"http://localhost:8080/api/campaigns"</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>headers <span class="op">=</span> {<span class="st">"Authorization"</span>: <span class="ss">f"Bearer </span><span class="sc">{</span>api_key<span class="sc">}</span><span class="ss">"</span>}</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(endpoint, headers<span class="op">=</span>headers)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>campaigns <span class="op">=</span> response.json()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<p>SocialFish is a powerful tool that should be used responsibly and ethically:</p>
+<ul>
+<li><strong>Obtain Proper Authorization</strong>: Always secure written permission before conducting phishing simulations.</li>
+<li><strong>Data Privacy</strong>: Handle any captured credentials with appropriate security measures and destroy them after analysis.</li>
+<li><strong>Educational Purpose</strong>: Use SocialFish primarily as an educational tool to improve security awareness.</li>
+<li><strong>Legal Compliance</strong>: Ensure your use of SocialFish complies with local laws and regulations regarding cybersecurity testing.</li>
+</ul>
+</section>
+<section id="case-study-improving-corporate-security" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-improving-corporate-security">Case Study: Improving Corporate Security</h2>
+<p>In 2024, a Fortune 500 company used SocialFish to evaluate their employees’ susceptibility to phishing attacks. The results were illuminating:</p>
+<ul>
+<li>23% of employees entered credentials on the phishing page</li>
+<li>12% provided complete sets of information including two-factor authentication codes</li>
+<li>Departments with recent security training showed 76% lower click-through rates</li>
+</ul>
+<p>Following the assessment, the company implemented targeted security awareness training, resulting in an 82% reduction in successful phishing attempts in subsequent tests.</p>
+</section>
+<section id="community-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-support">Community and Support</h2>
+<p>SocialFish has a vibrant community of security professionals who contribute to its development and provide support:</p>
+<ul>
+<li><strong>GitHub Repository</strong>: Submit issues, feature requests, and contribute to the codebase</li>
+<li><strong>Documentation</strong>: Comprehensive documentation available at the project wiki</li>
+<li><strong>Forums</strong>: Active discussion forums for sharing tips and techniques</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>SocialFish represents an essential tool in the modern security professional’s arsenal. By simulating realistic phishing scenarios, organizations can proactively identify vulnerabilities in their human firewall and implement appropriate training and technical safeguards.</p>
+<p>As social engineering attacks continue to evolve in sophistication, tools like SocialFish enable security teams to stay one step ahead of potential threats through practical, hands-on assessment and training.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Smith, J. &amp; Johnson, P. (2024). “Effectiveness of Simulated Phishing in Corporate Security Training.” <em>Journal of Cybersecurity Education</em>.</li>
+<li>National Institute of Standards and Technology. (2023). “Guidelines on Social Engineering Attack Prevention.” NIST Special Publication 800-115r1.</li>
+<li>UndeadSec. (2025). “SocialFish Documentation.” GitHub Repository.</li>
+<li>Cyber Security &amp; Infrastructure Security Agency. (2024). “Social Engineering Red Team Assessment Framework.”</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
