@@ -3,7 +3,7 @@ title: "Wifite: Automated Wireless Auditing Simplified"
 date: "2025-03-10"
 categories: [Wireless Hacking]
 author: "Xu Haiyang"
-image: "/api/placeholder/800/400"
+image: "https://gitlab.com/uploads/-/system/project/avatar/11904401/kali-wifite.png"
 format:
   html:
     toc: true
@@ -15,7 +15,7 @@ format:
 
 Wifite is an automated wireless attack tool designed to audit multiple WEP, WPA, and WPS encrypted networks simultaneously. Unlike more complex wireless auditing tools that require extensive knowledge of command-line arguments, Wifite simplifies the process with an intuitive interface and automated attack sequences.
 
-![Wifite Logo](/api/placeholder/600/200)
+![Wifite Logo](https://gitlab.com/uploads/-/system/project/avatar/11904401/kali-wifite.png)
 
 Wifite was created to provide a streamlined approach to wireless network security assessment, making it accessible to both beginners and experienced penetration testers. Its key advantage is automation - running multiple attacks against multiple targets with minimal user intervention.
 
@@ -74,7 +74,7 @@ You can check for missing dependencies with:
 sudo wifite --check
 ```
 
-![Wifite Dependency Check](/api/placeholder/800/400)
+![Wifite Dependency Check](https://www.winmill.com/wp-content/uploads/2024/01/Figure-7-Wifite-Automated-Wi-Fi-Assessment-Tool-300x183.png)
 
 ## Basic Usage
 
@@ -90,7 +90,7 @@ This command will:
 3. Prompt you to select which networks to attack
 4. Automatically execute appropriate attacks based on encryption type
 
-![Wifite Basic Scan](/api/placeholder/800/500)
+![Wifite Basic Scan](https://www.oreilly.com/api/v2/epubs/9781789341768/files/assets/4bdb099f-22fc-4b40-ac64-ba4d85cef47e.png)
 
 ## Attack Workflows
 
@@ -208,7 +208,7 @@ sudo wifite --wpa --wep --wps --kill --crack --dict /path/to/wordlist.txt
 
 4. **Monitor attack progress:**
 
-![Wifite Attack Progress](/api/placeholder/800/400)
+![Wifite Attack Progress](https://www.researchgate.net/publication/319342934/figure/fig2/AS:532846915272704@1504052012374/Output-of-a-typical-Wifite-scan-The-Wifite-tool-can-conduct-exhaustive-keyword-searches.png)
 
 5. **Review results:**
 
@@ -256,7 +256,7 @@ Wifite has been rewritten (often called Wifite2) with significant improvements:
 - Better interface and status updates
 - Python-based rewrite for better maintenance
 
-![Wifite 2.0 Interface](/api/placeholder/800/400)
+![Wifite 2.0 Interface](https://media.invisioncic.com/r167241/monthly_2018_01/1.JPG.0686069528c5d36d6c03691c8ae73b4b.JPG)
 
 ## Best Practices and Tips
 

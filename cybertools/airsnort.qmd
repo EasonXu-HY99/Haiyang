@@ -3,7 +3,7 @@ title: "AirSnort: A Classic Wireless Network Security Tool"
 date: "2025-03-10"
 categories: [Wireless Hacking]
 author: "Xu Haiyang"
-image: "/api/placeholder/800/400"
+image: "https://image3.slideserve.com/5719562/airsnort-l.jpg"
 format:
   html:
     toc: true
@@ -15,7 +15,7 @@ format:
 
 AirSnort was one of the pioneering wireless network security tools that gained prominence in the early 2000s. Developed primarily for security research and network testing, it was designed to analyze vulnerabilities in WEP (Wired Equivalent Privacy) encryption, which was the standard security protocol for 802.11b wireless networks at that time.
 
-![AirSnort Logo](/api/placeholder/400/200)
+![AirSnort Logo](https://image3.slideserve.com/5719562/airsnort-l.jpg)
 
 ::: {.callout-note}
 ## Historical Context
@@ -74,7 +74,7 @@ AirSnort, along with other similar tools like Aircrack, dramatically changed the
 2. Accelerated development of stronger encryption protocols (WPA, WPA2)
 3. More rigorous security testing methodologies for wireless technologies
 
-![Evolution of Wireless Security](/api/placeholder/600/300)
+![Evolution of Wireless Security](https://www.learncisco.net/wp-content/themes/learncisco/assets/images/icnd1/36-evolution-of-wireless-security.jpg)
 
 ## Technical Requirements and Setup
 
@@ -111,7 +111,7 @@ While AirSnort is no longer actively maintained, studying its techniques provide
 - How practical attacks influence security standards
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-  <img src="/api/placeholder/560/315" alt="Legacy of AirSnort" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  <img src="https://miro.medium.com/v2/resize%3Afit%3A1200/1%2A_zJVfcpPoGVM9Tb2XjQhRQ.png" alt="Legacy of AirSnort" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
 </div>
 
 ## Conclusion

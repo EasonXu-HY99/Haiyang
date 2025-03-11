@@ -3,7 +3,7 @@ title: "Aircrack-NG: A Complete Suite for Wireless Network Security Assessment"
 date: "2025-03-10"
 categories: [Wireless Hacking]
 author: "Xu Haiyang"
-image: "/api/placeholder/800/400"
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq5XAXu-hWPig2Q60dL_JqHpyZkoUEckjFFw&s"
 format:
   html:
     toc: true
@@ -20,7 +20,7 @@ Aircrack-NG is a comprehensive suite of tools for assessing WiFi network securit
 - Testing: Checking WiFi cards and driver capabilities
 - Cracking: WEP and WPA PSK (WPA 1 and 2)
 
-![Aircrack-NG Logo](/api/placeholder/600/200)
+![Aircrack-NG Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq5XAXu-hWPig2Q60dL_JqHpyZkoUEckjFFw&s)
 
 ## Core Components
 
@@ -50,7 +50,7 @@ airodump-ng mon0
 airodump-ng -c 1 --bssid 00:11:22:33:44:55 -w capture mon0
 ```
 
-![Airodump-NG in Action](/api/placeholder/800/400)
+![Airodump-NG in Action](https://www.researchgate.net/publication/366999411/figure/fig2/AS:11431281112267455@1673372072347/Airodump-ng-running-in-terminal.ppm)
 
 ### aireplay-ng
 
@@ -159,7 +159,7 @@ sudo aireplay-ng -3 -b [target_MAC] -h [your_MAC] wlan0mon
 sudo aircrack-ng capture*.cap
 ```
 
-![WEP Cracking Process Visualization](/api/placeholder/800/500)
+![WEP Cracking Process Visualization](https://www.stationx.net/wp-content/uploads/2023/04/11.-Aircrack-ng.jpg)
 
 ## Advanced Techniques: WPA/WPA2 Cracking
 

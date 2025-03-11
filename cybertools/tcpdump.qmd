@@ -3,7 +3,7 @@ title: "TCPDump: The Network Traffic Analysis Swiss Army Knife"
 date: "2025-03-10"
 categories: [Wireless Hacking]
 author: "Xu Haiyang"
-image: "/api/placeholder/800/400"
+image: "https://aboutnetworks.net/wp-content/uploads/2020/05/tcpdump-logo.jpg"
 format:
   html:
     toc: true
@@ -15,7 +15,7 @@ format:
 
 TCPDump is a powerful command-line packet analyzer that allows you to intercept and display TCP/IP and other packets being transmitted or received over a network. As one of the oldest and most reliable network analysis tools available, TCPDump has become an essential utility for network administrators, security professionals, and anyone who needs to troubleshoot network issues or monitor network traffic.
 
-![TCPDump Terminal Output](/api/placeholder/800/400)
+![TCPDump Terminal Output](https://media.geeksforgeeks.org/wp-content/uploads/20200521231351/capture-packets-tcpdump.png)
 
 Unlike graphical tools like Wireshark, TCPDump is designed for the command line, making it ideal for remote servers, headless systems, and automated scripts. Its lightweight nature and minimal dependencies allow it to run on virtually any Unix-like system, including Linux, BSD, macOS, and even embedded devices.
 
@@ -89,7 +89,7 @@ This command will:
 2. Display a summary of each packet to the terminal
 3. Continue until interrupted (Ctrl+C)
 
-![Basic TCPDump Usage](/api/placeholder/800/400)
+![Basic TCPDump Usage](https://www.techplayon.com/wp-content/uploads/2020/11/man-tcpdump.png)
 
 ### Common Basic Options
 
@@ -262,7 +262,7 @@ tcpdump -r capture.pcap 'host 192.168.1.1 and port 80'
 tcpdump -r capture.pcap -X 'tcp port 443'
 ```
 
-![TCPDump File Operations](/api/placeholder/800/400)
+![TCPDump File Operations](https://www.techtarget.com/rms/onlineimages/ref_1_tcpdump_capture-f_mobile.jpg)
 
 ## Analyzing Specific Protocols
 
@@ -472,7 +472,7 @@ sudo tcpdump -i eth0 -w - | tshark -r - -Y 'http'
 ssh user@remote-server "sudo tcpdump -i eth0 -w - 'not port 22'" | wireshark -k -i -
 ```
 
-![TCPDump with Wireshark](/api/placeholder/800/400)
+![TCPDump with Wireshark](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG6c14ujK2SG6bEqqCuMzW6GhhmxKbYNwMRg&s)
 
 ## Remote Monitoring
 

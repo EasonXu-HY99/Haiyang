@@ -3,7 +3,7 @@ title: "Kismet: Advanced Wireless Network Detector, Sniffer, and IDS"
 date: "2025-03-10"
 categories: [Wireless Hacking]
 author: "Xu Haiyang"
-image: "/api/placeholder/800/400"
+image: "https://www.kismetwireless.net/images/kismet-web.svg"
 format:
   html:
     toc: true
@@ -15,7 +15,7 @@ format:
 
 Kismet is a powerful open-source wireless network detector, sniffer, and intrusion detection system. Unlike many other wireless tools that focus solely on Wi-Fi networks, Kismet can work with multiple interface types simultaneously, including Wi-Fi, Bluetooth, software-defined radio (SDR), and various other RF systems.
 
-![Kismet Interface](/api/placeholder/800/450)
+![Kismet Interface](https://upload.wikimedia.org/wikipedia/commons/f/f2/Kismet_Web_UI.png)
 
 What sets Kismet apart from other wireless network tools is its passive monitoring capability. While many tools actively probe networks, Kismet operates silently by default, making it ideal for security research, network mapping, and wardriving without alerting network administrators to your presence.
 
@@ -41,7 +41,7 @@ Kismet uses a client-server architecture that consists of three main components:
 2. **Capture Sources**: Hardware interfaces that collect wireless data
 3. **Clients**: Interfaces for viewing and interacting with collected data
 
-![Kismet Architecture Diagram](/api/placeholder/800/400)
+![Kismet Architecture Diagram](https://www.researchgate.net/publication/2865994/figure/fig3/AS:394642538418176@1471101521041/System-architecture-for-Kismet-The-motivation-system-runs-on-four-Motorola-68332.png)
 
 This architecture allows Kismet to:
 
@@ -130,7 +130,7 @@ By default, Kismet will:
 - Launch the web interface on http://localhost:2501
 - Prompt you to add capture sources
 
-![Kismet Startup Screen](/api/placeholder/800/450)
+![Kismet Startup Screen](https://www.zerodaysnoop.com/wp-content/uploads/2021/07/kismet-startup-screen-1.png)
 
 ### Adding Capture Sources
 
@@ -168,7 +168,7 @@ The main dashboard shows an overview of:
 - Alerts
 - GPS data (if enabled)
 
-![Kismet Dashboard](/api/placeholder/800/450)
+![Kismet Dashboard](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOoMDQ1PQFfU9LVDKTN0MJIL1VaWAkgNuDdNXb_uoaL4jTX325KlrwVGNU3EKQD6S2N8euWL3tThRT_2I0erq1O9DDoNYV-pQXjo6HzFV3TM3-foQwo_ePs4T10gopJdQn82KeUkLwAIo/s640/kismet-web-ui_1.png)
 
 ### Devices View
 
@@ -187,7 +187,7 @@ This view shows RF spectrum usage across channels:
 - Packet counts per channel
 - Signal levels
 
-![Channel Utilization Graph](/api/placeholder/800/400)
+![Channel Utilization Graph](https://www.101labs.net/wp-content/uploads/2022/04/46-9.png)
 
 ## Advanced Features
 
@@ -202,7 +202,7 @@ kismet -c wlan0 --gps gpsd:host=localhost,port=2947
 
 The resulting data can be exported in KML format for viewing in Google Earth or other mapping applications.
 
-![Kismet GPS Mapping](/api/placeholder/800/450)
+![Kismet GPS Mapping](https://wiki.networksecuritytoolkit.org/nstwiki/images/Kismet-google-earth.png)
 
 ### PCAP Logging
 
@@ -315,7 +315,7 @@ After a wardriving session, the collected data can be:
 - Analyzed for statistics on encryption usage
 - Mapped to identify coverage patterns
 
-![Wardriving Map](/api/placeholder/800/450)
+![Wardriving Map](https://kaos-tech.ghost.io/content/images/2024/07/image.png)
 
 ## Intrusion Detection Capabilities
 
