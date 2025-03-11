@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-10">
 
-<title>reaver – Haiyang's Tech Portfolio</title>
+<title>Reaver: Exploiting WPS Vulnerabilities in Wireless Networks – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,59 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-reaver" id="toc-introduction-to-reaver" class="nav-link active" data-scroll-target="#introduction-to-reaver">Introduction to Reaver</a></li>
+  <li><a href="#understanding-wps-vulnerabilities" id="toc-understanding-wps-vulnerabilities" class="nav-link" data-scroll-target="#understanding-wps-vulnerabilities">Understanding WPS Vulnerabilities</a>
+  <ul class="collapse">
+  <li><a href="#what-is-wps" id="toc-what-is-wps" class="nav-link" data-scroll-target="#what-is-wps">What is WPS?</a></li>
+  <li><a href="#the-pin-vulnerability" id="toc-the-pin-vulnerability" class="nav-link" data-scroll-target="#the-pin-vulnerability">The PIN Vulnerability</a></li>
+  </ul></li>
+  <li><a href="#how-reaver-works" id="toc-how-reaver-works" class="nav-link" data-scroll-target="#how-reaver-works">How Reaver Works</a>
+  <ul class="collapse">
+  <li><a href="#operating-principles" id="toc-operating-principles" class="nav-link" data-scroll-target="#operating-principles">Operating Principles</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#technical-implementation" id="toc-technical-implementation" class="nav-link" data-scroll-target="#technical-implementation">Technical Implementation</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites-and-dependencies" id="toc-prerequisites-and-dependencies" class="nav-link" data-scroll-target="#prerequisites-and-dependencies">Prerequisites and Dependencies</a></li>
+  <li><a href="#setting-up-reaver" id="toc-setting-up-reaver" class="nav-link" data-scroll-target="#setting-up-reaver">Setting Up Reaver</a></li>
+  </ul></li>
+  <li><a href="#practical-usage" id="toc-practical-usage" class="nav-link" data-scroll-target="#practical-usage">Practical Usage</a>
+  <ul class="collapse">
+  <li><a href="#basic-command-syntax" id="toc-basic-command-syntax" class="nav-link" data-scroll-target="#basic-command-syntax">Basic Command Syntax</a></li>
+  <li><a href="#advanced-options" id="toc-advanced-options" class="nav-link" data-scroll-target="#advanced-options">Advanced Options</a></li>
+  <li><a href="#associated-tools" id="toc-associated-tools" class="nav-link" data-scroll-target="#associated-tools">Associated Tools</a></li>
+  </ul></li>
+  <li><a href="#reaver-versions-and-development" id="toc-reaver-versions-and-development" class="nav-link" data-scroll-target="#reaver-versions-and-development">Reaver Versions and Development</a>
+  <ul class="collapse">
+  <li><a href="#timeline-and-evolution" id="toc-timeline-and-evolution" class="nav-link" data-scroll-target="#timeline-and-evolution">Timeline and Evolution</a></li>
+  <li><a href="#reaver-vs.-reaver-wps-fork" id="toc-reaver-vs.-reaver-wps-fork" class="nav-link" data-scroll-target="#reaver-vs.-reaver-wps-fork">Reaver vs.&nbsp;Reaver-WPS-Fork</a></li>
+  </ul></li>
+  <li><a href="#countermeasures-and-protection" id="toc-countermeasures-and-protection" class="nav-link" data-scroll-target="#countermeasures-and-protection">Countermeasures and Protection</a>
+  <ul class="collapse">
+  <li><a href="#manufacturer-responses" id="toc-manufacturer-responses" class="nav-link" data-scroll-target="#manufacturer-responses">Manufacturer Responses</a></li>
+  <li><a href="#protecting-your-network" id="toc-protecting-your-network" class="nav-link" data-scroll-target="#protecting-your-network">Protecting Your Network</a></li>
+  </ul></li>
+  <li><a href="#current-relevance-and-future" id="toc-current-relevance-and-future" class="nav-link" data-scroll-target="#current-relevance-and-future">Current Relevance and Future</a>
+  <ul class="collapse">
+  <li><a href="#current-effectiveness" id="toc-current-effectiveness" class="nav-link" data-scroll-target="#current-effectiveness">Current Effectiveness</a></li>
+  <li><a href="#related-attack-vectors" id="toc-related-attack-vectors" class="nav-link" data-scroll-target="#related-attack-vectors">Related Attack Vectors</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Reaver: Exploiting WPS Vulnerabilities in Wireless Networks</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Wireless Hacking</div>
   </div>
@@ -182,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 10, 2025</p>
     </div>
   </div>
   
@@ -194,8 +273,326 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-reaver" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-reaver">Introduction to Reaver</h2>
+<p>Reaver is a specialized open-source tool designed to exploit vulnerabilities in Wi-Fi Protected Setup (WPS), a network security standard created to simplify the process of connecting devices to secure wireless networks. Developed by Craig Heffner and released in 2011, Reaver gained significant attention after demonstrating that a security feature intended to make Wi-Fi networks more accessible had inadvertently introduced critical vulnerabilities.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.licdn.com/dms/image/v2/D5622AQFyDhfE2FnSfQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727345525393?e=2147483647&amp;v=beta&amp;t=5KJGvIb1Iv_2HDY9ZVx7yrwtzkICiUexGxp5IR-_vu4.png" class="img-fluid figure-img"></p>
+<figcaption>Reaver in Action</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Security Research Context
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Reaver was developed as a proof-of-concept tool to demonstrate weaknesses in the WPS protocol. It’s primarily used by network security professionals and researchers to assess network security posture and demonstrate the importance of disabling vulnerable features.</p>
+</div>
+</div>
+</section>
+<section id="understanding-wps-vulnerabilities" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-wps-vulnerabilities">Understanding WPS Vulnerabilities</h2>
+<section id="what-is-wps" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-wps">What is WPS?</h3>
+<p>Wi-Fi Protected Setup (WPS) was introduced in 2006 by the Wi-Fi Alliance to simplify the process of connecting devices to WPA/WPA2 secured networks without needing to remember complex passwords. WPS offers several methods to connect devices:</p>
+<ul>
+<li>Push-Button Method (PBC)</li>
+<li>PIN Method</li>
+<li>Near Field Communication (NFC)</li>
+<li>USB Method</li>
+</ul>
+</section>
+<section id="the-pin-vulnerability" class="level3">
+<h3 class="anchored" data-anchor-id="the-pin-vulnerability">The PIN Vulnerability</h3>
+<p>The critical vulnerability that Reaver exploits lies in the PIN method implementation:</p>
+<ol type="1">
+<li>The 8-digit PIN is split into two parts (first 4 digits and last 4 digits)</li>
+<li>The access point verifies each half separately</li>
+<li>The last digit is a checksum</li>
+<li>This reduces the effective keyspace from 10^8 (100 million) to approximately 10^7 (10 million) possibilities</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-981-15-9019-1_29/MediaObjects/490878_1_En_29_Fig4_HTML.png" class="img-fluid figure-img"></p>
+<figcaption>WPS PIN Vulnerability Diagram</figcaption>
+</figure>
+</div>
+<p>This design flaw allows Reaver to perform a systematic brute force attack against the PIN, typically requiring between 4-10 hours to recover the complete PIN on vulnerable devices.</p>
+<div id="83fc6c98" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Simplified Illustration of WPS PIN Structure</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> demonstrate_wps_pin_vulnerability():</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Simplified illustration of how WPS PIN validation creates vulnerability</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For an 8-digit PIN (e.g. 12345678)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The pin is actually: 1234 567 8</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Where:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># - 1234: First half (verified separately)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># - 567: Second half (minus checksum)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># - 8: Checksum digit</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    sample_pin <span class="op">=</span> <span class="st">"12345678"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    first_half <span class="op">=</span> sample_pin[<span class="dv">0</span>:<span class="dv">4</span>]  <span class="co"># 1234 (10,000 possibilities)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    second_half <span class="op">=</span> sample_pin[<span class="dv">4</span>:<span class="dv">7</span>]  <span class="co"># 567 (1,000 possibilities)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    checksum <span class="op">=</span> sample_pin[<span class="dv">7</span>]      <span class="co"># 8 (fixed based on other digits)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Instead of 10^8 (100 million) combinations</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Attacker only needs to try:</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 10^4 (10,000) + 10^3 (1,000) = 11,000 combinations</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Full PIN: </span><span class="sc">{</span>sample_pin<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"First half (verified separately): </span><span class="sc">{</span>first_half<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Second half (without checksum): </span><span class="sc">{</span>second_half<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Checksum digit: </span><span class="sc">{</span>checksum<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"full_pin"</span>: sample_pin,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"effective_keyspace"</span>: <span class="dv">11000</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"theoretical_keyspace"</span>: <span class="dv">100000000</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"security_reduction_factor"</span>: <span class="dv">100000000</span> <span class="op">/</span> <span class="dv">11000</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="how-reaver-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-reaver-works">How Reaver Works</h2>
+<p>Reaver operates through a systematic process to exploit the WPS vulnerability:</p>
+<section id="operating-principles" class="level3">
+<h3 class="anchored" data-anchor-id="operating-principles">Operating Principles</h3>
+<ol type="1">
+<li><strong>Discovery Phase</strong>: Identify access points with WPS enabled</li>
+<li><strong>Online Brute Force</strong>: Systematically test PIN combinations</li>
+<li><strong>PIN Verification</strong>: Exploit the split verification process</li>
+<li><strong>Network Access</strong>: Use the recovered PIN to derive the WPA/WPA2 passphrase</li>
+</ol>
+</section>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<p>Reaver includes several features that make it effective:</p>
+<ul>
+<li>Built-in WPS detection capabilities</li>
+<li>Automatic rate-limiting detection and adjustment</li>
+<li>Session saving and restoration for interrupted attacks</li>
+<li>Comprehensive logging and status reporting</li>
+<li>Integration with Wash for WPS scanning</li>
+</ul>
+</section>
+</section>
+<section id="technical-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="technical-implementation">Technical Implementation</h2>
+<section id="prerequisites-and-dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites-and-dependencies">Prerequisites and Dependencies</h3>
+<p>To use Reaver effectively, several components are required:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Linux Operating System</td>
+<td>Primary platform for Reaver</td>
+</tr>
+<tr class="even">
+<td>Wireless Adapter</td>
+<td>Must support packet injection and monitor mode</td>
+</tr>
+<tr class="odd">
+<td>Aircrack-ng Suite</td>
+<td>For managing wireless interfaces</td>
+</tr>
+<tr class="even">
+<td>libpcap</td>
+<td>For packet capture capabilities</td>
+</tr>
+<tr class="odd">
+<td>sqlite3</td>
+<td>For session management</td>
+</tr>
+<tr class="even">
+<td>libssl-dev</td>
+<td>For cryptographic operations</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="setting-up-reaver" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up-reaver">Setting Up Reaver</h3>
+<p>The basic setup process involves:</p>
+<ol type="1">
+<li>Installing Reaver and dependencies</li>
+<li>Setting the wireless interface to monitor mode</li>
+<li>Identifying target networks with WPS enabled</li>
+<li>Launching the Reaver attack with appropriate parameters</li>
+</ol>
+<div style="position: relative; padding-bottom: 56.25%; height: 0;">
+<p><img src="../api/placeholder/560/315" alt="Reaver Setup Process" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></p>
+</div>
+</section>
+</section>
+<section id="practical-usage" class="level2">
+<h2 class="anchored" data-anchor-id="practical-usage">Practical Usage</h2>
+<section id="basic-command-syntax" class="level3">
+<h3 class="anchored" data-anchor-id="basic-command-syntax">Basic Command Syntax</h3>
+<p>The basic usage of Reaver follows this pattern:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">reaver</span> <span class="at">-i</span> <span class="op">&lt;</span>interface<span class="op">&gt;</span> -b <span class="op">&lt;</span>bssid<span class="op">&gt;</span> -c <span class="op">&lt;</span>channel<span class="op">&gt;</span> -vv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Where: - <code>-i</code> specifies the wireless interface in monitor mode - <code>-b</code> specifies the target access point’s MAC address - <code>-c</code> specifies the channel the access point is operating on - <code>-vv</code> enables verbose output</p>
+</section>
+<section id="advanced-options" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-options">Advanced Options</h3>
+<p>Reaver offers numerous advanced options to handle various scenarios:</p>
+<ul>
+<li><code>-K</code>: Use small DH keys to improve compatibility with some APs</li>
+<li><code>-N</code>: Don’t terminate after recovering the WPS PIN</li>
+<li><code>-L</code>: Ignore locked WPS state</li>
+<li><code>-E</code>: Terminate after recovering the PSK (password)</li>
+<li><code>-S</code>: Use small timeouts for faster cracking</li>
+<li><code>-A</code>: Auto-detect best advanced options for target</li>
+</ul>
+</section>
+<section id="associated-tools" class="level3">
+<h3 class="anchored" data-anchor-id="associated-tools">Associated Tools</h3>
+<p>Reaver is often used alongside complementary tools:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://en.kali.tools/wp-content/uploads/2017/03/wash.png" class="img-fluid figure-img"></p>
+<figcaption>Wash Tool Interface</figcaption>
+</figure>
+</div>
+<section id="wash" class="level4">
+<h4 class="anchored" data-anchor-id="wash">Wash</h4>
+<p>Wash is a utility included with Reaver that scans for WPS-enabled access points:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wash</span> <span class="at">-i</span> <span class="op">&lt;</span>interface<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This provides a list of vulnerable devices, including: - BSSID (MAC address) - SSID (network name) - Channel - WPS version - WPS locked status</p>
+</section>
+<section id="pixiewps" class="level4">
+<h4 class="anchored" data-anchor-id="pixiewps">PixieWPS</h4>
+<p>PixieWPS is a complementary tool that implements the offline Pixie Dust attack against WPS:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">reaver</span> <span class="at">-i</span> <span class="op">&lt;</span>interface<span class="op">&gt;</span> -b <span class="op">&lt;</span>bssid<span class="op">&gt;</span> -c <span class="op">&lt;</span>channel<span class="op">&gt;</span> -K 1 <span class="at">-vv</span> <span class="at">-P</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The Pixie Dust attack can recover the WPS PIN in seconds on vulnerable devices by exploiting weak random number generation.</p>
+</section>
+</section>
+</section>
+<section id="reaver-versions-and-development" class="level2">
+<h2 class="anchored" data-anchor-id="reaver-versions-and-development">Reaver Versions and Development</h2>
+<section id="timeline-and-evolution" class="level3">
+<h3 class="anchored" data-anchor-id="timeline-and-evolution">Timeline and Evolution</h3>
+<p>Reaver has evolved significantly since its initial release:</p>
+<ul>
+<li><strong>2011</strong>: Initial release by Craig Heffner</li>
+<li><strong>2012-2014</strong>: Community maintenance period</li>
+<li><strong>2015</strong>: Reaver Pro (commercial version) discontinued</li>
+<li><strong>2017-Present</strong>: Reaver-WPS-Fork (t6x) becomes the main community edition</li>
+</ul>
+</section>
+<section id="reaver-vs.-reaver-wps-fork" class="level3">
+<h3 class="anchored" data-anchor-id="reaver-vs.-reaver-wps-fork">Reaver vs.&nbsp;Reaver-WPS-Fork</h3>
+<p>The current community-maintained fork (by t6x on GitHub) includes several enhancements:</p>
+<ul>
+<li>Improved handling of locked WPS</li>
+<li>Better session management</li>
+<li>Additional attack modes (including Pixie Dust integration)</li>
+<li>Enhanced compatibility with modern access points</li>
+<li>Advanced timeout and retry mechanisms</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ethical and Legal Usage
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Reaver should only be used for authorized security testing, educational purposes, or on networks you own. Unauthorized use against networks without explicit permission is illegal in most jurisdictions and violates computer fraud and abuse laws.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="countermeasures-and-protection" class="level2">
+<h2 class="anchored" data-anchor-id="countermeasures-and-protection">Countermeasures and Protection</h2>
+<section id="manufacturer-responses" class="level3">
+<h3 class="anchored" data-anchor-id="manufacturer-responses">Manufacturer Responses</h3>
+<p>In response to the vulnerabilities exposed by Reaver, manufacturers implemented several protections:</p>
+<ol type="1">
+<li><strong>WPS Locking</strong>: Temporarily disabling WPS after multiple failed attempts</li>
+<li><strong>Rate Limiting</strong>: Slowing down PIN validation attempts</li>
+<li><strong>PIN Generation Improvements</strong>: Better randomization of PINs</li>
+<li><strong>Firmware Updates</strong>: Patching vulnerable implementations</li>
+</ol>
+</section>
+<section id="protecting-your-network" class="level3">
+<h3 class="anchored" data-anchor-id="protecting-your-network">Protecting Your Network</h3>
+<p>To protect wireless networks from Reaver attacks:</p>
+<ul>
+<li>Disable WPS entirely if possible</li>
+<li>Update router firmware to the latest version</li>
+<li>Use WPA2/WPA3 with a strong, complex password</li>
+<li>Enable WPS locking features if WPS must be used</li>
+<li>Consider using push-button WPS only when necessary</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/600/350.png" class="img-fluid figure-img"></p>
+<figcaption>Router WPS Settings</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="current-relevance-and-future" class="level2">
+<h2 class="anchored" data-anchor-id="current-relevance-and-future">Current Relevance and Future</h2>
+<section id="current-effectiveness" class="level3">
+<h3 class="anchored" data-anchor-id="current-effectiveness">Current Effectiveness</h3>
+<p>As of 2025, Reaver’s effectiveness has diminished due to:</p>
+<ul>
+<li>Widespread awareness of the vulnerability</li>
+<li>Manufacturer mitigations in newer devices</li>
+<li>Default disabling of WPS in many modern routers</li>
+<li>Introduction of more secure connection methods</li>
+</ul>
+<p>However, it remains relevant for: - Legacy equipment still in use - Improperly configured networks - Security awareness training - Demonstrating the importance of keeping network equipment updated</p>
+</section>
+<section id="related-attack-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="related-attack-vectors">Related Attack Vectors</h3>
+<p>Modern wireless security research has moved beyond WPS to focus on:</p>
+<ul>
+<li>WPA3 implementation weaknesses</li>
+<li>Downgrade attacks</li>
+<li>Evil twin attacks</li>
+<li>Client-side vulnerabilities</li>
+<li>Captive portal bypasses</li>
+</ul>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Reaver represents an important chapter in wireless security history, demonstrating how features designed for convenience can sometimes introduce significant security vulnerabilities. While its effectiveness has decreased as manufacturers have implemented countermeasures, its legacy continues to influence secure design principles for wireless technologies.</p>
+<p>For security professionals, Reaver remains a valuable tool for identifying vulnerable legacy equipment and demonstrating the importance of disabling unnecessary features. The WPS vulnerability exposed by Reaver serves as a reminder that security assessments must consider the entire authentication system rather than just the strength of encryption algorithms or passwords.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Heffner, C. (2011). “Cracking WiFi Protected Setup with Reaver.” Presented at Black Hat Abu Dhabi.</li>
+<li>Viehböck, S. (2011). “Brute forcing Wi-Fi Protected Setup: When poor design meets poor implementation.”</li>
+<li>Wi-Fi Alliance. (2006). “Wi-Fi Protected Setup Specification.”</li>
+<li>Bongard, D. (2014). “Offline bruteforce attack on WiFi Protected Setup.” Presented at Hacklu.</li>
+<li>t6x. (2015-Present). “Reaver-WPS-Fork.” GitHub Repository.</li>
+<li>Antoniewicz, B. (2015). “Practical attacks against WPS (Wi-Fi Protected Setup).” SANS Institute.</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

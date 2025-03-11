@@ -1,6 +1,283 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "Reaver: Exploiting WPS Vulnerabilities in Wireless Networks"
+date: "2025-03-10"
 categories: [Wireless Hacking]
 author: "Xu Haiyang"
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu_FIky48k0g72YBdndaQD5qhztdlGGpe4aQ&s"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction to Reaver
+
+Reaver is a specialized open-source tool designed to exploit vulnerabilities in Wi-Fi Protected Setup (WPS), a network security standard created to simplify the process of connecting devices to secure wireless networks. Developed by Craig Heffner and released in 2011, Reaver gained significant attention after demonstrating that a security feature intended to make Wi-Fi networks more accessible had inadvertently introduced critical vulnerabilities.
+
+![Reaver in Action](https://media.licdn.com/dms/image/v2/D5622AQFyDhfE2FnSfQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727345525393?e=2147483647&v=beta&t=5KJGvIb1Iv_2HDY9ZVx7yrwtzkICiUexGxp5IR-_vu4)
+
+::: {.callout-note}
+## Security Research Context
+Reaver was developed as a proof-of-concept tool to demonstrate weaknesses in the WPS protocol. It's primarily used by network security professionals and researchers to assess network security posture and demonstrate the importance of disabling vulnerable features.
+:::
+
+## Understanding WPS Vulnerabilities
+
+### What is WPS?
+
+Wi-Fi Protected Setup (WPS) was introduced in 2006 by the Wi-Fi Alliance to simplify the process of connecting devices to WPA/WPA2 secured networks without needing to remember complex passwords. WPS offers several methods to connect devices:
+
+- Push-Button Method (PBC)
+- PIN Method
+- Near Field Communication (NFC)
+- USB Method
+
+### The PIN Vulnerability
+
+The critical vulnerability that Reaver exploits lies in the PIN method implementation:
+
+1. The 8-digit PIN is split into two parts (first 4 digits and last 4 digits)
+2. The access point verifies each half separately
+3. The last digit is a checksum
+4. This reduces the effective keyspace from 10^8 (100 million) to approximately 10^7 (10 million) possibilities
+
+![WPS PIN Vulnerability Diagram](https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-981-15-9019-1_29/MediaObjects/490878_1_En_29_Fig4_HTML.png)
+
+This design flaw allows Reaver to perform a systematic brute force attack against the PIN, typically requiring between 4-10 hours to recover the complete PIN on vulnerable devices.
+
+```{python}
+#| eval: false
+#| code-fold: true
+#| code-summary: "Simplified Illustration of WPS PIN Structure"
+
+def demonstrate_wps_pin_vulnerability():
+    """
+    Simplified illustration of how WPS PIN validation creates vulnerability
+    """
+    # For an 8-digit PIN (e.g. 12345678)
+    # The pin is actually: 1234 567 8
+    # Where:
+    # - 1234: First half (verified separately)
+    # - 567: Second half (minus checksum)
+    # - 8: Checksum digit
+    
+    sample_pin = "12345678"
+    first_half = sample_pin[0:4]  # 1234 (10,000 possibilities)
+    second_half = sample_pin[4:7]  # 567 (1,000 possibilities)
+    checksum = sample_pin[7]      # 8 (fixed based on other digits)
+    
+    # Instead of 10^8 (100 million) combinations
+    # Attacker only needs to try:
+    # 10^4 (10,000) + 10^3 (1,000) = 11,000 combinations
+    
+    print(f"Full PIN: {sample_pin}")
+    print(f"First half (verified separately): {first_half}")
+    print(f"Second half (without checksum): {second_half}")
+    print(f"Checksum digit: {checksum}")
+    
+    return {
+        "full_pin": sample_pin,
+        "effective_keyspace": 11000,
+        "theoretical_keyspace": 100000000,
+        "security_reduction_factor": 100000000 / 11000
+    }
+```
+
+## How Reaver Works
+
+Reaver operates through a systematic process to exploit the WPS vulnerability:
+
+### Operating Principles
+
+1. **Discovery Phase**: Identify access points with WPS enabled
+2. **Online Brute Force**: Systematically test PIN combinations
+3. **PIN Verification**: Exploit the split verification process
+4. **Network Access**: Use the recovered PIN to derive the WPA/WPA2 passphrase
+
+### Key Features
+
+Reaver includes several features that make it effective:
+
+- Built-in WPS detection capabilities
+- Automatic rate-limiting detection and adjustment
+- Session saving and restoration for interrupted attacks
+- Comprehensive logging and status reporting
+- Integration with Wash for WPS scanning
+
+## Technical Implementation
+
+### Prerequisites and Dependencies
+
+To use Reaver effectively, several components are required:
+
+| Component | Purpose |
+|-----------|---------|
+| Linux Operating System | Primary platform for Reaver |
+| Wireless Adapter | Must support packet injection and monitor mode |
+| Aircrack-ng Suite | For managing wireless interfaces |
+| libpcap | For packet capture capabilities |
+| sqlite3 | For session management |
+| libssl-dev | For cryptographic operations |
+
+### Setting Up Reaver
+
+The basic setup process involves:
+
+1. Installing Reaver and dependencies
+2. Setting the wireless interface to monitor mode
+3. Identifying target networks with WPS enabled
+4. Launching the Reaver attack with appropriate parameters
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0;">
+  <img src="/api/placeholder/560/315" alt="Reaver Setup Process" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+</div>
+
+## Practical Usage
+
+### Basic Command Syntax
+
+The basic usage of Reaver follows this pattern:
+
+```bash
+reaver -i <interface> -b <bssid> -c <channel> -vv
+```
+
+Where:
+- `-i` specifies the wireless interface in monitor mode
+- `-b` specifies the target access point's MAC address
+- `-c` specifies the channel the access point is operating on
+- `-vv` enables verbose output
+
+### Advanced Options
+
+Reaver offers numerous advanced options to handle various scenarios:
+
+- `-K`: Use small DH keys to improve compatibility with some APs
+- `-N`: Don't terminate after recovering the WPS PIN
+- `-L`: Ignore locked WPS state
+- `-E`: Terminate after recovering the PSK (password)
+- `-S`: Use small timeouts for faster cracking
+- `-A`: Auto-detect best advanced options for target
+
+### Associated Tools
+
+Reaver is often used alongside complementary tools:
+
+![Wash Tool Interface](https://en.kali.tools/wp-content/uploads/2017/03/wash.png)
+
+#### Wash
+
+Wash is a utility included with Reaver that scans for WPS-enabled access points:
+
+```bash
+wash -i <interface>
+```
+
+This provides a list of vulnerable devices, including:
+- BSSID (MAC address)
+- SSID (network name)
+- Channel
+- WPS version
+- WPS locked status
+
+#### PixieWPS
+
+PixieWPS is a complementary tool that implements the offline Pixie Dust attack against WPS:
+
+```bash
+reaver -i <interface> -b <bssid> -c <channel> -K 1 -vv -P
+```
+
+The Pixie Dust attack can recover the WPS PIN in seconds on vulnerable devices by exploiting weak random number generation.
+
+## Reaver Versions and Development
+
+### Timeline and Evolution
+
+Reaver has evolved significantly since its initial release:
+
+- **2011**: Initial release by Craig Heffner
+- **2012-2014**: Community maintenance period
+- **2015**: Reaver Pro (commercial version) discontinued
+- **2017-Present**: Reaver-WPS-Fork (t6x) becomes the main community edition
+
+### Reaver vs. Reaver-WPS-Fork
+
+The current community-maintained fork (by t6x on GitHub) includes several enhancements:
+
+- Improved handling of locked WPS
+- Better session management
+- Additional attack modes (including Pixie Dust integration)
+- Enhanced compatibility with modern access points
+- Advanced timeout and retry mechanisms
+
+::: {.callout-important}
+## Ethical and Legal Usage
+Reaver should only be used for authorized security testing, educational purposes, or on networks you own. Unauthorized use against networks without explicit permission is illegal in most jurisdictions and violates computer fraud and abuse laws.
+:::
+
+## Countermeasures and Protection
+
+### Manufacturer Responses
+
+In response to the vulnerabilities exposed by Reaver, manufacturers implemented several protections:
+
+1. **WPS Locking**: Temporarily disabling WPS after multiple failed attempts
+2. **Rate Limiting**: Slowing down PIN validation attempts
+3. **PIN Generation Improvements**: Better randomization of PINs
+4. **Firmware Updates**: Patching vulnerable implementations
+
+### Protecting Your Network
+
+To protect wireless networks from Reaver attacks:
+
+- Disable WPS entirely if possible
+- Update router firmware to the latest version
+- Use WPA2/WPA3 with a strong, complex password
+- Enable WPS locking features if WPS must be used
+- Consider using push-button WPS only when necessary
+
+![Router WPS Settings](/api/placeholder/600/350)
+
+## Current Relevance and Future
+
+### Current Effectiveness
+
+As of 2025, Reaver's effectiveness has diminished due to:
+
+- Widespread awareness of the vulnerability
+- Manufacturer mitigations in newer devices
+- Default disabling of WPS in many modern routers
+- Introduction of more secure connection methods
+
+However, it remains relevant for:
+- Legacy equipment still in use
+- Improperly configured networks
+- Security awareness training
+- Demonstrating the importance of keeping network equipment updated
+
+### Related Attack Vectors
+
+Modern wireless security research has moved beyond WPS to focus on:
+
+- WPA3 implementation weaknesses
+- Downgrade attacks
+- Evil twin attacks
+- Client-side vulnerabilities
+- Captive portal bypasses
+
+## Conclusion
+
+Reaver represents an important chapter in wireless security history, demonstrating how features designed for convenience can sometimes introduce significant security vulnerabilities. While its effectiveness has decreased as manufacturers have implemented countermeasures, its legacy continues to influence secure design principles for wireless technologies.
+
+For security professionals, Reaver remains a valuable tool for identifying vulnerable legacy equipment and demonstrating the importance of disabling unnecessary features. The WPS vulnerability exposed by Reaver serves as a reminder that security assessments must consider the entire authentication system rather than just the strength of encryption algorithms or passwords.
+
+## References
+
+1. Heffner, C. (2011). "Cracking WiFi Protected Setup with Reaver." Presented at Black Hat Abu Dhabi.
+2. Viehböck, S. (2011). "Brute forcing Wi-Fi Protected Setup: When poor design meets poor implementation."
+3. Wi-Fi Alliance. (2006). "Wi-Fi Protected Setup Specification."
+4. Bongard, D. (2014). "Offline bruteforce attack on WiFi Protected Setup." Presented at Hacklu.
+5. t6x. (2015-Present). "Reaver-WPS-Fork." GitHub Repository.
+6. Antoniewicz, B. (2015). "Practical attacks against WPS (Wi-Fi Protected Setup)." SANS Institute.

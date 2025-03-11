@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-10">
 
-<title>airsnort – Haiyang's Tech Portfolio</title>
+<title>AirSnort: A Classic Wireless Network Security Tool – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,32 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-airsnort" id="toc-introduction-to-airsnort" class="nav-link active" data-scroll-target="#introduction-to-airsnort">Introduction to AirSnort</a></li>
+  <li><a href="#technical-background" id="toc-technical-background" class="nav-link" data-scroll-target="#technical-background">Technical Background</a>
+  <ul class="collapse">
+  <li><a href="#what-is-wep" id="toc-what-is-wep" class="nav-link" data-scroll-target="#what-is-wep">What is WEP?</a></li>
+  <li><a href="#how-airsnort-worked" id="toc-how-airsnort-worked" class="nav-link" data-scroll-target="#how-airsnort-worked">How AirSnort Worked</a></li>
+  </ul></li>
+  <li><a href="#historical-impact" id="toc-historical-impact" class="nav-link" data-scroll-target="#historical-impact">Historical Impact</a></li>
+  <li><a href="#technical-requirements-and-setup" id="toc-technical-requirements-and-setup" class="nav-link" data-scroll-target="#technical-requirements-and-setup">Technical Requirements and Setup</a></li>
+  <li><a href="#modern-alternatives" id="toc-modern-alternatives" class="nav-link" data-scroll-target="#modern-alternatives">Modern Alternatives</a></li>
+  <li><a href="#legacy-and-learning" id="toc-legacy-and-learning" class="nav-link" data-scroll-target="#legacy-and-learning">Legacy and Learning</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">AirSnort: A Classic Wireless Network Security Tool</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Wireless Hacking</div>
   </div>
@@ -182,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 10, 2025</p>
     </div>
   </div>
   
@@ -194,8 +246,176 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-airsnort" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-airsnort">Introduction to AirSnort</h2>
+<p>AirSnort was one of the pioneering wireless network security tools that gained prominence in the early 2000s. Developed primarily for security research and network testing, it was designed to analyze vulnerabilities in WEP (Wired Equivalent Privacy) encryption, which was the standard security protocol for 802.11b wireless networks at that time.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/400/200.png" class="img-fluid figure-img"></p>
+<figcaption>AirSnort Logo</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Historical Context
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>AirSnort is now considered a legacy tool as WEP encryption has been deprecated in favor of more secure protocols like WPA2 and WPA3. This article explores AirSnort from a historical and educational perspective.</p>
+</div>
+</div>
+</section>
+<section id="technical-background" class="level2">
+<h2 class="anchored" data-anchor-id="technical-background">Technical Background</h2>
+<section id="what-is-wep" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-wep">What is WEP?</h3>
+<p>Wired Equivalent Privacy (WEP) was the original encryption standard specified in the IEEE 802.11 standard. It was designed to provide wireless networks with security comparable to traditional wired networks. However, WEP suffered from several significant security flaws:</p>
+<ul>
+<li>Used the RC4 stream cipher with known vulnerabilities</li>
+<li>Implemented a weak key scheduling algorithm</li>
+<li>Had inadequate data integrity checks</li>
+<li>Used static encryption keys that rarely changed in practice</li>
+</ul>
+</section>
+<section id="how-airsnort-worked" class="level3">
+<h3 class="anchored" data-anchor-id="how-airsnort-worked">How AirSnort Worked</h3>
+<p>AirSnort operated by:</p>
+<ol type="1">
+<li>Passively monitoring wireless network traffic</li>
+<li>Collecting encrypted data packets</li>
+<li>Analyzing these packets to identify patterns and weaknesses</li>
+<li>Exploiting statistical weaknesses in the WEP implementation</li>
+<li>Eventually recovering the encryption key after gathering sufficient data</li>
+</ol>
+<div id="7103cbc0" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Example code showing simplified WEP key recovery logic</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_wep_packets(packets):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Simplified example of how tools like AirSnort would analyze WEP packets</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    weak_ivs <span class="op">=</span> {}  <span class="co"># Initialization Vectors</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> packet <span class="kw">in</span> packets:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        iv <span class="op">=</span> packet.get_iv()</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> is_weak_iv(iv):</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            weak_ivs[iv] <span class="op">=</span> packet.data</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># After collecting enough weak IVs, attempt key recovery</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(weak_ivs) <span class="op">&gt;</span> THRESHOLD:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        potential_key <span class="op">=</span> recover_key_from_weak_ivs(weak_ivs)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> potential_key</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="historical-impact" class="level2">
+<h2 class="anchored" data-anchor-id="historical-impact">Historical Impact</h2>
+<p>AirSnort, along with other similar tools like Aircrack, dramatically changed the wireless security landscape by demonstrating the practical exploitability of WEP encryption. This led to:</p>
+<ol type="1">
+<li>Increased awareness about wireless network security issues</li>
+<li>Accelerated development of stronger encryption protocols (WPA, WPA2)</li>
+<li>More rigorous security testing methodologies for wireless technologies</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/600/300.png" class="img-fluid figure-img"></p>
+<figcaption>Evolution of Wireless Security</figcaption>
+</figure>
+</div>
+</section>
+<section id="technical-requirements-and-setup" class="level2">
+<h2 class="anchored" data-anchor-id="technical-requirements-and-setup">Technical Requirements and Setup</h2>
+<p>In its time, AirSnort required:</p>
+<ul>
+<li>Linux/Windows operating system</li>
+<li>Compatible wireless network card capable of monitor mode</li>
+<li>Proper drivers to enable packet capture</li>
+<li>Sufficient storage for collecting encrypted packets</li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Educational Use Only
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tools like AirSnort should only be used for educational purposes, security research, or on networks you own or have explicit permission to test. Unauthorized access to networks is illegal in most jurisdictions.</p>
+</div>
+</div>
+</section>
+<section id="modern-alternatives" class="level2">
+<h2 class="anchored" data-anchor-id="modern-alternatives">Modern Alternatives</h2>
+<p>Today’s wireless security landscape has evolved significantly. Modern equivalents that focus on newer protocols include:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Focus</th>
+<th>Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Aircrack-ng</td>
+<td>WEP/WPA/WPA2</td>
+<td>Cross-platform</td>
+</tr>
+<tr class="even">
+<td>Wireshark</td>
+<td>Packet analysis</td>
+<td>Cross-platform</td>
+</tr>
+<tr class="odd">
+<td>Kismet</td>
+<td>Wireless network detection</td>
+<td>Linux/BSD</td>
+</tr>
+<tr class="even">
+<td>WiFi Pineapple</td>
+<td>Network auditing</td>
+<td>Custom hardware</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="legacy-and-learning" class="level2">
+<h2 class="anchored" data-anchor-id="legacy-and-learning">Legacy and Learning</h2>
+<p>While AirSnort is no longer actively maintained, studying its techniques provides valuable insights into:</p>
+<ul>
+<li>Cryptographic implementation flaws</li>
+<li>The evolution of security protocols</li>
+<li>The importance of regular security updates</li>
+<li>How practical attacks influence security standards</li>
+</ul>
+<div style="position: relative; padding-bottom: 56.25%; height: 0;">
+<p><img src="../api/placeholder/560/315" alt="Legacy of AirSnort" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></p>
+</div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>AirSnort represents an important chapter in the history of wireless security. Its development highlighted critical vulnerabilities in early wireless encryption standards and contributed to the creation of more robust security protocols that we rely on today.</p>
+<p>For those interested in wireless security research, understanding tools like AirSnort provides valuable historical context for appreciating modern security measures and their evolution.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Fluhrer, S., Mantin, I., &amp; Shamir, A. (2001). “Weaknesses in the key scheduling algorithm of RC4.”</li>
+<li>IEEE 802.11 Working Group. (1999). “IEEE Standard for Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) specifications.”</li>
+<li>Borisov, N., Goldberg, I., &amp; Wagner, D. (2001). “Intercepting mobile communications: The insecurity of 802.11.”</li>
+<li>Stubblefield, A., Ioannidis, J., &amp; Rubin, A. D. (2002). “Using the Fluhrer, Mantin, and Shamir attack to break WEP.”</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

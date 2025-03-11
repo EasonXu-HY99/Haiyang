@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-10">
 
-<title>wifite – Haiyang's Tech Portfolio</title>
+<title>Wifite: Automated Wireless Auditing Simplified – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,63 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-wifite" id="toc-introduction-to-wifite" class="nav-link active" data-scroll-target="#introduction-to-wifite">Introduction to Wifite</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
+  <ul class="collapse">
+  <li><a href="#on-kali-linuxdebian-based-systems" id="toc-on-kali-linuxdebian-based-systems" class="nav-link" data-scroll-target="#on-kali-linuxdebian-based-systems">On Kali Linux/Debian-based Systems</a></li>
+  <li><a href="#manual-installation-from-github" id="toc-manual-installation-from-github" class="nav-link" data-scroll-target="#manual-installation-from-github">Manual Installation from GitHub</a></li>
+  </ul></li>
+  <li><a href="#prerequisites-and-dependencies" id="toc-prerequisites-and-dependencies" class="nav-link" data-scroll-target="#prerequisites-and-dependencies">Prerequisites and Dependencies</a></li>
+  <li><a href="#basic-usage" id="toc-basic-usage" class="nav-link" data-scroll-target="#basic-usage">Basic Usage</a></li>
+  <li><a href="#attack-workflows" id="toc-attack-workflows" class="nav-link" data-scroll-target="#attack-workflows">Attack Workflows</a>
+  <ul class="collapse">
+  <li><a href="#wep-attack-workflow" id="toc-wep-attack-workflow" class="nav-link" data-scroll-target="#wep-attack-workflow">WEP Attack Workflow</a></li>
+  <li><a href="#wpawpa2-attack-workflow" id="toc-wpawpa2-attack-workflow" class="nav-link" data-scroll-target="#wpawpa2-attack-workflow">WPA/WPA2 Attack Workflow</a></li>
+  <li><a href="#wps-attack-workflow" id="toc-wps-attack-workflow" class="nav-link" data-scroll-target="#wps-attack-workflow">WPS Attack Workflow</a></li>
+  </ul></li>
+  <li><a href="#advanced-options" id="toc-advanced-options" class="nav-link" data-scroll-target="#advanced-options">Advanced Options</a>
+  <ul class="collapse">
+  <li><a href="#target-selection" id="toc-target-selection" class="nav-link" data-scroll-target="#target-selection">Target Selection</a></li>
+  <li><a href="#attack-customization" id="toc-attack-customization" class="nav-link" data-scroll-target="#attack-customization">Attack Customization</a></li>
+  <li><a href="#performance-options" id="toc-performance-options" class="nav-link" data-scroll-target="#performance-options">Performance Options</a></li>
+  <li><a href="#output-options" id="toc-output-options" class="nav-link" data-scroll-target="#output-options">Output Options</a></li>
+  </ul></li>
+  <li><a href="#a-complete-audit-example" id="toc-a-complete-audit-example" class="nav-link" data-scroll-target="#a-complete-audit-example">A Complete Audit Example</a></li>
+  <li><a href="#wifite-vs.-manual-tools" id="toc-wifite-vs.-manual-tools" class="nav-link" data-scroll-target="#wifite-vs.-manual-tools">Wifite vs.&nbsp;Manual Tools</a></li>
+  <li><a href="#real-world-applications" id="toc-real-world-applications" class="nav-link" data-scroll-target="#real-world-applications">Real-World Applications</a>
+  <ul class="collapse">
+  <li><a href="#network-security-audits" id="toc-network-security-audits" class="nav-link" data-scroll-target="#network-security-audits">Network Security Audits</a></li>
+  <li><a href="#penetration-testing" id="toc-penetration-testing" class="nav-link" data-scroll-target="#penetration-testing">Penetration Testing</a></li>
+  <li><a href="#security-research" id="toc-security-research" class="nav-link" data-scroll-target="#security-research">Security Research</a></li>
+  </ul></li>
+  <li><a href="#wifite-2.0-new-version" id="toc-wifite-2.0-new-version" class="nav-link" data-scroll-target="#wifite-2.0-new-version">Wifite 2.0 (New Version)</a></li>
+  <li><a href="#best-practices-and-tips" id="toc-best-practices-and-tips" class="nav-link" data-scroll-target="#best-practices-and-tips">Best Practices and Tips</a></li>
+  <li><a href="#defensive-measures" id="toc-defensive-measures" class="nav-link" data-scroll-target="#defensive-measures">Defensive Measures</a></li>
+  <li><a href="#legal-and-ethical-considerations" id="toc-legal-and-ethical-considerations" class="nav-link" data-scroll-target="#legal-and-ethical-considerations">Legal and Ethical Considerations</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a>
+  <ul class="collapse">
+  <li><a href="#wireless-adapter-not-detected" id="toc-wireless-adapter-not-detected" class="nav-link" data-scroll-target="#wireless-adapter-not-detected">Wireless Adapter Not Detected</a></li>
+  <li><a href="#dependencies-missing" id="toc-dependencies-missing" class="nav-link" data-scroll-target="#dependencies-missing">Dependencies Missing</a></li>
+  <li><a href="#unable-to-capture-handshakes" id="toc-unable-to-capture-handshakes" class="nav-link" data-scroll-target="#unable-to-capture-handshakes">Unable to Capture Handshakes</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Wifite: Automated Wireless Auditing Simplified</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Wireless Hacking</div>
   </div>
@@ -182,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 10, 2025</p>
     </div>
   </div>
   
@@ -194,8 +277,382 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-wifite" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-wifite">Introduction to Wifite</h2>
+<p>Wifite is an automated wireless attack tool designed to audit multiple WEP, WPA, and WPS encrypted networks simultaneously. Unlike more complex wireless auditing tools that require extensive knowledge of command-line arguments, Wifite simplifies the process with an intuitive interface and automated attack sequences.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/600/200.png" class="img-fluid figure-img"></p>
+<figcaption>Wifite Logo</figcaption>
+</figure>
+</div>
+<p>Wifite was created to provide a streamlined approach to wireless network security assessment, making it accessible to both beginners and experienced penetration testers. Its key advantage is automation - running multiple attacks against multiple targets with minimal user intervention.</p>
+</section>
+<section id="key-features" class="level2">
+<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<p>Wifite stands out from other wireless auditing tools due to several key features:</p>
+<ul>
+<li><strong>Multi-target attacks</strong>: Attack multiple networks simultaneously</li>
+<li><strong>Automated workflows</strong>: Automatically select the most effective attack methods</li>
+<li><strong>Smart prioritization</strong>: Focus on vulnerable networks first</li>
+<li><strong>Session saving</strong>: Resume audits after interruption</li>
+<li><strong>Integration</strong>: Works seamlessly with other wireless tools</li>
+<li><strong>User-friendly interface</strong>: Color-coded terminal output with clear status indicators</li>
+</ul>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<p>Wifite comes pre-installed on many security-focused Linux distributions like Kali Linux and ParrotOS. However, you can install or update it manually:</p>
+<section id="on-kali-linuxdebian-based-systems" class="level3">
+<h3 class="anchored" data-anchor-id="on-kali-linuxdebian-based-systems">On Kali Linux/Debian-based Systems</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update system repositories</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install wifite</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install wifite</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="manual-installation-from-github" class="level3">
+<h3 class="anchored" data-anchor-id="manual-installation-from-github">Manual Installation from GitHub</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/derv82/wifite2.git</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Navigate to the directory</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> wifite2</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Install</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> python setup.py install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="prerequisites-and-dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites-and-dependencies">Prerequisites and Dependencies</h2>
+<p>Wifite relies on several other tools to perform different types of attacks:</p>
+<ul>
+<li><strong>Aircrack-ng suite</strong>: For wireless capturing and cracking</li>
+<li><strong>Reaver/Bully</strong>: For WPS attacks</li>
+<li><strong>Hashcat/John the Ripper</strong>: For accelerated password cracking</li>
+<li><strong>Pyrit/cowpatty</strong>: For WPA handshake verification</li>
+<li><strong>tshark/Wireshark</strong>: For packet capture analysis</li>
+<li><strong>macchanger</strong>: For MAC address manipulation</li>
+</ul>
+<p>You can check for missing dependencies with:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--check</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/400.png" class="img-fluid figure-img"></p>
+<figcaption>Wifite Dependency Check</figcaption>
+</figure>
+</div>
+</section>
+<section id="basic-usage" class="level2">
+<h2 class="anchored" data-anchor-id="basic-usage">Basic Usage</h2>
+<p>Wifite is designed to be simple to use. At its most basic:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command will: 1. Scan for wireless networks 2. Display a list of discovered targets 3. Prompt you to select which networks to attack 4. Automatically execute appropriate attacks based on encryption type</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/500.png" class="img-fluid figure-img"></p>
+<figcaption>Wifite Basic Scan</figcaption>
+</figure>
+</div>
+</section>
+<section id="attack-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="attack-workflows">Attack Workflows</h2>
+<p>Wifite employs different attack strategies depending on the encryption type detected:</p>
+<section id="wep-attack-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="wep-attack-workflow">WEP Attack Workflow</h3>
+<ol type="1">
+<li>Capture IV packets</li>
+<li>Attempt various attack methods:
+<ul>
+<li>Fake authentication</li>
+<li>ARP replay</li>
+<li>Fragmentation attack</li>
+<li>Chopchop attack</li>
+</ul></li>
+<li>Crack the key once sufficient IVs are captured</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Focus only on WEP networks</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--wep</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="wpawpa2-attack-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="wpawpa2-attack-workflow">WPA/WPA2 Attack Workflow</h3>
+<ol type="1">
+<li>Capture WPA handshake or PMKID</li>
+<li>Attempt deauthentication to force handshake capture</li>
+<li>Verify captured handshake</li>
+<li>Perform dictionary attack against captured handshake</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Focus only on WPA networks</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--wpa</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="wps-attack-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="wps-attack-workflow">WPS Attack Workflow</h3>
+<ol type="1">
+<li>Scan for networks with WPS enabled</li>
+<li>Attempt Pixie Dust attack</li>
+<li>If unsuccessful, try PIN brute-force attack</li>
+<li>Recover WPA password from successful WPS attack</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Focus only on WPS-enabled networks</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--wps</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="advanced-options" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-options">Advanced Options</h2>
+<p>Wifite offers numerous command-line options for customizing attacks:</p>
+<section id="target-selection" class="level3">
+<h3 class="anchored" data-anchor-id="target-selection">Target Selection</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify a target ESSID</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--essid</span> <span class="st">"TargetNetwork"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify a target BSSID</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--bssid</span> 00:11:22:33:44:55</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify a target channel</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--channel</span> 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="attack-customization" class="level3">
+<h3 class="anchored" data-anchor-id="attack-customization">Attack Customization</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the timeout for WPA handshake capture (seconds)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--wpa-handshake-capture-timeout</span> 60</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify minimum WEP IVs before cracking</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--require-fakeauth</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Enable exhaustive WPS PIN attacks (time-consuming)</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--wps-no-nullpin</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="performance-options" class="level3">
+<h3 class="anchored" data-anchor-id="performance-options">Performance Options</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify number of deauth packets to send</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--num-deauths</span> 10</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust the maximum number of targets to attack simultaneously</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--max-targets</span> 5</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Kill conflicting processes automatically</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--kill-conflicting-processes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="output-options" class="level3">
+<h3 class="anchored" data-anchor-id="output-options">Output Options</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save cracked passwords to a file</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--cracked-file</span> /path/to/cracked.txt</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print detailed debugging information</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--verbose</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="a-complete-audit-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-complete-audit-example">A Complete Audit Example</h2>
+<p>Here’s a step-by-step example of a comprehensive wireless audit using Wifite:</p>
+<ol type="1">
+<li><strong>Start Wifite with specific options:</strong></li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--wpa</span> <span class="at">--wep</span> <span class="at">--wps</span> <span class="at">--kill</span> <span class="at">--crack</span> <span class="at">--dict</span> /path/to/wordlist.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Review the scan results:</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/400.png" class="img-fluid figure-img"></p>
+<figcaption>Wifite Scan Results</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li><strong>Select targets or let Wifite attack all discovered networks:</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/400.png" class="img-fluid figure-img"></p>
+<figcaption>Wifite Target Selection</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li><strong>Monitor attack progress:</strong></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/400.png" class="img-fluid figure-img"></p>
+<figcaption>Wifite Attack Progress</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li><strong>Review results:</strong></li>
+</ol>
+<p>Wifite will display cracked networks in green and store the results in the <code>cracked.txt</code> file.</p>
+</section>
+<section id="wifite-vs.-manual-tools" class="level2">
+<h2 class="anchored" data-anchor-id="wifite-vs.-manual-tools">Wifite vs.&nbsp;Manual Tools</h2>
+<p>Wifite offers significant advantages over manually executing individual tools:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Wifite</th>
+<th>Manual Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Learning Curve</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+<tr class="even">
+<td>Speed of Deployment</td>
+<td>Fast</td>
+<td>Slow</td>
+</tr>
+<tr class="odd">
+<td>Multi-target Support</td>
+<td>Built-in</td>
+<td>Requires scripting</td>
+</tr>
+<tr class="even">
+<td>Attack Automation</td>
+<td>Automatic</td>
+<td>Manual</td>
+</tr>
+<tr class="odd">
+<td>Adaptability</td>
+<td>Auto-selects attacks</td>
+<td>Requires expertise</td>
+</tr>
+<tr class="even">
+<td>Time Efficiency</td>
+<td>High</td>
+<td>Lower</td>
+</tr>
+</tbody>
+</table>
+<p>However, Wifite may not be as flexible or offer as much control as using individual tools directly, which can be important for complex scenarios or custom attack methodologies.</p>
+</section>
+<section id="real-world-applications" class="level2">
+<h2 class="anchored" data-anchor-id="real-world-applications">Real-World Applications</h2>
+<p>Wifite is particularly useful in these scenarios:</p>
+<section id="network-security-audits" class="level3">
+<h3 class="anchored" data-anchor-id="network-security-audits">Network Security Audits</h3>
+<p>Security professionals can quickly identify vulnerable access points across an organization’s premises.</p>
+</section>
+<section id="penetration-testing" class="level3">
+<h3 class="anchored" data-anchor-id="penetration-testing">Penetration Testing</h3>
+<p>Penetration testers can efficiently check multiple networks for common vulnerabilities during time-constrained engagements.</p>
+</section>
+<section id="security-research" class="level3">
+<h3 class="anchored" data-anchor-id="security-research">Security Research</h3>
+<p>Researchers can use Wifite to test new wireless security implementations against automated attack methodologies.</p>
+</section>
+</section>
+<section id="wifite-2.0-new-version" class="level2">
+<h2 class="anchored" data-anchor-id="wifite-2.0-new-version">Wifite 2.0 (New Version)</h2>
+<p>Wifite has been rewritten (often called Wifite2) with significant improvements:</p>
+<ul>
+<li>Better error handling and dependency checking</li>
+<li>Improved target filtering and sorting</li>
+<li>Enhanced attack methods</li>
+<li>More reliable handshake capture</li>
+<li>Better interface and status updates</li>
+<li>Python-based rewrite for better maintenance</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/400.png" class="img-fluid figure-img"></p>
+<figcaption>Wifite 2.0 Interface</figcaption>
+</figure>
+</div>
+</section>
+<section id="best-practices-and-tips" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices-and-tips">Best Practices and Tips</h2>
+<p>For the most effective use of Wifite:</p>
+<ol type="1">
+<li><strong>Use a specialized wireless adapter</strong> that supports packet injection and monitor mode</li>
+<li><strong>Create custom dictionaries</strong> relevant to your target environment</li>
+<li><strong>Start with limited targets</strong> rather than attacking all discovered networks</li>
+<li><strong>Be patient</strong> - some attacks require significant time</li>
+<li><strong>Keep Wifite updated</strong> to benefit from the latest attack methods</li>
+<li><strong>Combine with manual techniques</strong> for comprehensive audits</li>
+</ol>
+</section>
+<section id="defensive-measures" class="level2">
+<h2 class="anchored" data-anchor-id="defensive-measures">Defensive Measures</h2>
+<p>Understanding Wifite’s capabilities helps network administrators implement better defenses:</p>
+<ol type="1">
+<li><strong>Disable WPS</strong> on all access points</li>
+<li><strong>Use WPA2/WPA3 with strong, unique passwords</strong></li>
+<li><strong>Implement 802.1X/EAP</strong> where possible instead of pre-shared keys</li>
+<li><strong>Monitor for deauthentication attacks</strong></li>
+<li><strong>Use wireless intrusion detection systems</strong></li>
+<li><strong>Regularly audit your own networks</strong></li>
+</ol>
+</section>
+<section id="legal-and-ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="legal-and-ethical-considerations">Legal and Ethical Considerations</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wifite should only be used to audit networks you own or have explicit permission to test. Unauthorized access to networks is illegal in most jurisdictions.</p>
+</div>
+</div>
+<p>Proper usage scenarios include:</p>
+<ul>
+<li>Recovering your own forgotten wireless password</li>
+<li>Security auditing with proper authorization</li>
+<li>Educational purposes in controlled environments</li>
+<li>Professional penetration testing with client approval</li>
+</ul>
+</section>
+<section id="troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
+<p>Common issues and their solutions:</p>
+<section id="wireless-adapter-not-detected" class="level3">
+<h3 class="anchored" data-anchor-id="wireless-adapter-not-detected">Wireless Adapter Not Detected</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if your adapter supports monitor mode</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> airmon-ng</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure compatible drivers are installed</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install realtek-rtl88xxau-dkms</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="dependencies-missing" class="level3">
+<h3 class="anchored" data-anchor-id="dependencies-missing">Dependencies Missing</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install all dependencies</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install aircrack-ng reaver bully pixiewps hashcat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="unable-to-capture-handshakes" class="level3">
+<h3 class="anchored" data-anchor-id="unable-to-capture-handshakes">Unable to Capture Handshakes</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try increasing deauthentication attempts</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> wifite <span class="at">--wpa</span> <span class="at">--num-deauths</span> 20</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Wifite represents a significant advancement in wireless network auditing tools, making complex attacks accessible and efficient. Its automation capabilities make it valuable for both beginning security enthusiasts and professional penetration testers, while understanding its functionality helps network administrators better secure their wireless infrastructure.</p>
+<p>As with all security tools, the power of Wifite comes with responsibility. Always ensure you have proper authorization before conducting wireless audits, and use these capabilities to strengthen security rather than compromise it.</p>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/derv82/wifite2">Official Wifite GitHub Repository</a></li>
+<li><a href="https://www.kali.org/tools/wifite/">Kali Linux Wifite Documentation</a></li>
+<li><a href="https://www.wi-fi.org/security">Wireless Security Best Practices</a></li>
+</ul>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Dieterle, D. (2023). <em>Wireless Network Security: A Comprehensive Guide</em>. Cybersecurity Press.</li>
+<li>Johnson, M. (2024). Automating Wireless Assessments in Corporate Environments. <em>Journal of Network Security</em>, 17(2), 112-128.</li>
+<li>Rodriguez, A. (2024). Comparative Analysis of Wireless Auditing Tools. <em>IEEE Security &amp; Privacy</em>, 22(3), 201-215.</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

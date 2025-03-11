@@ -1,6 +1,128 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "AirSnort: A Classic Wireless Network Security Tool"
+date: "2025-03-10"
 categories: [Wireless Hacking]
 author: "Xu Haiyang"
+image: "/api/placeholder/800/400"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction to AirSnort
+
+AirSnort was one of the pioneering wireless network security tools that gained prominence in the early 2000s. Developed primarily for security research and network testing, it was designed to analyze vulnerabilities in WEP (Wired Equivalent Privacy) encryption, which was the standard security protocol for 802.11b wireless networks at that time.
+
+![AirSnort Logo](/api/placeholder/400/200)
+
+::: {.callout-note}
+## Historical Context
+AirSnort is now considered a legacy tool as WEP encryption has been deprecated in favor of more secure protocols like WPA2 and WPA3. This article explores AirSnort from a historical and educational perspective.
+:::
+
+## Technical Background
+
+### What is WEP?
+
+Wired Equivalent Privacy (WEP) was the original encryption standard specified in the IEEE 802.11 standard. It was designed to provide wireless networks with security comparable to traditional wired networks. However, WEP suffered from several significant security flaws:
+
+- Used the RC4 stream cipher with known vulnerabilities
+- Implemented a weak key scheduling algorithm
+- Had inadequate data integrity checks
+- Used static encryption keys that rarely changed in practice
+
+### How AirSnort Worked
+
+AirSnort operated by:
+
+1. Passively monitoring wireless network traffic
+2. Collecting encrypted data packets
+3. Analyzing these packets to identify patterns and weaknesses
+4. Exploiting statistical weaknesses in the WEP implementation
+5. Eventually recovering the encryption key after gathering sufficient data
+
+```{python}
+#| eval: false
+#| code-fold: true
+#| code-summary: "Example code showing simplified WEP key recovery logic"
+
+def analyze_wep_packets(packets):
+    """
+    Simplified example of how tools like AirSnort would analyze WEP packets
+    """
+    weak_ivs = {}  # Initialization Vectors
+    for packet in packets:
+        iv = packet.get_iv()
+        if is_weak_iv(iv):
+            weak_ivs[iv] = packet.data
+            
+    # After collecting enough weak IVs, attempt key recovery
+    if len(weak_ivs) > THRESHOLD:
+        potential_key = recover_key_from_weak_ivs(weak_ivs)
+        return potential_key
+    else:
+        return None
+```
+
+## Historical Impact
+
+AirSnort, along with other similar tools like Aircrack, dramatically changed the wireless security landscape by demonstrating the practical exploitability of WEP encryption. This led to:
+
+1. Increased awareness about wireless network security issues
+2. Accelerated development of stronger encryption protocols (WPA, WPA2)
+3. More rigorous security testing methodologies for wireless technologies
+
+![Evolution of Wireless Security](/api/placeholder/600/300)
+
+## Technical Requirements and Setup
+
+In its time, AirSnort required:
+
+- Linux/Windows operating system
+- Compatible wireless network card capable of monitor mode
+- Proper drivers to enable packet capture
+- Sufficient storage for collecting encrypted packets
+
+::: {.callout-warning}
+## Educational Use Only
+Tools like AirSnort should only be used for educational purposes, security research, or on networks you own or have explicit permission to test. Unauthorized access to networks is illegal in most jurisdictions.
+:::
+
+## Modern Alternatives
+
+Today's wireless security landscape has evolved significantly. Modern equivalents that focus on newer protocols include:
+
+| Tool | Focus | Platform |
+|------|-------|----------|
+| Aircrack-ng | WEP/WPA/WPA2 | Cross-platform |
+| Wireshark | Packet analysis | Cross-platform |
+| Kismet | Wireless network detection | Linux/BSD |
+| WiFi Pineapple | Network auditing | Custom hardware |
+
+## Legacy and Learning
+
+While AirSnort is no longer actively maintained, studying its techniques provides valuable insights into:
+
+- Cryptographic implementation flaws
+- The evolution of security protocols
+- The importance of regular security updates
+- How practical attacks influence security standards
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0;">
+  <img src="/api/placeholder/560/315" alt="Legacy of AirSnort" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+</div>
+
+## Conclusion
+
+AirSnort represents an important chapter in the history of wireless security. Its development highlighted critical vulnerabilities in early wireless encryption standards and contributed to the creation of more robust security protocols that we rely on today.
+
+For those interested in wireless security research, understanding tools like AirSnort provides valuable historical context for appreciating modern security measures and their evolution.
+
+## References
+
+1. Fluhrer, S., Mantin, I., & Shamir, A. (2001). "Weaknesses in the key scheduling algorithm of RC4."
+2. IEEE 802.11 Working Group. (1999). "IEEE Standard for Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) specifications."
+3. Borisov, N., Goldberg, I., & Wagner, D. (2001). "Intercepting mobile communications: The insecurity of 802.11."
+4. Stubblefield, A., Ioannidis, J., & Rubin, A. D. (2002). "Using the Fluhrer, Mantin, and Shamir attack to break WEP."

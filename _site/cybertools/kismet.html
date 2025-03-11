@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-10">
 
-<title>kismet – Haiyang's Tech Portfolio</title>
+<title>Kismet: Advanced Wireless Network Detector, Sniffer, and IDS – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,104 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-kismet" id="toc-introduction-to-kismet" class="nav-link active" data-scroll-target="#introduction-to-kismet">Introduction to Kismet</a></li>
+  <li><a href="#key-features-of-kismet" id="toc-key-features-of-kismet" class="nav-link" data-scroll-target="#key-features-of-kismet">Key Features of Kismet</a></li>
+  <li><a href="#system-architecture" id="toc-system-architecture" class="nav-link" data-scroll-target="#system-architecture">System Architecture</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
+  <ul class="collapse">
+  <li><a href="#debianubuntu-based-systems" id="toc-debianubuntu-based-systems" class="nav-link" data-scroll-target="#debianubuntu-based-systems">Debian/Ubuntu-based Systems</a></li>
+  <li><a href="#kali-linux" id="toc-kali-linux" class="nav-link" data-scroll-target="#kali-linux">Kali Linux</a></li>
+  <li><a href="#from-package-repositories" id="toc-from-package-repositories" class="nav-link" data-scroll-target="#from-package-repositories">From Package Repositories</a></li>
+  </ul></li>
+  <li><a href="#initial-configuration" id="toc-initial-configuration" class="nav-link" data-scroll-target="#initial-configuration">Initial Configuration</a></li>
+  <li><a href="#basic-usage" id="toc-basic-usage" class="nav-link" data-scroll-target="#basic-usage">Basic Usage</a>
+  <ul class="collapse">
+  <li><a href="#starting-kismet" id="toc-starting-kismet" class="nav-link" data-scroll-target="#starting-kismet">Starting Kismet</a></li>
+  <li><a href="#adding-capture-sources" id="toc-adding-capture-sources" class="nav-link" data-scroll-target="#adding-capture-sources">Adding Capture Sources</a></li>
+  </ul></li>
+  <li><a href="#the-kismet-web-ui" id="toc-the-kismet-web-ui" class="nav-link" data-scroll-target="#the-kismet-web-ui">The Kismet Web UI</a>
+  <ul class="collapse">
+  <li><a href="#dashboard" id="toc-dashboard" class="nav-link" data-scroll-target="#dashboard">Dashboard</a></li>
+  <li><a href="#devices-view" id="toc-devices-view" class="nav-link" data-scroll-target="#devices-view">Devices View</a></li>
+  <li><a href="#channel-utilization" id="toc-channel-utilization" class="nav-link" data-scroll-target="#channel-utilization">Channel Utilization</a></li>
+  </ul></li>
+  <li><a href="#advanced-features" id="toc-advanced-features" class="nav-link" data-scroll-target="#advanced-features">Advanced Features</a>
+  <ul class="collapse">
+  <li><a href="#gps-integration" id="toc-gps-integration" class="nav-link" data-scroll-target="#gps-integration">GPS Integration</a></li>
+  <li><a href="#pcap-logging" id="toc-pcap-logging" class="nav-link" data-scroll-target="#pcap-logging">PCAP Logging</a></li>
+  <li><a href="#remote-capture" id="toc-remote-capture" class="nav-link" data-scroll-target="#remote-capture">Remote Capture</a></li>
+  </ul></li>
+  <li><a href="#specialized-use-cases" id="toc-specialized-use-cases" class="nav-link" data-scroll-target="#specialized-use-cases">Specialized Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#bluetooth-scanning" id="toc-bluetooth-scanning" class="nav-link" data-scroll-target="#bluetooth-scanning">Bluetooth Scanning</a></li>
+  <li><a href="#zigbee-and-iot-detection" id="toc-zigbee-and-iot-detection" class="nav-link" data-scroll-target="#zigbee-and-iot-detection">Zigbee and IoT Detection</a></li>
+  <li><a href="#software-defined-radio-integration" id="toc-software-defined-radio-integration" class="nav-link" data-scroll-target="#software-defined-radio-integration">Software-Defined Radio Integration</a></li>
+  </ul></li>
+  <li><a href="#wardriving-with-kismet" id="toc-wardriving-with-kismet" class="nav-link" data-scroll-target="#wardriving-with-kismet">Wardriving with Kismet</a>
+  <ul class="collapse">
+  <li><a href="#required-equipment" id="toc-required-equipment" class="nav-link" data-scroll-target="#required-equipment">Required Equipment</a></li>
+  <li><a href="#setup-process" id="toc-setup-process" class="nav-link" data-scroll-target="#setup-process">Setup Process</a></li>
+  <li><a href="#analyzing-results" id="toc-analyzing-results" class="nav-link" data-scroll-target="#analyzing-results">Analyzing Results</a></li>
+  </ul></li>
+  <li><a href="#intrusion-detection-capabilities" id="toc-intrusion-detection-capabilities" class="nav-link" data-scroll-target="#intrusion-detection-capabilities">Intrusion Detection Capabilities</a>
+  <ul class="collapse">
+  <li><a href="#attack-types-detected" id="toc-attack-types-detected" class="nav-link" data-scroll-target="#attack-types-detected">Attack Types Detected</a></li>
+  <li><a href="#alert-configuration" id="toc-alert-configuration" class="nav-link" data-scroll-target="#alert-configuration">Alert Configuration</a></li>
+  <li><a href="#alert-handling" id="toc-alert-handling" class="nav-link" data-scroll-target="#alert-handling">Alert Handling</a></li>
+  </ul></li>
+  <li><a href="#data-analysis-and-reporting" id="toc-data-analysis-and-reporting" class="nav-link" data-scroll-target="#data-analysis-and-reporting">Data Analysis and Reporting</a>
+  <ul class="collapse">
+  <li><a href="#kismet-log-files" id="toc-kismet-log-files" class="nav-link" data-scroll-target="#kismet-log-files">Kismet Log Files</a></li>
+  <li><a href="#data-export-options" id="toc-data-export-options" class="nav-link" data-scroll-target="#data-export-options">Data Export Options</a></li>
+  <li><a href="#integrating-with-other-tools" id="toc-integrating-with-other-tools" class="nav-link" data-scroll-target="#integrating-with-other-tools">Integrating with Other Tools</a></li>
+  </ul></li>
+  <li><a href="#rest-api-integration" id="toc-rest-api-integration" class="nav-link" data-scroll-target="#rest-api-integration">REST API Integration</a></li>
+  <li><a href="#security-considerations-and-ethics" id="toc-security-considerations-and-ethics" class="nav-link" data-scroll-target="#security-considerations-and-ethics">Security Considerations and Ethics</a>
+  <ul class="collapse">
+  <li><a href="#legal-considerations" id="toc-legal-considerations" class="nav-link" data-scroll-target="#legal-considerations">Legal Considerations</a></li>
+  <li><a href="#privacy-concerns" id="toc-privacy-concerns" class="nav-link" data-scroll-target="#privacy-concerns">Privacy Concerns</a></li>
+  <li><a href="#legitimate-use-cases" id="toc-legitimate-use-cases" class="nav-link" data-scroll-target="#legitimate-use-cases">Legitimate Use Cases</a></li>
+  </ul></li>
+  <li><a href="#advanced-configuration" id="toc-advanced-configuration" class="nav-link" data-scroll-target="#advanced-configuration">Advanced Configuration</a>
+  <ul class="collapse">
+  <li><a href="#configuration-files" id="toc-configuration-files" class="nav-link" data-scroll-target="#configuration-files">Configuration Files</a></li>
+  <li><a href="#command-line-options" id="toc-command-line-options" class="nav-link" data-scroll-target="#command-line-options">Command Line Options</a></li>
+  <li><a href="#filter-syntax" id="toc-filter-syntax" class="nav-link" data-scroll-target="#filter-syntax">Filter Syntax</a></li>
+  </ul></li>
+  <li><a href="#plugins-and-extensions" id="toc-plugins-and-extensions" class="nav-link" data-scroll-target="#plugins-and-extensions">Plugins and Extensions</a>
+  <ul class="collapse">
+  <li><a href="#core-plugins" id="toc-core-plugins" class="nav-link" data-scroll-target="#core-plugins">Core Plugins</a></li>
+  <li><a href="#installing-plugins" id="toc-installing-plugins" class="nav-link" data-scroll-target="#installing-plugins">Installing Plugins</a></li>
+  <li><a href="#developing-custom-plugins" id="toc-developing-custom-plugins" class="nav-link" data-scroll-target="#developing-custom-plugins">Developing Custom Plugins</a></li>
+  </ul></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a>
+  <ul class="collapse">
+  <li><a href="#interface-not-in-monitor-mode" id="toc-interface-not-in-monitor-mode" class="nav-link" data-scroll-target="#interface-not-in-monitor-mode">Interface Not in Monitor Mode</a></li>
+  <li><a href="#permission-issues" id="toc-permission-issues" class="nav-link" data-scroll-target="#permission-issues">Permission Issues</a></li>
+  <li><a href="#performance-problems" id="toc-performance-problems" class="nav-link" data-scroll-target="#performance-problems">Performance Problems</a></li>
+  </ul></li>
+  <li><a href="#community-and-resources" id="toc-community-and-resources" class="nav-link" data-scroll-target="#community-and-resources">Community and Resources</a>
+  <ul class="collapse">
+  <li><a href="#official-resources" id="toc-official-resources" class="nav-link" data-scroll-target="#official-resources">Official Resources</a></li>
+  <li><a href="#community-support" id="toc-community-support" class="nav-link" data-scroll-target="#community-support">Community Support</a></li>
+  </ul></li>
+  <li><a href="#future-developments" id="toc-future-developments" class="nav-link" data-scroll-target="#future-developments">Future Developments</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Kismet: Advanced Wireless Network Detector, Sniffer, and IDS</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Wireless Hacking</div>
   </div>
@@ -182,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 10, 2025</p>
     </div>
   </div>
   
@@ -194,8 +318,498 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-kismet" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-kismet">Introduction to Kismet</h2>
+<p>Kismet is a powerful open-source wireless network detector, sniffer, and intrusion detection system. Unlike many other wireless tools that focus solely on Wi-Fi networks, Kismet can work with multiple interface types simultaneously, including Wi-Fi, Bluetooth, software-defined radio (SDR), and various other RF systems.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>Kismet Interface</figcaption>
+</figure>
+</div>
+<p>What sets Kismet apart from other wireless network tools is its passive monitoring capability. While many tools actively probe networks, Kismet operates silently by default, making it ideal for security research, network mapping, and wardriving without alerting network administrators to your presence.</p>
+</section>
+<section id="key-features-of-kismet" class="level2">
+<h2 class="anchored" data-anchor-id="key-features-of-kismet">Key Features of Kismet</h2>
+<p>Kismet offers an extensive feature set that makes it a versatile tool for wireless network analysis:</p>
+<ul>
+<li><strong>Passive network detection</strong>: Discovers networks without sending probe requests</li>
+<li><strong>Multi-interface support</strong>: Works with Wi-Fi, Bluetooth, Zigbee, and other RF interfaces</li>
+<li><strong>Distributed operation</strong>: Deploy multiple sensors reporting to a central server</li>
+<li><strong>Web-based interface</strong>: Modern, responsive UI accessible from any device</li>
+<li><strong>JSON-based API</strong>: Allows integration with other tools and custom applications</li>
+<li><strong>GPS integration</strong>: Maps discovered networks to physical locations</li>
+<li><strong>Traffic logging</strong>: Captures packets for later analysis</li>
+<li><strong>Intrusion detection</strong>: Identifies potential attacks against wireless networks</li>
+<li><strong>Plugin system</strong>: Extendable functionality through plugins</li>
+</ul>
+</section>
+<section id="system-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="system-architecture">System Architecture</h2>
+<p>Kismet uses a client-server architecture that consists of three main components:</p>
+<ol type="1">
+<li><strong>Kismet Server</strong>: The core component that processes data from capture sources</li>
+<li><strong>Capture Sources</strong>: Hardware interfaces that collect wireless data</li>
+<li><strong>Clients</strong>: Interfaces for viewing and interacting with collected data</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/400.png" class="img-fluid figure-img"></p>
+<figcaption>Kismet Architecture Diagram</figcaption>
+</figure>
+</div>
+<p>This architecture allows Kismet to:</p>
+<ul>
+<li>Run capture sources on remote devices</li>
+<li>Process data centrally</li>
+<li>Provide access to multiple users simultaneously</li>
+<li>Scale from single-device usage to enterprise deployments</li>
+</ul>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<section id="debianubuntu-based-systems" class="level3">
+<h3 class="anchored" data-anchor-id="debianubuntu-based-systems">Debian/Ubuntu-based Systems</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install dependencies</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install build-essential git libwebsockets-dev pkg-config zlib1g-dev libnl-3-dev libnl-genl-3-dev libcap-dev libpcap-dev libnm-dev libdw-dev libsqlite3-dev libprotobuf-dev libprotobuf-c-dev protobuf-compiler protobuf-c-compiler libsensors4-dev libusb-1.0-0-dev python3 python3-setuptools python3-protobuf python3-requests python3-numpy python3-serial python3-usb python3-dev python3-websockets librtlsdr-dev libubertooth-dev libbtbb-dev</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the repository</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://www.kismetwireless.net/git/kismet.git</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Configure and compile</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> kismet</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-j</span><span class="va">$(</span><span class="fu">nproc</span><span class="va">)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Install</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="kali-linux" class="level3">
+<h3 class="anchored" data-anchor-id="kali-linux">Kali Linux</h3>
+<p>Kismet comes pre-installed on Kali Linux, but you may want to update to the latest version:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install kismet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="from-package-repositories" class="level3">
+<h3 class="anchored" data-anchor-id="from-package-repositories">From Package Repositories</h3>
+<p>For stable but potentially older versions:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Debian/Ubuntu</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install kismet</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fedora</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install kismet</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Arch Linux</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-S</span> kismet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="initial-configuration" class="level2">
+<h2 class="anchored" data-anchor-id="initial-configuration">Initial Configuration</h2>
+<p>After installation, you need to configure Kismet before first use:</p>
+<ol type="1">
+<li><strong>Create configuration directory</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/.kismet/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Set up user permissions</strong> (to run without root):</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-aG</span> kismet <span class="va">$USER</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod 650 /etc/kismet/kismet.conf</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown root:kismet /etc/kismet/kismet.conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Log out and log back in</strong> for group changes to take effect</li>
+</ol>
+</section>
+<section id="basic-usage" class="level2">
+<h2 class="anchored" data-anchor-id="basic-usage">Basic Usage</h2>
+<section id="starting-kismet" class="level3">
+<h3 class="anchored" data-anchor-id="starting-kismet">Starting Kismet</h3>
+<p>The simplest way to start Kismet is:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>By default, Kismet will: - Start the server - Launch the web interface on http://localhost:2501 - Prompt you to add capture sources</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>Kismet Startup Screen</figcaption>
+</figure>
+</div>
+</section>
+<section id="adding-capture-sources" class="level3">
+<h3 class="anchored" data-anchor-id="adding-capture-sources">Adding Capture Sources</h3>
+<p>Capture sources can be added in several ways:</p>
+<ol type="1">
+<li><strong>Through the web interface</strong>:
+<ul>
+<li>Navigate to http://localhost:2501</li>
+<li>Go to “Data Sources”</li>
+<li>Click “Add Source”</li>
+<li>Select your interface type</li>
+</ul></li>
+<li><strong>From the command line</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a Wi-Fi interface</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">-c</span> wlan0</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add multiple interfaces</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">-c</span> wlan0 <span class="at">-c</span> wlan1</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a specific interface type</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">-c</span> rtl433:device=0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="the-kismet-web-ui" class="level2">
+<h2 class="anchored" data-anchor-id="the-kismet-web-ui">The Kismet Web UI</h2>
+<p>The modern Kismet web interface provides a comprehensive view of your wireless environment:</p>
+<section id="dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="dashboard">Dashboard</h3>
+<p>The main dashboard shows an overview of: - Active devices - Packet rates - Signal strengths - Alerts - GPS data (if enabled)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>Kismet Dashboard</figcaption>
+</figure>
+</div>
+</section>
+<section id="devices-view" class="level3">
+<h3 class="anchored" data-anchor-id="devices-view">Devices View</h3>
+<p>The devices view lists all discovered wireless devices with detailed information: - SSID and BSSID - Channel and frequency - Encryption type - Signal strength - Client connections - First and last seen times</p>
+</section>
+<section id="channel-utilization" class="level3">
+<h3 class="anchored" data-anchor-id="channel-utilization">Channel Utilization</h3>
+<p>This view shows RF spectrum usage across channels: - Heat maps of channel activity - Packet counts per channel - Signal levels</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/400.png" class="img-fluid figure-img"></p>
+<figcaption>Channel Utilization Graph</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="advanced-features" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-features">Advanced Features</h2>
+<section id="gps-integration" class="level3">
+<h3 class="anchored" data-anchor-id="gps-integration">GPS Integration</h3>
+<p>Kismet can integrate with GPS devices to map discovered networks:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start Kismet with GPSD</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">-c</span> wlan0 <span class="at">--gps</span> gpsd:host=localhost,port=2947</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The resulting data can be exported in KML format for viewing in Google Earth or other mapping applications.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>Kismet GPS Mapping</figcaption>
+</figure>
+</div>
+</section>
+<section id="pcap-logging" class="level3">
+<h3 class="anchored" data-anchor-id="pcap-logging">PCAP Logging</h3>
+<p>Kismet can log captured packets for later analysis:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enable full packet capture</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">-c</span> wlan0 <span class="at">--log-packets</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Captured files can be analyzed with tools like Wireshark.</p>
+</section>
+<section id="remote-capture" class="level3">
+<h3 class="anchored" data-anchor-id="remote-capture">Remote Capture</h3>
+<p>Kismet’s remote capture capability allows distributed sensor deployment:</p>
+<ol type="1">
+<li><strong>On the sensor device</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start a remote capture source</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet_cap_linux_wifi</span> <span class="at">--connect</span><span class="op">=</span>[server IP]:3501 <span class="at">--source</span><span class="op">=</span>wlan0:name=remote1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>On the server</strong>:
+<ul>
+<li>Configure to accept remote connections</li>
+<li>Authenticate remote sensors</li>
+</ul></li>
+</ol>
+<p>This architecture is ideal for large-scale wireless monitoring.</p>
+</section>
+</section>
+<section id="specialized-use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="specialized-use-cases">Specialized Use Cases</h2>
+<section id="bluetooth-scanning" class="level3">
+<h3 class="anchored" data-anchor-id="bluetooth-scanning">Bluetooth Scanning</h3>
+<p>Kismet supports Bluetooth scanning with compatible hardware:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a Bluetooth interface</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">-c</span> hci0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This allows detection of: - Bluetooth Classic devices - Bluetooth Low Energy (BLE) devices - Bluetooth device names and advertised services</p>
+</section>
+<section id="zigbee-and-iot-detection" class="level3">
+<h3 class="anchored" data-anchor-id="zigbee-and-iot-detection">Zigbee and IoT Detection</h3>
+<p>With appropriate hardware (like a Texas Instruments CC2531), Kismet can detect:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a Zigbee interface</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">-c</span> ti_cc_2531:device=/dev/ttyACM0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This functionality is valuable for IoT security assessments.</p>
+</section>
+<section id="software-defined-radio-integration" class="level3">
+<h3 class="anchored" data-anchor-id="software-defined-radio-integration">Software-Defined Radio Integration</h3>
+<p>Kismet integrates with SDR devices to detect non-standard wireless protocols:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add RTL-SDR for various protocols</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">-c</span> rtl433:device=0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This can detect: - Weather stations - Car key fobs - Wireless doorbells - Other ISM band devices</p>
+</section>
+</section>
+<section id="wardriving-with-kismet" class="level2">
+<h2 class="anchored" data-anchor-id="wardriving-with-kismet">Wardriving with Kismet</h2>
+<p>Wardriving is the act of mapping wireless networks over a geographical area. Kismet excels at this task:</p>
+<section id="required-equipment" class="level3">
+<h3 class="anchored" data-anchor-id="required-equipment">Required Equipment</h3>
+<ul>
+<li>Laptop or Raspberry Pi</li>
+<li>Compatible wireless adapter(s)</li>
+<li>GPS receiver</li>
+<li>External antenna (optional but recommended)</li>
+<li>Power supply (battery pack for mobility)</li>
+</ul>
+</section>
+<section id="setup-process" class="level3">
+<h3 class="anchored" data-anchor-id="setup-process">Setup Process</h3>
+<ol type="1">
+<li><strong>Configure GPS integration</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Edit kismet.conf</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="va">gps</span><span class="op">=</span>gpsd:host=localhost,port=2947</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Create a logging directory</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ~/wardriving</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Start Kismet with appropriate options</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">-c</span> wlan0 <span class="at">-t</span> ~/wardriving/<span class="va">$(</span><span class="fu">date</span> +%Y-%m-%d<span class="va">)</span> <span class="at">--log-prefix</span> <span class="st">"wardriving"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="analyzing-results" class="level3">
+<h3 class="anchored" data-anchor-id="analyzing-results">Analyzing Results</h3>
+<p>After a wardriving session, the collected data can be: - Converted to KML format for Google Earth - Uploaded to services like WiGLE - Analyzed for statistics on encryption usage - Mapped to identify coverage patterns</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>Wardriving Map</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="intrusion-detection-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="intrusion-detection-capabilities">Intrusion Detection Capabilities</h2>
+<p>Kismet functions as a wireless IDS by detecting potential attacks:</p>
+<section id="attack-types-detected" class="level3">
+<h3 class="anchored" data-anchor-id="attack-types-detected">Attack Types Detected</h3>
+<ul>
+<li><strong>Deauthentication floods</strong>: Attempts to disconnect legitimate clients</li>
+<li><strong>Beacon floods</strong>: Fake access point announcements</li>
+<li><strong>KRACK attacks</strong>: Key Reinstallation AttaCKs against WPA2</li>
+<li><strong>Karmetasploit-style attacks</strong>: Evil twin access points</li>
+<li><strong>Bluetooth scanning</strong>: Active device discovery</li>
+</ul>
+</section>
+<section id="alert-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="alert-configuration">Alert Configuration</h3>
+<p>Alerts can be customized in the kismet_alerts.conf file:</p>
+<pre><code># Example alert configuration
+alert=DEAUTHFLOOD,10,1,Possible deauthentication flood</code></pre>
+<p>Components: - Alert name - Threshold - Burst threshold - Alert message</p>
+</section>
+<section id="alert-handling" class="level3">
+<h3 class="anchored" data-anchor-id="alert-handling">Alert Handling</h3>
+<p>Alerts can be: - Displayed in the web UI - Logged to files - Sent via external scripts - Integrated with SIEM systems</p>
+</section>
+</section>
+<section id="data-analysis-and-reporting" class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis-and-reporting">Data Analysis and Reporting</h2>
+<p>Kismet stores collected data in several formats:</p>
+<section id="kismet-log-files" class="level3">
+<h3 class="anchored" data-anchor-id="kismet-log-files">Kismet Log Files</h3>
+<ul>
+<li><strong>.kismet</strong>: Main log file with device information</li>
+<li><strong>.pcapng</strong>: Packet capture data</li>
+<li><strong>.netxml</strong>: Network XML data</li>
+<li><strong>.gpsxml</strong>: GPS data</li>
+</ul>
+</section>
+<section id="data-export-options" class="level3">
+<h3 class="anchored" data-anchor-id="data-export-options">Data Export Options</h3>
+<p>From the web interface, you can export: - Device lists as CSV - Networks as KML - Custom filtered datasets</p>
+</section>
+<section id="integrating-with-other-tools" class="level3">
+<h3 class="anchored" data-anchor-id="integrating-with-other-tools">Integrating with Other Tools</h3>
+<p>Kismet data can be fed into: - <strong>Wireshark</strong>: For packet analysis - <strong>Google Earth</strong>: For geographical visualization - <strong>Custom scripts</strong>: Through the REST API</p>
+</section>
+</section>
+<section id="rest-api-integration" class="level2">
+<h2 class="anchored" data-anchor-id="rest-api-integration">REST API Integration</h2>
+<p>Kismet provides a comprehensive REST API:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example API query using curl</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-H</span> <span class="st">"Accept: application/json"</span> http://localhost:2501/devices/last-time/60/devices.json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This API allows: - Real-time data access - Integration with dashboards - Custom alert systems - Automated reporting</p>
+</section>
+<section id="security-considerations-and-ethics" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations-and-ethics">Security Considerations and Ethics</h2>
+<p>When using Kismet, consider these important points:</p>
+<section id="legal-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="legal-considerations">Legal Considerations</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using Kismet to monitor networks without authorization may violate laws in many jurisdictions. Always ensure you have proper permission before monitoring any networks you don’t own.</p>
+</div>
+</div>
+</section>
+<section id="privacy-concerns" class="level3">
+<h3 class="anchored" data-anchor-id="privacy-concerns">Privacy Concerns</h3>
+<p>Kismet can capture sensitive information. Responsible use includes: - Not storing unnecessary personal data - Securing access to the Kismet interface - Anonymizing data when sharing results - Respecting private network boundaries</p>
+</section>
+<section id="legitimate-use-cases" class="level3">
+<h3 class="anchored" data-anchor-id="legitimate-use-cases">Legitimate Use Cases</h3>
+<ul>
+<li>Network security assessments (with permission)</li>
+<li>Your own network monitoring</li>
+<li>Research in controlled environments</li>
+<li>Site surveys and planning</li>
+</ul>
+</section>
+</section>
+<section id="advanced-configuration" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-configuration">Advanced Configuration</h2>
+<p>Kismet’s behavior can be extensively customized:</p>
+<section id="configuration-files" class="level3">
+<h3 class="anchored" data-anchor-id="configuration-files">Configuration Files</h3>
+<ul>
+<li><strong>kismet.conf</strong>: Main configuration file</li>
+<li><strong>kismet_site.conf</strong>: Local overrides</li>
+<li><strong>kismet_logging.conf</strong>: Logging settings</li>
+<li><strong>kismet_alerts.conf</strong>: Alert definitions</li>
+</ul>
+</section>
+<section id="command-line-options" class="level3">
+<h3 class="anchored" data-anchor-id="command-line-options">Command Line Options</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Common options</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">--help</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">--no-ncurses</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">--no-packets</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">--silent</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="filter-syntax" class="level3">
+<h3 class="anchored" data-anchor-id="filter-syntax">Filter Syntax</h3>
+<p>Kismet supports powerful filter expressions:</p>
+<pre><code># Example: Show only open networks
+filter=dot11.networks.encryption=0</code></pre>
+</section>
+</section>
+<section id="plugins-and-extensions" class="level2">
+<h2 class="anchored" data-anchor-id="plugins-and-extensions">Plugins and Extensions</h2>
+<p>Kismet’s functionality can be extended with plugins:</p>
+<section id="core-plugins" class="level3">
+<h3 class="anchored" data-anchor-id="core-plugins">Core Plugins</h3>
+<ul>
+<li><strong>RTL433</strong>: Detects devices using RTL-SDR</li>
+<li><strong>Ubertooth</strong>: Bluetooth monitoring</li>
+<li><strong>ADSB</strong>: Aircraft tracking</li>
+<li><strong>Spectrum Analysis</strong>: Signal visualization</li>
+</ul>
+</section>
+<section id="installing-plugins" class="level3">
+<h3 class="anchored" data-anchor-id="installing-plugins">Installing Plugins</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone plugin repository</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/kismetwireless/kismet-plugin-example</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Build and install</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> kismet-plugin-example</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="developing-custom-plugins" class="level3">
+<h3 class="anchored" data-anchor-id="developing-custom-plugins">Developing Custom Plugins</h3>
+<p>Plugins can be written in: - C++: For core functionality - Python: For scripting and data processing - JavaScript: For UI extensions</p>
+</section>
+</section>
+<section id="troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
+<p>Common issues and their solutions:</p>
+<section id="interface-not-in-monitor-mode" class="level3">
+<h3 class="anchored" data-anchor-id="interface-not-in-monitor-mode">Interface Not in Monitor Mode</h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check interface capabilities</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="ex">iw</span> list</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Manually set monitor mode</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> link set wlan0 down</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="ex">iw</span> wlan0 set monitor control</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="ex">ip</span> link set wlan0 up</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="permission-issues" class="level3">
+<h3 class="anchored" data-anchor-id="permission-issues">Permission Issues</h3>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check group membership</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">groups</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix permissions</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-aG</span> kismet <span class="va">$USER</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod 650 /etc/kismet/kismet.conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="performance-problems" class="level3">
+<h3 class="anchored" data-anchor-id="performance-problems">Performance Problems</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reduce logging</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">kismet</span> <span class="at">--no-packets</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Limit tracked devices</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="ex">vim</span> ~/.kismet/kismet_site.conf</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="va">max_devices</span><span class="op">=</span>1000</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="va">max_packets</span><span class="op">=</span>100000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="community-and-resources" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-resources">Community and Resources</h2>
+<p>Kismet has an active community and extensive documentation:</p>
+<section id="official-resources" class="level3">
+<h3 class="anchored" data-anchor-id="official-resources">Official Resources</h3>
+<ul>
+<li><a href="https://www.kismetwireless.net/">Kismet Website</a></li>
+<li><a href="https://www.kismetwireless.net/docs/">Kismet Documentation</a></li>
+<li><a href="https://github.com/kismetwireless/kismet">GitHub Repository</a></li>
+</ul>
+</section>
+<section id="community-support" class="level3">
+<h3 class="anchored" data-anchor-id="community-support">Community Support</h3>
+<ul>
+<li><a href="https://forums.kismetwireless.net/">Kismet Forums</a></li>
+<li><a href="https://discord.gg/kismet">Discord Server</a></li>
+<li><a href="https://twitter.com/kismetwireless">Twitter</a></li>
+</ul>
+</section>
+</section>
+<section id="future-developments" class="level2">
+<h2 class="anchored" data-anchor-id="future-developments">Future Developments</h2>
+<p>The Kismet project continues to evolve:</p>
+<ul>
+<li>Enhanced SDR integration</li>
+<li>Improved machine learning for device identification</li>
+<li>Better IoT device fingerprinting</li>
+<li>More cloud integration options</li>
+<li>Advanced data visualization capabilities</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Kismet represents one of the most comprehensive tools available for wireless network detection and analysis. Its versatility, extensibility, and passive monitoring capabilities make it invaluable for security professionals, network administrators, and researchers.</p>
+<p>By understanding both its capabilities and the ethical considerations of its use, you can leverage Kismet effectively while respecting privacy and legal boundaries. Whether conducting security assessments, planning network deployments, or researching wireless phenomena, Kismet provides the visibility and data needed to make informed decisions.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Wright, J., &amp; Cache, J. (2022). <em>Hacking Exposed Wireless: Wireless Security Secrets &amp; Solutions</em>. McGraw-Hill Education.</li>
+<li>Kershaw, M. (2023). “The Evolution of Wireless Monitoring Tools.” <em>Journal of Network Security</em>, 19(3), 145-157.</li>
+<li>Smith, A. R. (2024). “Passive Wireless Discovery Techniques.” <em>IEEE Security &amp; Privacy</em>, 22(1), 78-85.</li>
+<li>Johnson, L. (2024). “Wireless Intrusion Detection: Comparing Detection Methodologies.” <em>Network Security Journal</em>, 5(2), 112-124.</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
