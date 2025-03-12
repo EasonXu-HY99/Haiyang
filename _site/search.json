@@ -359,9 +359,9 @@
   {
     "objectID": "contact.html",
     "href": "contact.html",
-    "title": "Contact Me",
+    "title": "Let's Connect!",
     "section": "",
-    "text": "Let’s Connect!\n\nEmail: 📧 haiyang.xu.2021@scis.smu.edu.sg\nPhone: 📱 +65 8090 8720\nLinkedIn: 🔗 Haiyang Xu\nResume: 📄 Download my Resume"
+    "text": "Let's Connect!\n    Bringing cybersecurity expertise to your next project\n  \n\n\n\n  \n    I'm always open to discussing new projects, collaboration opportunities, or just exchanging ideas about cybersecurity and cloud architecture. Feel free to reach out through any of the channels below.\n  \n\n  \n    \n      \n        \n      \n      haiyang.xu.2021@scis.smu.edu.sg\n    \n    \n    \n      \n        \n      \n      +65 8090 8720\n    \n    \n    \n      \n        \n      \n      Haiyang Xu\n    \n    \n    \n      \n        \n      \n      EasonXu-HY99\n    \n    \n    \n      \n        \n      \n      Download my Resume"
   },
   {
     "objectID": "cloud.html",
@@ -3645,5 +3645,19 @@
     "title": "Reaver: Exploiting WPS Vulnerabilities in Wireless Networks",
     "section": "References",
     "text": "References\n\nHeffner, C. (2011). “Cracking WiFi Protected Setup with Reaver.” Presented at Black Hat Abu Dhabi.\nViehböck, S. (2011). “Brute forcing Wi-Fi Protected Setup: When poor design meets poor implementation.”\nWi-Fi Alliance. (2006). “Wi-Fi Protected Setup Specification.”\nBongard, D. (2014). “Offline bruteforce attack on WiFi Protected Setup.” Presented at Hacklu.\nt6x. (2015-Present). “Reaver-WPS-Fork.” GitHub Repository.\nAntoniewicz, B. (2015). “Practical attacks against WPS (Wi-Fi Protected Setup).” SANS Institute."
+  },
+  {
+    "objectID": "contact.html#schedule-a-meeting",
+    "href": "contact.html#schedule-a-meeting",
+    "title": "Contact Me",
+    "section": "",
+    "text": "If you’d like to schedule a meeting with me, please use the calendar link below to find a time that works for both of us.\nSchedule a Meeting →"
+  },
+  {
+    "objectID": "contact.html#send-a-message",
+    "href": "contact.html#send-a-message",
+    "title": "Contact Me",
+    "section": "",
+    "text": "&lt;label for=\"name\"&gt;Name&lt;/label&gt;\n&lt;input type=\"text\" id=\"name\" name=\"name\" required&gt;\n\n\n&lt;label for=\"email\"&gt;Email&lt;/label&gt;\n&lt;input type=\"email\" id=\"email\" name=\"email\" required&gt;\n\n\n&lt;label for=\"subject\"&gt;Subject&lt;/label&gt;\n&lt;input type=\"text\" id=\"subject\" name=\"subject\" required&gt;\n\n\n&lt;label for=\"message\"&gt;Message&lt;/label&gt;\n&lt;textarea id=\"message\" name=\"message\" rows=\"5\" required&gt;&lt;/textarea&gt;\n\n\nSend Message"
   }
 ]
