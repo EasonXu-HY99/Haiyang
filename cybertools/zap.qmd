@@ -3,7 +3,7 @@ title: "ZAP: The OWASP Zed Attack Proxy"
 date: "2025-03-11"
 categories: [Exploitation, Security, Web Application Testing]
 author: "Xu Haiyang"
-image: "/api/placeholder/800/400"
+image: "https://cybertzar.com/wp-content/uploads/2022/11/zap-logo.png"
 format:
   html:
     toc: true
@@ -17,7 +17,7 @@ format:
 
 The OWASP Zed Attack Proxy (ZAP) is one of the world's most popular free security tools and is actively maintained by a dedicated international team of volunteers. It can help you automatically find security vulnerabilities in your web applications while you are developing and testing your applications.
 
-![ZAP Logo](/api/placeholder/600/300)
+![ZAP Logo](https://cybertzar.com/wp-content/uploads/2022/11/zap-logo.png)
 
 ZAP is designed to be used by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing as well as being a useful addition to an experienced pen tester's toolbox.
 
@@ -40,7 +40,7 @@ zap-cli quick-scan --self-contained \
 
 The intercepting proxy allows you to see all the requests and responses between your browser and the web application you're testing.
 
-![Intercepting Proxy](/api/placeholder/700/350)
+![Intercepting Proxy](https://miro.medium.com/v2/resize:fit:1400/1*Xas25nsY6q245mIYE3vYHQ.png)
 
 ### Traditional and AJAX Spiders
 
@@ -122,7 +122,7 @@ with open('zap_report.html', 'w') as f:
 
 ZAP supports scripting in various languages including JavaScript, Python, Ruby, and Groovy. Scripts can be used to automate tasks, add new functionality, and customize ZAP's behavior.
 
-![ZAP Scripting Interface](/api/placeholder/650/320)
+![ZAP Scripting Interface](https://www.vaadata.com/blog/wp-content/uploads/2025/03/understanding-zap-interface-1024x745.png)
 
 ### Fuzzing
 

@@ -3,7 +3,7 @@ title: "Burp Suite: The Leading Web Application Security Testing Tool"
 date: "2025-03-11"
 categories: [Exploitation]
 author: "Xu Haiyang"
-image: "/api/placeholder/1200/600"
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvdAoXv_ukedOGkOQg57lomA8bkqs6V1WKog&s"
 format:
   html:
     toc: true
@@ -15,7 +15,7 @@ format:
 
 Burp Suite is an integrated platform for performing security testing of web applications. It has become the industry-standard tool used by information security professionals and is regularly featured in top security methodologies like the OWASP Testing Guide.
 
-![Burp Suite Interface](/api/placeholder/800/450)
+![Burp Suite Interface](https://miro.medium.com/v2/resize:fit:1400/1*q1mXbZtEGYdsgzAuvhx29A.png)
 
 Burp Suite contains various tools that work seamlessly together to support the entire testing process, from initial mapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities.
 
@@ -39,7 +39,7 @@ The Burp Proxy is an intercepting web proxy that operates as a man-in-the-middle
 +-------------+    +-----------+    +-------------------+
 ```
 
-![Burp Proxy Intercepting Traffic](/api/placeholder/800/450)
+![Burp Proxy Intercepting Traffic](https://www.vaadata.com/blog/wp-content/uploads/2024/01/burp-suite-proxy-1024x536.png)
 
 ### Scanner
 
@@ -62,7 +62,7 @@ Burp Intruder is a powerful tool for automating customized attacks against web a
 - Harvesting useful data
 - Exploiting vulnerabilities
 
-![Burp Intruder Attack Configuration](/api/placeholder/800/450)
+![Burp Intruder Attack Configuration](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ39oX8vz8cDnnosHNS8wZjuLJCdBGArFz2JQ&s)
 
 ### Repeater
 
@@ -137,7 +137,7 @@ graph LR
 4. Choose a payload list of SQL injection test strings
 5. Start the attack and analyze responses for errors or behavioral changes
 
-![SQL Injection Testing Process](/api/placeholder/800/450)
+![SQL Injection Testing Process](https://i.ytimg.com/vi/JkJLZ4NYISQ/maxresdefault.jpg)
 
 ### Finding Hidden Directories
 

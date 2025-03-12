@@ -3,7 +3,7 @@ title: "SQLMap: Automated SQL Injection Detection and Exploitation Tool"
 date: "2025-03-11"
 categories: [Exploitation]
 author: "Xu Haiyang"
-image: "/api/placeholder/1200/600"
+image: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Sqlmap_logo.png"
 format:
   html:
     toc: true
@@ -15,7 +15,7 @@ format:
 
 SQLMap is an open-source penetration testing tool that automates the process of detecting and exploiting SQL injection vulnerabilities in database servers. Since its initial release in 2006, SQLMap has become one of the most powerful and widely used tools for database security assessment.
 
-![SQLMap Banner](/api/placeholder/800/400)
+![SQLMap Banner](https://sqlmap.org/images/screenshot.png)
 
 SQLMap automates the process of detecting and exploiting SQL injection flaws, with support for a wide range of database management systems including MySQL, Oracle, PostgreSQL, Microsoft SQL Server, SQLite, and many others.
 
@@ -72,7 +72,7 @@ SQLMap employs various SQL injection techniques:
 - Stacked queries
 - Out-of-band
 
-![SQLMap Injection Techniques](/api/placeholder/800/450)
+![SQLMap Injection Techniques](https://www.vaadata.com/blog/wp-content/uploads/2024/05/payload-and-dbms-identification-1024x521.png)
 
 ### Advanced Features
 
@@ -175,7 +175,7 @@ sqlmap -u "http://example.com/page.php?id=1" --dbs
 
 This command tests the "id" parameter for SQL injection vulnerabilities and attempts to retrieve the list of databases if successful.
 
-![SQLMap Basic URL Testing](/api/placeholder/800/450)
+![SQLMap Basic URL Testing](https://purplesec.us/wp-content/uploads/2019/11/SQLMap-05.jpg)
 
 ### Example 2: Testing with HTTP POST Data
 
@@ -271,7 +271,7 @@ SQLMap can be integrated with Burp Suite for more comprehensive testing:
 sqlmap -r request.txt --dbs
 ```
 
-![SQLMap with Burp Suite](/api/placeholder/800/450)
+![SQLMap with Burp Suite](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_A6JjXlAYK1jEvBt9sgNyY1iSttfQeNcXjA&s)
 
 ### Batch Processing
 
@@ -417,7 +417,7 @@ sqlmap -u "https://target-app.com/products.php?id=123" --random-agent -D custome
 
 6. **Reporting**: The team reported the vulnerability with proof of concept and recommended fixes.
 
-![SQLMap Case Study](/api/placeholder/800/450)
+![SQLMap Case Study](https://ijisae.org/public/journals/1/submission_2141_2425_coverImage_en_US.png)
 
 ## Conclusion
 

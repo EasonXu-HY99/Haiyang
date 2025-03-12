@@ -3,7 +3,7 @@ title: "Metasploit Framework: The Comprehensive Penetration Testing Arsenal"
 date: "2025-03-11"
 categories: [Exploitation]
 author: "Xu Haiyang"
-image: "/api/placeholder/1200/600"
+image: "https://pbs.twimg.com/profile_images/580131056629735424/2ENTk2K2_400x400.png"
 format:
   html:
     toc: true
@@ -15,7 +15,7 @@ format:
 
 The Metasploit Framework is one of the most powerful and widely used penetration testing tools available today. Created by H.D. Moore in 2003, it has evolved into a comprehensive platform that security professionals use to find, exploit, and validate vulnerabilities in various systems and applications.
 
-![Metasploit Framework Console](/api/placeholder/800/450)
+![Metasploit Framework Console](https://www.imperva.com/learn/wp-content/uploads/sites/13/2022/04/Screen-Shot-2022-04-03-at-14.41.09.png)
 
 Metasploit provides a structured environment for penetration testing with a vast collection of exploit code, payload generators, and auxiliary modules designed to streamline security assessments.
 
@@ -34,7 +34,7 @@ The Metasploit Framework follows a modular architecture that makes it highly ext
 
 ### Core Components
 
-![Metasploit Architecture](/api/placeholder/800/450)
+![Metasploit Architecture](https://www.offsec.com/wp-content/uploads/2015/04/msfarch2.png)
 
 ```
 +--------------------+     +--------------------+     +--------------------+
@@ -106,7 +106,7 @@ Payloads are code that runs after successful exploitation. Metasploit offers thr
 2. **Stagers**: Establish a connection channel between attacker and victim
 3. **Stages**: Downloaded by stagers to provide advanced features
 
-![Metasploit Payload Types](/api/placeholder/800/450)
+![Metasploit Payload Types](https://www.hackthebox.com/storage/blog/RrYdoV7nYkaR9NdV6h263NRzMQ4SdGT5.jpg)
 
 #### Auxiliary
 
@@ -206,7 +206,7 @@ msf > hosts
 msf > services
 ```
 
-![Metasploit Vulnerability Scanning](/api/placeholder/800/450)
+![Metasploit Vulnerability Scanning](https://www.offsec.com/wp-content/uploads/2015/04/metasploit-db_nmap.png)
 
 ### Example 2: Exploiting a Vulnerable Service
 
@@ -243,7 +243,7 @@ meterpreter > search -f *.pdf
 meterpreter > migrate 1234
 ```
 
-![Meterpreter Post-Exploitation](/api/placeholder/800/450)
+![Meterpreter Post-Exploitation](https://www.redscan.com/media/redscan-image.jpg)
 
 ## Advanced Metasploit Techniques
 
