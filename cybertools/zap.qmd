@@ -1,6 +1,204 @@
 ---
-title: ""
-date: "2025-03-06"
-categories: [Exploitation, Web Application Assessment]
+title: "ZAP: The OWASP Zed Attack Proxy"
+date: "2025-03-11"
+categories: [Exploitation, Security, Web Application Testing]
 author: "Xu Haiyang"
+image: "/api/placeholder/800/400"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
+    code-fold: true
+    code-summary: "Show code"
 ---
+
+## Introduction to ZAP
+
+The OWASP Zed Attack Proxy (ZAP) is one of the world's most popular free security tools and is actively maintained by a dedicated international team of volunteers. It can help you automatically find security vulnerabilities in your web applications while you are developing and testing your applications.
+
+![ZAP Logo](/api/placeholder/600/300)
+
+ZAP is designed to be used by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing as well as being a useful addition to an experienced pen tester's toolbox.
+
+## Key Features
+
+ZAP provides the following key features that make it an essential tool for web application security testing:
+
+### Automated Scanner
+
+ZAP's automated scanner is a great way to find vulnerabilities in your web applications with minimal effort.
+
+```bash
+# Example of running an automated scan with ZAP
+zap-cli quick-scan --self-contained \
+  --start-options "-config api.disablekey=true" \
+  https://example.com
+```
+
+### Intercepting Proxy
+
+The intercepting proxy allows you to see all the requests and responses between your browser and the web application you're testing.
+
+![Intercepting Proxy](/api/placeholder/700/350)
+
+### Traditional and AJAX Spiders
+
+ZAP offers both traditional and AJAX spiders to help you discover the attack surface of your application:
+
+- **Traditional Spider**: Crawls web applications to discover linked content
+- **AJAX Spider**: Finds content that requires JavaScript execution
+
+### Passive Scanner
+
+The passive scanner automatically scans all HTTP messages (requests and responses) that pass through ZAP without modifying them. This allows you to detect potential vulnerabilities without sending any additional requests.
+
+## Getting Started with ZAP
+
+### Installation
+
+ZAP is cross-platform and runs on Windows, Linux, and macOS. Here are the installation options:
+
+1. **Download the installer** from the [official ZAP website](https://www.zaproxy.org/)
+2. **Use Docker**:
+
+```bash
+docker run -u zap -p 8080:8080 -p 8090:8090 -i owasp/zap2docker-stable zap-webswing.sh
+```
+
+3. **Use package managers**:
+
+```bash
+# For macOS
+brew install --cask owasp-zap
+
+# For Linux (Kali)
+apt install zaproxy
+```
+
+### Basic Usage
+
+After installing ZAP, follow these steps to start testing your application:
+
+1. **Launch ZAP**
+2. **Set up your browser** to use ZAP as a proxy (usually `localhost:8080`)
+3. **Navigate to your application** through your browser
+4. **Explore your application** while ZAP captures the traffic
+5. **Run active scans** on the discovered endpoints
+
+```python
+# Python example using the ZAP API
+import time
+from zapv2 import ZAPv2
+
+# Connect to ZAP
+zap = ZAPv2(apikey='your-api-key', proxies={'http': 'http://localhost:8080', 'https': 'http://localhost:8080'})
+
+# Access the target
+target = 'https://example.com'
+zap.urlopen(target)
+
+# Spider the target
+scan_id = zap.spider.scan(target)
+while int(zap.spider.status(scan_id)) < 100:
+    print(f'Spider progress: {zap.spider.status(scan_id)}%')
+    time.sleep(2)
+
+# Active scan
+scan_id = zap.ascan.scan(target)
+while int(zap.ascan.status(scan_id)) < 100:
+    print(f'Active scan progress: {zap.ascan.status(scan_id)}%')
+    time.sleep(5)
+
+# Generate report
+report = zap.core.htmlreport()
+with open('zap_report.html', 'w') as f:
+    f.write(report)
+```
+
+## Advanced Features
+
+### Scripting
+
+ZAP supports scripting in various languages including JavaScript, Python, Ruby, and Groovy. Scripts can be used to automate tasks, add new functionality, and customize ZAP's behavior.
+
+![ZAP Scripting Interface](/api/placeholder/650/320)
+
+### Fuzzing
+
+The fuzzer allows you to send a large number of unexpected or random inputs to your application to identify potential vulnerabilities.
+
+```javascript
+// Example fuzzer configuration script
+var Fuzzer = Java.type("org.zaproxy.zap.extension.fuzz.payloads.ui.impl.FileStringPayloadGeneratorUIHandler");
+var payload = new Fuzzer();
+payload.setFile("/path/to/payload/list.txt");
+```
+
+### API
+
+ZAP provides a comprehensive API that allows you to integrate ZAP with your CI/CD pipeline or other tools.
+
+## Integration with DevSecOps
+
+ZAP can be seamlessly integrated into your DevSecOps pipeline to provide continuous security testing. Here's a GitHub Actions example:
+
+```yaml
+name: ZAP Security Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.9.0
+        with:
+          target: 'https://www.example.com'
+          rules_file_name: '.zap/rules.tsv'
+          cmd_options: '-a'
+```
+
+## Case Study: Finding Vulnerabilities with ZAP
+
+In 2024, a security researcher used ZAP to identify several critical vulnerabilities in a popular e-commerce platform:
+
+1. **Cross-Site Scripting (XSS)** in the product search function
+2. **SQL Injection** vulnerability in the user profile page
+3. **Insecure Direct Object References** in order management
+4. **Cross-Site Request Forgery (CSRF)** in the payment process
+
+These vulnerabilities were responsibly disclosed and fixed before any exploitation occurred.
+
+## Comparison with Other Tools
+
+| Tool | Open Source | Passive Scanning | Active Scanning | Automation | Scripting |
+|------|------------|-----------------|----------------|------------|-----------|
+| ZAP | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Burp Suite Community | ✅ | ✅ | ❌ | ❌ | ❌ |
+| Burp Suite Professional | ❌ | ✅ | ✅ | ✅ | ✅ |
+| OWASP Amass | ✅ | ✅ | ❌ | ✅ | ❌ |
+| Nikto | ✅ | ❌ | ✅ | ✅ | ❌ |
+
+## Resources and Further Reading
+
+For more information about ZAP and web application security testing:
+
+- [Official ZAP Documentation](https://www.zaproxy.org/docs/)
+- [ZAP User Guide](https://www.zaproxy.org/docs/desktop/ui/)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- [ZAP in Ten](https://www.alldaydevops.com/zap-in-ten) - Short video tutorials
+
+## Conclusion
+
+ZAP is a powerful and versatile security tool that can help identify vulnerabilities in web applications. Whether you're a security professional or a developer new to security testing, ZAP provides the features and flexibility needed to improve your application's security posture.
+
+The open-source nature of ZAP, combined with its active community and regular updates, makes it an excellent choice for integrating security testing into your development process.

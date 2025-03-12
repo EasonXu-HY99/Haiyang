@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-11">
 
-<title>zap – Haiyang's Tech Portfolio</title>
+<title>ZAP: The OWASP Zed Attack Proxy – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,17 +189,48 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-zap" id="toc-introduction-to-zap" class="nav-link active" data-scroll-target="#introduction-to-zap">Introduction to ZAP</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a>
+  <ul class="collapse">
+  <li><a href="#automated-scanner" id="toc-automated-scanner" class="nav-link" data-scroll-target="#automated-scanner">Automated Scanner</a></li>
+  <li><a href="#intercepting-proxy" id="toc-intercepting-proxy" class="nav-link" data-scroll-target="#intercepting-proxy">Intercepting Proxy</a></li>
+  <li><a href="#traditional-and-ajax-spiders" id="toc-traditional-and-ajax-spiders" class="nav-link" data-scroll-target="#traditional-and-ajax-spiders">Traditional and AJAX Spiders</a></li>
+  <li><a href="#passive-scanner" id="toc-passive-scanner" class="nav-link" data-scroll-target="#passive-scanner">Passive Scanner</a></li>
+  </ul></li>
+  <li><a href="#getting-started-with-zap" id="toc-getting-started-with-zap" class="nav-link" data-scroll-target="#getting-started-with-zap">Getting Started with ZAP</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#basic-usage" id="toc-basic-usage" class="nav-link" data-scroll-target="#basic-usage">Basic Usage</a></li>
+  </ul></li>
+  <li><a href="#advanced-features" id="toc-advanced-features" class="nav-link" data-scroll-target="#advanced-features">Advanced Features</a>
+  <ul class="collapse">
+  <li><a href="#scripting" id="toc-scripting" class="nav-link" data-scroll-target="#scripting">Scripting</a></li>
+  <li><a href="#fuzzing" id="toc-fuzzing" class="nav-link" data-scroll-target="#fuzzing">Fuzzing</a></li>
+  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
+  </ul></li>
+  <li><a href="#integration-with-devsecops" id="toc-integration-with-devsecops" class="nav-link" data-scroll-target="#integration-with-devsecops">Integration with DevSecOps</a></li>
+  <li><a href="#case-study-finding-vulnerabilities-with-zap" id="toc-case-study-finding-vulnerabilities-with-zap" class="nav-link" data-scroll-target="#case-study-finding-vulnerabilities-with-zap">Case Study: Finding Vulnerabilities with ZAP</a></li>
+  <li><a href="#comparison-with-other-tools" id="toc-comparison-with-other-tools" class="nav-link" data-scroll-target="#comparison-with-other-tools">Comparison with Other Tools</a></li>
+  <li><a href="#resources-and-further-reading" id="toc-resources-and-further-reading" class="nav-link" data-scroll-target="#resources-and-further-reading">Resources and Further Reading</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">ZAP: The OWASP Zed Attack Proxy</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Exploitation</div>
-    <div class="quarto-category">Web Application Assessment</div>
+    <div class="quarto-category">Security</div>
+    <div class="quarto-category">Web Application Testing</div>
   </div>
   </div>
 
@@ -183,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 11, 2025</p>
     </div>
   </div>
   
@@ -195,8 +260,252 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-zap" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-zap">Introduction to ZAP</h2>
+<p>The OWASP Zed Attack Proxy (ZAP) is one of the world’s most popular free security tools and is actively maintained by a dedicated international team of volunteers. It can help you automatically find security vulnerabilities in your web applications while you are developing and testing your applications.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/600/300.png" class="img-fluid figure-img"></p>
+<figcaption>ZAP Logo</figcaption>
+</figure>
+</div>
+<p>ZAP is designed to be used by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing as well as being a useful addition to an experienced pen tester’s toolbox.</p>
+</section>
+<section id="key-features" class="level2">
+<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<p>ZAP provides the following key features that make it an essential tool for web application security testing:</p>
+<section id="automated-scanner" class="level3">
+<h3 class="anchored" data-anchor-id="automated-scanner">Automated Scanner</h3>
+<p>ZAP’s automated scanner is a great way to find vulnerabilities in your web applications with minimal effort.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of running an automated scan with ZAP</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">zap-cli</span> quick-scan <span class="at">--self-contained</span> <span class="dt">\</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--start-options</span> <span class="st">"-config api.disablekey=true"</span> <span class="dt">\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  https://example.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="intercepting-proxy" class="level3">
+<h3 class="anchored" data-anchor-id="intercepting-proxy">Intercepting Proxy</h3>
+<p>The intercepting proxy allows you to see all the requests and responses between your browser and the web application you’re testing.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/700/350.png" class="img-fluid figure-img"></p>
+<figcaption>Intercepting Proxy</figcaption>
+</figure>
+</div>
+</section>
+<section id="traditional-and-ajax-spiders" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-and-ajax-spiders">Traditional and AJAX Spiders</h3>
+<p>ZAP offers both traditional and AJAX spiders to help you discover the attack surface of your application:</p>
+<ul>
+<li><strong>Traditional Spider</strong>: Crawls web applications to discover linked content</li>
+<li><strong>AJAX Spider</strong>: Finds content that requires JavaScript execution</li>
+</ul>
+</section>
+<section id="passive-scanner" class="level3">
+<h3 class="anchored" data-anchor-id="passive-scanner">Passive Scanner</h3>
+<p>The passive scanner automatically scans all HTTP messages (requests and responses) that pass through ZAP without modifying them. This allows you to detect potential vulnerabilities without sending any additional requests.</p>
+</section>
+</section>
+<section id="getting-started-with-zap" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-with-zap">Getting Started with ZAP</h2>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>ZAP is cross-platform and runs on Windows, Linux, and macOS. Here are the installation options:</p>
+<ol type="1">
+<li><strong>Download the installer</strong> from the <a href="https://www.zaproxy.org/">official ZAP website</a></li>
+<li><strong>Use Docker</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-u</span> zap <span class="at">-p</span> 8080:8080 <span class="at">-p</span> 8090:8090 <span class="at">-i</span> owasp/zap2docker-stable zap-webswing.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li><strong>Use package managers</strong>:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For macOS</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install <span class="at">--cask</span> owasp-zap</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For Linux (Kali)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> install zaproxy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="basic-usage" class="level3">
+<h3 class="anchored" data-anchor-id="basic-usage">Basic Usage</h3>
+<p>After installing ZAP, follow these steps to start testing your application:</p>
+<ol type="1">
+<li><strong>Launch ZAP</strong></li>
+<li><strong>Set up your browser</strong> to use ZAP as a proxy (usually <code>localhost:8080</code>)</li>
+<li><strong>Navigate to your application</strong> through your browser</li>
+<li><strong>Explore your application</strong> while ZAP captures the traffic</li>
+<li><strong>Run active scans</strong> on the discovered endpoints</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python example using the ZAP API</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> zapv2 <span class="im">import</span> ZAPv2</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to ZAP</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>zap <span class="op">=</span> ZAPv2(apikey<span class="op">=</span><span class="st">'your-api-key'</span>, proxies<span class="op">=</span>{<span class="st">'http'</span>: <span class="st">'http://localhost:8080'</span>, <span class="st">'https'</span>: <span class="st">'http://localhost:8080'</span>})</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Access the target</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> <span class="st">'https://example.com'</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>zap.urlopen(target)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Spider the target</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>scan_id <span class="op">=</span> zap.spider.scan(target)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">int</span>(zap.spider.status(scan_id)) <span class="op">&lt;</span> <span class="dv">100</span>:</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Spider progress: </span><span class="sc">{</span>zap<span class="sc">.</span>spider<span class="sc">.</span>status(scan_id)<span class="sc">}</span><span class="ss">%'</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">2</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Active scan</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>scan_id <span class="op">=</span> zap.ascan.scan(target)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">int</span>(zap.ascan.status(scan_id)) <span class="op">&lt;</span> <span class="dv">100</span>:</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Active scan progress: </span><span class="sc">{</span>zap<span class="sc">.</span>ascan<span class="sc">.</span>status(scan_id)<span class="sc">}</span><span class="ss">%'</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">5</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate report</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> zap.core.htmlreport()</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'zap_report.html'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    f.write(report)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="advanced-features" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-features">Advanced Features</h2>
+<section id="scripting" class="level3">
+<h3 class="anchored" data-anchor-id="scripting">Scripting</h3>
+<p>ZAP supports scripting in various languages including JavaScript, Python, Ruby, and Groovy. Scripts can be used to automate tasks, add new functionality, and customize ZAP’s behavior.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\api/placeholder/650/320.png" class="img-fluid figure-img"></p>
+<figcaption>ZAP Scripting Interface</figcaption>
+</figure>
+</div>
+</section>
+<section id="fuzzing" class="level3">
+<h3 class="anchored" data-anchor-id="fuzzing">Fuzzing</h3>
+<p>The fuzzer allows you to send a large number of unexpected or random inputs to your application to identify potential vulnerabilities.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Example fuzzer configuration script</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> Fuzzer <span class="op">=</span> Java<span class="op">.</span><span class="fu">type</span>(<span class="st">"org.zaproxy.zap.extension.fuzz.payloads.ui.impl.FileStringPayloadGeneratorUIHandler"</span>)<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> payload <span class="op">=</span> <span class="kw">new</span> <span class="fu">Fuzzer</span>()<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>payload<span class="op">.</span><span class="fu">setFile</span>(<span class="st">"/path/to/payload/list.txt"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="api" class="level3">
+<h3 class="anchored" data-anchor-id="api">API</h3>
+<p>ZAP provides a comprehensive API that allows you to integrate ZAP with your CI/CD pipeline or other tools.</p>
+</section>
+</section>
+<section id="integration-with-devsecops" class="level2">
+<h2 class="anchored" data-anchor-id="integration-with-devsecops">Integration with DevSecOps</h2>
+<p>ZAP can be seamlessly integrated into your DevSecOps pipeline to provide continuous security testing. Here’s a GitHub Actions example:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> ZAP Security Scan</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at"> main </span><span class="kw">]</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at"> main </span><span class="kw">]</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">zap_scan</span><span class="kw">:</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Checkout</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v3</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="at">      </span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> ZAP Baseline Scan</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> zaproxy/action-baseline@v0.9.0</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">target</span><span class="kw">:</span><span class="at"> </span><span class="st">'https://www.example.com'</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">rules_file_name</span><span class="kw">:</span><span class="at"> </span><span class="st">'.zap/rules.tsv'</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">cmd_options</span><span class="kw">:</span><span class="at"> </span><span class="st">'-a'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="case-study-finding-vulnerabilities-with-zap" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-finding-vulnerabilities-with-zap">Case Study: Finding Vulnerabilities with ZAP</h2>
+<p>In 2024, a security researcher used ZAP to identify several critical vulnerabilities in a popular e-commerce platform:</p>
+<ol type="1">
+<li><strong>Cross-Site Scripting (XSS)</strong> in the product search function</li>
+<li><strong>SQL Injection</strong> vulnerability in the user profile page</li>
+<li><strong>Insecure Direct Object References</strong> in order management</li>
+<li><strong>Cross-Site Request Forgery (CSRF)</strong> in the payment process</li>
+</ol>
+<p>These vulnerabilities were responsibly disclosed and fixed before any exploitation occurred.</p>
+</section>
+<section id="comparison-with-other-tools" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-with-other-tools">Comparison with Other Tools</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 21%">
+<col style="width: 16%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>Open Source</th>
+<th>Passive Scanning</th>
+<th>Active Scanning</th>
+<th>Automation</th>
+<th>Scripting</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ZAP</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Burp Suite Community</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td>Burp Suite Professional</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>OWASP Amass</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td>Nikto</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="resources-and-further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="resources-and-further-reading">Resources and Further Reading</h2>
+<p>For more information about ZAP and web application security testing:</p>
+<ul>
+<li><a href="https://www.zaproxy.org/docs/">Official ZAP Documentation</a></li>
+<li><a href="https://www.zaproxy.org/docs/desktop/ui/">ZAP User Guide</a></li>
+<li><a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a></li>
+<li><a href="https://www.alldaydevops.com/zap-in-ten">ZAP in Ten</a> - Short video tutorials</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>ZAP is a powerful and versatile security tool that can help identify vulnerabilities in web applications. Whether you’re a security professional or a developer new to security testing, ZAP provides the features and flexibility needed to improve your application’s security posture.</p>
+<p>The open-source nature of ZAP, combined with its active community and regular updates, makes it an excellent choice for integrating security testing into your development process.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
