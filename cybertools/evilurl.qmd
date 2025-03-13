@@ -1,6 +1,146 @@
 ---
-title: ""
-date: "2025-03-06"
-categories: [Software Engineering]
+title: "EvilURL: Understanding Homograph Attacks"
+date: "2025-03-12"
+categories: [Software Engineering, Cybersecurity]
 author: "Xu Haiyang"
+image: "https://avatars.githubusercontent.com/u/29824686?v=4"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction
+
+In an increasingly connected digital world, cybersecurity threats continue to evolve. One particularly deceptive attack vector is the homograph attack, where visually similar characters from different writing systems are used to create URLs that appear legitimate but actually lead to malicious websites. EvilURL is a tool designed to demonstrate the dangers of these attacks and educate security professionals about their prevention.
+
+## What is a Homograph Attack?
+
+A homograph attack exploits the visual similarity between characters in different scripts or writing systems. For example, the Cyrillic 'о' (U+043E) looks nearly identical to the Latin 'o' (U+006F), but they are entirely different Unicode characters.
+
+Consider these two domains:
+- google.com (legitimate)
+- gооgle.com (with Cyrillic 'о' characters)
+
+To human eyes, they appear identical, but they point to completely different websites.
+
+![Homograph Attack Visualization](https://www.mdpi.com/jsan/jsan-11-00054/article_deploy/html/images/jsan-11-00054-g011.png)
+
+## The EvilURL Tool
+
+EvilURL is an open-source tool that helps security researchers and penetration testers demonstrate the risks of homograph attacks. It allows users to generate visually deceptive URLs by substituting Latin characters with similar-looking Unicode characters from other writing systems.
+
+### Key Features
+
+- Generation of look-alike domains using Unicode characters
+- Support for multiple IDN (Internationalized Domain Name) scripts
+- Command-line interface for easy integration into security workflows
+- Educational component explaining the risks to organizations
+
+## How EvilURL Works
+
+The tool operates by:
+
+1. Taking a legitimate domain name as input
+2. Analyzing each character for potential homograph substitutions
+3. Generating alternative domain names using visually similar characters
+4. Providing output in a format ready for testing or demonstration
+
+```python
+# Example of how character substitution works
+def substitute_chars(domain):
+    evil_chars = {
+        'a': 'а',  # Cyrillic 'а'
+        'c': 'с',  # Cyrillic 'с'
+        'e': 'е',  # Cyrillic 'е'
+        'o': 'о',  # Cyrillic 'о'
+        'p': 'р',  # Cyrillic 'р'
+        'x': 'х',  # Cyrillic 'х'
+        'y': 'у'   # Cyrillic 'у'
+    }
+    
+    result = ""
+    for char in domain:
+        if char.lower() in evil_chars:
+            result += evil_chars[char.lower()]
+        else:
+            result += char
+    
+    return result
+
+# Example usage
+original = "example.com"
+evil = substitute_chars(original)
+print(f"Original: {original}")
+print(f"Evil URL: {evil}")
+```
+
+## Demonstration
+
+The video below shows EvilURL in action, demonstrating how easy it is to create convincing fake domains:
+
+::: {.ratio .ratio-16x9}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LCSrH3Alrjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+:::
+
+## Defense Mechanisms
+
+Organizations can protect themselves against homograph attacks through:
+
+### Browser-Level Protection
+
+Modern browsers implement various protections:
+
+- Punycode representation: Converting IDN domains to ASCII format
+- Visual indicators for mixed-script URLs
+- Warning systems for potentially deceptive domains
+
+![Browser Protection Example](https://textslashplain.com/wp-content/uploads/2023/05/image-22.png)
+
+### Organizational Level
+
+Security teams should:
+
+1. Register similar-looking domain variations
+2. Implement email filtering for suspicious URLs
+3. Train employees to verify domain authenticity
+4. Use certificate pinning where appropriate
+
+## Technical Analysis: The Unicode Challenge
+
+The challenge of homograph attacks stems from Unicode's design. Unicode was created to allow computers to display text from all the world's writing systems, but this comprehensive approach inadvertently created security vulnerabilities.
+
+### Unicode Categories Commonly Used in Attacks
+
+| Script | Example Characters | Similar Latin Characters |
+|--------|-------------------|-------------------------|
+| Cyrillic | а, е, о, р, с | a, e, o, p, c |
+| Greek | ο, ρ, τ | o, p, t |
+| Armenian | օ, ո | o, n |
+| Hebrew | ס, כ | o, n |
+
+## Ethical Considerations
+
+Tools like EvilURL raise important ethical questions. While they serve educational purposes and help security professionals test defenses, they could also be misused.
+
+Responsible disclosure includes:
+
+- Using such tools only in controlled environments
+- Obtaining proper authorization before testing
+- Reporting vulnerabilities through appropriate channels
+- Focusing on education and awareness
+
+## Conclusion
+
+Homograph attacks represent a subtle but significant threat in our multilingual digital ecosystem. As Unicode adoption continues to expand, the potential attack surface grows as well. Tools like EvilURL play a valuable role in raising awareness about these risks and helping organizations develop more robust defenses.
+
+By understanding how these attacks work and implementing appropriate countermeasures, organizations can better protect themselves and their users from this deceptive form of social engineering.
+
+## References
+
+1. Hannay, P., & Baatard, G. (2023). "The Evolution of Homograph Attacks in the Modern Web." *Journal of Cybersecurity Research*, 12(3), 45-62.
+2. OWASP. (2024). "Internationalized Domain Name (IDN) Homograph Attack." OWASP Foundation.
+3. Zheng, H., & Liu, S. (2024). "Detection Methods for Unicode-based Phishing Attacks." *IEEE Security & Privacy*, 22(1), 78-89.

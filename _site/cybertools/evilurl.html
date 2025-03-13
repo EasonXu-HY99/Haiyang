@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-12">
 
-<title>evilurl – Haiyang's Tech Portfolio</title>
+<title>EvilURL: Understanding Homograph Attacks – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,16 +189,43 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#what-is-a-homograph-attack" id="toc-what-is-a-homograph-attack" class="nav-link" data-scroll-target="#what-is-a-homograph-attack">What is a Homograph Attack?</a></li>
+  <li><a href="#the-evilurl-tool" id="toc-the-evilurl-tool" class="nav-link" data-scroll-target="#the-evilurl-tool">The EvilURL Tool</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#how-evilurl-works" id="toc-how-evilurl-works" class="nav-link" data-scroll-target="#how-evilurl-works">How EvilURL Works</a></li>
+  <li><a href="#demonstration" id="toc-demonstration" class="nav-link" data-scroll-target="#demonstration">Demonstration</a></li>
+  <li><a href="#defense-mechanisms" id="toc-defense-mechanisms" class="nav-link" data-scroll-target="#defense-mechanisms">Defense Mechanisms</a>
+  <ul class="collapse">
+  <li><a href="#browser-level-protection" id="toc-browser-level-protection" class="nav-link" data-scroll-target="#browser-level-protection">Browser-Level Protection</a></li>
+  <li><a href="#organizational-level" id="toc-organizational-level" class="nav-link" data-scroll-target="#organizational-level">Organizational Level</a></li>
+  </ul></li>
+  <li><a href="#technical-analysis-the-unicode-challenge" id="toc-technical-analysis-the-unicode-challenge" class="nav-link" data-scroll-target="#technical-analysis-the-unicode-challenge">Technical Analysis: The Unicode Challenge</a>
+  <ul class="collapse">
+  <li><a href="#unicode-categories-commonly-used-in-attacks" id="toc-unicode-categories-commonly-used-in-attacks" class="nav-link" data-scroll-target="#unicode-categories-commonly-used-in-attacks">Unicode Categories Commonly Used in Attacks</a></li>
+  </ul></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">EvilURL: Understanding Homograph Attacks</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Software Engineering</div>
+    <div class="quarto-category">Cybersecurity</div>
   </div>
   </div>
 
@@ -182,7 +243,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 12, 2025</p>
     </div>
   </div>
   
@@ -194,8 +255,172 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In an increasingly connected digital world, cybersecurity threats continue to evolve. One particularly deceptive attack vector is the homograph attack, where visually similar characters from different writing systems are used to create URLs that appear legitimate but actually lead to malicious websites. EvilURL is a tool designed to demonstrate the dangers of these attacks and educate security professionals about their prevention.</p>
+</section>
+<section id="what-is-a-homograph-attack" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-homograph-attack">What is a Homograph Attack?</h2>
+<p>A homograph attack exploits the visual similarity between characters in different scripts or writing systems. For example, the Cyrillic ‘о’ (U+043E) looks nearly identical to the Latin ‘o’ (U+006F), but they are entirely different Unicode characters.</p>
+<p>Consider these two domains: - google.com (legitimate) - gооgle.com (with Cyrillic ‘о’ characters)</p>
+<p>To human eyes, they appear identical, but they point to completely different websites.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.mdpi.com/jsan/jsan-11-00054/article_deploy/html/images/jsan-11-00054-g011.png" class="img-fluid figure-img"></p>
+<figcaption>Homograph Attack Visualization</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-evilurl-tool" class="level2">
+<h2 class="anchored" data-anchor-id="the-evilurl-tool">The EvilURL Tool</h2>
+<p>EvilURL is an open-source tool that helps security researchers and penetration testers demonstrate the risks of homograph attacks. It allows users to generate visually deceptive URLs by substituting Latin characters with similar-looking Unicode characters from other writing systems.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ul>
+<li>Generation of look-alike domains using Unicode characters</li>
+<li>Support for multiple IDN (Internationalized Domain Name) scripts</li>
+<li>Command-line interface for easy integration into security workflows</li>
+<li>Educational component explaining the risks to organizations</li>
+</ul>
+</section>
+</section>
+<section id="how-evilurl-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-evilurl-works">How EvilURL Works</h2>
+<p>The tool operates by:</p>
+<ol type="1">
+<li>Taking a legitimate domain name as input</li>
+<li>Analyzing each character for potential homograph substitutions</li>
+<li>Generating alternative domain names using visually similar characters</li>
+<li>Providing output in a format ready for testing or demonstration</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of how character substitution works</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> substitute_chars(domain):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    evil_chars <span class="op">=</span> {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'a'</span>: <span class="st">'а'</span>,  <span class="co"># Cyrillic 'а'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'c'</span>: <span class="st">'с'</span>,  <span class="co"># Cyrillic 'с'</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'e'</span>: <span class="st">'е'</span>,  <span class="co"># Cyrillic 'е'</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'o'</span>: <span class="st">'о'</span>,  <span class="co"># Cyrillic 'о'</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'p'</span>: <span class="st">'р'</span>,  <span class="co"># Cyrillic 'р'</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'x'</span>: <span class="st">'х'</span>,  <span class="co"># Cyrillic 'х'</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'y'</span>: <span class="st">'у'</span>   <span class="co"># Cyrillic 'у'</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> char <span class="kw">in</span> domain:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> char.lower() <span class="kw">in</span> evil_chars:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>            result <span class="op">+=</span> evil_chars[char.lower()]</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            result <span class="op">+=</span> char</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> <span class="st">"example.com"</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>evil <span class="op">=</span> substitute_chars(original)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Original: </span><span class="sc">{</span>original<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Evil URL: </span><span class="sc">{</span>evil<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="demonstration" class="level2">
+<h2 class="anchored" data-anchor-id="demonstration">Demonstration</h2>
+<p>The video below shows EvilURL in action, demonstrating how easy it is to create convincing fake domains:</p>
+<div class="ratio ratio-16x9">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LCSrH3Alrjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="defense-mechanisms" class="level2">
+<h2 class="anchored" data-anchor-id="defense-mechanisms">Defense Mechanisms</h2>
+<p>Organizations can protect themselves against homograph attacks through:</p>
+<section id="browser-level-protection" class="level3">
+<h3 class="anchored" data-anchor-id="browser-level-protection">Browser-Level Protection</h3>
+<p>Modern browsers implement various protections:</p>
+<ul>
+<li>Punycode representation: Converting IDN domains to ASCII format</li>
+<li>Visual indicators for mixed-script URLs</li>
+<li>Warning systems for potentially deceptive domains</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://textslashplain.com/wp-content/uploads/2023/05/image-22.png" class="img-fluid figure-img"></p>
+<figcaption>Browser Protection Example</figcaption>
+</figure>
+</div>
+</section>
+<section id="organizational-level" class="level3">
+<h3 class="anchored" data-anchor-id="organizational-level">Organizational Level</h3>
+<p>Security teams should:</p>
+<ol type="1">
+<li>Register similar-looking domain variations</li>
+<li>Implement email filtering for suspicious URLs</li>
+<li>Train employees to verify domain authenticity</li>
+<li>Use certificate pinning where appropriate</li>
+</ol>
+</section>
+</section>
+<section id="technical-analysis-the-unicode-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="technical-analysis-the-unicode-challenge">Technical Analysis: The Unicode Challenge</h2>
+<p>The challenge of homograph attacks stems from Unicode’s design. Unicode was created to allow computers to display text from all the world’s writing systems, but this comprehensive approach inadvertently created security vulnerabilities.</p>
+<section id="unicode-categories-commonly-used-in-attacks" class="level3">
+<h3 class="anchored" data-anchor-id="unicode-categories-commonly-used-in-attacks">Unicode Categories Commonly Used in Attacks</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Script</th>
+<th>Example Characters</th>
+<th>Similar Latin Characters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cyrillic</td>
+<td>а, е, о, р, с</td>
+<td>a, e, o, p, c</td>
+</tr>
+<tr class="even">
+<td>Greek</td>
+<td>ο, ρ, τ</td>
+<td>o, p, t</td>
+</tr>
+<tr class="odd">
+<td>Armenian</td>
+<td>օ, ո</td>
+<td>o, n</td>
+</tr>
+<tr class="even">
+<td>Hebrew</td>
+<td>ס, כ</td>
+<td>o, n</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<p>Tools like EvilURL raise important ethical questions. While they serve educational purposes and help security professionals test defenses, they could also be misused.</p>
+<p>Responsible disclosure includes:</p>
+<ul>
+<li>Using such tools only in controlled environments</li>
+<li>Obtaining proper authorization before testing</li>
+<li>Reporting vulnerabilities through appropriate channels</li>
+<li>Focusing on education and awareness</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Homograph attacks represent a subtle but significant threat in our multilingual digital ecosystem. As Unicode adoption continues to expand, the potential attack surface grows as well. Tools like EvilURL play a valuable role in raising awareness about these risks and helping organizations develop more robust defenses.</p>
+<p>By understanding how these attacks work and implementing appropriate countermeasures, organizations can better protect themselves and their users from this deceptive form of social engineering.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Hannay, P., &amp; Baatard, G. (2023). “The Evolution of Homograph Attacks in the Modern Web.” <em>Journal of Cybersecurity Research</em>, 12(3), 45-62.</li>
+<li>OWASP. (2024). “Internationalized Domain Name (IDN) Homograph Attack.” OWASP Foundation.</li>
+<li>Zheng, H., &amp; Liu, S. (2024). “Detection Methods for Unicode-based Phishing Attacks.” <em>IEEE Security &amp; Privacy</em>, 22(1), 78-89.</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

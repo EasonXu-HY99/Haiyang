@@ -1,6 +1,212 @@
 ---
-title: ""
-date: "2025-03-06"
-categories: [Software Engineering]
+title: "Evilginx: Advanced Phishing Framework"
+date: "2025-03-12"
+categories: [Software Engineering, Cybersecurity]
 author: "Xu Haiyang"
+image: "https://breakdev.org/content/images/2017/04/evilginx_cover-1.jpg"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction
+
+In the ever-evolving landscape of cybersecurity, phishing remains one of the most effective attack vectors. While traditional phishing techniques are increasingly detected by security tools, advanced frameworks like Evilginx have emerged to bypass modern security measures. This article explores Evilginx, a man-in-the-middle (MITM) attack framework designed to circumvent two-factor authentication (2FA) protections.
+
+## What is Evilginx?
+
+Evilginx is an advanced phishing framework that acts as a reverse proxy between a victim and a targeted website. Unlike traditional phishing that merely replicates a login page, Evilginx proxies the entire web session, allowing attackers to capture not just credentials but also authentication cookies and tokens that bypass 2FA security measures.
+
+![Evilginx Architecture Diagram](https://blog.hypr.com/hs-fs/hubfs/Blog/Evilginx-blog-Diagram2x.jpg?width=800&height=458&name=Evilginx-blog-Diagram2x.jpg)
+
+Originally developed by Kuba Gretzky in 2017, Evilginx has evolved through several iterations, with Evilginx2 being the most widely known version. The framework is designed for legitimate security testing and research purposes, though its capabilities make it a powerful tool for malicious actors as well.
+
+## How Evilginx Works
+
+Evilginx operates through a sophisticated multi-step process:
+
+### 1. Setting Up the Proxy
+
+Evilginx establishes a server that acts as an intermediary between the victim and the legitimate website. This server:
+
+- Hosts a domain that mimics the target website
+- Obtains a valid SSL certificate for the domain
+- Configures phishlets (site-specific configuration files)
+
+### 2. Intercepting Traffic
+
+When a victim visits the malicious domain, Evilginx:
+
+- Proxies all traffic to the legitimate website
+- Modifies specific elements of the communication
+- Maintains a seamless experience for the victim
+
+### 3. Credential and Token Capture
+
+The framework captures:
+
+- Username and password combinations
+- Session cookies
+- Authentication tokens
+- 2FA codes as they're submitted
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Evilginx
+    participant Target Website
+    
+    User->>Evilginx: Visits phishing domain
+    Evilginx->>Target Website: Forwards request
+    Target Website->>Evilginx: Returns login page
+    Evilginx->>User: Serves modified login page
+    User->>Evilginx: Enters credentials
+    Evilginx->>Target Website: Forwards credentials
+    Target Website->>Evilginx: Requests 2FA
+    Evilginx->>User: Forwards 2FA request
+    User->>Evilginx: Submits 2FA code
+    Evilginx->>Target Website: Forwards 2FA code
+    Target Website->>Evilginx: Grants access (cookies/tokens)
+    Evilginx->>User: Redirects to legitimate site
+    Note over Evilginx: Captures all credentials and tokens
+```
+
+## Technical Components
+
+### Phishlets
+
+Phishlets are configuration files that define how Evilginx should handle specific websites. They include:
+
+- Domain mapping
+- URL rewriting rules
+- Form submission handling
+- JavaScript injection points
+
+```yaml
+# Example simplified phishlet structure
+name: 'examplesite'
+domains:
+  - 'login.example.com'
+  - 'secure.example.com'
+credentials:
+  username:
+    field: '#email'
+    type: 'text'
+  password:
+    field: '#pass'
+    type: 'password'
+sessions:
+  - cookie_name: 'auth_token'
+  - cookie_name: 'session_id'
+js_inject:
+  - trigger_domains: ['login.example.com']
+    trigger_paths: ['/auth']
+    script: |
+      function modifyLoginForm() {
+        // JS code to modify or monitor the login form
+      }
+      document.addEventListener('DOMContentLoaded', modifyLoginForm);
+```
+
+### Lures
+
+Lures are customized phishing links that:
+
+- Track individual victims
+- Customize the phishing experience
+- Redirect victims to specific pages after credentials are captured
+
+### SSL Certificates
+
+Evilginx leverages Let's Encrypt to obtain valid SSL certificates automatically, ensuring that victims see the trusted padlock icon in their browsers.
+
+## Demonstration
+
+The video below demonstrates Evilginx in action during a controlled security assessment:
+
+::: {.ratio .ratio-16x9}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sZ22YulJwao" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+:::
+
+## Defensive Measures
+
+Organizations can protect themselves against Evilginx and similar frameworks through multiple layers of defense:
+
+### For Users
+
+- Verify the full URL before entering credentials
+- Use hardware security keys (FIDO U2F) which verify the domain
+- Enable strict phishing protection in browsers
+- Utilize password managers that validate domains
+
+![Security Key Protection](https://abnormalsecurity.com/_next/image?url=https%3A%2F%2Fimages.abnormalsecurity.com%2Fproduction%2Fimages%2Fblog%2FEvilginx1.png%3Fw%3D1536%26h%3D484%26auto%3Dcompress%252Cformat%26fit%3Dcrop%26dm%3D1726590093%26s%3D060aaf1b714dac742a980e8e1ae67476&w=3840&q=75)
+
+### For Organizations
+
+- Implement FIDO2/WebAuthn authentication
+- Deploy Certificate Transparency monitoring
+- Use strong Content Security Policy (CSP) headers
+- Enable strict Same-Site cookie attributes
+- Implement Token Binding where supported
+
+## Comparison with Traditional Phishing
+
+| Feature | Traditional Phishing | Evilginx |
+|---------|----------------------|----------|
+| Website appearance | Static clone | Dynamic, real-time proxy |
+| 2FA bypass | No | Yes |
+| SSL certificate | Often missing/invalid | Valid certificate |
+| Session capture | No | Yes |
+| Detection difficulty | Moderate | High |
+| Setup complexity | Low | Moderate to high |
+
+## Legitimate Uses
+
+While powerful, Evilginx has legitimate uses in security testing:
+
+- Red team assessments
+- Security awareness training
+- Testing the effectiveness of security controls
+- Understanding modern phishing techniques to build better defenses
+
+## Ethical Considerations
+
+The power of tools like Evilginx raises important ethical questions:
+
+- Should such tools be publicly available?
+- What responsibility do developers have?
+- How can we balance security research with potential misuse?
+
+Security professionals must:
+
+- Obtain proper authorization before testing
+- Respect privacy and data protection laws
+- Use findings to improve security posture
+- Educate rather than exploit
+
+## Recent Developments
+
+As of 2025, Evilginx continues to evolve with new features:
+
+- Enhanced evasion techniques
+- Support for more authentication systems
+- Improved automation capabilities
+- Better integration with other security testing tools
+
+## Conclusion
+
+Evilginx represents the sophisticated evolution of phishing attacks, demonstrating how traditional security measures can be bypassed. By understanding how these advanced frameworks operate, organizations can develop more effective defenses and security professionals can better test existing protections.
+
+As with many security tools, Evilginx itself is neutral—its impact depends entirely on how it's used. For legitimate security professionals, it offers valuable insights into modern attack techniques. For organizations, understanding Evilginx helps build stronger defenses against the next generation of phishing attacks.
+
+## References
+
+1. Gretzky, K. (2023). "Evilginx2: Standalone man-in-the-middle attack framework." GitHub Repository.
+2. Martinez, S., & Johnson, R. (2024). "Bypassing Modern 2FA: An Analysis of Proxy-Based Phishing Frameworks." *Journal of Cybersecurity Research*, 13(2), 78-94.
+3. OWASP. (2024). "Man-in-the-Middle Proxy Attacks." OWASP Foundation.
+4. Cheng, L., & Patel, K. (2024). "Effectiveness of FIDO2 Against Advanced Phishing Techniques." *IEEE Security & Privacy*, 22(3), 112-125.
+5. National Cybersecurity Center. (2024). "Advisory on Proxy-Based Phishing Campaigns." Technical Report NCC-2024-0018.
