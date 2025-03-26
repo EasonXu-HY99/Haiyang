@@ -15,8 +15,7 @@ Xu Haiyang
 ::::
 
 ::: {.column width="80%"}
-Hello! I'm **Xu Haiyang**, a dedicated **Computer Science graduate** with a passion for **Cybersecurity & Cyber-Physical Systems**. Over the years, I've immersed myself in the intricacies of **IoT, AWS Cloud, and AI** to develop innovative solutions that secure and optimize real-world applications. This website is a curated portfolio of my **projects, research, and technical expertise**. I hold a **Bachelor of Science (Computer Science) (20 Jan 2025) Merit** 🎓.\
-🔗 [**View My Certification**](cert.pdf){target="_blank"}
+Hello! I'm **Xu Haiyang**, a dedicated **Computer Science graduate** with a passion for **Cybersecurity & Cyber-Physical Systems**. Over the years, I've immersed myself in the intricacies of **IoT, AWS Cloud, and AI** to develop innovative solutions that secure and optimize real-world applications. This website is a curated portfolio of my **projects, research, and technical expertise**. 
 :::
 ::::::
 
