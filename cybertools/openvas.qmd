@@ -1,6 +1,176 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "OpenVAS: Comprehensive Open-Source Vulnerability Scanner"
+date: "2025-03-17"
 categories: [Vulnerability Scanning]
 author: "Xu Haiyang"
+image: "https://forum.greenbone.net/uploads/default/original/1X/85f2c3c10c2be8e4a9eb7a1d0cd34c5d66d57aba.png"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Overview of OpenVAS
+
+OpenVAS (Open Vulnerability Assessment System) is a robust, full-featured vulnerability scanner and management framework designed to comprehensively assess network security and identify potential system vulnerabilities.
+
+![OpenVAS Logo](https://forum.greenbone.net/uploads/default/original/1X/85f2c3c10c2be8e4a9eb7a1d0cd34c5d66d57aba.png)
+
+### Core Capabilities
+
+-   **Extensive vulnerability database**
+-   **Comprehensive network scanning**
+-   **Detailed security reporting**
+-   **Continuous vulnerability tracking**
+-   **Open-source and community-driven**
+
+## Technical Architecture
+
+``` bash
+# OpenVAS core components
+- Vulnerability Scanner (OpenVAS Scanner)
+- Vulnerability Management (Greenbone Vulnerability Manager)
+- Network Vulnerability Tests (NVTs)
+```
+
+### Scanning Capabilities
+
+1.  **Network Assessment**
+    -   TCP/UDP Port Scanning
+    -   Service Detection
+    -   Operating System Identification
+2.  **Vulnerability Detection**
+    -   CVE Database Integration
+    -   Custom Vulnerability Checks
+    -   Compliance Verification
+
+## Installation Methods
+
+::::: columns
+::: {.column width="50%"}
+### Linux Installation
+
+``` bash
+# Debian/Ubuntu
+sudo apt-get update
+sudo apt-get install openvas
+```
+:::
+
+::: {.column width="50%"}
+### Docker Deployment
+
+``` bash
+# Docker container deployment
+docker pull greenbone/openvas
+docker run -p 443:443 greenbone/openvas
+```
+:::
+:::::
+
+## Scanning Workflow
+
+### 1. Target Configuration
+
+-   Define IP ranges
+-   Specify scanning parameters
+-   Configure authentication
+
+### 2. Vulnerability Scanning
+
+-   Perform comprehensive network scan
+-   Identify potential security weaknesses
+-   Generate detailed reports
+
+## Advanced Configuration
+
+### Scanning Strategies
+
+``` bash
+# Example OpenVAS scanning command
+openvas-cli scan \
+  --target 192.168.1.0/24 \
+  --profile "Full and fast"
+```
+
+### Customization Options
+
+-   Configurable scan profiles
+-   Precise vulnerability filtering
+-   Automated reporting
+
+## Performance Characteristics
+
+::::: columns
+::: {.column width="60%"}
+### Scanning Efficiency
+
+-   Parallel scanning capabilities
+-   Low-overhead network assessment
+-   Minimal system resource consumption
+:::
+
+::: {.column width="40%"}
+![Network Vulnerability Scanning](https://hackertarget.com/wp-content/uploads/2019/02/openvas-scanner-overview.png)
+:::
+:::::
+
+## Practical Use Cases
+
+### 1. Enterprise Security
+
+-   Comprehensive network vulnerability assessment
+-   Continuous security monitoring
+-   Compliance verification
+
+### 2. Penetration Testing
+
+-   Identify potential security gaps
+-   Generate detailed vulnerability reports
+-   Support remediation strategies
+
+## Ethical Considerations
+
+::: callout-warning
+OpenVAS must **exclusively** be used: - With explicit network owner permission - On systems you are authorized to test - For legitimate security assessment - In controlled research environments
+:::
+
+## Unique Features
+
+### Distinguishing Characteristics
+
+1.  **Extensive Vulnerability Database**
+2.  **Regular NVT Updates**
+3.  **Flexible Reporting**
+4.  **Community-Driven Development**
+
+## Integrated Capabilities
+
+### Additional Tools
+
+-   Greenbone Vulnerability Manager
+-   OpenVAS Command-Line Interface
+-   Web-Based Management Console
+
+## Community and Resources
+
+-   **Official Website**: [www.openvas.org](https://www.openvas.org/)
+-   **GitHub Repository**: [github.com/greenbone/openvas](https://github.com/greenbone/openvas)
+-   **Documentation**: Comprehensive user guides
+-   **Community Forums**: Active security research discussions
+
+## Best Practices
+
+1.  **Obtain proper authorization**
+2.  **Regularly update vulnerability tests**
+3.  **Implement responsible scanning**
+4.  **Respect network boundaries**
+
+## Conclusion
+
+OpenVAS represents a critical tool in cybersecurity, enabling professionals to comprehensively assess and improve network security through systematic, responsible vulnerability scanning.
+
+::: callout-tip
+**Critical Reminder**: Unauthorized network scanning is unethical and potentially illegal!
+:::

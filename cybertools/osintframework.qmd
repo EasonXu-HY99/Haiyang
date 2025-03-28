@@ -1,7 +1,7 @@
 ---
 title: "OSINT Framework: The Ultimate Open-Source Intelligence Resource"
 date: "2025-03-07"
-categories: [Information Gathering, OSINT, Cybersecurity]
+categories: [Information Gathering]
 author: "Xu Haiyang"
 image: "https://www.cdnlogo.com/logos/o/88/osint.svg"
 format:
@@ -89,10 +89,10 @@ The OSINT Framework is organized into a hierarchical structure with main categor
 
 The framework provides an interactive tree structure that expands as users click through categories, revealing subcategories and specific tools. This design allows for:
 
-1. Progressive disclosure of information
-2. Logical categorization of similar tools
-3. Quick navigation to relevant resources
-4. Visual representation of relationships between different OSINT areas
+1.  Progressive disclosure of information
+2.  Logical categorization of similar tools
+3.  Quick navigation to relevant resources
+4.  Visual representation of relationships between different OSINT areas
 
 ## Key OSINT Tools Highlighted
 
@@ -100,7 +100,7 @@ The framework provides an interactive tree structure that expands as users click
 
 The framework includes numerous tools for researching usernames across platforms:
 
-```python
+``` python
 import requests
 from concurrent.futures import ThreadPoolExecutor
 
@@ -142,7 +142,7 @@ sites = [
 Several tools within the framework help investigate email addresses:
 
 | Tool Name | Purpose | Features |
-|-----------|---------|----------|
+|--------------------------|----------------------|------------------------|
 | Hunter.io | Email verification and discovery | Domain email patterns, verification, company insights |
 | Epieos | Email OSINT | Social account discovery, breach checking |
 | EmailRep | Reputation checking | Risk scoring, known malicious activity |
@@ -162,15 +162,14 @@ Several tools within the framework help investigate email addresses:
 
 Security professionals use the OSINT Framework to:
 
-1. **Threat Intelligence Gathering**
-   - Monitor potential threats to organizations
-   - Track malicious actors and their infrastructure
-   - Identify attack patterns and methods
-
-2. **Vulnerability Research**
-   - Discover exposed assets and information
-   - Identify potential attack vectors
-   - Conduct security assessments
+1.  **Threat Intelligence Gathering**
+    -   Monitor potential threats to organizations
+    -   Track malicious actors and their infrastructure
+    -   Identify attack patterns and methods
+2.  **Vulnerability Research**
+    -   Discover exposed assets and information
+    -   Identify potential attack vectors
+    -   Conduct security assessments
 
 ```{=html}
 <div class="alert alert-info">
@@ -183,20 +182,20 @@ Security professionals use the OSINT Framework to:
 
 Journalists leverage the framework to:
 
-- Verify sources and information
-- Discover connections between people and organizations
-- Monitor events and developments in real-time
-- Fact-check claims and statements
+-   Verify sources and information
+-   Discover connections between people and organizations
+-   Monitor events and developments in real-time
+-   Fact-check claims and statements
 
 ### Corporate Intelligence
 
 Businesses use OSINT tools for:
 
-- Competitive analysis
-- Brand monitoring
-- Due diligence investigations
-- Employee background checks
-- Risk assessment
+-   Competitive analysis
+-   Brand monitoring
+-   Due diligence investigations
+-   Employee background checks
+-   Risk assessment
 
 ## Ethical Considerations and Privacy
 
@@ -224,11 +223,11 @@ Using OSINT tools raises important ethical considerations:
 
 When using OSINT tools, practitioners should:
 
-1. Respect individual privacy
-2. Consider potential harm from information disclosure
-3. Maintain appropriate data security
-4. Use information for legitimate purposes only
-5. Document sources and collection methods
+1.  Respect individual privacy
+2.  Consider potential harm from information disclosure
+3.  Maintain appropriate data security
+4.  Use information for legitimate purposes only
+5.  Document sources and collection methods
 
 ## Getting Started with OSINT Framework
 
@@ -236,16 +235,16 @@ When using OSINT tools, practitioners should:
 
 The OSINT Framework is freely available online at [osintframework.com](https://osintframework.com/). The site features:
 
-- Interactive interface for exploring tools
-- Regularly updated resources
-- No registration required
-- Community-maintained listings
+-   Interactive interface for exploring tools
+-   Regularly updated resources
+-   No registration required
+-   Community-maintained listings
 
 ### Setting Up Your Environment
 
 For effective OSINT investigation, consider this basic setup:
 
-```bash
+``` bash
 # Create a secure OSINT environment
 # Example using Docker to isolate your activities
 
@@ -268,25 +267,22 @@ docker run -it --name osint-research \
 
 Effective OSINT investigation involves a structured approach:
 
-1. **Planning & Direction**
-   - Define research objectives
-   - Identify required information
-   - Select appropriate tools from the framework
-
-2. **Collection**
-   - Gather information using selected tools
-   - Document sources and methods
-   - Maintain chain of custody for findings
-
-3. **Processing & Analysis**
-   - Correlate information from multiple sources
-   - Verify findings through multiple tools
-   - Identify patterns and relationships
-
-4. **Dissemination**
-   - Present findings in organized format
-   - Provide source attribution
-   - Maintain security of sensitive information
+1.  **Planning & Direction**
+    -   Define research objectives
+    -   Identify required information
+    -   Select appropriate tools from the framework
+2.  **Collection**
+    -   Gather information using selected tools
+    -   Document sources and methods
+    -   Maintain chain of custody for findings
+3.  **Processing & Analysis**
+    -   Correlate information from multiple sources
+    -   Verify findings through multiple tools
+    -   Identify patterns and relationships
+4.  **Dissemination**
+    -   Present findings in organized format
+    -   Provide source attribution
+    -   Maintain security of sensitive information
 
 ### OSINT Resource Comparison
 
@@ -350,21 +346,21 @@ graph LR
 
 To effectively use the OSINT Framework:
 
-1. Start with basic tools and expand expertise gradually
-2. Follow practical tutorials and courses
-3. Participate in CTF competitions with OSINT challenges
-4. Document findings and techniques for future reference
-5. Stay updated with new tools added to the framework
+1.  Start with basic tools and expand expertise gradually
+2.  Follow practical tutorials and courses
+3.  Participate in CTF competitions with OSINT challenges
+4.  Document findings and techniques for future reference
+5.  Stay updated with new tools added to the framework
 
 ## Future of OSINT
 
 The landscape of OSINT is continuously evolving with:
 
-- AI-powered analysis tools
-- Automated correlation of disparate data sources
-- Enhanced privacy protections challenging traditional collection methods
-- Greater emphasis on verification to combat misinformation
-- Increased focus on ethical guidelines and responsible use
+-   AI-powered analysis tools
+-   Automated correlation of disparate data sources
+-   Enhanced privacy protections challenging traditional collection methods
+-   Greater emphasis on verification to combat misinformation
+-   Increased focus on ethical guidelines and responsible use
 
 ## Conclusion
 
@@ -374,9 +370,9 @@ Whether you're a cybersecurity professional, journalist, researcher, or business
 
 ## References
 
-1. Nordine, J. (2023). OSINT Framework. [osintframework.com](https://osintframework.com/)
-2. Hassan, N. A., & Hijazi, R. (2018). Open Source Intelligence Methods and Tools. Apress.
-3. Bazzell, M. (2023). Open Source Intelligence Techniques (9th Edition). CreateSpace Independent Publishing.
-4. Chauhan, S. (2021). "Open Source Intelligence in the Twenty-First Century." Routledge.
-5. Electronic Frontier Foundation. (2022). "Privacy and OSINT: Ethical Considerations for Researchers."
-6. SANS Institute. (2023). "OSINT for Cybersecurity: Leveraging Public Information for Defense."
+1.  Nordine, J. (2023). OSINT Framework. [osintframework.com](https://osintframework.com/)
+2.  Hassan, N. A., & Hijazi, R. (2018). Open Source Intelligence Methods and Tools. Apress.
+3.  Bazzell, M. (2023). Open Source Intelligence Techniques (9th Edition). CreateSpace Independent Publishing.
+4.  Chauhan, S. (2021). "Open Source Intelligence in the Twenty-First Century." Routledge.
+5.  Electronic Frontier Foundation. (2022). "Privacy and OSINT: Ethical Considerations for Researchers."
+6.  SANS Institute. (2023). "OSINT for Cybersecurity: Leveraging Public Information for Defense."

@@ -1,6 +1,118 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "Nikto: Web Server Security Scanner"
+date: "2025-03-28"
 categories: [Web Application Assessment]
 author: "Xu Haiyang"
+image: "https://www.kali.org/tools/nikto/images/nikto-logo.svg"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Overview of Nikto
+
+Nikto is an open-source web server scanner that performs comprehensive tests against web servers for multiple items, including:
+
+-   Dangerous files/CGIs
+-   Outdated software
+-   Specific vulnerabilities
+-   Misconfigurations
+-   Default/test files
+
+### Key Features
+
+-   Full HTTP port scanning
+-   Host and server identification
+-   Multiple injection tests
+-   Comprehensive vulnerability database
+-   SSL/TLS testing capabilities
+
+## Installation
+
+### Linux/Unix Systems
+
+``` bash
+git clone https://github.com/sullo/nikto.git
+cd nikto
+./nikto.pl
+```
+
+### macOS
+
+``` bash
+brew install nikto
+```
+
+### Windows
+
+Use Windows Subsystem for Linux (WSL) or Cygwin to run Nikto.
+
+## Basic Usage
+
+### Simple Scan
+
+``` bash
+nikto -h example.com
+```
+
+### Advanced Scanning Options
+
+``` bash
+# Scan with verbose output
+nikto -h example.com -v
+
+# Scan specific port
+nikto -h example.com -p 8080
+
+# Output to HTML
+nikto -h example.com -o report.html
+```
+
+## Example Scan Output
+
+![Nikto Scan Example](https://hackertarget.com/wp-content/uploads/2019/02/nikto-scanner-result.png)
+
+## Limitations and Considerations
+
+::: callout-warning
+-   Scanning without permission is unethical and potentially illegal
+-   Some scans might temporarily disrupt web services
+-   Not a comprehensive security assessment tool
+:::
+
+## Real-World Applications
+
+1.  **Penetration Testing**
+    -   Identify potential web server vulnerabilities
+    -   Part of initial reconnaissance phase
+2.  **Security Auditing**
+    -   Regular infrastructure health checks
+    -   Compliance verification
+3.  **Research and Education**
+    -   Understanding web server security
+    -   Training cybersecurity professionals
+
+## Complementary Tools
+
+-   Nmap
+-   OpenVAS
+-   Nessus
+-   OWASP ZAP
+
+## Ethical Considerations
+
+::: callout-important
+Always obtain explicit permission before scanning any web infrastructure you do not own or manage.
+:::
+
+## References
+
+1.  Nikto Official GitHub Repository
+2.  OWASP Web Security Testing Guide
+3.  "Web Application Security" by Andrew Hoffman
+
+## Conclusion
+
+Nikto remains a powerful, open-source tool for initial web server security assessment, providing quick insights into potential vulnerabilities and misconfigurations.

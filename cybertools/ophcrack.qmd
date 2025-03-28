@@ -1,6 +1,163 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "Ophcrack: Advanced Windows Password Recovery Tool"
+date: "2025-03-15"
 categories: [Password Cracking]
 author: "Xu Haiyang"
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYUhNsQo-Vdw6fY2uXBwQvJ1HETo5-1nk1Sw&s"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Overview of Ophcrack
+
+Ophcrack is a sophisticated, open-source Windows password cracking tool that utilizes rainbow table technology to efficiently recover Windows user account passwords.
+
+![Ophcrack Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYUhNsQo-Vdw6fY2uXBwQvJ1HETo5-1nk1Sw&s)
+
+### Key Features
+
+-   **Windows LM and NTLM hash support**
+-   **Rainbow table-based cracking**
+-   **Live CD/USB bootable environment**
+-   **Graphical user interface**
+-   **Multi-platform compatibility**
+
+## Technical Architecture
+
+``` bash
+# Ophcrack primary interaction methods
+ophcrack [options] [SAM file]
+```
+
+### Supported Windows Versions
+
+1.  **Windows Versions**
+    -   Windows XP
+    -   Windows Vista
+    -   Windows 7
+    -   Windows Server 2003/2008
+2.  **Hash Types Supported**
+    -   LM (LAN Manager) Hashes
+    -   NTLM (NT LAN Manager) Hashes
+    -   NT Hashes
+
+## Installation Methods
+
+::::: columns
+::: {.column width="50%"}
+### Windows Installation
+
+``` powershell
+# Download installer from official website
+ophcrack-installer.exe
+```
+:::
+
+::: {.column width="50%"}
+### Linux Live CD
+
+``` bash
+# Download ISO for bootable environment
+ophcrack-livexp.iso
+```
+:::
+:::::
+
+## Operational Modes
+
+### 1. Local System Cracking
+
+-   Direct SAM file analysis
+-   Mounted system volume investigation
+
+### 2. Live CD/USB Cracking
+
+-   Bootable recovery environment
+-   No installation required
+-   Supports multiple Windows versions
+
+## Rainbow Table Strategy
+
+### Understanding Rainbow Tables
+
+Rainbow tables are pre-computed hash tables that dramatically accelerate password recovery: - Reduce computational complexity - Trade storage space for processing speed - Enable rapid hash-to-password conversion
+
+``` bash
+# Sample rainbow table types
+- Small tables (fast, limited coverage)
+- Extensive tables (comprehensive, larger size)
+```
+
+## Performance Characteristics
+
+::::: columns
+::: {.column width="60%"}
+### Cracking Efficiency
+
+-   Low computational overhead
+-   Minimal system resource usage
+-   Quick password retrieval
+:::
+
+::: {.column width="40%"}
+![Password Cracking Visualization](https://upload.wikimedia.org/wikipedia/commons/e/e0/Ophcrack.jpg)
+:::
+:::::
+
+## Practical Scenarios
+
+### 1. System Recovery
+
+-   Lost administrator passwords
+-   Corporate system access restoration
+-   Forensic password investigation
+
+### 2. Security Auditing
+
+-   Evaluate password complexity
+-   Identify weak authentication mechanisms
+-   Demonstrate potential vulnerabilities
+
+## Ethical Considerations
+
+::: callout-warning
+Ophcrack should **exclusively** be used: - With explicit system owner consent - On personally owned systems - For legitimate recovery purposes - In controlled, authorized environments
+:::
+
+## Advanced Configuration
+
+### Customization Options
+
+-   Custom rainbow table integration
+-   Configurable cracking parameters
+-   Selective hash targeting
+
+``` bash
+# Advanced configuration example
+ophcrack -t custom-tables.rt -f samfile.txt
+```
+
+## Community and Resources
+
+-   **Official Website**: [ophcrack.sourceforge.net](https://ophcrack.sourceforge.net/)
+-   **SourceForge Repository**: [sourceforge.net/projects/ophcrack](https://sourceforge.net/projects/ophcrack/)
+-   **Documentation**: Comprehensive user guides
+-   **Community Forums**: Active user support network
+
+## Best Practices
+
+1.  **Obtain proper authorization**
+2.  **Use official, verified rainbow tables**
+3.  **Understand legal implications**
+4.  **Respect system ownership**
+
+## Conclusion
+
+Ophcrack represents a powerful tool in Windows password recovery, offering professionals a specialized solution for legitimate password retrieval and system access restoration.
+
+::: callout-tip
+**Critical Reminder**: Unauthorized password cracking is unethical and potentially illegal!
+:::

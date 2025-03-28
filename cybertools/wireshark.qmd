@@ -1,6 +1,156 @@
 ---
-title: ""
-date: "2025-03-06"
-categories: [Vulnerability Scanning]
+title: "Wireshark: Comprehensive Network Protocol Analyzer"
+date: "2025-03-26"
+categories: [Forensics]
 author: "Xu Haiyang"
+image: "https://www.wireshark.org/assets/img/sharkbytes.jpeg"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction to Wireshark
+
+Wireshark is a world-renowned, open-source network protocol analyzer that provides deep insights into network communications. As the most popular network troubleshooting and analysis tool globally, it enables cybersecurity professionals, network administrators, and researchers to capture, inspect, and dissect network traffic in unprecedented detail.
+
+### Key Features
+
+1.  **Comprehensive Protocol Support**
+    -   Over 2000 network protocols analyzed
+    -   Real-time packet capture
+    -   Multi-platform compatibility
+    -   Detailed packet deconstruction
+2.  **Advanced Visualization**
+    -   Interactive packet inspection
+    -   Graphical traffic analysis
+    -   Colorized protocol representation
+    -   Extensive filtering capabilities
+
+## Network Inspection Capabilities
+
+### Supported Network Protocols
+
+-   TCP/IP
+-   HTTP/HTTPS
+-   DNS
+-   SSH
+-   SSL/TLS
+-   FTP
+-   SMTP
+-   ICMP
+-   IPv4/IPv6
+-   Bluetooth
+-   Wireless protocols
+-   Industrial control protocols
+
+### Capture Methods
+
+-   **Live Network Capture**
+    -   Real-time traffic monitoring
+    -   Multiple interface support
+    -   Wireless network analysis
+    -   VPN traffic inspection
+-   **Offline Packet Analysis**
+    -   Pcap file examination
+    -   Historical traffic reconstruction
+    -   Forensic evidence preservation
+
+## Technical Specifications
+
+### System Requirements
+
+-   Windows, macOS, Linux support
+-   Graphical and command-line interfaces
+-   Minimum 8GB RAM
+-   Multi-core processor
+-   Network adapter support
+-   Extensive storage for packet captures
+
+### Capture Performance
+
+-   High-speed packet processing
+-   Low-overhead capture mechanisms
+-   Scalable to enterprise networks
+-   Minimal system resource consumption
+
+## Network Analysis Workflow
+
+### Packet Investigation Process
+
+1.  Select network interface
+2.  Configure capture filters
+3.  Begin packet capture
+4.  Apply display filters
+5.  Analyze protocol interactions
+6.  Generate comprehensive reports
+
+## Advanced Capabilities
+
+### Forensic Analysis Tools
+
+-   Packet reconstruction
+-   Stream reassembly
+-   Encryption detection
+-   Malformed packet identification
+-   Network anomaly detection
+
+### Visualization Features
+
+-   Conversation graphs
+-   Endpoint statistics
+-   Protocol hierarchy tree
+-   Time-sequence diagrams
+-   IO graphs for traffic analysis
+
+## Use Cases
+
+### Investigative Scenarios
+
+1.  **Network Security**
+    -   Intrusion detection
+    -   Malware traffic analysis
+    -   Security vulnerability assessment
+    -   Threat intelligence gathering
+2.  **Network Troubleshooting**
+    -   Performance bottleneck identification
+    -   Protocol implementation debugging
+    -   Network configuration validation
+    -   Connectivity issue diagnosis
+3.  **Forensic Investigations**
+    -   Digital evidence collection
+    -   Cyber incident reconstruction
+    -   Network behavior analysis
+    -   Compliance monitoring
+
+## Security Considerations
+
+-   Non-intrusive traffic analysis
+-   Encrypted traffic handling
+-   Minimal network disruption
+-   Comprehensive logging
+-   Forensically sound methodology
+
+## Community and Support
+
+-   Open-source project
+-   Global developer community
+-   Regular software updates
+-   Extensive documentation
+-   Active user forums
+
+## Conclusion
+
+Wireshark represents the gold standard in network protocol analysis, providing unparalleled insights into complex network communications and supporting critical cybersecurity investigations.
+
+## References
+
+1.  Sanders, C. (2017). Practical Packet Analysis. No Starch Press.
+2.  Kozierok, C. M. (2005). The TCP/IP Guide. No Starch Press.
+3.  Official Wireshark Documentation
+
+## Additional Resources
+
+-   Official Website: https://www.wireshark.org/
+-   GitHub Repository: https://github.com/wireshark/wireshark

@@ -1,6 +1,176 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "Nessus: Enterprise-Grade Vulnerability Scanner"
+date: "2025-03-18"
 categories: [Vulnerability Scanning]
 author: "Xu Haiyang"
+image: "https://training.totalcyber.com/wp-content/uploads/2022/05/nessuslogo-02.png"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Overview of Nessus
+
+Nessus is a comprehensive, industry-leading vulnerability assessment tool developed by Tenable Network Security, designed to identify network vulnerabilities, misconfigurations, and potential security risks across diverse IT infrastructures.
+
+![Nessus Vulnerability Scanner](https://training.totalcyber.com/wp-content/uploads/2022/05/nessuslogo-02.png)
+
+### Core Capabilities
+
+-   **Extensive vulnerability detection**
+-   **Cross-platform scanning**
+-   **Detailed security reporting**
+-   **Continuous vulnerability monitoring**
+-   **Enterprise-grade scalability**
+
+## Technical Architecture
+
+``` bash
+# Nessus core scanning components
+- Network Vulnerability Scanner
+- Configuration Compliance Checker
+- Credential-Based Assessment
+```
+
+### Scanning Methodologies
+
+1.  **Network Assessment**
+    -   Host Discovery
+    -   Port Scanning
+    -   Service Identification
+    -   Operating System Detection
+2.  **Vulnerability Analysis**
+    -   CVE Database Integration
+    -   Custom Plugin Support
+    -   Compliance Verification
+
+## Installation Methods
+
+::::: columns
+::: {.column width="50%"}
+### Linux Installation
+
+``` bash
+# Debian/Ubuntu Package
+wget https://www.tenable.com/downloads/nessus
+sudo dpkg -i nessus-debian-package.deb
+```
+:::
+
+::: {.column width="50%"}
+### Windows Installation
+
+``` powershell
+# Download Windows Installer
+Start-Process msiexec.exe -ArgumentList "/i nessus-windows-installer.msi"
+```
+:::
+:::::
+
+## Scanning Workflow
+
+### 1. Target Configuration
+
+-   Define scanning scope
+-   Set authentication credentials
+-   Configure scan parameters
+
+### 2. Vulnerability Discovery
+
+-   Perform comprehensive assessment
+-   Identify security weaknesses
+-   Generate detailed findings
+
+## Advanced Configuration
+
+### Scanning Strategies
+
+``` bash
+# Example Nessus scanning command
+nessus-cli scan \
+  --target 192.168.1.0/24 \
+  --profile "Advanced Scan"
+```
+
+### Customization Features
+
+-   Configurable scan templates
+-   Detailed result filtering
+-   Automated remediation recommendations
+
+## Performance Characteristics
+
+::::: columns
+::: {.column width="60%"}
+### Scanning Efficiency
+
+-   Parallel scanning capabilities
+-   Minimal network disruption
+-   Comprehensive coverage
+:::
+
+::: {.column width="40%"}
+![Network Vulnerability Assessment](https://www.tenable.com/sites/drupal.dmz.tenablesecurity.com/files/images/blog/How%20To-%20Run%20Your%20First%20Vulnerability%20Scan%20with%20Nessus_4.png)
+:::
+:::::
+
+## Practical Use Cases
+
+### 1. Enterprise Security
+
+-   Comprehensive vulnerability management
+-   Continuous compliance monitoring
+-   Risk prioritization
+
+### 2. Penetration Testing
+
+-   Detailed security gap analysis
+-   Actionable remediation insights
+-   Regulatory compliance verification
+
+## Ethical Considerations
+
+::: callout-warning
+Nessus must **exclusively** be used: - With explicit organizational permission - On authorized network environments - For legitimate security assessment - In controlled research scenarios
+:::
+
+## Unique Features
+
+### Distinguishing Characteristics
+
+1.  **Extensive Plugin Ecosystem**
+2.  **Cloud and Container Scanning**
+3.  **Advanced Reporting**
+4.  **Integrated Remediation Guidance**
+
+## Licensing Models
+
+### Available Editions
+
+-   Nessus Essentials (Free)
+-   Nessus Professional
+-   Nessus Network Monitor
+
+## Community and Resources
+
+-   **Official Website**: [www.tenable.com/products/nessus](https://www.tenable.com/products/nessus)
+-   **Documentation**: Comprehensive user guides
+-   **Support Forums**: Active security community
+-   **Plugin Repository**: Continuous vulnerability updates
+
+## Best Practices
+
+1.  **Obtain proper authorization**
+2.  **Regularly update scan plugins**
+3.  **Implement responsible scanning**
+4.  **Prioritize discovered vulnerabilities**
+
+## Conclusion
+
+Nessus represents a critical tool in modern cybersecurity, enabling organizations to systematically identify, assess, and mitigate network vulnerabilities through comprehensive and responsible scanning methodologies.
+
+::: callout-tip
+**Critical Reminder**: Unauthorized network scanning is unethical and potentially illegal!
+:::

@@ -1,6 +1,151 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "OWASP ZAP: Comprehensive Web Application Security Scanner"
+date: "2025-03-27"
 categories: [Web Application Assessment]
 author: "Xu Haiyang"
+image: "https://www.zaproxy.org/docs/api/images/logo.png"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction to OWASP ZAP
+
+OWASP Zed Attack Proxy (ZAP) is a free, open-source web application security scanner developed by the Open Web Application Security Project (OWASP). As a leading penetration testing tool, ZAP provides comprehensive vulnerability detection and security assessment capabilities for web applications and APIs.
+
+### Key Features
+
+1.  **Automated Security Testing**
+    -   Comprehensive vulnerability scanning
+    -   Multiple attack vector detection
+    -   Automated and manual testing modes
+    -   Continuous security assessment
+2.  **Advanced Vulnerability Detection**
+    -   OWASP Top 10 vulnerability coverage
+    -   Cross-site scripting (XSS) detection
+    -   SQL injection identification
+    -   Security misconfigurations analysis
+
+## Web Application Security Techniques
+
+### Supported Testing Methodologies
+
+-   Active scanning
+-   Passive scanning
+-   Fuzzing
+-   Brute force authentication testing
+-   API security assessment
+-   Web service vulnerability probing
+
+### Vulnerability Categories
+
+-   Authentication vulnerabilities
+-   Injection flaws
+-   Cross-site scripting
+-   Security misconfigurations
+-   Sensitive data exposure
+-   Broken access controls
+-   XML external entity (XXE) attacks
+
+## Technical Specifications
+
+### System Requirements
+
+-   Cross-platform support (Windows, macOS, Linux)
+-   Java Runtime Environment 8+
+-   Graphical and command-line interfaces
+-   Minimum 4GB RAM
+-   Web browser compatibility
+-   Docker container support
+
+### Scanning Capabilities
+
+-   HTTP/HTTPS protocol support
+-   REST and GraphQL API testing
+-   Web application crawling
+-   Advanced proxy functionality
+-   Automated and manual testing modes
+
+## Security Assessment Workflow
+
+### Penetration Testing Process
+
+1.  Configure target application
+2.  Perform initial reconnaissance
+3.  Launch automated scanning
+4.  Conduct manual exploration
+5.  Generate comprehensive report
+6.  Validate and prioritize vulnerabilities
+
+## Advanced Capabilities
+
+### Testing Features
+
+-   Automated spider/crawler
+-   Web socket testing
+-   Authentication scanning
+-   Scripting and extension support
+-   Continuous integration compatibility
+-   Machine learning-enhanced detection
+
+### Reporting Capabilities
+
+-   Detailed vulnerability reports
+-   OWASP risk rating integration
+-   Export to multiple formats
+-   Remediation guidance
+-   Trend and historical analysis
+
+## Use Cases
+
+### Investigative Scenarios
+
+1.  **Web Application Security**
+    -   Pre-deployment vulnerability assessment
+    -   Continuous security monitoring
+    -   Developer security training
+    -   Compliance verification
+2.  **Penetration Testing**
+    -   External network testing
+    -   Internal application scanning
+    -   API security validation
+    -   Threat modeling
+3.  **Security Research**
+    -   Vulnerability research
+    -   Attack vector exploration
+    -   Security tool development
+    -   Academic security studies
+
+## Security Considerations
+
+-   Non-destructive testing
+-   Minimal application disruption
+-   Comprehensive logging
+-   Ethical hacking principles
+-   Configurable scanning intensity
+
+## Community and Support
+
+-   Open-source project
+-   Global developer community
+-   Regular software updates
+-   Extensive documentation
+-   Active user forums
+-   OWASP foundation backing
+
+## Conclusion
+
+OWASP ZAP represents a critical tool in web application security, empowering organizations to proactively identify and mitigate potential security vulnerabilities.
+
+## References
+
+1.  OWASP Foundation. (2021). Web Application Security Testing Guide.
+2.  Stuttard, D., & Pinto, M. (2011). The Web Application Hacker's Handbook.
+3.  Official OWASP ZAP Documentation
+
+## Additional Resources
+
+-   Official Website: https://www.zaproxy.org/
+-   GitHub Repository: https://github.com/zaproxy/zaproxy

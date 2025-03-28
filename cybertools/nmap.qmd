@@ -1,7 +1,7 @@
 ---
 title: "Nmap: The Network Mapper - Essential Tool for Network Discovery and Security Auditing"
 date: "2025-03-07"
-categories: [Information Gathering, Network Security, Penetration Testing]
+categories: [Information Gathering]
 author: "Xu Haiyang"
 image: "https://nmap.org/images/nmap-logo-256x256.png"
 format:
@@ -124,7 +124,6 @@ nmap --script=http-title 192.168.1.100
 Zenmap provides a user-friendly graphical interface for Nmap, making it accessible to users who might be intimidated by the command line.
 
 ![Zenmap GUI](https://nmap.org/zenmap/images/zenmap-hd-648x700.png){fig-align="center" width="700"}
-
 
 Key features of Zenmap include:
 

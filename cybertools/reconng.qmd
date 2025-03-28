@@ -1,7 +1,7 @@
 ---
 title: "Recon-ng: Comprehensive Web Reconnaissance Framework"
 date: "2025-03-07"
-categories: [Information Gathering, OSINT, Reconnaissance]
+categories: [Information Gathering]
 author: "Xu Haiyang"
 image: "https://miro.medium.com/v2/resize:fit:1080/0*bjq1agxWAu7xlmr5.png"
 format:
@@ -326,7 +326,7 @@ Guidelines for ethical use:
 ## Comparison with Similar Tools
 
 | Tool | Strengths | Limitations |
-|-----------------|--------------------------|-----------------------------|
+|------------------|--------------------------|----------------------------|
 | **Recon-ng** | Complete framework, modular, database-backed | Requires API keys for many modules |
 | **theHarvester** | Simple, focused on email harvesting | Less comprehensive, fewer data sources |
 | **Maltego** | Visual mapping, excellent UI | Community edition limitations, cost |

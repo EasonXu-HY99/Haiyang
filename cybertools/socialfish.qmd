@@ -1,7 +1,7 @@
 ---
 title: "SocialFish: Advanced Social Engineering Tool"
 date: "2025-03-08"
-categories: [Software Engineering, Cybersecurity, Penetration Testing]
+categories: [Software Engineering]
 author: "Xu Haiyang"
 image: "https://raw.githubusercontent.com/UndeadSec/SocialFishMobile/master/content/logo.png"
 format:
@@ -21,12 +21,12 @@ SocialFish is an advanced phishing framework designed for security professionals
 
 SocialFish offers a comprehensive suite of features that make it a valuable tool for security assessment:
 
-- **Custom Landing Pages**: Create authentic-looking replicas of popular websites including social media platforms, email services, and corporate login portals.
-- **Credential Harvesting**: Capture and securely log user credentials entered into phishing pages for analysis.
-- **Real-time Analytics**: Monitor phishing campaign success rates with detailed statistics and user interaction data.
-- **Multi-platform Support**: Deploy across various operating systems including Linux, macOS, and Windows.
-- **Customizable Templates**: Modify existing templates or create your own to target specific scenarios.
-- **Campaign Management**: Run multiple phishing campaigns simultaneously with separate tracking and analytics.
+-   **Custom Landing Pages**: Create authentic-looking replicas of popular websites including social media platforms, email services, and corporate login portals.
+-   **Credential Harvesting**: Capture and securely log user credentials entered into phishing pages for analysis.
+-   **Real-time Analytics**: Monitor phishing campaign success rates with detailed statistics and user interaction data.
+-   **Multi-platform Support**: Deploy across various operating systems including Linux, macOS, and Windows.
+-   **Customizable Templates**: Modify existing templates or create your own to target specific scenarios.
+-   **Campaign Management**: Run multiple phishing campaigns simultaneously with separate tracking and analytics.
 
 ## Installation
 
@@ -36,7 +36,7 @@ The installation process for SocialFish is straightforward and well-documented. 
 
 Before installing SocialFish, ensure your system meets these requirements:
 
-```bash
+``` bash
 # Required packages
 sudo apt-get install python3 python3-pip git
 ```
@@ -45,7 +45,7 @@ sudo apt-get install python3 python3-pip git
 
 Clone the repository and install the dependencies:
 
-```bash
+``` bash
 # Clone the repository
 git clone https://github.com/UndeadSec/SocialFish.git
 
@@ -60,7 +60,7 @@ pip3 install -r requirements.txt
 
 Launch SocialFish with the following command:
 
-```bash
+``` bash
 python3 SocialFish.py
 ```
 
@@ -82,7 +82,7 @@ Modify the landing page according to your requirements. You can edit HTML, CSS, 
 
 Start your phishing server and obtain the URL that will be sent to targets.
 
-```bash
+``` bash
 # Example server launch command
 python3 SocialFish.py --start-server
 ```
@@ -105,7 +105,7 @@ For experienced security professionals, SocialFish offers advanced capabilities:
 
 Create personalized phishing templates tailored to specific organizations:
 
-```python
+``` python
 # Example template configuration
 template = {
     "name": "Corporate Portal",
@@ -119,7 +119,7 @@ template = {
 
 SocialFish can be integrated with other security tools through its API:
 
-```python
+``` python
 import requests
 
 # Example API call to SocialFish
@@ -135,18 +135,18 @@ campaigns = response.json()
 
 SocialFish is a powerful tool that should be used responsibly and ethically:
 
-- **Obtain Proper Authorization**: Always secure written permission before conducting phishing simulations.
-- **Data Privacy**: Handle any captured credentials with appropriate security measures and destroy them after analysis.
-- **Educational Purpose**: Use SocialFish primarily as an educational tool to improve security awareness.
-- **Legal Compliance**: Ensure your use of SocialFish complies with local laws and regulations regarding cybersecurity testing.
+-   **Obtain Proper Authorization**: Always secure written permission before conducting phishing simulations.
+-   **Data Privacy**: Handle any captured credentials with appropriate security measures and destroy them after analysis.
+-   **Educational Purpose**: Use SocialFish primarily as an educational tool to improve security awareness.
+-   **Legal Compliance**: Ensure your use of SocialFish complies with local laws and regulations regarding cybersecurity testing.
 
 ## Case Study: Improving Corporate Security
 
 In 2024, a Fortune 500 company used SocialFish to evaluate their employees' susceptibility to phishing attacks. The results were illuminating:
 
-- 23% of employees entered credentials on the phishing page
-- 12% provided complete sets of information including two-factor authentication codes
-- Departments with recent security training showed 76% lower click-through rates
+-   23% of employees entered credentials on the phishing page
+-   12% provided complete sets of information including two-factor authentication codes
+-   Departments with recent security training showed 76% lower click-through rates
 
 Following the assessment, the company implemented targeted security awareness training, resulting in an 82% reduction in successful phishing attempts in subsequent tests.
 
@@ -154,9 +154,9 @@ Following the assessment, the company implemented targeted security awareness tr
 
 SocialFish has a vibrant community of security professionals who contribute to its development and provide support:
 
-- **GitHub Repository**: Submit issues, feature requests, and contribute to the codebase
-- **Documentation**: Comprehensive documentation available at the project wiki
-- **Forums**: Active discussion forums for sharing tips and techniques
+-   **GitHub Repository**: Submit issues, feature requests, and contribute to the codebase
+-   **Documentation**: Comprehensive documentation available at the project wiki
+-   **Forums**: Active discussion forums for sharing tips and techniques
 
 ## Conclusion
 
@@ -166,7 +166,7 @@ As social engineering attacks continue to evolve in sophistication, tools like S
 
 ## References
 
-1. Smith, J. & Johnson, P. (2024). "Effectiveness of Simulated Phishing in Corporate Security Training." *Journal of Cybersecurity Education*.
-2. National Institute of Standards and Technology. (2023). "Guidelines on Social Engineering Attack Prevention." NIST Special Publication 800-115r1.
-3. UndeadSec. (2025). "SocialFish Documentation." GitHub Repository.
-4. Cyber Security & Infrastructure Security Agency. (2024). "Social Engineering Red Team Assessment Framework."
+1.  Smith, J. & Johnson, P. (2024). "Effectiveness of Simulated Phishing in Corporate Security Training." *Journal of Cybersecurity Education*.
+2.  National Institute of Standards and Technology. (2023). "Guidelines on Social Engineering Attack Prevention." NIST Special Publication 800-115r1.
+3.  UndeadSec. (2025). "SocialFish Documentation." GitHub Repository.
+4.  Cyber Security & Infrastructure Security Agency. (2024). "Social Engineering Red Team Assessment Framework."

@@ -1,6 +1,139 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "WPScan: WordPress Security Scanner"
+date: "2025-03-28"
 categories: [Web Application Assessment]
 author: "Xu Haiyang"
+image: "https://raw.githubusercontent.com/wpscanteam/wpscan/gh-pages/images/wpscan_logo.png"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Overview of WPScan
+
+WPScan is a black-box WordPress vulnerability scanner designed to test WordPress installations for security issues. It provides comprehensive scanning capabilities to identify potential vulnerabilities in WordPress websites.
+
+### Key Capabilities
+
+-   WordPress core version detection
+-   Plugin vulnerability scanning
+-   Theme vulnerability identification
+-   User enumeration
+-   Weak password detection
+-   Configuration security checks
+
+## Installation
+
+### Linux/Unix Systems
+
+``` bash
+# Install Ruby first
+sudo apt-get install ruby
+
+# Install WPScan
+gem install wpscan
+```
+
+### macOS
+
+``` bash
+# Using Homebrew
+brew install wpscan
+```
+
+### Windows
+
+``` powershell
+# Use Windows Subsystem for Linux (WSL)
+# or install via Ruby package manager
+gem install wpscan
+```
+
+## Basic Usage Scenarios
+
+### Basic WordPress Site Scan
+
+``` bash
+wpscan --url https://example.com
+```
+
+### Advanced Scanning Options
+
+``` bash
+# Enumerate users
+wpscan --url https://example.com --enumerate u
+
+# Aggressive vulnerability detection
+wpscan --url https://example.com --detection-mode aggressive
+```
+
+## Scanning Techniques
+
+### 1. Version Detection
+
+WPScan can precisely identify: - WordPress core version - Installed plugin versions - Active theme version
+
+### 2. Vulnerability Assessment
+
+::: callout-warning
+Comprehensive vulnerability database includes: - Known CVEs - Security advisories - Potential exploit vectors
+:::
+
+## Practical Use Cases
+
+1.  **Penetration Testing**
+    -   Initial reconnaissance
+    -   Vulnerability identification
+    -   Security assessment
+2.  **Website Maintenance**
+    -   Regular security checks
+    -   Update recommendations
+    -   Risk mitigation
+3.  **Security Auditing**
+    -   Compliance verification
+    -   Comprehensive security review
+
+## Ethical Considerations
+
+::: callout-important
+-   Always obtain explicit permission
+-   Scanning without authorization is unethical
+-   Use only on websites you own or manage
+:::
+
+## Limitations
+
+-   Requires active WordPress site
+-   Can generate significant network traffic
+-   Some advanced features require API token
+
+## Complementary Tools
+
+-   Nikto
+-   OWASP ZAP
+-   Acunetix
+-   Nessus
+
+## Example Scan Visualization
+
+![WPScan Detailed Report](https://miro.medium.com/v2/resize:fit:1400/1*GdaxBWBrwn1ZbyvPBqQmJw.png)
+
+## Configuration Best Practices
+
+1.  Keep WordPress core updated
+2.  Use strong, unique passwords
+3.  Limit user permissions
+4.  Remove unused plugins
+5.  Use security plugins
+
+## References
+
+1.  Official WPScan Documentation
+2.  WordPress Security Handbook
+3.  OWASP Web Application Security Guide
+
+## Conclusion
+
+WPScan is an essential tool for WordPress security professionals, providing deep insights into potential vulnerabilities and security weaknesses in WordPress installations.
