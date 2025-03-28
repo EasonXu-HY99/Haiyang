@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-25">
 
-<title>foremost – Haiyang's Tech Portfolio</title>
+<title>Foremost: Advanced Digital Forensics File Carving Tool – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,16 +155,54 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-foremost" id="toc-introduction-to-foremost" class="nav-link active" data-scroll-target="#introduction-to-foremost">Introduction to Foremost</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#file-carving-techniques" id="toc-file-carving-techniques" class="nav-link" data-scroll-target="#file-carving-techniques">File Carving Techniques</a>
+  <ul class="collapse">
+  <li><a href="#supported-file-types" id="toc-supported-file-types" class="nav-link" data-scroll-target="#supported-file-types">Supported File Types</a></li>
+  <li><a href="#recovery-methods" id="toc-recovery-methods" class="nav-link" data-scroll-target="#recovery-methods">Recovery Methods</a></li>
+  </ul></li>
+  <li><a href="#technical-specifications" id="toc-technical-specifications" class="nav-link" data-scroll-target="#technical-specifications">Technical Specifications</a>
+  <ul class="collapse">
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System Requirements</a></li>
+  <li><a href="#supported-storage-media" id="toc-supported-storage-media" class="nav-link" data-scroll-target="#supported-storage-media">Supported Storage Media</a></li>
+  </ul></li>
+  <li><a href="#forensic-workflow" id="toc-forensic-workflow" class="nav-link" data-scroll-target="#forensic-workflow">Forensic Workflow</a>
+  <ul class="collapse">
+  <li><a href="#file-recovery-process" id="toc-file-recovery-process" class="nav-link" data-scroll-target="#file-recovery-process">File Recovery Process</a></li>
+  </ul></li>
+  <li><a href="#advanced-capabilities" id="toc-advanced-capabilities" class="nav-link" data-scroll-target="#advanced-capabilities">Advanced Capabilities</a>
+  <ul class="collapse">
+  <li><a href="#forensic-configuration" id="toc-forensic-configuration" class="nav-link" data-scroll-target="#forensic-configuration">Forensic Configuration</a></li>
+  <li><a href="#performance-optimization" id="toc-performance-optimization" class="nav-link" data-scroll-target="#performance-optimization">Performance Optimization</a></li>
+  </ul></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#investigative-scenarios" id="toc-investigative-scenarios" class="nav-link" data-scroll-target="#investigative-scenarios">Investigative Scenarios</a></li>
+  </ul></li>
+  <li><a href="#security-considerations" id="toc-security-considerations" class="nav-link" data-scroll-target="#security-considerations">Security Considerations</a></li>
+  <li><a href="#community-and-support" id="toc-community-and-support" class="nav-link" data-scroll-target="#community-and-support">Community and Support</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Foremost: Advanced Digital Forensics File Carving Tool</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Vulnerability Scanning</div>
+    <div class="quarto-category">Forensics</div>
   </div>
   </div>
 
@@ -182,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 25, 2025</p>
     </div>
   </div>
   
@@ -194,8 +232,186 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-foremost" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-foremost">Introduction to Foremost</h2>
+<p>Foremost is an open-source file carving tool designed for digital forensics and incident response, enabling investigators to recover deleted, hidden, or fragmented files from various storage media. Developed by the United States Air Force Office of Special Investigations (AFOSI), it provides powerful file recovery capabilities across multiple file formats.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ol type="1">
+<li><strong>Comprehensive File Recovery</strong>
+<ul>
+<li>Supports multiple file types</li>
+<li>Recovers deleted and fragmented files</li>
+<li>Works across various storage media</li>
+<li>Minimal metadata modification</li>
+</ul></li>
+<li><strong>Forensic Integrity</strong>
+<ul>
+<li>Non-destructive file extraction</li>
+<li>Detailed recovery logging</li>
+<li>Cryptographic verification</li>
+<li>Chain of custody preservation</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="file-carving-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="file-carving-techniques">File Carving Techniques</h2>
+<section id="supported-file-types" class="level3">
+<h3 class="anchored" data-anchor-id="supported-file-types">Supported File Types</h3>
+<ul>
+<li>Images (JPEG, PNG, GIF)</li>
+<li>Documents (PDF, DOC, DOCX)</li>
+<li>Video files (AVI, MOV, MP4)</li>
+<li>Audio files (MP3, WAV)</li>
+<li>Compressed archives (ZIP, RAR)</li>
+<li>Database files</li>
+<li>Email archives</li>
+</ul>
+</section>
+<section id="recovery-methods" class="level3">
+<h3 class="anchored" data-anchor-id="recovery-methods">Recovery Methods</h3>
+<ul>
+<li><strong>Signature-Based Carving</strong>
+<ul>
+<li>Identifies files by header/footer signatures</li>
+<li>Bypasses file system limitations</li>
+<li>Recovers seemingly inaccessible data</li>
+</ul></li>
+<li><strong>Advanced Reconstruction</strong>
+<ul>
+<li>Partial file recovery</li>
+<li>Fragmented data reassembly</li>
+<li>Multi-pass scanning techniques</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="technical-specifications" class="level2">
+<h2 class="anchored" data-anchor-id="technical-specifications">Technical Specifications</h2>
+<section id="system-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="system-requirements">System Requirements</h3>
+<ul>
+<li>Linux/Unix-based systems</li>
+<li>Command-line interface</li>
+<li>Forensic workstation</li>
+<li>Minimum 8GB RAM</li>
+<li>Multi-core processor</li>
+<li>Large storage capacity</li>
+</ul>
+</section>
+<section id="supported-storage-media" class="level3">
+<h3 class="anchored" data-anchor-id="supported-storage-media">Supported Storage Media</h3>
+<ul>
+<li>Hard disk drives</li>
+<li>Solid-state drives</li>
+<li>USB storage devices</li>
+<li>Memory cards</li>
+<li>Network storage</li>
+<li>Forensic disk images</li>
+</ul>
+</section>
+</section>
+<section id="forensic-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="forensic-workflow">Forensic Workflow</h2>
+<section id="file-recovery-process" class="level3">
+<h3 class="anchored" data-anchor-id="file-recovery-process">File Recovery Process</h3>
+<ol type="1">
+<li>Identify target storage media</li>
+<li>Configure file type filters</li>
+<li>Initiate carving process</li>
+<li>Validate recovered files</li>
+<li>Generate forensic report</li>
+<li>Preserve original evidence</li>
+</ol>
+</section>
+</section>
+<section id="advanced-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-capabilities">Advanced Capabilities</h2>
+<section id="forensic-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="forensic-configuration">Forensic Configuration</h3>
+<ul>
+<li>Custom file type definitions</li>
+<li>Configurable search parameters</li>
+<li>Multiple output directory support</li>
+<li>Detailed log generation</li>
+</ul>
+</section>
+<section id="performance-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="performance-optimization">Performance Optimization</h3>
+<ul>
+<li>Parallel processing</li>
+<li>Selective file type recovery</li>
+<li>Large media handling</li>
+<li>Minimal system resource consumption</li>
+</ul>
+</section>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
+<section id="investigative-scenarios" class="level3">
+<h3 class="anchored" data-anchor-id="investigative-scenarios">Investigative Scenarios</h3>
+<ol type="1">
+<li><strong>Digital Forensics</strong>
+<ul>
+<li>Evidence recovery</li>
+<li>Deleted file reconstruction</li>
+<li>Cybercrime investigations</li>
+</ul></li>
+<li><strong>Incident Response</strong>
+<ul>
+<li>Malware artifact collection</li>
+<li>System compromise analysis</li>
+<li>Data breach investigations</li>
+</ul></li>
+<li><strong>Legal Proceedings</strong>
+<ul>
+<li>Electronic discovery</li>
+<li>Digital evidence preservation</li>
+<li>Forensic data validation</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="security-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations">Security Considerations</h2>
+<ul>
+<li>Non-invasive file recovery</li>
+<li>Minimal evidence modification</li>
+<li>Comprehensive logging</li>
+<li>Forensically sound methodology</li>
+</ul>
+</section>
+<section id="community-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-support">Community and Support</h2>
+<ul>
+<li>Open-source project</li>
+<li>Active forensics community</li>
+<li>Regular tool updates</li>
+<li>Extensive documentation</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Foremost represents a critical tool in digital forensics, enabling investigators to recover and analyze digital evidence across complex storage environments with precision and reliability.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Carrier, B. (2005). File System Forensic Analysis. Addison-Wesley Professional.</li>
+<li>Casey, E. (2011). Digital Evidence and Computer Crime. Academic Press.</li>
+<li>Official Foremost Documentation</li>
+</ol>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li>Project Repository: https://foremost.sourceforge.net/</li>
+<li>GitHub Mirror: https://github.com/jonstewart/foremost</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

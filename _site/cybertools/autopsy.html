@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-22">
 
-<title>autopsy – Haiyang's Tech Portfolio</title>
+<title>Autopsy: Advanced Digital Forensics Platform – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,16 +155,50 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-autopsy" id="toc-introduction-to-autopsy" class="nav-link active" data-scroll-target="#introduction-to-autopsy">Introduction to Autopsy</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#core-functionality" id="toc-core-functionality" class="nav-link" data-scroll-target="#core-functionality">Core Functionality</a>
+  <ul class="collapse">
+  <li><a href="#evidence-processing" id="toc-evidence-processing" class="nav-link" data-scroll-target="#evidence-processing">Evidence Processing</a></li>
+  <li><a href="#investigative-modules" id="toc-investigative-modules" class="nav-link" data-scroll-target="#investigative-modules">Investigative Modules</a></li>
+  </ul></li>
+  <li><a href="#technical-architecture" id="toc-technical-architecture" class="nav-link" data-scroll-target="#technical-architecture">Technical Architecture</a>
+  <ul class="collapse">
+  <li><a href="#modular-plugin-system" id="toc-modular-plugin-system" class="nav-link" data-scroll-target="#modular-plugin-system">Modular Plugin System</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a></li>
+  </ul></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#typical-scenarios" id="toc-typical-scenarios" class="nav-link" data-scroll-target="#typical-scenarios">Typical Scenarios</a></li>
+  </ul></li>
+  <li><a href="#installation-and-configuration" id="toc-installation-and-configuration" class="nav-link" data-scroll-target="#installation-and-configuration">Installation and Configuration</a>
+  <ul class="collapse">
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System Requirements</a></li>
+  <li><a href="#basic-setup-steps" id="toc-basic-setup-steps" class="nav-link" data-scroll-target="#basic-setup-steps">Basic Setup Steps</a></li>
+  </ul></li>
+  <li><a href="#security-considerations" id="toc-security-considerations" class="nav-link" data-scroll-target="#security-considerations">Security Considerations</a></li>
+  <li><a href="#community-and-support" id="toc-community-and-support" class="nav-link" data-scroll-target="#community-and-support">Community and Support</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Autopsy: Advanced Digital Forensics Platform</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Vulnerability Scanning</div>
+    <div class="quarto-category">Forensics</div>
   </div>
   </div>
 
@@ -182,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 22, 2025</p>
     </div>
   </div>
   
@@ -194,8 +228,180 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-autopsy" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-autopsy">Introduction to Autopsy</h2>
+<p>Autopsy is a comprehensive, open-source digital forensics platform designed for analyzing and investigating digital evidence across various computing environments. Developed by the Sleuth Kit (TSK) team, it provides investigators, cybersecurity professionals, and law enforcement with powerful tools to extract, analyze, and visualize digital artifacts.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ol type="1">
+<li><strong>Multi-Platform Support</strong>
+<ul>
+<li>Windows, macOS, and Linux compatibility</li>
+<li>Supports multiple file system types</li>
+<li>Handles diverse digital evidence sources</li>
+</ul></li>
+<li><strong>Advanced Forensic Capabilities</strong>
+<ul>
+<li>Disk image analysis</li>
+<li>Deleted file recovery</li>
+<li>Metadata extraction</li>
+<li>Timeline analysis</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="core-functionality" class="level2">
+<h2 class="anchored" data-anchor-id="core-functionality">Core Functionality</h2>
+<section id="evidence-processing" class="level3">
+<h3 class="anchored" data-anchor-id="evidence-processing">Evidence Processing</h3>
+<p>Autopsy provides multiple methods for digital evidence examination:</p>
+<ul>
+<li><strong>Disk Image Ingest</strong>
+<ul>
+<li>Supports major forensic image formats (E01, DD, raw)</li>
+<li>Comprehensive file system parsing</li>
+<li>Automatic artifact identification</li>
+</ul></li>
+<li><strong>Data Carving</strong>
+<ul>
+<li>Recovers deleted files</li>
+<li>Extracts hidden or fragmented data</li>
+<li>Supports multiple file types</li>
+</ul></li>
+</ul>
+</section>
+<section id="investigative-modules" class="level3">
+<h3 class="anchored" data-anchor-id="investigative-modules">Investigative Modules</h3>
+<section id="key-forensic-modules" class="level4">
+<h4 class="anchored" data-anchor-id="key-forensic-modules">Key Forensic Modules</h4>
+<ol type="1">
+<li><strong>Web Artifacts Analyzer</strong>
+<ul>
+<li>Browser history recovery</li>
+<li>Cached content extraction</li>
+<li>Social media trace analysis</li>
+</ul></li>
+<li><strong>Email Forensics</strong>
+<ul>
+<li>Email metadata examination</li>
+<li>Attachment recovery</li>
+<li>Communication pattern analysis</li>
+</ul></li>
+<li><strong>Multimedia Forensics</strong>
+<ul>
+<li>Image and video metadata extraction</li>
+<li>Geolocation data recovery</li>
+<li>Embedded information analysis</li>
+</ul></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="technical-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="technical-architecture">Technical Architecture</h2>
+<section id="modular-plugin-system" class="level3">
+<h3 class="anchored" data-anchor-id="modular-plugin-system">Modular Plugin System</h3>
+<ul>
+<li>Extensible architecture</li>
+<li>Custom module development support</li>
+<li>Regular community-driven updates</li>
+</ul>
+</section>
+<section id="data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization">Data Visualization</h3>
+<ul>
+<li>Interactive timeline views</li>
+<li>Graphical relationship mapping</li>
+<li>Keyword search and filtering</li>
+</ul>
+</section>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
+<section id="typical-scenarios" class="level3">
+<h3 class="anchored" data-anchor-id="typical-scenarios">Typical Scenarios</h3>
+<ol type="1">
+<li><strong>Corporate Investigations</strong>
+<ul>
+<li>Insider threat detection</li>
+<li>Data breach analysis</li>
+<li>Compliance audits</li>
+</ul></li>
+<li><strong>Law Enforcement</strong>
+<ul>
+<li>Criminal digital evidence collection</li>
+<li>Cybercrime investigations</li>
+<li>Electronic discovery</li>
+</ul></li>
+<li><strong>Incident Response</strong>
+<ul>
+<li>Malware forensics</li>
+<li>System compromise analysis</li>
+<li>Threat actor tracking</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="installation-and-configuration" class="level2">
+<h2 class="anchored" data-anchor-id="installation-and-configuration">Installation and Configuration</h2>
+<section id="system-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="system-requirements">System Requirements</h3>
+<ul>
+<li>64-bit operating system</li>
+<li>Minimum 16GB RAM</li>
+<li>Multi-core processor</li>
+<li>SSD recommended for large evidence sets</li>
+</ul>
+</section>
+<section id="basic-setup-steps" class="level3">
+<h3 class="anchored" data-anchor-id="basic-setup-steps">Basic Setup Steps</h3>
+<ol type="1">
+<li>Download from official repository</li>
+<li>Install Java Runtime Environment</li>
+<li>Configure forensic image paths</li>
+<li>Select appropriate forensic modules</li>
+</ol>
+</section>
+</section>
+<section id="security-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations">Security Considerations</h2>
+<ul>
+<li>Uses write-blocking techniques</li>
+<li>Maintains forensic integrity</li>
+<li>Provides chain of custody documentation</li>
+<li>Encrypted evidence storage support</li>
+</ul>
+</section>
+<section id="community-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-support">Community and Support</h2>
+<ul>
+<li>Open-source project</li>
+<li>Active developer community</li>
+<li>Regular security updates</li>
+<li>Extensive documentation and tutorials</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Autopsy represents a critical tool in modern digital forensics, enabling comprehensive and methodical investigation of digital evidence across complex computing environments.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Carrier, B. (2005). File System Forensic Analysis. Addison-Wesley Professional.</li>
+<li>Casey, E. (2011). Digital Evidence and Computer Crime. Academic Press.</li>
+<li>Official Autopsy Documentation, The Sleuth Kit Project</li>
+</ol>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li>Project Website: https://www.sleuthkit.org/autopsy/</li>
+<li>GitHub Repository: https://github.com/sleuthkit/autopsy</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

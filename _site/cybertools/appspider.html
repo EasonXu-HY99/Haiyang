@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-28">
 
-<title>appspider – Haiyang's Tech Portfolio</title>
+<title>AppSpider: Automated Web Application Security Scanner – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,46 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#overview-of-appspider" id="toc-overview-of-appspider" class="nav-link active" data-scroll-target="#overview-of-appspider">Overview of AppSpider</a>
+  <ul class="collapse">
+  <li><a href="#core-capabilities" id="toc-core-capabilities" class="nav-link" data-scroll-target="#core-capabilities">Core Capabilities</a></li>
+  </ul></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  <li><a href="#installation-and-setup" id="toc-installation-and-setup" class="nav-link" data-scroll-target="#installation-and-setup">Installation and Setup</a>
+  <ul class="collapse">
+  <li><a href="#enterprise-deployment" id="toc-enterprise-deployment" class="nav-link" data-scroll-target="#enterprise-deployment">Enterprise Deployment</a></li>
+  <li><a href="#configuration-requirements" id="toc-configuration-requirements" class="nav-link" data-scroll-target="#configuration-requirements">Configuration Requirements</a></li>
+  </ul></li>
+  <li><a href="#scanning-modes" id="toc-scanning-modes" class="nav-link" data-scroll-target="#scanning-modes">Scanning Modes</a>
+  <ul class="collapse">
+  <li><a href="#full-comprehensive-scan" id="toc-full-comprehensive-scan" class="nav-link" data-scroll-target="#full-comprehensive-scan">1. Full Comprehensive Scan</a></li>
+  <li><a href="#targeted-vulnerability-assessment" id="toc-targeted-vulnerability-assessment" class="nav-link" data-scroll-target="#targeted-vulnerability-assessment">2. Targeted Vulnerability Assessment</a></li>
+  <li><a href="#api-security-testing" id="toc-api-security-testing" class="nav-link" data-scroll-target="#api-security-testing">3. API Security Testing</a></li>
+  </ul></li>
+  <li><a href="#vulnerability-types-detected" id="toc-vulnerability-types-detected" class="nav-link" data-scroll-target="#vulnerability-types-detected">Vulnerability Types Detected</a></li>
+  <li><a href="#integration-capabilities" id="toc-integration-capabilities" class="nav-link" data-scroll-target="#integration-capabilities">Integration Capabilities</a></li>
+  <li><a href="#enterprise-use-cases" id="toc-enterprise-use-cases" class="nav-link" data-scroll-target="#enterprise-use-cases">Enterprise Use Cases</a></li>
+  <li><a href="#complementary-tools" id="toc-complementary-tools" class="nav-link" data-scroll-target="#complementary-tools">Complementary Tools</a></li>
+  <li><a href="#performance-considerations" id="toc-performance-considerations" class="nav-link" data-scroll-target="#performance-considerations">Performance Considerations</a></li>
+  <li><a href="#reporting-capabilities" id="toc-reporting-capabilities" class="nav-link" data-scroll-target="#reporting-capabilities">Reporting Capabilities</a></li>
+  <li><a href="#example-scan-visualization" id="toc-example-scan-visualization" class="nav-link" data-scroll-target="#example-scan-visualization">Example Scan Visualization</a></li>
+  <li><a href="#ethical-and-legal-considerations" id="toc-ethical-and-legal-considerations" class="nav-link" data-scroll-target="#ethical-and-legal-considerations">Ethical and Legal Considerations</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">AppSpider: Automated Web Application Security Scanner</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Web Application Assessment</div>
   </div>
@@ -182,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 28, 2025</p>
     </div>
   </div>
   
@@ -194,8 +260,203 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="overview-of-appspider" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-appspider">Overview of AppSpider</h2>
+<p>AppSpider is an advanced web application security scanning and testing tool developed by Rapid7. It provides comprehensive automated security assessment capabilities for web applications, helping organizations identify and mitigate potential vulnerabilities.</p>
+<section id="core-capabilities" class="level3">
+<h3 class="anchored" data-anchor-id="core-capabilities">Core Capabilities</h3>
+<ul>
+<li>Automated web application vulnerability scanning</li>
+<li>Dynamic application security testing (DAST)</li>
+<li>Advanced exploit validation</li>
+<li>Comprehensive vulnerability reporting</li>
+<li>Support for complex web architectures</li>
+</ul>
+</section>
+</section>
+<section id="key-features" class="level2">
+<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<ol type="1">
+<li><strong>Automated Vulnerability Detection</strong>
+<ul>
+<li>Identifies security weaknesses across web applications</li>
+<li>Supports multiple technologies and frameworks</li>
+<li>Provides detailed vulnerability insights</li>
+</ul></li>
+<li><strong>Sophisticated Scanning Techniques</strong>
+<ul>
+<li>Advanced crawling and mapping</li>
+<li>JavaScript-aware scanning</li>
+<li>Complex authentication handling</li>
+<li>API endpoint discovery</li>
+</ul></li>
+</ol>
+</section>
+<section id="installation-and-setup" class="level2">
+<h2 class="anchored" data-anchor-id="installation-and-setup">Installation and Setup</h2>
+<section id="enterprise-deployment" class="level3">
+<h3 class="anchored" data-anchor-id="enterprise-deployment">Enterprise Deployment</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Typical enterprise installation process</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Requires licensing from Rapid7</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ./appspider_installer.sh <span class="at">--enterprise-mode</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="configuration-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="configuration-requirements">Configuration Requirements</h3>
+<ul>
+<li>Dedicated scanning infrastructure</li>
+<li>Network access to target applications</li>
+<li>Appropriate licensing</li>
+<li>Compatible operating systems (Windows, Linux)</li>
+</ul>
+</section>
+</section>
+<section id="scanning-modes" class="level2">
+<h2 class="anchored" data-anchor-id="scanning-modes">Scanning Modes</h2>
+<section id="full-comprehensive-scan" class="level3">
+<h3 class="anchored" data-anchor-id="full-comprehensive-scan">1. Full Comprehensive Scan</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">appspider</span> scan <span class="at">--target</span> https://example.com <span class="at">--mode</span> full</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="targeted-vulnerability-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="targeted-vulnerability-assessment">2. Targeted Vulnerability Assessment</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">appspider</span> scan <span class="at">--target</span> https://example.com <span class="at">--mode</span> vulnerability</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="api-security-testing" class="level3">
+<h3 class="anchored" data-anchor-id="api-security-testing">3. API Security Testing</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">appspider</span> scan <span class="at">--target</span> https://api.example.com <span class="at">--mode</span> api</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="vulnerability-types-detected" class="level2">
+<h2 class="anchored" data-anchor-id="vulnerability-types-detected">Vulnerability Types Detected</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>AppSpider identifies critical vulnerability categories: - SQL Injection - Cross-Site Scripting (XSS) - Authentication Bypass - Session Management Flaws - Security Misconfigurations - Sensitive Data Exposure</p>
+</div>
+</div>
+</section>
+<section id="integration-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="integration-capabilities">Integration Capabilities</h2>
+<ul>
+<li>CI/CD Pipeline Integration</li>
+<li>SIEM System Compatibility</li>
+<li>Vulnerability Management Platforms</li>
+<li>Security Orchestration Tools</li>
+</ul>
+</section>
+<section id="enterprise-use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="enterprise-use-cases">Enterprise Use Cases</h2>
+<ol type="1">
+<li><strong>Continuous Security Assessment</strong>
+<ul>
+<li>Regular automated scanning</li>
+<li>Compliance verification</li>
+<li>Risk management</li>
+</ul></li>
+<li><strong>Penetration Testing Support</strong>
+<ul>
+<li>Initial reconnaissance</li>
+<li>Vulnerability identification</li>
+<li>Exploit potential mapping</li>
+</ul></li>
+<li><strong>Developer Security Enablement</strong>
+<ul>
+<li>Early vulnerability detection</li>
+<li>Security awareness</li>
+<li>Shift-left security approach</li>
+</ul></li>
+</ol>
+</section>
+<section id="complementary-tools" class="level2">
+<h2 class="anchored" data-anchor-id="complementary-tools">Complementary Tools</h2>
+<ul>
+<li>Burp Suite</li>
+<li>OWASP ZAP</li>
+<li>Acunetix</li>
+<li>Nessus</li>
+<li>Metasploit</li>
+</ul>
+</section>
+<section id="performance-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="performance-considerations">Performance Considerations</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Scalable architecture</li>
+<li>Minimal performance impact</li>
+<li>Configurable scanning intensity</li>
+<li>Advanced result filtering</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="reporting-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-capabilities">Reporting Capabilities</h2>
+<ul>
+<li>Detailed vulnerability reports</li>
+<li>Executive summaries</li>
+<li>Remediation guidance</li>
+<li>Compliance documentation</li>
+<li>REST API for custom integrations</li>
+</ul>
+</section>
+<section id="example-scan-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="example-scan-visualization">Example Scan Visualization</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://docs.rapid7.com/api/docs/file/product-documentation__master/appspider/images/Screen%20Shot%202018-06-06%20at%205.28.01%20PM.png" class="img-fluid figure-img"></p>
+<figcaption>AppSpider Vulnerability Report</figcaption>
+</figure>
+</div>
+</section>
+<section id="ethical-and-legal-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-and-legal-considerations">Ethical and Legal Considerations</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Obtain explicit authorization</li>
+<li>Use only on owned or permitted infrastructure</li>
+<li>Respect legal and ethical boundaries</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Rapid7 Official Documentation</li>
+<li>OWASP Web Security Testing Guide</li>
+<li>NIST Application Security Guidelines</li>
+</ol>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>AppSpider represents a sophisticated solution for automated web application security testing, offering organizations a powerful tool to proactively identify and address potential security vulnerabilities.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

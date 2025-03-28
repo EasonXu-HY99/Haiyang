@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-26">
 
-<title>binwalk – Haiyang's Tech Portfolio</title>
+<title>Binwalk: Firmware Analysis and Extraction Framework – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,16 +155,54 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-binwalk" id="toc-introduction-to-binwalk" class="nav-link active" data-scroll-target="#introduction-to-binwalk">Introduction to Binwalk</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#firmware-investigation-techniques" id="toc-firmware-investigation-techniques" class="nav-link" data-scroll-target="#firmware-investigation-techniques">Firmware Investigation Techniques</a>
+  <ul class="collapse">
+  <li><a href="#supported-file-types" id="toc-supported-file-types" class="nav-link" data-scroll-target="#supported-file-types">Supported File Types</a></li>
+  <li><a href="#analysis-methods" id="toc-analysis-methods" class="nav-link" data-scroll-target="#analysis-methods">Analysis Methods</a></li>
+  </ul></li>
+  <li><a href="#technical-specifications" id="toc-technical-specifications" class="nav-link" data-scroll-target="#technical-specifications">Technical Specifications</a>
+  <ul class="collapse">
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System Requirements</a></li>
+  <li><a href="#supported-architectures" id="toc-supported-architectures" class="nav-link" data-scroll-target="#supported-architectures">Supported Architectures</a></li>
+  </ul></li>
+  <li><a href="#forensic-workflow" id="toc-forensic-workflow" class="nav-link" data-scroll-target="#forensic-workflow">Forensic Workflow</a>
+  <ul class="collapse">
+  <li><a href="#firmware-investigation-process" id="toc-firmware-investigation-process" class="nav-link" data-scroll-target="#firmware-investigation-process">Firmware Investigation Process</a></li>
+  </ul></li>
+  <li><a href="#advanced-capabilities" id="toc-advanced-capabilities" class="nav-link" data-scroll-target="#advanced-capabilities">Advanced Capabilities</a>
+  <ul class="collapse">
+  <li><a href="#firmware-extraction" id="toc-firmware-extraction" class="nav-link" data-scroll-target="#firmware-extraction">Firmware Extraction</a></li>
+  <li><a href="#signature-management" id="toc-signature-management" class="nav-link" data-scroll-target="#signature-management">Signature Management</a></li>
+  </ul></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#investigative-scenarios" id="toc-investigative-scenarios" class="nav-link" data-scroll-target="#investigative-scenarios">Investigative Scenarios</a></li>
+  </ul></li>
+  <li><a href="#security-considerations" id="toc-security-considerations" class="nav-link" data-scroll-target="#security-considerations">Security Considerations</a></li>
+  <li><a href="#community-and-support" id="toc-community-and-support" class="nav-link" data-scroll-target="#community-and-support">Community and Support</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Binwalk: Firmware Analysis and Extraction Framework</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Vulnerability Scanning</div>
+    <div class="quarto-category">Forensics</div>
   </div>
   </div>
 
@@ -182,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 26, 2025</p>
     </div>
   </div>
   
@@ -194,8 +232,185 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-binwalk" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-binwalk">Introduction to Binwalk</h2>
+<p>Binwalk is an advanced open-source tool designed for analyzing, reverse engineering, and extracting firmware images across multiple embedded systems and device architectures. Developed as a powerful firmware investigation platform, it enables security researchers, penetration testers, and digital forensics experts to dissect complex binary firmware structures.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ol type="1">
+<li><strong>Comprehensive Firmware Analysis</strong>
+<ul>
+<li>Multi-format file signature detection</li>
+<li>Embedded file extraction</li>
+<li>Deep binary inspection</li>
+<li>Signature-based file identification</li>
+</ul></li>
+<li><strong>Advanced Extraction Capabilities</strong>
+<ul>
+<li>Recursive file system extraction</li>
+<li>Compressed archive parsing</li>
+<li>Embedded artifact recovery</li>
+<li>Cross-platform compatibility</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="firmware-investigation-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="firmware-investigation-techniques">Firmware Investigation Techniques</h2>
+<section id="supported-file-types" class="level3">
+<h3 class="anchored" data-anchor-id="supported-file-types">Supported File Types</h3>
+<ul>
+<li>Firmware images</li>
+<li>Embedded system binaries</li>
+<li>Compressed archives</li>
+<li>Filesystem images</li>
+<li>Kernel representations</li>
+<li>Bootloader configurations</li>
+</ul>
+</section>
+<section id="analysis-methods" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-methods">Analysis Methods</h3>
+<ul>
+<li><strong>Signature Scanning</strong>
+<ul>
+<li>Identifies file types and embedded content</li>
+<li>Detects hidden or compressed sections</li>
+<li>Reveals internal firmware structure</li>
+</ul></li>
+<li><strong>Extraction Capabilities</strong>
+<ul>
+<li>Automatic file system extraction</li>
+<li>Recursive content analysis</li>
+<li>Preservation of original file attributes</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="technical-specifications" class="level2">
+<h2 class="anchored" data-anchor-id="technical-specifications">Technical Specifications</h2>
+<section id="system-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="system-requirements">System Requirements</h3>
+<ul>
+<li>Linux/Unix primary platform</li>
+<li>Python 3.x environment</li>
+<li>Command-line interface</li>
+<li>Minimum 8GB RAM</li>
+<li>Multi-core processor</li>
+<li>Extensive storage capacity</li>
+</ul>
+</section>
+<section id="supported-architectures" class="level3">
+<h3 class="anchored" data-anchor-id="supported-architectures">Supported Architectures</h3>
+<ul>
+<li>x86/x64 systems</li>
+<li>ARM processors</li>
+<li>MIPS architectures</li>
+<li>PowerPC platforms</li>
+<li>RISC-V configurations</li>
+<li>Embedded device firmware</li>
+</ul>
+</section>
+</section>
+<section id="forensic-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="forensic-workflow">Forensic Workflow</h2>
+<section id="firmware-investigation-process" class="level3">
+<h3 class="anchored" data-anchor-id="firmware-investigation-process">Firmware Investigation Process</h3>
+<ol type="1">
+<li>Load firmware image</li>
+<li>Perform initial signature scan</li>
+<li>Identify embedded components</li>
+<li>Extract file systems</li>
+<li>Analyze recovered artifacts</li>
+<li>Generate comprehensive report</li>
+</ol>
+</section>
+</section>
+<section id="advanced-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-capabilities">Advanced Capabilities</h2>
+<section id="firmware-extraction" class="level3">
+<h3 class="anchored" data-anchor-id="firmware-extraction">Firmware Extraction</h3>
+<ul>
+<li>Recursive file extraction</li>
+<li>Compressed content parsing</li>
+<li>Embedded archive handling</li>
+<li>Customizable extraction rules</li>
+</ul>
+</section>
+<section id="signature-management" class="level3">
+<h3 class="anchored" data-anchor-id="signature-management">Signature Management</h3>
+<ul>
+<li>Custom signature definition</li>
+<li>Extensible detection libraries</li>
+<li>Dynamic signature updating</li>
+<li>Multi-format support</li>
+</ul>
+</section>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
+<section id="investigative-scenarios" class="level3">
+<h3 class="anchored" data-anchor-id="investigative-scenarios">Investigative Scenarios</h3>
+<ol type="1">
+<li><strong>Cybersecurity Research</strong>
+<ul>
+<li>IoT device analysis</li>
+<li>Embedded system security assessment</li>
+<li>Firmware vulnerability detection</li>
+</ul></li>
+<li><strong>Reverse Engineering</strong>
+<ul>
+<li>Malware infrastructure mapping</li>
+<li>Proprietary firmware investigation</li>
+<li>Device firmware reconstruction</li>
+</ul></li>
+<li><strong>Digital Forensics</strong>
+<ul>
+<li>Hidden data extraction</li>
+<li>Firmware artifact preservation</li>
+<li>Embedded system compromise analysis</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="security-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations">Security Considerations</h2>
+<ul>
+<li>Non-destructive analysis</li>
+<li>Minimal system modification</li>
+<li>Comprehensive logging</li>
+<li>Forensically sound methodology</li>
+</ul>
+</section>
+<section id="community-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-support">Community and Support</h2>
+<ul>
+<li>Open-source project</li>
+<li>Active development community</li>
+<li>Regular tool updates</li>
+<li>Extensive documentation</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Binwalk represents a critical tool in firmware analysis, providing researchers with unprecedented insights into complex embedded system architectures and binary structures.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Andersen, R. (2021). Practical Reverse Engineering. Wiley.</li>
+<li>Zetter, K. (2014). Firmware Analysis Techniques. O’Reilly Media.</li>
+<li>Official Binwalk Documentation</li>
+</ol>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li>Project Repository: https://github.com/ReFirmLabs/binwalk</li>
+<li>Documentation: https://binwalk.org/</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

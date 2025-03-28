@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-24">
 
-<title>guymager – Haiyang's Tech Portfolio</title>
+<title>Guymager: Forensic Disk Image Acquisition Tool – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,16 +155,54 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-guymager" id="toc-introduction-to-guymager" class="nav-link active" data-scroll-target="#introduction-to-guymager">Introduction to Guymager</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#disk-imaging-techniques" id="toc-disk-imaging-techniques" class="nav-link" data-scroll-target="#disk-imaging-techniques">Disk Imaging Techniques</a>
+  <ul class="collapse">
+  <li><a href="#supported-image-formats" id="toc-supported-image-formats" class="nav-link" data-scroll-target="#supported-image-formats">Supported Image Formats</a></li>
+  <li><a href="#acquisition-methods" id="toc-acquisition-methods" class="nav-link" data-scroll-target="#acquisition-methods">Acquisition Methods</a></li>
+  </ul></li>
+  <li><a href="#technical-specifications" id="toc-technical-specifications" class="nav-link" data-scroll-target="#technical-specifications">Technical Specifications</a>
+  <ul class="collapse">
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System Requirements</a></li>
+  <li><a href="#supported-media-types" id="toc-supported-media-types" class="nav-link" data-scroll-target="#supported-media-types">Supported Media Types</a></li>
+  </ul></li>
+  <li><a href="#forensic-workflow" id="toc-forensic-workflow" class="nav-link" data-scroll-target="#forensic-workflow">Forensic Workflow</a>
+  <ul class="collapse">
+  <li><a href="#evidence-acquisition-process" id="toc-evidence-acquisition-process" class="nav-link" data-scroll-target="#evidence-acquisition-process">Evidence Acquisition Process</a></li>
+  </ul></li>
+  <li><a href="#advanced-capabilities" id="toc-advanced-capabilities" class="nav-link" data-scroll-target="#advanced-capabilities">Advanced Capabilities</a>
+  <ul class="collapse">
+  <li><a href="#forensic-validation" id="toc-forensic-validation" class="nav-link" data-scroll-target="#forensic-validation">Forensic Validation</a></li>
+  <li><a href="#performance-optimization" id="toc-performance-optimization" class="nav-link" data-scroll-target="#performance-optimization">Performance Optimization</a></li>
+  </ul></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#investigative-scenarios" id="toc-investigative-scenarios" class="nav-link" data-scroll-target="#investigative-scenarios">Investigative Scenarios</a></li>
+  </ul></li>
+  <li><a href="#security-considerations" id="toc-security-considerations" class="nav-link" data-scroll-target="#security-considerations">Security Considerations</a></li>
+  <li><a href="#community-and-support" id="toc-community-and-support" class="nav-link" data-scroll-target="#community-and-support">Community and Support</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Guymager: Forensic Disk Image Acquisition Tool</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Vulnerability Scanning</div>
+    <div class="quarto-category">Forensics</div>
   </div>
   </div>
 
@@ -182,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 24, 2025</p>
     </div>
   </div>
   
@@ -194,8 +232,184 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-guymager" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-guymager">Introduction to Guymager</h2>
+<p>Guymager is an open-source forensic disk imaging tool designed for creating bit-by-bit copies of storage media with a focus on forensic integrity and comprehensive metadata preservation. Developed primarily for Linux environments, it provides investigators with a robust solution for digital evidence acquisition.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ol type="1">
+<li><strong>Forensic Imaging Capabilities</strong>
+<ul>
+<li>Multiple image format support</li>
+<li>Bit-by-bit disk and device cloning</li>
+<li>Minimal write operations to source media</li>
+<li>Comprehensive metadata logging</li>
+</ul></li>
+<li><strong>Evidence Preservation</strong>
+<ul>
+<li>Cryptographic hash generation</li>
+<li>Detailed forensic logs</li>
+<li>Write-blocking functionality</li>
+<li>Chain of custody documentation</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="disk-imaging-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="disk-imaging-techniques">Disk Imaging Techniques</h2>
+<section id="supported-image-formats" class="level3">
+<h3 class="anchored" data-anchor-id="supported-image-formats">Supported Image Formats</h3>
+<ul>
+<li>EnCase (E01)</li>
+<li>Advanced Forensic Format (AFF)</li>
+<li>Raw DD images</li>
+<li>Split image files</li>
+<li>Compressed image options</li>
+</ul>
+</section>
+<section id="acquisition-methods" class="level3">
+<h3 class="anchored" data-anchor-id="acquisition-methods">Acquisition Methods</h3>
+<ul>
+<li><strong>Full Disk Imaging</strong>
+<ul>
+<li>Complete storage device capture</li>
+<li>Preserves deleted and hidden data</li>
+<li>Supports multiple file systems</li>
+</ul></li>
+<li><strong>Selective Imaging</strong>
+<ul>
+<li>Specific partition extraction</li>
+<li>Targeted evidence collection</li>
+<li>Flexible imaging parameters</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="technical-specifications" class="level2">
+<h2 class="anchored" data-anchor-id="technical-specifications">Technical Specifications</h2>
+<section id="system-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="system-requirements">System Requirements</h3>
+<ul>
+<li>Linux-based operating system</li>
+<li>Forensic workstation</li>
+<li>Write-blocker hardware recommended</li>
+<li>Minimum 16GB RAM</li>
+<li>Multi-core processor</li>
+<li>Large storage capacity</li>
+</ul>
+</section>
+<section id="supported-media-types" class="level3">
+<h3 class="anchored" data-anchor-id="supported-media-types">Supported Media Types</h3>
+<ul>
+<li>Hard disk drives (HDD)</li>
+<li>Solid-state drives (SSD)</li>
+<li>USB storage devices</li>
+<li>Memory cards</li>
+<li>External storage media</li>
+<li>Network-attached storage</li>
+</ul>
+</section>
+</section>
+<section id="forensic-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="forensic-workflow">Forensic Workflow</h2>
+<section id="evidence-acquisition-process" class="level3">
+<h3 class="anchored" data-anchor-id="evidence-acquisition-process">Evidence Acquisition Process</h3>
+<ol type="1">
+<li>Connect storage media</li>
+<li>Verify write-blocking</li>
+<li>Select imaging parameters</li>
+<li>Generate forensic image</li>
+<li>Validate cryptographic hashes</li>
+<li>Document acquisition details</li>
+</ol>
+</section>
+</section>
+<section id="advanced-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-capabilities">Advanced Capabilities</h2>
+<section id="forensic-validation" class="level3">
+<h3 class="anchored" data-anchor-id="forensic-validation">Forensic Validation</h3>
+<ul>
+<li>MD5 hash generation</li>
+<li>SHA-256 hash verification</li>
+<li>Automatic error detection</li>
+<li>Detailed acquisition logs</li>
+</ul>
+</section>
+<section id="performance-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="performance-optimization">Performance Optimization</h3>
+<ul>
+<li>Parallel imaging support</li>
+<li>Compression options</li>
+<li>Network device imaging</li>
+<li>Large media handling</li>
+</ul>
+</section>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
+<section id="investigative-scenarios" class="level3">
+<h3 class="anchored" data-anchor-id="investigative-scenarios">Investigative Scenarios</h3>
+<ol type="1">
+<li><strong>Law Enforcement</strong>
+<ul>
+<li>Criminal digital evidence collection</li>
+<li>Cybercrime investigations</li>
+<li>Forensic data preservation</li>
+</ul></li>
+<li><strong>Corporate Security</strong>
+<ul>
+<li>Insider threat investigations</li>
+<li>Compliance audits</li>
+<li>Incident response</li>
+</ul></li>
+<li><strong>Cybersecurity Research</strong>
+<ul>
+<li>Malware forensics</li>
+<li>Digital artifact collection</li>
+<li>System compromise analysis</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="security-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations">Security Considerations</h2>
+<ul>
+<li>Minimal source media modification</li>
+<li>Forensically sound acquisition</li>
+<li>Comprehensive logging</li>
+<li>Evidence integrity preservation</li>
+</ul>
+</section>
+<section id="community-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-support">Community and Support</h2>
+<ul>
+<li>Open-source project</li>
+<li>Active Linux forensics community</li>
+<li>Regular tool updates</li>
+<li>Extensive documentation</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Guymager represents a critical tool in digital forensics, enabling precise, verifiable, and legally defensible digital evidence acquisition across diverse storage environments.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Carrier, B. (2005). File System Forensic Analysis. Addison-Wesley Professional.</li>
+<li>Casey, E. (2011). Digital Evidence and Computer Crime. Academic Press.</li>
+<li>Official Guymager Documentation</li>
+</ol>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li>Project Website: https://guymager.sourceforge.io/</li>
+<li>GitHub Repository: https://sourceforge.net/projects/guymager/</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
