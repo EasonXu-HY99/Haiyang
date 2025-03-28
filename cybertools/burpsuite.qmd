@@ -1,7 +1,7 @@
 ---
 title: "Burp Suite: The Leading Web Application Security Testing Tool"
 date: "2025-03-11"
-categories: [Exploitation]
+categories: [Exploitation, Web Application Assessment]
 author: "Xu Haiyang"
 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvdAoXv_ukedOGkOQg57lomA8bkqs6V1WKog&s"
 format:
@@ -23,9 +23,9 @@ Burp Suite contains various tools that work seamlessly together to support the e
 
 Burp Suite comes in three editions to accommodate different needs:
 
-1. **Burp Suite Community Edition** - Free version with core manual tools
-2. **Burp Suite Professional** - Full-featured commercial product for security professionals
-3. **Burp Suite Enterprise Edition** - Automated, scalable web vulnerability scanner for DevSecOps teams
+1.  **Burp Suite Community Edition** - Free version with core manual tools
+2.  **Burp Suite Professional** - Full-featured commercial product for security professionals
+3.  **Burp Suite Enterprise Edition** - Automated, scalable web vulnerability scanner for DevSecOps teams
 
 ## Key Components
 
@@ -33,7 +33,7 @@ Burp Suite comes in three editions to accommodate different needs:
 
 The Burp Proxy is an intercepting web proxy that operates as a man-in-the-middle between the browser and target applications. It lets you intercept, inspect, and modify traffic passing in both directions.
 
-```
+```         
 +-------------+    +-----------+    +-------------------+
 |  Browser    | -> | Burp Proxy | -> | Target Application|
 +-------------+    +-----------+    +-------------------+
@@ -45,22 +45,22 @@ The Burp Proxy is an intercepting web proxy that operates as a man-in-the-middle
 
 Available in Professional and Enterprise editions, Burp Scanner is an advanced web vulnerability scanner that can automatically detect numerous types of vulnerabilities.
 
-::: {.callout-note}
+::: callout-note
 Burp Scanner combines both passive and active scanning techniques:
 
-- **Passive scanning** analyzes HTTP responses without sending additional requests
-- **Active scanning** sends crafted payloads to detect vulnerabilities through application responses
+-   **Passive scanning** analyzes HTTP responses without sending additional requests
+-   **Active scanning** sends crafted payloads to detect vulnerabilities through application responses
 :::
 
 ### Intruder
 
 Burp Intruder is a powerful tool for automating customized attacks against web applications. It allows you to configure highly customized attacks for:
 
-- Fuzzing web applications
-- Brute forcing credentials
-- Enumerating identifiers
-- Harvesting useful data
-- Exploiting vulnerabilities
+-   Fuzzing web applications
+-   Brute forcing credentials
+-   Enumerating identifiers
+-   Harvesting useful data
+-   Exploiting vulnerabilities
 
 ![Burp Intruder Attack Configuration](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ39oX8vz8cDnnosHNS8wZjuLJCdBGArFz2JQ&s)
 
@@ -68,7 +68,7 @@ Burp Intruder is a powerful tool for automating customized attacks against web a
 
 Repeater is a simple but powerful tool for manually manipulating and resending individual HTTP requests, then analyzing the application's responses.
 
-```python
+``` python
 # Example of how you might programmatically replicate a Repeater-like functionality
 import requests
 
@@ -100,25 +100,25 @@ A utility for performing visual comparison between any two items of data.
 
 ### Installation
 
-1. Download Burp Suite from [PortSwigger's official website](https://portswigger.net/burp/communitydownload)
-2. Run the installer appropriate for your operating system (Windows, macOS, or Linux)
-3. Launch Burp Suite and choose between temporary project or saved project
+1.  Download Burp Suite from [PortSwigger's official website](https://portswigger.net/burp/communitydownload)
+2.  Run the installer appropriate for your operating system (Windows, macOS, or Linux)
+3.  Launch Burp Suite and choose between temporary project or saved project
 
 ### Configuring Your Browser
 
 For Burp Suite to intercept browser traffic, you need to configure your browser to use Burp's proxy:
 
-1. By default, Burp's proxy listener runs on `127.0.0.1:8080`
-2. Configure your browser's proxy settings to use this address and port
-3. Install the Burp CA certificate in your browser to intercept HTTPS traffic
+1.  By default, Burp's proxy listener runs on `127.0.0.1:8080`
+2.  Configure your browser's proxy settings to use this address and port
+3.  Install the Burp CA certificate in your browser to intercept HTTPS traffic
 
-::: {.callout-warning}
+::: callout-warning
 Without installing Burp's CA certificate, your browser will show certificate warnings for HTTPS sites.
 :::
 
 ### Basic Workflow
 
-```mermaid
+``` mermaid
 graph LR
     A[Configure Browser] --> B[Intercept Traffic]
     B --> C[Send to Other Burp Tools]
@@ -131,27 +131,27 @@ graph LR
 
 ### Testing for SQL Injection
 
-1. Intercept a request with Burp Proxy that submits data to the server
-2. Right-click and send to Intruder
-3. Set payload positions around parameters likely to be vulnerable
-4. Choose a payload list of SQL injection test strings
-5. Start the attack and analyze responses for errors or behavioral changes
+1.  Intercept a request with Burp Proxy that submits data to the server
+2.  Right-click and send to Intruder
+3.  Set payload positions around parameters likely to be vulnerable
+4.  Choose a payload list of SQL injection test strings
+5.  Start the attack and analyze responses for errors or behavioral changes
 
 ![SQL Injection Testing Process](https://i.ytimg.com/vi/JkJLZ4NYISQ/maxresdefault.jpg)
 
 ### Finding Hidden Directories
 
-1. Use the Burp Suite Content Discovery feature (Professional edition)
-2. Target the root of the website
-3. Review discovered content for sensitive directories and files
-4. Analyze each potential finding for further vulnerabilities
+1.  Use the Burp Suite Content Discovery feature (Professional edition)
+2.  Target the root of the website
+3.  Review discovered content for sensitive directories and files
+4.  Analyze each potential finding for further vulnerabilities
 
 ### Session Token Analysis
 
-1. Capture a series of session tokens using Burp Proxy
-2. Send them to Sequencer
-3. Run analysis to check for proper randomness and unpredictability
-4. Review the detailed statistical analysis provided by Sequencer
+1.  Capture a series of session tokens using Burp Proxy
+2.  Send them to Sequencer
+3.  Run analysis to check for proper randomness and unpredictability
+4.  Review the detailed statistical analysis provided by Sequencer
 
 ## Advanced Techniques
 
@@ -159,7 +159,7 @@ graph LR
 
 Burp Suite supports a robust extension framework that allows adding new functionality through custom or third-party extensions.
 
-```java
+``` java
 // Example of a simple Burp extension in Java
 package burp;
 
@@ -176,38 +176,38 @@ public class BurpExtender implements IBurpExtender {
 
 Macros in Burp Suite allow you to automate multi-step processes like logging in before testing authenticated functions:
 
-1. Navigate to Project options > Sessions
-2. Define a macro that performs the login sequence
-3. Configure session handling rules to apply the macro when needed
+1.  Navigate to Project options \> Sessions
+2.  Define a macro that performs the login sequence
+3.  Configure session handling rules to apply the macro when needed
 
 ### Collaborative Testing
 
 For team environments, Burp Suite Professional offers features that support collaborative testing:
 
-- Save and load projects to share work
-- Use Burp Collaborator for detecting out-of-band vulnerabilities
-- Share scan configurations and issue definitions
+-   Save and load projects to share work
+-   Use Burp Collaborator for detecting out-of-band vulnerabilities
+-   Share scan configurations and issue definitions
 
 ## Security Best Practices with Burp Suite
 
 When using Burp Suite for security testing, keep these best practices in mind:
 
-1. Always obtain proper authorization before testing an application
-2. Be cautious with active scanning on production systems
-3. Use throttling options to reduce server load during testing
-4. Keep detailed records of all testing activities
-5. Regularly update Burp Suite to get the latest security checks
+1.  Always obtain proper authorization before testing an application
+2.  Be cautious with active scanning on production systems
+3.  Use throttling options to reduce server load during testing
+4.  Keep detailed records of all testing activities
+5.  Regularly update Burp Suite to get the latest security checks
 
 ## Comparison with Other Tools
 
-| Feature | Burp Suite | OWASP ZAP | Nikto |
-|---------|------------|-----------|-------|
-| Proxy Interception | ✓ | ✓ | ✗ |
-| Automated Scanning | ✓ (Pro/Enterprise) | ✓ | ✓ |
-| Extensibility | ✓ | ✓ | Limited |
-| Active Community | Very Active | Active | Moderate |
-| Enterprise Support | ✓ | Limited | ✗ |
-| Cost | Free (Community)<br>$399/year (Pro) | Free | Free |
+| Feature            | Burp Suite                           | OWASP ZAP | Nikto    |
+|--------------------|--------------------------------------|-----------|----------|
+| Proxy Interception | ✓                                    | ✓         | ✗        |
+| Automated Scanning | ✓ (Pro/Enterprise)                   | ✓         | ✓        |
+| Extensibility      | ✓                                    | ✓         | Limited  |
+| Active Community   | Very Active                          | Active    | Moderate |
+| Enterprise Support | ✓                                    | Limited   | ✗        |
+| Cost               | Free (Community)<br>\$399/year (Pro) | Free      | Free     |
 
 ## Conclusion
 
@@ -217,6 +217,6 @@ Whether you're performing a one-time security assessment or implementing continu
 
 ## Resources for Further Learning
 
-- [Official Burp Suite Documentation](https://portswigger.net/burp/documentation)
-- [Web Security Academy](https://portswigger.net/web-security) - Free, online web security training from PortSwigger
-- [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
+-   [Official Burp Suite Documentation](https://portswigger.net/burp/documentation)
+-   [Web Security Academy](https://portswigger.net/web-security) - Free, online web security training from PortSwigger
+-   [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)

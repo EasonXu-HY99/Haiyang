@@ -1,6 +1,133 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "John the Ripper: Advanced Password Cracking Tool"
+date: "2025-03-13"
 categories: [Password Cracking]
 author: "Xu Haiyang"
+image: "https://dashboard.snapcraft.io/site_media/appmedia/2024/08/com.openwall.John.png"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Overview of John the Ripper
+
+John the Ripper (JtR) is an advanced, open-source password cracking tool designed to test password strength and assist in password recovery. Developed by Solar Designer, this tool has become a critical utility in cybersecurity for identifying weak passwords and improving overall system security.
+
+![John the Ripper Logo](https://dashboard.snapcraft.io/site_media/appmedia/2024/08/com.openwall.John.png)
+
+### Key Features
+
+-   **Multi-platform support**: Runs on various Unix, Linux, macOS, and Windows systems
+-   **Multiple hash algorithm support**: Handles hundreds of password hash types
+-   **Efficient cracking modes**:
+    -   Dictionary attacks
+    -   Brute-force attacks
+    -   Hybrid attacks
+-   **Customizable password generation rules**
+-   **Distributed computing support**
+
+## Technical Architecture
+
+``` bash
+# Basic John the Ripper command structure
+john [options] password-file
+```
+
+### Supported Hash Types
+
+1.  **Unix/Linux Hashes**
+    -   MD5
+    -   SHA-256
+    -   SHA-512
+    -   PBKDF2
+2.  **Windows Hashes**
+    -   NTLM
+    -   LM
+    -   Active Directory
+3.  **Web Application Hashes**
+    -   MD5
+    -   SHA-1
+    -   bcrypt
+    -   Argon2
+
+## Installation Methods
+
+::::: columns
+::: {.column width="50%"}
+### Linux Installation
+
+``` bash
+sudo apt-get update
+sudo apt-get install john
+```
+:::
+
+::: {.column width="50%"}
+### macOS Installation
+
+``` bash
+brew install john-jumbo
+```
+:::
+:::::
+
+## Practical Usage Scenarios
+
+### 1. Network Security Auditing
+
+Security professionals use John the Ripper to: - Test password strength in organizational networks - Identify weak user credentials - Recommend password policy improvements
+
+### 2. Forensic Investigations
+
+Digital forensics experts leverage JtR to: - Recover lost passwords - Analyze encrypted data - Support legal evidence collection
+
+## Ethical Considerations
+
+::: callout-warning
+John the Ripper should **only** be used: - With explicit permission - On systems you own - For legitimate security testing - In controlled educational environments
+:::
+
+## Advanced Techniques
+
+### Rule-Based Password Generation
+
+John the Ripper allows creating complex password generation rules: - Character substitutions - Prefix/suffix additions - Numerical variations
+
+``` bash
+# Example rule configuration
+[Rules]
+# Convert to lowercase, add numbers
+l $[0-9]
+```
+
+## Performance Optimization
+
+::::: columns
+::: {.column width="60%"}
+### Hardware Acceleration
+
+-   GPU-based cracking
+-   Distributed computing clusters
+-   FPGA and ASIC support
+:::
+
+::: {.column width="40%"}
+![GPU Acceleration](https://media.geeksforgeeks.org/wp-content/uploads/20240105180457/HOW-GPU-ACCELERATION-WORKS.png)
+:::
+:::::
+
+## Community and Resources
+
+-   **Official Website**: [www.openwall.com/john](https://www.openwall.com/john)
+-   **GitHub Repository**: [github.com/openwall/john](https://github.com/openwall/john)
+-   **Documentation**: Comprehensive wiki and user guides
+
+## Conclusion
+
+John the Ripper remains an essential tool in cybersecurity, helping organizations and professionals understand and improve password security through responsible, ethical testing.
+
+::: callout-tip
+**Pro Tip**: Always obtain proper authorization before performing any password cracking activities!
+:::

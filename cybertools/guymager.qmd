@@ -1,6 +1,143 @@
 ---
-title: ""
-date: "2025-03-06"
-categories: [Vulnerability Scanning]
+title: "Guymager: Forensic Disk Image Acquisition Tool"
+date: "2025-03-24"
+categories: [Forensics]
 author: "Xu Haiyang"
+image: "https://www.kali.org/tools/guymager/images/guymager-logo.svg"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction to Guymager
+
+Guymager is an open-source forensic disk imaging tool designed for creating bit-by-bit copies of storage media with a focus on forensic integrity and comprehensive metadata preservation. Developed primarily for Linux environments, it provides investigators with a robust solution for digital evidence acquisition.
+
+### Key Features
+
+1.  **Forensic Imaging Capabilities**
+    -   Multiple image format support
+    -   Bit-by-bit disk and device cloning
+    -   Minimal write operations to source media
+    -   Comprehensive metadata logging
+2.  **Evidence Preservation**
+    -   Cryptographic hash generation
+    -   Detailed forensic logs
+    -   Write-blocking functionality
+    -   Chain of custody documentation
+
+## Disk Imaging Techniques
+
+### Supported Image Formats
+
+-   EnCase (E01)
+-   Advanced Forensic Format (AFF)
+-   Raw DD images
+-   Split image files
+-   Compressed image options
+
+### Acquisition Methods
+
+-   **Full Disk Imaging**
+    -   Complete storage device capture
+    -   Preserves deleted and hidden data
+    -   Supports multiple file systems
+-   **Selective Imaging**
+    -   Specific partition extraction
+    -   Targeted evidence collection
+    -   Flexible imaging parameters
+
+## Technical Specifications
+
+### System Requirements
+
+-   Linux-based operating system
+-   Forensic workstation
+-   Write-blocker hardware recommended
+-   Minimum 16GB RAM
+-   Multi-core processor
+-   Large storage capacity
+
+### Supported Media Types
+
+-   Hard disk drives (HDD)
+-   Solid-state drives (SSD)
+-   USB storage devices
+-   Memory cards
+-   External storage media
+-   Network-attached storage
+
+## Forensic Workflow
+
+### Evidence Acquisition Process
+
+1.  Connect storage media
+2.  Verify write-blocking
+3.  Select imaging parameters
+4.  Generate forensic image
+5.  Validate cryptographic hashes
+6.  Document acquisition details
+
+## Advanced Capabilities
+
+### Forensic Validation
+
+-   MD5 hash generation
+-   SHA-256 hash verification
+-   Automatic error detection
+-   Detailed acquisition logs
+
+### Performance Optimization
+
+-   Parallel imaging support
+-   Compression options
+-   Network device imaging
+-   Large media handling
+
+## Use Cases
+
+### Investigative Scenarios
+
+1.  **Law Enforcement**
+    -   Criminal digital evidence collection
+    -   Cybercrime investigations
+    -   Forensic data preservation
+2.  **Corporate Security**
+    -   Insider threat investigations
+    -   Compliance audits
+    -   Incident response
+3.  **Cybersecurity Research**
+    -   Malware forensics
+    -   Digital artifact collection
+    -   System compromise analysis
+
+## Security Considerations
+
+-   Minimal source media modification
+-   Forensically sound acquisition
+-   Comprehensive logging
+-   Evidence integrity preservation
+
+## Community and Support
+
+-   Open-source project
+-   Active Linux forensics community
+-   Regular tool updates
+-   Extensive documentation
+
+## Conclusion
+
+Guymager represents a critical tool in digital forensics, enabling precise, verifiable, and legally defensible digital evidence acquisition across diverse storage environments.
+
+## References
+
+1.  Carrier, B. (2005). File System Forensic Analysis. Addison-Wesley Professional.
+2.  Casey, E. (2011). Digital Evidence and Computer Crime. Academic Press.
+3.  Official Guymager Documentation
+
+## Additional Resources
+
+-   Project Website: https://guymager.sourceforge.io/
+-   GitHub Repository: https://sourceforge.net/projects/guymager/

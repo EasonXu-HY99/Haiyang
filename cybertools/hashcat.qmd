@@ -1,6 +1,161 @@
 ---
-title: ""
-date: "2025-03-06"
+title: "Hashcat: Advanced Password Recovery and Cracking Tool"
+date: "2025-03-14"
 categories: [Password Cracking]
 author: "Xu Haiyang"
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJzkDKpUyJ0aNjvFw4yH0DZGxfTqymkNilA&s"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Overview of Hashcat
+
+Hashcat is the world's fastest and most advanced password recovery tool, renowned for its exceptional performance in cracking complex password hashes across multiple platforms and hash types.
+
+![Hashcat Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJzkDKpUyJ0aNjvFw4yH0DZGxfTqymkNilA&s)
+
+### Key Strengths
+
+-   **Unprecedented cracking speed**
+-   **Support for over 300 hash types**
+-   **Advanced GPU acceleration**
+-   **Multi-platform compatibility**
+-   **Flexible attack modes**
+
+## Technical Architecture
+
+``` bash
+# Basic Hashcat command structure
+hashcat [options] hashfile [wordlist]
+```
+
+### Supported Hash Types
+
+1.  **Operating System Hashes**
+    -   Windows (NTLM, LM)
+    -   Linux (MD5, SHA-256, SHA-512)
+    -   macOS (FileVault)
+2.  **Web Application Hashes**
+    -   MD5
+    -   SHA-1
+    -   bcrypt
+    -   PBKDF2
+    -   Argon2
+3.  **Cryptocurrency Wallets**
+    -   Bitcoin
+    -   Ethereum
+    -   Litecoin
+
+## Installation Methods
+
+::::: columns
+::: {.column width="50%"}
+### Linux Installation
+
+``` bash
+sudo apt-get update
+sudo apt-get install hashcat
+```
+:::
+
+::: {.column width="50%"}
+### Windows Installation
+
+``` powershell
+# Using Chocolatey package manager
+choco install hashcat
+```
+:::
+:::::
+
+## Attack Modes
+
+### 1. Dictionary Attack
+
+``` bash
+hashcat -a 0 -m 1000 hashes.txt wordlist.txt
+```
+
+### 2. Brute-Force Attack
+
+``` bash
+hashcat -a 3 -m 1000 hashes.txt ?a?a?a?a
+```
+
+### 3. Hybrid Attack
+
+``` bash
+hashcat -a 6 -m 1000 hashes.txt wordlist.txt ?d?d?d
+```
+
+## Performance Optimization
+
+::::: columns
+::: {.column width="60%"}
+### Hardware Acceleration
+
+-   CUDA GPU Support
+-   OpenCL Multi-GPU Cracking
+-   Distributed Computing
+:::
+
+::: {.column width="40%"}
+![GPU Acceleration](https://hashcat.net/hashcat/hashcat.png)
+:::
+:::::
+
+## Advanced Techniques
+
+### Rule-Based Password Generation
+
+Hashcat's rule engine allows complex password mutations: - Character substitutions - Prefix/suffix additions - Numerical variations
+
+``` bash
+# Example rule file
+:[A-Z]$[0-9]
+```
+
+## Practical Use Cases
+
+### 1. Security Auditing
+
+-   Identify weak password patterns
+-   Test organizational password policies
+-   Demonstrate authentication vulnerabilities
+
+### 2. Forensic Investigations
+
+-   Recover lost passwords
+-   Assist in digital forensics
+-   Support legal evidence collection
+
+## Ethical Considerations
+
+::: callout-warning
+Hashcat must **only** be used: - With explicit written consent - On systems you legally own - For authorized security testing - In controlled research environments
+:::
+
+## Community and Resources
+
+-   **Official Website**: [hashcat.net](https://hashcat.net/)
+-   **GitHub Repository**: [github.com/hashcat/hashcat](https://github.com/hashcat/hashcat)
+-   **Documentation**: Comprehensive user guides
+-   **Community Forums**: Active user support
+
+## Best Practices
+
+1.  **Always obtain proper authorization**
+2.  **Use diverse, complex wordlists**
+3.  **Implement responsible testing**
+4.  **Respect legal boundaries**
+
+## Conclusion
+
+Hashcat remains an essential tool in cybersecurity, enabling professionals to comprehensively assess password security through responsible, ethical testing.
+
+::: callout-tip
+**Critical Reminder**: Unauthorized password cracking is unethical and potentially illegal!
+:::

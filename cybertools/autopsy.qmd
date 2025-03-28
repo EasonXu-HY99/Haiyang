@@ -1,6 +1,136 @@
 ---
-title: ""
-date: "2025-03-06"
-categories: [Vulnerability Scanning]
+title: "Autopsy: Advanced Digital Forensics Platform"
+date: "2025-03-22"
+categories: [Forensics]
 author: "Xu Haiyang"
+image: "https://logowik.com/content/uploads/images/autopsy-digital-forensics5329.jpg"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
 ---
+
+## Introduction to Autopsy
+
+Autopsy is a comprehensive, open-source digital forensics platform designed for analyzing and investigating digital evidence across various computing environments. Developed by the Sleuth Kit (TSK) team, it provides investigators, cybersecurity professionals, and law enforcement with powerful tools to extract, analyze, and visualize digital artifacts.
+
+### Key Features
+
+1.  **Multi-Platform Support**
+    -   Windows, macOS, and Linux compatibility
+    -   Supports multiple file system types
+    -   Handles diverse digital evidence sources
+2.  **Advanced Forensic Capabilities**
+    -   Disk image analysis
+    -   Deleted file recovery
+    -   Metadata extraction
+    -   Timeline analysis
+
+## Core Functionality
+
+### Evidence Processing
+
+Autopsy provides multiple methods for digital evidence examination:
+
+-   **Disk Image Ingest**
+    -   Supports major forensic image formats (E01, DD, raw)
+    -   Comprehensive file system parsing
+    -   Automatic artifact identification
+-   **Data Carving**
+    -   Recovers deleted files
+    -   Extracts hidden or fragmented data
+    -   Supports multiple file types
+
+### Investigative Modules
+
+#### Key Forensic Modules
+
+1.  **Web Artifacts Analyzer**
+    -   Browser history recovery
+    -   Cached content extraction
+    -   Social media trace analysis
+2.  **Email Forensics**
+    -   Email metadata examination
+    -   Attachment recovery
+    -   Communication pattern analysis
+3.  **Multimedia Forensics**
+    -   Image and video metadata extraction
+    -   Geolocation data recovery
+    -   Embedded information analysis
+
+## Technical Architecture
+
+### Modular Plugin System
+
+-   Extensible architecture
+-   Custom module development support
+-   Regular community-driven updates
+
+### Data Visualization
+
+-   Interactive timeline views
+-   Graphical relationship mapping
+-   Keyword search and filtering
+
+## Use Cases
+
+### Typical Scenarios
+
+1.  **Corporate Investigations**
+    -   Insider threat detection
+    -   Data breach analysis
+    -   Compliance audits
+2.  **Law Enforcement**
+    -   Criminal digital evidence collection
+    -   Cybercrime investigations
+    -   Electronic discovery
+3.  **Incident Response**
+    -   Malware forensics
+    -   System compromise analysis
+    -   Threat actor tracking
+
+## Installation and Configuration
+
+### System Requirements
+
+-   64-bit operating system
+-   Minimum 16GB RAM
+-   Multi-core processor
+-   SSD recommended for large evidence sets
+
+### Basic Setup Steps
+
+1.  Download from official repository
+2.  Install Java Runtime Environment
+3.  Configure forensic image paths
+4.  Select appropriate forensic modules
+
+## Security Considerations
+
+-   Uses write-blocking techniques
+-   Maintains forensic integrity
+-   Provides chain of custody documentation
+-   Encrypted evidence storage support
+
+## Community and Support
+
+-   Open-source project
+-   Active developer community
+-   Regular security updates
+-   Extensive documentation and tutorials
+
+## Conclusion
+
+Autopsy represents a critical tool in modern digital forensics, enabling comprehensive and methodical investigation of digital evidence across complex computing environments.
+
+## References
+
+1.  Carrier, B. (2005). File System Forensic Analysis. Addison-Wesley Professional.
+2.  Casey, E. (2011). Digital Evidence and Computer Crime. Academic Press.
+3.  Official Autopsy Documentation, The Sleuth Kit Project
+
+## Additional Resources
+
+-   Project Website: https://www.sleuthkit.org/autopsy/
+-   GitHub Repository: https://github.com/sleuthkit/autopsy

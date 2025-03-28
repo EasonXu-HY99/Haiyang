@@ -1,7 +1,7 @@
 ---
 title: "OWASP Amass: Advanced DNS Enumeration and Network Mapping"
 date: "2025-03-07"
-categories: [Information Gathering, OSINT, DNS Enumeration]
+categories: [Information Gathering]
 author: "Xu Haiyang"
 image: "https://avatars.githubusercontent.com/u/128647419?s=200&v=4"
 format:
@@ -360,7 +360,7 @@ Guidelines for ethical use:
 ## Comparison with Similar Tools
 
 | Tool | Primary Strength | Limitation |
-|-----------------|----------------------------------|----------------------|
+|----|----|----|
 | **Amass** | Comprehensive data collection and visualization | Resource intensive |
 | **Subfinder** | Fast passive enumeration | Less visualization capability |
 | **Sublist3r** | Simplicity and ease of use | Limited source integrations |

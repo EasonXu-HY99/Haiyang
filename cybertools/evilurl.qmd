@@ -1,7 +1,7 @@
 ---
 title: "EvilURL: Understanding Homograph Attacks"
 date: "2025-03-12"
-categories: [Software Engineering, Cybersecurity]
+categories: [Software Engineering]
 author: "Xu Haiyang"
 image: "https://avatars.githubusercontent.com/u/29824686?v=4"
 format:
@@ -19,9 +19,7 @@ In an increasingly connected digital world, cybersecurity threats continue to ev
 
 A homograph attack exploits the visual similarity between characters in different scripts or writing systems. For example, the Cyrillic 'о' (U+043E) looks nearly identical to the Latin 'o' (U+006F), but they are entirely different Unicode characters.
 
-Consider these two domains:
-- google.com (legitimate)
-- gооgle.com (with Cyrillic 'о' characters)
+Consider these two domains: - google.com (legitimate) - gооgle.com (with Cyrillic 'о' characters)
 
 To human eyes, they appear identical, but they point to completely different websites.
 
@@ -33,21 +31,21 @@ EvilURL is an open-source tool that helps security researchers and penetration t
 
 ### Key Features
 
-- Generation of look-alike domains using Unicode characters
-- Support for multiple IDN (Internationalized Domain Name) scripts
-- Command-line interface for easy integration into security workflows
-- Educational component explaining the risks to organizations
+-   Generation of look-alike domains using Unicode characters
+-   Support for multiple IDN (Internationalized Domain Name) scripts
+-   Command-line interface for easy integration into security workflows
+-   Educational component explaining the risks to organizations
 
 ## How EvilURL Works
 
 The tool operates by:
 
-1. Taking a legitimate domain name as input
-2. Analyzing each character for potential homograph substitutions
-3. Generating alternative domain names using visually similar characters
-4. Providing output in a format ready for testing or demonstration
+1.  Taking a legitimate domain name as input
+2.  Analyzing each character for potential homograph substitutions
+3.  Generating alternative domain names using visually similar characters
+4.  Providing output in a format ready for testing or demonstration
 
-```python
+``` python
 # Example of how character substitution works
 def substitute_chars(domain):
     evil_chars = {
@@ -94,9 +92,9 @@ Organizations can protect themselves against homograph attacks through:
 
 Modern browsers implement various protections:
 
-- Punycode representation: Converting IDN domains to ASCII format
-- Visual indicators for mixed-script URLs
-- Warning systems for potentially deceptive domains
+-   Punycode representation: Converting IDN domains to ASCII format
+-   Visual indicators for mixed-script URLs
+-   Warning systems for potentially deceptive domains
 
 ![Browser Protection Example](https://textslashplain.com/wp-content/uploads/2023/05/image-22.png)
 
@@ -104,10 +102,10 @@ Modern browsers implement various protections:
 
 Security teams should:
 
-1. Register similar-looking domain variations
-2. Implement email filtering for suspicious URLs
-3. Train employees to verify domain authenticity
-4. Use certificate pinning where appropriate
+1.  Register similar-looking domain variations
+2.  Implement email filtering for suspicious URLs
+3.  Train employees to verify domain authenticity
+4.  Use certificate pinning where appropriate
 
 ## Technical Analysis: The Unicode Challenge
 
@@ -115,12 +113,12 @@ The challenge of homograph attacks stems from Unicode's design. Unicode was crea
 
 ### Unicode Categories Commonly Used in Attacks
 
-| Script | Example Characters | Similar Latin Characters |
-|--------|-------------------|-------------------------|
-| Cyrillic | а, е, о, р, с | a, e, o, p, c |
-| Greek | ο, ρ, τ | o, p, t |
-| Armenian | օ, ո | o, n |
-| Hebrew | ס, כ | o, n |
+| Script   | Example Characters | Similar Latin Characters |
+|----------|--------------------|--------------------------|
+| Cyrillic | а, е, о, р, с      | a, e, o, p, c            |
+| Greek    | ο, ρ, τ            | o, p, t                  |
+| Armenian | օ, ո               | o, n                     |
+| Hebrew   | ס, כ               | o, n                     |
 
 ## Ethical Considerations
 
@@ -128,10 +126,10 @@ Tools like EvilURL raise important ethical questions. While they serve education
 
 Responsible disclosure includes:
 
-- Using such tools only in controlled environments
-- Obtaining proper authorization before testing
-- Reporting vulnerabilities through appropriate channels
-- Focusing on education and awareness
+-   Using such tools only in controlled environments
+-   Obtaining proper authorization before testing
+-   Reporting vulnerabilities through appropriate channels
+-   Focusing on education and awareness
 
 ## Conclusion
 
@@ -141,6 +139,6 @@ By understanding how these attacks work and implementing appropriate countermeas
 
 ## References
 
-1. Hannay, P., & Baatard, G. (2023). "The Evolution of Homograph Attacks in the Modern Web." *Journal of Cybersecurity Research*, 12(3), 45-62.
-2. OWASP. (2024). "Internationalized Domain Name (IDN) Homograph Attack." OWASP Foundation.
-3. Zheng, H., & Liu, S. (2024). "Detection Methods for Unicode-based Phishing Attacks." *IEEE Security & Privacy*, 22(1), 78-89.
+1.  Hannay, P., & Baatard, G. (2023). "The Evolution of Homograph Attacks in the Modern Web." *Journal of Cybersecurity Research*, 12(3), 45-62.
+2.  OWASP. (2024). "Internationalized Domain Name (IDN) Homograph Attack." OWASP Foundation.
+3.  Zheng, H., & Liu, S. (2024). "Detection Methods for Unicode-based Phishing Attacks." *IEEE Security & Privacy*, 22(1), 78-89.

@@ -1,7 +1,7 @@
 ---
 title: "GoPhish: Open-Source Phishing Toolkit"
 date: "2025-03-08"
-categories: [Software Engineering, Cybersecurity]
+categories: [Software Engineering]
 author: "Xu Haiyang"
 image: "https://img.helpnetsecurity.com/wp-content/uploads/2016/04/09113139/gophish-featured.jpg"
 format:
@@ -21,18 +21,18 @@ format:
 
 GoPhish offers a comprehensive set of features that make it an essential tool for security professionals:
 
-- **User-friendly web interface**: Intuitive dashboard for creating and managing phishing campaigns
-- **Extensive reporting**: Detailed metrics and analytics on campaign performance
-- **Landing page replication**: Easily clone legitimate websites for realistic phishing simulations
-- **Email templating**: Create customizable email templates with tracking capabilities
-- **Scheduled campaigns**: Automate campaign launches for consistent testing
-- **API access**: Integrate GoPhish into your existing security infrastructure
+-   **User-friendly web interface**: Intuitive dashboard for creating and managing phishing campaigns
+-   **Extensive reporting**: Detailed metrics and analytics on campaign performance
+-   **Landing page replication**: Easily clone legitimate websites for realistic phishing simulations
+-   **Email templating**: Create customizable email templates with tracking capabilities
+-   **Scheduled campaigns**: Automate campaign launches for consistent testing
+-   **API access**: Integrate GoPhish into your existing security infrastructure
 
 ## Getting Started
 
 Installing and configuring GoPhish is straightforward. Below is a basic guide to get you up and running:
 
-```bash
+``` bash
 # Download the latest release
 wget https://github.com/gophish/gophish/releases/latest/download/gophish-v0.12.1-linux-64bit.zip
 
@@ -52,11 +52,11 @@ Once launched, you can access the admin interface at `https://localhost:3333` wi
 
 The campaign creation process follows these main steps:
 
-1. **Create landing pages**: Design or clone the pages where users will land after clicking links
-2. **Set up email templates**: Craft the phishing emails that will be sent to targets
-3. **Define sending profiles**: Configure the email sending settings
-4. **Manage user groups**: Organize target recipients into logical groups
-5. **Launch campaigns**: Schedule and execute your phishing simulations
+1.  **Create landing pages**: Design or clone the pages where users will land after clicking links
+2.  **Set up email templates**: Craft the phishing emails that will be sent to targets
+3.  **Define sending profiles**: Configure the email sending settings
+4.  **Manage user groups**: Organize target recipients into logical groups
+5.  **Launch campaigns**: Schedule and execute your phishing simulations
 
 ![GoPhish Dashboard](https://user-images.githubusercontent.com/1317288/27941933-e72d302c-6298-11e7-9db1-fe592c79c61e.png)
 
@@ -74,16 +74,16 @@ The following video demonstrates how to create a basic phishing campaign using G
 
 When using GoPhish for security testing, consider these important factors:
 
-- **Legal authorization**: Always obtain proper authorization before conducting phishing tests
-- **Scope definition**: Clearly define test parameters and communicate them to stakeholders
-- **Data protection**: Handle all collected data according to relevant privacy regulations
-- **Educational focus**: Emphasize the educational aspect of campaigns over punitive measures
+-   **Legal authorization**: Always obtain proper authorization before conducting phishing tests
+-   **Scope definition**: Clearly define test parameters and communicate them to stakeholders
+-   **Data protection**: Handle all collected data according to relevant privacy regulations
+-   **Educational focus**: Emphasize the educational aspect of campaigns over punitive measures
 
 ## Advanced Configuration
 
 GoPhish can be customized for more complex testing scenarios:
 
-```yaml
+``` yaml
 admin_server:
   listen_url: 0.0.0.0:3333
   use_tls: true
@@ -107,9 +107,9 @@ logging:
 
 GoPhish works well with other security tools and can be integrated into broader security testing frameworks:
 
-- **SIEM systems**: Feed phishing exercise data into security information and event management tools
-- **Training platforms**: Connect with security awareness training solutions
-- **Automation tools**: Use the API to automate campaign creation and reporting
+-   **SIEM systems**: Feed phishing exercise data into security information and event management tools
+-   **Training platforms**: Connect with security awareness training solutions
+-   **Automation tools**: Use the API to automate campaign creation and reporting
 
 ## Conclusion
 
@@ -119,8 +119,8 @@ For more information, visit the [official GoPhish documentation](https://docs.ge
 
 ## References
 
-1. GoPhish Official Website: [https://getgophish.com/](https://getgophish.com/)
-2. GoPhish Documentation: [https://docs.getgophish.com/](https://docs.getgophish.com/)
-3. GitHub Repository: [https://github.com/gophish/gophish](https://github.com/gophish/gophish)
-4. SANS Institute. (2023). "Phishing Awareness Training Best Practices"
-5. National Cyber Security Centre. (2024). "Phishing Attacks: Defending Your Organisation"
+1.  GoPhish Official Website: <https://getgophish.com/>
+2.  GoPhish Documentation: <https://docs.getgophish.com/>
+3.  GitHub Repository: <https://github.com/gophish/gophish>
+4.  SANS Institute. (2023). "Phishing Awareness Training Best Practices"
+5.  National Cyber Security Centre. (2024). "Phishing Attacks: Defending Your Organisation"
