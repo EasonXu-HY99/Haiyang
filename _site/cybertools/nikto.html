@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-28">
 
-<title>nikto – Haiyang's Tech Portfolio</title>
+<title>Nikto: Web Server Security Scanner – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,42 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#overview-of-nikto" id="toc-overview-of-nikto" class="nav-link active" data-scroll-target="#overview-of-nikto">Overview of Nikto</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
+  <ul class="collapse">
+  <li><a href="#linuxunix-systems" id="toc-linuxunix-systems" class="nav-link" data-scroll-target="#linuxunix-systems">Linux/Unix Systems</a></li>
+  <li><a href="#macos" id="toc-macos" class="nav-link" data-scroll-target="#macos">macOS</a></li>
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
+  </ul></li>
+  <li><a href="#basic-usage" id="toc-basic-usage" class="nav-link" data-scroll-target="#basic-usage">Basic Usage</a>
+  <ul class="collapse">
+  <li><a href="#simple-scan" id="toc-simple-scan" class="nav-link" data-scroll-target="#simple-scan">Simple Scan</a></li>
+  <li><a href="#advanced-scanning-options" id="toc-advanced-scanning-options" class="nav-link" data-scroll-target="#advanced-scanning-options">Advanced Scanning Options</a></li>
+  </ul></li>
+  <li><a href="#example-scan-output" id="toc-example-scan-output" class="nav-link" data-scroll-target="#example-scan-output">Example Scan Output</a></li>
+  <li><a href="#limitations-and-considerations" id="toc-limitations-and-considerations" class="nav-link" data-scroll-target="#limitations-and-considerations">Limitations and Considerations</a></li>
+  <li><a href="#real-world-applications" id="toc-real-world-applications" class="nav-link" data-scroll-target="#real-world-applications">Real-World Applications</a></li>
+  <li><a href="#complementary-tools" id="toc-complementary-tools" class="nav-link" data-scroll-target="#complementary-tools">Complementary Tools</a></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Nikto: Web Server Security Scanner</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Web Application Assessment</div>
   </div>
@@ -182,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 28, 2025</p>
     </div>
   </div>
   
@@ -194,8 +256,150 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="overview-of-nikto" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-nikto">Overview of Nikto</h2>
+<p>Nikto is an open-source web server scanner that performs comprehensive tests against web servers for multiple items, including:</p>
+<ul>
+<li>Dangerous files/CGIs</li>
+<li>Outdated software</li>
+<li>Specific vulnerabilities</li>
+<li>Misconfigurations</li>
+<li>Default/test files</li>
+</ul>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ul>
+<li>Full HTTP port scanning</li>
+<li>Host and server identification</li>
+<li>Multiple injection tests</li>
+<li>Comprehensive vulnerability database</li>
+<li>SSL/TLS testing capabilities</li>
+</ul>
+</section>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<section id="linuxunix-systems" class="level3">
+<h3 class="anchored" data-anchor-id="linuxunix-systems">Linux/Unix Systems</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/sullo/nikto.git</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> nikto</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./nikto.pl</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="macos" class="level3">
+<h3 class="anchored" data-anchor-id="macos">macOS</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install nikto</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="windows" class="level3">
+<h3 class="anchored" data-anchor-id="windows">Windows</h3>
+<p>Use Windows Subsystem for Linux (WSL) or Cygwin to run Nikto.</p>
+</section>
+</section>
+<section id="basic-usage" class="level2">
+<h2 class="anchored" data-anchor-id="basic-usage">Basic Usage</h2>
+<section id="simple-scan" class="level3">
+<h3 class="anchored" data-anchor-id="simple-scan">Simple Scan</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nikto</span> <span class="at">-h</span> example.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="advanced-scanning-options" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-scanning-options">Advanced Scanning Options</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scan with verbose output</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nikto</span> <span class="at">-h</span> example.com <span class="at">-v</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Scan specific port</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">nikto</span> <span class="at">-h</span> example.com <span class="at">-p</span> 8080</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Output to HTML</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">nikto</span> <span class="at">-h</span> example.com <span class="at">-o</span> report.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="example-scan-output" class="level2">
+<h2 class="anchored" data-anchor-id="example-scan-output">Example Scan Output</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://hackertarget.com/wp-content/uploads/2019/02/nikto-scanner-result.png" class="img-fluid figure-img"></p>
+<figcaption>Nikto Scan Example</figcaption>
+</figure>
+</div>
+</section>
+<section id="limitations-and-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-and-considerations">Limitations and Considerations</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Scanning without permission is unethical and potentially illegal</li>
+<li>Some scans might temporarily disrupt web services</li>
+<li>Not a comprehensive security assessment tool</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="real-world-applications" class="level2">
+<h2 class="anchored" data-anchor-id="real-world-applications">Real-World Applications</h2>
+<ol type="1">
+<li><strong>Penetration Testing</strong>
+<ul>
+<li>Identify potential web server vulnerabilities</li>
+<li>Part of initial reconnaissance phase</li>
+</ul></li>
+<li><strong>Security Auditing</strong>
+<ul>
+<li>Regular infrastructure health checks</li>
+<li>Compliance verification</li>
+</ul></li>
+<li><strong>Research and Education</strong>
+<ul>
+<li>Understanding web server security</li>
+<li>Training cybersecurity professionals</li>
+</ul></li>
+</ol>
+</section>
+<section id="complementary-tools" class="level2">
+<h2 class="anchored" data-anchor-id="complementary-tools">Complementary Tools</h2>
+<ul>
+<li>Nmap</li>
+<li>OpenVAS</li>
+<li>Nessus</li>
+<li>OWASP ZAP</li>
+</ul>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Always obtain explicit permission before scanning any web infrastructure you do not own or manage.</p>
+</div>
+</div>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Nikto Official GitHub Repository</li>
+<li>OWASP Web Security Testing Guide</li>
+<li>“Web Application Security” by Andrew Hoffman</li>
+</ol>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Nikto remains a powerful, open-source tool for initial web server security assessment, providing quick insights into potential vulnerabilities and misconfigurations.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

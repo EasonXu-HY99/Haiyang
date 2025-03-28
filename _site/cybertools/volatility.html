@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-23">
 
-<title>volatility – Haiyang's Tech Portfolio</title>
+<title>Volatility Framework: Advanced Memory Forensics and Incident Response – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,16 +155,54 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-volatility-framework" id="toc-introduction-to-volatility-framework" class="nav-link active" data-scroll-target="#introduction-to-volatility-framework">Introduction to Volatility Framework</a>
+  <ul class="collapse">
+  <li><a href="#key-capabilities" id="toc-key-capabilities" class="nav-link" data-scroll-target="#key-capabilities">Key Capabilities</a></li>
+  </ul></li>
+  <li><a href="#core-functionality" id="toc-core-functionality" class="nav-link" data-scroll-target="#core-functionality">Core Functionality</a>
+  <ul class="collapse">
+  <li><a href="#memory-acquisition-techniques" id="toc-memory-acquisition-techniques" class="nav-link" data-scroll-target="#memory-acquisition-techniques">Memory Acquisition Techniques</a></li>
+  <li><a href="#advanced-investigative-plugins" id="toc-advanced-investigative-plugins" class="nav-link" data-scroll-target="#advanced-investigative-plugins">Advanced Investigative Plugins</a></li>
+  </ul></li>
+  <li><a href="#technical-architecture" id="toc-technical-architecture" class="nav-link" data-scroll-target="#technical-architecture">Technical Architecture</a>
+  <ul class="collapse">
+  <li><a href="#plugin-based-design" id="toc-plugin-based-design" class="nav-link" data-scroll-target="#plugin-based-design">Plugin-Based Design</a></li>
+  <li><a href="#supported-memory-profile-types" id="toc-supported-memory-profile-types" class="nav-link" data-scroll-target="#supported-memory-profile-types">Supported Memory Profile Types</a></li>
+  </ul></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#typical-investigation-scenarios" id="toc-typical-investigation-scenarios" class="nav-link" data-scroll-target="#typical-investigation-scenarios">Typical Investigation Scenarios</a></li>
+  </ul></li>
+  <li><a href="#installation-and-configuration" id="toc-installation-and-configuration" class="nav-link" data-scroll-target="#installation-and-configuration">Installation and Configuration</a>
+  <ul class="collapse">
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System Requirements</a></li>
+  <li><a href="#basic-setup-steps" id="toc-basic-setup-steps" class="nav-link" data-scroll-target="#basic-setup-steps">Basic Setup Steps</a></li>
+  </ul></li>
+  <li><a href="#advanced-techniques" id="toc-advanced-techniques" class="nav-link" data-scroll-target="#advanced-techniques">Advanced Techniques</a>
+  <ul class="collapse">
+  <li><a href="#memory-forensics-workflow" id="toc-memory-forensics-workflow" class="nav-link" data-scroll-target="#memory-forensics-workflow">Memory Forensics Workflow</a></li>
+  </ul></li>
+  <li><a href="#security-considerations" id="toc-security-considerations" class="nav-link" data-scroll-target="#security-considerations">Security Considerations</a></li>
+  <li><a href="#community-and-ecosystem" id="toc-community-and-ecosystem" class="nav-link" data-scroll-target="#community-and-ecosystem">Community and Ecosystem</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Volatility Framework: Advanced Memory Forensics and Incident Response</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Vulnerability Scanning</div>
+    <div class="quarto-category">Forensics</div>
   </div>
   </div>
 
@@ -182,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 23, 2025</p>
     </div>
   </div>
   
@@ -194,8 +232,196 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-volatility-framework" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-volatility-framework">Introduction to Volatility Framework</h2>
+<p>Volatility is an open-source memory forensics framework designed for incident response, malware analysis, and digital forensics. It provides investigators with powerful tools to extract and analyze volatile memory from running computer systems, enabling deep insights into system state, running processes, and potential security threats.</p>
+<section id="key-capabilities" class="level3">
+<h3 class="anchored" data-anchor-id="key-capabilities">Key Capabilities</h3>
+<ol type="1">
+<li><strong>Cross-Platform Support</strong>
+<ul>
+<li>Analyzes memory dumps from Windows, Linux, and macOS</li>
+<li>Supports multiple memory acquisition techniques</li>
+<li>Compatible with various memory image formats</li>
+</ul></li>
+<li><strong>Comprehensive Memory Analysis</strong>
+<ul>
+<li>Process and kernel memory examination</li>
+<li>Network connection tracking</li>
+<li>Malware detection</li>
+<li>Artifact extraction</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="core-functionality" class="level2">
+<h2 class="anchored" data-anchor-id="core-functionality">Core Functionality</h2>
+<section id="memory-acquisition-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="memory-acquisition-techniques">Memory Acquisition Techniques</h3>
+<section id="memory-dump-collection-methods" class="level4">
+<h4 class="anchored" data-anchor-id="memory-dump-collection-methods">Memory Dump Collection Methods</h4>
+<ul>
+<li><strong>Live System Capture</strong>
+<ul>
+<li>Kernel memory snapshots</li>
+<li>Running process memory extraction</li>
+<li>System state preservation</li>
+</ul></li>
+<li><strong>Forensic Image Analysis</strong>
+<ul>
+<li>Hibernate file investigation</li>
+<li>Crash dump examination</li>
+<li>Disk-based memory image processing</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="advanced-investigative-plugins" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-investigative-plugins">Advanced Investigative Plugins</h3>
+<section id="forensic-analysis-modules" class="level4">
+<h4 class="anchored" data-anchor-id="forensic-analysis-modules">Forensic Analysis Modules</h4>
+<ol type="1">
+<li><strong>Process Inspection</strong>
+<ul>
+<li>Process tree reconstruction</li>
+<li>Hidden process detection</li>
+<li>Executable memory mapping analysis</li>
+</ul></li>
+<li><strong>Network Forensics</strong>
+<ul>
+<li>Active network connection tracking</li>
+<li>Socket information extraction</li>
+<li>Malicious connection identification</li>
+</ul></li>
+<li><strong>Malware Detection</strong>
+<ul>
+<li>Rootkit identification</li>
+<li>Injected code detection</li>
+<li>Suspicious memory pattern recognition</li>
+</ul></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="technical-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="technical-architecture">Technical Architecture</h2>
+<section id="plugin-based-design" class="level3">
+<h3 class="anchored" data-anchor-id="plugin-based-design">Plugin-Based Design</h3>
+<ul>
+<li>Extensible framework</li>
+<li>Custom plugin development support</li>
+<li>Regular community-driven updates</li>
+</ul>
+</section>
+<section id="supported-memory-profile-types" class="level3">
+<h3 class="anchored" data-anchor-id="supported-memory-profile-types">Supported Memory Profile Types</h3>
+<ul>
+<li>Windows XP to Windows 11</li>
+<li>Multiple Linux kernel versions</li>
+<li>macOS memory profiles</li>
+<li>Virtual machine memory analysis</li>
+</ul>
+</section>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
+<section id="typical-investigation-scenarios" class="level3">
+<h3 class="anchored" data-anchor-id="typical-investigation-scenarios">Typical Investigation Scenarios</h3>
+<ol type="1">
+<li><strong>Incident Response</strong>
+<ul>
+<li>Rapid threat assessment</li>
+<li>Malware behavior analysis</li>
+<li>Compromise investigation</li>
+</ul></li>
+<li><strong>Cybersecurity Research</strong>
+<ul>
+<li>Advanced persistent threat (APT) tracking</li>
+<li>Malware development analysis</li>
+<li>Forensic artifact collection</li>
+</ul></li>
+<li><strong>Digital Forensics</strong>
+<ul>
+<li>Artifact reconstruction</li>
+<li>System state preservation</li>
+<li>Evidence collection for legal proceedings</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="installation-and-configuration" class="level2">
+<h2 class="anchored" data-anchor-id="installation-and-configuration">Installation and Configuration</h2>
+<section id="system-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="system-requirements">System Requirements</h3>
+<ul>
+<li>Python 3.7+</li>
+<li>16GB RAM recommended</li>
+<li>Multi-core processor</li>
+<li>SSD for optimal performance</li>
+</ul>
+</section>
+<section id="basic-setup-steps" class="level3">
+<h3 class="anchored" data-anchor-id="basic-setup-steps">Basic Setup Steps</h3>
+<ol type="1">
+<li>Install Python dependencies</li>
+<li>Clone Volatility repository</li>
+<li>Configure memory profile libraries</li>
+<li>Prepare memory dump for analysis</li>
+</ol>
+</section>
+</section>
+<section id="advanced-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-techniques">Advanced Techniques</h2>
+<section id="memory-forensics-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="memory-forensics-workflow">Memory Forensics Workflow</h3>
+<ol type="1">
+<li>Acquire memory image</li>
+<li>Identify memory profile</li>
+<li>Select appropriate plugins</li>
+<li>Extract and analyze artifacts</li>
+<li>Generate comprehensive report</li>
+</ol>
+</section>
+</section>
+<section id="security-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations">Security Considerations</h2>
+<ul>
+<li>Non-invasive memory analysis</li>
+<li>Forensically sound evidence collection</li>
+<li>Minimal system interference</li>
+<li>Encrypted memory dump support</li>
+</ul>
+</section>
+<section id="community-and-ecosystem" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-ecosystem">Community and Ecosystem</h2>
+<ul>
+<li>Open-source project</li>
+<li>Active development community</li>
+<li>Regular framework updates</li>
+<li>Extensive documentation and training resources</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Volatility represents a cornerstone tool in modern digital forensics, providing unprecedented insights into system memory and enabling sophisticated threat detection and investigation methodologies.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Hale Ligh, M., et al.&nbsp;(2014). The Art of Memory Forensics. Wiley.</li>
+<li>Case, A., &amp; Nikolatic, N. (2020). Memory Forensics: Methods and Techniques. Packt Publishing.</li>
+<li>Official Volatility Documentation</li>
+</ol>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li>Project Website: https://www.volatilityfoundation.org</li>
+<li>GitHub Repository: https://github.com/volatilityfoundation/volatility3</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

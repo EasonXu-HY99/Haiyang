@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-21">
 
-<title>sluethkit – Haiyang's Tech Portfolio</title>
+<title>Sleuth Kit: Unlocking Digital Forensics – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,16 +155,35 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-sleuth-kit" id="toc-introduction-to-sleuth-kit" class="nav-link active" data-scroll-target="#introduction-to-sleuth-kit">Introduction to Sleuth Kit</a></li>
+  <li><a href="#core-features-of-sleuth-kit" id="toc-core-features-of-sleuth-kit" class="nav-link" data-scroll-target="#core-features-of-sleuth-kit">Core Features of Sleuth Kit</a>
+  <ul class="collapse">
+  <li><a href="#file-system-analysis" id="toc-file-system-analysis" class="nav-link" data-scroll-target="#file-system-analysis">File System Analysis</a></li>
+  <li><a href="#disk-image-support" id="toc-disk-image-support" class="nav-link" data-scroll-target="#disk-image-support">Disk Image Support</a></li>
+  <li><a href="#timeline-generation" id="toc-timeline-generation" class="nav-link" data-scroll-target="#timeline-generation">Timeline Generation</a></li>
+  </ul></li>
+  <li><a href="#how-sleuth-kit-works" id="toc-how-sleuth-kit-works" class="nav-link" data-scroll-target="#how-sleuth-kit-works">How Sleuth Kit Works</a>
+  <ul class="collapse">
+  <li><a href="#video-sleuth-kit-overview" id="toc-video-sleuth-kit-overview" class="nav-link" data-scroll-target="#video-sleuth-kit-overview">Video: Sleuth Kit Overview</a></li>
+  </ul></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Sleuth Kit: Unlocking Digital Forensics</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Vulnerability Scanning</div>
+    <div class="quarto-category">Forensics</div>
   </div>
   </div>
 
@@ -182,7 +201,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 21, 2025</p>
     </div>
   </div>
   
@@ -194,8 +213,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-sleuth-kit" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-sleuth-kit">Introduction to Sleuth Kit</h2>
+<p>The Sleuth Kit (TSK) is an open-source collection of command-line tools and a C library that allows investigators to analyze disk images and recover files in digital forensics investigations. Often used alongside Autopsy, its graphical interface, Sleuth Kit is a go-to solution for law enforcement, security professionals, and researchers. This page explores its features, uses, and capabilities.</p>
+</section>
+<section id="core-features-of-sleuth-kit" class="level2">
+<h2 class="anchored" data-anchor-id="core-features-of-sleuth-kit">Core Features of Sleuth Kit</h2>
+<p>Sleuth Kit provides a robust set of tools for forensic analysis:</p>
+<section id="file-system-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="file-system-analysis">File System Analysis</h3>
+<ul>
+<li>Supports multiple file systems, including NTFS, FAT, ext2/ext3/ext4, and HFS+.</li>
+<li>Recovers deleted files and examines file metadata.</li>
+</ul>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Sleuthkit_Screenshot.tiff/lossless-page1-800px-Sleuthkit_Screenshot.tiff.png" class="img-fluid" alt="Sleuth Kit Terminal"> <em>Caption: A terminal screenshot showing Sleuth Kit commands in action.</em></p>
+</section>
+<section id="disk-image-support" class="level3">
+<h3 class="anchored" data-anchor-id="disk-image-support">Disk Image Support</h3>
+<ul>
+<li>Works with raw disk images (e.g., <code>.dd</code> files) and other formats.</li>
+<li>Extracts data from partitions and volumes.</li>
+</ul>
+</section>
+<section id="timeline-generation" class="level3">
+<h3 class="anchored" data-anchor-id="timeline-generation">Timeline Generation</h3>
+<ul>
+<li>Creates timelines of file activity to reconstruct events.</li>
+</ul>
+</section>
+</section>
+<section id="how-sleuth-kit-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-sleuth-kit-works">How Sleuth Kit Works</h2>
+<p>Sleuth Kit operates by processing disk images or live systems at a low level. Investigators use its command-line tools—like <code>mmls</code> (to list partitions), <code>fsstat</code> (file system details), and <code>fls</code> (list files)—to extract and analyze data. This modular approach makes it highly customizable and scriptable for complex investigations.</p>
+<section id="video-sleuth-kit-overview" class="level3">
+<h3 class="anchored" data-anchor-id="video-sleuth-kit-overview">Video: Sleuth Kit Overview</h3>
+<p>Check out this video for a quick introduction to Sleuth Kit:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R-IE2j04Chc" frameborder="0" allowfullscreen="">
+</iframe>
+<p><em>Caption: A tutorial on using Sleuth Kit for forensic analysis.</em></p>
+</section>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
+<ul>
+<li><strong>Criminal Investigations</strong>: Recover evidence from suspect devices.</li>
+<li><strong>Data Recovery</strong>: Retrieve lost or deleted files for non-forensic purposes.</li>
+<li><strong>Security Research</strong>: Analyze malware or breaches by examining file system artifacts.</li>
+</ul>
+<p><img src="https://www.sleuthkit.org/autopsy/images/file1.gif" class="img-fluid" alt="Sleuth Kit with Autopsy"> <em>Caption: Sleuth Kit integrated with Autopsy’s graphical interface.</em></p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The Sleuth Kit is a cornerstone of digital forensics, offering powerful, flexible tools for uncovering critical data. Its open-source nature and compatibility with various file systems make it an essential resource for anyone delving into the world of forensic analysis.</p>
+<hr>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

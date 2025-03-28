@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-20">
 
-<title>lynis – Haiyang's Tech Portfolio</title>
+<title>Lynis: Comprehensive Open-Source Security Auditing Tool – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,46 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-lynis" id="toc-introduction-to-lynis" class="nav-link active" data-scroll-target="#introduction-to-lynis">Introduction to Lynis</a></li>
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a>
+  <ul class="collapse">
+  <li><a href="#comprehensive-system-scanning" id="toc-comprehensive-system-scanning" class="nav-link" data-scroll-target="#comprehensive-system-scanning">Comprehensive System Scanning</a></li>
+  <li><a href="#detailed-reporting" id="toc-detailed-reporting" class="nav-link" data-scroll-target="#detailed-reporting">Detailed Reporting</a></li>
+  <li><a href="#flexible-and-extensible" id="toc-flexible-and-extensible" class="nav-link" data-scroll-target="#flexible-and-extensible">Flexible and Extensible</a></li>
+  </ul></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
+  <ul class="collapse">
+  <li><a href="#basic-installation-methods" id="toc-basic-installation-methods" class="nav-link" data-scroll-target="#basic-installation-methods">Basic Installation Methods</a></li>
+  </ul></li>
+  <li><a href="#basic-usage" id="toc-basic-usage" class="nav-link" data-scroll-target="#basic-usage">Basic Usage</a>
+  <ul class="collapse">
+  <li><a href="#quick-system-audit" id="toc-quick-system-audit" class="nav-link" data-scroll-target="#quick-system-audit">Quick System Audit</a></li>
+  <li><a href="#specific-audit-types" id="toc-specific-audit-types" class="nav-link" data-scroll-target="#specific-audit-types">Specific Audit Types</a></li>
+  </ul></li>
+  <li><a href="#advanced-features" id="toc-advanced-features" class="nav-link" data-scroll-target="#advanced-features">Advanced Features</a>
+  <ul class="collapse">
+  <li><a href="#custom-profiles" id="toc-custom-profiles" class="nav-link" data-scroll-target="#custom-profiles">Custom Profiles</a></li>
+  <li><a href="#reporting-options" id="toc-reporting-options" class="nav-link" data-scroll-target="#reporting-options">Reporting Options</a></li>
+  </ul></li>
+  <li><a href="#sample-scan-output" id="toc-sample-scan-output" class="nav-link" data-scroll-target="#sample-scan-output">Sample Scan Output</a></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a></li>
+  <li><a href="#limitations-and-considerations" id="toc-limitations-and-considerations" class="nav-link" data-scroll-target="#limitations-and-considerations">Limitations and Considerations</a></li>
+  <li><a href="#community-and-support" id="toc-community-and-support" class="nav-link" data-scroll-target="#community-and-support">Community and Support</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Lynis: Comprehensive Open-Source Security Auditing Tool</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Vulnerability Scanning</div>
   </div>
@@ -182,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 20, 2025</p>
     </div>
   </div>
   
@@ -194,8 +260,167 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-lynis" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-lynis">Introduction to Lynis</h2>
+<p>Lynis is a powerful, open-source security auditing and hardening tool designed for Linux, macOS, and other Unix-based systems. It performs deep security scans, helping system administrators and security professionals identify potential vulnerabilities, misconfigurations, and security weaknesses in their infrastructure.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://i0.wp.com/letslearnabout.net/wp-content/uploads/2024/01/8558546.png?resize=280%2C235&amp;ssl=1" class="img-fluid figure-img"></p>
+<figcaption>Lynis Logo</figcaption>
+</figure>
+</div>
+</section>
+<section id="key-features" class="level2">
+<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<section id="comprehensive-system-scanning" class="level3">
+<h3 class="anchored" data-anchor-id="comprehensive-system-scanning">Comprehensive System Scanning</h3>
+<ul>
+<li>Performs in-depth security scans across multiple system layers</li>
+<li>Checks configuration files, system settings, and running processes</li>
+<li>Supports a wide range of Linux distributions and Unix-like operating systems</li>
+</ul>
+</section>
+<section id="detailed-reporting" class="level3">
+<h3 class="anchored" data-anchor-id="detailed-reporting">Detailed Reporting</h3>
+<ul>
+<li>Generates comprehensive reports with actionable recommendations</li>
+<li>Provides clear explanations of potential security risks</li>
+<li>Highlights both critical and minor security improvements</li>
+</ul>
+</section>
+<section id="flexible-and-extensible" class="level3">
+<h3 class="anchored" data-anchor-id="flexible-and-extensible">Flexible and Extensible</h3>
+<ul>
+<li>Modular design allows easy extension and customization</li>
+<li>Supports custom tests and plugins</li>
+<li>Can be integrated into existing security workflows and CI/CD pipelines</li>
+</ul>
+</section>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<section id="basic-installation-methods" class="level3">
+<h3 class="anchored" data-anchor-id="basic-installation-methods">Basic Installation Methods</h3>
+<ol type="1">
+<li><strong>Package Manager</strong></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Debian/Ubuntu</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install lynis</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Red Hat/CentOS</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> yum install lynis</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Arch Linux</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> pacman <span class="at">-S</span> lynis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><strong>Direct Download</strong></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download and install from GitHub</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/CISOfy/lynis</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> lynis</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ./lynis audit system</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="basic-usage" class="level2">
+<h2 class="anchored" data-anchor-id="basic-usage">Basic Usage</h2>
+<section id="quick-system-audit" class="level3">
+<h3 class="anchored" data-anchor-id="quick-system-audit">Quick System Audit</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run a basic system audit</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> lynis audit system</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="specific-audit-types" class="level3">
+<h3 class="anchored" data-anchor-id="specific-audit-types">Specific Audit Types</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform a specific type of audit</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">lynis</span> audit <span class="at">--section</span> malware</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">lynis</span> audit <span class="at">--section</span> docker</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="advanced-features" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-features">Advanced Features</h2>
+<section id="custom-profiles" class="level3">
+<h3 class="anchored" data-anchor-id="custom-profiles">Custom Profiles</h3>
+<p>Lynis supports custom configuration profiles, allowing you to: - Define specific scan parameters - Customize security baselines - Create organization-specific audit guidelines</p>
+</section>
+<section id="reporting-options" class="level3">
+<h3 class="anchored" data-anchor-id="reporting-options">Reporting Options</h3>
+<ul>
+<li>Generate JSON output for integration</li>
+<li>Create detailed HTML reports</li>
+<li>Export results for further analysis</li>
+</ul>
+</section>
+</section>
+<section id="sample-scan-output" class="level2">
+<h2 class="anchored" data-anchor-id="sample-scan-output">Sample Scan Output</h2>
+<pre><code>[ Lynis 3.0.8 ]
+
+================================================================================
+  Lynis Security Scan Details:
+--------------------------------------------------------------------------------
+  Hardening index : [++] Strong
+  Tests performed : 250
+  Warnings       : 3
+  Suggestions    : 15
+  Vulnerabilities: 0
+
+  Components:
+  - Kernel version      : 5.15.0-75-generic
+  - Kernel security     : [ENABLED]
+  - OpenSSL             : 3.0.2
+  - System crypto       : [HARDENED]
+
+  Recommendations:
+  - Update SSH configuration
+  - Enable automatic security updates
+  - Review firewall rules
+================================================================================</code></pre>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
+<ol type="1">
+<li><strong>System Administrators</strong>
+<ul>
+<li>Regular security assessments</li>
+<li>Compliance verification</li>
+<li>System hardening</li>
+</ul></li>
+<li><strong>Security Professionals</strong>
+<ul>
+<li>Vulnerability detection</li>
+<li>Initial system reconnaissance</li>
+<li>Baseline security testing</li>
+</ul></li>
+<li><strong>DevOps and Cloud Environments</strong>
+<ul>
+<li>Infrastructure security scanning</li>
+<li>Continuous security monitoring</li>
+<li>Pre-deployment security checks</li>
+</ul></li>
+</ol>
+</section>
+<section id="limitations-and-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-and-considerations">Limitations and Considerations</h2>
+<ul>
+<li>Requires root/sudo access for comprehensive scans</li>
+<li>Not a replacement for full penetration testing</li>
+<li>Provides recommendations, not automatic fixes</li>
+<li>Best used as part of a broader security strategy</li>
+</ul>
+</section>
+<section id="community-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-support">Community and Support</h2>
+<ul>
+<li><strong>GitHub Repository</strong>: <a href="https://github.com/CISOfy/lynis">Lynis on GitHub</a></li>
+<li><strong>Documentation</strong>: <a href="https://cisofy.com/documentation/lynis/">Official Documentation</a></li>
+<li><strong>Community Forums</strong>: Active discussion and support channels</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Lynis is an essential tool for anyone serious about system security. Its comprehensive scanning, detailed reporting, and flexibility make it a go-to solution for security auditing and system hardening.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

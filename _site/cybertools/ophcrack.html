@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-15">
 
-<title>ophcrack – Haiyang's Tech Portfolio</title>
+<title>Ophcrack: Advanced Windows Password Recovery Tool – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,52 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#overview-of-ophcrack" id="toc-overview-of-ophcrack" class="nav-link active" data-scroll-target="#overview-of-ophcrack">Overview of Ophcrack</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#technical-architecture" id="toc-technical-architecture" class="nav-link" data-scroll-target="#technical-architecture">Technical Architecture</a>
+  <ul class="collapse">
+  <li><a href="#supported-windows-versions" id="toc-supported-windows-versions" class="nav-link" data-scroll-target="#supported-windows-versions">Supported Windows Versions</a></li>
+  </ul></li>
+  <li><a href="#installation-methods" id="toc-installation-methods" class="nav-link" data-scroll-target="#installation-methods">Installation Methods</a></li>
+  <li><a href="#operational-modes" id="toc-operational-modes" class="nav-link" data-scroll-target="#operational-modes">Operational Modes</a>
+  <ul class="collapse">
+  <li><a href="#local-system-cracking" id="toc-local-system-cracking" class="nav-link" data-scroll-target="#local-system-cracking">1. Local System Cracking</a></li>
+  <li><a href="#live-cdusb-cracking" id="toc-live-cdusb-cracking" class="nav-link" data-scroll-target="#live-cdusb-cracking">2. Live CD/USB Cracking</a></li>
+  </ul></li>
+  <li><a href="#rainbow-table-strategy" id="toc-rainbow-table-strategy" class="nav-link" data-scroll-target="#rainbow-table-strategy">Rainbow Table Strategy</a>
+  <ul class="collapse">
+  <li><a href="#understanding-rainbow-tables" id="toc-understanding-rainbow-tables" class="nav-link" data-scroll-target="#understanding-rainbow-tables">Understanding Rainbow Tables</a></li>
+  </ul></li>
+  <li><a href="#performance-characteristics" id="toc-performance-characteristics" class="nav-link" data-scroll-target="#performance-characteristics">Performance Characteristics</a></li>
+  <li><a href="#practical-scenarios" id="toc-practical-scenarios" class="nav-link" data-scroll-target="#practical-scenarios">Practical Scenarios</a>
+  <ul class="collapse">
+  <li><a href="#system-recovery" id="toc-system-recovery" class="nav-link" data-scroll-target="#system-recovery">1. System Recovery</a></li>
+  <li><a href="#security-auditing" id="toc-security-auditing" class="nav-link" data-scroll-target="#security-auditing">2. Security Auditing</a></li>
+  </ul></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a></li>
+  <li><a href="#advanced-configuration" id="toc-advanced-configuration" class="nav-link" data-scroll-target="#advanced-configuration">Advanced Configuration</a>
+  <ul class="collapse">
+  <li><a href="#customization-options" id="toc-customization-options" class="nav-link" data-scroll-target="#customization-options">Customization Options</a></li>
+  </ul></li>
+  <li><a href="#community-and-resources" id="toc-community-and-resources" class="nav-link" data-scroll-target="#community-and-resources">Community and Resources</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Ophcrack: Advanced Windows Password Recovery Tool</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Password Cracking</div>
   </div>
@@ -182,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 15, 2025</p>
     </div>
   </div>
   
@@ -194,8 +266,202 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="overview-of-ophcrack" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-ophcrack">Overview of Ophcrack</h2>
+<p>Ophcrack is a sophisticated, open-source Windows password cracking tool that utilizes rainbow table technology to efficiently recover Windows user account passwords.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYUhNsQo-Vdw6fY2uXBwQvJ1HETo5-1nk1Sw&amp;s.png" class="img-fluid figure-img"></p>
+<figcaption>Ophcrack Logo</figcaption>
+</figure>
+</div>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ul>
+<li><strong>Windows LM and NTLM hash support</strong></li>
+<li><strong>Rainbow table-based cracking</strong></li>
+<li><strong>Live CD/USB bootable environment</strong></li>
+<li><strong>Graphical user interface</strong></li>
+<li><strong>Multi-platform compatibility</strong></li>
+</ul>
+</section>
+</section>
+<section id="technical-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="technical-architecture">Technical Architecture</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ophcrack primary interaction methods</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ophcrack</span> <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span> [SAM file]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="supported-windows-versions" class="level3">
+<h3 class="anchored" data-anchor-id="supported-windows-versions">Supported Windows Versions</h3>
+<ol type="1">
+<li><strong>Windows Versions</strong>
+<ul>
+<li>Windows XP</li>
+<li>Windows Vista</li>
+<li>Windows 7</li>
+<li>Windows Server 2003/2008</li>
+</ul></li>
+<li><strong>Hash Types Supported</strong>
+<ul>
+<li>LM (LAN Manager) Hashes</li>
+<li>NTLM (NT LAN Manager) Hashes</li>
+<li>NT Hashes</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="installation-methods" class="level2">
+<h2 class="anchored" data-anchor-id="installation-methods">Installation Methods</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="windows-installation" class="level3">
+<h3 class="anchored" data-anchor-id="windows-installation">Windows Installation</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download installer from official website</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ophcrack-installer<span class="op">.</span><span class="fu">exe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="linux-live-cd" class="level3">
+<h3 class="anchored" data-anchor-id="linux-live-cd">Linux Live CD</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download ISO for bootable environment</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ophcrack-livexp.iso</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div>
+</div>
+</section>
+<section id="operational-modes" class="level2">
+<h2 class="anchored" data-anchor-id="operational-modes">Operational Modes</h2>
+<section id="local-system-cracking" class="level3">
+<h3 class="anchored" data-anchor-id="local-system-cracking">1. Local System Cracking</h3>
+<ul>
+<li>Direct SAM file analysis</li>
+<li>Mounted system volume investigation</li>
+</ul>
+</section>
+<section id="live-cdusb-cracking" class="level3">
+<h3 class="anchored" data-anchor-id="live-cdusb-cracking">2. Live CD/USB Cracking</h3>
+<ul>
+<li>Bootable recovery environment</li>
+<li>No installation required</li>
+<li>Supports multiple Windows versions</li>
+</ul>
+</section>
+</section>
+<section id="rainbow-table-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="rainbow-table-strategy">Rainbow Table Strategy</h2>
+<section id="understanding-rainbow-tables" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-rainbow-tables">Understanding Rainbow Tables</h3>
+<p>Rainbow tables are pre-computed hash tables that dramatically accelerate password recovery: - Reduce computational complexity - Trade storage space for processing speed - Enable rapid hash-to-password conversion</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample rainbow table types</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> Small tables <span class="er">(</span><span class="ex">fast,</span> limited coverage<span class="kw">)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-</span> Extensive tables <span class="er">(</span><span class="ex">comprehensive,</span> larger size<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="performance-characteristics" class="level2">
+<h2 class="anchored" data-anchor-id="performance-characteristics">Performance Characteristics</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<section id="cracking-efficiency" class="level3">
+<h3 class="anchored" data-anchor-id="cracking-efficiency">Cracking Efficiency</h3>
+<ul>
+<li>Low computational overhead</li>
+<li>Minimal system resource usage</li>
+<li>Quick password retrieval</li>
+</ul>
+</section>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Ophcrack.jpg" class="img-fluid figure-img"></p>
+<figcaption>Password Cracking Visualization</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="practical-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="practical-scenarios">Practical Scenarios</h2>
+<section id="system-recovery" class="level3">
+<h3 class="anchored" data-anchor-id="system-recovery">1. System Recovery</h3>
+<ul>
+<li>Lost administrator passwords</li>
+<li>Corporate system access restoration</li>
+<li>Forensic password investigation</li>
+</ul>
+</section>
+<section id="security-auditing" class="level3">
+<h3 class="anchored" data-anchor-id="security-auditing">2. Security Auditing</h3>
+<ul>
+<li>Evaluate password complexity</li>
+<li>Identify weak authentication mechanisms</li>
+<li>Demonstrate potential vulnerabilities</li>
+</ul>
+</section>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ophcrack should <strong>exclusively</strong> be used: - With explicit system owner consent - On personally owned systems - For legitimate recovery purposes - In controlled, authorized environments</p>
+</div>
+</div>
+</section>
+<section id="advanced-configuration" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-configuration">Advanced Configuration</h2>
+<section id="customization-options" class="level3">
+<h3 class="anchored" data-anchor-id="customization-options">Customization Options</h3>
+<ul>
+<li>Custom rainbow table integration</li>
+<li>Configurable cracking parameters</li>
+<li>Selective hash targeting</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Advanced configuration example</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ophcrack</span> <span class="at">-t</span> custom-tables.rt <span class="at">-f</span> samfile.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="community-and-resources" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-resources">Community and Resources</h2>
+<ul>
+<li><strong>Official Website</strong>: <a href="https://ophcrack.sourceforge.net/">ophcrack.sourceforge.net</a></li>
+<li><strong>SourceForge Repository</strong>: <a href="https://sourceforge.net/projects/ophcrack/">sourceforge.net/projects/ophcrack</a></li>
+<li><strong>Documentation</strong>: Comprehensive user guides</li>
+<li><strong>Community Forums</strong>: Active user support network</li>
+</ul>
+</section>
+<section id="best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
+<ol type="1">
+<li><strong>Obtain proper authorization</strong></li>
+<li><strong>Use official, verified rainbow tables</strong></li>
+<li><strong>Understand legal implications</strong></li>
+<li><strong>Respect system ownership</strong></li>
+</ol>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Ophcrack represents a powerful tool in Windows password recovery, offering professionals a specialized solution for legitimate password retrieval and system access restoration.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Critical Reminder</strong>: Unauthorized password cracking is unethical and potentially illegal!</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

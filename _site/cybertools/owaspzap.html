@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-27">
 
-<title>owaspzap – Haiyang's Tech Portfolio</title>
+<title>OWASP ZAP: Comprehensive Web Application Security Scanner – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,14 +155,52 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-owasp-zap" id="toc-introduction-to-owasp-zap" class="nav-link active" data-scroll-target="#introduction-to-owasp-zap">Introduction to OWASP ZAP</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#web-application-security-techniques" id="toc-web-application-security-techniques" class="nav-link" data-scroll-target="#web-application-security-techniques">Web Application Security Techniques</a>
+  <ul class="collapse">
+  <li><a href="#supported-testing-methodologies" id="toc-supported-testing-methodologies" class="nav-link" data-scroll-target="#supported-testing-methodologies">Supported Testing Methodologies</a></li>
+  <li><a href="#vulnerability-categories" id="toc-vulnerability-categories" class="nav-link" data-scroll-target="#vulnerability-categories">Vulnerability Categories</a></li>
+  </ul></li>
+  <li><a href="#technical-specifications" id="toc-technical-specifications" class="nav-link" data-scroll-target="#technical-specifications">Technical Specifications</a>
+  <ul class="collapse">
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System Requirements</a></li>
+  <li><a href="#scanning-capabilities" id="toc-scanning-capabilities" class="nav-link" data-scroll-target="#scanning-capabilities">Scanning Capabilities</a></li>
+  </ul></li>
+  <li><a href="#security-assessment-workflow" id="toc-security-assessment-workflow" class="nav-link" data-scroll-target="#security-assessment-workflow">Security Assessment Workflow</a>
+  <ul class="collapse">
+  <li><a href="#penetration-testing-process" id="toc-penetration-testing-process" class="nav-link" data-scroll-target="#penetration-testing-process">Penetration Testing Process</a></li>
+  </ul></li>
+  <li><a href="#advanced-capabilities" id="toc-advanced-capabilities" class="nav-link" data-scroll-target="#advanced-capabilities">Advanced Capabilities</a>
+  <ul class="collapse">
+  <li><a href="#testing-features" id="toc-testing-features" class="nav-link" data-scroll-target="#testing-features">Testing Features</a></li>
+  <li><a href="#reporting-capabilities" id="toc-reporting-capabilities" class="nav-link" data-scroll-target="#reporting-capabilities">Reporting Capabilities</a></li>
+  </ul></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#investigative-scenarios" id="toc-investigative-scenarios" class="nav-link" data-scroll-target="#investigative-scenarios">Investigative Scenarios</a></li>
+  </ul></li>
+  <li><a href="#security-considerations" id="toc-security-considerations" class="nav-link" data-scroll-target="#security-considerations">Security Considerations</a></li>
+  <li><a href="#community-and-support" id="toc-community-and-support" class="nav-link" data-scroll-target="#community-and-support">Community and Support</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">OWASP ZAP: Comprehensive Web Application Security Scanner</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Web Application Assessment</div>
   </div>
@@ -182,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 27, 2025</p>
     </div>
   </div>
   
@@ -194,8 +232,188 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-owasp-zap" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-owasp-zap">Introduction to OWASP ZAP</h2>
+<p>OWASP Zed Attack Proxy (ZAP) is a free, open-source web application security scanner developed by the Open Web Application Security Project (OWASP). As a leading penetration testing tool, ZAP provides comprehensive vulnerability detection and security assessment capabilities for web applications and APIs.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ol type="1">
+<li><strong>Automated Security Testing</strong>
+<ul>
+<li>Comprehensive vulnerability scanning</li>
+<li>Multiple attack vector detection</li>
+<li>Automated and manual testing modes</li>
+<li>Continuous security assessment</li>
+</ul></li>
+<li><strong>Advanced Vulnerability Detection</strong>
+<ul>
+<li>OWASP Top 10 vulnerability coverage</li>
+<li>Cross-site scripting (XSS) detection</li>
+<li>SQL injection identification</li>
+<li>Security misconfigurations analysis</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="web-application-security-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="web-application-security-techniques">Web Application Security Techniques</h2>
+<section id="supported-testing-methodologies" class="level3">
+<h3 class="anchored" data-anchor-id="supported-testing-methodologies">Supported Testing Methodologies</h3>
+<ul>
+<li>Active scanning</li>
+<li>Passive scanning</li>
+<li>Fuzzing</li>
+<li>Brute force authentication testing</li>
+<li>API security assessment</li>
+<li>Web service vulnerability probing</li>
+</ul>
+</section>
+<section id="vulnerability-categories" class="level3">
+<h3 class="anchored" data-anchor-id="vulnerability-categories">Vulnerability Categories</h3>
+<ul>
+<li>Authentication vulnerabilities</li>
+<li>Injection flaws</li>
+<li>Cross-site scripting</li>
+<li>Security misconfigurations</li>
+<li>Sensitive data exposure</li>
+<li>Broken access controls</li>
+<li>XML external entity (XXE) attacks</li>
+</ul>
+</section>
+</section>
+<section id="technical-specifications" class="level2">
+<h2 class="anchored" data-anchor-id="technical-specifications">Technical Specifications</h2>
+<section id="system-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="system-requirements">System Requirements</h3>
+<ul>
+<li>Cross-platform support (Windows, macOS, Linux)</li>
+<li>Java Runtime Environment 8+</li>
+<li>Graphical and command-line interfaces</li>
+<li>Minimum 4GB RAM</li>
+<li>Web browser compatibility</li>
+<li>Docker container support</li>
+</ul>
+</section>
+<section id="scanning-capabilities" class="level3">
+<h3 class="anchored" data-anchor-id="scanning-capabilities">Scanning Capabilities</h3>
+<ul>
+<li>HTTP/HTTPS protocol support</li>
+<li>REST and GraphQL API testing</li>
+<li>Web application crawling</li>
+<li>Advanced proxy functionality</li>
+<li>Automated and manual testing modes</li>
+</ul>
+</section>
+</section>
+<section id="security-assessment-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="security-assessment-workflow">Security Assessment Workflow</h2>
+<section id="penetration-testing-process" class="level3">
+<h3 class="anchored" data-anchor-id="penetration-testing-process">Penetration Testing Process</h3>
+<ol type="1">
+<li>Configure target application</li>
+<li>Perform initial reconnaissance</li>
+<li>Launch automated scanning</li>
+<li>Conduct manual exploration</li>
+<li>Generate comprehensive report</li>
+<li>Validate and prioritize vulnerabilities</li>
+</ol>
+</section>
+</section>
+<section id="advanced-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-capabilities">Advanced Capabilities</h2>
+<section id="testing-features" class="level3">
+<h3 class="anchored" data-anchor-id="testing-features">Testing Features</h3>
+<ul>
+<li>Automated spider/crawler</li>
+<li>Web socket testing</li>
+<li>Authentication scanning</li>
+<li>Scripting and extension support</li>
+<li>Continuous integration compatibility</li>
+<li>Machine learning-enhanced detection</li>
+</ul>
+</section>
+<section id="reporting-capabilities" class="level3">
+<h3 class="anchored" data-anchor-id="reporting-capabilities">Reporting Capabilities</h3>
+<ul>
+<li>Detailed vulnerability reports</li>
+<li>OWASP risk rating integration</li>
+<li>Export to multiple formats</li>
+<li>Remediation guidance</li>
+<li>Trend and historical analysis</li>
+</ul>
+</section>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
+<section id="investigative-scenarios" class="level3">
+<h3 class="anchored" data-anchor-id="investigative-scenarios">Investigative Scenarios</h3>
+<ol type="1">
+<li><strong>Web Application Security</strong>
+<ul>
+<li>Pre-deployment vulnerability assessment</li>
+<li>Continuous security monitoring</li>
+<li>Developer security training</li>
+<li>Compliance verification</li>
+</ul></li>
+<li><strong>Penetration Testing</strong>
+<ul>
+<li>External network testing</li>
+<li>Internal application scanning</li>
+<li>API security validation</li>
+<li>Threat modeling</li>
+</ul></li>
+<li><strong>Security Research</strong>
+<ul>
+<li>Vulnerability research</li>
+<li>Attack vector exploration</li>
+<li>Security tool development</li>
+<li>Academic security studies</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="security-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations">Security Considerations</h2>
+<ul>
+<li>Non-destructive testing</li>
+<li>Minimal application disruption</li>
+<li>Comprehensive logging</li>
+<li>Ethical hacking principles</li>
+<li>Configurable scanning intensity</li>
+</ul>
+</section>
+<section id="community-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-support">Community and Support</h2>
+<ul>
+<li>Open-source project</li>
+<li>Global developer community</li>
+<li>Regular software updates</li>
+<li>Extensive documentation</li>
+<li>Active user forums</li>
+<li>OWASP foundation backing</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>OWASP ZAP represents a critical tool in web application security, empowering organizations to proactively identify and mitigate potential security vulnerabilities.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>OWASP Foundation. (2021). Web Application Security Testing Guide.</li>
+<li>Stuttard, D., &amp; Pinto, M. (2011). The Web Application Hacker’s Handbook.</li>
+<li>Official OWASP ZAP Documentation</li>
+</ol>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li>Official Website: https://www.zaproxy.org/</li>
+<li>GitHub Repository: https://github.com/zaproxy/zaproxy</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

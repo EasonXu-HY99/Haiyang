@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-28">
 
-<title>wpscan – Haiyang's Tech Portfolio</title>
+<title>WPScan: WordPress Security Scanner – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,48 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#overview-of-wpscan" id="toc-overview-of-wpscan" class="nav-link active" data-scroll-target="#overview-of-wpscan">Overview of WPScan</a>
+  <ul class="collapse">
+  <li><a href="#key-capabilities" id="toc-key-capabilities" class="nav-link" data-scroll-target="#key-capabilities">Key Capabilities</a></li>
+  </ul></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a>
+  <ul class="collapse">
+  <li><a href="#linuxunix-systems" id="toc-linuxunix-systems" class="nav-link" data-scroll-target="#linuxunix-systems">Linux/Unix Systems</a></li>
+  <li><a href="#macos" id="toc-macos" class="nav-link" data-scroll-target="#macos">macOS</a></li>
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
+  </ul></li>
+  <li><a href="#basic-usage-scenarios" id="toc-basic-usage-scenarios" class="nav-link" data-scroll-target="#basic-usage-scenarios">Basic Usage Scenarios</a>
+  <ul class="collapse">
+  <li><a href="#basic-wordpress-site-scan" id="toc-basic-wordpress-site-scan" class="nav-link" data-scroll-target="#basic-wordpress-site-scan">Basic WordPress Site Scan</a></li>
+  <li><a href="#advanced-scanning-options" id="toc-advanced-scanning-options" class="nav-link" data-scroll-target="#advanced-scanning-options">Advanced Scanning Options</a></li>
+  </ul></li>
+  <li><a href="#scanning-techniques" id="toc-scanning-techniques" class="nav-link" data-scroll-target="#scanning-techniques">Scanning Techniques</a>
+  <ul class="collapse">
+  <li><a href="#version-detection" id="toc-version-detection" class="nav-link" data-scroll-target="#version-detection">1. Version Detection</a></li>
+  <li><a href="#vulnerability-assessment" id="toc-vulnerability-assessment" class="nav-link" data-scroll-target="#vulnerability-assessment">2. Vulnerability Assessment</a></li>
+  </ul></li>
+  <li><a href="#practical-use-cases" id="toc-practical-use-cases" class="nav-link" data-scroll-target="#practical-use-cases">Practical Use Cases</a></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#complementary-tools" id="toc-complementary-tools" class="nav-link" data-scroll-target="#complementary-tools">Complementary Tools</a></li>
+  <li><a href="#example-scan-visualization" id="toc-example-scan-visualization" class="nav-link" data-scroll-target="#example-scan-visualization">Example Scan Visualization</a></li>
+  <li><a href="#configuration-best-practices" id="toc-configuration-best-practices" class="nav-link" data-scroll-target="#configuration-best-practices">Configuration Best Practices</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">WPScan: WordPress Security Scanner</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Web Application Assessment</div>
   </div>
@@ -182,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 28, 2025</p>
     </div>
   </div>
   
@@ -194,8 +262,173 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="overview-of-wpscan" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-wpscan">Overview of WPScan</h2>
+<p>WPScan is a black-box WordPress vulnerability scanner designed to test WordPress installations for security issues. It provides comprehensive scanning capabilities to identify potential vulnerabilities in WordPress websites.</p>
+<section id="key-capabilities" class="level3">
+<h3 class="anchored" data-anchor-id="key-capabilities">Key Capabilities</h3>
+<ul>
+<li>WordPress core version detection</li>
+<li>Plugin vulnerability scanning</li>
+<li>Theme vulnerability identification</li>
+<li>User enumeration</li>
+<li>Weak password detection</li>
+<li>Configuration security checks</li>
+</ul>
+</section>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<section id="linuxunix-systems" class="level3">
+<h3 class="anchored" data-anchor-id="linuxunix-systems">Linux/Unix Systems</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install Ruby first</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install ruby</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Install WPScan</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">gem</span> install wpscan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="macos" class="level3">
+<h3 class="anchored" data-anchor-id="macos">macOS</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using Homebrew</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install wpscan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="windows" class="level3">
+<h3 class="anchored" data-anchor-id="windows">Windows</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use Windows Subsystem for Linux (WSL)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or install via Ruby package manager</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>gem install wpscan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="basic-usage-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="basic-usage-scenarios">Basic Usage Scenarios</h2>
+<section id="basic-wordpress-site-scan" class="level3">
+<h3 class="anchored" data-anchor-id="basic-wordpress-site-scan">Basic WordPress Site Scan</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wpscan</span> <span class="at">--url</span> https://example.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="advanced-scanning-options" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-scanning-options">Advanced Scanning Options</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enumerate users</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wpscan</span> <span class="at">--url</span> https://example.com <span class="at">--enumerate</span> u</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggressive vulnerability detection</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">wpscan</span> <span class="at">--url</span> https://example.com <span class="at">--detection-mode</span> aggressive</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="scanning-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="scanning-techniques">Scanning Techniques</h2>
+<section id="version-detection" class="level3">
+<h3 class="anchored" data-anchor-id="version-detection">1. Version Detection</h3>
+<p>WPScan can precisely identify: - WordPress core version - Installed plugin versions - Active theme version</p>
+</section>
+<section id="vulnerability-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="vulnerability-assessment">2. Vulnerability Assessment</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Comprehensive vulnerability database includes: - Known CVEs - Security advisories - Potential exploit vectors</p>
+</div>
+</div>
+</section>
+</section>
+<section id="practical-use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="practical-use-cases">Practical Use Cases</h2>
+<ol type="1">
+<li><strong>Penetration Testing</strong>
+<ul>
+<li>Initial reconnaissance</li>
+<li>Vulnerability identification</li>
+<li>Security assessment</li>
+</ul></li>
+<li><strong>Website Maintenance</strong>
+<ul>
+<li>Regular security checks</li>
+<li>Update recommendations</li>
+<li>Risk mitigation</li>
+</ul></li>
+<li><strong>Security Auditing</strong>
+<ul>
+<li>Compliance verification</li>
+<li>Comprehensive security review</li>
+</ul></li>
+</ol>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Always obtain explicit permission</li>
+<li>Scanning without authorization is unethical</li>
+<li>Use only on websites you own or manage</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<ul>
+<li>Requires active WordPress site</li>
+<li>Can generate significant network traffic</li>
+<li>Some advanced features require API token</li>
+</ul>
+</section>
+<section id="complementary-tools" class="level2">
+<h2 class="anchored" data-anchor-id="complementary-tools">Complementary Tools</h2>
+<ul>
+<li>Nikto</li>
+<li>OWASP ZAP</li>
+<li>Acunetix</li>
+<li>Nessus</li>
+</ul>
+</section>
+<section id="example-scan-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="example-scan-visualization">Example Scan Visualization</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://miro.medium.com/v2/resize:fit:1400/1*GdaxBWBrwn1ZbyvPBqQmJw.png" class="img-fluid figure-img"></p>
+<figcaption>WPScan Detailed Report</figcaption>
+</figure>
+</div>
+</section>
+<section id="configuration-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="configuration-best-practices">Configuration Best Practices</h2>
+<ol type="1">
+<li>Keep WordPress core updated</li>
+<li>Use strong, unique passwords</li>
+<li>Limit user permissions</li>
+<li>Remove unused plugins</li>
+<li>Use security plugins</li>
+</ol>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Official WPScan Documentation</li>
+<li>WordPress Security Handbook</li>
+<li>OWASP Web Application Security Guide</li>
+</ol>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>WPScan is an essential tool for WordPress security professionals, providing deep insights into potential vulnerabilities and security weaknesses in WordPress installations.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

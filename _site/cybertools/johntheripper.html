@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-13">
 
-<title>johntheripper – Haiyang's Tech Portfolio</title>
+<title>John the Ripper: Advanced Password Cracking Tool – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -155,14 +189,42 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#overview-of-john-the-ripper" id="toc-overview-of-john-the-ripper" class="nav-link active" data-scroll-target="#overview-of-john-the-ripper">Overview of John the Ripper</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#technical-architecture" id="toc-technical-architecture" class="nav-link" data-scroll-target="#technical-architecture">Technical Architecture</a>
+  <ul class="collapse">
+  <li><a href="#supported-hash-types" id="toc-supported-hash-types" class="nav-link" data-scroll-target="#supported-hash-types">Supported Hash Types</a></li>
+  </ul></li>
+  <li><a href="#installation-methods" id="toc-installation-methods" class="nav-link" data-scroll-target="#installation-methods">Installation Methods</a></li>
+  <li><a href="#practical-usage-scenarios" id="toc-practical-usage-scenarios" class="nav-link" data-scroll-target="#practical-usage-scenarios">Practical Usage Scenarios</a>
+  <ul class="collapse">
+  <li><a href="#network-security-auditing" id="toc-network-security-auditing" class="nav-link" data-scroll-target="#network-security-auditing">1. Network Security Auditing</a></li>
+  <li><a href="#forensic-investigations" id="toc-forensic-investigations" class="nav-link" data-scroll-target="#forensic-investigations">2. Forensic Investigations</a></li>
+  </ul></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a></li>
+  <li><a href="#advanced-techniques" id="toc-advanced-techniques" class="nav-link" data-scroll-target="#advanced-techniques">Advanced Techniques</a>
+  <ul class="collapse">
+  <li><a href="#rule-based-password-generation" id="toc-rule-based-password-generation" class="nav-link" data-scroll-target="#rule-based-password-generation">Rule-Based Password Generation</a></li>
+  </ul></li>
+  <li><a href="#performance-optimization" id="toc-performance-optimization" class="nav-link" data-scroll-target="#performance-optimization">Performance Optimization</a></li>
+  <li><a href="#community-and-resources" id="toc-community-and-resources" class="nav-link" data-scroll-target="#community-and-resources">Community and Resources</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">John the Ripper: Advanced Password Cracking Tool</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Password Cracking</div>
   </div>
@@ -182,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 13, 2025</p>
     </div>
   </div>
   
@@ -194,8 +256,165 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="overview-of-john-the-ripper" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-john-the-ripper">Overview of John the Ripper</h2>
+<p>John the Ripper (JtR) is an advanced, open-source password cracking tool designed to test password strength and assist in password recovery. Developed by Solar Designer, this tool has become a critical utility in cybersecurity for identifying weak passwords and improving overall system security.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://dashboard.snapcraft.io/site_media/appmedia/2024/08/com.openwall.John.png" class="img-fluid figure-img"></p>
+<figcaption>John the Ripper Logo</figcaption>
+</figure>
+</div>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ul>
+<li><strong>Multi-platform support</strong>: Runs on various Unix, Linux, macOS, and Windows systems</li>
+<li><strong>Multiple hash algorithm support</strong>: Handles hundreds of password hash types</li>
+<li><strong>Efficient cracking modes</strong>:
+<ul>
+<li>Dictionary attacks</li>
+<li>Brute-force attacks</li>
+<li>Hybrid attacks</li>
+</ul></li>
+<li><strong>Customizable password generation rules</strong></li>
+<li><strong>Distributed computing support</strong></li>
+</ul>
+</section>
+</section>
+<section id="technical-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="technical-architecture">Technical Architecture</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic John the Ripper command structure</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">john</span> <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span> password-file</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="supported-hash-types" class="level3">
+<h3 class="anchored" data-anchor-id="supported-hash-types">Supported Hash Types</h3>
+<ol type="1">
+<li><strong>Unix/Linux Hashes</strong>
+<ul>
+<li>MD5</li>
+<li>SHA-256</li>
+<li>SHA-512</li>
+<li>PBKDF2</li>
+</ul></li>
+<li><strong>Windows Hashes</strong>
+<ul>
+<li>NTLM</li>
+<li>LM</li>
+<li>Active Directory</li>
+</ul></li>
+<li><strong>Web Application Hashes</strong>
+<ul>
+<li>MD5</li>
+<li>SHA-1</li>
+<li>bcrypt</li>
+<li>Argon2</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="installation-methods" class="level2">
+<h2 class="anchored" data-anchor-id="installation-methods">Installation Methods</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="linux-installation" class="level3">
+<h3 class="anchored" data-anchor-id="linux-installation">Linux Installation</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install john</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="macos-installation" class="level3">
+<h3 class="anchored" data-anchor-id="macos-installation">macOS Installation</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install john-jumbo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</div>
+</div>
+</section>
+<section id="practical-usage-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="practical-usage-scenarios">Practical Usage Scenarios</h2>
+<section id="network-security-auditing" class="level3">
+<h3 class="anchored" data-anchor-id="network-security-auditing">1. Network Security Auditing</h3>
+<p>Security professionals use John the Ripper to: - Test password strength in organizational networks - Identify weak user credentials - Recommend password policy improvements</p>
+</section>
+<section id="forensic-investigations" class="level3">
+<h3 class="anchored" data-anchor-id="forensic-investigations">2. Forensic Investigations</h3>
+<p>Digital forensics experts leverage JtR to: - Recover lost passwords - Analyze encrypted data - Support legal evidence collection</p>
+</section>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>John the Ripper should <strong>only</strong> be used: - With explicit permission - On systems you own - For legitimate security testing - In controlled educational environments</p>
+</div>
+</div>
+</section>
+<section id="advanced-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-techniques">Advanced Techniques</h2>
+<section id="rule-based-password-generation" class="level3">
+<h3 class="anchored" data-anchor-id="rule-based-password-generation">Rule-Based Password Generation</h3>
+<p>John the Ripper allows creating complex password generation rules: - Character substitutions - Prefix/suffix additions - Numerical variations</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example rule configuration</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[Rules]</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to lowercase, add numbers</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">l</span> $<span class="pp">[</span><span class="ss">0</span><span class="pp">-</span><span class="ss">9</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="performance-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="performance-optimization">Performance Optimization</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<section id="hardware-acceleration" class="level3">
+<h3 class="anchored" data-anchor-id="hardware-acceleration">Hardware Acceleration</h3>
+<ul>
+<li>GPU-based cracking</li>
+<li>Distributed computing clusters</li>
+<li>FPGA and ASIC support</li>
+</ul>
+</section>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240105180457/HOW-GPU-ACCELERATION-WORKS.png" class="img-fluid figure-img"></p>
+<figcaption>GPU Acceleration</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="community-and-resources" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-resources">Community and Resources</h2>
+<ul>
+<li><strong>Official Website</strong>: <a href="https://www.openwall.com/john">www.openwall.com/john</a></li>
+<li><strong>GitHub Repository</strong>: <a href="https://github.com/openwall/john">github.com/openwall/john</a></li>
+<li><strong>Documentation</strong>: Comprehensive wiki and user guides</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>John the Ripper remains an essential tool in cybersecurity, helping organizations and professionals understand and improve password security through responsible, ethical testing.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Pro Tip</strong>: Always obtain proper authorization before performing any password cracking activities!</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

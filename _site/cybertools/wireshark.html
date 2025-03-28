@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Xu Haiyang">
-<meta name="dcterms.date" content="2025-03-06">
+<meta name="dcterms.date" content="2025-03-26">
 
-<title>wireshark – Haiyang's Tech Portfolio</title>
+<title>Wireshark: Comprehensive Network Protocol Analyzer – Haiyang’s Tech Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,16 +155,54 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-wireshark" id="toc-introduction-to-wireshark" class="nav-link active" data-scroll-target="#introduction-to-wireshark">Introduction to Wireshark</a>
+  <ul class="collapse">
+  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  </ul></li>
+  <li><a href="#network-inspection-capabilities" id="toc-network-inspection-capabilities" class="nav-link" data-scroll-target="#network-inspection-capabilities">Network Inspection Capabilities</a>
+  <ul class="collapse">
+  <li><a href="#supported-network-protocols" id="toc-supported-network-protocols" class="nav-link" data-scroll-target="#supported-network-protocols">Supported Network Protocols</a></li>
+  <li><a href="#capture-methods" id="toc-capture-methods" class="nav-link" data-scroll-target="#capture-methods">Capture Methods</a></li>
+  </ul></li>
+  <li><a href="#technical-specifications" id="toc-technical-specifications" class="nav-link" data-scroll-target="#technical-specifications">Technical Specifications</a>
+  <ul class="collapse">
+  <li><a href="#system-requirements" id="toc-system-requirements" class="nav-link" data-scroll-target="#system-requirements">System Requirements</a></li>
+  <li><a href="#capture-performance" id="toc-capture-performance" class="nav-link" data-scroll-target="#capture-performance">Capture Performance</a></li>
+  </ul></li>
+  <li><a href="#network-analysis-workflow" id="toc-network-analysis-workflow" class="nav-link" data-scroll-target="#network-analysis-workflow">Network Analysis Workflow</a>
+  <ul class="collapse">
+  <li><a href="#packet-investigation-process" id="toc-packet-investigation-process" class="nav-link" data-scroll-target="#packet-investigation-process">Packet Investigation Process</a></li>
+  </ul></li>
+  <li><a href="#advanced-capabilities" id="toc-advanced-capabilities" class="nav-link" data-scroll-target="#advanced-capabilities">Advanced Capabilities</a>
+  <ul class="collapse">
+  <li><a href="#forensic-analysis-tools" id="toc-forensic-analysis-tools" class="nav-link" data-scroll-target="#forensic-analysis-tools">Forensic Analysis Tools</a></li>
+  <li><a href="#visualization-features" id="toc-visualization-features" class="nav-link" data-scroll-target="#visualization-features">Visualization Features</a></li>
+  </ul></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#investigative-scenarios" id="toc-investigative-scenarios" class="nav-link" data-scroll-target="#investigative-scenarios">Investigative Scenarios</a></li>
+  </ul></li>
+  <li><a href="#security-considerations" id="toc-security-considerations" class="nav-link" data-scroll-target="#security-considerations">Security Considerations</a></li>
+  <li><a href="#community-and-support" id="toc-community-and-support" class="nav-link" data-scroll-target="#community-and-support">Community and Support</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
+<h1 class="title">Wireshark: Comprehensive Network Protocol Analyzer</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Vulnerability Scanning</div>
+    <div class="quarto-category">Forensics</div>
   </div>
   </div>
 
@@ -182,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 6, 2025</p>
+      <p class="date">March 26, 2025</p>
     </div>
   </div>
   
@@ -194,8 +232,197 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introduction-to-wireshark" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-wireshark">Introduction to Wireshark</h2>
+<p>Wireshark is a world-renowned, open-source network protocol analyzer that provides deep insights into network communications. As the most popular network troubleshooting and analysis tool globally, it enables cybersecurity professionals, network administrators, and researchers to capture, inspect, and dissect network traffic in unprecedented detail.</p>
+<section id="key-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-features">Key Features</h3>
+<ol type="1">
+<li><strong>Comprehensive Protocol Support</strong>
+<ul>
+<li>Over 2000 network protocols analyzed</li>
+<li>Real-time packet capture</li>
+<li>Multi-platform compatibility</li>
+<li>Detailed packet deconstruction</li>
+</ul></li>
+<li><strong>Advanced Visualization</strong>
+<ul>
+<li>Interactive packet inspection</li>
+<li>Graphical traffic analysis</li>
+<li>Colorized protocol representation</li>
+<li>Extensive filtering capabilities</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="network-inspection-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="network-inspection-capabilities">Network Inspection Capabilities</h2>
+<section id="supported-network-protocols" class="level3">
+<h3 class="anchored" data-anchor-id="supported-network-protocols">Supported Network Protocols</h3>
+<ul>
+<li>TCP/IP</li>
+<li>HTTP/HTTPS</li>
+<li>DNS</li>
+<li>SSH</li>
+<li>SSL/TLS</li>
+<li>FTP</li>
+<li>SMTP</li>
+<li>ICMP</li>
+<li>IPv4/IPv6</li>
+<li>Bluetooth</li>
+<li>Wireless protocols</li>
+<li>Industrial control protocols</li>
+</ul>
+</section>
+<section id="capture-methods" class="level3">
+<h3 class="anchored" data-anchor-id="capture-methods">Capture Methods</h3>
+<ul>
+<li><strong>Live Network Capture</strong>
+<ul>
+<li>Real-time traffic monitoring</li>
+<li>Multiple interface support</li>
+<li>Wireless network analysis</li>
+<li>VPN traffic inspection</li>
+</ul></li>
+<li><strong>Offline Packet Analysis</strong>
+<ul>
+<li>Pcap file examination</li>
+<li>Historical traffic reconstruction</li>
+<li>Forensic evidence preservation</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="technical-specifications" class="level2">
+<h2 class="anchored" data-anchor-id="technical-specifications">Technical Specifications</h2>
+<section id="system-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="system-requirements">System Requirements</h3>
+<ul>
+<li>Windows, macOS, Linux support</li>
+<li>Graphical and command-line interfaces</li>
+<li>Minimum 8GB RAM</li>
+<li>Multi-core processor</li>
+<li>Network adapter support</li>
+<li>Extensive storage for packet captures</li>
+</ul>
+</section>
+<section id="capture-performance" class="level3">
+<h3 class="anchored" data-anchor-id="capture-performance">Capture Performance</h3>
+<ul>
+<li>High-speed packet processing</li>
+<li>Low-overhead capture mechanisms</li>
+<li>Scalable to enterprise networks</li>
+<li>Minimal system resource consumption</li>
+</ul>
+</section>
+</section>
+<section id="network-analysis-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="network-analysis-workflow">Network Analysis Workflow</h2>
+<section id="packet-investigation-process" class="level3">
+<h3 class="anchored" data-anchor-id="packet-investigation-process">Packet Investigation Process</h3>
+<ol type="1">
+<li>Select network interface</li>
+<li>Configure capture filters</li>
+<li>Begin packet capture</li>
+<li>Apply display filters</li>
+<li>Analyze protocol interactions</li>
+<li>Generate comprehensive reports</li>
+</ol>
+</section>
+</section>
+<section id="advanced-capabilities" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-capabilities">Advanced Capabilities</h2>
+<section id="forensic-analysis-tools" class="level3">
+<h3 class="anchored" data-anchor-id="forensic-analysis-tools">Forensic Analysis Tools</h3>
+<ul>
+<li>Packet reconstruction</li>
+<li>Stream reassembly</li>
+<li>Encryption detection</li>
+<li>Malformed packet identification</li>
+<li>Network anomaly detection</li>
+</ul>
+</section>
+<section id="visualization-features" class="level3">
+<h3 class="anchored" data-anchor-id="visualization-features">Visualization Features</h3>
+<ul>
+<li>Conversation graphs</li>
+<li>Endpoint statistics</li>
+<li>Protocol hierarchy tree</li>
+<li>Time-sequence diagrams</li>
+<li>IO graphs for traffic analysis</li>
+</ul>
+</section>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
+<section id="investigative-scenarios" class="level3">
+<h3 class="anchored" data-anchor-id="investigative-scenarios">Investigative Scenarios</h3>
+<ol type="1">
+<li><strong>Network Security</strong>
+<ul>
+<li>Intrusion detection</li>
+<li>Malware traffic analysis</li>
+<li>Security vulnerability assessment</li>
+<li>Threat intelligence gathering</li>
+</ul></li>
+<li><strong>Network Troubleshooting</strong>
+<ul>
+<li>Performance bottleneck identification</li>
+<li>Protocol implementation debugging</li>
+<li>Network configuration validation</li>
+<li>Connectivity issue diagnosis</li>
+</ul></li>
+<li><strong>Forensic Investigations</strong>
+<ul>
+<li>Digital evidence collection</li>
+<li>Cyber incident reconstruction</li>
+<li>Network behavior analysis</li>
+<li>Compliance monitoring</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="security-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="security-considerations">Security Considerations</h2>
+<ul>
+<li>Non-intrusive traffic analysis</li>
+<li>Encrypted traffic handling</li>
+<li>Minimal network disruption</li>
+<li>Comprehensive logging</li>
+<li>Forensically sound methodology</li>
+</ul>
+</section>
+<section id="community-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="community-and-support">Community and Support</h2>
+<ul>
+<li>Open-source project</li>
+<li>Global developer community</li>
+<li>Regular software updates</li>
+<li>Extensive documentation</li>
+<li>Active user forums</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Wireshark represents the gold standard in network protocol analysis, providing unparalleled insights into complex network communications and supporting critical cybersecurity investigations.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Sanders, C. (2017). Practical Packet Analysis. No Starch Press.</li>
+<li>Kozierok, C. M. (2005). The TCP/IP Guide. No Starch Press.</li>
+<li>Official Wireshark Documentation</li>
+</ol>
+</section>
+<section id="additional-resources" class="level2">
+<h2 class="anchored" data-anchor-id="additional-resources">Additional Resources</h2>
+<ul>
+<li>Official Website: https://www.wireshark.org/</li>
+<li>GitHub Repository: https://github.com/wireshark/wireshark</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
