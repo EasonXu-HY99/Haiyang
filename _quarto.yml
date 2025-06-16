@@ -21,7 +21,7 @@ website:
       - href: coding.qmd
         text: Coding
       - href: cloud.qmd
-        text: Cloud
+        text: AWS Cloud
       - href: github.qmd
         text: GitHub
       - href: ai.qmd
