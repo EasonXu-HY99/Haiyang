@@ -18,6 +18,8 @@ website:
         text: Cybersecurity
       - href: tools.qmd
         text: Cyber Tools
+      - href: cyberArk.qmd
+        text: CyberArk
       - href: coding.qmd
         text: Coding
       - href: cloud.qmd
