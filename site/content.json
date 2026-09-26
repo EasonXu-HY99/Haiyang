@@ -1,0 +1,91 @@
+{
+  "name": "Haiyang Xu",
+  "email": "haiyangeasoon@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/haiyang-xu-8a2151212/",
+  "github": "https://github.com/EasonXu-HY99",
+  "headline": "Security Operations · Incident Response · Cloud Security",
+  "summary": "Engineer at Seatrium, focused on SOC L2 investigations and incident response. I handle cases escalated by BlueVoyant's L1 team, investigate alerts in Microsoft Defender and Microsoft Sentinel, and take action to secure affected accounts.",
+  "experience": [
+    {
+      "company": "Seatrium",
+      "role": "Engineer",
+      "period": "Jun 2025 – Present",
+      "focus": "SOC L2 investigation & incident response",
+      "current": true,
+      "bullets": [
+        "Handle L2 investigations for security cases escalated by BlueVoyant's L1 team, reviewing alerts and supporting incident response.",
+        "Investigate alerts in Microsoft Defender and Microsoft Sentinel, examining relevant logs and activity to assess suspicious behavior and determine response actions.",
+        "Perform account containment and remediation, including password resets, session revocation, and MFA authentication-method resets or revocation as required.",
+        "Conduct firewall testing to support validation of network security controls.",
+        "Support AWS security log validation in Microsoft Sentinel, using KQL for account-specific and time-bounded checks alongside cloud infrastructure teams."
+      ],
+      "tags": ["Microsoft Sentinel", "Microsoft Defender", "KQL", "BlueVoyant", "Firewall testing"]
+    },
+    {
+      "company": "Hungry Hub",
+      "role": "Cybersecurity Analyst",
+      "period": "May 2024 – Aug 2024",
+      "focus": "AppServation Co., Ltd. · Bangkok, Thailand",
+      "bullets": [
+        "Integrated OWASP ZAP, GitHub Actions, and SonarQube into web and API security testing workflows.",
+        "Built AWS Lambda and API Gateway workflows for security alert processing and categorization.",
+        "Automated log analysis and report generation with Python and Shell scripts."
+      ],
+      "tags": ["Application security", "AWS", "CI/CD", "Python"]
+    },
+    {
+      "company": "UBS AG",
+      "role": "Insider Threat Risk Solution Developer",
+      "period": "Jan 2024 – Apr 2024",
+      "focus": "Singapore · Security analytics & development",
+      "bullets": [
+        "Developed user-activity anomaly detection using TensorFlow and scikit-learn, with feature engineering to improve detection quality.",
+        "Built Python/Flask microservices backed by MySQL and optimized queries and caching.",
+        "Integrated automated testing and vulnerability scans into GitLab CI/CD and Docker workflows."
+      ],
+      "tags": ["Threat detection", "Python", "Machine learning", "Docker"]
+    },
+    {
+      "company": "W2 Industrial Services Hub",
+      "role": "IoT & Web Development Intern",
+      "period": "Aug 2020 – Feb 2021",
+      "focus": "Singapore · Industrial IoT",
+      "bullets": [
+        "Connected industrial hardware to AWS IoT Core, Lambda, and DynamoDB for real-time data processing.",
+        "Built React and Node.js dashboards to help technicians monitor equipment and operational data."
+      ],
+      "tags": ["AWS IoT Core", "React", "Node.js"]
+    },
+    {
+      "company": "Singapore Indoor Farms",
+      "role": "IoT & Web Development Intern",
+      "period": "Aug 2020 – Feb 2021",
+      "focus": "Singapore · Smart farming",
+      "bullets": [
+        "Connected sensors and backend services with AWS IoT Core, Lambda, and S3, and automated agricultural data processing.",
+        "Built a React and Flask dashboard for sensor visualization and remote environmental control."
+      ],
+      "tags": ["IoT", "AWS", "Flask"]
+    }
+  ],
+  "education": [
+    {"school": "Singapore Management University", "degree": "BSc in Computer Science", "detail": "Cybersecurity & Cyber-Physical Systems", "period": "Aug 2021 – Dec 2024"},
+    {"school": "Singapore Polytechnic", "degree": "Diploma in Computer Engineering", "detail": "Computing, connected systems & engineering", "period": "Mar 2018 – Apr 2021"}
+  ],
+  "certifications": ["AWS Certified Solutions Architect", "CompTIA Security+", "Certified Ethical Hacker (CEH)"],
+  "toolkit": [
+    {"title": "Security operations", "items": ["Microsoft Sentinel", "Microsoft Defender", "KQL", "BlueVoyant case handling"]},
+    {"title": "Response & validation", "items": ["Alert investigation", "Identity remediation", "Firewall testing", "Cloud log validation"]},
+    {"title": "Cloud & automation", "items": ["AWS", "Python", "Shell", "GitHub Actions", "GitLab CI/CD", "Docker"]},
+    {"title": "Application & data", "items": ["OWASP ZAP", "SonarQube", "Flask", "React", "MySQL", "scikit-learn"]}
+  ],
+  "notes": [
+    {"category": "Security", "title": "Cybersecurity & defense", "description": "Notes on security fundamentals, risk, and defensive practices.", "href": "cybersecurity.html", "number": "01"},
+    {"category": "Security", "title": "Security tools", "description": "A reference collection for assessment, investigation, and analysis.", "href": "tools.html", "number": "02"},
+    {"category": "Cloud", "title": "AWS & cloud computing", "description": "Cloud architecture, AWS services, and serverless concepts.", "href": "cloud.html", "number": "03"},
+    {"category": "Security", "title": "Privileged access", "description": "Learning notes on CyberArk and privileged access management.", "href": "cyberArk.html", "number": "04"},
+    {"category": "Development", "title": "Code & delivery", "description": "Programming references and practical development concepts.", "href": "coding.html", "number": "05"},
+    {"category": "Development", "title": "Git & collaboration", "description": "Version control, GitHub workflows, and development practices.", "href": "github.html", "number": "06"},
+    {"category": "Development", "title": "AI & machine learning", "description": "A collection of learning notes on models and AI applications.", "href": "ai.html", "number": "07"}
+  ]
+}
