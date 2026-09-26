@@ -13,17 +13,23 @@
       "focus": "SOC L2 investigation & incident response",
       "current": true,
       "bullets": [
-        "Handle L2 investigations for security cases escalated by BlueVoyant's L1 team, reviewing alerts and supporting incident response.",
-        "Investigate alerts in Microsoft Defender and Microsoft Sentinel, examining relevant logs and activity to assess suspicious behavior and determine response actions.",
-        "Perform account containment and remediation, including password resets, session revocation, and MFA authentication-method resets or revocation as required.",
-        "Conduct firewall testing to support validation of network security controls.",
-        "Support AWS security log validation in Microsoft Sentinel, using KQL for account-specific and time-bounded checks alongside cloud infrastructure teams."
+        "Handle Tier 2 investigations for cases escalated by BlueVoyant’s L1 team, investigating Microsoft Defender XDR alerts involving compromised accounts, phishing, malware, endpoint threats, and suspicious network activity.",
+        "Analyze Microsoft Entra ID sign-in and audit logs, perform password resets and session revocation, verify MFA configuration, and coordinate remediation with affected users.",
+        "Conduct threat hunting with Microsoft Sentinel and KQL to investigate anomalies and validate endpoint telemetry.",
+        "Configure Microsoft Purview DLP policies, manage Defender Indicators for malicious IPs and file hashes, and investigate phishing campaigns.",
+        "Conduct firewall testing and support AWS security log validation alongside cloud infrastructure teams."
       ],
-      "tags": ["Microsoft Sentinel", "Microsoft Defender", "KQL", "BlueVoyant", "Firewall testing"]
+      "tags": [
+        "Microsoft Defender XDR",
+        "Microsoft Sentinel",
+        "Entra ID",
+        "Purview DLP",
+        "KQL"
+      ]
     },
     {
       "company": "Hungry Hub",
-      "role": "Cybersecurity Analyst",
+      "role": "Cybersecurity Analyst Intern",
       "period": "May 2024 – Aug 2024",
       "focus": "AppServation Co., Ltd. · Bangkok, Thailand",
       "bullets": [
@@ -31,7 +37,12 @@
         "Built AWS Lambda and API Gateway workflows for security alert processing and categorization.",
         "Automated log analysis and report generation with Python and Shell scripts."
       ],
-      "tags": ["Application security", "AWS", "CI/CD", "Python"]
+      "tags": [
+        "Application security",
+        "AWS",
+        "CI/CD",
+        "Python"
+      ]
     },
     {
       "company": "UBS AG",
@@ -43,7 +54,12 @@
         "Built Python/Flask microservices backed by MySQL and optimized queries and caching.",
         "Integrated automated testing and vulnerability scans into GitLab CI/CD and Docker workflows."
       ],
-      "tags": ["Threat detection", "Python", "Machine learning", "Docker"]
+      "tags": [
+        "Threat detection",
+        "Python",
+        "Machine learning",
+        "Docker"
+      ]
     },
     {
       "company": "W2 Industrial Services Hub",
@@ -54,7 +70,11 @@
         "Connected industrial hardware to AWS IoT Core, Lambda, and DynamoDB for real-time data processing.",
         "Built React and Node.js dashboards to help technicians monitor equipment and operational data."
       ],
-      "tags": ["AWS IoT Core", "React", "Node.js"]
+      "tags": [
+        "AWS IoT Core",
+        "React",
+        "Node.js"
+      ]
     },
     {
       "company": "Singapore Indoor Farms",
@@ -65,27 +85,81 @@
         "Connected sensors and backend services with AWS IoT Core, Lambda, and S3, and automated agricultural data processing.",
         "Built a React and Flask dashboard for sensor visualization and remote environmental control."
       ],
-      "tags": ["IoT", "AWS", "Flask"]
+      "tags": [
+        "IoT",
+        "AWS",
+        "Flask"
+      ]
     }
   ],
   "education": [
-    {"school": "Singapore Management University", "degree": "BSc in Computer Science", "detail": "Cybersecurity & Cyber-Physical Systems", "period": "Aug 2021 – Dec 2024"},
-    {"school": "Singapore Polytechnic", "degree": "Diploma in Computer Engineering", "detail": "Computing, connected systems & engineering", "period": "Mar 2018 – Apr 2021"}
+    {
+      "school": "Singapore Management University",
+      "degree": "BSc in Computer Science",
+      "detail": "Cybersecurity & Cyber-Physical Systems",
+      "period": "Aug 2021 – Jan 2025"
+    },
+    {
+      "school": "Singapore Polytechnic",
+      "degree": "Diploma in Computer Engineering",
+      "detail": "SP EEE Director’s Honor · Top 10% of cohort",
+      "period": "Mar 2018 – Apr 2021"
+    }
   ],
-  "certifications": ["AWS Certified Solutions Architect", "CompTIA Security+", "Certified Ethical Hacker (CEH)"],
+  "certifications": [
+    "AWS Certified Solutions Architect"
+  ],
   "toolkit": [
-    {"title": "Security operations", "items": ["Microsoft Sentinel", "Microsoft Defender", "KQL", "BlueVoyant case handling"]},
-    {"title": "Response & validation", "items": ["Alert investigation", "Identity remediation", "Firewall testing", "Cloud log validation"]},
-    {"title": "Cloud & automation", "items": ["AWS", "Python", "Shell", "GitHub Actions", "GitLab CI/CD", "Docker"]},
-    {"title": "Application & data", "items": ["OWASP ZAP", "SonarQube", "Flask", "React", "MySQL", "scikit-learn"]}
+    {
+      "title": "Security operations",
+      "items": [
+        "Microsoft Sentinel",
+        "Defender XDR & Endpoint",
+        "Defender for Office 365",
+        "KQL",
+        "BlueVoyant case handling"
+      ]
+    },
+    {
+      "title": "Response & validation",
+      "items": [
+        "Microsoft Entra ID",
+        "Microsoft Purview DLP",
+        "Threat hunting",
+        "Identity remediation",
+        "Firewall testing"
+      ]
+    },
+    {
+      "title": "Cloud & automation",
+      "items": [
+        "AWS",
+        "Python",
+        "Shell",
+        "GitHub Actions",
+        "GitLab CI/CD",
+        "Docker"
+      ]
+    },
+    {
+      "title": "Application & data",
+      "items": [
+        "VirusTotal",
+        "AbuseIPDB",
+        "Wireshark",
+        "OWASP ZAP",
+        "SonarQube",
+        "MySQL"
+      ]
+    }
   ],
   "notes": [
-    {"category": "Security", "title": "Cybersecurity & defense", "description": "Notes on security fundamentals, risk, and defensive practices.", "href": "cybersecurity.html", "number": "01"},
-    {"category": "Security", "title": "Security tools", "description": "A reference collection for assessment, investigation, and analysis.", "href": "tools.html", "number": "02"},
-    {"category": "Cloud", "title": "AWS & cloud computing", "description": "Cloud architecture, AWS services, and serverless concepts.", "href": "cloud.html", "number": "03"},
-    {"category": "Security", "title": "Privileged access", "description": "Learning notes on CyberArk and privileged access management.", "href": "cyberArk.html", "number": "04"},
-    {"category": "Development", "title": "Code & delivery", "description": "Programming references and practical development concepts.", "href": "coding.html", "number": "05"},
-    {"category": "Development", "title": "Git & collaboration", "description": "Version control, GitHub workflows, and development practices.", "href": "github.html", "number": "06"},
-    {"category": "Development", "title": "AI & machine learning", "description": "A collection of learning notes on models and AI applications.", "href": "ai.html", "number": "07"}
+    {
+      "category": "AI / Machine Learning",
+      "title": "A new chapter in learning",
+      "description": "A focused space for future AI experiments, machine learning notes, and reflections on security applications. New articles will appear here as they are ready.",
+      "href": "ai.html",
+      "number": "01"
+    }
   ]
 }

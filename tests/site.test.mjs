@@ -28,7 +28,19 @@ test('PDF download is a nonempty PDF document', async()=>{
   const pdf=await readFile(path.join(root,'dist/resume.pdf'));
   assert.equal(pdf.subarray(0,5).toString(),'%PDF-');assert.ok(pdf.length>3000);
 });
-test('archived technical notes retain their content and a return path',async()=>{
-  const page=await readFile(path.join(root,'dist/cybersecurity.html'),'utf8');
-  assert.ok(page.includes('portfolio-return'));assert.ok(page.length>20000);
+test('retired content is excluded from deployment and discovery',async()=>{
+  for(const retired of ['cybersecurity.html','tools.html','cloud.html','cyberArk.html','coding.html','github.html','posts','cybertools','search.json']) {
+    await assert.rejects(access(path.join(root,'dist',retired)), {code:'ENOENT'});
+  }
+  const sitemap=await readFile(path.join(root,'dist/sitemap.xml'),'utf8');
+  assert.doesNotMatch(sitemap,/\/(?:cloud|coding|cybertools|posts)(?:[/.<])/);
+  const journal=await readFile(path.join(root,'dist/ai.html'),'utf8');
+  assert.match(journal,/no new articles published yet/);
+  assert.doesNotMatch(journal,/20 Useful ChatGPT|CVE-2025-184XX/);
+});
+test('uploaded resume and photo are published byte-for-byte',async()=>{
+  for(const [source,dest] of [['site/resume.pdf','dist/resume.pdf'],['site/assets/profile.png','dist/assets/profile.png']]) {
+    assert.deepEqual(await readFile(path.join(root,source)),await readFile(path.join(root,dest)));
+  }
+  assert.match(html,/assets\/profile\.png/);
 });

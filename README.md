@@ -1,10 +1,10 @@
 # Haiyang Xu — Security Operations Portfolio
 
-A responsive résumé website focused on SOC L2 investigations, incident response, and cloud security. The existing Quarto technical library remains available at its original URLs.
+Responsive résumé website focused on SOC L2 investigation, incident response, and cloud security, with a fresh AI / Machine Learning journal.
 
 ## Run locally
 
-Requires Node.js 22 or later; no npm dependencies are needed.
+Node.js 22 or later. No npm dependencies are required.
 
 ```sh
 npm run build
@@ -14,19 +14,20 @@ npm run dev
 
 Open http://127.0.0.1:4173.
 
-## Maintain the site
+## Maintain
 
-- `site/content.json`: employment, education, certifications, skills, and note links. Formal title: Engineer; SOC L2 is the functional scope.
-- `site/index.html`: homepage template and introductory copy.
-- `site/assets/`: responsive styles, progressive-enhancement interactions, and favicon.
-- `site/resume.pdf`: current downloadable résumé. Regenerate after changing résumé content with `python scripts/build_resume.py` (requires ReportLab). Review the rendered PDF before committing it.
-- `scripts/build.mjs`: assembles the site into `dist/`, preserving the existing `_site/` technical library, adding return links, and replacing stale biographical routes.
-- `*.qmd`, `cybertools/`, and `_site/`: retained Quarto sources and published article snapshot. To update articles, use Quarto to regenerate `_site/`, then run the Node build. The Node build always supplies the résumé homepage.
+- `site/content.json`: experience, education, certifications, and skills, based on the owner-provided résumé and confirmed responsibilities. Engineer remains the confirmed formal title; SOC L2 is the functional scope.
+- `site/index.html`: homepage template.
+- `site/assets/profile.png`: owner-provided portrait, published without alteration.
+- `site/resume.pdf`: owner-provided PDF, published byte-for-byte. Replace only with an owner-approved file; do not regenerate it from website content.
+- `site/ai.html`: AI / ML journal. No new articles are published yet; topic cards describe future interests.
+- `site/JOURNAL.md`: manual publishing workflow for future articles.
+- `scripts/build.mjs`: cleans and rebuilds `dist/` from an explicit set of inputs, so removed pages cannot return through stale output or build caches.
 
-The homepage works without JavaScript. JavaScript adds the mobile menu, note filters, and active-section navigation. Reduced-motion preferences and keyboard navigation are supported. No analytics, account login, tracking pixels, or contact-form backend is added.
+The previous Quarto technical pages, dated news posts, old AI prompt collection, and legacy search index are retired. Their source remains recoverable in Git history. Removed URLs return 404. Earlier biographical URLs point to the current homepage sections.
 
 ## Deploy
 
-The existing destination is Netlify: https://haiyangxu.netlify.app/. `netlify.toml` configures `npm run build` with publish directory `dist`. Connect this repository to the existing site or upload `dist/` as a manual deployment. Do not publish the repository root: it contains source and editor files.
+The existing Netlify site is https://haiyangxu.netlify.app/. `netlify.toml` runs `npm run build` and publishes only `dist/`. Pushes to `main` trigger the existing deployment. GitHub Actions builds and tests the same output.
 
-The 2026 content refresh uses owner-confirmed Seatrium scope and dates, plus earlier biography content from this repository. It does not assert new performance metrics, certification validity dates, or production outcomes. Historical technical notes are retained as learning material, not newly validated guidance.
+The site has no analytics, contact-form backend, or recurring content-generation job. Standard email and LinkedIn links handle contact. Core content and article links work without JavaScript; mobile navigation is progressively enhanced.
