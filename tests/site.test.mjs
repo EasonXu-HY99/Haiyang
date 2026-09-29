@@ -39,8 +39,8 @@ test('retired content is excluded from deployment and discovery',async()=>{
   assert.doesNotMatch(journal,/20 Useful ChatGPT|CVE-2025-184XX/);
 });
 test('uploaded resume and photo are published byte-for-byte',async()=>{
-  for(const [source,dest] of [['site/resume.pdf','dist/resume.pdf'],['site/assets/profile.png','dist/assets/profile.png']]) {
+  for(const [source,dest] of [['site/resume.pdf','dist/resume.pdf'],['site/assets/portrait.jpg','dist/assets/portrait.jpg']]) {
     assert.deepEqual(await readFile(path.join(root,source)),await readFile(path.join(root,dest)));
   }
-  assert.match(html,/assets\/profile\.png/);
+  assert.match(html,/assets\/portrait\.jpg/);
 });

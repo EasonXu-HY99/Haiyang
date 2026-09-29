@@ -18,7 +18,7 @@ Open http://127.0.0.1:4173.
 
 - `site/content.json`: experience, education, certifications, and skills, based on the owner-provided résumé and confirmed responsibilities. Engineer remains the confirmed formal title; SOC L2 is the functional scope.
 - `site/index.html`: homepage template.
-- `site/assets/profile.png`: owner-provided portrait, published without alteration.
+- `site/assets/portrait.jpg`: owner-provided portrait, published without alteration.
 - `site/resume.pdf`: owner-provided PDF, published byte-for-byte. Replace only with an owner-approved file; do not regenerate it from website content.
 - `site/ai.html`: AI / ML journal. No new articles are published yet; topic cards describe future interests.
 - `site/JOURNAL.md`: manual publishing workflow for future articles.
