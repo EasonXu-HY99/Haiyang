@@ -1,6 +1,7 @@
 import { cp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { buildJournal } from './journal.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const out = path.join(root, 'dist');
@@ -16,7 +17,9 @@ await mkdir(path.join(out, 'assets'), { recursive: true });
 await cp(path.join(root, 'site/assets'), path.join(out, 'assets'), { recursive: true });
 await cp(path.join(root, 'site/resume.pdf'), path.join(out, 'resume.pdf'));
 
+const journal = await buildJournal(root, out);
 const replacements = {
+  latestArticle: journal.latest,
   experience: content.experience.map(job => `<article class="job">
     <div class="job-date"><span>${escape(job.period)}</span>${job.current ? '<span class="current-badge">CURRENT ROLE</span>' : ''}</div>
     <div><div class="job-heading"><h3>${escape(job.company)}</h3></div><p class="job-role">${escape(job.role)}</p><p class="job-focus">${escape(job.focus)}</p>
@@ -34,7 +37,7 @@ html = html.replace(/\{\{(\w+)\}\}/g, (_, key) => {
 });
 await writeFile(path.join(out, 'index.html'), html);
 
-await cp(path.join(root, 'site/ai.html'), path.join(out, 'ai.html'));
+
 // Optional future articles; the journal can launch without placeholder posts.
 try { await cp(path.join(root, 'site/articles'), path.join(out, 'articles'), { recursive: true }); }
 catch (error) { if (error.code !== 'ENOENT') throw error; }
@@ -43,6 +46,6 @@ for (const [file, anchor] of [['projects.html','experience'],['contact.html','co
   await writeFile(path.join(out, file), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=/#${anchor}"><link rel="canonical" href="https://haiyangxu.netlify.app/#${anchor}"><title>Haiyang Xu</title></head><body><a href="/#${anchor}">Continue to Haiyang Xu’s ${anchor}</a></body></html>`);
 }
 await writeFile(path.join(out, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://haiyangxu.netlify.app/sitemap.xml\n');
-await writeFile(path.join(out, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://haiyangxu.netlify.app/</loc></url><url><loc>https://haiyangxu.netlify.app/ai.html</loc></url></urlset>');
+await writeFile(path.join(out, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ['https://haiyangxu.netlify.app/','https://haiyangxu.netlify.app/ai.html',...journal.urls].map(url=>'<url><loc>'+escape(url)+'</loc></url>').join('')+'</urlset>');
 await writeFile(path.join(out, '404.html'), '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | Haiyang Xu</title><link rel="stylesheet" href="/assets/portfolio.css"></head><body><main class="wrap section"><p class="eyebrow">404 / PAGE NOT FOUND</p><h1>This page has moved.</h1><p>Find my experience and technical notes on the homepage.</p><a class="button primary" href="/">Back to Haiyang’s résumé ↗</a></main></body></html>');
 console.log(`Built résumé website and AI / ML journal in ${out}`);

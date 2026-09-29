@@ -1,13 +1,11 @@
-# AI / Machine Learning publishing notes
+# Daily AI journal
 
-The public journal is `site/ai.html`. It intentionally starts with no articles. The earlier Quarto content is not copied into deployments.
+The daily 20:00 Asia/Shanghai task researches, writes, verifies and publishes a briefing. The user has authorized automatic GitHub updates.
 
-For each new article:
+1. Read original sources and verify dates. Prefer the past 24 hours; label retrospectives from the past week. Attribute vendor claims and distinguish analysis from facts. Never invent personal experiments or employer incidents.
+2. Add one entry per local date to site/journal.json, following existing fields. Reuse the same entry on same-day retries; preserve previous entries.
+3. Run npm run build. scripts/journal.mjs generates articles, the blog index, the homepage latest article and sitemap URLs. Do not hand-edit dist or duplicate index cards. site/ai.html is the index template.
+4. Run npm test. Check references and mobile layout, commit relevant files, push main, then verify GitHub checks and the live Netlify article.
+5. Report the article URL and commit. Do not report push success as deployment success, or publish when reliable sources cannot be verified.
 
-1. Create an HTML page under `site/articles/` using the portfolio stylesheet and a return link to `/ai.html`.
-2. Include a meaningful title, author, actual publication date, optional update date, summary, sources, and a distinction between experiments and verified outcomes.
-3. Add a descriptive link and short summary to `site/ai.html`. Replace its empty-state message when the first article is published.
-4. Add the article URL to the generated sitemap in `scripts/build.mjs`.
-5. Run `npm run build` and `npm test`, check mobile layout and references, then publish through the existing GitHub / Netlify workflow.
-
-Ideas are not published posts. Do not assign future articles fabricated dates, results, or reading-time claims. No recurring publishing automation is configured.
+Preserve the resume, portrait, biography and unrelated edits. The first manual run is dated 2026-09-29.

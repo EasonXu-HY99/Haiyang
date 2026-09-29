@@ -35,7 +35,7 @@ test('retired content is excluded from deployment and discovery',async()=>{
   const sitemap=await readFile(path.join(root,'dist/sitemap.xml'),'utf8');
   assert.doesNotMatch(sitemap,/\/(?:cloud|coding|cybertools|posts)(?:[/.<])/);
   const journal=await readFile(path.join(root,'dist/ai.html'),'utf8');
-  assert.match(journal,/no new articles published yet/);
+  assert.doesNotMatch(journal,/no new articles published yet|\{\{articles\}\}/);
   assert.doesNotMatch(journal,/20 Useful ChatGPT|CVE-2025-184XX/);
 });
 test('uploaded resume and photo are published byte-for-byte',async()=>{
@@ -43,4 +43,22 @@ test('uploaded resume and photo are published byte-for-byte',async()=>{
     assert.deepEqual(await readFile(path.join(root,source)),await readFile(path.join(root,dest)));
   }
   assert.match(html,/assets\/portrait\.jpg/);
+});
+
+test('journal articles are discoverable and local article links resolve', async()=>{
+  const posts=JSON.parse(await readFile(path.join(root,'site/journal.json'),'utf8'));
+  const journal=await readFile(path.join(root,'dist/ai.html'),'utf8');
+  const sitemap=await readFile(path.join(root,'dist/sitemap.xml'),'utf8');
+  for(const post of posts){
+    const url=`/articles/${post.slug}.html`;
+    assert.ok(journal.includes(url));assert.ok(sitemap.includes(url));
+    const article=await readFile(path.join(root,'dist',url),'utf8');
+    assert.match(article,/AI-assisted/);
+    assert.ok(article.includes(post.date));
+    for(const [,link] of article.matchAll(/(?:href|src)="([^"]+)"/g)){
+      if(link.startsWith('#')||link.startsWith('https:'))continue;
+      await access(path.join(root,'dist',link));
+    }
+  }
+  assert.ok(html.includes(`/articles/${posts.sort((a,b)=>b.date.localeCompare(a.date))[0].slug}.html`));
 });

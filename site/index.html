@@ -24,7 +24,7 @@
     <a class="wordmark" href="#home" aria-label="Haiyang Xu, home"><span class="monogram">hx<span>.</span></span><span>HAIYANG XU</span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" hidden>Menu <span aria-hidden="true">＋</span></button>
     <nav id="main-nav" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#experience">Experience</a><a href="#expertise">Expertise</a><a href="#knowledge">AI / ML</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#expertise">Expertise</a><a class="nav-blog" href="ai.html">AI Blog</a><a href="#contact">Contact</a>
       <a class="nav-resume" href="resume.pdf" download="Haiyang-Xu-Resume.pdf">Résumé <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
@@ -37,6 +37,7 @@
         <p class="hero-description">I investigate security alerts, respond to incidents, and help protect identities. My work connects hands-on SOC operations with cloud security and automation.</p>
         <div class="hero-actions"><a class="button primary" href="#experience">Explore my experience <span aria-hidden="true">↘</span></a><a class="text-link" href="resume.pdf" download="Haiyang-Xu-Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a></div>
         <div class="hero-links"><a href="{{linkedin}}">LinkedIn <span aria-hidden="true">↗</span></a><a href="{{github}}">GitHub <span aria-hidden="true">↗</span></a><a href="mailto:{{email}}">Email me <span aria-hidden="true">↗</span></a></div>
+        <a class="hero-journal" href="ai.html"><span>Beyond the SOC</span><strong>Read my AI & Machine Learning blog</strong><span aria-hidden="true">↗</span></a>
       </div>
       <aside class="portrait-card" aria-label="Profile">
         <div class="portrait-top"><span>Haiyang / Eason</span><span aria-hidden="true">Profile</span></div>
@@ -67,8 +68,8 @@
       <div class="credentials"><p class="eyebrow">Certification</p>{{certifications}}<div class="learning-note"><span aria-hidden="true">↗</span><p>Beyond the classroom: AI detection at Deep Learning Week and a media streaming project at the Lyve Cloud Hackathon, both in 2022.</p></div></div>
     </div></section>
     <section class="section wrap" id="knowledge" aria-labelledby="knowledge-title">
-      <div class="section-top"><div><p class="eyebrow">AI & Machine Learning</p><h2 id="knowledge-title">A new chapter in learning.</h2></div><p>A focused space for AI and machine learning.<br>New writing, at a thoughtful pace.</p></div>
-      <div class="notes-grid journal-preview">{{notes}}</div>
+      <div class="section-top"><div><p class="eyebrow">AI & Machine Learning</p><h2 id="knowledge-title">Stay curious. Keep the evidence close.</h2></div><p>Useful AI news, practical ideas, and a security perspective.<br>A daily briefing with original sources.</p></div>
+      <div class="blog-feature"><div class="blog-invitation"><p>AI & Machine Learning</p><h3>What’s worth your attention?</h3><p>Explore the developments behind the headlines, why they matter, and what to try next.</p><a class="button primary" href="ai.html">Explore the AI blog ↗</a></div><div>{{latestArticle}}</div></div>
     </section>
     <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="section wrap">
       <p class="eyebrow">Get in touch</p><div class="contact-grid"><div><h2 id="contact-title">Let’s talk<br><em>security.</em></h2><p>For conversations about security operations,<br>incident response, and cloud security.</p></div><div class="contact-links"><a class="email-link" href="mailto:{{email}}">{{email}} <span aria-hidden="true">↗</span></a><div><a href="{{linkedin}}">Connect on LinkedIn <span aria-hidden="true">↗</span></a><a href="{{github}}">Explore GitHub <span aria-hidden="true">↗</span></a></div><a class="button light" href="resume.pdf" download="Haiyang-Xu-Resume.pdf">Download résumé <span aria-hidden="true">↓</span></a></div></div>
