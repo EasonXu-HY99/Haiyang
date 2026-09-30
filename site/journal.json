@@ -13,7 +13,25 @@
         "news": "Anthropic released Claude Sonnet 5.5 on 28 September. It reports output generation more than 30% faster than Sonnet 5 and up to 30% lower cost per task in its testing. The published input and output token rates remain the same as Sonnet 5; the claimed savings come from using fewer tokens to complete work. Anthropic positions it for well-scoped tasks and says higher-risk cybersecurity requests can fall back to Sonnet 5.",
         "analysis": "The useful distinction is between cheaper tokens and cheaper completed work. For a small coding or document workflow, compare the number of retries, correction time, latency and total cost—not just a headline benchmark. A possible security learning exercise is to ask the model to explain a synthetic alert and identify missing evidence. Keep that experiment separate from production incident decisions. Vendor measurements do not establish how it will perform on a particular team’s data.",
         "source": "https://www.anthropic.com/claude-sonnet-5-5",
-        "sourceLabel": "Anthropic: Introducing Claude Sonnet 5.5"
+        "sourceLabel": "Anthropic: Introducing Claude Sonnet 5.5",
+        "visual": {
+          "title": "Measure the whole task",
+          "steps": [
+            {
+              "label": "Choose a task",
+              "detail": "Use the same prompt and inputs."
+            },
+            {
+              "label": "Check the result",
+              "detail": "Record errors, retries and review time."
+            },
+            {
+              "label": "Compare the cost",
+              "detail": "Count completed work, not just tokens."
+            }
+          ],
+          "caption": "Suggested evaluation workflow. This is a conceptual guide, not benchmark data."
+        }
       },
       {
         "title": "OpenAI DevDay: watch the event, not the rumours",
@@ -21,7 +39,25 @@
         "news": "The official DevDay schedule lists the opening keynote at 10:00 a.m. Pacific Time on 29 September in San Francisco. That converts to 1:00 a.m. on 30 September in Singapore and Beijing. OpenAI says the keynote will be livestreamed and other sessions will be recorded. At this briefing’s publication time, the keynote has not started. No unannounced models or features are assumed here.",
         "analysis": "For developers, a useful watchlist is concrete: which capabilities are actually available, whether documentation and working examples ship with them, what changes in pricing or access, and whether migration is required. A demonstration can be interesting without yet being something to deploy. After the event, compare the announcement with the API documentation and release notes before changing a working integration. The timezone difference also matters: a September 29 US event is not necessarily September 29 news with confirmed outcomes for readers in Singapore.",
         "source": "https://devday.openai.com/",
-        "sourceLabel": "OpenAI: DevDay 2026 official schedule"
+        "sourceLabel": "OpenAI: DevDay 2026 official schedule",
+        "visual": {
+          "title": "One keynote, two local dates",
+          "steps": [
+            {
+              "label": "San Francisco",
+              "detail": "29 September · 10:00 a.m. PDT"
+            },
+            {
+              "label": "15 hours ahead",
+              "detail": "Convert from UTC−7 to UTC+8."
+            },
+            {
+              "label": "Singapore / Beijing",
+              "detail": "30 September · 1:00 a.m."
+            }
+          ],
+          "caption": "Scheduled keynote time from the official event page. No event outcomes are implied."
+        }
       },
       {
         "title": "From last week: Opus 5.5 and the cost of judgment",
@@ -29,7 +65,25 @@
         "news": "Anthropic introduced Opus 5.5 on 22 September. It reports lower prices and roughly 40% lower cost on typical workloads at default settings compared with Opus 5. It also reports improvements in its behavioural audit and resistance to prompt injection, while acknowledging evaluation limits. This is a look back at last week’s release, included as context for the newer Sonnet announcement rather than presented as fresh news.",
         "analysis": "A practical model-selection question is whether a harder task benefits from more sustained judgment enough to justify its cost. Test a fixed set of representative tasks and define success before comparing models. For security-related assistance, an answer should expose its evidence, uncertainty and proposed next step. Better reported safety scores are useful context, but they do not replace restricted permissions, review of consequential actions or validation of the output. A stronger model is still one component in a workflow.",
         "source": "https://www.anthropic.com/claude-opus-5-5",
-        "sourceLabel": "Anthropic: Introducing Claude Opus 5.5"
+        "sourceLabel": "Anthropic: Introducing Claude Opus 5.5",
+        "visual": {
+          "title": "Capability still needs a review loop",
+          "steps": [
+            {
+              "label": "Define success",
+              "detail": "Agree on the evidence a task requires."
+            },
+            {
+              "label": "Test within limits",
+              "detail": "Use representative tasks and restricted access."
+            },
+            {
+              "label": "Review the output",
+              "detail": "Check uncertainty and consequential actions."
+            }
+          ],
+          "caption": "Editorial analysis: a suggested workflow, not a reported product feature."
+        }
       }
     ],
     "takeaway": "Today’s practical theme is measurement. Start with a narrow task, write down what a correct result looks like, and keep a record of failures as well as successes. News can point to a promising experiment; it cannot substitute for one. For the next briefing, the priority is to check what DevDay actually announces and distinguish available capabilities from previews. This journal will keep original sources close to each claim so readers can inspect the evidence themselves."

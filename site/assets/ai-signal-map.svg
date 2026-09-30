@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 420" fill="none">
+<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#426774" stroke-opacity=".23"/></pattern><radialGradient id="halo"><stop stop-color="#4c9e9c" stop-opacity=".34"/><stop offset="1" stop-color="#4c9e9c" stop-opacity="0"/></radialGradient></defs>
+<path fill="#153440" d="M0 0h1120v420H0z"/><path fill="url(#grid)" d="M0 0h1120v420H0z"/><ellipse cx="710" cy="215" rx="420" ry="280" fill="url(#halo)"/>
+<g stroke="#7facae" stroke-width="1.5"><path d="M-30 100h250l130 110h180M-30 180h250l130 30M-30 310h250l130-100M-30 380h170l210-170"/><path d="M620 210h150l120-110h250M770 210l120 0h250M770 210l120 110h250"/><circle cx="555" cy="210" r="118" stroke-opacity=".4"/><circle cx="555" cy="210" r="150" stroke-opacity=".2"/><path d="M435 60h55M620 360h55"/></g>
+<path d="M-30 180h250l130 30h420l120-110h250" stroke="#c3dfc5" stroke-width="3"/>
+<g fill="#d5e9dc"><circle cx="218" cy="180" r="6"/><circle cx="350" cy="210" r="6"/><circle cx="772" cy="210" r="6"/><circle cx="890" cy="100" r="6"/></g>
+<rect x="485" y="140" width="140" height="140" rx="32" fill="#214b57" stroke="#a4c5bd" stroke-width="2"/>
+<g stroke="#e1eedf" stroke-width="3" stroke-linecap="round"><path d="M526 182h58v56h-58zM540 168v14m29-14v14m-29 56v14m29-14v14m-57-56h14m-14 28h14m58-28h14m-14 28h14"/><circle cx="555" cy="210" r="12"/></g>
+<g font-family="Segoe UI,Arial,sans-serif" font-size="20" fill="#e2eeeb"><text x="66" y="75">Signals</text><text x="504" y="335">Evidence</text><text x="900" y="65">Judgment</text></g>
+<g fill="#b5cecd"><circle cx="164" cy="310" r="4"/><circle cx="942" cy="321" r="4"/><circle cx="1010" cy="210" r="4"/></g>
+</svg>
