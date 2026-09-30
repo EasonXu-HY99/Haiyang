@@ -61,4 +61,48 @@
       "height": 630
     }
   }
+  ,{
+    "date": "2026-09-30",
+    "slug": "2026-09-30-ai-briefing",
+    "title": "After DevDay: model costs, persistent agents, and security in the cloud",
+    "summary": "Three confirmed announcements to watch: GPT-6.1 Sol, dots, and Codex Security Cloud—with practical questions about cost, permissions, and evidence.",
+    "scope": "Published 30 September 2026 (UTC+8). Covers official announcements dated 29 September in the US, following the DevDay keynote overnight in Singapore. Availability reflects the linked launch pages at the time of writing.",
+    "intro": "Yesterday’s briefing treated DevDay as an upcoming event. Today, the official announcements give us something concrete to examine. This edition focuses on three developments with practical implications for builders and security practitioners, rather than trying to repeat every launch. Facts below come from OpenAI’s own publications; performance claims remain vendor claims. The analysis suggests questions to test, not personal benchmark results or production recommendations.",
+    "cover": {
+      "src": "https://devday.openai.com/images/devday/devday-2026-seo-og.png",
+      "alt": "Official OpenAI DevDay 2026 event artwork",
+      "caption": "Official event artwork for OpenAI DevDay 2026.",
+      "credit": "OpenAI",
+      "source": "https://devday.openai.com/",
+      "width": 1920,
+      "height": 1080
+    },
+    "items": [
+      {
+        "title": "GPT-6.1 Sol: look at the price of a finished task",
+        "date": "29 September 2026 · model release",
+        "news": "OpenAI introduced GPT-6.1 Sol as an upgrade to GPT-6 Sol. It reports improvements in coding, computer use and professional work, with some evaluations approaching Astra. Standard API rates are $2 per million input tokens, $0.10 for cached input and $10 for output. The launch page lists availability in the API, ChatGPT Work and Codex, while explicitly saying it is not yet available in Chat. Sol Ultrafast is described as coming in the following days, rather than already generally available.",
+        "analysis": "A practical comparison should use a small, repeatable task set with fixed acceptance criteria. Track retries, review time and whether the result actually works alongside token charges. Caching may matter for repeated context, but an advertised cached-input rate does not mean every request qualifies. For a security learning exercise, use synthetic evidence and assess whether the model separates observations from assumptions. A lower price can make experiments easier; it does not demonstrate reliable incident decisions. Start with a reversible, bounded task before considering a larger workflow.",
+        "source": "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "sourceLabel": "OpenAI: Introducing GPT-6.1 Sol"
+      },
+      {
+        "title": "Dots: persistent work makes permissions more important",
+        "date": "29 September 2026 · agent rollout",
+        "news": "OpenAI launched dots, Astra-powered agents with their own cloud computers and connected tools. The announcement describes a rollout on Pro and Business Premium in eligible markets, with an administrator-enabled beta for Enterprise users. It distinguishes read-only background research from actions that change accounts or share information. Users can set action rules and inspect activity, and the launch page warns that dots can still make mistakes. Availability is conditional on market, plan and workspace settings.",
+        "analysis": "The interesting shift is continuity: a system can keep pursuing work between conversations. That makes its access boundaries part of the operating design. A sensible initial trial is a read-only task with a named data source, a specific output and a clear stopping condition. Before allowing changes, decide who owns the agent identity, how access is removed, and which actions require review. Keep an audit trail that makes it possible to connect an action to the request behind it. An always-on assistant should not imply permanently unrestricted access.",
+        "source": "https://openai.com/index/introducing-dots/",
+        "sourceLabel": "OpenAI: Introducing dots"
+      },
+      {
+        "title": "Codex Security Cloud: findings still need a validation loop",
+        "date": "29 September 2026 · defensive security announcement",
+        "news": "OpenAI’s DevDay recap describes Codex Security Cloud as a way to scan GitHub repositories on demand or on a schedule, including ongoing checks of new commits. It says the service investigates findings, removes duplicates and prepares fixes in the cloud. The recap lists availability for Pro, Business, Enterprise and Edu users and includes access to Daybreak Blue models without a separate application. These are launch descriptions, not independently measured detection or remediation results.",
+        "analysis": "For a defender, the useful output is a reproducible finding with enough context to decide what to do next. A trial should ask whether the affected code path is reachable, whether the proposed fix preserves intended behaviour, and whether tests cover the failure. Measure noise and review effort, not only the number of alerts. Begin with a repository whose owners have approved the assessment. Keep generated patches in the normal review process, with a human owner for acceptance and deployment. Cloud execution changes where work runs; it does not remove accountability.",
+        "source": "https://openai.com/index/devday-2026-recap/",
+        "sourceLabel": "OpenAI: DevDay 2026 Recap — Codex Security Cloud"
+      }
+    ],
+    "takeaway": "The common thread is that more work can now be delegated with less dependence on a local computer. The evaluation question should stay concrete: did the system complete an authorized task, leave inspectable evidence, and stop at the right boundary? For a small pilot, write those conditions down before connecting tools. Keep today’s launch claims separate from tomorrow’s observations, and retain failed examples as part of the evaluation. That makes the next decision easier to defend than choosing a tool from a demonstration alone."
+  }
 ]
