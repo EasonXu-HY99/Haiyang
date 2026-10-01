@@ -105,4 +105,48 @@
     ],
     "takeaway": "The common thread is that more work can now be delegated with less dependence on a local computer. The evaluation question should stay concrete: did the system complete an authorized task, leave inspectable evidence, and stop at the right boundary? For a small pilot, write those conditions down before connecting tools. Keep today’s launch claims separate from tomorrow’s observations, and retain failed examples as part of the evaluation. That makes the next decision easier to defend than choosing a tool from a demonstration alone."
   }
+  ,{
+    "date": "2026-10-01",
+    "slug": "2026-10-01-ai-briefing",
+    "title": "Argon arrives, retrieval gains context, and smaller decisions get their own model",
+    "summary": "Google’s phased frontier-model launch, Perplexity’s evidence-aware retrieval research, and a recent decision-model release offer three different ways to improve AI workflows.",
+    "scope": "Published 1 October 2026, Asia/Shanghai (UTC+8). Google and Perplexity sources are dated 30 September; Liquid AI d1 is a clearly labelled 29 September retrospective. Publication dates do not imply general availability.",
+    "intro": "October opens with a useful contrast: a model designed for long professional tasks, a retrieval model designed to find supporting evidence, and a model designed to return a structured decision. They address different problems, so a single leaderboard cannot tell us which belongs in a workflow. This AI-assisted news digest separates announcements from analysis. The observations below are proposed evaluation ideas, not hands-on results, and all performance claims remain attributed to their publishers.",
+    "cover": {
+      "src": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/g4_30-09-26_key-art_blog.width-1300.png",
+      "alt": "Google’s official Gemini 4 Argon announcement artwork, with white lettering on a blue background",
+      "caption": "Gemini 4 Argon announcement artwork from Google’s original launch post.",
+      "credit": "Google",
+      "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "width": 1300,
+      "height": 731
+    },
+    "items": [
+      {
+        "title": "Gemini 4 Argon: a phased launch for demanding work",
+        "date": "30 September 2026 · announcement; 1 October in Singapore at publication",
+        "news": "Google announced Gemini 4 Argon, initially rolling it out to trusted cyber defenders through its Fairwind Program. Wider developer, enterprise and consumer access is planned, rather than universally available now. Google describes strengths in software engineering, professional workflows and vulnerability remediation. It also expands the output limit to one million tokens; that is an output limit, not a claim about the input context window. Google reports benchmark improvements and says it is strengthening safeguards before broader access.",
+        "analysis": "For security practitioners, availability is the first practical constraint. An announcement is not a tool that every team can immediately deploy. When access becomes appropriate, a useful trial would compare a narrowly scoped repository investigation against a known baseline, recording missed findings and review effort. A longer output allowance may support extended work, but it also makes budgets and stopping conditions worth specifying. Treat benchmark leadership as a reason to investigate, not proof of reliability on an organization’s own systems. Require reproducible evidence and normal code review for any proposed remediation.",
+        "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "sourceLabel": "Google: Gemini 4 Argon"
+      },
+      {
+        "title": "Perplexity: retrieve the evidence around the answer",
+        "date": "30 September 2026 · research preview",
+        "news": "Perplexity introduced pplx-embed-v2-context-9b-preview, a contextual embedding model trained to retrieve supporting passages alongside an answer. Its research post describes a compression model that supplies relevance signals during training, without adding that teacher at retrieval time. A preview is available on Hugging Face; API availability is still being worked on. Perplexity reports strong results on ConTEB and context-bench, but acknowledges that it does not lead every domain. Context-bench is privately held by turbopuffer, which limits independent reproduction of those results.",
+        "analysis": "This targets a familiar retrieval problem: a sentence can look correct while belonging to the wrong version of a document. For a documentation assistant, an evaluation should check whether the returned evidence includes the product version, applicable date and qualifying conditions. Count answers that sound plausible but lack those details as failures. Compare contextual retrieval with a simpler baseline using the same corpus and answer budget. Better evidence retrieval could make review easier, but the answer generator still needs to use that evidence correctly. Model quality and final-answer quality remain separate measurements.",
+        "source": "https://www.perplexity.ai/pl/hub/blog/contextual-embedding-beyond-the-gold-passage",
+        "sourceLabel": "Perplexity Research: Contextual embedding beyond the gold passage"
+      },
+      {
+        "title": "Recent release: Liquid AI d1 returns decisions instead of prose",
+        "date": "29 September 2026 · retrospective; documentation checked 1 October",
+        "news": "Liquid AI’s d1 decision model offers a narrower interface than a conversational model. Its official documentation uses d1:free and describes three question types: Noul for a yes-or-no probability, Choice for named alternatives, and Score for an ordered rubric. A request supplies context and typed questions; the response reports probabilities and zero generated output tokens. Liquid positions the interface for classification, routing and scoring, while recommending language models for open-ended writing, summarization and complex multi-step reasoning.",
+        "analysis": "A bounded interface can simplify a support-ticket router because software receives a defined answer shape. It does not guarantee a correct classification or well-calibrated confidence on new data. Before connecting it to consequential actions, build a labelled sample with ambiguous and out-of-scope cases. Measure each category separately and decide when to abstain or request review. Zero output tokens describes the response mechanism; it should not be read as zero computation, zero latency or a permanent pricing promise. A sensible first experiment produces suggestions beside existing decisions, leaving the established process in control.",
+        "source": "https://docs.liquid.ai/lfm/models/decision-models",
+        "sourceLabel": "Liquid AI: Decision Models documentation"
+      }
+    ],
+    "takeaway": "The useful question is where a workflow currently fails. If it cannot find the right evidence, a larger reasoning model may not solve the underlying retrieval problem. If the output is a fixed category, unrestricted prose may create unnecessary parsing and review work. If the task really requires sustained investigation, access controls and a clear completion test become essential. Start with one failure mode, keep a small set of difficult examples, and compare changes against the same baseline. These launches suggest experiments worth running; they do not establish results for a particular team."
+  }
 ]
