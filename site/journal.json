@@ -149,4 +149,39 @@
     ],
     "takeaway": "The useful question is where a workflow currently fails. If it cannot find the right evidence, a larger reasoning model may not solve the underlying retrieval problem. If the output is a fixed category, unrestricted prose may create unnecessary parsing and review work. If the task really requires sustained investigation, access controls and a clear completion test become essential. Start with one failure mode, keep a small set of difficult examples, and compare changes against the same baseline. These launches suggest experiments worth running; they do not establish results for a particular team."
   }
+  ,{
+    "date": "2026-10-02",
+    "slug": "2026-10-02-ai-briefing",
+    "title": "Checkable science, open decision models, and a more human video interface",
+    "summary": "BootLoops puts verification at the centre of scientific workflows, Perplexity publishes decision-model weights, and Tavus previews Griffin—with important limits behind the headlines.",
+    "scope": "Published 2 October 2026, Asia/Shanghai (UTC+8). Sources and announcements are dated 1 October; the Perplexity model repository was created at 21:24 UTC, or 05:24 on 2 October in Singapore. Date-only announcements are not assigned an inferred release hour.",
+    "intro": "Today’s three stories explore different definitions of progress: a calculation another researcher can check, a decision model developers can inspect and run, and a video interface that reacts while someone is speaking. None of those achievements answers every question about reliability. This AI-assisted news digest summarises primary sources and separates publisher claims from practical analysis. It does not report personal experiments. The common evaluation question is whether a system improves a specific task under conditions that other people can understand and reproduce.",
+    "items": [
+      {
+        "title": "BootLoops: scientific value needs more than a correct calculation",
+        "date": "1 October 2026 · research essay and open-source toolkit",
+        "news": "In an Anthropic guest essay, physicist Matthew Schwartz describes BootLoops, an open-source toolkit and workflow for exact calculations in quantitative science. He reports using Claude to connect computational techniques across fields, with domain experts redirecting technically correct but initially unremarkable results toward useful questions. The essay also describes persistent problems: premature success claims, weak time estimates and long calculations that needed human redirection. BootLoops is owned and maintained by Schwartz, rather than being an Anthropic product; the disclosure says he has been a visiting researcher there.",
+        "analysis": "The transferable idea is to choose work with an independent check. For a small learning project, reproduce a published numerical result and retain the inputs, code, tolerances and comparison output. Treat scientific novelty as a separate question for someone with relevant expertise. An agent’s ability to port code or run a calculation does not establish that its interpretation matters. The essay is an account of one research programme, not a controlled productivity trial across disciplines. Its most useful lesson for builders is to define completion before delegating and preserve enough evidence to challenge the conclusion.",
+        "source": "https://www.anthropic.com/research/claude-shaped-science",
+        "sourceLabel": "Matthew Schwartz via Anthropic: Claude-shaped science"
+      },
+      {
+        "title": "Perplexity publishes weights for a structured decision model",
+        "date": "1 October 2026 UTC · repository release; 2 October UTC+8",
+        "news": "Perplexity published pplx-decider-v1-27b on Hugging Face under Apache 2.0. The model card describes a Qwen3.8-27B fine-tune and provides examples for choosing among categories, returning a yes-or-no probability, and accepting images. Its supplied inference setup requires Python 3.12 or later and a CUDA GPU with roughly 49 GiB for weights plus additional working memory. The card reports an overall 85.71% across eleven benchmarks, measured through the Perplexity API, while its table shows that other models lead on several individual tasks.",
+        "analysis": "Compared with yesterday’s hosted decision-model discussion, downloadable weights create a distinct option for inspecting deployment code and controlling where inference runs. That does not make deployment lightweight: memory, dependencies and operational ownership still need planning. Before adopting a classifier, assemble examples from the actual intended task, including ambiguous inputs and unfamiliar categories. Compare error rates by class and define a review path when confidence is misleading. API benchmark numbers should not be assumed to describe every local configuration. Test the exact weights, precision and inference implementation that would be used, and keep that configuration with the results.",
+        "source": "https://huggingface.co/perplexity-ai/pplx-decider-v1-27b",
+        "sourceLabel": "Perplexity: pplx-decider-v1-27b model card"
+      },
+      {
+        "title": "Griffin: natural video interaction remains a research preview",
+        "date": "1 October 2026 · limited research preview",
+        "news": "Tavus introduced Griffin, a video-to-video system that processes incoming audio and video while deciding how to respond and generating speech and video. The company reports that 48% of participants in a one-minute video-call study believed they had spoken to a person. Tavus presents this as a video Turing-test milestone, but says Griffin-Lite is limited to selected trusted testers. The announcement explicitly states that it is not currently available for customer use and that further safety and disclosure work is needed.",
+        "analysis": "Responsive turn-taking could be useful for practice conversations or interfaces where a user points a camera at an object. However, a short study about perceived humanness does not establish factual accuracy, teaching quality or dependable task completion. For a future evaluation, measure whether interruptions work, whether the system notices relevant visual changes, and whether it answers correctly over longer sessions. Clearly identifying an AI participant should be part of the experience. For security awareness, the announcement is also a reminder that a convincing face and voice are not sufficient evidence of identity or authority.",
+        "source": "https://www.tavus.io/griffin",
+        "sourceLabel": "Tavus: Introducing Griffin"
+      }
+    ],
+    "takeaway": "These releases invite different tests. A scientific workflow needs reproducible calculations and expert interpretation. A decision model needs representative labels, calibrated expectations and deployment checks. A video interface needs transparent identity and reliable interaction as well as a convincing presentation. Keep those success criteria separate when comparing tools. A practical next step is to write one acceptance test and one failure example before trying a new system; doing so makes a demonstration easier to judge and a failed experiment more informative. Progress becomes useful when its evidence matches the task someone actually needs completed."
+  }
 ]
