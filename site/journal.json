@@ -60,8 +60,8 @@
       "width": 1200,
       "height": 630
     }
-  }
-  ,{
+  },
+  {
     "date": "2026-09-30",
     "slug": "2026-09-30-ai-briefing",
     "title": "After DevDay: model costs, persistent agents, and security in the cloud",
@@ -104,8 +104,8 @@
       }
     ],
     "takeaway": "The common thread is that more work can now be delegated with less dependence on a local computer. The evaluation question should stay concrete: did the system complete an authorized task, leave inspectable evidence, and stop at the right boundary? For a small pilot, write those conditions down before connecting tools. Keep today’s launch claims separate from tomorrow’s observations, and retain failed examples as part of the evaluation. That makes the next decision easier to defend than choosing a tool from a demonstration alone."
-  }
-  ,{
+  },
+  {
     "date": "2026-10-01",
     "slug": "2026-10-01-ai-briefing",
     "title": "Argon arrives, retrieval gains context, and smaller decisions get their own model",
@@ -148,8 +148,8 @@
       }
     ],
     "takeaway": "The useful question is where a workflow currently fails. If it cannot find the right evidence, a larger reasoning model may not solve the underlying retrieval problem. If the output is a fixed category, unrestricted prose may create unnecessary parsing and review work. If the task really requires sustained investigation, access controls and a clear completion test become essential. Start with one failure mode, keep a small set of difficult examples, and compare changes against the same baseline. These launches suggest experiments worth running; they do not establish results for a particular team."
-  }
-  ,{
+  },
+  {
     "date": "2026-10-02",
     "slug": "2026-10-02-ai-briefing",
     "title": "Checkable science, open decision models, and a more human video interface",
@@ -182,9 +182,26 @@
         "sourceLabel": "Tavus: Introducing Griffin"
       }
     ],
-    "takeaway": "These releases invite different tests. A scientific workflow needs reproducible calculations and expert interpretation. A decision model needs representative labels, calibrated expectations and deployment checks. A video interface needs transparent identity and reliable interaction as well as a convincing presentation. Keep those success criteria separate when comparing tools. A practical next step is to write one acceptance test and one failure example before trying a new system; doing so makes a demonstration easier to judge and a failed experiment more informative. Progress becomes useful when its evidence matches the task someone actually needs completed."
-  }
-  ,{
+    "takeaway": "These releases invite different tests. A scientific workflow needs reproducible calculations and expert interpretation. A decision model needs representative labels, calibrated expectations and deployment checks. A video interface needs transparent identity and reliable interaction as well as a convincing presentation. Keep those success criteria separate when comparing tools. A practical next step is to write one acceptance test and one failure example before trying a new system; doing so makes a demonstration easier to judge and a failed experiment more informative. Progress becomes useful when its evidence matches the task someone actually needs completed.",
+    "visual": {
+      "focus": "What makes an AI result trustworthy?",
+      "branches": [
+        {
+          "label": "Check the calculation",
+          "detail": "BootLoops: reproducible work and expert interpretation."
+        },
+        {
+          "label": "Inspect the decision",
+          "detail": "pplx-decider: open weights, task-specific evaluation."
+        },
+        {
+          "label": "Verify the interaction",
+          "detail": "Griffin: responsive video is not proof of accuracy."
+        }
+      ]
+    }
+  },
+  {
     "date": "2026-10-03",
     "slug": "2026-10-03-ai-briefing",
     "title": "Weekend review: securing AI identities and checking mathematical discoveries",
@@ -209,7 +226,20 @@
         "sourceLabel": "Meta AI Research: Solving Open Research Problems Together"
       }
     ],
-    "takeaway": "A practical project notebook could use four fields: the task, the permitted actions, the evidence produced and the unresolved questions. For a security assistant, evidence might be a trace showing that a restricted operation was rejected. For a mathematics assistant, it might be an independently checked step. Keep publisher claims in a separate column from observations made in the project itself. This simple habit helps prevent a polished explanation from becoming an unsupported conclusion. It also makes later comparisons fairer: another tool should face the same task and the same acceptance criteria. The aim is not to collect the largest number of impressive demonstrations, but to learn which narrow capabilities remain dependable when someone checks the details."
+    "takeaway": "A practical project notebook could use four fields: the task, the permitted actions, the evidence produced and the unresolved questions. For a security assistant, evidence might be a trace showing that a restricted operation was rejected. For a mathematics assistant, it might be an independently checked step. Keep publisher claims in a separate column from observations made in the project itself. This simple habit helps prevent a polished explanation from becoming an unsupported conclusion. It also makes later comparisons fairer: another tool should face the same task and the same acceptance criteria. The aim is not to collect the largest number of impressive demonstrations, but to learn which narrow capabilities remain dependable when someone checks the details.",
+    "visual": {
+      "focus": "Accountability surrounds the model",
+      "branches": [
+        {
+          "label": "Control the access",
+          "detail": "Microsoft: identify the agent, limit permissions, trace actions."
+        },
+        {
+          "label": "Review the argument",
+          "detail": "Meta: researchers guide the work and check the proofs."
+        }
+      ]
+    }
   },
   {
     "date": "2026-10-04",
@@ -236,7 +266,20 @@
         "sourceLabel": "Behnam et al.: RealCompanion, arXiv v2"
       }
     ],
-    "takeaway": "For a small memory experiment, create a timeline containing a few known facts, one correction and several irrelevant details. Ask questions at different points, including questions that cannot be answered from the available evidence. Score whether the answer cites the right observation, respects the correction and admits uncertainty. Keep the timeline fixed when comparing configurations. This gives a clearer view of behaviour than merely increasing the context window and asking whether the conversation feels better. The exercise can stay entirely synthetic, avoiding the need to collect sensitive personal material. Its purpose is to reveal when information helps, when it distracts and when a system silently fills a gap. A good memory feature should make those distinctions easier for the user to inspect."
+    "takeaway": "For a small memory experiment, create a timeline containing a few known facts, one correction and several irrelevant details. Ask questions at different points, including questions that cannot be answered from the available evidence. Score whether the answer cites the right observation, respects the correction and admits uncertainty. Keep the timeline fixed when comparing configurations. This gives a clearer view of behaviour than merely increasing the context window and asking whether the conversation feels better. The exercise can stay entirely synthetic, avoiding the need to collect sensitive personal material. Its purpose is to reveal when information helps, when it distracts and when a system silently fills a gap. A good memory feature should make those distinctions easier for the user to inspect.",
+    "visual": {
+      "focus": "When should an assistant remember?",
+      "branches": [
+        {
+          "label": "Retain visual evidence",
+          "detail": "OneStreamer: record events while new frames arrive."
+        },
+        {
+          "label": "Retrieve with restraint",
+          "detail": "RealCompanion: recall relevant history without inventing a profile."
+        }
+      ]
+    }
   },
   {
     "date": "2026-10-05",
@@ -263,9 +306,22 @@
         "sourceLabel": "Meta AI Research: Developing Capable Models Responsibly"
       }
     ],
-    "takeaway": "Before evaluating an action-taking system, write down what progress looks like and what should cause it to stop. Use a small task whose state can be inspected independently, then introduce one controlled interruption. Observe whether the system notices the change, updates its next step and leaves a clear record. This proposal applies to a toy software workflow without requiring a robot or a frontier training run. Avoid drawing broad conclusions from one successful trial: repeat with different initial states and retain failures. The most informative result may be discovering that an apparently minor assumption was carrying the entire demonstration. A useful project report explains those assumptions, the boundary of the experiment and the questions that remain open."
-  }
-  ,{
+    "takeaway": "Before evaluating an action-taking system, write down what progress looks like and what should cause it to stop. Use a small task whose state can be inspected independently, then introduce one controlled interruption. Observe whether the system notices the change, updates its next step and leaves a clear record. This proposal applies to a toy software workflow without requiring a robot or a frontier training run. Avoid drawing broad conclusions from one successful trial: repeat with different initial states and retain failures. The most informative result may be discovering that an apparently minor assumption was carrying the entire demonstration. A useful project report explains those assumptions, the boundary of the experiment and the questions that remain open.",
+    "visual": {
+      "focus": "Plan the next step—and the stopping point",
+      "branches": [
+        {
+          "label": "Track intermediate progress",
+          "detail": "ProWAM: sparse visual sub-goals guide robot actions."
+        },
+        {
+          "label": "Contain the experiment",
+          "detail": "Meta: sandbox review, protected logs and stop mechanisms."
+        }
+      ]
+    }
+  },
+  {
     "date": "2026-10-06",
     "slug": "2026-10-06-ai-briefing",
     "title": "From promising results to dependable work: mathematics, experiments, and engineering",
@@ -298,6 +354,23 @@
         "sourceLabel": "Anthropic: Claude Frontier Academy announcement"
       }
     ],
-    "takeaway": "The next useful step need not be a bigger model or a larger project. Take one existing demonstration and write down what would invalidate its conclusion. Perhaps a comparison uses different inputs, a proof relies on an unchecked step, or a workflow only succeeds while its author is watching. Turn that weakness into a small acceptance test, then retain the result with the project. This is a proposed working method, not a report of an experiment performed here. It connects research reading with practical engineering while keeping claims proportional to the evidence available."
+    "takeaway": "The next useful step need not be a bigger model or a larger project. Take one existing demonstration and write down what would invalidate its conclusion. Perhaps a comparison uses different inputs, a proof relies on an unchecked step, or a workflow only succeeds while its author is watching. Turn that weakness into a small acceptance test, then retain the result with the project. This is a proposed working method, not a report of an experiment performed here. It connects research reading with practical engineering while keeping claims proportional to the evidence available.",
+    "visual": {
+      "focus": "From an idea to dependable work",
+      "branches": [
+        {
+          "label": "Propose and prove",
+          "detail": "Arithmetic geometry: human strategy meets AI collaboration."
+        },
+        {
+          "label": "Compare fairly",
+          "detail": "NOEMA: keep experiment conditions consistent and inspectable."
+        },
+        {
+          "label": "Build and hand over",
+          "detail": "Frontier Academy: assessed practice in deploying useful systems."
+        }
+      ]
+    }
   }
 ]
