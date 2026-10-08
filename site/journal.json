@@ -416,4 +416,47 @@
       ]
     }
   }
+  ,{
+    "date": "2026-10-08",
+    "slug": "2026-10-08-ai-briefing",
+    "title": "Smaller models, visible provenance, and a protected home for personal AI",
+    "summary": "Haiku 5.5 targets inexpensive repeated tasks, SynthID Detector broadens access, and Android outlines stronger isolation for personal AI context.",
+    "scope": "8 October 2026 · Asia/Shanghai (UTC+8), evening edition. All three official announcements are dated 7 October. Date-only publication labels do not establish exact release hours or guarantee that every announcement falls within a strict 24-hour window.",
+    "intro": "Today’s selection asks three practical questions: how much intelligence does a repeated task need, what can a media-verification result actually establish, and where should an assistant keep sensitive context? Each announcement addresses one part of an AI workflow rather than solving the entire trust problem. This AI-assisted news digest separates publisher statements from proposed evaluation ideas. It does not claim hands-on testing or access to private systems. The editorial reading map connects the stories to their main decision points. Existing product announcements and future engineering plans are identified separately so that a roadmap does not read like a feature already available on every device.",
+    "items": [
+      {
+        "title": "Haiku 5.5 makes narrow, repeated work a more prominent design choice",
+        "date": "7 October 2026 · model launch",
+        "news": "Anthropic launched Claude Haiku 5.5 for high-volume tasks such as summarization, classification and supporting-agent work, with an adjustable effort setting. On the Claude Platform, its announced prices for prompts up to 100,000 tokens are $0.10 per million input tokens and $0.50 per million output tokens; longer prompts use higher rates. The company also cut Sonnet 5.5 cache-read pricing. Its cost and performance comparisons are vendor evaluations, and the announcement continues to position larger models for more complex agentic coding.",
+        "analysis": "A useful trial would separate routine requests from difficult exceptions before comparing models. Measure the total cost of an accepted result, including retries and review, rather than multiplying a token price by an assumed workload. A smaller model could handle a bounded extraction task while uncertain cases move to a more capable reviewer. That routing policy itself needs evaluation: confidently misclassified exceptions may erase the apparent saving. Keep prompts, test examples and acceptance rules fixed, and record latency alongside correctness. Lower prices create room for experiments; they do not establish that every existing workflow should switch models.",
+        "source": "https://www.anthropic.com/claude-haiku-5-5",
+        "sourceLabel": "Anthropic: Introducing Claude Haiku 5.5"
+      },
+      {
+        "title": "SynthID Detector expands public access to watermark checks",
+        "date": "7 October 2026 · verification-tool announcement",
+        "news": "Google announced global English-language access to SynthID Detector, expanding beyond its earlier audience of media professionals. The tool checks images, video and audio for supported AI provenance signals. Google names its own tools and partners including OpenAI, NVIDIA and Kakao, with Apple support described as forthcoming. The announcement concerns identification through the supported ecosystem; it does not establish a universal detector for every AI-generated file circulating online.",
+        "analysis": "For a newsroom or security-awareness exercise, a detector result should be one entry in an evidence record. Preserve the original file, note which service was used and distinguish a supported watermark finding from a judgment about the story depicted. A missing signal should not be treated as proof of human authorship. Likewise, identifying AI involvement does not tell a reader whether the accompanying claim is accurate. Compare the media with its original publication and relevant contextual evidence. These are proposed verification practices, not independent measurements of the detector’s error rates or resilience to editing.",
+        "source": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/",
+        "sourceLabel": "Google DeepMind: Expanding SynthID Detector"
+      },
+      {
+        "title": "Android AISeal separates protected context storage from future in-vault inference",
+        "date": "7 October 2026 · architecture announcement and roadmap",
+        "news": "Google introduced Android on-device AI seal, or AISeal, built on Android Virtualization Framework and the protected KVM hypervisor. It describes a hardware-isolated vault for personal context, with protected storage as the foundational rollout milestone. In-vault model execution and agents, direct NPU assignment, and confidential cloud extensions appear in the forward-looking roadmap. Those planned capabilities should not be assumed to be present on every Android handset today. The security properties are claims about the specified architecture and its boundaries.",
+        "analysis": "This develops the privacy question raised by local AI: keeping processing on a device is only one part of controlling access. An evaluation should identify which components can read context, where inference actually runs and what information may leave the protected environment. Device support, operating-system integration and the implemented configuration all matter. Isolation also cannot establish that an assistant’s final answer is correct or that a user intended every requested action. When reviewing an implementation, separate protection against unauthorized data access from controls governing legitimate but overly broad requests.",
+        "source": "https://blog.google/security/enabling-the-next-gen-enclave-architecture-for-on-device-ai-on-android/",
+        "sourceLabel": "Google Android Security: Next-Gen Enclave for On-Device AI"
+      }
+    ],
+    "takeaway": "A practical evaluation notebook can give each new tool one question it must answer with evidence. For a small model, ask whether the task still passes after accounting for corrections. For a provenance tool, ask exactly what a positive or negative result means. For a protected environment, ask where its boundary begins and ends. Avoid collapsing these into a single claim that a product is trustworthy. Clear boundaries make tools easier to combine and failures easier to investigate. Start with a limited, repeatable exercise and document what remains unknown before expanding the workflow. None of the proposed exercises here has been performed for this edition.",
+    "visual": {
+      "focus": "Three different tests of trust",
+      "branches": [
+        {"label":"Match the model to the task","detail":"Haiku 5.5: assess accepted-result cost, retries and difficult exceptions."},
+        {"label":"Interpret the evidence","detail":"SynthID: supported provenance signals are not universal authenticity verdicts."},
+        {"label":"Locate the data boundary","detail":"Android AISeal: distinguish protected storage from planned inference capabilities."}
+      ]
+    }
+  }
 ]
