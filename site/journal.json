@@ -459,4 +459,47 @@
       ]
     }
   }
+  ,{
+    "date": "2026-10-09",
+    "slug": "2026-10-09-ai-briefing",
+    "title": "From findings to finished work: AI scanners, enterprise agents, and a UV sky map",
+    "summary": "Anthropic offers opt-in security scans for open-source maintainers, Google introduces the Gemini agent for work, and an astronomy project makes the boundary between measurement and prediction visible.",
+    "scope": "9 October 2026 · Asia/Shanghai (UTC+8), evening edition. The three announcements were published on 8 October. Their date-only labels do not establish exact release hours; this selection does not claim a strict 24-hour publication window.",
+    "intro": "A finished artifact is often easier to admire than to evaluate. A vulnerability report can look convincing before its reproducer runs. A business document can look complete while relying on the wrong records. A seamless scientific map can include regions that no instrument directly observed. Today’s announcements make those distinctions especially useful. This AI-assisted news digest separates reported capabilities from editorial analysis and proposed evaluation steps. It includes no personal testing claims or employer case material. The reading map offers three routes into the stories: validate the finding, constrain the agent, and inspect the provenance. Each route ends at an original source readers can examine themselves.",
+    "items": [
+      {
+        "title": "OSS Scanner offers faster reports, with validation left to maintainers",
+        "date": "8 October 2026 · opt-in security service",
+        "news": "Anthropic launched OSS Scanner, a free periodic vulnerability-scanning service for eligible open-source projects. Core maintainers can apply through the linked GitHub enrollment process; admission is assessed case by case. Reports include a reproducer, an explanation and, when available, a proposed patch. Crucially, this fast-track service delivers model-generated findings without human triage. Anthropic says its separate coordinated-disclosure process for human-verified findings will continue. The announcement acknowledges incorrect reports, duplicate issues and potentially inflated severity ratings.",
+        "analysis": "For a maintainer, the useful question is whether earlier access produces fixes without overwhelming the review queue. Start with a named owner for incoming reports and a repeatable way to validate reproduction steps in an isolated environment. Review a proposed patch against the project’s threat model and regression checks before accepting it. Track duplicate reports and time spent rejecting findings alongside confirmed defects. Free scanning still consumes engineering attention. This service is distinct from the broader Cyber Verification Program covered earlier this week: it supplies project-specific reports, rather than simply changing access to model capabilities.",
+        "source": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
+        "sourceLabel": "Anthropic: Launching an opt-in vulnerability-finding service"
+      },
+      {
+        "title": "Google positions Gemini as a persistent enterprise agent",
+        "date": "8 October 2026 · Gemini at Work announcement",
+        "news": "Google Cloud introduced the Gemini agent, combining questions, knowledge work and coding with persistent cloud execution. Its announcement describes reusable skills, connected business tools and model selection across Gemini and Claude. It also describes agent identities, permission controls, audit trails, sandboxing and project spending caps. Google presents financial-services and legal specializations as previews. These are publisher-described capabilities and rollout announcements, not evidence that every feature is enabled in every customer environment.",
+        "analysis": "A practical pilot could ask an agent to assemble a project update from a small, explicitly shared folder. Define which records it may read, where drafts belong and which actions require review. Check that logs identify the agent and that a permission change affects subsequent work. Include an outdated document and an inaccessible document in the evaluation: a polished answer should not conceal missing evidence. For longer tasks, inspect what happens when spending reaches the configured limit. The main implementation question is whether the organization can trace and control the work as easily as it can request it.",
+        "source": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026",
+        "sourceLabel": "Google Cloud: Introducing the Gemini agent"
+      },
+      {
+        "title": "A complete ultraviolet sky map keeps predicted regions identifiable",
+        "date": "8 October 2026 · project account published; map dated 16 September",
+        "news": "Astrophysicist Brice Ménard described using Claude Science to combine ultraviolet surveys and estimate missing regions of the sky. The accompanying technical project page explains that gap filling uses statistical regression rather than an image generator. It publishes provenance and uncertainty information alongside the map. The page also states that the work has not yet undergone human peer review. A complete-looking visualization therefore includes both observational evidence and explicitly labelled inference.",
+        "analysis": "This is an engaging teaching resource for comparing how the sky appears at different wavelengths. For research use, inspect the provenance layer before interpreting a feature: a prediction cannot establish a newly observed object in an unobserved region. The project’s own caveats also matter when comparing its map with the data used to construct it. More generally, scientific AI outputs should keep measurements, transformations and estimates distinguishable. A smooth visual presentation is valuable for exploration, but should never remove the information needed to judge what each region can support.",
+        "source": "https://menard.pha.jhu.edu/uvmap/",
+        "sourceLabel": "Brice Ménard: UV sky map, method, provenance and limitations"
+      }
+    ],
+    "takeaway": "The common lesson is to preserve the path from an output back to its evidence. Ask what can be reproduced, what was permitted and what was actually measured. Those questions produce different checks in different settings, but all make a result easier to challenge constructively. A useful evaluation record includes the input, the expected boundary, the observed output and the unresolved question. Keep that record small enough to repeat after a product update. The evaluation ideas in this edition are editorial suggestions, not experiments performed for this journal.",
+    "visual": {
+      "focus": "Inspect what stands behind the finished result",
+      "branches": [
+        {"label":"Validate the finding","detail":"OSS Scanner: reproduce reports and review patches before accepting them."},
+        {"label":"Constrain the agent","detail":"Gemini at Work: trace identity, permissions, actions and spending."},
+        {"label":"Inspect the provenance","detail":"UV sky map: distinguish observed pixels from statistical estimates."}
+      ]
+    }
+  }
 ]
