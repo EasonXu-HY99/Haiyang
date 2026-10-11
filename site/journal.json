@@ -545,4 +545,47 @@
       ]
     }
   }
+  ,{
+    "date": "2026-10-11",
+    "slug": "2026-10-11-ai-briefing",
+    "title": "Weekend catch-up: decision models meet multimodal inputs and local coding",
+    "summary": "Microsoft-Decision-1 scores bounded choices, Cloudflare Clef-omni adds audio and video, and JetBrains Mellum2.1 targets self-hosted coding agents.",
+    "scope": "11 October 2026 · Asia/Shanghai (UTC+8), evening edition. Weekend catch-up on three previously unreported releases from 8–9 October, within the past seven days. These are explicitly recent-week selections, not claims of new launches in the latest 24 hours.",
+    "intro": "A useful AI system often needs several kinds of work: choosing where a request belongs, interpreting its evidence and producing a change that someone can review. This weekend edition looks at three releases that address those needs in different ways. The selection draws on official announcements read today and avoids repeating stories already covered in this journal. This AI-assisted news digest distinguishes vendor descriptions from editorial analysis and proposed trials. No hands-on performance results are claimed. The reading map provides a practical route through the choices: define the decision, check the media evidence, and inspect the code change. Release dates remain visible so that a useful catch-up does not become misleading breaking news.",
+    "items": [
+      {
+        "title": "Microsoft-Decision-1 returns scores for predefined choices",
+        "date": "9 October 2026 · recent-week model announcement",
+        "news": "Microsoft introduced Microsoft-Decision-1, based on post-training Qwen3.5-9B for single-pass decision scoring. It supports binary questions, multiple-choice options and ratings, returning probability scores rather than requiring a prose answer. The announcement positions it for routing, classification and evaluating proposed agent actions, with access through Microsoft Foundry. Its reported quality, latency and calibration results are Microsoft’s own evaluations. Those results establish what the publisher tested, not how accurately the model will classify an organization’s particular queue.",
+        "analysis": "A bounded pilot could route sanitized support tickets among a few clearly defined categories. Include an uncertain category and compare the model’s confidence with actual correctness on held-out examples. Record which mistakes are expensive: a misrouted routine request and a missed urgent issue do not have equal consequences. Keep routing separate from remediation, so a classification result cannot independently trigger an account change. Scores are useful inputs to a workflow, but they are not explanations of the underlying evidence. Review both the chosen labels and cases that the system sends for human attention.",
+        "source": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/",
+        "sourceLabel": "Microsoft: Introducing Microsoft-Decision-1"
+      },
+      {
+        "title": "Clef-omni combines media inputs in a decision request",
+        "date": "9 October 2026 · recent-week multimodal release",
+        "news": "Cloudflare released Clef-omni for decisions using audio, video, images and text, and linked downloadable weights. The model builds on Qwen3-Omni’s comprehension components and returns structured scores instead of generated speech or prose. The same announcement changes hosted Clef-flash pricing while reducing its context window from 64k to 24k; Cloudflare says the downloadable weights are unchanged. Multimodal support and that hosted-service trade-off are separate changes. The supplied benchmark table also shows that Clef-omni does not lead every task against the other Clef variants.",
+        "analysis": "This could simplify a narrow media-classification pipeline that otherwise needs separate transcription and image-analysis stages. Test whether combining inputs improves the actual decision, rather than assuming fewer API calls must produce better evidence. Include missing audio, poor lighting and contradictory signals in a representative evaluation set. Measure preprocessing and upload time alongside inference latency. For an existing Clef-flash integration, check long requests before adopting the cheaper hosted configuration. A shorter context limit can matter even when most examples are small. Keep source media available for permitted human review when a score cannot resolve an ambiguous case.",
+        "source": "https://blog.cloudflare.com/clef-faster-cheaper-multimodal/",
+        "sourceLabel": "Cloudflare: Clef-omni and updates to Clef and Clef-flash"
+      },
+      {
+        "title": "Mellum2.1 focuses post-training on repository work",
+        "date": "8 October 2026 · recent-week open-model release",
+        "news": "JetBrains released Mellum2.1, an Apache 2.0 model with 12 billion total parameters and 2.5 billion active parameters. Its architecture remains unchanged from Mellum2; the announcement emphasizes reinforcement learning in sandboxed environments to improve repository exploration, editing and checking changes. Weights are available through Hugging Face. At announcement time, GGUF builds and the multi-token-prediction head were described as coming soon. JetBrains’ speed comparisons use a specified serving setup, including an H200, and should not be read as laptop performance guarantees.",
+        "analysis": "For a self-hosted coding assistant, start with a disposable copy of a small repository and a task whose expected behavior is already clear. Inspect the diff and run meaningful checks independently of the model’s summary. Measure memory use, response time and review effort on the hardware intended for deployment. Active parameter count alone does not describe the total memory requirement. Local hosting gives a team more control over where inference happens, but connected tools, logs and network access still require configuration. Treat the release as a candidate for a measured trial, with packaging availability checked separately.",
+        "source": "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
+        "sourceLabel": "JetBrains: Mellum2.1 Gets to Work"
+      }
+    ],
+    "takeaway": "Match the output to the job before comparing models. A probability can help route a request, a multimodal score can combine evidence, and a patch can express a proposed software change. Each needs a different acceptance rule. For a first experiment, write down one successful case, one ambiguous case and one case that must be rejected. Keep those examples stable while changing the model or deployment configuration. That makes it easier to see whether a release improves the workflow rather than merely changing its presentation. The trial ideas in this edition are editorial suggestions, not results from tests performed for this journal.",
+    "visual": {
+      "focus": "Choose the output, then define its acceptance test",
+      "branches": [
+        {"label":"Score a bounded choice","detail":"Microsoft-Decision-1: check calibration and allow uncertain cases."},
+        {"label":"Combine media evidence","detail":"Clef-omni: test missing or conflicting signals and context limits."},
+        {"label":"Review a code change","detail":"Mellum2.1: inspect diffs and measure the intended hardware."}
+      ]
+    }
+  }
 ]
