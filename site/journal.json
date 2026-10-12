@@ -588,4 +588,47 @@
       ]
     }
   }
+  ,{
+    "date": "2026-10-12",
+    "slug": "2026-10-12-ai-briefing",
+    "title": "Deployment choices: Mistral’s preview, richer retrieval, and local agent boundaries",
+    "summary": "A recent-week review of Mistral Large 4, Perplexity’s multi-vector retrieval models, and Microsoft’s plans for local inference and sandboxed agent tools.",
+    "scope": "12 October 2026 · Asia/Shanghai (UTC+8), evening edition. Recent-week selections from 6–7 October, checked against original sources today. These previously uncovered announcements are labelled as a catch-up rather than presented as launches from the latest 24 hours. Planned availability is distinguished from released capabilities.",
+    "intro": "Choosing an AI component also means choosing how it will be operated. A hosted preview gives a team a way to evaluate a model before downloadable weights arrive. A richer search representation changes the balance between retrieval quality, storage and latency. A local coding model changes where inference runs, while a sandbox determines what its tools can access. Today’s selection examines those three decisions using official sources. This AI-assisted news digest separates publisher statements from editorial analysis. It includes no personal testing claims, private incident material or assumed rollout dates. The reading map connects each announcement to the operational question that should come before a wider trial.",
+    "items": [
+      {
+        "title": "Mistral Large 4 is available as a preview before its planned weight release",
+        "date": "6 October 2026 · recent-week public-preview announcement",
+        "news": "Mistral introduced a public API preview of Mistral Large 4, a multimodal mixture-of-experts model aimed at coding, agent workflows and specialized enterprise work. The announcement says downloadable weights are planned for the end of October. That is a future release commitment, not evidence that self-hosting is available today. Mistral also describes ongoing training and partner red-teaming. Its capability comparisons are reported evaluations under particular conditions; this journal has not independently reproduced them.",
+        "analysis": "For an evaluation, separate the question of model quality from the question of deployment readiness. A hosted preview can help test a bounded task with non-sensitive examples, but it cannot establish the hardware requirements or operational behavior of an eventual self-hosted version. Record the exact model version, task and acceptance criteria, since a changing preview may produce different results later. For a security use case, check whether the proposed answer cites supporting evidence and identifies uncertainty. Benchmark claims should motivate a controlled comparison, not substitute for one on the team’s intended work.",
+        "source": "https://mistral.ai/news/mistral-large-4/",
+        "sourceLabel": "Mistral: Introducing Mistral Large 4"
+      },
+      {
+        "title": "Perplexity keeps token-level detail for visual and textual retrieval",
+        "date": "7 October 2026 · recent-week embedding-model announcement",
+        "news": "Perplexity released pplx-embed-v2-late in 0.6B and 9B sizes. These late-interaction models retain multiple vectors per input and can search text, images and rendered document pages. A shared representation space allows the smaller model to encode queries against documents indexed by the larger one. The approach preserves finer matching detail, but Perplexity explicitly notes higher storage and candidate-scoring costs than single-vector retrieval. This is distinct from its contextual embedding release covered earlier in the journal.",
+        "analysis": "A useful trial could compare retrieval over the same small collection of manuals containing tables, diagrams and ordinary paragraphs. Ask questions whose answers depend on layout, then inspect whether the retrieved page actually contains the required evidence. Measure index size and query time as well as ranking quality. A mixed-size configuration may shift expensive work to indexing, but its value depends on how often documents change and queries arrive. Retrieving the correct page is also only one step: any answer-generation component still needs to interpret the evidence faithfully and link back to it.",
+        "source": "https://www.perplexity.ai/en-GB/hub/blog/multimodal-embeddings-beyond-a-single-vector",
+        "sourceLabel": "Perplexity: Multimodal embeddings beyond a single vector"
+      },
+      {
+        "title": "Microsoft separates local inference from restrictions on agent tools",
+        "date": "7 October 2026 · recent-week announcement and rollout plans",
+        "news": "Microsoft described planned GitHub Copilot orchestration between local and cloud models, with automatic placement targeted for the end of October. It also explained Microsoft Execution Containers, which apply policies to agent-launched processes. The article distinguishes process sandboxing from checks performed inside the agent application: built-in file tools and remote MCP connections do not share the same operating-system-enforced boundary as child processes. Local inference alone does not make the entire session offline or constrain every action.",
+        "analysis": "Before a pilot, draw a simple inventory of the model endpoint, shell processes, local services and remote connectors. Identify which component enforces each permission. A read-only repository workflow should be checked for attempted writes and network access using controlled examples, regardless of whether its model runs locally. Also confirm which rollout features are actually enabled on the intended machine. This announcement is useful because it names different boundaries rather than treating local execution as one uniform property. A model choice and a tool-access policy solve different operational problems and should be reviewed separately.",
+        "source": "https://commandline.microsoft.com/local-models-sandboxed-tools-github-windows/",
+        "sourceLabel": "Microsoft: Local models and sandboxed tools for GitHub Copilot"
+      }
+    ],
+    "takeaway": "Start with a small deployment record: what is available now, what is promised later, where data is processed and how success will be measured. Attach one representative input and its expected result. For a preview model, retain the version. For retrieval, retain the evidence page and index settings. For an agent, retain the effective permissions and action log. These records make comparisons easier when a component changes. They also help explain why a system that looks similar in a demonstration may behave differently in a real workflow. The proposed checks in this edition are editorial guidance, not experiments performed for this journal.",
+    "visual": {
+      "focus": "Check availability, evidence and execution boundaries",
+      "branches": [
+        {"label":"Preview versus deployment","detail":"Mistral Large 4: distinguish API access from planned downloadable weights."},
+        {"label":"Detail versus retrieval cost","detail":"Perplexity: compare relevant pages, index size and query latency."},
+        {"label":"Inference versus tool access","detail":"GitHub Copilot: identify which boundary enforces each permission."}
+      ]
+    }
+  }
 ]
