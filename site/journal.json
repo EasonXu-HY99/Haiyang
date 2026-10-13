@@ -631,4 +631,57 @@
       ]
     }
   }
+,
+{
+  "date": "2026-10-13",
+  "slug": "2026-10-13-ai-briefing",
+  "title": "Memory, decisions and audit trails: three practical AI updates",
+  "summary": "Meta launches Muse Wonder, H2O reports a compact decision-model result, and GitHub separates Copilot identity telemetry from content capture.",
+  "scope": "13 October 2026 · Asia/Shanghai (UTC+8), evening edition. Sources dated 12 October, checked today. H2O’s announcement reports a leaderboard snapshot from 7 October; that measurement is not a new result from today. Publication dates are retained where an exact publication time is unavailable.",
+  "intro": "Today’s AI news spans three different kinds of work: carrying context across a long task, selecting an answer from a fixed set, and recording who used an assistant. These are useful distinctions for anyone building or supervising an AI workflow. A capable general agent does not automatically replace a specialized classifier, and collecting activity records does not require collecting every conversation. This AI-assisted news digest summarizes three official announcements and separates their reported capabilities from editorial suggestions for evaluation. The reading map highlights one question to ask about each update. None of the suggested checks below are presented as experiments performed by this journal.",
+  "items": [
+    {
+      "title": "Meta launches Muse Wonder with an emphasis on memory and sustained work",
+      "date": "12 October 2026 · model announcement",
+      "news": "Meta introduced Muse Wonder and Muse Wonder Full. Wonder is available through the Meta Model API and Muse Code; Full is available to Muse Code subscribers. Meta describes Active Memory as retrieving relevant context across conversations, and Active Focus as sustained work through alternatives and blockers. Its benchmark comparisons and safety claims are publisher-reported results. The announcement says additional safety evaluations will follow, while integration into the Muse consumer experience is a forthcoming rollout rather than universal availability today.",
+      "analysis": "Persistent context could make a coding assistant more useful across repeated revisions, but it also makes outdated information consequential. A practical evaluation could give the assistant a project requirement, revise that requirement later, and inspect which version guides its next change. Check whether it distinguishes a remembered preference from current authorization before taking an external action. For longer tasks, retain checkpoints and reviewable changes so an incorrect assumption does not propagate through the entire workflow. These are proposed evaluation criteria; the launch article alone cannot establish how reliably the model meets them in a particular environment.",
+      "source": "https://research.meta.ai/blog/muse-wonder",
+      "sourceLabel": "Meta AI Research: Muse Wonder"
+    },
+    {
+      "title": "H2O highlights a small model for bounded decisions",
+      "date": "12 October 2026 · announcement of a 7 October benchmark snapshot",
+      "news": "H2O.ai reported that H2O-Lightning-4B ranked first among 104 open-weight systems on the JevBench Composite Score leaderboard as of 7 October. It is a Qwen3.5-4B fine-tune released under Apache 2.0. Instead of a free-form answer, it returns probabilities for named choices, yes/no questions or ordinal scores. H2O reports a composite score of 72.5; the benchmark combines intelligence, calibration, speed and cost. This is a dated, vendor-reported benchmark result, not a guarantee of leadership on every classification task.",
+      "analysis": "Ticket routing is a plausible bounded use case: the possible destinations can be enumerated and uncertain cases can go to a person. Evaluate the model on held-out examples with realistic class frequencies, including ambiguous tickets and categories it has not seen. Accuracy alone is insufficient when the cost of a wrong route varies. Examine calibration and choose review thresholds using observed errors rather than the confidence value in isolation. A smaller model may simplify serving, but preprocessing, monitoring and escalation remain part of the system. Compare the complete workflow cost rather than extrapolating a leaderboard estimate directly into a production budget.",
+      "source": "https://h2o.ai/company/press-media/2026/h2o-lightning-4b-ranks-first-on-jevbench",
+      "sourceLabel": "H2O.ai: H2O-Lightning-4B JevBench announcement"
+    },
+    {
+      "title": "GitHub separates Copilot identity attribution from captured content",
+      "date": "12 October 2026 · enterprise telemetry update",
+      "news": "GitHub added managed telemetry controls that can attach Copilot account, operating-system account and host identities to OpenTelemetry data without enabling prompt or tool-content collection. Identity capture is off by default. Administrators can independently configure five content classes: prompts, responses, tool arguments, tool output and policy details. These classes also default to off. The announcement covers Copilot CLI, the Copilot app and VS Code sessions using Agent Host; explicit managed values override local configuration.",
+      "analysis": "For a SOC or platform team, the useful question is what evidence a defined investigation actually needs. Attribution may answer who initiated activity without storing source files or full conversations. Start with a synthetic session and inspect the exported fields, the destination and who can read them. If richer content is required, scope collection and retention deliberately: commands, returned data and workspace paths can reveal sensitive context. An identity field supports correlation, but it does not by itself explain intent or prove that an action was appropriate. Treat telemetry as one input to an investigation, with its collection settings recorded alongside it.",
+      "source": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture/",
+      "sourceLabel": "GitHub Changelog: Client telemetry user attribution and configurable capture"
+    }
+  ],
+  "takeaway": "Choose the evidence before choosing the metric. For a memory-enabled assistant, inspect whether it follows the latest requirement. For a decision model, inspect errors and calibration on the intended population. For an audit stream, inspect the actual exported fields. A short, repeatable evaluation with preserved inputs is more informative than a polished demonstration. Keep a clear boundary between a model’s reported capability, your proposed use and the behavior you have actually observed.",
+  "visual": {
+    "focus": "What evidence makes this AI workflow trustworthy?",
+    "branches": [
+      {
+        "label": "Remember the right context",
+        "detail": "Muse Wonder: check updated requirements and action checkpoints."
+      },
+      {
+        "label": "Measure bounded decisions",
+        "detail": "H2O-Lightning-4B: compare calibration, errors and human review thresholds."
+      },
+      {
+        "label": "Collect the necessary evidence",
+        "detail": "Copilot telemetry: separate identity attribution from sensitive content."
+      }
+    ]
+  }
+}
 ]
