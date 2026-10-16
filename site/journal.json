@@ -790,4 +790,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-10-16",
+  "slug": "2026-10-16-ai-briefing",
+  "title": "Open models, practical choices: Muse Spark, Nemotron and Granite Switch",
+  "summary": "Meta releases Muse Spark Open, NVIDIA expands Nemotron for servers and desktops, and IBM combines chat, decisions and transcription in one endpoint.",
+  "scope": "16 October 2026 · Asia/Shanghai (UTC+8), evening edition. Three announcements dated 15 October, checked today. IBM’s model card dates its checkpoint release to 14 October. Publication times are not consistently available, so these are dated updates rather than a claimed exact 24-hour window.",
+  "intro": "Running an AI model yourself is becoming a more varied proposition. One release targets a pair of unusually powerful desktop computers; another offers options across server and local hardware; a third combines several capabilities behind one endpoint. The interesting question is what each approach makes easier to operate and what remains your responsibility. This AI-assisted news digest separates the publishers’ specifications from editorial analysis and makes no claims of personal testing. The reading map connects each release to a practical evaluation question. Use the original sources to inspect the supported configurations before comparing headline capabilities or planning a deployment.",
+  "items": [
+    {
+      "title": "Meta releases Muse Spark Open with substantial hardware requirements",
+      "date": "15 October 2026 · open-weight release",
+      "news": "Meta released Muse Spark Open, a multimodal model with 816 billion total parameters, 42 billion active parameters and a one-million-token context window. The announcement describes local operation on two Apple M5 Ultra Mac Studios using MLX, alongside hosted inference partners and other supported engines. The weights use the Muse Model License with limited commercial terms. Meta also reports additional safety post-training and links its model card; its strongest performance claims remain publisher assessments.",
+      "analysis": "The desktop demonstration is interesting because it broadens where a large model can run, but two high-memory workstations are a significant deployment requirement. Compare a hosted trial with a local configuration using the same small set of tasks before deciding whether ownership is worthwhile. Record completion quality, waiting time, memory pressure and maintenance effort. A long context window should be tested with a relevant detail buried inside realistic documents, rather than equated with dependable recall. For commercial work, review the actual model licence and intended use. Downloadable weights alone do not establish unrestricted permission, low operating cost or reliable autonomous action.",
+      "source": "https://research.meta.ai/blog/muse-spark-open",
+      "sourceLabel": "Meta AI Research: Introducing Muse Spark Open"
+    },
+    {
+      "title": "NVIDIA expands Nemotron from multimodal servers to local agents",
+      "date": "15 October 2026 · Super VL and Bolt releases",
+      "news": "NVIDIA announced the 120-billion-parameter Nemotron 3.5 Super VL and Nemotron 3.5 Bolt 74B-A9B 24GB. Both are available, while the smaller Bolt E4B 4GB is scheduled for 23 October. Super VL targets visual documents and agent workflows. Bolt uses native two-bit quantization to fit its model into 24GB of memory. NVIDIA lists local inference integrations and publishes customization resources. Its throughput and accuracy comparisons are vendor-reported results, not measurements reproduced here.",
+      "analysis": "A local model becomes useful when it can finish work while the rest of the computer remains usable. Evaluate the complete application: model memory, context storage, tool processes and any concurrent workloads. A model fitting into a stated memory budget does not mean every context length or application combination will fit equally well. For document tasks, include a table whose units matter and a chart with a misleading visual scale; check extracted values against the source. Keep tool permissions narrow during initial agent trials. Local inference can change where processing happens, but external tools and telemetry still need separate inspection before making a privacy claim.",
+      "source": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+      "sourceLabel": "NVIDIA: Nemotron 3.5 Super VL and Bolt"
+    },
+    {
+      "title": "IBM combines chat, decisions and transcription in Granite Switch",
+      "date": "15 October 2026 · announcement; 14 October checkpoint date",
+      "news": "IBM’s Granite Switch 4.1 announcement describes 8B and 30B configurations combining a base model, Decision and Guardian adapters, and speech transcription in one endpoint. The linked 8B model card dates the release to 14 October and lists Apache 2.0 licensing. Its speech path is English-only and inserts a transcript into the language-model context; the speech encoder and language model are not jointly trained. The card also warns that the packaged Guardian adapter does not include every Guardian Library capability.",
+      "analysis": "This could simplify a prototype that transcribes a request, summarizes it and classifies it against a small set of choices. Evaluate each stage separately so a transcription mistake does not get misdiagnosed as a reasoning failure. Include ambiguous wording, an unfamiliar name and a request outside the supported choices. Review the transcript alongside the final classification and retain an explicit abstention or human-review route. Adapter probabilities should not be treated as a certificate that a decision is correct. The operational benefit is a shared serving interface; application teams still need to define acceptable errors, inspect the installed adapters and test their own workflow.",
+      "source": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1",
+      "sourceLabel": "IBM Granite: Chat, Decisions, and Speech from One Endpoint (with model cards)"
+    }
+  ],
+  "takeaway": "Today’s releases make deployment choices more concrete: choose the scale you can operate, then test the full path from input to outcome. Keep a short evaluation record with the model revision, serving configuration, task, expected result and observed failure. Reuse that record when changing hardware, quantization or adapters. This is more informative than comparing unrelated leaderboard positions. The reading map and suggested checks are editorial synthesis, not publisher artwork or completed experiments. The objective is a system whose behavior you can explain and maintain, with enough evidence to know when an upgrade helps.",
+  "visual": {
+    "focus": "Match model access to a workflow you can operate and verify",
+    "branches": [
+      {
+        "label": "Scale and licence",
+        "detail": "Muse Spark Open: compare local hardware needs, hosted access and permitted use."
+      },
+      {
+        "label": "Whole-system capacity",
+        "detail": "Nemotron: test documents, memory headroom and tool permissions together."
+      },
+      {
+        "label": "Stage-by-stage accuracy",
+        "detail": "Granite Switch: inspect transcription before trusting a decision."
+      }
+    ]
+  }
+}
 ]
