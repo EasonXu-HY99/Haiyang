@@ -843,4 +843,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-10-18",
+  "slug": "2026-10-18-ai-briefing",
+  "title": "Evidence before confidence: agent evaluations, independent scrutiny and secret detection",
+  "summary": "A weekend review of Google Cloud’s agent-testing lessons, Anthropic’s evaluator access, and GitHub’s specialized secret classifier.",
+  "scope": "18 October 2026 · Asia/Shanghai (UTC+8), early edition. This run arrived after midnight. Recent-week review of official material dated 13–16 October; these are not presented as new announcements from the past 24 hours.",
+  "intro": "A useful AI system needs evidence that survives closer inspection. For an agent, that means checking its actions instead of accepting its final explanation. For a model developer, it means letting qualified outsiders examine information that a public benchmark cannot reveal. For a security scanner, it means showing how classification quality changes alongside latency and cost. This AI-assisted news digest reviews three recent official publications that have not appeared in earlier editions. The original dates are retained, and publisher observations are separated from editorial analysis. The reading map summarizes the three questions; it is an editorial guide rather than publisher artwork or a record of personal experiments.",
+  "items": [
+    {
+      "title": "Google Cloud explains why agent evaluations need execution evidence",
+      "date": "16 October 2026 · engineering lessons",
+      "news": "Google Cloud published four lessons from evaluating its Developer plugin: inspect execution trajectories, preserve asynchronous call structure, compare live and plan-only runs, and maintain expert-curated baselines. In its initial eleven-prompt suite, a grader examining final replies incorrectly failed three tasks that tool logs showed had passed. The article also describes an early permission failure hiding a problematic plan. These are observations from one engineering effort, not a universal error rate for AI graders.",
+      "analysis": "For a small internal assistant, start with a handful of tasks whose outcomes can be inspected directly. Record the requested scope, actual tool arguments and resulting artifact, then compare those records with the closing response. Preserve enough timing information to identify dependent operations dispatched together. A plan-only run can expose intent, but it cannot demonstrate that an API call succeeds. Conversely, an execution failure may prevent a later weakness from becoming visible. Treat disagreements between conditions as investigation leads. The practical lesson is to evaluate the whole application, including its tools and permissions, and to avoid interpreting a polished response as proof of completed work.",
+      "source": "https://cloud.google.com/blog/topics/developers-practitioners/four-eval-engineering-lessons",
+      "sourceLabel": "Google Cloud: Four evaluation engineering lessons"
+    },
+    {
+      "title": "Anthropic details deeper access for independent evaluators",
+      "date": "15 October 2026 · announcement; terms clarified 16 October",
+      "news": "Anthropic says six METR staff have been given employee-like access, including internal tools and office resources, to assess risks. METR can publish assessments without an Anthropic veto, subject to predefined redaction categories. Anthropic decides whether information falls within those categories, while METR retains certain rights to comment on its access. The post’s 16 October clarification matters when interpreting independence. Other partnerships are at earlier stages with more restricted access or publication rights.",
+      "analysis": "The important distinction is between an evaluation arrangement and an evaluation result. Access can enable stronger scrutiny, but the announcement itself does not establish that any particular model is safe. When an assessment appears, read its scope, excluded information, unresolved disagreements and publication conditions alongside its conclusion. A similar principle applies when comparing security vendors: an independent label is less informative than a clear account of what reviewers could inspect. Ask whether the evidence covers the deployed version and the failure modes relevant to your use. This is a useful governance development to follow, with the substantive value still depending on the published work.",
+      "source": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "sourceLabel": "Anthropic: An update on independent evaluators"
+    },
+    {
+      "title": "GitHub shows where a specialized classifier can outperform a larger pipeline",
+      "date": "13 October 2026 · technical report; updated 14 October",
+      "news": "GitHub described a two-stage secret-detection pipeline: regular expressions propose credential-like candidates, then a fine-tuned ModernBERT classifier examines surrounding context. Against its previous LLM-based pipeline, GitHub reports an 11.5% improvement in owner-weighted alert acceptance, an 86% reduction in median post-push scan execution time and over 98% serving-cost savings. The classifier helps distinguish credentials from examples and lookalikes. Those figures describe GitHub’s implementation and evaluation, not guaranteed improvements for another scanner.",
+      "analysis": "This is a practical counterweight to choosing the largest general model for every task. A narrow classifier can be evaluated against a specific decision boundary and combined with deterministic candidate generation. For a comparable prototype, assemble authorized synthetic examples containing both fake credentials and harmless strings that look similar. Track missed detections as well as unwanted alerts; a quieter queue is not sufficient evidence of better protection. Check whether performance changes across file types and contexts. Operationally, detection also needs an owner and a remediation path. Finding a potentially exposed credential and establishing that its access has been revoked are separate outcomes.",
+      "source": "https://github.blog/ai-and-ml/githubs-model-for-secret-detection-finding-more-secrets-with-less-noise/",
+      "sourceLabel": "GitHub: Finding more secrets with less noise"
+    }
+  ],
+  "takeaway": "Across these stories, the most useful question is what evidence would change your conclusion. For an agent, inspect the execution record. For an external review, inspect access and publication boundaries. For a classifier, inspect errors as well as efficiency. Keep the evaluation small enough to repeat after a model or configuration changes, and write down what it does not cover. These proposed checks are editorial starting points, not completed tests. A modest, repeatable assessment usually tells a team more about its own workflow than a striking demonstration whose conditions it cannot reconstruct.",
+  "visual": {
+    "focus": "Three ways to make an AI claim inspectable",
+    "branches": [
+      {
+        "label": "Observe the action",
+        "detail": "Google Cloud: compare tool traces, final replies and plan-only behavior."
+      },
+      {
+        "label": "Inspect the reviewer’s access",
+        "detail": "Anthropic and METR: distinguish scrutiny arrangements from published findings."
+      },
+      {
+        "label": "Measure the error tradeoff",
+        "detail": "GitHub: examine detection quality alongside speed and serving cost."
+      }
+    ]
+  }
+}
 ]
