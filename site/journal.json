@@ -949,4 +949,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-10-20",
+  "slug": "2026-10-20-ai-briefing",
+  "title": "Cheaper agents, clearer controls: MiniMax Flash, Copilot policies and AI security",
+  "summary": "MiniMax launches M3.1 Flash, GitHub exposes model policies through REST, and Anthropic updates its security roadmap.",
+  "scope": "20 October 2026 · Asia/Shanghai (UTC+8), evening edition. Three official updates dated 19 October, checked today. Exact publication times are not consistently available, so source dates are retained without asserting an exact 24-hour window.",
+  "intro": "The practical cost of an AI agent includes more than tokens. Teams also need to control which models are available and understand what security evidence a provider can supply. Today’s three updates address those different parts of operating AI: a lower-priced model release, programmable availability policies, and progress reports on infrastructure safeguards. This AI-assisted news digest distinguishes available features from vendor measurements and future commitments. It makes no personal testing claims. The editorial reading map links each story to a concrete question to investigate before adoption, with original sources below for checking the details and any later changes.",
+  "items": [
+    {
+      "title": "MiniMax M3.1 Flash launches with lower listed token prices",
+      "date": "19 October 2026 · model release",
+      "news": "MiniMax released M3.1 Flash through its API, M Plan and MiniMax Code. Listed prices per million tokens are $0.15 for input, $0.60 for output and $0.015 for cached input. The company reports improved coding, computer-use and agent benchmarks, along with faster inference and lower task costs. These are vendor-reported comparisons. The launch post says model weights will follow later; it does not establish their availability on release day.",
+      "analysis": "A useful trial measures cost per accepted result, including retries and human correction, rather than comparing token prices alone. Choose a small task with an inspectable output, such as producing a patch against a disposable repository and running its existing tests. Record the exact model identifier, token usage, elapsed time and whether the result met the acceptance criteria. Keep the same task for comparison with the current model. A faster response can still be expensive if it needs repeated repair. For security-related evaluation, use authorized examples and judge the correctness of the finding and proposed remedy instead of assuming a benchmark score transfers to your environment.",
+      "source": "https://www.minimax.io/blog/minimax-m31f",
+      "sourceLabel": "MiniMax: M3.1 Flash launch"
+    },
+    {
+      "title": "GitHub adds REST access to Copilot model policies",
+      "date": "19 October 2026 · generally available API",
+      "news": "GitHub introduced generally available GET and PATCH endpoints for Copilot model policies at enterprise, enterprise-team, enterprise-app and organization levels. The API can retrieve or update model availability. Enterprise policy can delegate control to organizations in organization mode, or to teams and apps in enterprise-teams mode. This is a management interface for model access; the announcement does not describe a new model or a change to model quality.",
+      "analysis": "For administrators, the immediate opportunity is to compare actual settings with an approved configuration and identify drift across groups. Begin with read-only inventory before automating changes, then review how delegation affects the intended scope. A policy update should have a clear owner, a saved prior configuration and a way to verify the resulting user experience. Model availability is only one layer of governance: it does not by itself define which repositories an agent may access or which actions it may perform. Treat the API as a repeatable configuration mechanism, and test it in a limited scope before extending the same change across an enterprise.",
+      "source": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams/",
+      "sourceLabel": "GitHub: Copilot model policy API"
+    },
+    {
+      "title": "Anthropic reports security prototypes and expands its roadmap",
+      "date": "19 October 2026 · roadmap update",
+      "news": "Anthropic updated its Frontier Safety Roadmap with security progress and new goals. It reports an inference-verification prototype and signing of internal token traffic, while describing isolated environments as prototype work with further deployment planned. New goals address datacenter physical security and platform security. The company also reports completing an automated red-teaming objective under its own comparison criteria. These statements are progress reports from the provider, not an independent certification that every planned safeguard is deployed.",
+      "analysis": "Roadmaps are most useful when readers separate prototypes, production controls and future targets. For a provider assessment, ask what evidence applies to the service and model revision actually being used. A control that checks output provenance answers a different question from whether that output is correct or safe. Similarly, a successful test campaign does not establish coverage of every attack scenario. Track the scope, measurement method and remaining work behind each milestone. The practical value of this update is a more specific set of claims to follow up, with limitations and unfinished work visible alongside reported achievements.",
+      "source": "https://www.anthropic.com/responsible-scaling-policy/roadmap",
+      "sourceLabel": "Anthropic: Frontier Safety Roadmap, 19 October updates"
+    }
+  ],
+  "takeaway": "Connect economics, access and evidence in the same adoption decision. First establish that the model can complete a representative task at an acceptable total cost. Then confirm that its availability matches the intended policy and user scope. Finally, document which provider safeguards are operating today and which remain commitments. Keep these records concise enough to revisit when a model version, price or policy changes. The suggested checks are editorial starting points rather than results obtained by this journal; a release announcement is the beginning of an assessment, not its conclusion.",
+  "visual": {
+    "focus": "Evaluate the task, govern access, verify the safeguard",
+    "branches": [
+      {
+        "label": "Cost per accepted result",
+        "detail": "MiniMax Flash: include retries and review effort when comparing prices."
+      },
+      {
+        "label": "Model availability",
+        "detail": "Copilot policies: inventory effective settings and delegation before changes."
+      },
+      {
+        "label": "Deployment evidence",
+        "detail": "Anthropic: distinguish production controls from prototypes and roadmap goals."
+      }
+    ]
+  }
+}
 ]
