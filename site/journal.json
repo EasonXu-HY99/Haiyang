@@ -1002,4 +1002,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-10-21",
+  "slug": "2026-10-21-ai-briefing",
+  "title": "Better evidence, stronger agents: retrieval, training and fairness under pressure",
+  "summary": "NVIDIA expands document retrieval, Hugging Face organizes agent post-training, and Ai2 tests whether decisions withstand persuasion consistently.",
+  "scope": "21 October 2026 · Asia/Shanghai (UTC+8), evening edition. Original announcements dated 20–21 October, checked today; publication dates are retained where exact times are unavailable.",
+  "intro": "A useful agent needs more than a fluent final answer. It must find the right evidence, learn how to act on it, and remain consistent when challenged. Today’s selection follows those three steps through a model release, a practical learning resource and an evaluation benchmark. These are different kinds of progress, so a training guide should not be mistaken for a newly trained model, or a benchmark result for a deployment guarantee. This AI-assisted news digest links the original announcements and separates reported facts from editorial application ideas. The reading map offers a starting point for choosing which part of an existing workflow to investigate first.",
+  "items": [
+    {
+      "title": "NVIDIA adds multimodal retrieval and structured document parsing",
+      "date": "21 October 2026 · model release",
+      "news": "NVIDIA announced Nemotron 3.5 Embed, Rerank and Parse. The collection includes 8B and 1B embedding variants, an 8B reranker and a 631M-parameter document parser. Embeddings support searching text and visual documents; reranking refines the candidate order; parsing extracts structured content from page images. NVIDIA reports that adding its reranker reduced agent inference token use by approximately 13–14% in its tested configurations while improving retrieval accuracy. Those figures describe vendor experiments, not guaranteed savings for every corpus.",
+      "analysis": "For a knowledge assistant, the useful question is whether the retrieved passage actually supports the answer. Start with a small collection of public PDFs containing tables and diagrams, and write questions whose supporting pages are known. Compare retrieval alone with retrieval plus reranking, then inspect both missed evidence and misleading matches. Count total latency and serving expense as well as language-model tokens: an additional model introduces its own cost. Preserve page references so a reviewer can check extracted values against the original document. Better search is valuable, but it does not establish that the agent interpreted the evidence correctly.",
+      "source": "https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval",
+      "sourceLabel": "NVIDIA: Nemotron 3.5 Embed, Rerank and Parse"
+    },
+    {
+      "title": "Hugging Face publishes a route through agent post-training",
+      "date": "20 October 2026 · learning resource",
+      "news": "Hugging Face’s new curriculum organizes agent post-training into supervised fine-tuning, distillation, reinforcement learning, environments and training through agent harnesses. It connects explanations, recordings, examples and TRL documentation. The guide distinguishes learning from successful traces from learning on a model’s own attempts, and explains why multi-turn environments change the training problem. This is a structured entry point to existing methods and materials, rather than an announcement that one technique solves every agent task.",
+      "analysis": "The practical value is choosing a method after defining the failure. If an agent cannot follow the required tool format, clean demonstrations may be a sensible first experiment. If it follows the format but makes poor sequences of decisions, the evaluation must inspect those sequences. Before training, create a held-out task set and specify what successful completion means. Include recovery after an unsuccessful tool call, rather than rewarding only a polished final response. A reward function can be incomplete or exploitable, so keep human-inspectable examples alongside aggregate scores. For learners, reproducing one small exercise is a clearer milestone than attempting the entire pipeline immediately.",
+      "source": "https://huggingface.co/blog/huggingface/train-agents",
+      "sourceLabel": "Hugging Face: A curriculum for post-training agents"
+    },
+    {
+      "title": "Ai2 FairStress examines decisions under matched persuasion",
+      "date": "20 October 2026 · benchmark introduction",
+      "news": "Ai2 introduced FairStress to examine demographic fairness beyond a model’s initial choice. It starts from 300 two-candidate scenarios across 29 domains and varies identity signals and persuasive arguments. A smaller FairStress-Core contains 50,000 items. The researchers report that identical initial choices can hide differences in how readily models change decisions under matched challenges. Their definition emphasizes symmetric treatment and robustness; the announcement explicitly says it does not capture every conception of fairness.",
+      "analysis": "For evaluation teams, this suggests testing the decision process rather than recording only a first answer. Keep the relevant qualifications constant, vary one factor at a time, and examine whether a follow-up argument changes the result for a defensible reason. Report accuracy and consistency separately: making choices look more balanced can still damage correctness. A benchmark is a diagnostic instrument, not permission to automate consequential decisions about people. Its scenarios, scoring rules and definition of fairness constrain what conclusions transfer to another setting. The most useful outcome is a reproducible failure case that a team can investigate and retest after a change.",
+      "source": "https://huggingface.co/blog/allenai/fairstress",
+      "sourceLabel": "Ai2: FairStress announcement and linked research materials"
+    }
+  ],
+  "takeaway": "Choose one observable failure before adding another component. When evidence is missing, investigate retrieval. When actions fail despite adequate evidence, inspect the behavior and training signal. When decisions shift unexpectedly, test the conditions that caused the shift. Keep a compact record of the task, model version, retrieved material, tool results and acceptance criteria so improvements can be compared fairly. These are editorial suggestions, not experiments performed by this journal. The common lesson is to make progress inspectable: a convincing demonstration becomes more useful when another person can identify what changed and reproduce the relevant check.",
+  "visual": {
+    "focus": "Find evidence → learn actions → challenge decisions",
+    "branches": [
+      {
+        "label": "Retrieve supporting material",
+        "detail": "Nemotron: compare relevant evidence, total cost and page-level traceability."
+      },
+      {
+        "label": "Train against a clear failure",
+        "detail": "Hugging Face: match demonstrations, rewards and environments to the task."
+      },
+      {
+        "label": "Test consistent decisions",
+        "detail": "FairStress: inspect accuracy and robustness under matched challenges."
+      }
+    ]
+  }
+}
 ]
