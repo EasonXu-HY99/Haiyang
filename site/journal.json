@@ -1267,4 +1267,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-10-28",
+  "slug": "2026-10-28-ai-briefing",
+  "title": "Identity, judgment and action: Copilot service access, novelty judges and robotics",
+  "summary": "Organization-owned agent credentials, a benchmark exposing unstable research judgments, and a cloud preview for embodied reasoning.",
+  "scope": "28 October 2026 · Asia/Shanghai (UTC+8), evening edition. Three original posts dated 27 October, verified today. Exact publication times are not consistently available, so source dates are retained without claiming a precise 24-hour window.",
+  "intro": "As agents move beyond a chat window, three questions become more practical: whose authority are they using, how reliable are their judgments, and what happens when their decisions trigger actions? Today’s selection connects those questions through a developer preview, a research benchmark and a robotics announcement. This AI-assisted news digest draws on the original sources linked below and separates reported capabilities from editorial suggestions. It does not imply personal testing or access to private deployments. The reading map provides a quick route through each story. The common theme is accountability: a useful capability should come with enough context to identify its owner, inspect its evidence and evaluate its limits before relying on it.",
+  "items": [
+    {
+      "title": "Copilot previews organization-owned authentication for services and agents",
+      "date": "27 October 2026 · public preview",
+      "news": "GitHub announced server-to-server authentication for organization-installed GitHub Apps using the Copilot SDK. An app can receive the read-only Copilot Requests organization permission and supply a short-lived installation access token, avoiding dependence on a signed-in user’s credentials. Requests are attributed and billed to the organization that owns the installation, with its model policies, budgets and spending controls applying. Owners can inspect app-attributed usage through app_client_id in AI usage CSV reports and stop access by suspending or uninstalling the app.",
+      "analysis": "This is relevant to scheduled assistants and backend services whose identity should survive staff changes. Start an evaluation with a dedicated app, a small budget and a clear owner. Check that usage appears under the intended installation and that suspension prevents further access. The permission label does not mean every action performed by an SDK-based agent is harmless: repository access and other connected tools still need their own review. Short-lived tokens reduce the duration of exposure but do not remove the need to protect the app’s underlying credentials. Treat preview behavior as something to validate before relying on it for an essential service.",
+      "source": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication/",
+      "sourceLabel": "GitHub: server-to-server authentication preview and organization controls"
+    },
+    {
+      "title": "Ai2 finds that small prompt changes can destabilize novelty judgments",
+      "date": "27 October 2026 · study, benchmark and tooling release",
+      "news": "Ai2 released Old Ideas, Novel Problems, with data and code for evaluating whether LLMs can judge research novelty. The study compares human-authored ideas selected using peer-review evidence and a separate setting containing generated ideas. Across six judges, evaluation choices changed verdicts substantially. In one GPT-5.4 comparison, a prompt change reduced accuracy from 93.5% to 40.9%. Ai2 explicitly describes the generated-idea labels as weak assumptions rather than individually verified ground truth. More retrieval or reasoning did not consistently improve the tested judgments.",
+      "analysis": "The useful takeaway is to test a judge on the material it will actually assess. A system that looks stable on published human research may behave differently when evaluating generated proposals. Try several reasonable prompt formulations, preserve disagreements and inspect the supporting literature instead of accepting one novelty score. The benchmark helps expose sensitivity; it does not establish a universal ranking of research ideas or prove that every generated idea lacks originality. Keep a human review step for consequential decisions, and distinguish a promising evaluation tool from an automated substitute for scholarly judgment.",
+      "source": "https://huggingface.co/blog/allenai/novelty-bench",
+      "sourceLabel": "Ai2: novelty-judge benchmark, prompt sensitivity and label limitations"
+    },
+    {
+      "title": "Gemini Robotics ER 2 reaches public preview on Google Cloud",
+      "date": "27 October 2026 · cloud availability announcement",
+      "news": "Google announced public-preview availability of Gemini Robotics Embodied Reasoning 2 on its Gemini platform. The model serves as a high-level reasoning layer, using spatial and temporal understanding to plan tasks and orchestrate lower-level robot interfaces. Developers can expose navigation APIs, vision-language-action models or custom functions as tools. The announcement describes progress assessment from video, instrument reading and multi-robot coordination, alongside cloud workflows for simulation and evaluation. This is a new cloud access milestone for a model introduced earlier, not a claim that the underlying model was first unveiled yesterday.",
+      "analysis": "A useful first project would evaluate progress recognition on recorded video or in simulation before connecting decisions to physical movement. Define what counts as completion, interruption and uncertainty, and test unfamiliar scenes as well as ordinary successes. High-level reasoning still depends on the low-level controller, sensor quality and operating environment. Cloud availability does not establish that a particular robot is safe for unattended work. Keep independent operational limits and human intervention available, then measure latency and recovery behavior on the intended setup. Vendor demonstrations and benchmark claims should guide testing rather than replace it.",
+      "source": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-robotics-embodied-reasoning-2-is-now-available-on-google-cloud",
+      "sourceLabel": "Google Cloud: Gemini Robotics ER 2 public preview and integration workflow"
+    }
+  ],
+  "takeaway": "Today’s editorial observation is to keep three records separate: identity, evidence and outcome. Knowing which service made a request does not establish that its reasoning was sound; a convincing explanation does not establish that an action succeeded. For a small pilot, assign an owner, retain the information used for each important decision and define an observable success condition. Review the failures and disagreements before expanding the scope. This creates a more useful adoption record than a collection of impressive examples alone. The evaluation ideas in this briefing are suggestions for readers, not experiments performed by this journal.",
+  "visual": {
+    "focus": "Connect authority, evidence and observable outcomes",
+    "branches": [
+      {
+        "label": "Identify the workload",
+        "detail": "Copilot SDK: attribute requests to an organization-owned app and verify access controls."
+      },
+      {
+        "label": "Inspect the judgment",
+        "detail": "Novelty benchmark: check prompt sensitivity, evidence and uncertain labels."
+      },
+      {
+        "label": "Validate the action",
+        "detail": "Robotics ER 2: evaluate progress and recovery before connecting physical controls."
+      }
+    ]
+  }
+}
 ]
