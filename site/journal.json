@@ -1320,4 +1320,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-10-29",
+  "slug": "2026-10-29-ai-briefing",
+  "title": "Review before action: AI code scanning, agentic workflows and multilingual speech",
+  "summary": "New checks for agent architectures, generally available repository automation, and a promptable open-weight transcription model.",
+  "scope": "29 October 2026 · Asia/Shanghai (UTC+8), evening edition. Three original announcements dated 28 October, read and verified today. Source dates are retained because exact publication times are not consistently available; this is not a claim of a precise 24-hour window.",
+  "intro": "The most useful AI releases are often the ones that make a workflow easier to inspect. Today’s selection moves from reviewing an agent’s code, to constraining its automated work, to checking what a speech model heard. Each addresses a different point where a plausible result can become an operational mistake. This AI-assisted news digest summarizes original announcements and separates reported features from editorial evaluation ideas. No personal testing or private deployment experience is implied. The editorial reading map links to each sourced story and highlights a concrete question for a first evaluation. Read the availability notes carefully: a public preview, a generally available framework and an open-weight model have different readiness and deployment implications.",
+  "items": [
+    {
+      "title": "GitHub previews code scanning for AI-specific application risks",
+      "date": "28 October 2026 · public preview",
+      "news": "GitHub announced pull-request scanning for AI application and agent vulnerabilities, including indirect prompt injection, sensitive information disclosure and excessive agency. The detector identifies paths where untrusted material can reach a model with access to tools, data or business systems, and provides mitigation guidance in the pull request. It runs alongside existing CodeQL analysis when the relevant scanning settings are enabled. The public preview requires GitHub Advanced Security on github.com and is not available on GitHub Enterprise Server.",
+      "analysis": "For a security team, the practical opportunity is earlier architectural review. Pick an agent that reads external documents and trace what those documents can influence. Compare the detector’s findings with the actual tool permissions and data boundaries. A clean scan should not be interpreted as proof that prompt injection is impossible, and a suggested fix still needs review against the application’s behavior. Measure whether alerts identify actionable paths and whether fixes preserve legitimate functionality. Start with a narrow repository scope and retain examples of both useful findings and missed cases before expanding reliance on the preview.",
+      "source": "https://github.blog/changelog/2026-10-28-code-scanning-for-ai-applications-in-public-preview/",
+      "sourceLabel": "GitHub: AI application code scanning preview, coverage and requirements"
+    },
+    {
+      "title": "Agentic Workflows becomes generally available with layered safeguards",
+      "date": "28 October 2026 · general availability",
+      "news": "GitHub Agentic Workflows is now generally available. Developers describe reasoning-based automation in Markdown, which compiles into Actions YAML for tasks such as issue triage and CI failure analysis. GitHub describes read-only defaults, sandboxing, a workflow firewall, validated safe outputs and a threat-detection job for proposed changes. The release also adds supported budget forecasting and expanded runner and isolation options. It is available on github.com for Free, Team and Enterprise; the default Copilot CLI engine requires a Copilot license.",
+      "analysis": "A sensible first use is producing a diagnostic report after a failed build. That creates a reviewable output without immediately granting broad write access. Define the permitted repositories, expected artifacts, spending limit and escalation behavior before enabling a schedule. Read-only defaults are a starting configuration, not a guarantee about every workflow someone later configures. Inspect generated YAML and the permissions needed by output actions. Evaluate the quality of proposed changes separately from whether a run completed successfully. General availability makes the framework easier to adopt, but the owner still has to decide which decisions require review.",
+      "source": "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available/",
+      "sourceLabel": "GitHub: Agentic Workflows GA, safeguards and licensing"
+    },
+    {
+      "title": "NVIDIA releases promptable transcription and the Granary v2 data pipeline",
+      "date": "28 October 2026 · model and dataset announcement",
+      "news": "NVIDIA introduced Nemotron 3.5 Transcribe, an open-weight model combining transcription, speaker attribution, translation and audio question answering. The announcement lists transcription in 40 languages, translation between English and 31 languages, and speaker attribution in 13. It handles recordings up to an hour and up to eight speakers. Granary v2 supplies multilingual manifests and a reusable data-curation pipeline for adaptation. The model targets recorded audio rather than live streaming; quantized local deployment versions are described as forthcoming.",
+      "analysis": "This could be useful for searchable meeting archives or recorded training sessions, provided the task and language are supported. Evaluate difficult names, overlapping speakers and mixed-language passages against the original recording, not only a fluent-looking transcript. Preserve timestamps so a reviewer can return to the evidence. Start with prompt-level vocabulary guidance before investing in fine-tuning, and verify consent and permitted data use before processing recordings. Open weights do not make every deployment inexpensive or every dataset freely reusable. Benchmark rankings reported by the vendor are useful leads for evaluation, not a substitute for measuring accuracy and resource needs on representative audio.",
+      "source": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+      "sourceLabel": "NVIDIA: Nemotron 3.5 Transcribe, Granary v2 and recorded-audio limitations"
+    }
+  ],
+  "takeaway": "Today’s editorial observation is to define the review step before connecting a new capability to an important workflow. Decide which evidence a reviewer needs, what uncertainty looks like and who can approve the next action. A useful pilot should record failures as carefully as successes and make it possible to reproduce an unexpected result. Keep a small set of representative examples that can be rerun after configuration or model changes. That makes adoption a sequence of observable decisions rather than a one-time demonstration. The evaluation suggestions here are proposed starting points, not experiments performed by this journal.",
+  "visual": {
+    "focus": "Make each AI workflow reviewable",
+    "branches": [
+      {
+        "label": "Inspect the architecture",
+        "detail": "AI code scanning: trace untrusted inputs to tools and sensitive data."
+      },
+      {
+        "label": "Constrain the automation",
+        "detail": "Agentic Workflows: review permissions, outputs and budgets before scheduling."
+      },
+      {
+        "label": "Check the recording",
+        "detail": "Nemotron Transcribe: verify words and speaker labels against timestamped audio."
+      }
+    ]
+  }
+}
 ]
