@@ -1373,4 +1373,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-10-30",
+  "slug": "2026-10-30-ai-briefing",
+  "title": "Build on what exists: open science, Swift model choices and modular updates",
+  "summary": "Project ProtoStar prepares scientific resources for reuse, new Swift packages expose specialized models, and IBM updates adapters without retraining the base.",
+  "scope": "30 October 2026 · Asia/Shanghai (UTC+8), evening edition. Three original announcements dated 29 October, verified today. Exact publication times are not consistently available; source dates are retained without claiming a precise 24-hour window.",
+  "intro": "A useful AI project does not always start with a larger model. Sometimes the missing piece is a dataset that another team can understand, an interface that makes model choices explicit, or an upgrade that changes only the component that needs improvement. Today’s announcements explore those three possibilities. This AI-assisted news digest draws on the original sources linked below and separates reported capabilities from editorial analysis. It does not claim personal testing. The accompanying editorial reading map highlights what to inspect before adopting each release: provenance, backend behavior and regression evidence. Together, the stories offer practical starting points for developers who want to build on existing work while keeping their own assumptions visible.",
+  "items": [
+    {
+      "title": "Project ProtoStar aims to make publicly funded research reusable for AI",
+      "date": "29 October 2026 · initiative announced; first challenge opens 2 November",
+      "news": "Hugging Face and research partners announced Project ProtoStar to improve discovery and reuse of scientific datasets, models and code through machine-actionable formats and open challenges. Its first challenge, hosted by Carnegie Mellon University on November 2–13, concerns climate risk intelligence for 210 US cities. Participants use records through 2018 to predict conditions from 2019–2026 and compare results with simple statistical baselines. Final forecasting results are planned for early 2027, after complete 2026 weather records become available.",
+      "analysis": "The practical lesson is that publishing a file is only the beginning of reuse. A developer evaluating a scientific resource should check provenance, units, missing values, licensing and whether the documentation explains how the data was collected. For this challenge, keeping later observations out of the training inputs is essential to a meaningful comparison. Treat the launch as an invitation to test reusable infrastructure, not evidence that AI already outperforms established forecasting methods. The most informative contribution may be a reproducible baseline or a documented interoperability problem that other teams can fix.",
+      "source": "https://huggingface.co/blog/announcing-project-protostar",
+      "sourceLabel": "Hugging Face and research partners: Project ProtoStar and the CMU challenge"
+    },
+    {
+      "title": "New Swift packages expose speech engines and typed model decisions",
+      "date": "29 October 2026 · package announcement",
+      "news": "AnySpeechRecognizer and AnyDecisionModel extend open-model tooling on Apple platforms. The speech package mirrors Apple’s analyzer-style API while allowing alternative engines, including local Parakeet and Qwen3-ASR. The decision package returns typed answers and probabilities rather than generated prose, with local and hosted backend choices. The announcement documents important differences: Qwen3-ASR returns final segment results without word timing or confidence, and reported speech tests were performed on macOS rather than an iPhone. Backend and toolchain requirements vary.",
+      "analysis": "These interfaces could simplify a prototype that transcribes a support recording and classifies its topic. They do not make the underlying engines interchangeable in quality, latency or supported features. Start by choosing whether the application needs live partial results, timestamps, specific languages or offline operation. For decisions, measure errors on representative examples and reserve separate data for calibration. A concentrated probability distribution is not proof of a correct answer. Confirm the selected backend and its data destination instead of assuming that every configuration runs locally merely because the package supports on-device models.",
+      "source": "https://huggingface.co/blog/anydecisionmodel",
+      "sourceLabel": "Package author: AnySpeechRecognizer, AnyDecisionModel and backend limitations"
+    },
+    {
+      "title": "Granite Switch 4.1.1 updates specialized components around an unchanged base",
+      "date": "29 October 2026 · patch announcement",
+      "news": "IBM describes Granite Switch 4.1.1 as a backward-compatible patch to 4.1. It updates the speech-recognition model with ten-language support and native punctuation and capitalization, alongside a refreshed Decision adapter in granitelib-core. IBM reports improved overall performance on the Jev Decision Index test set. The announcement says the base model was unchanged: training focused on the speech model and decision adapter. Tutorials and an Adapter SDK for third-party development are described as work in progress, rather than currently shipped capabilities.",
+      "analysis": "The interesting deployment idea is to evaluate and replace a specialized component without treating every improvement as a full model migration. Pin the exact model and adapter revisions, preserve the previous configuration and rerun representative tasks before promotion. Backward-compatible interfaces can still produce different outputs, so check transcript formatting and downstream decision behavior as well as whether requests succeed. The vendor’s aggregate benchmark claim does not establish improvement for every domain or language. A small, repeatable regression set is a better basis for an upgrade decision than the patch version number alone.",
+      "source": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1",
+      "sourceLabel": "IBM: Granite Switch 4.1.1 patch scope and adapter updates"
+    }
+  ],
+  "takeaway": "Today’s editorial observation is that reuse works best when the boundary of each component is clear. Record where an input came from, which implementation processed it and which version produced the output. Keep a short list of assumptions beside the examples used for evaluation. When a result changes, those records help distinguish a data problem from a backend difference or an intended upgrade. Begin with one modest workflow, preserve its baseline and expand only after understanding its failures. These are proposed evaluation practices for readers; this journal has not run the announced challenge, benchmarked the packages or tested IBM’s patch.",
+  "visual": {
+    "focus": "Reuse carefully: data, interfaces and versions",
+    "branches": [
+      {
+        "label": "Understand the data",
+        "detail": "ProtoStar: preserve provenance and compare against reproducible baselines."
+      },
+      {
+        "label": "Choose the backend",
+        "detail": "Swift packages: match speech features and verify decision calibration."
+      },
+      {
+        "label": "Validate the update",
+        "detail": "Granite Switch: pin adapter revisions and rerun representative tasks."
+      }
+    ]
+  }
+}
 ]
