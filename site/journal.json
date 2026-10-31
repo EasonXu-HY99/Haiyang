@@ -1426,4 +1426,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-10-31",
+  "slug": "2026-10-31-ai-briefing",
+  "title": "From models to experiences: a talking house, compact multimodal AI and Replica",
+  "summary": "A Halloween voice-agent build, a recent-week look at Liquid AI’s LFM3, and design-system-aware prototyping from GitHub.",
+  "scope": "31 October 2026 · Asia/Shanghai (UTC+8), evening edition. One implementation report dated 30 October and two explicitly dated recent-week selections from 27–28 October. All original sources were read today; the older releases are not presented as new today.",
+  "intro": "Halloween offers an unusually concrete test of an AI system: can it listen, respond and animate quickly enough to sustain a conversation? Today’s lead story describes exactly that kind of build. Two recent-week selections widen the view, looking at compact multimodal models and a tool for turning product ideas into interactive prototypes. This AI-assisted news digest distinguishes reported implementation details from editorial suggestions and does not imply personal testing. The reading map connects each story to a practical evaluation question. Rather than treating an impressive demonstration as proof of general reliability, the aim is to understand which components make an experience work and where readers would need their own evidence.",
+  "items": [
+    {
+      "title": "NVIDIA’s MonsterHouse combines conversation, voice and animation",
+      "date": "30 October 2026 · implementation report",
+      "news": "An NVIDIA-authored post describes MonsterHouse, an interactive Halloween projection built around Nemotron Voice Agent. Speech recognition feeds a Bolt E4B dialogue model; Magpie synthesizes a character voice and Audio2Face-3D drives animation. The author uses conversation logic, a LoRA adapter and prepared responses to shape the encounter. The reported setup uses one workstation with two professional GPUs, separating the conversational pipeline from graphics. Cached recordings and incremental delivery reduce waiting, while clean speech drives animation separately from audience-facing vocal effects.",
+      "analysis": "The useful engineering lesson is to budget for the entire interaction rather than model generation alone. A small prototype could measure speech-end detection, response generation, synthesis and animation separately, then compare the perceived delay. Prepared greetings can improve repeatable moments without making every exchange scripted. The post is one creator’s implementation, not a general hardware minimum or a reproducible performance guarantee. For a public installation, define how the character handles interruption and unsuitable requests, and make microphone and camera use understandable to visitors. Character continuity depends on application state as well as a convincing prompt.",
+      "source": "https://huggingface.co/blog/nvidia/nemotron-halloween",
+      "sourceLabel": "NVIDIA authors: MonsterHouse architecture and implementation report"
+    },
+    {
+      "title": "Recent-week selection: LFM3 offers compact models across modalities",
+      "date": "27 October 2026 · original release; recent-week review",
+      "news": "Liquid AI introduced LFM3 as a family of six roughly two-billion-parameter models derived from a shared 1.7B base. The lineup covers text, vision, audio, omni and specialized decision workloads. Base and post-trained weights are available through Hugging Face, with hosted access through Liquid’s services. The company describes a hybrid of convolutions, sliding-window attention and global attention, and a 256K-token context window for the text model. Its emphasis is adapting compact models to specialized applications and local deployment.",
+      "analysis": "Start with the input and output your application actually needs. A text-only classification task and a spoken visual assistant have different runtime requirements even when their models share a backbone. Check the selected model’s card, license, supported backend and memory requirements before committing to a device. Long-context capacity does not establish reliable retrieval at every position, and parameter count alone does not determine total runtime memory. Evaluate a narrow task with representative failures before adding tools or modalities. Vendor comparisons can identify candidates, but local latency and task accuracy must be measured on the intended configuration.",
+      "source": "https://www.liquid.ai/blog/lfm3",
+      "sourceLabel": "Liquid AI: LFM3 release, model family and architecture"
+    },
+    {
+      "title": "Recent-week selection: Replica brings a design system into AI prototyping",
+      "date": "28 October 2026 · open-source release; recent-week review",
+      "news": "GitHub Design released Replica under the MIT license. It helps teams create interactive prototypes using their existing components, patterns and documentation, with designers defining the guidance and teammates refining ideas through natural-language conversations in the Copilot app. Teams can work locally or publish prototypes to an optional self-hosted Replica Hub for exploration and comments. The announcement frames the tool as a way to test product ideas and gather feedback, rather than a replacement for production engineering.",
+      "analysis": "A useful first experiment is a small flow whose components already exist, such as a filter builder or settings panel. Supply clear examples and assess whether the prototype follows the product’s interaction rules, not just its colors and spacing. Review keyboard navigation, empty states and errors during feedback sessions. A polished prototype does not demonstrate correct authorization, data handling or backend behavior. Keep sample data separate from production systems and document which interactions are simulated. The value is faster discussion around a tangible experience; production readiness still requires its own implementation and validation.",
+      "source": "https://github.blog/changelog/2026-10-28-introducing-replica-an-open-source-ai-prototyping-tool/",
+      "sourceLabel": "GitHub: Replica release, design-system guidance and optional Hub"
+    }
+  ],
+  "takeaway": "Today’s editorial observation is to evaluate the experience at its boundaries. What happens when speech overlaps, the selected model lacks a required modality, or a prototype reaches an unimplemented state? Choose a few such cases before the first demonstration and keep them in the review checklist. Record which behavior comes from the model and which comes from application logic, cached material or a simulated interface. That distinction makes both successes and failures easier to explain. The experiments suggested here are starting points for readers; this journal has not built MonsterHouse, benchmarked LFM3 or deployed Replica.",
+  "visual": {
+    "focus": "Evaluate the complete experience",
+    "branches": [
+      {
+        "label": "Coordinate the interaction",
+        "detail": "MonsterHouse: listening, dialogue, speech and animation share a timing budget."
+      },
+      {
+        "label": "Match the model to the task",
+        "detail": "LFM3: check modality, runtime and evidence on the target device."
+      },
+      {
+        "label": "Test the product idea",
+        "detail": "Replica: use real design patterns and make simulated behavior explicit."
+      }
+    ]
+  }
+}
 ]
