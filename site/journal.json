@@ -1479,4 +1479,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-11-01",
+  "slug": "2026-11-01-ai-briefing",
+  "title": "Who chooses the model? A practical review of Copilot routing and security tools",
+  "summary": "A recent-week selection on Fusion orchestration, experimental local routing and reviewing code scanning alerts inside the Copilot app.",
+  "scope": "1 November 2026 · Asia/Shanghai (UTC+8), evening edition. Recent-week review: all three announcements were published on 28 October and read today. These previously uncollected updates are not presented as releases from the last 24 hours.",
+  "intro": "Today’s search did not produce enough suitable major announcements from the latest daily window, so this edition revisits three related updates from the past week. They address choices that can become easy to overlook as coding assistants take on more work: which model runs a task, where processing happens and how proposed security fixes reach a reviewer. This AI-assisted news digest uses GitHub’s original announcements, with publication dates preserved and analysis separated from reported features. No personal testing is implied. The editorial reading map gives each update its own evaluation question. The general release and the experimental or preview features should be assessed separately rather than treated as one uniformly mature product.",
+  "items": [
+    {
+      "title": "Copilot Fusion combines model selection with multiple execution patterns",
+      "date": "28 October 2026 · general availability; recent-week review",
+      "news": "GitHub made Copilot Fusion generally available, bringing model selection and multi-model orchestration together. Users choose Standard, High or Max effort instead of selecting a specific model. GitHub describes direct single-model execution, a cascade that can escalate an initial response, and a critique pattern in which another model reviews a draft. Organization and enterprise model policies constrain eligible models. Billing follows the models used. The announcement lists availability across VS Code, the Copilot app, Copilot CLI and JetBrains IDEs.",
+      "analysis": "The practical benefit to evaluate is whether routing reduces manual switching while preserving useful results. Compare a small set of ordinary and difficult tasks with a fixed-model baseline, keeping the acceptance criteria identical. Record elapsed time, cost and defects found during review, not merely whether the assistant produced an answer. A second model’s critique can be useful without constituting independent verification of code behavior. Administrators should inspect eligible models before choosing a default, while developers should retain tests and review steps even when the orchestration looks sophisticated. Treat vendor benchmark comparisons as hypotheses to examine on your own workload.",
+      "source": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/",
+      "sourceLabel": "GitHub: Fusion general availability, execution patterns and policies"
+    },
+    {
+      "title": "Experimental local routing does not turn a Copilot session offline",
+      "date": "28 October 2026 · experimental preview; recent-week review",
+      "news": "A separate Fusion announcement introduces opt-in routing between supported local and cloud models. Supported Windows devices can use managed MAI Code 1.1 Flash setup through Windows ML. Copilot CLI also supports manually configured eligible local models across Windows, macOS and Linux. The app’s intelligent routing currently supports managed Windows ML models only, although direct selection of compatible local models is broader. GitHub explicitly states that routing decisions still occur in the cloud and that local models may have different safety protections.",
+      "analysis": "This distinction matters when evaluating a local inference feature for sensitive work. Do not infer the data flow from the location of model weights alone. Review the client’s documented behavior and organizational policy before using private material. For an initial test, use non-sensitive examples and check resource consumption, response quality and which configurations are actually eligible for routing. Discovering a model through a provider setting does not automatically establish routing support. Separate three questions in the evaluation record: can the model run locally, can Fusion select it, and which parts of the session still depend on cloud services?",
+      "source": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models/",
+      "sourceLabel": "GitHub: experimental local routing, platform differences and cloud dependency"
+    },
+    {
+      "title": "The security extension brings existing alerts and local review into the app",
+      "date": "28 October 2026 · public preview; recent-week review",
+      "news": "GitHub’s security extension for the Copilot app lets developers browse code scanning alerts and request explanations or fixes. Fixes stay in the local working copy; the extension does not commit or push them. A security-review command examines current changes and indicates when another review is needed after edits. Existing-alert access depends on repository permissions and enabled code scanning; private repositories need GitHub Code Security. The preview supports github.com and Enterprise Cloud with data residency, but not Enterprise Server.",
+      "analysis": "A useful pilot would follow one known alert from explanation through a reviewed patch and a confirming scan. Check that the proposed change addresses the original data flow and preserves expected behavior. Local review can shorten the path to feedback, but neither a generated explanation nor an empty findings list establishes that code is secure. Keep responsibility for dismissal and merging explicit, and avoid treating severity ordering as a complete prioritization strategy. Review linked work before starting a duplicate fix. The relevant outcome is a validated remediation, not simply a successful interaction with the extension.",
+      "source": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app/",
+      "sourceLabel": "GitHub: security extension preview, local fixes and access requirements"
+    }
+  ],
+  "takeaway": "Today’s editorial observation is to preserve visibility as convenience increases. A helpful adoption record should identify the chosen configuration, the information it handled and the evidence used to accept its output. Keep the scope of a first trial small enough that someone can explain each important decision afterward. Revisit the record when models, policies or client versions change. This makes it easier to distinguish an improvement in workflow from a change in where uncertainty is hidden. The evaluation ideas in this edition are suggestions for readers, not experiments conducted by this journal.",
+  "visual": {
+    "focus": "Keep routing, data flow and remediation visible",
+    "branches": [
+      {
+        "label": "Evaluate model selection",
+        "detail": "Fusion: compare quality, time and cost with a fixed-model baseline."
+      },
+      {
+        "label": "Trace the processing",
+        "detail": "Local routing: distinguish on-device inference from cloud routing decisions."
+      },
+      {
+        "label": "Verify the fix",
+        "detail": "Security extension: inspect the patch and confirm remediation before merging."
+      }
+    ]
+  }
+}
 ]
