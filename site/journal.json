@@ -1532,4 +1532,49 @@
     ]
   }
 }
+,
+{
+  "date": "2026-11-02",
+  "slug": "2026-11-02-ai-briefing",
+  "title": "What gets lost between a log line, a sound wave and a video frame?",
+  "scope": "2 November 2026 · Asia/Shanghai (UTC+8), evening edition. Original project reports published on 1–2 November.",
+  "summary": "A security benchmark exposes dropped fields, an audio viewer separates channels, and a broadcast team measures the cost of sampling fewer frames.",
+  "intro": "A log line can pass through a model and come out as valid JSON with the wrong timestamp. A recording can sound fine when mixed down even though one microphone clipped. A video can retain a scoreboard while losing the play that changed the score. Three project teams published accounts of these problems this week. This AI-assisted news digest follows the evidence back to the original inputs. The measurements below come from the publishers, and the suggested checks are editorial analysis.",
+  "cover": {
+    "src": "https://raw.githubusercontent.com/SimZhou/vscode-audiolens/c5c5a246e0daaa9ee2f1411be4175685209ef691/docs/assets/readme/Main-Screen-multichannel.en-US.png",
+    "width": 3576,
+    "height": 2100,
+    "alt": "Three audio channels in AudioLens, each showing a blue waveform above a frequency spectrogram on the same time axis.",
+    "caption": "The first channel is soloed and the next two are muted. Their plots remain visible for comparison at the same instant.",
+    "credit": "SimZhou, AudioLens project documentation (Apache License 2.0)",
+    "source": "https://github.com/SimZhou/vscode-audiolens/blob/c5c5a246e0daaa9ee2f1411be4175685209ef691/docs/assets/readme/Main-Screen-multichannel.en-US.png"
+  },
+  "items": [
+    {
+      "title": "IFParse measures whether a normalized log still means the same thing",
+      "date": "1 November 2026 · benchmark release",
+      "source": "https://discuss.huggingface.co/t/ifparse-2-0-release/191309",
+      "sourceLabel": "IFParse authors’ release report and linked dataset",
+      "news": "IFParse v2.0 gives a model a machine record and scores the entire JSON object it returns. A missing key, an incorrect type or a shifted timestamp costs the whole point. Across 1,800 tasks, the authors report exact matches on 3.7% for their 7B Qwen model and 3.3% for the 3B model. The 1.5B model produced syntactically valid JSON on 85% of tasks and recorded zero exact matches. Among the mistakes the team inspected were dropped null fields and lost half-hour time offsets.",
+      "analysis": "For a SOC analyst joining two event streams, an offset error can put an authentication event on the wrong side of an alert. Keep the raw record alongside its normalized form when evaluating a parser. Score exact matches to learn how many records can pass downstream untouched, then count failures by field to identify the repair. A missing optional key and a shifted event time both fail the benchmark, but their consequences depend on the detection rule. These results describe three models under the authors’ evaluation settings."
+    },
+    {
+      "title": "AudioLens lets a speech engineer inspect the channel behind a bad transcript",
+      "date": "2 November 2026 · developer walkthrough",
+      "source": "https://discuss.huggingface.co/t/introducing-audiolens-for-vs-code-a-brand-new-audio-analysis-tool-for-audio-ai-engineers/191319",
+      "sourceLabel": "AudioLens developer’s illustrated walkthrough",
+      "news": "The AudioLens developer published a walkthrough of a VS Code extension for inspecting audio beside transcripts and dataset manifests. Each channel has its own waveform and spectrogram. A user can select a time interval, listen to one channel, measure its peak and clipping ratio, and export the interval as a WAV file. For files on a Remote SSH workspace, the extension transfers the audio needed for local playback and visualization.",
+      "analysis": "Suppose a recognizer repeatedly misses a word in a stereo recording. Open the path from the manifest, select that word’s interval and listen to each channel separately. If speech is audible on one side and distorted on the other, inspect the channel selection used during preprocessing before changing the model. A spectrogram can locate a difference, while listening and checking the transcript help explain it. Keep the original timestamps with an exported clip so a colleague can reproduce the comparison against the full recording."
+    },
+    {
+      "title": "SceneMaker reports what sparse frame sampling misses in broadcast video",
+      "date": "2 November 2026 · team report on earlier broadcast work",
+      "source": "https://discuss.huggingface.co/t/scenemaker-open-models-for-korean-broadcast-highlights-and-what-0-5-fps-costs-in-video-understanding/191318",
+      "sourceLabel": "SceneMaker team’s broadcast report and evaluation notes",
+      "news": "The SceneMaker team describes a Korean broadcast workflow in which operators reviewed 79 proposed baseball highlights. In a separate experiment on 100 six-second news clips, sampling at half a frame per second instead of 30 cut the reported prompt size from 11,791 to 1,711 tokens per clip and ran 2.4 times faster. Logos and on-screen text held up comparatively well. Scene transitions and continuous action suffered. The team says its full evaluation of the broadcast workflow is still underway.",
+      "analysis": "At half a frame per second, consecutive samples are two seconds apart. A scoreboard may remain readable across several samples while a catch fits entirely between them. An editor choosing a sampling rate could score these tasks separately, then revisit candidate highlights at a higher frame rate before setting clip boundaries. The speed figure comes from the short news-clip experiment. Applying it to a full baseball broadcast would require timing transcription, retrieval, rendering and operator review as well."
+    }
+  ],
+  "takeaway": "Today’s observation is to keep a small example of what the pipeline discarded. For logs, that means the source field and its expected type. For audio, it means the individual channels at the disputed timestamp. For video, it means the frames between two samples. A reviewer with those examples can identify the first step that lost information and test a targeted correction."
+}
 ]
