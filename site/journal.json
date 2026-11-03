@@ -1577,4 +1577,49 @@
   ],
   "takeaway": "Today’s observation is to keep a small example of what the pipeline discarded. For logs, that means the source field and its expected type. For audio, it means the individual channels at the disputed timestamp. For video, it means the frames between two samples. A reviewer with those examples can identify the first step that lost information and test a targeted correction."
 }
+,
+{
+  "date": "2026-11-03",
+  "slug": "2026-11-03-ai-briefing",
+  "title": "Which model ran, and what did the agent actually do?",
+  "scope": "3 November 2026 · Asia/Shanghai (UTC+8). Two reports published on 2 November and a recent-week security investigation published on 29 October.",
+  "summary": "FlashProve links an answer to a model, Weighthouse tracks the weights on disk, and CrowdStrike separates targeting from confirmed intrusions.",
+  "intro": "Suppose a coding assistant gives a different answer after a weekend deployment. The name in the model picker may look familiar, yet the weights on disk, the model serving a request and the actions taken with its output are three different things to establish. Two projects described on Monday offer ways to check the first two. A threat investigation from last week shows why the third distinction matters to incident responders. This AI-assisted news digest draws on the research team, the tool’s developer and the investigators who observed the campaign.",
+  "cover": {
+    "src": "https://raw.githubusercontent.com/weighthouse/weighthouse/967d06b90e77348ce3c64415e702cb5ee97f56b4/docs/images/model-details-dark.png",
+    "alt": "Weighthouse shows a pinned Llama model revision and an available upstream update with controls to review differences and verify files.",
+    "caption": "The revision on disk remains visible while a newer version awaits review. That distinction matters when trying to reproduce a model run.",
+    "credit": "Weighthouse project documentation, MIT license",
+    "source": "https://github.com/weighthouse/weighthouse/blob/967d06b90e77348ce3c64415e702cb5ee97f56b4/docs/images/model-details-dark.png",
+    "width": 2560,
+    "height": 1428
+  },
+  "items": [
+    {
+      "title": "FlashProve gives a verifier evidence of which computation ran",
+      "date": "2 November 2026 · research publication",
+      "news": "Anthropic and collaborators published FlashProve, a research system for cryptographic proofs of model inference. A provider commits to a set of model weights. A verifier can then check evidence that the specified computation used those weights while the weights themselves remain private. In a Llama 4 Maverick experiment with four-bit weights and integer arithmetic during prefill, the researchers report about 19 MB of proof for a 1,024-token request. Producing proofs took roughly 70 to 95 times the GPU time of running inference in their vLLM comparison.",
+      "analysis": "Consider a service that promises to route a particular class of requests to a particular model. Someone auditing that promise needs a trusted association between the model’s identity and its initial commitment. With that in place, a proof can help investigate suspected substitution. A separate check still has to establish whether the answer itself is accurate. For an engineering pilot, measure proof generation, transfer and verification separately. A service that audits a sample of completed jobs has a different latency budget from one that must verify every response before displaying it.",
+      "source": "https://www.anthropic.com/research/provable-inference",
+      "sourceLabel": "Anthropic and collaborators’ FlashProve research report"
+    },
+    {
+      "title": "Weighthouse records which model files reached local storage",
+      "date": "2 November 2026 · developer announcement",
+      "news": "The developer of Weighthouse introduced a self-hosted library for managing Hugging Face models across storage locations. A manifest records the pinned repository revision and the files selected for download. The tool can flag a missing file or an unexpected size and show what changed upstream before an operator updates a copy. Teams can use a web interface or give an agent a scoped key to inspect the library and queue work. The developer says agent requests are logged.",
+      "analysis": "A team comparing two evaluation runs could save the manifest with each set of results. If one run used a different quantized file, that supplies a specific difference to investigate before attributing the change to a prompt. The screenshot above shows where an operator can inspect the installed revision even when an update is available. A matching file size alone leaves open the possibility that the contents differ. For an audit that requires byte-level identity, compare independently recorded hashes and retain the serving configuration that selected those files.",
+      "source": "https://discuss.huggingface.co/t/weighthouse-a-self-hosted-library-for-managing-hugging-face-models/191351",
+      "sourceLabel": "Weighthouse developer’s announcement and linked source repository"
+    },
+    {
+      "title": "CrowdStrike distinguishes ARTEX targeting from confirmed post-exploitation",
+      "date": "29 October 2026 · recent-week review of activity beginning 17 October",
+      "news": "CrowdStrike reported that the actor it tracks as VAPOR PANDA used an ARTEX controller against more than 200 organizations. It observed activity directed at entities in at least 14 countries over 11 days and confirmed post-exploitation at nine organizations. Investigators drew on exposed controller material, agent transcripts and endpoint telemetry. They describe a human operator steering concurrent engagements at decision points and report observing the BLOODALCHEMY backdoor during the campaign.",
+      "analysis": "An incident timeline benefits from keeping a proposed action, an attempted connection and a confirmed host change in separate entries. A transcript can show which system the operator intended to reach. Authentication records can show whether the connection succeeded. Endpoint evidence can then establish what executed. This also explains why the report’s two organization counts answer different questions. For a detection exercise, take one observed behavior, identify which event would confirm it, and write down where coverage ends. That last detail helps the next analyst decide what evidence to collect.",
+      "source": "https://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign/",
+      "sourceLabel": "CrowdStrike’s original VAPOR PANDA investigation"
+    }
+  ],
+  "takeaway": "Keep the evidence beside the claim it supports. A manifest can help reproduce a deployment, a proof can bind a computation to committed weights, and host records can establish an effect on a machine. When an investigation crosses those boundaries, preserve the identifiers and timestamps that let another person join the records."
+}
 ]
