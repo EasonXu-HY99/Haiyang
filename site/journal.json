@@ -1622,4 +1622,57 @@
   ],
   "takeaway": "Keep the evidence beside the claim it supports. A manifest can help reproduce a deployment, a proof can bind a computation to committed weights, and host records can establish an effect on a machine. When an investigation crosses those boundaries, preserve the identifiers and timestamps that let another person join the records."
 }
+,
+{
+  "date": "2026-11-04",
+  "slug": "2026-11-04-ai-briefing",
+  "title": "Three ways to catch an AI system that looks correct",
+  "summary": "StateBench follows changing facts, CWE-bench checks security repairs, and tiny model fixtures expose silent regressions.",
+  "scope": "4 November 2026 · Asia/Shanghai (UTC+8), evening edition. Three original reports published on 3 November and reviewed today. Publication times are not specified, so inclusion within a strict 24-hour window is not assumed.",
+  "intro": "An assistant can produce a convincing answer while losing an earlier update, submit a plausible security patch that breaks another feature, or keep running after a dependency change alters its behavior. Today's selection brings together three attempts to make these failures measurable. Each report supplies a different kind of test, from synthetic sequences to repository repairs and small model fixtures. This AI-assisted news digest separates the publishers' findings from suggested uses. The reading map is editorial synthesis, with each branch linking to the relevant story and its original source. No personal testing of the released tools is claimed.",
+  "items": [
+    {
+      "title": "StateBench asks whether a model can follow changing facts",
+      "date": "2026-11-03",
+      "news": "Ai2 introduced StateBench to compare four levels of state tracking, from recovering a fixed value to following dependent updates across variables. The team reports that four tested frontier models fell to 13% accuracy or lower on the longest problems in the hardest category. Separately, small recurrent and hybrid models trained directly on the tasks generalized much farther than their pretrained counterparts. The release includes data and code. Its current framework assumes a fixed number of variables, leaving the arrival of new entities outside its scope.",
+      "analysis": "For an assistant that summarizes changing access permissions, retrieving one sentence is only the beginning. An editorial evaluation idea is to construct a short, synthetic sequence of grants, transfers and revocations, then ask for the final state with the decisive updates identified. Increase the dependency chain before increasing document length. This helps distinguish failure to locate information from failure to carry a change forward. The published benchmark does not establish performance on a production incident timeline, and task-specific training results should not be read as capabilities of an off-the-shelf hybrid model.",
+      "source": "https://huggingface.co/blog/allenai/statebench",
+      "sourceLabel": "Ai2 · StateBench announcement and research links"
+    },
+    {
+      "title": "CWE-bench v2 makes defensive repair tests inspectable",
+      "date": "2026-11-03",
+      "news": "Collinear AI published a public set of 100 security-repair tasks covering 91 CWE categories. Each task gives an agent a real repository checkout and an instruction, with programmatic checks for the repair and preservation of existing functionality. The authors say every task received manual review. Tasks run in Dockerized Harbor environments, and dataset access requires accepting its conditions. The announcement also describes a separate held-out set. Its reported leading pass@4 score of 81% shows that repeated attempts still leave a substantial unresolved portion.",
+      "analysis": "This is useful for teams evaluating whether an assistant can deliver an acceptable defensive change. Start with vulnerability categories relevant to the codebase, inspect what each verifier actually measures, and record both failed repairs and regressions. Keep the number of attempts and execution budget visible when comparing systems. A public benchmark can support reproducible comparisons, but repeated exposure can also make it less representative of unfamiliar work. A passing result is evidence about the checked behavior. Deployment still needs the repository's broader tests and a review of the proposed change.",
+      "source": "https://huggingface.co/blog/cwe-bench",
+      "sourceLabel": "Collinear AI · CWE-bench v2 release"
+    },
+    {
+      "title": "Small model fixtures catch a silent attention regression",
+      "date": "2026-11-03",
+      "news": "Hugging Face proposed Model Integration Contracts, combining a pinned, reduced model fixture, a runnable usage example and human-reviewed baseline outputs. Its retrospective UMT5 experiment detected an attention regression that let a decoder see future tokens during training. A demonstrated CPU runner step took 13.4 seconds, excluding setup. The chosen attention implementation mattered to detection. As of the report's 1 November status, the Transformers CI job reported failures without blocking pull requests. Coverage remains partial, and some bugs appeared only with real checkpoint weights.",
+      "analysis": "The practical attraction is earlier feedback on behavior that can change without crashing. For a model integration, preserve one meaningful generation or training path and record the environment alongside its expected outputs. A tiny fixture can make frequent checks affordable, provided it exercises the same relevant components. Review baseline changes carefully so an accidental behavior change does not become the new expectation automatically. Full checkpoint tests remain necessary for effects the reduced fixture cannot reproduce. The CPU timing is a specific demonstration, not a universal test-suite runtime estimate.",
+      "source": "https://huggingface.co/blog/transformers-mic",
+      "sourceLabel": "Hugging Face · Model Integration Contracts"
+    }
+  ],
+  "takeaway": "Today's observation is to write down the failure you want a test to reveal before choosing a score. Keep a compact example, an expected result and enough execution detail for another person to repeat the check. When a failure appears, preserve it as a regression case. That habit makes evaluations useful after the initial comparison, when dependencies change and the system must keep earning trust.",
+  "visual": {
+    "focus": "What evidence would expose a convincing mistake?",
+    "branches": [
+      {
+        "label": "Changing facts",
+        "detail": "StateBench follows dependent updates to a final state."
+      },
+      {
+        "label": "Security repairs",
+        "detail": "CWE-bench checks a fix and the functionality it must preserve."
+      },
+      {
+        "label": "Model regressions",
+        "detail": "Integration contracts compare repeatable behavior with reviewed baselines."
+      }
+    ]
+  }
+}
 ]
