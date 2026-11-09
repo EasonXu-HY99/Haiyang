@@ -1834,4 +1834,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-11-09",
+  "slug": "2026-11-09-ai-briefing",
+  "title": "When the environment changes: voice agents, robot tests and harness adapters",
+  "summary": "Three recent releases examine how AI behaves when conversation, physical conditions or development tools change.",
+  "scope": "9 November 2026 · Asia/Shanghai (UTC+8). Recent-week review of original reports dated 6–7 November; these are not presented as announcements from the latest 24 hours.",
+  "intro": "A useful AI system must keep working when its surroundings change. A person interrupts a voice assistant, a robot encounters an unfamiliar arrangement, or a coding model receives a different set of tools. Those changes can expose weaknesses hidden by a smooth demonstration. Today's selection revisits three recent primary reports that have not appeared in this journal, rather than filling the edition with unverified breaking news. This AI-assisted news digest separates the developers' descriptions from editorial evaluation suggestions. The accompanying reading map connects each story to its source. No personal testing, production deployment or employer experience is claimed.",
+  "items": [
+    {
+      "title": "MOSS-Live keeps conversation active while tools work",
+      "date": "2026-11-07",
+      "news": "OpenMOSS described MOSS-Live, a system combining simultaneous listening and speaking, live visual input and background tool execution. Its foreground handles conversational timing while a background model performs reasoning and longer tasks. Shared context and task state coordinate the two. The team's published comparison reports 51% tool-use success on FDB v3 and 57.93% multi-turn task success on tau-Voice. These are developer-reported benchmark results, not independent validation or a guarantee for a particular application.",
+      "analysis": "The practical opportunity is an assistant that remains available when a lookup takes time. A useful trial would change a request while its first task is still running, then check whether the returned answer reflects the new intent. Also test interruptions, nearby speech and consented camera input separately. Fluent timing should not conceal a failed action or an outdated result. Before enabling consequential tools, define which actions require confirmation and how cancelled work is handled. The reported success rates make clear that conversational responsiveness and reliable task completion still need separate assessment.",
+      "source": "https://huggingface.co/blog/OpenMOSS-Team/moss-live",
+      "sourceLabel": "OpenMOSS · MOSS-Live announcement, 7 November"
+    },
+    {
+      "title": "ToyBlocks makes robot failure easier to isolate",
+      "date": "2026-11-06",
+      "news": "Ai2 introduced ToyBlocks as the first setting in its FoundationWorlds framework. The controlled tabletop environment varies properties such as block arrangements and dimensions, while combining reinforcement-learning skills with task-and-motion planning to generate demonstrations. Its evaluation separates high-level planning from low-level execution and examines generalization to changed conditions. Measurements include progress, forces and speed alongside task success. Simulator access helps produce training behavior, while the learned policies operate from sensor observations.",
+      "analysis": "For robotics researchers, controlled variation can answer a more useful question than whether one stack was completed: which change caused the failure? Compare a planner with a reference executor, or an execution policy with reference plans, before treating every miss as a single model problem. Keep familiar and unfamiliar conditions separate in the results. The limitation is scope: a structured block environment cannot establish readiness for an uncontrolled workplace. Physical hardware, contact dynamics and unfamiliar objects still require their own evidence. Use the framework to diagnose and prioritize experiments, rather than to certify deployment safety.",
+      "source": "https://huggingface.co/blog/allenai/toyblocks",
+      "sourceLabel": "Ai2 · ToyBlocks and FoundationWorlds, 6 November"
+    },
+    {
+      "title": "Harness adapters train models inside the tools they will use",
+      "date": "2026-11-06",
+      "news": "Harness Hub described training a separate LoRA adapter for each model and agent harness, including pi, opencode and hermes. Reinforcement learning runs inside the unmodified harnesses. The project builds verifiable repository tasks and uses a tool-call proxy to detect prohibited reward-hacking behavior. Its announcement reports preliminary smoke-test improvements in tool efficiency while maintaining or improving held-out accuracy; final runs were still underway. This is an early training workflow, rather than evidence that one adapter transfers equally well across all environments.",
+      "analysis": "The useful idea is to evaluate the model together with the interface that shapes its actions. Teams experimenting with adapters should preserve harness versions, tool definitions and task splits so improvements can be reproduced. Inspect the grader as carefully as the generated code: passing a weak test can reward the wrong behavior. Track correctness, tool calls and runtime together, and retain tasks outside the training distribution. A proxy that catches specified violations is helpful, but it is not a general security boundary or proof against every form of manipulation. Recheck results when the harness changes.",
+      "source": "https://huggingface.co/blog/harness-hub/harness-adapters",
+      "sourceLabel": "Harness Hub · Harness-specific adapters, 6 November"
+    }
+  ],
+  "takeaway": "Today's observation is to make change part of the test plan. Choose one realistic disruption, record the expected behavior and inspect what actually happens. Keep enough context to explain a failure without confusing presentation quality with task success. A small, repeatable evaluation with explicit limits provides a better basis for the next engineering decision than a broad claim that an assistant, robot or coding model simply works.",
+  "visual": {
+    "focus": "Test what happens when conditions change",
+    "branches": [
+      {
+        "label": "Conversation changes",
+        "detail": "Check that interruptions and revised requests reach ongoing tasks."
+      },
+      {
+        "label": "Physical conditions change",
+        "detail": "Separate planning errors from execution failures in controlled robot tests."
+      },
+      {
+        "label": "Tool environments change",
+        "detail": "Evaluate adapters with their harness versions and trustworthy graders."
+      }
+    ]
+  }
+}
 ]
