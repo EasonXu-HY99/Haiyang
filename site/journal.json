@@ -1940,4 +1940,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-11-11",
+  "slug": "2026-11-11-ai-briefing",
+  "title": "Can a small model call the right tool, route a ticket or animate a pair of scissors?",
+  "scope": "11 November 2026 · Asia/Shanghai (UTC+8). Primary reports published on 10 and 11 November.",
+  "summary": "BotPsy takes tool calls onto the device, Hugging Face gives applications a way to score choices, and MotionGraphicsBench checks whether an animation follows its brief.",
+  "intro": "Suppose you ask an assistant to move a meeting by half an hour. It might understand the sentence perfectly and still change the wrong event. A designer faces a similar problem when asking for a pair of scissors to close and reopen. The blades can move in the right direction and still stop too far apart. Three reports in this AI-assisted news digest offer different ways to examine the gap between understanding a request and delivering the requested result.",
+  "items": [
+    {
+      "title": "BotPsy puts a tool-calling model on the device",
+      "date": "2026-11-11",
+      "news": "Tether AI Research introduced BotPsy, an 800-million-parameter assistant derived from Qwen3.5-0.8B. The release includes weights and quantized versions for local inference. Its training targets requests that an application can carry out through tools, including calendar and file operations. The team reports strong results on single calls and identifies a specific weakness in tasks that require several rounds of information retrieval. Its evaluation also shows performance dropping as instructions accumulate.",
+      "analysis": "A calendar is a good place to see the difference. Evaluating a request to list tomorrow’s meetings takes one known calendar and a date. Rescheduling the second meeting with a particular colleague requires finding the right person, resolving which meeting counts as second and carrying that identifier into the edit. A developer can test each step using a disposable calendar and compare the final event with the original request. Running inference locally gives the application control over the model input. Where the calendar tool sends its arguments is a separate design decision, especially if it connects to a hosted service.",
+      "source": "https://huggingface.co/blog/qvac/botpsy",
+      "sourceLabel": "Tether AI Research · BotPsy release and evaluation"
+    },
+    {
+      "title": "Decision models give each routing option a score",
+      "date": "2026-11-10",
+      "news": "Hugging Face published a guide to decision models that take a description of the current situation and questions about it. Its support-ticket example asks which department should handle a message about a duplicate charge. The application supplies the allowed choices and a description of what each means. The model returns probabilities over the alternatives. The guide demonstrates a decision pipeline in Transformers and covers serving models with llama.cpp.",
+      "analysis": "An explicit list of destinations makes it possible to inspect ambiguous cases. Consider a message that reports both a duplicate charge and a checkout crash. Billing and technical support could each be plausible recipients. A routing team could collect examples that reviewers struggled to assign, record where they ultimately went and check how often the model placed the eventual destination first. Before using a probability threshold to dispatch tickets automatically, compare scores with actual outcomes on those examples. A queue definition that changes next month can also change the correct answer to an otherwise identical ticket.",
+      "source": "https://huggingface.co/blog/decision",
+      "sourceLabel": "Hugging Face · Decision model interface and serving guide"
+    },
+    {
+      "title": "MotionGraphicsBench checks the movement of an existing design",
+      "date": "2026-11-10",
+      "news": "Researchers at Figma and Stanford presented 100 animation tasks. Each starts with a complete static vector graphic and instructions describing the intended motion. Task-specific programs check properties such as the path an element follows and the order in which events occur. Of 32 models evaluated, four exceeded a 50 percent single-attempt pass rate at their highest available reasoning setting. On a separate set of 180 animations, the authors report 93.3 percent agreement between the checks and human judgments.",
+      "analysis": "The scissors example shows what a designer gains from a check that can explain its verdict. The blades close, reopen and return to their starting pose, yet the gap at their closest point is too wide. That gives the animator one correction to make while preserving the parts that already work. A product team commissioning motion for an interface could use the same approach for timing, position and synchronization. Human review still matters for qualities the brief leaves open, such as whether a transition feels abrupt or draws attention away from the next control.",
+      "source": "https://huggingface.co/blog/figma-ai/motion-graphics-bench",
+      "sourceLabel": "Figma and Stanford researchers · MotionGraphicsBench"
+    }
+  ],
+  "takeaway": "One practical question runs through the three reports. What would a reviewer inspect after the model finishes? For a calendar edit it is the changed event, for a support request the selected queue, and for an animation the positions of the blades over time. Choosing that observable result up front makes a failed attempt easier to diagnose.",
+  "visual": {
+    "focus": "What evidence shows the requested action succeeded?",
+    "branches": [
+      {
+        "label": "Calendar edit",
+        "detail": "Compare the event identifier and updated time with the request."
+      },
+      {
+        "label": "Ticket routing",
+        "detail": "Check the chosen queue against reviewed examples with overlapping intents."
+      },
+      {
+        "label": "Animation timing",
+        "detail": "Inspect the closest blade positions as well as the order of movements."
+      }
+    ]
+  }
+}
 ]
