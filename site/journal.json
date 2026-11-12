@@ -1993,4 +1993,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-11-12",
+  "slug": "2026-11-12-ai-briefing",
+  "title": "What survives a smaller search index, a new coding expert and a privacy filter?",
+  "scope": "12 November 2026 · Asia/Shanghai (UTC+8). A retrieval guide dated 11 November, with two recent-week picks from 10 and 9 November.",
+  "summary": "Hugging Face measures what search compression costs, TNG tests independently trained coding experts, and NVIDIA labels the exact text a Japanese privacy filter should catch.",
+  "intro": "A support engineer searching for a replacement part might type a model number and a symptom into the same search box. The manual that mentions both should rank above a page that mentions the symptom alone. Keeping enough detail to make that distinction gets expensive across millions of pages. This AI-assisted news digest opens with an experiment that puts a number on that tradeoff. Two reports from earlier this week ask similarly concrete questions about adding a programming language to a model and removing identifying details from a document.",
+  "items": [
+    {
+      "title": "A search encoder learns which details survive pooling",
+      "date": "2026-11-11",
+      "source": "https://huggingface.co/blog/token-pooling",
+      "sourceLabel": "Hugging Face · Token pooling and the NanoBEIR experiment",
+      "news": "A Hugging Face guide demonstrates training a search encoder for an index that merges similar token vectors. Storing several vectors per document lets different parts of a query find evidence in different passages. Merging vectors reduces storage and can also move the relevant document down the ranking. In the author's NanoBEIR experiment, fourfold pooling retained 94.6% of the conventionally trained model's original ranking score. Training with pooling in mind raised retention to 97.8% at the same vector budget. The metric, nDCG@10, rewards putting relevant documents nearer the top of the first ten results.",
+      "analysis": "For a team indexing equipment manuals, the cases worth inspecting are queries where a short identifier changes the right answer. Hold the documents and queries fixed, compare the two ranked lists, and look at the first relevant page that dropped out of the top ten. That reveals whether compression lost evidence a technician needs. The percentages describe retention of a benchmark score. To estimate the operational benefit, measure the complete index on disk and time actual queries, since a vector count accounts for only part of the serving system."
+    },
+    {
+      "title": "TNG adds Rust and Haskell experts to a frozen model",
+      "date": "2026-11-10",
+      "source": "https://huggingface.co/blog/tngtech/bring-your-own-expert-extending-moe-models-with-ne",
+      "sourceLabel": "TNG Technology Consulting · Bring Your Own Expert",
+      "news": "TNG reported an experiment with Qwen3.5-35B-A3B-Base, a model whose router selects a subset of specialist networks for each token. The team added new networks and trained the corresponding routing weights while keeping the existing weights frozen. Rust and Haskell specialists could be trained independently and combined in one checkpoint. The authors report gains on language-specific benchmarks while preserving the baseline capabilities they measured. To give a new expert a useful starting point, they initialized it from an active expert and briefly held routing fixed during training.",
+      "analysis": "Separate training runs would let a team update its Rust component without repeating the Haskell training run. The interesting evaluation comes after combining them. Compare the original model, each single-language extension and the combined checkpoint on identical examples. Include tasks that mix documentation, build configuration and source code, since a model may need to switch expertise within one answer. A passing compiler supplies an inexpensive first check. Behavioral tests can then expose a plausible implementation that handles the wrong inputs. TNG's results cover the base model and languages in its experiment."
+    },
+    {
+      "title": "Japanese redaction tests get character-level evidence",
+      "date": "2026-11-09",
+      "source": "https://huggingface.co/blog/nvidia/nemotron-pii-japan",
+      "sourceLabel": "NVIDIA · Nemotron PII Japan release",
+      "news": "NVIDIA released Nemotron PII Japan with 100,000 synthetic business documents spanning 43 document types. Annotations identify both the location and category of personal information. The release describes generating text around placeholders, inserting predetermined synthetic values and checking the final text against the labels. That makes it possible to inspect exactly where a detector stopped masking an address or started masking adjacent business information. The collection includes Japanese writing conventions such as dates expressed using an era name.",
+      "analysis": "A reviewer could give a redaction tool a synthetic change-of-address notice and compare the characters it obscures with the labeled address. Masking the street but leaving the apartment number visible is one failure. Removing the entire sentence can also make a document unusable if the reader loses the reason for the change. Score incomplete and excessive masking separately, then inspect examples by document type. A strong result on clean generated text leaves handwritten scans, OCR errors and local form layouts as separate evaluation questions."
+    }
+  ],
+  "takeaway": "Keep one example where the aggregate score conceals a meaningful error. A missing part number, a program that compiles but mishandles an input, or an exposed apartment number gives reviewers a concrete reason to prefer one configuration. Those examples can become regression tests the next time the index, model or privacy filter changes.",
+  "visual": {
+    "focus": "Which detail must the system preserve?",
+    "branches": [
+      {
+        "label": "Search relevance",
+        "detail": "Track whether the manual with the right part number stays in the top ten."
+      },
+      {
+        "label": "Code behavior",
+        "detail": "Run the same Rust and Haskell tests before and after combining experts."
+      },
+      {
+        "label": "Redaction boundaries",
+        "detail": "Compare every masked character with the annotated address."
+      }
+    ]
+  }
+}
 ]
