@@ -2046,4 +2046,57 @@
     ]
   }
 }
+,
+{
+  "date": "2026-11-13",
+  "slug": "2026-11-13-ai-briefing",
+  "title": "Building a local voice app that can survive its next upgrade",
+  "scope": "13 November 2026 scheduled edition · Asia/Shanghai (UTC+8). Compiled after midnight on 14 November. The lead release is dated 13 November. The speech releases from 12 and 10 November are recent-week picks.",
+  "summary": "llama.cpp marks a compatibility milestone, Salesforce targets recorded dictation, and Google shows how an offline voice conversation fits together on a phone.",
+  "intro": "A dictated email address can sound perfectly clear and still be unusable after transcription. A spoken reply can contain all the right words and still arrive too late for a conversation. And a voice app that handles both cases today has to keep working when its inference library changes. Three releases this week address those different jobs. This AI-assisted news digest follows the decisions a developer would face when choosing a runtime, processing a recording and putting live speech on a phone.",
+  "items": [
+    {
+      "title": "llama.cpp and ggml give downstream developers a version boundary",
+      "date": "2026-11-13",
+      "source": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+      "sourceLabel": "ggml-org · Version 1.0.0 announcement",
+      "news": "The llama.cpp maintainers announced version 1.0.0 of their libraries. They say future changes that break compatibility with the programming interface or its binary equivalent will trigger a major version increase for llama.cpp and ggml. That distinction matters for applications which ship a compiled library alongside their own code. The same announcement describes hardware backends that can be compiled as separate libraries and loaded at runtime, an arrangement that lets applications support different processors through a common inference stack.",
+      "analysis": "Consider a desktop app that distributes one installer to users with several kinds of graphics hardware. A major version change now gives its maintainer a clear signal to budget time for integration work. Even within a compatible version series, a sensible release test would load the same model file on each supported backend and exercise the first user-visible operation. Record whether it loads, how much memory it needs and how long the first response takes. Interface compatibility answers whether the pieces can talk to one another. Those measurements answer whether users can still do their work."
+    },
+    {
+      "title": "Salesforce releases an open-weight model for recorded speech",
+      "date": "2026-11-12",
+      "source": "https://huggingface.co/blog/salesforce-sovereign-intelligence/sov-transcribe-1",
+      "sourceLabel": "Salesforce · SOV-Transcribe-1 release",
+      "news": "Salesforce introduced SOV-Transcribe-1 for non-streaming speech recognition and released the weights under Apache 2.0. The model has 26 billion parameters in total, with four billion active. Its announcement highlights two details that often matter in dictation applications: recognizing what the speaker says and following instructions about how to format the transcript. Salesforce reports the highest open-weight ranking on the Artificial Analysis non-streaming speech-to-text comparison as of 12 November. The comparison is specific to the systems included on that date.",
+      "analysis": "A recorded support note offers a practical evaluation. Ask a consenting speaker to dictate a fictional email address, a ticket number and a correction to an earlier sentence. Review the identifiers character by character, then check how the requested formatting handles the correction. A transcript can have very few word errors while one wrong digit sends a reader to another ticket. The non-streaming design suits a workflow where the recording is already complete. A product that displays words while a user speaks needs separate evidence about partial results and the time they take to appear."
+    },
+    {
+      "title": "Google connects recognition and playback in AI Edge Gallery",
+      "date": "2026-11-10",
+      "source": "https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/",
+      "sourceLabel": "Google AI Edge and Android ML teams · Original announcement",
+      "news": "Google described offline speech recognition and speech synthesis in AI Edge Gallery. On Android, developers can use system speech models through ML Kit. For cross-platform development, the team describes downloadable model bundles supported by MediaPipe Tasks and LiteRT. The reference app shows how to stream a spoken question, generate a reply locally and read sentences aloud as they become available. Google's original announcement appeared on 10 November. The LiteRT community republished the walkthrough on 12 November.",
+      "analysis": "Sentence-level playback introduces a product decision that is easy to miss in a text-only prototype. A response containing a paragraph, a table and a code sample needs a rule for what reaches the speaker. Google's reference implementation skips some non-spoken content and highlights the sentence being read. To assess the experience, try a short bilingual exchange on a target device after the necessary language assets are installed. Listen for the pause before the first reply and check whether the highlighted sentence tracks the audio when the user jumps ahead."
+    }
+  ],
+  "takeaway": "For a local voice application, three small acceptance tests can reveal more than a single end-to-end demo. Load the shipped library on a supported device, check a dictated identifier against the recording, and listen to the first sentence of a reply with the network disconnected. Each result points to a different component when the experience breaks.",
+  "visual": {
+    "focus": "Follow a voice request through three engineering decisions",
+    "branches": [
+      {
+        "label": "Runtime upgrade",
+        "detail": "Check that the application loads its model on each supported backend."
+      },
+      {
+        "label": "Recorded dictation",
+        "detail": "Compare identifiers in the completed transcript with the recording."
+      },
+      {
+        "label": "Spoken conversation",
+        "detail": "Measure the first audible response and follow sentence-level playback."
+      }
+    ]
+  }
+}
 ]
