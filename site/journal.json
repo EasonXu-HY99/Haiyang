@@ -2151,5 +2151,57 @@
       }
     ]
   }
+},
+{
+  "date": "2026-11-15",
+  "slug": "2026-11-15-ai-briefing",
+  "title": "Which parts of your GitHub AI workflow will still work in December?",
+  "scope": "15 November 2026 · Asia/Shanghai (UTC+8). Weekend review of three GitHub announcements published on 13 November.",
+  "summary": "Six Copilot models have a retirement date. Enterprise Server teams gain an app connection, while security teams get finer control over repository scanning.",
+  "intro": "Suppose a developer opens the Copilot app in December, signs in successfully and finds the model their team uses has disappeared. Or a security manager enables AI Scan across an organization and waits for a report that never arrives. Three updates from GitHub this week explain how both situations can arise. This AI-assisted news digest follows the settings that matter, from the model a developer can select to the evidence that a repository scan actually ran.",
+  "items": [
+    {
+      "title": "Six Copilot models have a December deadline",
+      "news": "GitHub plans to retire six models from Copilot on 14 December. The notice covers chat, edits, agent workflows and code completion. Five models have suggested successors, including Claude Haiku 5.5 for Haiku 4.5. GitHub has yet to name a successor for Kimi K3. There is one subscription exception worth checking before raising a support ticket: individuals on annual Copilot plans can keep using Haiku 4.5.",
+      "analysis": "A team planning the handover can start with a task it already understands. Take a small change with a known acceptance test, save the original prompt, and give the suggested successor the same files and instructions. Check whether the test passes and how much editing the answer needs. A passing result on that task gives the team a reason to migrate that workflow, while leaving harder tasks open for review. Business and Enterprise administrators should also check model policies. A suggested successor can be available from GitHub while remaining disabled for the people expected to use it.",
+      "source": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december/",
+      "sourceLabel": "GitHub · December model retirement notice",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "The Copilot app can connect to GitHub Enterprise Server",
+      "news": "GitHub moved its Enterprise Server connection from opt-in preview to general availability in version 1.2.0 of the Copilot app. A developer first signs in with a GitHub.com or GHE.com account, then adds the Enterprise Server account in the app settings. The connection brings remote repositories, issues and pull requests into the app. Cloud sessions remain unavailable for Enterprise Server.",
+      "analysis": "Consider a developer assigned an issue on a company-hosted instance. A useful first check is whether they can open that issue in the app, find its repository and see the associated pull request under the expected account. Those steps exercise the work the connection actually supports. If the team's usual instructions then tell the developer to hand the task to a cloud session, those instructions still need a separate path for Enterprise Server. The announcement establishes which account and repository operations are supported. It gives no basis for assuming every other Copilot feature works on the same installation.",
+      "source": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app/",
+      "sourceLabel": "GitHub · Enterprise Server support in the Copilot app",
+      "date": "2026-11-13"
+    },
+    {
+      "title": "AI Scan gains a repository setting that teams can audit",
+      "news": "In public preview, GitHub's REST API lets administrators read or change repository AI Scan settings at organization and repository level. Repositories can opt out of an enabled organization setting. An organization-wide block prevents repositories from opting in. Enabling the feature leaves the scan itself pending until someone with write access starts it on demand. Each run uses GitHub Code Security AI credits. This announcement excludes GitHub Enterprise Server.",
+      "analysis": "A dashboard with one green check beside each repository would hide an important distinction. One column can show whether a scan is permitted and another can show when someone last completed one. A repository could then appear as eligible with no recorded scan, giving its owner a clear next action. There is also a detail for teams managing both pull-request and repository scanning together. If policy blocks either change in a combined request, GitHub rejects both. Reading the resulting settings before marking the rollout complete would catch that case.",
+      "source": "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api/",
+      "sourceLabel": "GitHub · Repository AI Scan management preview",
+      "date": "2026-11-13"
+    }
+  ],
+  "takeaway": "For a December readiness review, ask three people to bring three pieces of evidence: a developer's result on a familiar task with the replacement model, an Enterprise Server user's check of an actual issue in the app, and a security manager's record of a completed scan. Each answers a different operational question. Together they show which workflows the team can already rely on and exactly where someone still needs to act.",
+  "visual": {
+    "focus": "What can the team verify before December?",
+    "branches": [
+      {
+        "label": "Model",
+        "detail": "Compare the suggested successor on a task with an existing acceptance test."
+      },
+      {
+        "label": "Account",
+        "detail": "Open an Enterprise Server issue and its pull request from the desktop app."
+      },
+      {
+        "label": "Coverage",
+        "detail": "Track permission to scan separately from the last completed scan."
+      }
+    ]
+  }
 }
 ]
