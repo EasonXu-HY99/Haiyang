@@ -2203,5 +2203,57 @@
       }
     ]
   }
+},
+{
+  "date": "2026-11-16",
+  "slug": "2026-11-16-ai-briefing",
+  "title": "What counts as a finished task? Reading the Qwen4-Max launch numbers",
+  "scope": "16 November 2026 · Asia/Shanghai (UTC+8). Today's Qwen4-Max release, with two research papers submitted on 12 November as a look back at the week.",
+  "summary": "Alibaba reports a lower cost per task for Qwen4-Max. Two studies show how the result can change when a test has only 20 questions or when a correct answer uses different words.",
+  "intro": "If a model needs two attempts to read an invoice correctly, both attempts belong on the bill. Whether the second one counts as a success depends on how the answer is checked. That detail matters when reading Alibaba's Qwen4-Max announcement today. This AI-assisted news digest pairs the launch with two recent papers that make the scoring decision unusually concrete. One asks a model to answer picture questions in Even, a language spoken in Siberia. The other asks whether an answer can earn credit when its wording differs from the reference.",
+  "items": [
+    {
+      "date": "2026-11-16",
+      "title": "Alibaba reports a lower task cost for Qwen4-Max on its own benchmark",
+      "news": "Alibaba released Qwen4-Max through its cloud API on 16 November. The company describes a model that can read images and handle up to one million tokens of context. Its most useful cost comparison comes from Work360, Alibaba's own workplace benchmark. At high reasoning effort, Alibaba reports that the new model used 35% fewer tokens than Qwen3.8-Max and that average cost per task fell by about 60%. The announcement describes smaller models with downloadable weights as forthcoming.",
+      "analysis": "For a team extracting figures from invoices, a practical comparison would start with a handful of documents whose totals and currencies someone has already checked. Give both models the same pages and record the total charge across every attempt, including retries. Divide that bill by the number of documents accepted under the same rule. A model that reads a difficult page correctly on its first attempt could save more than the token price suggests. A cheap answer that sends a reviewer back to the PDF still costs staff time. The Work360 figure gives the team a reason to try that comparison, but supplies neither its invoice mix nor its acceptance rule.",
+      "source": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max?_p_lc=1",
+      "sourceLabel": "Alibaba Cloud · Qwen4-Max release announcement"
+    },
+    {
+      "date": "2026-11-12",
+      "title": "EvenVLM gets 13 of 20 picture questions right",
+      "news": "The EvenVLM authors built an Even–Russian resource from dictionaries and phrasebooks, then used it to create training examples. They adapted Qwen3-VL-4B for text tasks and trained it separately on questions about images. Their visual question set drew on 189 images. In the reported visual test, the adapted model answered 13 of 20 questions correctly. The base model and the version trained only on text scored zero on that test.",
+      "analysis": "Thirteen correct answers show that adding visual examples changed what the model could do on this exercise. The denominator also tells a reader how much precision to attach to 65%: one answer changes the score by five percentage points. For someone building a learning resource, a more informative follow-up would use unfamiliar pictures, several speakers' descriptions, and questions that require more than naming an object. Keep the original test alongside the new one. That way a gain on familiar vocabulary remains visible even if performance falls when speakers use a different expression.",
+      "source": "https://arxiv.org/abs/2611.16500",
+      "sourceLabel": "EvenVLM · Original research paper"
+    },
+    {
+      "date": "2026-11-12",
+      "title": "SAGE-QA checks the passage when an answer misses the reference wording",
+      "news": "The SAGE-QA researchers studied 10,000 questions from the SQuAD 2.0 validation set. They checked answers against the expected text, then used an external model to examine disagreements. One check asks whether two formulations mean the same thing. Another asks whether the passage supports the answer. For Gemini 3.1 Pro, the authors report 86.66 on exact match and 98.02 on a hybrid measure that credits answers after passage review. These are two scoring rules applied to the same model.",
+      "analysis": "Imagine a passage that says a service reopened on Monday after a weekend closure. A reference might say “Monday” and a model might say “on Monday.” A human can settle that disagreement quickly. An answer that adds an unsupported reopening time needs closer reading, even if it includes the right day. Keeping a sample of both kinds of disagreement lets a reviewer see which changes to the score are justified. The hybrid result also inherits the external judge's mistakes. Applying that judge to a new collection of documents calls for another check against human decisions.",
+      "source": "https://arxiv.org/abs/2611.16300",
+      "sourceLabel": "SAGE-QA · Original research paper"
+    }
+  ],
+  "takeaway": "Before comparing two models, write down what would let a reader accept one answer and move on. For an invoice, that might be the correct amount, currency and supporting page. For a question in Even, it might be a description a speaker accepts for a previously unseen image. Once the rule is explicit, the number of attempts, the size of the test and the cost per accepted answer all become easier to interpret.",
+  "visual": {
+    "focus": "What earns one unit of success?",
+    "branches": [
+      {
+        "label": "Cost",
+        "detail": "Count every attempt needed to deliver an accepted result."
+      },
+      {
+        "label": "Sample",
+        "detail": "Keep the 20 test questions visible beside the 65% result."
+      },
+      {
+        "label": "Evidence",
+        "detail": "Look at the original passage when the judge and exact match disagree."
+      }
+    ]
+  }
 }
 ]
