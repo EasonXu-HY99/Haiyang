@@ -2255,5 +2255,57 @@
       }
     ]
   }
+},
+{
+  "date": "2026-11-17",
+  "slug": "2026-11-17-ai-briefing",
+  "title": "Where the wait goes when you run an open model",
+  "scope": "17 November 2026 · Asia/Shanghai (UTC+8). All three publishers date their announcements or engineering reports 16 November. NVIDIA's SC26 update appeared on 17 November in Shanghai.",
+  "summary": "Hugging Face changes who answers an inference request, llama.cpp changes which builds occupy a runner, and NVIDIA links four desktop systems for experiments that would otherwise queue for a cluster.",
+  "intro": "A chat window can sit blank while a provider looks for capacity. A developer can spend the same minute waiting for a machine to compile a change. Both waits appear as an idle screen, yet buying a faster GPU would solve neither if the job has not started. This AI-assisted news digest follows three November updates through the point at which work starts. Each suggests a different measurement for someone deciding where to run an open model or develop the software around it.",
+  "items": [
+    {
+      "date": "2026-11-16",
+      "title": "Hugging Face gives a language-model request another route",
+      "source": "https://huggingface.co/blog/openrouter",
+      "sourceLabel": "Hugging Face · Inference Providers announcement",
+      "news": "Hugging Face announced that OpenRouter now handles language-model requests through its Inference Providers service. The router considers price, speed and reliability and can retry a failed request at another provider within the same call. Existing applications can keep their Hugging Face token. The account or organization now receives the language-model charges through Hugging Face. Image, audio and video generation continue through the existing provider arrangements.",
+      "analysis": "Consider a chat application that streams its replies. Measure the time from pressing Send to seeing the first word, then separately record the time the full reply takes. A provider that generates the rest of an answer quickly can still leave the user staring at an empty window. If a team requires one particular provider, it can select that provider explicitly. That decision also narrows its fallback options. A useful trial would compare the default route and the permitted route on the same set of short conversations, counting failed calls alongside response times."
+    },
+    {
+      "date": "2026-11-16",
+      "title": "llama.cpp moves reusable compiler output closer to its build jobs",
+      "source": "https://huggingface.co/blog/ggml-org/llama-cpp-ci-buckets",
+      "sourceLabel": "ggml-org · llama.cpp build infrastructure report",
+      "news": "The llama.cpp maintainers described how they reorganized a full test run spanning more than 100 jobs. Pull requests now run checks selected from the changed files, and pushes to the main development branch still get the full set. Eligible builds on that branch publish snapshots of compiled objects to Hugging Face Buckets. Pull requests can read those snapshots. The team also moved much of its Linux x64 build work to Hugging Face Jobs.",
+      "analysis": "Suppose a contributor edits one file and the job spends ten minutes waiting for a runner before the compiler even starts. A larger compiler cache can shorten the build after dispatch. It does little for those first ten minutes. The maintainers' account gives other projects a practical way to investigate: record queue time, cache download time and compilation time separately. Also look at a change that alters the compiler settings. Earlier objects may be unusable for that build, so the time saved on a small edit can overstate the benefit for a release or a major branch change."
+    },
+    {
+      "date": "2026-11-16",
+      "title": "NVIDIA connects four DGX Spark systems for local cluster experiments",
+      "source": "https://blogs.nvidia.com/blog/dgx-spark-hpc-developer-kit-sc26/",
+      "sourceLabel": "NVIDIA · DGX Spark HPC Developer Kit at SC26",
+      "news": "At SC26, NVIDIA introduced an HPC developer kit that connects four DGX Spark systems in a ring. Each system connects directly to two neighbors. NVIDIA lists 512 GB of combined memory and 20 TB of storage for the four systems. It describes running distributed workloads on the kit and names an installation guide for the HPC SDK as forthcoming. The announcement gives researchers a concrete configuration for trying work that spans more than one machine.",
+      "analysis": "A lab preparing a distributed inference experiment could start with a problem small enough to fit on one machine, then divide the same work among several nodes. This makes the cost of exchanging data visible before the team attempts a model that requires all four. The distinction matters when reading the memory figure: each node holds part of the total, and software must arrange how the work and data are shared. Finishing locally may save a wait for an allocation on a larger cluster. Estimating the duration of the eventual production run still requires measurements on that cluster."
+    }
+  ],
+  "takeaway": "For one slow request or build, write down when it was submitted, when execution began and when the result became usable. The first gap can point to provider capacity or a queue. The second can expose repeated compilation or time spent moving data. That small record makes it easier to decide whether another provider, a reusable build or a local machine would buy back the minutes that matter.",
+  "visual": {
+    "focus": "Where does the work spend time?",
+    "branches": [
+      {
+        "label": "Inference",
+        "detail": "Watch the wait for the first word and the time to the final word."
+      },
+      {
+        "label": "Compilation",
+        "detail": "Separate runner availability from cache transfer and compiler time."
+      },
+      {
+        "label": "Local cluster",
+        "detail": "Compare time saved in the queue with time spent exchanging data."
+      }
+    ]
+  }
 }
 ]
