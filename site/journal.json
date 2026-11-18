@@ -2307,5 +2307,57 @@
       }
     ]
   }
+},
+{
+  "date": "2026-11-18",
+  "slug": "2026-11-18-ai-briefing",
+  "title": "Following an AI coding task from activity log to review feedback",
+  "scope": "18 November 2026 · Asia/Shanghai (UTC+8). A review of three GitHub announcements dated 17 November. Publication pages provide dates without a precise release time.",
+  "summary": "Copilot activity can reach Agent 365, reviews can choose their effort level, and Event Streams can wake a waiting agent when a pull request changes.",
+  "intro": "A developer asks an agent to fix a bug, opens a pull request and leaves it waiting for review. Several people may need to understand what happens next. An administrator wants to inspect the agent's actions. A reviewer wants to find problems in the patch. The agent needs to learn that feedback has arrived. Three GitHub announcements address these different moments. This AI-assisted news digest follows a hypothetical coding task through them and identifies the evidence each feature makes available.",
+  "items": [
+    {
+      "title": "Copilot activity can be reviewed in Microsoft Agent 365",
+      "news": "GitHub announced streaming of Copilot agent activity into Microsoft Agent 365 for GitHub Enterprise Cloud customers using Enterprise Managed Users. The announcement describes visibility across cloud agents, command-line tools and supported development environments. Administrators can examine sessions containing prompts, responses and tool calls, alongside usage trends. GitHub also points to additional risk information in Microsoft Purview and Defender.",
+      "analysis": "For a team investigating an unexpected edit, the practical question is whether it can trace the change back to the request and the actions taken. A small, approved test task could provide a known sequence to compare against the records that arrive. Record the account used, the approximate time and the expected action before checking the destination. If something is missing, that gives the team a precise example to investigate. The stated availability condition matters for planning that exercise: an organization first needs to establish that its GitHub deployment and user setup qualify. Access to session content also needs to match the people responsible for investigating it.",
+      "source": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365/",
+      "sourceLabel": "GitHub · Copilot activity in Agent 365",
+      "date": "2026-11-17"
+    },
+    {
+      "title": "Adaptive reviews choose depth within an administrator's limit",
+      "news": "Copilot code review gained an Adaptive effort option in public preview. It selects Lite, Balanced or Max according to the pull request's complexity and risk, displays its choice and respects the configured maximum. Balanced remains the default. The same announcement introduces preview features for reading related public repositories and detecting exposed secrets during review. The latter combines detectors for known credential formats with AI methods.",
+      "analysis": "A team could compare a documentation edit with a change to an authorization check, then inspect the selected review effort and the comments produced. The selected level explains part of the review process, while the comments provide material a maintainer can assess. If a credential warning appears, the maintainer still needs to establish whether the value is real and whether it was exposed. A test fixture and an active credential call for different responses. Measuring the number of warnings alone would hide that distinction. Tracking which comments lead to a useful correction would give the team a clearer basis for changing its review settings.",
+      "source": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/",
+      "sourceLabel": "GitHub · Adaptive review and secret detection",
+      "date": "2026-11-17"
+    },
+    {
+      "title": "Event Streams lets an agent wait for a pull request update",
+      "news": "GitHub introduced Event Streams in preview, with access subject to waitlist approval across its plans. An agent subscribes to a pull request and keeps a connection open to receive updates. Events include reviews, new commits, merge conflicts, closure or merging, and changes to check suites. A public webhook receiver is unnecessary, allowing an agent running on a laptop to receive these updates.",
+      "analysis": "For a coding assistant waiting on review, an event can be the cue to read the current pull request and decide whether more work is needed. A comment might refer to a commit that has already changed, so the next action should use the current state. A useful integration exercise would also disconnect the laptop briefly, reconnect, and compare what the assistant knows with the repository. The launch announcement leaves delivery and recovery details to the documentation. Teams should verify those details before relying on the stream to resume unattended work, especially where a repeated action could create another commit or send another notification.",
+      "source": "https://github.blog/changelog/2026-11-17-github-event-streams-is-now-in-preview/",
+      "sourceLabel": "GitHub · Event Streams preview",
+      "date": "2026-11-17"
+    }
+  ],
+  "takeaway": "A useful trial can follow one ordinary pull request all the way through. Check whether the activity record explains the edit, whether review feedback improves it, and whether the waiting assistant resumes with the latest repository state. Write down any missing step with its time and expected result. That creates a concrete handover between developers and administrators and gives the next test a clear purpose.",
+  "visual": {
+    "focus": "What evidence accompanies the coding task?",
+    "branches": [
+      {
+        "label": "Activity",
+        "detail": "Trace the request, account and tool actions in the session record."
+      },
+      {
+        "label": "Review",
+        "detail": "Inspect the selected effort and whether comments lead to useful corrections."
+      },
+      {
+        "label": "Resume",
+        "detail": "Use an event to check the latest pull request before taking action."
+      }
+    ]
+  }
 }
 ]
