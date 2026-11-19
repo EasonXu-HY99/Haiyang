@@ -2359,5 +2359,57 @@
       }
     ]
   }
+},
+{
+  "date": "2026-11-19",
+  "slug": "2026-11-19-ai-briefing",
+  "title": "Small speech models, large local models and the time a training job really takes",
+  "scope": "19 November 2026 · Asia/Shanghai (UTC+8). Three original reports published on 18 November. The speech article covers an available checkpoint with an earlier weight update, while the other articles describe engineering experiments.",
+  "summary": "Rumble-2-Flash targets multilingual transcription, an expert-streaming experiment fits a large model onto a 32 GB Mac, and Dharma-AI predicts training duration from completed jobs.",
+  "intro": "A model's parameter count tells only part of the story when deciding whether a task can run on available hardware. A transcription service needs to handle the audio that actually arrives. A laptop must process a long prompt while leaving memory for other programs. A training schedule must account for evaluation and saving checkpoints. This AI-assisted news digest examines three reports published yesterday, each with a concrete result and conditions that matter when interpreting it.",
+  "items": [
+    {
+      "title": "Rumble-2-Flash makes a compact multilingual transcription option available",
+      "news": "Reson8's November 18 article presents Rumble-2-Flash, a 0.5-billion-parameter speech recognition model supporting more than 40 languages under Apache 2.0. It works through Transformers and vLLM, and offers control over transcription formatting. The authors report 7.86% word error rate on a 302-hour English call-centre benchmark. Their headline throughput above 7,000 times real time comes from larger datasets with full batches. The repository also records a weight update on November 10.",
+      "analysis": "For a meeting transcription application, accuracy on names, numbers and short interruptions may matter more than average error rate. A useful trial could include a quiet recording, a compressed call and a clip with an unfamiliar accent, using transcripts checked by a person. Record the time until a single recording is ready as well as total throughput across a batch. Those measurements answer different operational questions. The reported batch speed makes the model interesting for processing an archive, while a live conversation needs its own latency measurement. Formatting controls also deserve a check when downstream software expects dates or amounts as digits.",
+      "source": "https://huggingface.co/blog/rumble-2-flash",
+      "sourceLabel": "Reson8 and Hugging Face · Rumble-2-Flash report",
+      "date": "2026-11-18"
+    },
+    {
+      "title": "An experimental Transformers path streams model experts from disk",
+      "news": "Tarek Ziadé describes running Qwen3.8-Flash-Next on a Mac with 32 GB of unified memory by fetching selected mixture-of-experts weights from SSD into a bounded cache. After optimizations, he reports 13.9 tokens per second for short generation and 12.4 after a 6,000-token document on his M5 system. The approach uses quantized weights and model-specific components. Its generic implementation is proposed in a Transformers pull request, with the interface still under discussion.",
+      "analysis": "This experiment gives developers a concrete way to explore a model that exceeds their memory budget. To judge usefulness, start with the prompt length of the intended task and watch both peak memory and time to the first response. A small chat and a document review can stress the system differently. Leave the programs normally used alongside the model open during a realistic test. Disk capacity, available memory and conversion time belong in the setup estimate too. The author's measurements provide a reproducible starting point, but adopting this path means tracking experimental code and the exact model conversion used.",
+      "source": "https://huggingface.co/blog/moe-expert-streaming",
+      "sourceLabel": "Tarek Ziadé · Expert streaming experiment",
+      "date": "2026-11-18"
+    },
+    {
+      "title": "Dharma-AI uses completed jobs to estimate fine-tuning duration",
+      "news": "Dharma-AI studied 272 supervised fine-tuning jobs on a shared H200 GPU pool. In five-fold cross-validation, its CatBoost predictor achieved a mean absolute duration error of 1.71 hours, compared with 12.41 hours for one FLOP-based baseline. The predictor uses information available before dispatch, including evaluation and checkpoint settings. The report previews a forthcoming paper. Its data covers one GPU type and supervised fine-tuning, with relatively few very long runs.",
+      "analysis": "A team planning tomorrow's experiments could use the same general method to learn from its own execution logs. Preserve the requested configuration alongside the actual start and finish times, and record what evaluation and saving work the job performed. Compare predictions against later jobs before using them to promise a delivery time. For a deadline, the distribution of errors matters: an average can hide a few runs that finish much later than expected. A new GPU generation, software stack or training objective would also call for fresh validation. The published result is most useful as evidence that operational details can improve a scheduling estimate.",
+      "source": "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time",
+      "sourceLabel": "Dharma-AI · Fine-tuning duration study",
+      "date": "2026-11-18"
+    }
+  ],
+  "takeaway": "Each report suggests a different acceptance test. For transcription, check a transcript and the wait for it. For local inference, test the actual document length and memory headroom. For training, compare predicted duration with the next completed job. Keeping these small records makes a performance claim easier to translate into a decision about the workload in front of you.",
+  "visual": {
+    "focus": "Which measurement matches the workload?",
+    "branches": [
+      {
+        "label": "Speech",
+        "detail": "Check transcript errors and single-recording latency alongside batch throughput."
+      },
+      {
+        "label": "Local inference",
+        "detail": "Measure prompt processing, generation speed and peak memory together."
+      },
+      {
+        "label": "Training",
+        "detail": "Compare predicted finish times with completed jobs and inspect late outliers."
+      }
+    ]
+  }
 }
 ]
