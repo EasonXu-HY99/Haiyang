@@ -2463,5 +2463,57 @@
       }
     ]
   }
+},
+{
+  "date": "2026-11-21",
+  "slug": "2026-11-21-ai-briefing",
+  "title": "A practical look at open weights, video depth and coding agents",
+  "scope": "21 November 2026 · Asia/Shanghai (UTC+8). Recent-week review: Tencent's model repository snapshot dated 19 November, Apple's paper submitted 19 November UTC, and Microsoft's model release dated 17 November. These are not presented as same-day launches.",
+  "summary": "Hy4 flash offers another multimodal deployment option, Depth Pro 2 tackles video depth stability, and MAI Code 2 documents both coding capabilities and operational limits.",
+  "intro": "Today's selection revisits three useful developments from the past week. The sources checked for this edition did not establish enough distinct, important launches within the latest 24-hour window, so this is a dated review rather than a list padded with recycled breaking news. The common question is what a release enables a developer to evaluate in practice. Model availability, visual quality and a coding agent's ability to finish work each need different checks. This AI-assisted news digest separates publisher descriptions from editorial analysis; the suggested experiments below are proposals, not tests performed by the author.",
+  "items": [
+    {
+      "date": "2026-11-19",
+      "title": "Hy4 flash: open weights with a substantial deployment footprint",
+      "news": "Tencent's official Hy4 flash repository, whose latest recorded revision is dated November 19, provides instruct, FP8 and base-model links. This date identifies the repository snapshot, not a verified first-launch date. Its model card describes text and image input, text output and up to one million context tokens. Tencent lists approximately 220 billion total parameters, including roughly 64 billion Engram parameters, with about 12 billion active per token. The weights use the Tencent Hy License.",
+      "analysis": "For a team considering its own multimodal service, this creates a candidate for comparing screenshot interpretation and document extraction under controlled conditions. Begin with a small set of images with known answers, including tiny labels and distracting layout elements. Then measure errors alongside latency, peak memory and concurrency. The active parameter count alone is insufficient for planning the storage and memory needed to serve the complete model. A million-token ceiling also does not establish reliable recall throughout a long document. Before integration, check the actual weight format, runtime support and licence terms against the intended deployment. Treat publisher efficiency claims as hypotheses for that workload.",
+      "source": "https://huggingface.co/tencent/Hy4-flash",
+      "sourceLabel": "Tencent · Hy4 flash model card and repository history"
+    },
+    {
+      "date": "2026-11-19",
+      "title": "Depth Pro 2 targets sharp boundaries without unstable video depth",
+      "news": "Apple's Depth Pro 2 paper was submitted on November 19 at 18:55 UTC, corresponding to November 20 in Singapore and Beijing. It describes estimating metric depth from images and video at native resolution. The researchers address a trade-off between crisp object boundaries and consistency across successive frames, and report improvements across both dimensions. The project page links released code and model weights, and provides visual comparisons. These are the authors' reported results, not independent validation.",
+      "analysis": "Depth estimation is useful when an application needs an approximate spatial interpretation of an ordinary photograph or camera stream. For a prototype, compare a stationary scene with a slow camera pan: inspect whether thin objects retain their boundaries and whether the same surface changes apparent distance between frames. Include reflective surfaces and objects moving independently of the camera. A visually smooth output can still have the wrong scale, so compare a few distances with measurements where possible. The relevant choice is the accuracy and runtime achieved at the resolution the application will actually use. Review the released model's terms before reuse, and avoid treating inferred distances as guaranteed measurements.",
+      "source": "https://arxiv.org/abs/2611.26603",
+      "sourceLabel": "Apple researchers · Depth Pro 2 paper and linked project"
+    },
+    {
+      "date": "2026-11-17",
+      "title": "MAI Code 2 makes agent limits part of the release documentation",
+      "news": "Microsoft's model card dates MAI Code 2 and MAI Code 2 Flash to November 17. It describes hosted coding models accepting text and images, with a larger variant for complex repository work and a smaller variant aimed at faster everyday tasks. Distribution includes GitHub Copilot, with Flash also listed for Microsoft Foundry. The card reports reinforcement learning within Copilot CLI and VS Code agent environments. It explicitly warns about repeated tool calls, instruction drift, incomplete verification and quality degradation near the context limit.",
+      "analysis": "Those disclosures provide a useful acceptance checklist for a coding assistant. Give an agent a bounded repair in a disposable checkout, define the expected behavior beforehand, and retain its tool log. Check whether it runs the relevant test, examines the failure and verifies the final patch. Compare the smaller and larger options on completed work rather than response speed alone. A quick attempt that needs substantial manual repair can be the more expensive choice. Keep permission boundaries explicit when tools can alter infrastructure or access credentials. The model card's benchmark results describe Microsoft's evaluation setup; they do not establish how either model will perform in an unfamiliar repository.",
+      "source": "https://microsoft.ai/pdf/MAI-Code-2-And-MAI-Code-2-Flash-Model-Card.pdf",
+      "sourceLabel": "Microsoft · MAI Code 2 and MAI Code 2 Flash model card"
+    }
+  ],
+  "takeaway": "A useful trial starts with an observable failure condition. For multimodal models, that might be a misread label; for depth, an unstable or incorrectly scaled surface; for coding agents, a patch that fails the intended behavior. Save the input, model revision, runtime settings and result together. That small record makes the next release easier to judge and keeps a polished demonstration from becoming the only evidence behind an adoption decision.",
+  "visual": {
+    "focus": "What evidence would make each release useful?",
+    "branches": [
+      {
+        "label": "Deploy",
+        "detail": "Hy4 flash: verify image accuracy, memory needs and licence fit."
+      },
+      {
+        "label": "Measure",
+        "detail": "Depth Pro 2: inspect boundaries, frame stability and physical scale."
+      },
+      {
+        "label": "Finish",
+        "detail": "MAI Code 2: verify the patch, tool behavior and completed tests."
+      }
+    ]
+  }
 }
 ]
