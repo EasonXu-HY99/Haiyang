@@ -2411,5 +2411,57 @@
       }
     ]
   }
+},
+{
+  "date": "2026-11-20",
+  "slug": "2026-11-20-ai-briefing",
+  "title": "New local models and adapters put the agent setup in the spotlight",
+  "scope": "20 November 2026 edition · Asia/Shanghai (UTC+8). Published retrospectively on 21 November to fill a missed edition. Two reports are dated 20 November, with an explicitly dated look back at DaisyRose's 18 November release.",
+  "summary": "Inkling 2 Mini introduces a compact looped architecture, Hugging Face releases harness-specific adapters, and DaisyRose describes how long agent sessions were used in training.",
+  "intro": "A coding assistant's result depends on its model, the tools it can call and the way its conversation is managed. This edition examines three releases that change different parts of that arrangement. The examples below describe possible evaluation tasks, with performance figures attributed to their publishers. This AI-assisted news digest was researched and published on 21 November as a retrospective edition for 20 November. It includes the original dates so readers can distinguish the releases from the day this article was added.",
+  "items": [
+    {
+      "date": "2026-11-20",
+      "title": "Inkling 2 Mini brings a looped model to local runtimes",
+      "news": "Thinking Machines Lab released Inkling 2 Mini on November 20 under Apache 2.0. Hugging Face describes a multimodal mixture-of-experts model with roughly 26 billion physical parameters and 3 billion active per token. Some layers repeat three times. It accepts images and text and supports a one-million-token context. The launch includes support across Transformers, llama.cpp, MLX and SGLang, with mixed-precision weights.",
+      "analysis": "For a developer reading screenshots alongside source files, the combination of image input and local runtime support creates a practical evaluation candidate. Start with a small interface defect whose expected appearance is known, and keep the same screenshot and acceptance test across models. Record peak memory and time to a usable answer as well as whether the patch works. A supported context limit still leaves the question of how a particular computer behaves with a long input. The launch article describes its informal comparisons as needing further validation, so a team's own tasks are the next meaningful evidence.",
+      "source": "https://huggingface.co/blog/inkling2mini",
+      "sourceLabel": "Hugging Face · Inkling 2 Mini launch"
+    },
+    {
+      "date": "2026-11-20",
+      "title": "Harness adapters train the model inside its actual agent environment",
+      "news": "Hugging Face reports training separate reinforcement-learning LoRA adapters for Qwen3.8-27B inside Pi, OpenCode and Hermes Agent. Each specialist improves on the base model in its own harness across the two reported benchmarks. The release also describes combining adapters. The authors disclose that a merge weight was selected using Terminal-Bench results, making that benchmark's figures somewhat optimistic. SWE-bench Pro was excluded from that choice.",
+      "analysis": "The reusable idea is to evaluate a model together with the environment that supplies its tools and instructions. A team switching its coding agent could run the same set of known repair tasks before and after the change, logging tool calls, tokens and successful fixes. When comparing efficiency, inspect tasks that both versions solve as well as failures. An agent that stops early on a difficult task can look inexpensive while leaving the work unfinished. Choosing settings on one set of tasks and evaluating on another also makes it easier to tell whether the improvement extends beyond the tuning examples.",
+      "source": "https://huggingface.co/blog/harness-adapters-at-scale",
+      "sourceLabel": "Hugging Face · Harness adapters at scale"
+    },
+    {
+      "date": "2026-11-18",
+      "title": "A recent-week look back at DaisyRose's long-session training",
+      "news": "RadixArk's November 18 release describes DaisyRose-27B, built from Qwen3.8-27B with reinforcement learning on 1,200 curated tasks. The publisher reports Terminal-Bench 4.1 pass@1 rising from 5.6% to 12.0%. Training sessions could span one million tokens through harness summarization across multiple trajectories. The model retains a 256K-token context window. The report also describes substantial training infrastructure, including 144 H200 GPUs over 18 days.",
+      "analysis": "A long-running agent often needs to remember an earlier decision after its working context has been condensed. One practical test is to give it a multistep repair with a constraint introduced near the beginning, then check that constraint in the final patch. Preserve the summary passed between stages when diagnosing a failure. This helps distinguish missing information from a poor decision made with the information available. The release's task count alone also gives an incomplete picture of the training effort. Repeated attempts, environment execution and model updates all contribute to the resources required.",
+      "source": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "sourceLabel": "RadixArk · DaisyRose-27B release report"
+    }
+  ],
+  "takeaway": "For a useful comparison, save the full setup alongside the result: model revision, runtime, agent instructions, tool permissions and the task's acceptance check. If the assistant fails, inspect where the first incorrect decision occurred and what information was available then. That record makes it possible to test whether a new model, an adapter or a change in context management addresses the observed problem.",
+  "visual": {
+    "focus": "Which part of the agent setup changed?",
+    "branches": [
+      {
+        "label": "Model",
+        "detail": "Check image understanding, local runtime behavior and memory use."
+      },
+      {
+        "label": "Harness",
+        "detail": "Compare successful repairs, tool calls and tokens under the same environment."
+      },
+      {
+        "label": "Memory",
+        "detail": "Verify that an early constraint survives summaries and later actions."
+      }
+    ]
+  }
 }
 ]
